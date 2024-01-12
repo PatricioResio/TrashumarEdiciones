@@ -1,8 +1,10 @@
+import { useContext, useEffect } from "react";
+import { FormRegistro } from "../components";
+import LoginForm from "../components/LoginForm/LoginForm";
+import { AuthContext } from "../context/AuthContext";
 
-const Login = () => {
-  return (
-    <div>Login</div>
-  )
+export default function Login() {
+  const { currentUser } = useContext(AuthContext);
+
+  return <LoginForm />;
 }
-
-export default Login

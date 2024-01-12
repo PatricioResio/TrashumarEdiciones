@@ -1,11 +1,11 @@
-import FormProyectos from "../components/FormProyectos/FormProyectos"
-
-const Proyectos = () => {
+import { Container } from "@mui/material";
+import { SectionProyecto } from "../components";
+import { ContenedorProyectos } from "../components/index";
+const ProyectoNuevo = () => {
   return (
-    <div>
-        <FormProyectos/>
-    </div>
-  )
-}
-
-export default Proyectos
+    <Container maxWidth="xl" disableGutters sx={{ m: 0 }}>
+      <SectionProyecto />
+    </Container>
+  );
+};
+export default ProyectoNuevo;

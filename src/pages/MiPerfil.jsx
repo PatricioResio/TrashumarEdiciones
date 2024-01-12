@@ -1,9 +1,12 @@
-
+import { useContext, useEffect } from "react";
+import { FormRegistro, Perfil } from "../components/index";
+import { AuthContext } from "../context/AuthContext";
+import PerfilRouter from "../components/PerfilRouter/PerfilRouter";
 
 const MiPerfil = () => {
-  return (
-    <div>MiPerfil</div>
-  )
-}
+  const { newUser } = useContext(AuthContext);
 
-export default MiPerfil
+  return newUser === true ? <FormRegistro /> : <PerfilRouter />;
+};
+
+export default MiPerfil;

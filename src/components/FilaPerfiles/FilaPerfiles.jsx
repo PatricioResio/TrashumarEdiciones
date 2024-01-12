@@ -1,40 +1,26 @@
-import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
-import CartaPerfiles from '../CartaPerfiles/CartaPerfiles'
-
-const StyledGrid = styled(Grid)({
-  display: 'flex',
-  marginLeft: '20px',
-  paddingLeft: '20px',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  flexWrap:'nowrap',
-  alignItems: 'center',
-  scrollBehavior: 'smooth',
-  overflowX: 'scroll',
-  '&::-webkit-scrollbar': {
-    height: '8px',
-  },
-  '&::-webkit-scrollbar-thumb': {
-    backgroundColor: '#333',
-    borderRadius: '15px',
-  },
-  '&::-webkit-scrollbar-track': {
-    background: '#d4d4d4',
-    border: 'none',
-    borderRadius: '15px',
-  },
-});
+import CartaPerfiles from "../CartaPerfiles/CartaPerfiles";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import { SwiperSlide, Swiper } from "swiper/react";
 
 const FilaPerfiles = ({ perfiles }) => {
   return (
-    <StyledGrid container spacing={1} sx={{ paddingRight:'30px', paddingLeft:'65vh', minHeight: '18rem'}}>
-      {perfiles.map((perfil, i) => (
-        <Grid item key={i}>
-          <CartaPerfiles perfil={{ ...perfil }} />
-        </Grid>
-      ))}
-    </StyledGrid>
+    <>
+      <Swiper
+        navigation={true}
+        modules={[Navigation]}
+        className="swiper"
+        slidesPerView={4}
+        spaceBetween={40}
+      >
+        {perfiles.map((perfil, i) => (
+          <SwiperSlide key={i} className="swiper-slide">
+            <CartaPerfiles key={i} perfil={{ ...perfil }} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 };
 

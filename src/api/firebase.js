@@ -1,17 +1,22 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDd3uiFKSipYcHLx5WTdaIV_cbXcdUFmZ8",
-  authDomain: "trashumar-c8bd9.firebaseapp.com",
-  databaseURL: "https://trashumar-c8bd9-default-rtdb.firebaseio.com",
-  projectId: "trashumar-c8bd9",
-  storageBucket: "trashumar-c8bd9.appspot.com",
-  messagingSenderId: "921630332103",
-  appId: "1:921630332103:web:f483d700a5697049119ae2"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGIN_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
 export { db };
+export const auth = getAuth(app);
+

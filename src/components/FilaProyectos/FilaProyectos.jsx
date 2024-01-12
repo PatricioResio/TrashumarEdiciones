@@ -1,40 +1,27 @@
-import Grid from '@mui/material/Grid';
-import { styled } from '@mui/material/styles';
-import CartaProyectos from '../CartaProyectos/CartaProyectos'
-
-const StyledGrid = styled(Grid)({
-  display: 'flex',
-  marginLeft: '20px',
-  paddingLeft: '20px',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  flexWrap:'nowrap',
-  alignItems: 'center',
-  scrollBehavior: 'smooth',
-  overflowX: 'scroll',
-  '&::-webkit-scrollbar': {
-    height: '8px',
-  },
-  '&::-webkit-scrollbar-thumb': {
-    backgroundColor: '#333',
-    borderRadius: '15px',
-  },
-  '&::-webkit-scrollbar-track': {
-    background: '#d4d4d4',
-    border: 'none',
-    borderRadius: '15px',
-  },
-});
+import CartaProyectos from "../CartaProyectos/CartaProyectos";
+import { SwiperSlide, Swiper } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
+import "./FilaProyectos.css";
 
 const FilaProyectos = ({ proyectos }) => {
   return (
-    <StyledGrid container spacing={1} sx={{ paddingRight:'30px', paddingLeft:'80vh',  minHeight: '18rem'}}>
-      {proyectos.map((proyecto) => (
-        <Grid sx={{}} item key={proyecto.fecha}>
-          <CartaProyectos proyecto={{ ...proyecto }} />
-        </Grid>
-      ))}
-    </StyledGrid>
+    <>
+      <Swiper
+        navigation={true}
+        modules={[Navigation]}
+        className="swiper"
+        slidesPerView={4}
+        spaceBetween={5}
+      >
+        {proyectos.map((proyecto) => (
+          <SwiperSlide className="slide-swiper" item key={proyecto.fecha}>
+            <CartaProyectos proyecto={{ ...proyecto }} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 };
 

@@ -1,38 +1,49 @@
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import NavBar from './components/NavBar/NavBar'
-import Home from './components/Home/Home';
-import MiPerfil from './pages/MiPerfil';
-import Login from './pages/Login';
-import Proyecto from './pages/Proyecto'
-import { Route, Routes } from 'react-router-dom';
-import Footer from './components/Footer/Footer';
-import Registro from './pages/Registro';
-import ProyectoNuevo from './pages/ProyectoNuevo';
-import Nosotros from './pages/Nosotros';
+import { AuthProvider } from "./context/AuthContext";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import { Route, Routes } from "react-router-dom";
+import {
+  NavBar,
+  Footer,
+  FormRegistro,
+  PerfilPublico,
+  FormRegistroPerfil,
+} from "./components/index";
+import {
+  MiPerfil,
+  Libreria,
+  Login,
+  Nosotros,
+  Home,
+  Comunidad,
+  ProyectoNuevo,
+} from "./pages/index";
 
 export default function App() {
   return (
-
-
-
-    <Container sx={{backgroundColor:'#E1E5E6', margin: 0, width:'100%', padding: 0, height:'100%' }}>
-      <NavBar/>
-      <Box sx={{ width:'100%' }}>
-        <Routes>
-          <Route path='/' Component={Home}/>
-          <Route path='/miperfil' Component={MiPerfil}/>
-          <Route path='/proyecto' Component={Proyecto}/>
-          <Route path='/nosotros' Component={Nosotros}/>
-          <Route path='/login' Component={Login}/>
-          <Route path='/proyectoNuevo' Component={ProyectoNuevo}/>
-          <Route path='/registro' Component={Registro}/> 
-
-        </Routes>
-      </Box>
-      <Footer/>
-    </Container>
-
-    
+    <AuthProvider>
+      <Container
+        maxWidth="2xl"
+        sx={{ background: "#A9CBC8", width: "100%", margin: "0", padding: "0" }}
+        disableGutters
+      >
+        <NavBar />
+        <Box sx={{ padding: "0", margin: "0" }}>
+          <Routes>
+            <Route path="/" Component={Home} />
+            <Route path="/miperfil" Component={MiPerfil} />
+            <Route path="/infoPerfil" Component={FormRegistroPerfil} />
+            <Route pat="/miperfil/:perfil" Component={PerfilPublico} />
+            <Route path="/libreria" Component={Libreria} />
+            <Route path="/nosotros" Component={Nosotros} />
+            <Route path="/ingresa" Component={Login} />
+            <Route path="/publicar" Component={ProyectoNuevo} />
+            <Route path="/registro" Component={FormRegistro} />
+            <Route path="/comunidad" Component={Comunidad} />
+          </Routes>
+        </Box>
+        <Footer />
+      </Container>
+    </AuthProvider>
   );
 }
