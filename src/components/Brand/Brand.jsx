@@ -7,7 +7,7 @@ const Brand = () => {
   return (
     <Typography
       component={Link}
-      noWrap
+      flexWrap="wrap"
       to="/"
       sx={{
         display: "flex",

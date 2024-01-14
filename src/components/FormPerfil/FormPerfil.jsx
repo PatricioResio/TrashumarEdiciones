@@ -10,8 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import TabPerfil2 from "./TabPerfil2";
-import TabPerfil1 from "./TabPerfil1";
+import { TabPerfil1, TabPerfil2, TabPerfil3 } from "./TabPerfil1";
 
 const FormPerfil = () => {
   const [tabValue, setTabValue] = useState("1");
@@ -65,12 +64,29 @@ const FormPerfil = () => {
           }}
           value="1"
         >
-          <TabPerfil1></TabPerfil1>
+          <TabPerfil1 />
         </TabPanel>
-        <TabPanel value="2">
+        <TabPanel
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "50vh",
+            mb: "8px",
+          }}
+          value="2"
+        >
           <TabPerfil2 />
         </TabPanel>
-        <TabPanel value="3">
+        <TabPanel
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            width: "50vh",
+            mb: "8px",
+          }}
+          value="3"
+        >
+          <TabPerfil3 />
           <Button variant="contained"> enviar formulario</Button>
         </TabPanel>
       </TabContext>
