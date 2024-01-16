@@ -13,14 +13,13 @@ export default function CartaProyectos({ proyecto }) {
         heigth: "400px",
         border: "3px solid #3C9990",
         borderRadius: "20px",
-        transition: "transform 0.3s ease-in-out",
         backgroundColor: "#A6ECE0",
       }}
     >
       <CardMedia
         sx={{ height: "270px" }}
         image={proyecto.img}
-        src={proyecto.img}
+        src={!proyecto ? "" : proyecto.img}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="h5">

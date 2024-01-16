@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
-import { getProyectos } from "../api/api";
+import { getLibros } from "../api/api";
 
 const useLibros = () => {
-  const [proyectos, setProyectos] = useState([]);
+  const [libros, setlibros] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchProyectos = async () => {
-      const proyectos = await getProyectos();
-      setProyectos(proyectos);
+    const fetchLibros = async () => {
+      const libros = await getLibros();
+      setlibros(libros);
       setLoading(false);
     };
-    fetchProyectos();
+    fetchLibros();
   }, []);
-  return { loading, proyectos };
+  return { loading, libros };
 };
 
 export default useLibros;

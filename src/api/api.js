@@ -1,4 +1,3 @@
-
 import { db } from "./firebase";
 import { getDocs, collection, doc, getDoc } from "firebase/firestore";
 
@@ -9,18 +8,16 @@ export const getProyectos = async () => {
   } catch (error) {
     console.error(error);
     throw new Error("Error al obtener los proyectos");
-
   }
 };
 
 export const getPerfiles = async () => {
   try {
-
-    const perfilesSnapshot = await getDocs(collection(db, 'perfiles'));
-    return perfilesSnapshot.docs.map(doc => doc.data());
+    const perfilesSnapshot = await getDocs(collection(db, "perfiles"));
+    return perfilesSnapshot.docs.map((doc) => doc.data());
   } catch (error) {
     console.error(error);
-    throw new Error('Error al obtener los perfiles');
+    throw new Error("Error al obtener los perfiles");
   }
 };
 export const getLibros = async () => {

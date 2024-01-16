@@ -1,8 +1,8 @@
 import FilaProyectos from "../FilaProyectos/FilaProyectos";
 import { CircularProgress, Container } from "@mui/material";
-import useLibros from "../../hooks/useLibros";
+import useProyectos from "../../hooks/useProyectos";
 const ContenedorCartas = () => {
-  const { proyectos, loading } = useLibros();
+  const { proyectos, loading } = useProyectos();
 
   return (
     <Container

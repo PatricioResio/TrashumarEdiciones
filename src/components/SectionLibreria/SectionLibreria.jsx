@@ -1,20 +1,9 @@
 import { Box, CircularProgress, Container, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
-import { getLibros } from "../../api/api";
 import CartaLibros from "../CartaLibros/CartaLibros";
+import useLibros from "../../hooks/useLibros";
 
 const SectionLibreria = () => {
-  const [librosDB, setLibrosDB] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchLibros = async () => {
-      const libros = await getLibros();
-      setLibrosDB(libros);
-      setLoading(false);
-    };
-    fetchLibros();
-  }, []);
+  const { libros, loading } = useLibros();
 
   return loading ? (
     <CircularProgress />
@@ -37,7 +26,7 @@ const SectionLibreria = () => {
             m: "15px",
           }}
         >
-          {librosDB.map((libro, i) => (
+          {libros.map((libro, i) => (
             <Grid item key={i} xs={1}>
               <CartaLibros key={i} libro={libro} />
             </Grid>

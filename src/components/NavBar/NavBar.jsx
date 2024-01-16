@@ -164,7 +164,6 @@ function ResponsiveAppBar() {
                   color: "inherit",
                   marginRight: "3rem",
                 }}
-                maxWidth="100px"
               >
                 Ingresa
               </Button>

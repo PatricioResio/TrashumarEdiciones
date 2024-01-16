@@ -22,7 +22,6 @@ const Footer = () => {
     >
       <Typography
         variant="h6"
-        rap
         component={Link}
         to="/"
         sx={{

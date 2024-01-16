@@ -13,7 +13,6 @@ export default function CartaPerfiles({ perfil }) {
         height: "400px",
         border: "3px solid #3C9990",
         borderRadius: "20px",
-        transition: "transform 0.3s ease-in-out",
         backgroundColor: "#A6ECE0",
       }}
     >
@@ -26,7 +25,7 @@ export default function CartaPerfiles({ perfil }) {
         <Typography gutterBottom variant="h5" component="h5">
           {perfil.nombrePublico}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body" color="text.secondary">
           {perfil.oficio}
         </Typography>
       </CardContent>
