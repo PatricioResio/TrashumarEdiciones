@@ -1,27 +1,16 @@
-import { useState, useEffect } from "react";
-import { getProyectos } from "../../api/api";
 import FilaProyectos from "../FilaProyectos/FilaProyectos";
 import { CircularProgress, Container } from "@mui/material";
-
+import useLibros from "../../hooks/useLibros";
 const ContenedorCartas = () => {
-  const [proyectos, setProyectos] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchProyectos = async () => {
-      const proyectos = await getProyectos();
-      setProyectos(proyectos);
-      setLoading(false);
-    };
-    fetchProyectos();
-  }, []);
+  const { proyectos, loading } = useLibros();
 
   return (
     <Container
       maxWidth="2xl"
       sx={{
         display: "flex",
-        margin: "10px",
+        margin: "15px",
+        justifyContent: "center",
       }}
     >
       {loading ? <CircularProgress /> : <FilaProyectos proyectos={proyectos} />}

@@ -2,19 +2,10 @@ import { useState, useEffect } from "react";
 import { getPerfiles } from "../../api/api";
 import FilaPerfiles from "../FilaPerfiles/FilaPerfiles";
 import { CircularProgress, Container } from "@mui/material";
+import usePerfiles from "../../hooks/usePerfiles";
 
 const ContenedorPerfiles = () => {
-  const [perfiles, setPerfiles] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchPerfiles = async () => {
-      const perfiles = await getPerfiles();
-      setPerfiles(perfiles);
-      setLoading(false);
-    };
-    fetchPerfiles();
-  }, []);
+  const { perfiles, loading } = usePerfiles();
 
   return (
     <Container
@@ -22,7 +13,7 @@ const ContenedorPerfiles = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        width: "100%",
+        justifyContent: "center",
         margin: "15px",
       }}
     >

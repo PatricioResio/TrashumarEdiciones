@@ -5,22 +5,11 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
 import CartaPerfiles from "../CartaPerfiles/CartaPerfiles";
-import { getPerfiles } from "../../api/api";
+import usePerfiles from "../../hooks/usePerfiles";
 
 const SectionComunidad = () => {
-  const [perfiles, setPerfiles] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchPerfiles = async () => {
-      const perfiles = await getPerfiles();
-      setPerfiles(perfiles);
-      setLoading(false);
-    };
-    fetchPerfiles();
-  }, []);
+  const { perfiles, loading } = usePerfiles();
   return loading ? (
     <Container
       sx={{
