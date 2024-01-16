@@ -2,9 +2,6 @@
   display: flex;
   flex-direction: row;
 }
-.button-proyectos-row {
-  display: flex;
-}
 .h3-row {
   margin-top: 0;
   width: "100%";

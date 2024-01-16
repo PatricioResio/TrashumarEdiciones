@@ -11,8 +11,12 @@ const FilaPerfiles = ({ perfiles }) => {
         navigation={true}
         modules={[Navigation]}
         className="swiper"
-        slidesPerView={4}
-        spaceBetween={40}
+        spaceBetween={3}
+        breakpoints={{
+          740: { slidesPerView: "2" },
+          1070: { slidesPerView: "3" },
+          1400: { slidesPerView: "4" },
+        }}
       >
         {perfiles.map((perfil, i) => (
           <SwiperSlide key={i} className="swiper-slide">

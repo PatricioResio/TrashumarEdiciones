@@ -9,10 +9,8 @@ export default function CartaPerfiles({ perfil }) {
   return (
     <Card
       sx={{
-        width: "90%",
-        marginRight: "20px",
-        marginLeft: "20px",
-        marginBot: "60vh",
+        width: "250px",
+        height: "400px",
         border: "3px solid #3C9990",
         borderRadius: "20px",
         transition: "transform 0.3s ease-in-out",
@@ -20,12 +18,12 @@ export default function CartaPerfiles({ perfil }) {
       }}
     >
       <CardMedia
-        sx={{ height: "14rem" }}
+        sx={{ height: "270px" }}
         image={perfil.avatar}
         src={!perfil ? "" : perfil.avatar}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="h5">
           {perfil.nombrePublico}
         </Typography>
         <Typography variant="body2" color="text.secondary">

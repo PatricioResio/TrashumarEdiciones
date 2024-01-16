@@ -5,7 +5,7 @@ import { useContext } from "react";
 function LoginForm() {
   const { handleGoogle } = useContext(AuthContext);
   return (
-    <Container sx={{ height: "100vh", display: "flex", margin: "10% auto" }}>
+    <Container sx={{ height: "80vh", display: "flex", margin: "10% auto" }}>
       <form>
         <Container
           sx={{

@@ -27,9 +27,9 @@ function FormProyectos() {
         borderRadius: "20px",
       }}
     >
-      <Typography sx={{}} component="h2" id="outlined-basic" variant="h2">
+      {/*       <Typography sx={{}} component="h2" id="outlined-basic" variant="h2">
         Sumate a Trashumar!
-      </Typography>
+      </Typography> */}
       <TabContext value={tabValue}>
         <Box
           type="form"

@@ -12,8 +12,12 @@ const FilaProyectos = ({ proyectos }) => {
         navigation={true}
         modules={[Navigation]}
         className="swiper"
-        slidesPerView={4}
-        spaceBetween={5}
+        spaceBetween={3}
+        breakpoints={{
+          740: { slidesPerView: "2" },
+          1070: { slidesPerView: "3" },
+          1400: { slidesPerView: "4" },
+        }}
       >
         {proyectos.map((proyecto) => (
           <SwiperSlide className="slide-swiper" item key={proyecto.fecha}>
