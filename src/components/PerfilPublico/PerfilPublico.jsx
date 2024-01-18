@@ -1,7 +1,6 @@
 import "./Perfil.css";
-import SectionPerfil from "../SectionPerfil/SectionPerfil";
-
 const PerfilPublico = ({ nombrePublico, avatar, oficio }) => {
+  console.log(nombrePublico);
   return (
     <main className="perfil-main">
       <section className="perfil-card-container">
@@ -17,7 +16,6 @@ const PerfilPublico = ({ nombrePublico, avatar, oficio }) => {
           <p>{!oficio ? "No se encontro usuario" : oficio}</p>
         </span>
       </section>
-      <SectionPerfil></SectionPerfil>
     </main>
   );
 };

@@ -1,5 +1,5 @@
-import { useContext, useEffect } from "react";
-import { FormRegistro, Perfil } from "../components/index";
+import { useContext } from "react";
+import { FormRegistro } from "../components/index";
 import { AuthContext } from "../context/AuthContext";
 import PerfilRouter from "../components/PerfilRouter/PerfilRouter";
 

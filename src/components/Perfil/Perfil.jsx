@@ -30,7 +30,6 @@ const Perfil = () => {
           Editar información{" "}
         </Button>
       </section>
-      <SectionPerfil></SectionPerfil>
     </main>
   );
 };

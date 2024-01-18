@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 const CartaLibros = ({ libro }) => {
   return (
@@ -25,12 +26,14 @@ const CartaLibros = ({ libro }) => {
         <Typography gutterBottom variant="h4" component="h4">
           {libro.titulo}
         </Typography>
-        <Typography variant="body2" component="p" color="text.secondary">
+        <Typography variant="body" component="p" color="text.secondary">
           {libro.autor}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Ver mas detalles</Button>
+        <Button component={Link} to={`/libro/${libro.id}`}>
+          Ver mas detalles
+        </Button>
       </CardActions>
     </Card>
   );

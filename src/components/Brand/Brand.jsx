@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
-import { IMG_BRAND } from "../../constants/constants";
 import { Link } from "react-router-dom";
-const imgURL = IMG_BRAND;
+import banner1 from "../../assets/banner1.png";
 
 const Brand = () => {
   return (
@@ -17,7 +16,7 @@ const Brand = () => {
       }}
     >
       <img
-        src={imgURL}
+        src={banner1}
         alt="Imagen banner ilustrativa con el logo Trashumar Ediciones"
       />
     </Typography>

@@ -1,5 +1,5 @@
 import { db } from "./firebase";
-import { getDocs, collection, doc, getDoc } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 
 export const getProyectos = async () => {
   try {
@@ -20,6 +20,7 @@ export const getPerfiles = async () => {
     throw new Error("Error al obtener los perfiles");
   }
 };
+
 export const getLibros = async () => {
   try {
     const librosSnapshot = await getDocs(collection(db, "libros"));

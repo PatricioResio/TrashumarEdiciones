@@ -4,6 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 export default function CartaPerfiles({ perfil }) {
   return (
@@ -30,7 +31,9 @@ export default function CartaPerfiles({ perfil }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Ver perfil</Button>
+        <Button component={Link} to={`/perfil/${perfil.idPerfil}`}>
+          Ver perfil
+        </Button>
       </CardActions>
     </Card>
   );

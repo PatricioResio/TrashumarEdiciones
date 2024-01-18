@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import { getPerfiles } from "../../api/api";
 import FilaPerfiles from "../FilaPerfiles/FilaPerfiles";
 import { CircularProgress, Container } from "@mui/material";
 import usePerfiles from "../../hooks/usePerfiles";

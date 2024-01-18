@@ -1,28 +1,10 @@
-import { Card, Container } from "@mui/material";
+import { Button } from "@mui/material";
 
-const SectionPerfil = () => {
+const SectionPerfil = ({ currentUser }) => {
   return (
-    <Container
-      sx={{
-        margin: "4rem 2rem",
-      }}
-    >
-      <Card
-        sx={{
-          width: "42vw",
-          display: "flex",
-          height: "50vh",
-          backgroundColor: "#4D7A77",
-          border: "3px solid #3c9990",
-          borderRadius: "2%",
-          marginTop: "1rem",
-          justifyContent: "center",
-          textAlign: "center",
-        }}
-      >
-        Mis proyectos
-      </Card>
-    </Container>
+    <main className="perfil-main">
+      <section className="perfil-card-container"></section>
+    </main>
   );
 };
 

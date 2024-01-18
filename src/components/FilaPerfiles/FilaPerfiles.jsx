@@ -20,7 +20,7 @@ const FilaPerfiles = ({ perfiles }) => {
       >
         {perfiles.map((perfil, i) => (
           <SwiperSlide key={i} className="swiper-slide">
-            <CartaPerfiles key={i} perfil={{ ...perfil }} />
+            <CartaPerfiles key={perfil.id} perfil={{ ...perfil }} />
           </SwiperSlide>
         ))}
       </Swiper>

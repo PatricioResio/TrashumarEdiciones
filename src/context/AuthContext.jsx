@@ -21,13 +21,6 @@ export const useAuth = () => {
 };
 
 export function AuthProvider({ children }) {
-  const initialUser = {
-    nombre: "",
-    nombrePublico: "",
-    avatarURL: "",
-    oficio: "",
-  };
-
   const [currentUser, setCurrentUser] = useState(null);
   const [googleUser, setGoogleUser] = useState(null);
   const [newUser, setNewUser] = useState(false);
@@ -101,7 +94,6 @@ export function AuthProvider({ children }) {
       const userUID = googleUser.uid;
       const userProfileRef = doc(db, "perfiles", userUID);
       const userProfileSnap = await getDoc(userProfileRef);
-      console.log(registrerUser);
 
       if (!userProfileSnap.exists()) {
         await setDoc(userProfileRef, {

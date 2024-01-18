@@ -11,10 +11,11 @@ así mismo servir también como exposición de la editorial
 - React Router
 - Firebase
 - Material UI
+- Swiper js
 
 ## Funcionalidades
 
-- Login de usuario y registro de usuario utilizando google
+- Login de usuario y registro de usuario utilizando google y firebase
 - Busqueda de otros usuarios y visualización de perfiles
 - Busqueda de libros y visualización del libro
 - Enviar solicitud via email para presentar un proyecto a la editorial

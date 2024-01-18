@@ -15,6 +15,7 @@ import Carrusel from "./Carrusel/Carrusel";
 import ContenedorProyectos from "./ContenedorProyectos/ContenedorProyectos";
 import PerfilPublico from "./PerfilPublico/PerfilPublico";
 import SectionProyecto from "./SectionProyecto/SectionProyecto";
+import SectionPerfil from "./SectionPerfil/SectionPerfil";
 import FormRegistroPerfil from "./FormRegistroPerfil/FormRegistroPerfil";
 import SectionComunidad from "./SectionComunidad/SectionComunidad";
 import ContenedorPrograma from "./ContenedorPrograma/ContenedorPrograma";
@@ -23,6 +24,7 @@ export {
   ContenedorPrograma,
   Brand,
   SectionComunidad,
+  SectionPerfil,
   ContenedorPerfiles,
   CartaPerfiles,
   ContenedorProyectos,
