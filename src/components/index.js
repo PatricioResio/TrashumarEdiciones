@@ -6,22 +6,24 @@ import ContenedorPerfiles from "./ContenedorPerfiles/ContenedorPerfiles";
 import FilaPerfiles from "./FilaPerfiles/FilaPerfiles";
 import FilaProyectos from "./FilaProyectos/FilaProyectos";
 import Footer from "./Footer/Footer";
-import FormProyectos from "./FormProyectos/FormProyectos";
-import FormRegistro from "./FormRegistro/FormRegistro";
+import FormProyectos from "./Forms/FormProyectos/FormProyectos";
+import FormRegistro from "./Forms/FormRegistro/FormRegistro";
+import FormRegistroPerfil from "./Forms/FormPerfilContainer/FormRegistroPerfil";
 import NavBar from "./NavBar/NavBar";
 import Perfil from "./Perfil/Perfil";
 import LogOutBtn from "./LogOutBtn/LogOutBtn";
 import Carrusel from "./Carrusel/Carrusel";
 import ContenedorProyectos from "./ContenedorProyectos/ContenedorProyectos";
 import PerfilPublico from "./PerfilPublico/PerfilPublico";
-import SectionProyecto from "./SectionProyecto/SectionProyecto";
+import SectionProyecto from "./ArticleProyecto/ArticleProyecto";
 import SectionPerfil from "./SectionPerfil/SectionPerfil";
-import FormRegistroPerfil from "./FormRegistroPerfil/FormRegistroPerfil";
 import SectionComunidad from "./SectionComunidad/SectionComunidad";
 import ContenedorPrograma from "./ContenedorPrograma/ContenedorPrograma";
+import Loader from "./Loader/Loader";
 
 export {
   ContenedorPrograma,
+  Loader,
   Brand,
   SectionComunidad,
   SectionPerfil,

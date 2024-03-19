@@ -1,11 +1,14 @@
-import FormRegistro from "../components/FormRegistro/FormRegistro"
+import { Fade } from "react-awesome-reveal";
+import FormRegistro from "../components/Forms/FormRegistro/FormRegistro";
 
 const Registro = () => {
   return (
     <div>
-        <FormRegistro/>
+      <Fade>
+        <FormRegistro />
+      </Fade>
     </div>
-  )
-}
+  );
+};
 
-export default Registro
+export default Registro;

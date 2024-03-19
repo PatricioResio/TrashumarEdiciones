@@ -9,16 +9,18 @@ import { Link } from "react-router-dom";
 export default function CartaProyectos({ proyecto }) {
   return (
     <Card
+      easyIn
       sx={{
-        width: "250px",
-        heigth: "400px",
+        width: "420px",
+        height: "750px",
+
         border: "3px solid #3C9990",
         borderRadius: "20px",
         backgroundColor: "#A6ECE0",
       }}
     >
       <CardMedia
-        sx={{ height: "270px" }}
+        sx={{ padding: "40px", height: "480px" }}
         image={proyecto.img}
         src={!proyecto ? "" : proyecto.img}
       />

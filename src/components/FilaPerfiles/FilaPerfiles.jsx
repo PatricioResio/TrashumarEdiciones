@@ -1,7 +1,8 @@
+import { Fade } from "@mui/material";
 import CartaPerfiles from "../CartaPerfiles/CartaPerfiles";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import { EffectFade, Navigation } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 
 const FilaPerfiles = ({ perfiles }) => {
@@ -11,16 +12,16 @@ const FilaPerfiles = ({ perfiles }) => {
         navigation={true}
         modules={[Navigation]}
         className="swiper"
-        spaceBetween={3}
+        spaceBetween={2}
         breakpoints={{
-          740: { slidesPerView: "2" },
-          1070: { slidesPerView: "3" },
-          1400: { slidesPerView: "4" },
+          1180: { slidesPerView: "2" },
+          1690: { slidesPerView: "3" },
+          1980: { slidesPerView: "4" },
         }}
       >
-        {perfiles.map((perfil, i) => (
-          <SwiperSlide key={i} className="swiper-slide">
-            <CartaPerfiles key={perfil.id} perfil={{ ...perfil }} />
+        {perfiles.map((perfil) => (
+          <SwiperSlide key={perfil.id} className="MySwyper">
+            <CartaPerfiles key={perfil.name} perfil={{ ...perfil }} />
           </SwiperSlide>
         ))}
       </Swiper>

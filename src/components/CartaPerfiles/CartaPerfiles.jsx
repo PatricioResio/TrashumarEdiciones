@@ -10,15 +10,15 @@ export default function CartaPerfiles({ perfil }) {
   return (
     <Card
       sx={{
-        width: "250px",
-        height: "400px",
+        width: "280px",
+        height: "440px",
         border: "3px solid #3C9990",
         borderRadius: "20px",
         backgroundColor: "#A6ECE0",
       }}
     >
       <CardMedia
-        sx={{ height: "270px" }}
+        sx={{ height: "290px" }}
         image={perfil.avatar}
         src={!perfil ? "" : perfil.avatar}
       />

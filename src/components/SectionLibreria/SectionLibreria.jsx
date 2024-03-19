@@ -1,12 +1,22 @@
 import { Box, CircularProgress, Container, Grid } from "@mui/material";
 import CartaLibros from "../CartaLibros/CartaLibros";
 import useLibros from "../../hooks/useLibros";
+import { Fade } from "react-awesome-reveal";
 
 const SectionLibreria = () => {
   const { libros, loading } = useLibros();
 
   return loading ? (
-    <CircularProgress />
+    <Box
+      sx={{
+        width: "95%",
+        minHeight: "85vh",
+        border: "#3C9990 solid 2px",
+        borderRadius: "20px",
+      }}
+    >
+      <CircularProgress />
+    </Box>
   ) : (
     <>
       <Box
@@ -28,7 +38,9 @@ const SectionLibreria = () => {
         >
           {libros.map((libro, i) => (
             <Grid item key={i} xs={1}>
-              <CartaLibros key={i} libro={libro} />
+              <Fade>
+                <CartaLibros key={i} libro={libro} />
+              </Fade>
             </Grid>
           ))}
         </Grid>

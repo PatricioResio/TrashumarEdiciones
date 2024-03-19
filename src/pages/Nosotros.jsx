@@ -1,5 +1,7 @@
 import { Box, Typography } from "@mui/material";
-import { Carrusel, ContenedorPrograma } from "../components/index";
+import { ContenedorPrograma } from "../components/index";
+import ContenedorHistoria from "../components/ContenedorHistoria/ContenedorHistoria";
+import { Fade } from "react-awesome-reveal";
 
 const Nosotros = () => {
   return (
@@ -10,37 +12,25 @@ const Nosotros = () => {
             display: "flex",
             flexDirection: "column",
             textAlign: "center",
-            margin: "6rem 0",
+            margin: "auto 0",
             background: "#2D4746",
           }}
         >
-          <Typography
-            component="h2"
-            align="center"
-            variant="h2"
-            sx={{
-              fontSize: "34px",
-              color: "#B5C2C7",
-              margin: "3rem 0 0 0",
-              padding: "0",
-            }}
-          >
-            ¿Porqué Trashumar?
-          </Typography>
-          <Box
-            sx={{
-              backgroundColor: "#3C9990",
-              height: "30rem",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              border: "1px solid #3F7D92",
-              borderRadius: "20px",
-              width: "85%",
-              margin: "15px auto",
-            }}
-          ></Box>
-          <Carrusel />
+          <Fade>
+            <Typography
+              component="h2"
+              align="center"
+              variant="h2"
+              sx={{
+                color: "#B5C2C7",
+                margin: "3rem 0 0 0",
+                padding: "0",
+              }}
+            >
+              ¿De qué se trata?
+            </Typography>
+          </Fade>
+          <ContenedorHistoria></ContenedorHistoria>
         </Box>
       </section>
       <Box
@@ -48,7 +38,7 @@ const Nosotros = () => {
         sx={{
           fontSize: "16px",
           fontWeight: "bold",
-          margin: "3rem 0 0 0",
+          margin: "6rem 0 0 0",
           padding: "0",
           boxShadow: "inherit",
           display: "flex",

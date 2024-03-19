@@ -1,7 +1,8 @@
 import { Box, TextField, Typography, Button, Container } from "@mui/material";
-import { DEFAULT_PERFIL_FOTO } from "../../constants/constants";
+import { DEFAULT_PERFIL_FOTO } from "../../../constants/constants";
 import { useContext, useState } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext } from "../../../context/AuthContext";
+import { Fade } from "react-awesome-reveal";
 
 const FormRegistro = () => {
   const { currentUser, registrar, navigate } = useContext(AuthContext);
@@ -21,6 +22,7 @@ const FormRegistro = () => {
 
   const handlerChange = (e) => {
     const { name, value } = e.target;
+
     setFormUser((prevUser) => ({ ...prevUser, [name]: value }));
     console.log(formUser);
   };
@@ -56,14 +58,15 @@ const FormRegistro = () => {
         flexDirection: "column",
       }}
     >
-      <Typography
-        sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
-        component="h1"
-        variant="outlined"
-      >
-        Registrate!
-      </Typography>
-
+      <Fade>
+        <Typography
+          sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
+          component="h1"
+          variant="outlined"
+        >
+          Registrate!
+        </Typography>
+      </Fade>
       <Box
         component="form"
         onSubmit={(e) => handlerForm(e)}

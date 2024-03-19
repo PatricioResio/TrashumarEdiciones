@@ -13,12 +13,12 @@ const CartaLibros = ({ libro }) => {
         border: "3px solid #3C9990",
         borderRadius: "20px",
         backgroundColor: "#A6ECE0",
-        width: "230px",
-        height: "580px",
+        width: "350px",
+        height: "700px",
       }}
     >
       <CardMedia
-        sx={{ width: "230px", height: "40vh" }}
+        sx={{ width: "350px", height: "500px" }}
         image={libro.imagen}
         src={!libro ? "" : libro.imagen}
       />

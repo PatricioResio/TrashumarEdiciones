@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./Perfil.css";
-import SectionPerfil from "../SectionPerfil/SectionPerfil";
-import { Button } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
@@ -10,7 +9,7 @@ const Perfil = () => {
   const handleCardButton = () => {
     navigate("/infoPerfil");
   };
-
+  console.log(currentUser);
   return (
     <main className="perfil-main">
       <section className="perfil-card-container">
@@ -25,11 +24,36 @@ const Perfil = () => {
         <span>
           <p>{!currentUser ? "No se encontro usuario" : currentUser.oficio}</p>
         </span>
+        <p></p>
+        <Box>Facebook</Box>
+        <Box>Instagram</Box>
+        <Box>X</Box>
+        <Box>Gmail</Box>
+        <Box></Box>
         <Button color="secondary" onClick={handleCardButton}>
-          {" "}
-          Editar información{" "}
+          Editar información
         </Button>
       </section>
+      <Container sx={{ display: "flex", flexDirection: "column" }}>
+        <Typography variant="h2" component="h2">
+          Oficios
+        </Typography>
+        {!currentUser.oficios ? (
+          <Typography variant="h4" component="h4">
+            No hay ningun oficio registrado todavía
+          </Typography>
+        ) : (
+          currentUser.oficios.map(() => {
+            <Typography
+              key={currentUser.oficios.map}
+              variant="h5"
+              component="h5"
+            >
+              {currentUser.oficios.value}
+            </Typography>;
+          })
+        )}
+      </Container>
     </main>
   );
 };

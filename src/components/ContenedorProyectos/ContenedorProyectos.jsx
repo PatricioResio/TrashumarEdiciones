@@ -11,6 +11,8 @@ const ContenedorCartas = () => {
         display: "flex",
         margin: "15px",
         justifyContent: "center",
+        width: "100%",
+        alignItems: "center",
       }}
     >
       {loading ? <CircularProgress /> : <FilaProyectos proyectos={proyectos} />}

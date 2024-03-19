@@ -5,6 +5,19 @@ import {
   FormGroup,
   FormControlLabel,
 } from "@mui/material";
+import { useFormik } from "formik";
+import * as yup from "yup";
+
+const validationSchema = yup.object({
+  email: yup
+    .string("Enter your email")
+    .email("Enter a valid email")
+    .required("Email is required"),
+  password: yup
+    .string("Enter your password")
+    .min(8, "Password should be of minimum 8 characters length")
+    .required("Password is required"),
+});
 
 const Forms1 = () => {
   return (
@@ -40,7 +53,6 @@ const Forms2 = () => {
   return (
     <FormGroup>
       <Typography
-        Typography
         component="h4"
         id="outlined-basic"
         label="AUTORES"
@@ -119,12 +131,7 @@ const Forms3 = () => {
 const Forms4 = () => {
   return (
     <FormGroup>
-      <Typography
-        component="h4"
-        id="outlined-basic"
-        label="AUTORES"
-        variant="outlined"
-      >
+      <Typography component="h4" id="ETAPAS" label="ETAPAS" variant="outlined">
         {" "}
         ¿Que etapas te hace falta cubrir?{" "}
       </Typography>
@@ -146,33 +153,33 @@ const Forms4 = () => {
       />
       <Typography
         component="h4"
-        id="outlined-basic"
-        label="AUTORES"
+        id="TRADUCCION"
+        label="TRADUCCION"
         variant="outlined"
       >
         {" "}
         Traducción
       </Typography>
-      <Typography
-        component="h4"
-        id="outlined-basic"
-        label="AUTORES"
-        variant="outlined"
-      >
+      <Typography component="h4" id="IDIOMA" label="IDIOMA" variant="outlined">
         Selecciona el idioma original
       </Typography>
       <Typography
         component="h4"
-        id="outlined-basic"
-        label="AUTORES"
+        id="IDIOMATRADUCCION"
+        label="IDIOMATRADUCCION"
         variant="outlined"
       >
         A que idioma queres traducirlo?
       </Typography>
-      <Typography id="outlined-basic" label="AUTORES" variant="outlined">
+      <Typography
+        component="h4"
+        id="TRABAJANDOENELTEXTO"
+        label="TRABAJANDOENELTEXTO"
+        variant="outlined"
+      >
         ESTOY TRABAJANDO EN EL TEXTO.
       </Typography>
-      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+      <TextField id="outlined" label="Outlined" variant="outlined" />
     </FormGroup>
   );
 };

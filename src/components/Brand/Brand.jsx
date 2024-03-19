@@ -10,16 +10,17 @@ const Brand = () => {
       to="/"
       sx={{
         display: "flex",
+        height: "100px",
+        maxWidth: "100vw",
         margin: "0",
         padding: "0",
         boxSizing: "border-box",
+        backgroundImage: `url(${banner1})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
       }}
-    >
-      <img
-        src={banner1}
-        alt="Imagen banner ilustrativa con el logo Trashumar Ediciones"
-      />
-    </Typography>
+    ></Typography>
   );
 };
 

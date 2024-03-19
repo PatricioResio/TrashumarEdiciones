@@ -1,12 +1,14 @@
 import { Box, Container, Typography } from "@mui/material";
 import ContenedorProyectos from "../components/ContenedorProyectos/ContenedorProyectos";
 import ContenedorPerfiles from "../components/ContenedorPerfiles/ContenedorPerfiles";
-import HomeSection from "../components/HomeSection/HomeSection";
+import CarruselHome from "../components/CarruselHome/CarruselHome";
+import { Fade } from "react-awesome-reveal";
+import ArticleDestacado from "../components/ArticleDestacado/ArticleDestacado";
 
 const Home = () => {
   return (
     <>
-      <HomeSection />
+      <CarruselHome />
       <section>
         <Box
           maxWidth="100%"
@@ -18,53 +20,58 @@ const Home = () => {
             gap: 4,
           }}
         >
+          <ArticleDestacado />
           <Box
             sx={{
               backgroundColor: "#6BBCA8",
-              height: "30rem",
+              height: "850px",
               justifyContent: "center",
               border: "1px solid #3F7D92",
               borderRadius: "20px",
-              width: "85%",
+              width: "63%",
               margin: "15px auto",
             }}
           >
-            <Typography
-              component="h2"
-              sx={{
-                fontFamily: "roboto",
-                fontSize: "30px",
-                fontWeight: "bold",
-                color: "#00333D",
-              }}
-            >
-              Proyectos
-            </Typography>
-            <ContenedorProyectos />
+            <Fade>
+              <Typography
+                component="h2"
+                sx={{
+                  fontFamily: "roboto",
+                  fontSize: "30px",
+                  fontWeight: "bold",
+                  color: "#00333D",
+                }}
+              >
+                Proyectos para explorar
+              </Typography>
+              <ContenedorProyectos />
+            </Fade>
           </Box>
           <Box
             sx={{
               backgroundColor: "#6BBCA8",
-              height: "30rem",
+              height: "33rem",
               justifyContent: "center",
               border: "1px solid #3F7D92",
               borderRadius: "20px",
-              width: "85%",
+              width: "63%",
               margin: "15px auto",
             }}
           >
-            <Typography
-              component="h2"
-              sx={{
-                fontFamily: "roboto",
-                fontSize: "30px",
-                fontWeight: "bold",
-                color: "#00333D",
-              }}
-            >
-              Perfiles
-            </Typography>
-            <ContenedorPerfiles />
+            <Fade>
+              <Typography
+                component="h2"
+                sx={{
+                  fontFamily: "roboto",
+                  fontSize: "30px",
+                  fontWeight: "bold",
+                  color: "#00333D",
+                }}
+              >
+                Perfiles de nuestra comunidad
+              </Typography>
+              <ContenedorPerfiles />
+            </Fade>
           </Box>
         </Box>
       </section>

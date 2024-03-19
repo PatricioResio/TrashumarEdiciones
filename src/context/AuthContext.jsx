@@ -79,7 +79,7 @@ export function AuthProvider({ children }) {
     }
   };
 
-  const getPerfil = async (uidGoogleUser) => {
+  /*   const getPerfil = async (uidGoogleUser) => {
     const googleUser = uidGoogleUser;
     if (googleUser) {
       const userDoc = doc(db, "perfiles", User.uid);
@@ -87,7 +87,7 @@ export function AuthProvider({ children }) {
         setCurrentUser(response.data());
       });
     }
-  };
+  }; */
 
   const registrar = async (registrerUser) => {
     try {

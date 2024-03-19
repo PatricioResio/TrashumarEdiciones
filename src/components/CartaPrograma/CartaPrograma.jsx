@@ -51,7 +51,7 @@ import {
   PROGRAMA_TERCERO_7,
   PROGRAMA_TERCERO_8,
   PROGRAMA_TERCERO_9,
-} from "../../constants/constants";
+} from "../../constants/Textos";
 import { Box, Container, Typography } from "@mui/material";
 
 const CartaPrograma = () => {

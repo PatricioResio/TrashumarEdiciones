@@ -1,5 +1,5 @@
 import FilaPerfiles from "../FilaPerfiles/FilaPerfiles";
-import { CircularProgress, Container } from "@mui/material";
+import { CircularProgress, Container, Fade } from "@mui/material";
 import usePerfiles from "../../hooks/usePerfiles";
 
 const ContenedorPerfiles = () => {
@@ -12,6 +12,7 @@ const ContenedorPerfiles = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        width: "100%",
         margin: "15px",
       }}
     >

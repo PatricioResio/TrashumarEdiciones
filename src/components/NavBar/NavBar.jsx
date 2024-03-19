@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Brand, LogOutBtn } from "../index";
+import { Fade } from "react-awesome-reveal";
 
 const pages = [
   {
@@ -103,25 +104,27 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component={Link}
-            to=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 500,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Trashumar
-          </Typography>
+          <Fade>
+            <Typography
+              variant="h5"
+              noWrap
+              component={Link}
+              to=""
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 500,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              Trashumar
+            </Typography>
+          </Fade>
+
           <Box
             sx={{
               flexGrow: 1,
@@ -130,18 +133,21 @@ function ResponsiveAppBar() {
               maxWidth: "45%",
             }}
           >
-            {pages.map((page) => (
-              <Button
-                key={page.name}
-                component={Link}
-                to={page.path}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page.name}
-              </Button>
-            ))}
+            <Fade>
+              {pages.map((page) => (
+                <Button
+                  key={page.name}
+                  component={Link}
+                  to={page.path}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page.name}
+                </Button>
+              ))}
+            </Fade>
           </Box>
+
           {!currentUser ? (
             <Box
               sx={{
@@ -165,7 +171,7 @@ function ResponsiveAppBar() {
                   marginRight: "3rem",
                 }}
               >
-                Ingresa
+                <Fade>Ingresa</Fade>
               </Button>
             </Box>
           ) : (
@@ -192,9 +198,11 @@ function ResponsiveAppBar() {
                   maxWidth: { sm: "70px", md: "150px" },
                 }}
               >
-                {displayName}
+                <Fade>{displayName}</Fade>
               </Button>
-              <LogOutBtn />
+              <Fade>
+                <LogOutBtn />
+              </Fade>
             </Box>
           )}
         </Toolbar>
