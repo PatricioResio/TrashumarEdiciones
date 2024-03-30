@@ -7,7 +7,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Carrusel = ({ arrayImagenes }) => {
   return (
-    <Fade>
+    <Fade delay={650}>
       <Container
         sx={{
           minWidth: "100%",

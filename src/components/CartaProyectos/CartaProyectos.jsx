@@ -9,14 +9,13 @@ import { Link } from "react-router-dom";
 export default function CartaProyectos({ proyecto }) {
   return (
     <Card
-      easyIn
       sx={{
         width: "420px",
         height: "750px",
-
         border: "3px solid #3C9990",
         borderRadius: "20px",
         backgroundColor: "#A6ECE0",
+        position: "relative ",
       }}
     >
       <CardMedia
@@ -24,7 +23,7 @@ export default function CartaProyectos({ proyecto }) {
         image={proyecto.img}
         src={!proyecto ? "" : proyecto.img}
       />
-      <CardContent>
+      <CardContent sx={{ height: "300px" }}>
         <Typography gutterBottom variant="h5" component="h5">
           {proyecto.titulo}
         </Typography>
@@ -33,7 +32,11 @@ export default function CartaProyectos({ proyecto }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button component={Link} to={`/proyecto/${proyecto.id}`}>
+        <Button
+          sx={{ position: "absolute", bottom: "0" }}
+          component={Link}
+          to={`/proyecto/${proyecto.idProyecto}`}
+        >
           Ver mas detalles
         </Button>
       </CardActions>

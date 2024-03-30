@@ -1,15 +1,16 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { EffectFade, Pagination } from "swiper/modules";
+import { EffectFade, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { homeArrays } from "../../constants/Arrays";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
+import { autoPlay } from "react-swipeable-views-utils";
 
 const CarruselHome = () => {
   return (
-    <Fade triggerOnce={true} delay={400}>
+    <Fade triggerOnce={true} delay={650}>
       <Container
         maxWidth="false"
         disableGutters
@@ -21,7 +22,8 @@ const CarruselHome = () => {
       >
         <Swiper
           pagination={true}
-          modules={[Pagination, EffectFade]}
+          modules={[Pagination, EffectFade, Autoplay]}
+          autoplay={{ delay: 5000 }}
           className="swiper"
           effect="fade"
           slidesPerView={1}
@@ -71,7 +73,7 @@ const CarruselHome = () => {
                     component="h2"
                     variant="h2"
                   >
-                    <Fade direction="down" delay={950}>
+                    <Fade direction="down" delay={1000}>
                       {item.h2}
                     </Fade>
                   </Typography>
@@ -82,7 +84,7 @@ const CarruselHome = () => {
                     component="p"
                     variant="p"
                   >
-                    <Fade direction="right" delay={950}>
+                    <Fade direction="right" delay={1000}>
                       {item.textP}
                     </Fade>
                   </Typography>
@@ -95,7 +97,7 @@ const CarruselHome = () => {
                     variant="outlined"
                     sx={{ mt: "15px" }}
                   >
-                    <Fade direction="top" delay={950}>
+                    <Fade direction="top" delay={1000}>
                       {item.buttonText}
                     </Fade>
                   </Button>

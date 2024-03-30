@@ -1,18 +1,21 @@
 import { Box, CircularProgress, Container, Grid } from "@mui/material";
 import CartaLibros from "../CartaLibros/CartaLibros";
-import useLibros from "../../hooks/useLibros";
+
+import useProyectos from "../../hooks/useProyectos";
 import { Fade } from "react-awesome-reveal";
+import CartaProyectos from "../CartaProyectos/CartaProyectos";
 
 const SectionLibreria = () => {
-  const { libros, loading } = useLibros();
+  const { proyectos, loading } = useProyectos();
 
   return loading ? (
     <Box
       sx={{
         width: "95%",
-        minHeight: "85vh",
+        minHeight: "75vh",
         border: "#3C9990 solid 2px",
         borderRadius: "20px",
+        backgroundColor: "#4D7A77",
       }}
     >
       <CircularProgress />
@@ -20,26 +23,30 @@ const SectionLibreria = () => {
   ) : (
     <>
       <Box
-        component="section"
+        component="article"
         sx={{
-          border: "#3C9990 solid 2px",
+          border: "2px solid #D8EDE9",
           margin: "20px",
           borderRadius: "20px",
+          backgroundColor: "#3C9990",
         }}
       >
         <Grid
           container
           columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
           sx={{
-            width: "100%",
-            minHeight: "90vh",
-            m: "15px",
+            width: "90%",
+            minHeight: "75vh",
+            m: "50px auto",
+            gap: "70px",
+            justifyContent: "flex-start",
+            alignItems: "center",
           }}
         >
-          {libros.map((libro, i) => (
-            <Grid item key={i} xs={1}>
+          {proyectos.map((proyecto, i) => (
+            <Grid item key={i} xs={{ xs: 1, sm: 2, md: 3, xl: 4 }}>
               <Fade>
-                <CartaLibros key={i} libro={libro} />
+                <CartaProyectos key={i} proyecto={proyecto} />
               </Fade>
             </Grid>
           ))}

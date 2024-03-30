@@ -13,7 +13,7 @@ import { SwiperSlide, Swiper } from "swiper/react";
 
 const ContenedorPrograma = () => {
   return (
-    <Container disableGutters maxWidth="xl">
+    <Container disableGutters maxWidth="xl" sx={{ mt: "150px" }}>
       <Typography variant="h2" component="h2" align="center" gutterBottom>
         Programa editorial
       </Typography>

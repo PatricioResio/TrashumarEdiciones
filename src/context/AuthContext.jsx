@@ -24,15 +24,19 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [googleUser, setGoogleUser] = useState(null);
   const [newUser, setNewUser] = useState(false);
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   useEffect(() => {
     const googleUnsubscribe = onAuthStateChanged(auth, (user) => {
       if (!user) {
         setCurrentUser(null);
+        setLoading(false);
       } else {
         const userGoogle = user;
         setGoogleUser(userGoogle);
+        //aca tengo que setear el loading
+        setLoading(false);
         return;
       }
     });

@@ -10,7 +10,7 @@ export const homeArrays = [
   {
     id: 2,
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.png?alt=media&token=6a83db8a-f729-47a8-8fac-5db93ca84b09",
-    h2: "Libreria",
+    h2: "Descubri nuestra sección libreria",
     textP:
       "Trashumar es una editorial nomade, federal e independiente, por aquí podes ver nuestras novedades",
     buttonText: "Ir a libreria",

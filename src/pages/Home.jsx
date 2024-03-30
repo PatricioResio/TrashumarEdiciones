@@ -50,7 +50,7 @@ const Home = () => {
           <Box
             sx={{
               backgroundColor: "#6BBCA8",
-              height: "33rem",
+              height: "35rem",
               justifyContent: "center",
               border: "1px solid #3F7D92",
               borderRadius: "20px",

@@ -51,7 +51,7 @@ function FormProyectos() {
       sx={{
         minHeight: "65vh",
         fontSize: "18px",
-        pt: "20px",
+        p: "30px 0",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -535,14 +535,17 @@ function FormProyectos() {
         </FormControl>
         <Typography
           component="h4"
-          id="TRABAJANDOENELTEXTO"
-          label="TRABAJANDOENELTEXTO"
+          id="ContanosMas"
+          label="ContanosMas"
           variant="outlined"
         >
-          Estoy trabajando en el texto
+          Contanos mas al respecto de tu proyecto
         </Typography>
-
-        <TextField id="outlined" label="Outlined" variant="outlined" />
+        <TextField
+          id="ContanosMas"
+          label="Mi idea es ...."
+          variant="outlined"
+        />
         <Button variant="contained"> enviar formulario</Button>
       </Box>
     </Container>

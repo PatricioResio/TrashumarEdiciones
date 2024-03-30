@@ -20,8 +20,10 @@ import SectionPerfil from "./SectionPerfil/SectionPerfil";
 import SectionComunidad from "./SectionComunidad/SectionComunidad";
 import ContenedorPrograma from "./ContenedorPrograma/ContenedorPrograma";
 import Loader from "./Loader/Loader";
+import ProyectoPublico from "./ProyectoPublico/ProyectoPublico";
 
 export {
+  ProyectoPublico,
   ContenedorPrograma,
   Loader,
   Brand,

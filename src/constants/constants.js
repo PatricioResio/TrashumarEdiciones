@@ -11,3 +11,5 @@ export const TAPA_HIPPIES =
 
 export const CONTRATAPA_HIPPIES =
   "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Novedad%2FCONTRATAPA_HIPPIES.png?alt=media&token=d19a9f51-57ea-4e2d-a90c-be37d29aefa7";
+
+export const ID_PROYECTO_DESTACADO = "hPPVp4z2tMZF4cNA1HOb";

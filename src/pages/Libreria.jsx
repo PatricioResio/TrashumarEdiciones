@@ -7,19 +7,25 @@ const Libreria = () => {
   return (
     <Fade>
       <Container
-        maxWidth="xl"
+        maxWidth="2xl"
         disableGutters
         sx={{
+          m: "30px auto",
+          p: "30px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          width: "100vw",
-          minHeight: "70vh",
+          width: "90%",
+          minHeight: "65vh",
           textAlign: "center",
+          backgroundColor: "#4D7A77",
+          borderRadius: "20px",
+          border: "2px solid #3C9990",
+          color: "#D8EDE9",
         }}
       >
-        <Fade>
-          <Typography variant="h1" component="h2">
+        <Fade direction="down">
+          <Typography variant="h1" component="h2" fontWeight="bold">
             Libreria
           </Typography>
         </Fade>

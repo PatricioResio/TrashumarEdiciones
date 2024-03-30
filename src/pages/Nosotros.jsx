@@ -16,13 +16,13 @@ const Nosotros = () => {
             background: "#2D4746",
           }}
         >
-          <Fade>
+          <Fade delay={650}>
             <Typography
               component="h2"
               align="center"
               variant="h2"
               sx={{
-                color: "#B5C2C7",
+                color: "#D8EDE9",
                 margin: "3rem 0 0 0",
                 padding: "0",
               }}

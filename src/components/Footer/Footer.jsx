@@ -37,16 +37,20 @@ const Footer = () => {
         </Typography>
         <Grid
           container
-          spacing={2}
+          columns={4}
+          spacing={{ xs: 0, md: 3 }}
           sx={{
             bottom: "0",
             width: "100%",
             position: "bottom",
+
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <Grid
             item
-            xs={1}
+            xs={{ xs: 1, md: 4 }}
             sx={{
               height: "50%",
               padding: "0",
@@ -63,11 +67,11 @@ const Footer = () => {
               height: "50%",
               width: "50%",
               display: "flex",
-              marginTop: "1rem",
+              marginTop: { xs: "0px", md: "1rem" },
               alignItems: "center",
               justifyContent: "space-evenly",
             }}
-            xs={3}
+            xs={{ xs: 4, md: 1 }}
           >
             <FaFacebookF className="footer-icon" />
             <Button
@@ -85,9 +89,9 @@ const Footer = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "space-evenly",
-              marginTop: "1rem",
+              marginTop: { xs: "0px", md: "1rem" },
             }}
-            xs={4}
+            xs={{ xs: 4, md: 1 }}
           >
             <FaSquareInstagram className="footer-icon" />
             <Button
@@ -101,14 +105,14 @@ const Footer = () => {
           </Grid>
           <Grid
             item
-            xs={4}
+            xs={{ xs: 4, md: 1 }}
             sx={{
               height: "50%",
               width: "50%",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-evenly",
-              marginTop: "1rem",
+              marginTop: { xs: "0px", md: "1rem" },
               textAling: "center",
             }}
           >
@@ -123,7 +127,7 @@ const Footer = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              marginTop: "1rem",
+              marginTop: { xs: "0px", md: "1rem" },
             }}
           >
             <Typography color="secondary">
