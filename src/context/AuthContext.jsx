@@ -35,7 +35,6 @@ export function AuthProvider({ children }) {
       } else {
         const userGoogle = user;
         setGoogleUser(userGoogle);
-        //aca tengo que setear el loading
         setLoading(false);
         return;
       }
@@ -83,16 +82,6 @@ export function AuthProvider({ children }) {
     }
   };
 
-  /*   const getPerfil = async (uidGoogleUser) => {
-    const googleUser = uidGoogleUser;
-    if (googleUser) {
-      const userDoc = doc(db, "perfiles", User.uid);
-      getDoc(userDoc).then((response) => {
-        setCurrentUser(response.data());
-      });
-    }
-  }; */
-
   const registrar = async (registrerUser) => {
     try {
       const userUID = googleUser.uid;
@@ -102,8 +91,11 @@ export function AuthProvider({ children }) {
       if (!userProfileSnap.exists()) {
         await setDoc(userProfileRef, {
           ...registrerUser,
+          idPerfil: userUID,
         });
-        setCurrentUser(registrerUser);
+        setCurrentUser({ ...registrerUser });
+        navigate("/miperfil");
+        alert("Registro Terminado!");
         return;
       } else {
         navigate("/");
@@ -111,8 +103,6 @@ export function AuthProvider({ children }) {
       }
     } catch (err) {
       console.error("error", err);
-    } finally {
-      navigate("/miperfil");
     }
   };
 

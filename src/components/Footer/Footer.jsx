@@ -18,7 +18,7 @@ const Footer = () => {
           alignItems: "center",
           backgroundColor: "#3C9990",
           width: "100%",
-          height: " 16rem",
+          height: { xs: "26rem", xl: "16rem" },
           padding: { xs: "0", xl: "0" },
         }}
       >
@@ -37,8 +37,8 @@ const Footer = () => {
         </Typography>
         <Grid
           container
-          columns={4}
-          spacing={{ xs: 0, md: 3 }}
+          columns={{ xs: 1, md: 4 }}
+          spacing={{ xs: 1, md: 3 }}
           sx={{
             bottom: "0",
             width: "100%",
@@ -50,7 +50,7 @@ const Footer = () => {
         >
           <Grid
             item
-            xs={{ xs: 1, md: 4 }}
+            xs={1}
             sx={{
               height: "50%",
               padding: "0",
@@ -71,7 +71,7 @@ const Footer = () => {
               alignItems: "center",
               justifyContent: "space-evenly",
             }}
-            xs={{ xs: 4, md: 1 }}
+            xs={1}
           >
             <FaFacebookF className="footer-icon" />
             <Button
@@ -91,7 +91,7 @@ const Footer = () => {
               justifyContent: "space-evenly",
               marginTop: { xs: "0px", md: "1rem" },
             }}
-            xs={{ xs: 4, md: 1 }}
+            xs={1}
           >
             <FaSquareInstagram className="footer-icon" />
             <Button
@@ -105,7 +105,7 @@ const Footer = () => {
           </Grid>
           <Grid
             item
-            xs={{ xs: 4, md: 1 }}
+            xs={1}
             sx={{
               height: "50%",
               width: "50%",

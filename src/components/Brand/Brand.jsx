@@ -1,7 +1,6 @@
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import banner1 from "../../assets/banner1.png";
-
+import { IMG_BRAND } from "../../constants/constants";
 const Brand = () => {
   return (
     <Typography
@@ -15,7 +14,7 @@ const Brand = () => {
         margin: "0",
         padding: "0",
         boxSizing: "border-box",
-        backgroundImage: `url(${banner1})`,
+        backgroundImage: `url(${IMG_BRAND})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center center",

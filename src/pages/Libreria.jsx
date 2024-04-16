@@ -24,7 +24,7 @@ const Libreria = () => {
           color: "#D8EDE9",
         }}
       >
-        <Fade direction="down">
+        <Fade direction="down" triggerOnce>
           <Typography variant="h1" component="h2" fontWeight="bold">
             Libreria
           </Typography>

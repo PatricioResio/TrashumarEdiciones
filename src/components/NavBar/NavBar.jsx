@@ -51,17 +51,23 @@ function ResponsiveAppBar() {
   return (
     <AppBar position="static">
       <Brand></Brand>
+
       <Container
         disableGutters
         maxWidth="xl"
-        sx={{ margin: "0", minWidth: "100%" }}
+        sx={{
+          minWidth: "100%",
+          height: "55px",
+        }}
       >
-        <Toolbar disableGutters sx={{ textAling: "justify" }}>
+        <Toolbar disableGutters sx={{}}>
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
               justifyContent: "space-between",
+
+              alignItems: "center",
             }}
           >
             <IconButton
@@ -130,6 +136,8 @@ function ResponsiveAppBar() {
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
               justifyContent: "space-evenly",
+              alignItems: "center",
+              margin: "auto",
               maxWidth: "45%",
             }}
           >
@@ -140,7 +148,13 @@ function ResponsiveAppBar() {
                   component={Link}
                   to={page.path}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    m: "auto",
+                    height: "100%",
+                  }}
                 >
                   {page.name}
                 </Button>
@@ -153,8 +167,10 @@ function ResponsiveAppBar() {
               sx={{
                 flexGrow: 1,
                 marginLeft: "2rem ",
+                marginTop: "0",
                 display: "flex",
                 justifyContent: "end",
+                alignItems: "center",
               }}
             >
               <Button
@@ -182,6 +198,7 @@ function ResponsiveAppBar() {
                 width: "50%",
                 display: "flex",
                 justifyContent: "end",
+                alignItems: "center",
               }}
             >
               <Button
@@ -189,8 +206,8 @@ function ResponsiveAppBar() {
                 component={Link}
                 to="/miperfil"
                 sx={{
-                  my: 2,
                   flexGrow: 1,
+                  height: "100%",
                   fontFamily: "monospace",
                   fontWeight: 500,
                   letterSpacing: ".3rem",

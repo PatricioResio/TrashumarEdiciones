@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { FormRegistro } from "../components";
-import LoginForm from "../components/LoginForm/LoginForm";
+import LoginForm from "../components/Forms/LoginForm/LoginForm";
 import { AuthContext } from "../context/AuthContext";
 import { Fade } from "react-awesome-reveal";
 

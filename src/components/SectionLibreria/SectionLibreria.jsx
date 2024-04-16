@@ -1,9 +1,8 @@
 import { Box, CircularProgress, Container, Grid } from "@mui/material";
-import CartaLibros from "../CartaLibros/CartaLibros";
 
 import useProyectos from "../../hooks/useProyectos";
 import { Fade } from "react-awesome-reveal";
-import CartaProyectos from "../CartaProyectos/CartaProyectos";
+import CartaProyectos from "../Home/CartaProyectos/CartaProyectos";
 
 const SectionLibreria = () => {
   const { proyectos, loading } = useProyectos();
@@ -11,7 +10,7 @@ const SectionLibreria = () => {
   return loading ? (
     <Box
       sx={{
-        width: "95%",
+        width: "90%",
         minHeight: "75vh",
         border: "#3C9990 solid 2px",
         borderRadius: "20px",

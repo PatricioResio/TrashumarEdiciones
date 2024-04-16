@@ -17,7 +17,7 @@ const Comunidad = () => {
       }}
       disableGutters
     >
-      <Fade direction="down" triggerOnce duration={2300}>
+      <Fade direction="down" triggerOnce duration={1300}>
         <Typography
           variant="h1"
           component="h2"

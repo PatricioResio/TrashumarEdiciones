@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import { ContenedorPrograma } from "../components/index";
-import ContenedorHistoria from "../components/ContenedorHistoria/ContenedorHistoria";
+import ContenedorHistoria from "../components/Nosotros/ContenedorHistoria/ContenedorHistoria";
 import { Fade } from "react-awesome-reveal";
 
 const Nosotros = () => {

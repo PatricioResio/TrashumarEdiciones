@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import { Route, Routes } from "react-router-dom";
 import { NavBar, Footer, Loader } from "./components/index";
 import { Libreria, Nosotros, Home, Comunidad } from "./pages/index";
+import "./components/Perfil/DescripcionPerfil/DescripcionPerfil.css";
 
 const LazyLogin = lazy(() => import("./pages/Login.jsx"));
 const LazyMiPerfil = lazy(() => import("./pages/MiPerfil.jsx"));
@@ -28,18 +29,27 @@ export default function App() {
         maxWidth="2xl"
         sx={{
           background: "#A9CBC8",
-          maxWidth: "100%",
+          maxWidth: "100vw",
           margin: "0",
           padding: "0",
+          minWidth: "100vw",
         }}
         disableGutters
       >
         <NavBar />
-        <Box component="main" sx={{ padding: "0", margin: "0", width: "100%" }}>
+        <Box
+          component="main"
+          sx={{
+            padding: "0",
+            margin: "0",
+            minWidth: "100%",
+            minHeight: "100%",
+          }}
+        >
           <Routes>
             <Route path="/" Component={Home} />
             <Route path="/miperfil" Component={LazyMiPerfil} />
-            <Route path="/infoPerfil" Component={LazyFormRegistroPerfil} />
+            <Route path="/infoPerfil" Component={LazyFormRegistro} />
             <Route path="/perfil/:idPerfil" Component={LazyPerfil} />
             <Route path="/libreria" Component={LazyLibreria} />
             <Route path="/proyecto/:id" Component={LazyProyectoPublico} />

@@ -1,12 +1,21 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./Perfil.css";
-import { Box, Button, Container, IconButton, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import ContenedorColaboraciones from "../ContenedorColaboraciones/ContenedorColaboraciones";
-import ContenedorProyectosPerfil from "../ContenerdorProyectosPerfil/ContenedorProyectosPerfil";
+import ContenedorColaboraciones from "./ContenedorColaboraciones/ContenedorColaboraciones";
+import ContenedorProyectosPerfil from "./ContenedorProyectosPerfil/ContenedorProyectosPerfil";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+import DescripcionPerfil from "./DescripcionPerfil/DescripcionPerfil";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faSquareXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { faSquarePhone } from "@fortawesome/free-solid-svg-icons";
+import Oficios from "./Oficios/Oficios";
 
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
@@ -21,151 +30,191 @@ const Perfil = () => {
       component="section"
       sx={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        height: "90vh",
         width: "95%",
         m: "auto",
         mt: "40px",
+        mb: "0px",
+        p: "0",
         backgroundColor: "#4d7a77",
         borderRadius: "15px",
+        height: { xs: "3200px", md: "2900px", lg: "2200px", xl: "1550px" },
       }}
     >
       <Container
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          m: "50px",
-          width: "700px",
-          height: "60vh",
+          width: "100%",
+          height: { xs: "1800px", md: "1500px", lg: "1200px", xl: "1500px" },
           backgroundColor: "#4d7a77",
           borderRadius: "15px",
+          m: "auto",
         }}
       >
         <Container
           maxWidth="2xl"
-          disableGutters
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            border: "2px solid #4d7a77",
-            borderRadius: "20%",
-            minHeight: "25vh",
-            height: "30vh",
-            width: "200px",
-            backgroundColor: "#3c9990",
-            marginRight: "0px",
-            gap: "0px",
-          }}
-        >
-          <Typography
-            gutterBottom
-            variant="h4"
-            sx={{ fontWeight: "bold", marginRight: "0px" }}
-            component="h4"
-          >
-            Mis oficios
-          </Typography>
-          <Container sx={{ marginLeft: "0px" }}>
-            {!oficios || oficios.lenght === 0 ? (
-              <Typography variant="h5" component="h5">
-                No hay ningun oficio registrado todavía
-              </Typography>
-            ) : (
-              oficios.map((oficio) => (
-                <Typography key={oficio} variant="h5" component="h5">
-                  {oficio}
-                </Typography>
-              ))
-            )}
-          </Container>
-        </Container>
-        <Container
-          maxWidth="2xl"
-          sx={{
-            width: "400px",
+            width: { xs: "300px", md: "500px", lg: "800px", xl: "1200px" },
             height: "90%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            m: "auto auto auto -4px",
+            m: "auto auto auto auto",
+            mt: { xs: "20px" },
+            paddingTop: "0px",
             border: "2px solid #3c9990",
-            borderRadius: "20%",
+            borderRadius: "4%",
             backgroundColor: "#6BBCA8",
             position: "relative",
           }}
         >
           <Box
             component="img"
-            sx={{ position: "absolute", top: "0", margin: "50px" }}
+            sx={{
+              margin: "50px",
+              marginTop: "0px",
+              height: "280px",
+              width: "280px",
+            }}
             className="img-perfil-card"
             src={!currentUser ? "No se encontro usuario" : currentUser.avatar}
             alt="foto"
           />
-          <Typography variant="h3" paragraph fontWeight="bold">
-            {!currentUser
-              ? "No se encontro usuario"
-              : currentUser.nombrePublico}
-          </Typography>
-          <Box
+          <Container
             sx={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "column",
+              justifyContent: "center",
               alignItems: "center",
             }}
           >
-            <IconButton
-              variant="contained"
-              color="tertiary"
-              onClick={handleCardButton}
-              sx={{ borderRadius: "50%" }}
-            >
-              <FontAwesomeIcon icon={faPenToSquare} />
-            </IconButton>
-            <Typography variant="h5" fontWeight="bold">
-              Datos personales
+            <Typography variant="h3" paragraph fontWeight="bold">
+              {!currentUser
+                ? "No se encontro usuario"
+                : currentUser.nombrePublico}
             </Typography>
-          </Box>
-          {!currentUser.facebook ? (
-            <Typography></Typography>
-          ) : (
-            <Typography></Typography>
-          )}
-          {!currentUser.instagram ? (
-            <Typography></Typography>
-          ) : (
-            <Typography>Instagram</Typography>
-          )}
-          {!currentUser.x ? (
-            <Typography></Typography>
-          ) : (
-            <Typography>X</Typography>
-          )}
-          {!currentUser.email ? (
-            <Typography></Typography>
-          ) : (
-            <Typography>email</Typography>
-          )}
-          {!currentUser.telefonoPublico ? (
-            <Typography></Typography>
-          ) : (
-            <Typography>TelefonoPublico</Typography>
-          )}
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <IconButton
+                variant="contained"
+                color="tertiary"
+                onClick={handleCardButton}
+                sx={{ borderRadius: "50%" }}
+              >
+                <FontAwesomeIcon icon={faPenToSquare} />
+              </IconButton>
+              <Typography variant="h5" fontWeight="bold">
+                Datos personales
+              </Typography>
+            </Box>
+
+            <Box sx={{ margin: "0" }}>
+              {!currentUser.linkedinForm ? (
+                <>
+                  <Typography variant="h5"></Typography>
+                </>
+              ) : (
+                <Typography variant="h5">
+                  <FontAwesomeIcon icon={faLinkedin} />
+                  {currentUser.linkedinForm}
+                </Typography>
+              )}
+              {!currentUser.facebookForm ? (
+                <>
+                  <Typography variant="h5"></Typography>
+                </>
+              ) : (
+                <Typography variant="h5">
+                  <FontAwesomeIcon icon={faFacebook} />
+                  {currentUser.facebookForm}
+                </Typography>
+              )}
+              {!currentUser.instagramForm ? (
+                <Typography variant="h5"></Typography>
+              ) : (
+                <Typography variant="h5">
+                  <FontAwesomeIcon icon={faInstagram} />@
+                  {currentUser.instagramForm}
+                </Typography>
+              )}
+              {!currentUser.xForm ? (
+                <Typography variant="h5"></Typography>
+              ) : (
+                <Typography variant="h5">
+                  <FontAwesomeIcon icon={faSquareXTwitter} />@
+                  {currentUser.xForm}
+                </Typography>
+              )}
+              {!currentUser.email ? (
+                <Typography variant="h5"></Typography>
+              ) : (
+                <Typography variant="h5">
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  {currentUser.email}
+                </Typography>
+              )}
+              {!currentUser.telefono ? (
+                <Typography variant="h5"></Typography>
+              ) : (
+                <Typography variant="h5">
+                  <FontAwesomeIcon size="24px" icon={faSquarePhone} />
+                  {currentUser.telefono}
+                </Typography>
+              )}
+            </Box>
+          </Container>
         </Container>
+        <Oficios oficios={oficios} />
+        <DescripcionPerfil {...currentUser} />
       </Container>
 
-      <Box component="article" sx={{ height: "100vh", width: "500px" }}>
-        <ContenedorProyectosPerfil />
-      </Box>
-      <Box component="article" sx={{ height: "100vh", width: "500px" }}>
-        <ContenedorColaboraciones />
-      </Box>
+      <Container
+        disableGutters
+        sx={{
+          height: "100%",
+          m: "auto",
+          minWidth: "100%",
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            md: "column",
+            lg: "column",
+            xl: "row",
+          },
+        }}
+      >
+        <Box
+          component="article"
+          sx={{
+            m: "auto",
+            mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
+            width: { xs: "350px", md: "500px", lg: "800px" },
+          }}
+        >
+          <ContenedorProyectosPerfil />
+        </Box>
+        <Box
+          component="article"
+          sx={{
+            m: "auto",
+            mt: "0",
+            width: { xs: "350px", md: "500px", lg: "800px" },
+          }}
+        >
+          <ContenedorColaboraciones />
+        </Box>
+      </Container>
     </Box>
   );
 };

@@ -5,7 +5,7 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import CartaPerfiles from "../CartaPerfiles/CartaPerfiles";
+import CartaPerfiles from "../Home/CartaPerfiles/CartaPerfiles";
 import usePerfiles from "../../hooks/usePerfiles";
 import { Fade } from "react-awesome-reveal";
 

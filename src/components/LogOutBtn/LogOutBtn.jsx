@@ -13,13 +13,14 @@ const LogOutBtn = () => {
       component={Link}
       to="/"
       sx={{
-        my: 2,
         flexGrow: 1,
         fontFamily: "monospace",
         fontWeight: 500,
         letterSpacing: ".3rem",
         color: "inherit",
+        m: "auto",
         maxWidth: { sm: "70px", md: "150px" },
+        height: "100%",
       }}
     >
       Salir

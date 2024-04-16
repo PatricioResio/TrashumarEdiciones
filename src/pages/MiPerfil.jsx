@@ -1,27 +1,31 @@
 import { useContext } from "react";
 import { FormRegistro } from "../components/index";
 import { AuthContext } from "../context/AuthContext";
-import PerfilRouter from "../components/PerfilRouter/PerfilRouter";
+import PerfilRouter from "../components/Perfil/PerfilRouter/PerfilRouter";
 import { Fade } from "react-awesome-reveal";
-import { CircularProgress, Container } from "@mui/material";
+import { CircularProgress, Container, Typography } from "@mui/material";
+import FormRegistroRouter from "../components/Perfil/FormRegistroRouter/FormRegistroRouter";
 
 const MiPerfil = () => {
   const { newUser, loading } = useContext(AuthContext);
-  return newUser === false ? (
+  return !newUser ? (
     <PerfilRouter />
   ) : (
     <Container
+      maxWidth="xl"
+      disableGutters
       sx={{
-        minWidth: "100%",
-        height: "100vh",
+        minWidth: "80%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        borderRadius: "10px",
+        backgroundColor: "#2D4746",
+        height: "100vh",
+        margin: "40px auto",
       }}
     >
-      <Fade delay={200}>
-        {loading === true ? <CircularProgress /> : <FormRegistro />}
-      </Fade>
+      <FormRegistroRouter></FormRegistroRouter>
     </Container>
   );
 };
