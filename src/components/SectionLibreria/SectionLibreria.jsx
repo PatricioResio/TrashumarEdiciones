@@ -10,11 +10,11 @@ const SectionLibreria = () => {
   return loading ? (
     <Box
       sx={{
-        width: "90%",
         minHeight: "75vh",
-        border: "#3C9990 solid 2px",
-        borderRadius: "20px",
-        backgroundColor: "#4D7A77",
+        border: "2px solid #215E61",
+        borderRadius: "10px",
+        margin: "20px",
+        backgroundColor: "#38A098",
       }}
     >
       <CircularProgress />
@@ -24,21 +24,20 @@ const SectionLibreria = () => {
       <Box
         component="article"
         sx={{
-          border: "2px solid #D8EDE9",
-          margin: "20px",
+          border: "2px solid #3C9990",
+          margin: "10px",
           borderRadius: "20px",
-          backgroundColor: "#3C9990",
+          backgroundColor: "#38A098",
         }}
       >
         <Grid
           container
           columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
           sx={{
-            width: "90%",
             minHeight: "75vh",
-            m: "50px auto",
-            gap: "70px",
-            justifyContent: "flex-start",
+            m: "20px auto",
+            gap: "60px",
+            justifyContent: "space-around",
             alignItems: "center",
           }}
         >

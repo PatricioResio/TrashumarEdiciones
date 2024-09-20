@@ -12,40 +12,49 @@ const ContenedorDestacado = () => {
     <Container
       maxWidth="2xl"
       sx={{
-        backgroundColor: "#4D7A77",
         flexDirection: "column",
         justifyContent: "center",
-        height: { xs: "1200px", md: "1300px", lg: "1200px", xl: "900px" },
-        width: "70%",
+        height: { xs: "90rem", md: "100rem", lg: "1200px", xl: "900px" },
+        width: "100%",
         minWidth: { xs: "200px", xl: "700px" },
-        border: "3px solid #3C9990",
-        borderRadius: "15px",
+        backgroundColor: "#215E61",
+        borderRadius: "20px",
+        border: "2px solid #3C9990",
+
+        color: "#BAE3D7",
         p: "25px",
       }}
     >
-      <Fade direction="down">
+      <Fade triggerOnce easeOut direction="down">
         <Typography
-          sx={{ fontWeight: "bold", color: "#fff" }}
+          sx={{
+            fontWeight: "bold",
+            color: "#BAE3D7",
+            fontSize: "3.5rem",
+            margin: "2rem",
+          }}
           variant="h2"
           component="h2"
         >
           Este es nuestro proyecto destacado!
         </Typography>
       </Fade>
-      <Fade>
+      <Fade triggerOnce>
         <Box
           sx={{
-            height: { xs: "880px", md: "1100px", lg: "1000px", xl: "650px" },
+            height: { xs: "72rem", md: "90rem", lg: "1000px", xl: "650px" },
             display: "flex",
             justifyContent: "center",
             gap: "80px",
-            border: "2px solid #B5C2C7",
+            border: "2px solid #215E61",
             borderRadius: "20px",
             pt: "30px",
-            width: "80%",
+            width: "82%",
             minWidth: { xs: "250px", lg: "600px" },
             fontSize: "20px",
             m: "auto",
+
+            color: "#0C2324",
             backgroundColor: "#3C9990",
             flexDirection: {
               xs: "column",
@@ -78,17 +87,22 @@ const ContenedorDestacado = () => {
               gap: "20px",
             }}
           >
+            <Typography component="h3" variant="h3">
+              El día en que los hippies descubrieron los sahumerios
+            </Typography>
             <Typography component="h4" variant="h4">
               Pablo Atanasopolus
             </Typography>
-            <Typography component="h5" variant="h5">
-              El día en que los hippies descubrieron los sahumerios
-            </Typography>
-            <Typography component="p" variant="body2">
+            <Typography component="p" variant="body">
               Acá hay una breve descripcion de la wea de pablo
             </Typography>
             <Button
-              sx={{ width: { sx: "90px", xl: "180px" }, m: "5px auto" }}
+              sx={{
+                color: "#BAE3D7",
+                backgroundColor: "#215E61",
+                width: { sx: "90px", xl: "180px" },
+                m: "5px auto",
+              }}
               variant="contained"
               component={Link}
               to={`/proyecto/${ID_PROYECTO_DESTACADO}`}

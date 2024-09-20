@@ -7,7 +7,8 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
       sx={{
         width: { xs: "350px", md: "700px", lg: "900px", xl: "1200px" },
         height: { xs: "1200px", md: "900px", lg: "500px", xl: "600px" },
-        backgroundColor: "#3c9990",
+
+        backgroundColor: "#BAE3D7",
         my: { xs: "30px" },
         border: "2px solid #4d7a77",
         borderRadius: "8px",

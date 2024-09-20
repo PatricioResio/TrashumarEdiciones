@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import ContenedorProyectos from "../components/Home/ContenedorProyectos/ContenedorProyectos";
 import ContenedorPerfiles from "../components/Home/ContenedorPerfiles/ContenedorPerfiles";
 import CarruselHome from "../components/Home/CarruselHome/CarruselHome";
@@ -18,28 +18,31 @@ const Home = () => {
           textAlign: "center",
           margin: "4rem 0",
           gap: 4,
+
+          color: "#BAE3D7",
         }}
       >
         <ArticleDestacado />
         <Box
           sx={{
-            backgroundColor: "#6BBCA8",
-            height: "850px",
+            backgroundColor: "#38A098",
+            height: "100vh",
             justifyContent: "center",
             border: "1px solid #3F7D92",
             borderRadius: "20px",
-            width: "63%",
-            margin: "15px auto",
+            width: "100%",
+            margin: "10px auto",
             mt: "40px",
           }}
         >
-          <Fade>
+          <Fade triggerOnce>
             <Typography
               component="h2"
               sx={{
                 fontFamily: "roboto",
                 fontSize: "30px",
                 fontWeight: "bold",
+
                 color: "#00333D",
               }}
             >
@@ -48,17 +51,19 @@ const Home = () => {
             <ContenedorProyectos />
           </Fade>
         </Box>
+
         <Box
           sx={{
-            backgroundColor: "#6BBCA8",
-            height: "40rem",
+            backgroundColor: "#38A098",
+            height: "100vh",
+            justifyContent: "center",
             border: "1px solid #3F7D92",
             borderRadius: "20px",
-            width: "63%",
+            width: "100%",
             margin: "10px auto",
           }}
         >
-          <Fade>
+          <Fade triggerOnce>
             <Typography
               component="h2"
               sx={{
@@ -66,6 +71,7 @@ const Home = () => {
                 fontSize: "30px",
                 fontWeight: "bold",
                 color: "#00333D",
+                m: "2rem auto",
               }}
             >
               Perfiles de nuestra comunidad

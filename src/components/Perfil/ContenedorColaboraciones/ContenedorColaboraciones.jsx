@@ -7,7 +7,7 @@ import "../ContenedorProyectosPerfil/ContenedorProyectosPerfil.css";
 
 const ContenedorColaboraciones = () => {
   const { currentUser } = useContext(AuthContext);
-  const { proyectos, loading } = useProyectos();
+  const { proyectos, loadingProyectos } = useProyectos();
   const nombre = currentUser.nombre;
 
   const colaboracionesUser = proyectos.filter((proyecto) =>
@@ -16,7 +16,7 @@ const ContenedorColaboraciones = () => {
 
   return (
     <Container maxWidth="md" className="contenedor-fila-perfil">
-      {loading ? (
+      {loadingProyectos ? (
         <CircularProgress />
       ) : (
         <FilaColaboraciones colaboraciones={colaboracionesUser} />

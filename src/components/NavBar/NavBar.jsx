@@ -9,31 +9,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Brand, LogOutBtn } from "../index";
 import { Fade } from "react-awesome-reveal";
-
-const pages = [
-  {
-    name: "De que se trata",
-    path: "/nosotros",
-  },
-  {
-    name: "LIBRERIA",
-    path: "/libreria",
-  },
-  {
-    name: "COMUNIDAD",
-    path: "/comunidad",
-  },
-  {
-    name: "QUIERO PUBLICAR",
-    path: "/publicar",
-  },
-];
+import "./NavBar.css";
+import { LOGO_URL } from "../../constants/constants";
+import { pages } from "../../constants/Arrays";
 
 function ResponsiveAppBar() {
   const { currentUser } = useContext(AuthContext);
@@ -49,25 +32,23 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Brand></Brand>
-
+    <AppBar position="static" sx={{ maxWidth: "100%" }}>
+      <Brand />
       <Container
         disableGutters
         maxWidth="xl"
         sx={{
           minWidth: "100%",
-          height: "55px",
+          height: "5rem",
+          alignItems: "center",
         }}
       >
-        <Toolbar disableGutters sx={{}}>
+        <Toolbar disableGutters>
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-              justifyContent: "space-between",
-
-              alignItems: "center",
+              background: { xs: "#215E61" },
             }}
           >
             <IconButton
@@ -95,11 +76,21 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: "block", md: "none" },
+                display: {
+                  xs: "block",
+                  md: "none",
+                },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  sx={{
+                    backgroundColor: "#215E61",
+                    height: "100%",
+                  }}
+                  key={page.name}
+                  onClick={handleCloseNavMenu}
+                >
                   <Link
                     to={page.path}
                     style={{ textDecoration: "none", color: "inherit" }}
@@ -110,50 +101,55 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Fade>
-            <Typography
-              variant="h5"
-              noWrap
-              component={Link}
-              to=""
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 500,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              Trashumar
-            </Typography>
-          </Fade>
+
+          <Box sx={{ flexGrow: 1, margin: "auto 1rem" }}>
+            <Fade triggerOnce>
+              <Typography
+                variant="h6"
+                component={Link}
+                to="/"
+                sx={{
+                  display: "flex",
+                  height: "4.5rem",
+                  width: "4rem",
+                  p: "0",
+                  margin: "0.3rem 2rem",
+                }}
+              >
+                <img src={LOGO_URL} />
+              </Typography>
+            </Fade>
+          </Box>
 
           <Box
             sx={{
-              flexGrow: 1,
+              flexGrow: 2,
               display: { xs: "none", md: "flex" },
-              justifyContent: "space-evenly",
+              justifyContent: "space-around",
               alignItems: "center",
-              margin: "auto",
               maxWidth: "45%",
             }}
           >
-            <Fade>
+            <Fade triggerOnce>
               {pages.map((page) => (
                 <Button
                   key={page.name}
                   component={Link}
+                  variant="text"
                   to={page.path}
                   onClick={handleCloseNavMenu}
                   sx={{
-                    my: 2,
-                    color: "white",
+                    color: "#E4F7F7",
                     display: "block",
-                    m: "auto",
                     height: "100%",
+                    fontSize: { lg: "14px" },
+                    justifyContent: "center",
+                    width: "160px",
+                    transition: "transform 0.3s",
+                    "&:hover": {
+                      transform: "scale(1.1)",
+                      color: "white",
+                    },
                   }}
                 >
                   {page.name}
@@ -177,25 +173,30 @@ function ResponsiveAppBar() {
                 variant="contained"
                 component={Link}
                 to="/ingresa"
+                color="primary"
                 sx={{
-                  maxWidth: "300px",
+                  maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
                   flexGrow: 1,
                   fontFamily: "roboto",
-                  fontWeight: 900,
-                  letterSpacing: ".4rem",
-                  color: "inherit",
+                  fontWeight: { xs: 600, md: 900 },
+                  letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
                   marginRight: "3rem",
+                  transition: "transform 0.3s",
+
+                  "&:hover": {
+                    transform: "scale(1.03)",
+                    color: "white",
+                  },
                 }}
               >
-                <Fade>Ingresa</Fade>
+                <Fade triggerOnce>Ingresar</Fade>
               </Button>
             </Box>
           ) : (
             <Box
               sx={{
                 flexGrow: 0,
-                marginRight: "2rem",
-                width: "50%",
+                marginRight: { xs: ".6rem", md: "2rem" },
                 display: "flex",
                 justifyContent: "end",
                 alignItems: "center",
@@ -206,18 +207,21 @@ function ResponsiveAppBar() {
                 component={Link}
                 to="/miperfil"
                 sx={{
+                  maxWidth: "150px",
                   flexGrow: 1,
-                  height: "100%",
-                  fontFamily: "monospace",
-                  fontWeight: 500,
-                  letterSpacing: ".3rem",
-                  color: "inherit",
-                  maxWidth: { sm: "70px", md: "150px" },
+                  fontFamily: "roboto",
+                  fontWeight: { xs: 600, md: 900 },
+                  letterSpacing: { xs: ".1rem", md: ".2rem" },
+                  transition: "transform 0.3s",
+                  "&:hover": {
+                    transform: "scale(1.03)",
+                    color: "white",
+                  },
                 }}
               >
-                <Fade>{displayName}</Fade>
+                <Fade triggerOnce>{displayName}</Fade>
               </Button>
-              <Fade>
+              <Fade triggerOnce>
                 <LogOutBtn />
               </Fade>
             </Box>

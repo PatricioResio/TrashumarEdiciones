@@ -5,8 +5,9 @@
   margin: 0;
   justify-content: center;
   align-items: center;
-  background-color: #6bbca8;
-  border: 2px solid #6bbca8;
-  border-radius: 15px;
+  border: "1px solid";
+  border-color: "#14919B";
+  border-radius: "20px";
+  background-color: "#02291F";
   box-shadow: 1px 1px 5px black;
 }

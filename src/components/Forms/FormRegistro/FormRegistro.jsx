@@ -35,6 +35,9 @@ const FormRegistro = () => {
       { nombre: "Fotografo", valor: false },
     ],
     registroTerminado: false,
+    distribuidor: false,
+    ubicacion: "",
+    radio: "",
     avatar: DEFAULT_PERFIL_FOTO,
     facebookForm: "",
     instagramForm: "",
@@ -47,7 +50,6 @@ const FormRegistro = () => {
   useEffect(() => {
     if (currentUser) {
       setFormUser({ ...currentUser });
-      console.log(valorInicial);
     } else {
       return;
     }
@@ -58,9 +60,12 @@ const FormRegistro = () => {
 
   const handlerChange = (e) => {
     const { name, value, type, checked } = e.target;
-
-    if (type === "checkbox") {
-      // Actualiza el estado del formulario para el checkbox
+    if (type === "checkbox" && name === "distribuidor") {
+      setFormUser((prevUser) => ({
+        ...prevUser,
+        distribuidor: checked,
+      }));
+    } else if (type === "checkbox") {
       setFormUser((prevUser) => ({
         ...prevUser,
         oficios: prevUser.oficios.map((oficio, index) =>
@@ -68,7 +73,6 @@ const FormRegistro = () => {
         ),
       }));
     } else {
-      // Actualiza el estado del formulario para otros campos de entrada
       setFormUser((prevUser) => ({ ...prevUser, [name]: value }));
     }
   };
@@ -82,7 +86,7 @@ const FormRegistro = () => {
       return;
     }
     if (email !== emailConfirm) {
-      setError("emails are diferents");
+      setError("el email no coincide");
       alert(error);
       return;
     } else {
@@ -109,6 +113,16 @@ const FormRegistro = () => {
         background: "#A9CBC8",
       }}
     >
+      <Fade>
+        <Typography
+          sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
+          component="h1"
+          variant="h2"
+          fontWeight="bold"
+        >
+          Registrate!
+        </Typography>
+      </Fade>
       <Box
         component="form"
         onSubmit={(e) => handlerForm(e)}
@@ -122,16 +136,6 @@ const FormRegistro = () => {
           margin: "5px",
         }}
       >
-        <Fade>
-          <Typography
-            sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
-            component="h1"
-            variant="h2"
-            fontWeight="bold"
-          >
-            Registrate!
-          </Typography>
-        </Fade>
         <Container
           sx={{
             display: "flex",
@@ -153,6 +157,9 @@ const FormRegistro = () => {
             >
               Información Profesional
             </Typography>
+            <FormHelperText>
+              Los datos de la informacion profesional son obligatorios
+            </FormHelperText>
             <TextField
               sx={{ margin: "7px" }}
               label="Nombre"
@@ -176,6 +183,8 @@ const FormRegistro = () => {
               variant="outlined"
               value={formUser.email}
               onChange={handlerChange}
+              error={!!error && error.includes("Email")} // Error específico
+              helperText={!!error && error.includes("Email") ? error : ""}
             />
             <TextField
               sx={{ margin: "7px" }}
@@ -203,9 +212,21 @@ const FormRegistro = () => {
               onChange={handlerChange}
             />
           </Container>
-          <Container disableGutters sx={{ m: "auto" }}>
+          <Container
+            disableGutters
+            sx={{ display: "flex", m: "2rem 3rem", justifyContent: "start" }}
+          >
             <FormControl component="fieldset" variant="standard">
               <FormGroup>
+                <Typography
+                  component="h5"
+                  id="outlined-basic"
+                  align="left"
+                  variant="h5"
+                  gutterBottom
+                >
+                  ¿Cuál es tu oficio?
+                </Typography>
                 {formUser.oficios.map((oficio, index) => (
                   <FormControlLabel
                     key={index}
@@ -224,6 +245,7 @@ const FormRegistro = () => {
             </FormControl>
           </Container>
         </Container>
+
         <Container
           disableGutters
           sx={{
@@ -234,6 +256,50 @@ const FormRegistro = () => {
             marginLeft: "auto",
           }}
         >
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="distribuidor"
+                checked={formUser.distribuidor}
+                onChange={handlerChange}
+              />
+            }
+            label="Soy distribuidor (personas fisicas)"
+          />
+          <Box
+            sx={{
+              display: formUser.distribuidor === true ? "flex" : "none",
+              flexDirection: "column",
+              gap: 2,
+              marginTop: 4,
+            }}
+          >
+            <FormHelperText>
+              Selecciona la zona donde trabajas, y el radio en que te manejas.
+            </FormHelperText>
+            <TextField
+              label="Ubicación"
+              name="ubicacion"
+              value={formUser.ubicacion}
+              onChange={handlerChange}
+              fullWidth
+            />
+            <TextField
+              label="Radio de trabajo (km)"
+              name="radio"
+              value={formUser.radio}
+              onChange={handlerChange}
+              fullWidth
+            />
+            <FormHelperText>Detalla tus metodos de venta</FormHelperText>
+            <TextField
+              label="Metodo de venta"
+              name="metodoVenta"
+              value={formUser.radio}
+              onChange={handlerChange}
+              fullWidth
+            />{" "}
+          </Box>
           <Typography
             component="h4"
             id="outlined-basic"
@@ -292,40 +358,6 @@ const FormRegistro = () => {
           }
           helperText={formik.touched.linkedinForm && formik.errors.linkedinForm} */
           />
-          <Typography
-            component="h5"
-            id="outlined-basic"
-            align="left"
-            variant="h5"
-            gutterBottom
-          >
-            {/*         <FormControlLabel
-            control={
-              <Switch
-              id="distribuidor"
-              label="distribuidor"
-              variant="outlined"
-                value={formik.values.distribuidor}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                error={
-                  formik.touched.distribuidor &&
-                  Boolean(formik.errors.distribuidor)
-                }
-                helperText={
-                  formik.touched.distribuidor && formik.errors.distribuidor
-                  />
-                  
-                  
-                  label=""
-                /> */}
-            Soy distribuidor (personas fisicas)
-          </Typography>
-          <FormHelperText>
-            Selecciona la zona donde trabajas, y el radio en que te manejas.
-            Podes seleccionar varias distintas.
-          </FormHelperText>
-          <FormHelperText>Detalla tus metodos de venta</FormHelperText>
           {/*         <TextField
           id="metodosVenta"
           label="metodosVenta"
@@ -351,6 +383,7 @@ const FormRegistro = () => {
           >
             Registrarme!
           </Button>
+          {error && <Typography color="error">{error}</Typography>}
         </Container>
       </Box>
     </Container>

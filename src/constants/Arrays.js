@@ -1,7 +1,26 @@
+export const pages = [
+  {
+    name: "De que se trata",
+    path: "/nosotros",
+  },
+  {
+    name: "LIBRERIA",
+    path: "/libreria",
+  },
+  {
+    name: "COMUNIDAD",
+    path: "/comunidad",
+  },
+  {
+    name: "QUIERO PUBLICAR",
+    path: "/publicar",
+  },
+];
+
 export const homeArrays = [
   {
     id: 1,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home1.png?alt=media&token=0d3ba736-e813-41c0-9a09-e2b46b8b2e39",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home1.jpg?alt=media&token=76de3ec4-444d-4938-990b-047cd9bf7d3b",
     h2: "Bienvenidos a Trashumar Ediciones",
     textP: "¿Te intesera trabajar con nosotros? si queres saber más",
     buttonText: "Seguime por aquí",
@@ -9,7 +28,7 @@ export const homeArrays = [
   },
   {
     id: 2,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.png?alt=media&token=d384672c-dd94-4f90-8ea9-04fa1b8af8d3",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.jpg?alt=media&token=ed3613fb-fa43-4686-b762-a28d7a98ef1a",
     h2: "Descubri nuestra sección libreria",
     textP:
       "Trashumar es una editorial nomade, federal e independiente, por aquí podes ver nuestras novedades",
@@ -18,7 +37,7 @@ export const homeArrays = [
   },
   {
     id: 3,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3.png?alt=media&token=88a3e443-9f6e-4a4e-a9ce-bfb3a2cb5a86",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3.jpg?alt=media&token=5e4d8d47-dc01-4f5d-9d9d-9850adca8241",
     h2: "Estamos formando una comunidad!",
     textP:
       "También podes ingresar con una cuenta propia y así ser parte de nuestra comunidad en crecimiento",
@@ -54,273 +73,284 @@ export const imgArrayHistorias = [
   {
     id: "0",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-1%20(frente).png?alt=media&token=2a54ceb0-fa14-4ee0-badc-c5511994f560",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-1%20(frente)-min.png?alt=media&token=aed48790-c9b3-49cf-a23d-0d4834163fe3",
   },
   {
     id: "1",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-2.png?alt=media&token=63b98fdf-ff18-4777-8d87-a8c2f9ffb75d",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-2-min.png?alt=media&token=f514a4c9-fc54-436e-98ed-b02c00c35a4c",
+  },
+  {
+    id: "2",
+    posicion: "primero",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-3-min.png?alt=media&token=85d8190f-374a-416d-8fc3-e837229063e9",
   },
   {
     id: "3",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-3.png?alt=media&token=00c45127-f58e-4176-8ddb-fedede78f32c",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-4-min.png?alt=media&token=bb1dfa43-6018-44af-8639-58db8f8bd304",
   },
   {
     id: "4",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-4.png?alt=media&token=bbed0e33-ee1e-4bc8-a451-f6d08b5d179e",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-5-min.png?alt=media&token=1baa08be-b0e1-43a1-8824-d10584362002",
   },
   {
     id: "5",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-4.png?alt=media&token=bbed0e33-ee1e-4bc8-a451-f6d08b5d179e",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-6-min.png?alt=media&token=41b713e8-66fb-4fe5-b588-0b5e8a337916",
   },
   {
     id: "6",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-6.png?alt=media&token=e8d49f1b-a3c9-4637-a576-6a41d79d597b",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-7-min.png?alt=media&token=c97a9bec-6f66-40e6-ab33-589b0ec158d4",
   },
   {
     id: "7",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-7.png?alt=media&token=72e801dc-6b1b-46d2-a9d9-d72b26006c71",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-8-min.png?alt=media&token=fc7b3463-d596-4439-a5b1-a61724e0e4e0",
   },
   {
     id: "8",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-8.png?alt=media&token=8e16a5a6-b811-42a2-b914-396f8dc5a598",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-9-min.png?alt=media&token=b0f1d7a2-9459-4d1b-9f51-d5b827c28cad",
   },
   {
     id: "9",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-9.png?alt=media&token=e788e90f-8491-4766-a3a1-98bdbbdb4455",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-10-min.png?alt=media&token=27f93a93-7086-47bf-af1d-fe616784b68f",
   },
   {
     id: "10",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-10.png?alt=media&token=ef289985-fa5b-464b-ab11-1d7213fc6318",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-11-min.png?alt=media&token=463f0cff-c85f-4c18-bf7f-9702e6ec26a1",
   },
   {
     id: "11",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-11.png?alt=media&token=ceb2fdaa-ec92-4278-8a7a-b6dfda4fc84b",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-12-min.png?alt=media&token=7873f237-892a-4885-8575-986c721dc3ed",
   },
   {
     id: "12",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-12.png?alt=media&token=76d1efcf-13ce-460f-b199-c2447d0aa00e",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-13-min.png?alt=media&token=6e469382-a7a7-4bd7-b82f-560eea8d88ab",
   },
   {
     id: "13",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-13.png?alt=media&token=ff605a1a-928e-450a-9d2d-e273b7fdc66c",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-14-min.png?alt=media&token=37bbd9be-941d-41de-b440-cd9789d57a11",
   },
   {
     id: "14",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-14.png?alt=media&token=33b47657-915c-429a-8a21-ab843f910cda",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-15-min.png?alt=media&token=2dfbb1a3-63da-4628-9f2e-e986135a3819",
   },
   {
     id: "15",
     posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-15.png?alt=media&token=a5083910-bba2-4852-82f6-313185c2b7b9",
-  },
-  {
-    id: "16",
-    posicion: "primero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-16.png?alt=media&token=92ed362e-29c0-4c38-9db4-ca33676f61a1",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias1-16-min.png?alt=media&token=c06d0a1d-9ab1-4f9c-aec8-eb1445923c35",
   },
 
   {
     id: "17",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-1%20(frente).png?alt=media&token=0ce3a8a3-49d5-44c3-bc25-9f9099d7b385",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-1%20(frente)-min.png?alt=media&token=5f0f52e3-7ec4-45b2-ac93-447d37d3cab9",
   },
   {
     id: "18",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-2.png?alt=media&token=77aae61d-9b5f-4cdb-b0b5-ad822acc676d",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-2-min.png?alt=media&token=ce6948db-1a0b-4867-b3cc-e12884452553",
   },
   {
     id: "19",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-3.png?alt=media&token=f8ffa5f0-310a-4fb7-8873-6d8c0ea1159a",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-3-min.png?alt=media&token=6423c17c-11ba-4085-a765-00373c618b9b",
   },
   {
     id: "20",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-4.png?alt=media&token=04a1f944-15ba-4639-b852-5a2dc0600b5b",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-4-min.png?alt=media&token=47b8b42d-6d0a-494a-9e46-bd8e26a9a0ca",
   },
   {
     id: "21",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-5.png?alt=media&token=042838e3-5fa1-43a5-a37a-32fbcbb0e138",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-5-min.png?alt=media&token=6002b126-92d4-45ef-871b-8fefa2260cdc",
   },
   {
     id: "22",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-6.png?alt=media&token=ec420527-333b-4b19-b931-3d8b7023c577",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-6-min.png?alt=media&token=c7629400-6a1f-486f-a94d-d1f770c17cfe",
   },
   {
     id: "23",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-7.png?alt=media&token=b742cf7c-13c5-45da-9d8f-eaf73e2fb9a9",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-7-min.png?alt=media&token=e223b842-78d3-4bc3-9115-a958ade1c9b7",
   },
   {
     id: "24",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-8.png?alt=media&token=71d04c71-c489-435f-921a-7ab335f79122",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-8-min.png?alt=media&token=a69aae31-f15b-4bdf-a362-72e2e73c7fab",
   },
   {
     id: "25",
     posicion: "segundo",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-9.png?alt=media&token=bb795eef-3088-44ef-8daf-92ed97cee027",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-9-min.png?alt=media&token=28139421-baef-412f-8cf9-26d14a79838e",
   },
   {
     id: "26",
-    posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-11.png?alt=media&token=eb2c5c96-188a-49bc-9c5c-fa3697401047",
+    posicion: "segundo",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-10-min.png?alt=media&token=e5b670b2-07bb-4ffb-874f-cefbac495d17",
   },
   {
     id: "27",
-    posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-2.png?alt=media&token=26ad240b-469e-4c93-b591-4b6cf5ba5362",
+    posicion: "segundo",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias2-11-min.png?alt=media&token=1af0347d-d24d-4444-9d88-3ae6d76906d3",
   },
   {
     id: "28",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/3%20Por%20si%20png%20(B).png?alt=media&token=beed4555-b736-40d7-9f6c-8507f73ff11c",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-1-min.png?alt=media&token=bb120f8c-181a-446b-bf83-53f10f8b25c1",
   },
   {
     id: "29",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-4.png?alt=media&token=320bf751-0ee7-4fd9-8f39-7f0a750eb3c7",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-2-min.png?alt=media&token=489a92f8-318e-4ab4-bb33-3acba9c08a9d",
   },
   {
     id: "30",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-5.png?alt=media&token=1860d6c0-8854-497f-848e-a63c0ab3b309",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-3-min.png?alt=media&token=f036d337-7073-4618-b01d-1fa2d5994399",
   },
   {
     id: "31",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-6.png?alt=media&token=19655572-5cb0-4a65-bb0e-d20759a1fc09",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-4-min.png?alt=media&token=f15d62ec-b71d-4bc7-bd53-caa78c43c75d",
   },
   {
     id: "32",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-7.png?alt=media&token=add2e6f5-1b2b-4f1d-bab8-d894beda6564",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-5-min.png?alt=media&token=f78c8d05-c7d5-4ea8-bea0-8c1609a47fc4",
   },
   {
     id: "33",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-8.png?alt=media&token=b88f7c60-9fd0-4d88-a277-412651cf9a44",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-6-min.png?alt=media&token=1ecdca74-b38d-4fcb-a5c4-d845ced03b6c",
   },
   {
     id: "34",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-8.png?alt=media&token=b88f7c60-9fd0-4d88-a277-412651cf9a44",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-7-min.png?alt=media&token=640b18dd-b334-4340-9a44-00621645714f",
   },
   {
     id: "35",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/10%20asi%20png.png?alt=media&token=c4055f25-80ed-4385-bfb9-da85551463d7",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-8-min.png?alt=media&token=77b949af-2fc7-4bb3-ae7b-7e7ff733b65e",
   },
   {
     id: "36",
     posicion: "tercero",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/11%20TRASHUMAR%20EDICIONES%20png.png?alt=media&token=84b873b2-b796-4c44-bece-d024d53aa28c",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-9-min.png?alt=media&token=852c23a7-1785-4bca-9f52-f683319d8106",
   },
 
   {
     id: "37",
-    posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-1.png?alt=media&token=f343779b-419e-4d25-ac00-99fb52981113",
+    posicion: "tercero",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-10-min.png?alt=media&token=e5d645a0-39ac-46a2-9f42-db5e76db656c",
   },
   {
     id: "38",
-    posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-2.png?alt=media&token=bbf89b58-ce11-4490-890a-75183a325e64",
+    posicion: "tercero",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias3-11-min.png?alt=media&token=6dffdd18-e858-4679-a77d-22471280b9a8",
   },
   {
     id: "39",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-3.png?alt=media&token=222baad2-64c2-4bb4-894e-fd790e2b59de",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-1-min.png?alt=media&token=0f05fd7a-c770-497e-a180-f926b6c70cc6",
   },
   {
     id: "40",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-4.png?alt=media&token=7e65e026-5ff4-46b8-a983-dd4259adbfee",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-2-min.png?alt=media&token=72fc38b1-29b6-4e00-b527-2121d5af095d",
   },
   {
     id: "41",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-5.png?alt=media&token=a1826310-8ef4-4c67-9014-20473b041703",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-3-min.png?alt=media&token=d3d57603-2abe-4c59-ad9c-8ff460ab9a4b",
   },
   {
     id: "42",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-6.png?alt=media&token=61051321-4403-4db8-b95e-708b3e96e100",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-4-min.png?alt=media&token=f96febf0-6faf-455c-8397-8b277dcad930",
   },
   {
     id: "43",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-7.png?alt=media&token=8318f4a1-e711-4582-9150-9a2238a50ac1",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-5-min.png?alt=media&token=92f2fd6e-8145-425a-bac8-d1a9c717782e",
   },
   {
     id: "44",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-8.png?alt=media&token=16e30864-49d2-492c-b77a-ef7833117d09",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-6-min.png?alt=media&token=88f7826e-19df-4a57-869c-e37bd81c4d84",
   },
   {
     id: "45",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-9.png?alt=media&token=bf24fb44-c6ef-4544-b8e0-302e0efb52f6",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-7-min.png?alt=media&token=7b962981-079e-4ab8-b8f5-41ade17fb661",
   },
   {
     id: "46",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-10.png?alt=media&token=9538e910-061d-4857-a26f-a099c0092050",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-8-min.png?alt=media&token=ac6eda5d-02a7-49f3-bbd1-d4ab38a583a7",
   },
   {
     id: "47",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-11.png?alt=media&token=57f96d5f-1329-40b4-a601-b79bece85784",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-9-min.png?alt=media&token=b4553a66-7e2b-474e-85a7-839bd30c6e81",
   },
   {
     id: "48",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-12.jpg?alt=media&token=066bfaa8-2b97-42d6-8d65-8c4424d432b7",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-10-min.png?alt=media&token=460eaa03-82ae-478b-8134-59d331abce5e",
   },
   {
     id: "49",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-13.png?alt=media&token=ef3a360e-81d9-491e-8786-6e55908508b8",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-11-min.png?alt=media&token=c12aa62b-994a-4023-acd7-2f2938b4a2bf",
   },
   {
     id: "50",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-14.png?alt=media&token=38db1320-2b22-4396-8c17-8ea2e20ccc83",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-12-min.jpg?alt=media&token=d6705885-d4d4-408c-9c2b-e28d8d7b434f",
   },
   {
     id: "51",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-15.png?alt=media&token=2eae143a-e830-4d87-896b-8f00965b0105",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-13-min.png?alt=media&token=e8c5e414-6d35-4a9a-a4cb-9229d6bfb731",
   },
   {
     id: "52",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-16.png?alt=media&token=5440c0ef-9c5e-48a6-bf35-2afc76f4f16b",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-14-min.png?alt=media&token=b9249051-3f7c-4d4d-8c10-30fd10c2ec15",
   },
   {
     id: "53",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-17.png?alt=media&token=d4856610-193c-40fc-8eb8-614f66379c57",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-15-min.png?alt=media&token=7d322e4a-b080-4280-ac49-de78a2ed7ad9",
   },
   {
     id: "54",
     posicion: "cuarto",
-    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-18.png?alt=media&token=ccff179c-d777-43a5-ba4c-d41715af812e",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-16-min.png?alt=media&token=7c652c64-827c-43c1-9056-09861760edb8",
+  },
+  {
+    id: "55",
+    posicion: "cuarto",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-17-min.png?alt=media&token=75b1ad00-e74e-4992-9367-dcbed2219c05",
+  },
+
+  {
+    id: "56",
+    posicion: "cuarto",
+    img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-18-min.png?alt=media&token=3455d5f4-7d15-40a5-8e59-9be6bb864d17",
   },
 ];

@@ -1,0 +1,13 @@
+.carta-historia {
+  width: 280px;
+  margin: auto;
+  padding: 0;
+  border: 3px solid #3c9990;
+  border-radius: 15px;
+  background-color: #a6ece0;
+}
+.carta-historia:hover {
+  transform: scale(1.02);
+  transition: scale 2s;
+  border-color: #a6ece0;
+}

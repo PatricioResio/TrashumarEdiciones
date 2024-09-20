@@ -1,5 +1,5 @@
 import FilaProyectos from "../FilaProyectos/FilaProyectos";
-import { CircularProgress, Container } from "@mui/material";
+import { CircularProgress, Container, Typography } from "@mui/material";
 import useProyectos from "../../../hooks/useProyectos";
 const ContenedorCartas = () => {
   const { proyectos, loading } = useProyectos();
@@ -9,10 +9,13 @@ const ContenedorCartas = () => {
       maxWidth="2xl"
       sx={{
         display: "flex",
-        margin: "15px",
+        margin: "auto",
         justifyContent: "center",
-        width: "100%",
+        width: "90%",
+        border: "2px solid ",
+        borderRadius: "20px",
         alignItems: "center",
+        backgroundColor: "#215E61",
       }}
     >
       {loading ? <CircularProgress /> : <FilaProyectos proyectos={proyectos} />}

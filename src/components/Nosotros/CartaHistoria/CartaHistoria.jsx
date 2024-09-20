@@ -1,5 +1,6 @@
 import { Button, Card, CardActions, CardMedia } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
+import "./CartaHistoria.css";
 
 const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
   const handleClickHistoria = () => {
@@ -8,17 +9,7 @@ const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
 
   return (
     <Fade triggerOnce delay={1100}>
-      <Card
-        sx={{
-          height: "600px",
-          width: "280px",
-          m: "auto 20px",
-          p: "0",
-          border: "3px solid #3C9990",
-          borderRadius: "20px",
-          backgroundColor: "#A6ECE0",
-        }}
-      >
+      <Card className="carta-historia">
         <CardActions sx={{ p: "0" }}>
           <Button onClick={handleClickHistoria} sx={{ m: "0", p: "0" }}>
             <CardMedia

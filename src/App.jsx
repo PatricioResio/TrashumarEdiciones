@@ -3,8 +3,8 @@ import { AuthProvider } from "./context/AuthContext";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Route, Routes } from "react-router-dom";
-import { NavBar, Footer, Loader } from "./components/index";
-import { Libreria, Nosotros, Home, Comunidad } from "./pages/index";
+import { NavBar, Footer } from "./components/index";
+import { Nosotros, Home, Comunidad } from "./pages/index";
 import "./components/Perfil/DescripcionPerfil/DescripcionPerfil.css";
 
 const LazyLogin = lazy(() => import("./pages/Login.jsx"));
@@ -32,7 +32,7 @@ export default function App() {
           maxWidth: "100vw",
           margin: "0",
           padding: "0",
-          minWidth: "100vw",
+          minWidth: "99vw",
         }}
         disableGutters
       >
@@ -43,7 +43,6 @@ export default function App() {
             padding: "0",
             margin: "0",
             minWidth: "100%",
-            minHeight: "100%",
           }}
         >
           <Routes>
@@ -52,7 +51,10 @@ export default function App() {
             <Route path="/infoPerfil" Component={LazyFormRegistro} />
             <Route path="/perfil/:idPerfil" Component={LazyPerfil} />
             <Route path="/libreria" Component={LazyLibreria} />
-            <Route path="/proyecto/:id" Component={LazyProyectoPublico} />
+            <Route
+              path="/proyecto/:idProyecto"
+              Component={LazyProyectoPublico}
+            />
             <Route path="/nosotros" Component={Nosotros} />
             <Route path="/ingresa" Component={LazyLogin} />
             <Route path="/publicar" Component={LazyProyectoNuevo} />

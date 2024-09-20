@@ -3,19 +3,15 @@ import { useParams } from "react-router-dom";
 import useProyectos from "../hooks/useProyectos";
 import { CircularProgress } from "@mui/material";
 import { ProyectoPublico } from "../components/index";
+import useProyectoPublico from "../hooks/usePublicProyects";
 
 const PageProyectoPublico = () => {
-  const { proyectos, loading } = useProyectos();
-  const { idProyecto } = useParams();
-  const proyecto = proyectos.find(
-    (proyecto) => proyecto.idProyecto == idProyecto
-  );
-  console.log(proyecto);
+  const { proyectoPublico, loading } = useProyectoPublico();
   return loading ? (
     <CircularProgress />
   ) : (
     <>
-      <ProyectoPublico {...proyecto} />
+      <ProyectoPublico proyectoPublico={proyectoPublico} />
     </>
   );
 };

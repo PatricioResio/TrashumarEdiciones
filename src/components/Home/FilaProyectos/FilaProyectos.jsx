@@ -3,9 +3,9 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import { EffectCoverflow, Navigation } from "swiper/modules";
 import "./FilaProyectos.css";
 import "swiper/css/effect-coverflow";
+import { Navigation } from "swiper/modules";
 
 const FilaProyectos = ({ proyectos }) => {
   return (
@@ -16,9 +16,10 @@ const FilaProyectos = ({ proyectos }) => {
         className="mySwiper"
         spaceBetween={7}
         breakpoints={{
-          1180: { slidesPerView: "1" },
-          1690: { slidesPerView: "2" },
-          1980: { slidesPerView: "3" },
+          820: { slidesPerView: "2" },
+          1180: { slidesPerView: "3" },
+          1690: { slidesPerView: "3" },
+          1980: { slidesPerView: "4" },
         }}
       >
         {proyectos.map((proyecto) => (

@@ -62,7 +62,7 @@ export default function CartaPerfiles({ perfil }) {
     </Fade>
   ) : ( */
     <Fade triggerOnce delay={1200}>
-      <Card className="carta-perfiles">
+      <Card className="carta-perfiles" sx={{ borderRadius: "20px" }}>
         <CardMedia
           sx={{ height: "290px" }}
           image={perfil.avatar}

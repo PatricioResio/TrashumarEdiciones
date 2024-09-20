@@ -1,0 +1,14 @@
+.swiper-button-next {
+  width: 20px;
+  margin: auto;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  color: black;
+}
+.swiper-button-prev {
+  width: 60px;
+  height: 20px;
+  left: 0;
+  color: black;
+}

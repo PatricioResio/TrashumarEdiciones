@@ -33,13 +33,14 @@ const Perfil = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        width: "95%",
+        width: "100%",
         m: "auto",
         mt: "40px",
         mb: "0px",
         p: "0",
-        backgroundColor: "#4d7a77",
-        borderRadius: "15px",
+        backgroundColor: "#215E61",
+        borderRadius: "20px",
+        border: "2px solid #3C9990",
         height: { xs: "3200px", md: "2900px", lg: "2200px", xl: "1550px" },
       }}
     >
@@ -51,9 +52,11 @@ const Perfil = () => {
           alignItems: "center",
           width: "100%",
           height: { xs: "1800px", md: "1500px", lg: "1200px", xl: "1500px" },
-          backgroundColor: "#4d7a77",
-          borderRadius: "15px",
-          m: "auto",
+          backgroundColor: "#215E61",
+          borderRadius: "20px",
+          border: "2px solid #3C9990",
+          m: "10px auto",
+          boxShadow: "1px 1px 5px black",
         }}
       >
         <Container
@@ -68,20 +71,15 @@ const Perfil = () => {
             m: "auto auto auto auto",
             mt: { xs: "20px" },
             paddingTop: "0px",
-            border: "2px solid #3c9990",
-            borderRadius: "4%",
-            backgroundColor: "#6BBCA8",
+            borderColor: "#14919B",
+            borderRadius: "2%",
+            backgroundColor: "#BAE3D7",
             position: "relative",
+            color: "#02291F",
           }}
         >
           <Box
             component="img"
-            sx={{
-              margin: "50px",
-              marginTop: "0px",
-              height: "280px",
-              width: "280px",
-            }}
             className="img-perfil-card"
             src={!currentUser ? "No se encontro usuario" : currentUser.avatar}
             alt="foto"
@@ -94,7 +92,12 @@ const Perfil = () => {
               alignItems: "center",
             }}
           >
-            <Typography variant="h3" paragraph fontWeight="bold">
+            <Typography
+              variant="h3"
+              className="h2-perfil-card"
+              paragraph
+              fontWeight="bold"
+            >
               {!currentUser
                 ? "No se encontro usuario"
                 : currentUser.nombrePublico}

@@ -13,25 +13,28 @@ const SectionProyecto = () => {
         flexDirection: "column",
         alignItems: "center",
         marginTop: "20px",
-        fontSize: "20px",
+        fontSize: "26px",
         borderRadius: "10px",
         p: "35px",
+        backgroundColor: "#215E61",
       }}
       maxWidth="2xl"
     >
       <Box
         sx={{
           mb: "20px",
-          width: "75%",
+          width: "100%",
+          maxWidth: "1600px",
           p: "20px",
+          color: "#BAE3D7",
         }}
       >
         <Typography
           sx={{ m: "0 auto 30px auto" }}
           align="center"
-          variant="h2"
+          variant="h1"
           fontWeight="bold"
-          component="h2"
+          component="h1"
         >
           Quiero publicar
         </Typography>

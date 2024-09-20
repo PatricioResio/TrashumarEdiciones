@@ -10,7 +10,7 @@ const FilaColaboraciones = ({ colaboraciones }) => {
     <>
       <Typography
         sx={{
-          mb: "50px",
+          m: "auto auto 50px auto",
           fontSize: { xs: "34px", md: "42px", lg: "50px", xl: "60px" },
         }}
         variant="h3"
@@ -22,9 +22,10 @@ const FilaColaboraciones = ({ colaboraciones }) => {
         navigation={true}
         modules={[Navigation]}
         className="swiper"
+        centeredSlides
         spaceBetween={1}
         breakpoints={{
-          1180: { slidesPerView: "1" },
+          1180: { slidesPerView: "2" },
           1690: { slidesPerView: "2" },
           1980: { slidesPerView: "2" },
         }}

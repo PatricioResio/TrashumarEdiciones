@@ -4,184 +4,2730 @@ import {
   Typography,
   FormGroup,
   FormControlLabel,
+  RadioGroup,
+  Radio,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from "@mui/material";
-import { useFormik } from "formik";
-import * as yup from "yup";
+import { Fade } from "react-awesome-reveal";
 
-const validationSchema = yup.object({
-  email: yup
-    .string("Enter your email")
-    .email("Enter a valid email")
-    .required("Email is required"),
-  password: yup
-    .string("Enter your password")
-    .min(8, "Password should be of minimum 8 characters length")
-    .required("Password is required"),
-});
+const FormTextoUnico = ({ formik }) => {
+  return (
+    <>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿En qué etapa del desarrollo te encontras?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="etapaDesarrollo"
+              label="etapaDesarrollo"
+              variant="outlined"
+              value={formik.values.etapaDesarrollo}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.etapaDesarrollo &&
+                Boolean(formik.errors.etapaDesarrollo)
+              }
+              helperText={
+                formik.touched.etapaDesarrollo && formik.errors.etapaDesarrollo
+              }
+            />
+          }
+          label="ESTOY TRABAJANDO EN EL TEXTO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="Manuscrito"
+              label="Manuscrito"
+              variant="outlined"
+              value={formik.values.manuscritoTerminado}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.manuscritoTerminado &&
+                Boolean(formik.errors.manuscritoTerminado)
+              }
+              helperText={
+                formik.touched.manuscritoTerminado &&
+                formik.errors.manuscritoTerminado
+              }
+            />
+          }
+          label="TENGO EL MANUSCRITO TERMINADO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="ManuscritoTerminadoCorregido"
+              label="ManuscritoTerminadoCorregido"
+              variant="outlined"
+              value={formik.values.manuscritoTerminadoCorregido}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.manuscritoTerminadoCorregido &&
+                Boolean(formik.errors.manuscritoTerminadoCorregido)
+              }
+              helperText={
+                formik.touched.manuscritoTerminadoCorregido &&
+                formik.errors.manuscritoTerminadoCorregido
+              }
+            />
+          }
+          label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="ListoParaPublicar"
+              label="ListoParaPublicar"
+              variant="outlined"
+              value={formik.values.listoPublicar}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO TODO LISTO PARA PUBLICAR."
+        />
+      </FormGroup>
 
-const Forms1 = () => {
-  return (
-    <FormGroup>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          {" "}
+          ¿El texto esta acompañado de una o mas imagenes?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes listas"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="Si, ya las tengo listas"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes a crear"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="Si, no las tengo listas."
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="No incluira imagenes"
+        />
+      </RadioGroup>
+
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Que etapas te hace falta cubrir?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="INFORME DE LECTURA."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="CORRECCIÓN GRAMATICAL."
+        />
+        {/*             <FormControlLabel
+              control={
+                <Checkbox
+                id="Aquí podes explayarte"
+                label="Aquí podes explayarte"
+                  variant="outlined"
+                  value={formik.values.facebookForm}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={
+                    formik.touched.facebookForm &&
+                    Boolean(formik.errors.facebookForm)
+                  }
+                  helperText={
+                    formik.touched.facebookForm && formik.errors.facebookForm
+                  }
+                />
+              }
+              label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+            /> */}
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="CORRECCIÓN DE ESTILO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="traducir"
+              label="traducir"
+              variant="outlined"
+              value={formik.values.traducir}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}
+            />
+          }
+          label="TRADUCIR"
+        />
+      </FormGroup>
+      {formik.values.traducir === true ? (
+        <Fade>
+          <Typography component="h4" variant="outlined">
+            {" "}
+            Traducción
+          </Typography>
+          <Typography
+            component="h4"
+            id="IDIOMA"
+            label="IDIOMA"
+            variant="outlined"
+          >
+            Selecciona el idioma original
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              Idioma original
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Idioma"
+              value={formik.values.idiomaOriginal}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+          <Typography
+            component="h4"
+            id="IDIOMATRADUCCION"
+            label="IDIOMATRADUCCION"
+            variant="outlined"
+          >
+            A que idioma queres traducirlo?
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="idiomaTraduccion">Idioma a traducir</InputLabel>
+            <Select
+              labelId="idiomaTraduccion"
+              id="idiomaTraduccion"
+              label="idiomaTraduccion"
+              value={formik.values.idiomaTraduccion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+        </Fade>
+      ) : (
+        <></>
+      )}
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          {" "}
+          ¿Qué posición tendrías ante limitaciones presupuestarias?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes listas"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS "
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes a crear"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PREFIERO QUE LO CUBRA LA EDITORIAL, AUNQUE MI PAGO QUEDE PENDIENTE"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="LO QUIERO HACER AD HONOREN"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO HAY TRATO"
+        />
+      </RadioGroup>
       <Typography
-        component="h4"
-        id="outlined-basic"
-        label="AUTORES"
-        variant="outlined"
+        fontSize={"20px"}
+        sx={{
+          backgroundColor: "#215E61",
+          border: "2px solid ",
+          borderRadius: "10px",
+          color: "#CBF7EB",
+          padding: "5px",
+        }}
       >
-        Elegí el formato a trabajar
+        Intentaremos cubrir los gastos y pagarte, pero dependerá del presupuesto
+        que dispongamos. En el caso de que no podamos hacerlo de forma
+        inmediata, este quedara pendiente y sera abonado cuando la situación lo
+        permita, actualizado según nuestro tarifario. Tendremos en cuenta tu
+        propuesta y haremos lo posible por publicar tu texto. Tené en cuenta que
+        tu aporte acelerara las cosas.
       </Typography>
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="QUIERO PUBLICAR UN TEXTO ÚNICO EN LA PÁGINA"
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="QUIERO PUBLICAR UNA SERIE DE TEXTOS EN LA PÁGINA"
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="QUIERO PUBLICAR UN LIBRO DIGITAL"
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="QUIERO PUBLICAR UN LIBRO FISICO"
-      />
-    </FormGroup>
+    </>
   );
 };
-const Forms2 = () => {
+const FormSerieDeTextos = ({ formik }) => {
   return (
-    <FormGroup>
+    <>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿En qué etapa del desarrollo te encontras?
+        </Typography>
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="etapaDesarrollo"
+              label="etapaDesarrollo"
+              variant="outlined"
+              value={formik.values.etapaDesarrollo}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.etapaDesarrollo &&
+                Boolean(formik.errors.etapaDesarrollo)
+              }
+              helperText={
+                formik.touched.etapaDesarrollo && formik.errors.etapaDesarrollo
+              }
+            />
+          }
+          label="ESTOY TRABAJANDO EN EL TEXTO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="Manuscrito"
+              label="Manuscrito"
+              variant="outlined"
+              value={formik.values.manuscritoTerminado}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.manuscritoTerminado &&
+                Boolean(formik.errors.manuscritoTerminado)
+              }
+              helperText={
+                formik.touched.manuscritoTerminado &&
+                formik.errors.manuscritoTerminado
+              }
+            />
+          }
+          label="TENGO EL MANUSCRITO TERMINADO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="ManuscritoTerminadoCorregido"
+              label="ManuscritoTerminadoCorregido"
+              variant="outlined"
+              value={formik.values.manuscritoTerminadoCorregido}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.manuscritoTerminadoCorregido &&
+                Boolean(formik.errors.manuscritoTerminadoCorregido)
+              }
+              helperText={
+                formik.touched.manuscritoTerminadoCorregido &&
+                formik.errors.manuscritoTerminadoCorregido
+              }
+            />
+          }
+          label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="ListoParaPublicar"
+              label="ListoParaPublicar"
+              variant="outlined"
+              value={formik.values.listoPublicar}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO TODO LISTO PARA PUBLICAR."
+        />
+      </FormGroup>
+
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          {" "}
+          ¿El texto esta acompañado de una o mas imagenes?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes listas"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="Si, ya las tengo listas"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes a crear"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="Si, no las tengo listas."
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="No incluira imagenes"
+        />
+      </RadioGroup>
+
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Que etapas te hace falta cubrir?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="INFORME DE LECTURA."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="CORRECCIÓN GRAMATICAL."
+        />
+        {/*             <FormControlLabel
+              control={
+                <Checkbox
+                  id="Aquí podes explayarte"
+                  label="Aquí podes explayarte"
+                  variant="outlined"
+                  value={formik.values.facebookForm}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={
+                    formik.touched.facebookForm &&
+                    Boolean(formik.errors.facebookForm)
+                  }
+                  helperText={
+                    formik.touched.facebookForm && formik.errors.facebookForm
+                  }
+                />
+              }
+              label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+            /> */}
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="CORRECCIÓN DE ESTILO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="traduccir"
+              label="traduccir"
+              variant="outlined"
+              value={formik.values.traducir}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}
+            />
+          }
+          label="TRADUCCIÓN"
+        />
+      </FormGroup>
+      {formik.values.traducir === true ? (
+        <Fade>
+          <Typography component="h4" variant="outlined">
+            {" "}
+            Traducción
+          </Typography>
+          <Typography
+            component="h4"
+            id="IDIOMA"
+            label="IDIOMA"
+            variant="outlined"
+          >
+            Selecciona el idioma original
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              Idioma original
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Idioma"
+              value={formik.values.idiomaOriginal}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+          <Typography
+            component="h4"
+            id="IDIOMATRADUCCION"
+            label="IDIOMATRADUCCION"
+            variant="outlined"
+          >
+            A que idioma queres traducirlo?
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="idiomaTraduccion">Idioma a traducir</InputLabel>
+            <Select
+              labelId="idiomaTraduccion"
+              id="idiomaTraduccion"
+              label="idiomaTraduccion"
+              value={formik.values.idiomaTraduccion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+        </Fade>
+      ) : (
+        <></>
+      )}
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          {" "}
+          ¿Qué posición tendrías ante limitaciones presupuestarias??
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes listas"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS "
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes a crear"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PREFIERO QUE LO CUBRA LA EDITORIAL, AUNQUE MI PAGO QUEDE PENDIENTE"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="LO QUIERO HACER AD HONOREN"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO HAY TRATO
+            "
+        />
+      </RadioGroup>
       <Typography
-        component="h4"
-        id="outlined-basic"
-        label="AUTORES"
-        variant="outlined"
+        fontSize={"20px"}
+        sx={{
+          backgroundColor: "#215E61",
+          border: "2px solid ",
+          borderRadius: "10px",
+          color: "#CBF7EB",
+          padding: "5px",
+        }}
       >
-        selecciona el rol que cumplís en la obra{" "}
+        Intentaremos cubrir los gastos y pagarte, pero dependerá del presupuesto
+        que dispongamos. En el caso de que no podamos hacerlo de forma
+        inmediata, este quedara pendiente y sera abonado cuando la situación lo
+        permita, actualizado según nuestro tarifario. Tendremos en cuenta tu
+        propuesta y haremos lo posible por publicar tu texto. Tené en cuenta que
+        tu aporte acelerara las cosas.
       </Typography>
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="EL CONTENIDO A PUBLICAR ES DE MI AUTORIA"
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="EDITARÉ CONTENIDO AJENO"
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="TENGO LA IDEA, PERO NO LO VOY A ESCRIBIR"
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="QUIERO PUBLICAR UN LIBRO FISICO"
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="QUIERO PUBLICAR UN LIBRO FISICO"
-      />
-    </FormGroup>
+    </>
   );
 };
-const Forms3 = () => {
+const FormLibroContenidoDeAutor = ({ formik }) => {
   return (
-    <FormGroup>
-      <Typography
-        component="h4"
-        id="outlined-basic"
-        label="AUTORES"
-        variant="outlined"
-      >
-        {" "}
-        Contanos de que se trata (formato, genero, sinopsis, etcétera).
-      </Typography>
-      <TextField
-        id="Aquí podes explayarte"
-        label="Aquí podes explayarte"
-        variant="outlined"
-      />
-      <Typography
-        component="h4"
-        id="outlined-basic"
-        label="AUTORES"
-        variant="outlined"
-      >
-        {" "}
-        ¿En que etapa del desarrollo te encontras?
-      </Typography>
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="ESTOY TRABAJANDO EN EL TEXTO."
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="TENGO EL MANUSCRITO TERMINADO."
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="TENGO TODO LISTO PARA PUBLICAR."
-      />
-    </FormGroup>
+    <>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Que etapas te hace falta cubrir?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="INFORME DE LECTURA."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="CORRECCIÓN GRAMATICAL."
+        />
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="CORRECCIÓN DE ESTILO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="DISEÑO E IMAGENES INTERNAS"
+              label="DISEÑO E IMAGENES INTERNAS"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="DISEÑO E IMAGENES INTERNAS."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="ARTE DE TAPA Y CONTRATAPA."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="EDICIÓN Y MAQUETACIÓN."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="traducir"
+              label="traducir"
+              variant="outlined"
+              value={formik.values.traducir}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}
+            />
+          }
+          label="TRADUCIR"
+        />
+      </FormGroup>
+      {formik.values.traducir === true ? (
+        <Fade>
+          <Typography component="h4" variant="outlined">
+            {" "}
+            Traducción
+          </Typography>
+          <Typography
+            component="h4"
+            id="IDIOMA"
+            label="IDIOMA"
+            variant="outlined"
+          >
+            Selecciona el idioma original
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              Idioma original
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Idioma"
+              value={formik.values.idiomaOriginal}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+          <Typography
+            component="h4"
+            id="IDIOMATRADUCCION"
+            label="IDIOMATRADUCCION"
+            variant="outlined"
+          >
+            A que idioma queres traducirlo?
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="idiomaTraduccion">Idioma a traducir</InputLabel>
+            <Select
+              labelId="idiomaTraduccion"
+              id="idiomaTraduccion"
+              label="idiomaTraduccion"
+              value={formik.values.idiomaTraduccion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+        </Fade>
+      ) : (
+        <></>
+      )}
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Que etapas te hace falta cubrir?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="PUEDO CUBRIR LA PRIMERA TANDA DE IMPRESIONES."
+        />
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="PRECISO UNA BECA."
+        />
+        <Typography
+          fontSize={"20px"}
+          sx={{
+            backgroundColor: "#215E61",
+            border: "2px solid ",
+            borderRadius: "10px",
+            color: "#CBF7EB",
+            padding: "5px",
+          }}
+        >
+          TRASHUMAR abre becas periódicamente, en la medida en que la plataforma
+          y el presupuesto lo permite. La selección de que libros publicar está
+          sujeta al catálogo preexistente y a las propuestas que recibamos. Tené
+          en cuenta que, si estás dispuesto a financiar alguna parte, esto se
+          puede acelerar. Tu contrato tendrá en consideración estos factores.
+        </Typography>
+      </FormGroup>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Vas a involucrarte en la distribución del libro? / Para esto, debes
+          registrarte en DISTRIBUIDORES.
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="SI, LO HARÉ YO EN PERSONA"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="SI, PERO NO EXCLUSIVAMENTE."
+        />
+
+        <FormControlLabel
+          control={
+            <Radio
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="NO, GRACIAS."
+        />
+        <Typography
+          fontSize={"20px"}
+          sx={{
+            backgroundColor: "#215E61",
+            border: "2px solid ",
+            borderRadius: "10px",
+            color: "#CBF7EB",
+            padding: "5px",
+          }}
+        >
+          Considera que tu compromiso con la distribución facilitara la llegada
+          al público.
+        </Typography>
+      </RadioGroup>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Qué tipo de distribución te gustaría?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="QUIERO QUE LO DISTRIBUYAN OTROS MIEMBROS DE TRASHUMAR"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="QUIERO QUE SE DISTRIBUYA EN LIBRERIAS"
+        />
+
+        <Typography
+          fontSize={"20px"}
+          sx={{
+            backgroundColor: "#215E61",
+            border: "2px solid ",
+            borderRadius: "10px",
+            color: "#CBF7EB",
+            padding: "5px",
+          }}
+        >
+          Ojo. La opción LIBRERIAS te permitirá un precio de venta mayor, y
+          llegada a un público más “formal”. Sin embargo, pueden presentar
+          exigencias difíciles de cumplir, como tiradas altas o acuerdos de
+          exclusividad. De la misma manera, es probable que sean más selectivas
+          a la hora de tomar un libro.
+        </Typography>
+      </RadioGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Qué reconocimiento recibirán?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE EN PORTADA, JUNTO AL MIO"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SU NOMBRE EN PORTADA, JUNTO AL MIO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE EN PORTADA, SIN EL MIO"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PUEDO CUBRIR LA PRIMERA TANDA DE IMPRESIONES."
+        />
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE JUNTO A EL O LOS TEXTOS SUYOS"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SU NOMBRE JUNTO A EL O LOS TEXTOS SUYOS"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE EN EL INICIO DEL LIBRO"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SU NOMBRE EN EL INICIO DEL LIBRO"
+        />
+      </FormGroup>
+    </>
   );
 };
-const Forms4 = () => {
+const FormLibroEditarContenidoAjeno = ({ formik }) => {
   return (
-    <FormGroup>
-      <Typography component="h4" id="ETAPAS" label="ETAPAS" variant="outlined">
-        {" "}
-        ¿Que etapas te hace falta cubrir?{" "}
-      </Typography>
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="INFORME DE LECTURA."
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="CORRECCIÓN GRAMATICAL."
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
-      />
-      <FormControlLabel
-        control={<Checkbox name="jason" />}
-        label="CORRECCIÓN DE ESTILO."
-      />
+    <>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿Qué rol cumplís en el libro?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="ContenidoMiAutoria"
+              label="ContenidoMiAutoria"
+              variant="outlined"
+              name="rolEnElLibro"
+              value="Contenido de mi autoria"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="INFORME DE LECTURA"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="Editar"
+              label="Editar"
+              variant="outlined"
+              name="rolEnElLibro"
+              value="CORRECCIÓN GRAMATICAL"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="CORRECCIÓN GRAMATICAL"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="tengoIdea"
+              label="tengoIdea"
+              variant="outlined"
+              name="rolEnElLibro"
+              value="CORRECCIÓN DE ESTILO"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="CORRECCIÓN DE ESTILO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="tengoIdea"
+              label="tengoIdea"
+              variant="outlined"
+              name="rolEnElLibro"
+              value="EDICIÓN Y MAQUETACIÓN"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="EDICIÓN Y MAQUETACIÓN"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="traducir"
+              label="traducir"
+              variant="outlined"
+              value={formik.values.traducir}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}
+            />
+          }
+          label="TRADUCIR"
+        />
+      </FormGroup>
+      {formik.values.traducir === true ? (
+        <Fade>
+          <Typography component="h4" variant="outlined">
+            {" "}
+            Traducción
+          </Typography>
+          <Typography
+            component="h4"
+            id="IDIOMA"
+            label="IDIOMA"
+            variant="outlined"
+          >
+            Selecciona el idioma original
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              Idioma original
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Idioma"
+              value={formik.values.idiomaOriginal}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+          <Typography
+            component="h4"
+            id="IDIOMATRADUCCION"
+            label="IDIOMATRADUCCION"
+            variant="outlined"
+          >
+            A que idioma queres traducirlo?
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="idiomaTraduccion">Idioma a traducir</InputLabel>
+            <Select
+              labelId="idiomaTraduccion"
+              id="idiomaTraduccion"
+              label="idiomaTraduccion"
+              value={formik.values.idiomaTraduccion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+        </Fade>
+      ) : (
+        <></>
+      )}
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography component="h4" variant="outlined">
+          ¿Qué rol cumplen?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="noParticipa"
+              label="noParticipa"
+              name="otroAutor"
+              variant="outlined"
+              value="No participa"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO PARTICIPAN EN EL ARMADO DEL LIBRO"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="siParticipa"
+              label="siParticipa"
+              variant="outlined"
+              name="otroAutor"
+              value="Si participa"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PARTICIPAN ACTIVAMENTE EN EL ARMADO DEL LIBRO"
+        />
+      </RadioGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Qué reconocimiento recibirán?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeDeLectura"
+              label="reconocimientoAutor"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE EN PORTADA, JUNTO AL MIO"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SU NOMBRE EN PORTADA, JUNTO AL MIO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="CorreccionGramatical"
+              label="reconocimientoAutor"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE EN PORTADA, SIN EL MIO"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PUEDO CUBRIR LA PRIMERA TANDA DE IMPRESIONES."
+        />
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="reconocimientoAutor"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE JUNTO A EL O LOS TEXTOS SUYOS"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SU NOMBRE JUNTO A EL O LOS TEXTOS SUYOS"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="reconocimientoAutor"
+              variant="outlined"
+              name="reconocimientoAutor"
+              value="SU NOMBRE EN EL INICIO DEL LIBRO"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SU NOMBRE EN EL INICIO DEL LIBRO"
+        />
+      </FormGroup>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography component="h4" variant="outlined">
+          ¿Cómo es el acuerdo comercial entre ustedes?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="LO ARREGLAMOS DE FORMA PRIVADA"
+              label="acuerdoComercialNoAutor"
+              name="acuerdoComercialNoAutor"
+              variant="outlined"
+              value="LO ARREGLAMOS DE FORMA PRIVADA"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="LO ARREGLAMOS DE FORMA PRIVADA"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="RECIBEN UN PORCENTAJE DE FORMA DIRECTA"
+              label="acuerdoComercialNoAutor"
+              name="acuerdoComercialNoAutor"
+              variant="outlined"
+              value="RECIBEN UN PORCENTAJE DE FORMA DIRECTA"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="RECIBEN UN PORCENTAJE DE FORMA DIRECTA"
+        />
+        {formik.values.acuerdoComercialNoAutor ===
+        "RECIBEN UN PORCENTAJE DE FORMA DIRECTA" ? (
+          <TextField
+            id="RECIBEN UN PORCENTAJE"
+            name="acuerdoComercialPorcentaje"
+            variant="outlined"
+            label="El porcentaje que reciben es.."
+            value={formik.values.acuerdoComercialPorcentaje}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
+        ) : (
+          <></>
+        )}
+      </RadioGroup>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography component="h4" variant="outlined">
+          ¿En qué etapa del desarrollo te encontras?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="ESTAMOS TRABAJANDO EN EL TEXTO."
+              label="ESTAMOS TRABAJANDO EN EL TEXTO."
+              name="etapaDesarrollo"
+              variant="outlined"
+              value="ESTAMOS TRABAJANDO EN EL TEXTO."
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="ESTAMOS TRABAJANDO EN EL TEXTO."
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="TENEMOS EL MANUSCRITO TERMINADO."
+              label="TENEMOS EL MANUSCRITO TERMINADO."
+              name="etapaDesarrollo"
+              variant="outlined"
+              value="TENEMOS EL MANUSCRITO TERMINADO."
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENEMOS EL MANUSCRITO TERMINADO."
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="TENEMOS MANUSCRITO TERMINADO Y CORREGIDO."
+              label="TENEMOS MANUSCRITO TERMINADO Y CORREGIDO."
+              name="etapaDesarrollo"
+              variant="outlined"
+              value="TENEMOS MANUSCRITO TERMINADO Y CORREGIDO."
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENEMOS MANUSCRITO TERMINADO Y CORREGIDO."
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="TENEMOS TODO LISTO PARA PUBLICAR."
+              label="TENEMOS TODO LISTO PARA PUBLICAR."
+              name="etapaDesarrollo"
+              variant="outlined"
+              value="TENEMOS TODO LISTO PARA PUBLICAR."
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENEMOS TODO LISTO PARA PUBLICAR."
+        />
+      </RadioGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Que etapas te hace falta cubrir?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="INFORME DE LECTURA."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="CORRECCIÓN GRAMATICAL."
+        />
+
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="CORRECCIÓN DE ESTILO."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="DISEÑO E IMAGENES INTERNAS"
+              label="DISEÑO E IMAGENES INTERNAS"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="DISEÑO E IMAGENES INTERNAS."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="ARTE DE TAPA Y CONTRATAPA."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="EDICIÓN Y MAQUETACIÓN."
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="traducir"
+              label="traducir"
+              variant="outlined"
+              value={formik.values.traducir}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TRADUCIR"
+        />
+      </FormGroup>
+      {formik.values.traducir === true ? (
+        <>
+          <Typography component="h4" variant="outlined">
+            {" "}
+            Traducción
+          </Typography>
+          <Typography
+            component="h4"
+            id="IDIOMA"
+            label="IDIOMA"
+            variant="outlined"
+          >
+            Selecciona el idioma original
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="demo-simple-select-label">
+              Idioma original
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              label="Idioma"
+              value={formik.values.idiomaOriginal}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+          <Typography
+            component="h4"
+            id="IDIOMATRADUCCION"
+            label="IDIOMATRADUCCION"
+            variant="outlined"
+          >
+            A que idioma queres traducirlo?
+          </Typography>
+          <FormControl sx={{ m: "10px 0" }} fullWidth>
+            <InputLabel id="idiomaTraduccion">Idioma a traducir</InputLabel>
+            <Select
+              labelId="idiomaTraduccion"
+              id="idiomaTraduccion"
+              label="idiomaTraduccion"
+              value={formik.values.idiomaTraduccion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+            >
+              <MenuItem value={10}>Español (latinoamerica)</MenuItem>
+              <MenuItem value={20}>Ingles</MenuItem>
+              <MenuItem value={30}>Frances</MenuItem>
+              <MenuItem value={40}>Aleman</MenuItem>
+              <MenuItem value={50}>Portugues</MenuItem>
+              <MenuItem value={60}>Japones</MenuItem>
+            </Select>
+          </FormControl>
+        </>
+      ) : (
+        <></>
+      )}
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          {" "}
+          ¿Qué posición tendrías ante limitaciones presupuestarias?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes listas"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS "
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes a crear"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PREFIERO QUE LO CUBRA LA EDITORIAL, AUNQUE MI PAGO QUEDE PENDIENTE"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="LO QUIERO HACER AD HONOREN"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO HAY TRATO
+                "
+        />
+      </RadioGroup>
       <Typography
-        component="h4"
-        id="TRADUCCION"
-        label="TRADUCCION"
-        variant="outlined"
+        fontSize={"20px"}
+        sx={{
+          backgroundColor: "#215E61",
+          border: "2px solid ",
+          borderRadius: "10px",
+          color: "#CBF7EB",
+          padding: "5px",
+        }}
       >
-        {" "}
-        Traducción
+        TRASHUMAR abre becas periódicamente, en la medida en que la plataforma y
+        el presupuesto lo permite. La selección de que libros publicar está
+        sujeta al catálogo preexistente y a las propuestas que recibamos. Tené
+        en cuenta que, si estás dispuesto a financiar alguna parte, esto se
+        puede acelerar. Tu contrato tendrá en consideración estos factores.
       </Typography>
-      <Typography component="h4" id="IDIOMA" label="IDIOMA" variant="outlined">
-        Selecciona el idioma original
-      </Typography>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Vas a involucrarte en la distribución del libro? / Para esto, debes
+          registrarte en DISTRIBUIDORES.
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="SI, LO HARÉ YO EN PERSONA"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="SI, PERO NO EXCLUSIVAMENTE."
+        />
+
+        <FormControlLabel
+          control={
+            <Radio
+              id="correccionDeEstilo"
+              label="correccionDeEstilo"
+              variant="outlined"
+              value={formik.values.correccionEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionEstilos &&
+                Boolean(formik.errors.correccionEstilos)
+              }
+              helperText={
+                formik.touched.correccionEstilos &&
+                formik.errors.correccionEstilos
+              }
+            />
+          }
+          label="NO, GRACIAS."
+        />
+        <Typography>
+          Considera que tu compromiso con la distribución facilitara la llegada
+          al público.
+        </Typography>
+      </RadioGroup>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="ETAPAS"
+          label="ETAPAS"
+          variant="outlined"
+        >
+          ¿Qué tipo de distribución te gustaría?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="informeDeLectura"
+              label="informeDeLectura"
+              variant="outlined"
+              value={formik.values.informeDeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.informeDeLectura &&
+                Boolean(formik.errors.informeDeLectura)
+              }
+              helperText={
+                formik.touched.informeDeLectura &&
+                formik.errors.informeDeLectura
+              }
+            />
+          }
+          label="QUIERO QUE LO DISTRIBUYAN OTROS MIEMBROS DE TRASHUMAR"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="CorreccionGramatical"
+              label="CorreccionGramatical"
+              variant="outlined"
+              value={formik.values.correccionGramatical}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              error={
+                formik.touched.correccionGramatical &&
+                Boolean(formik.errors.correccionGramatical)
+              }
+              helperText={
+                formik.touched.correccionGramatical &&
+                formik.errors.correccionGramatical
+              }
+            />
+          }
+          label="QUIERO QUE SE DISTRIBUYA EN LIBRERIAS"
+        />
+
+        <Typography
+          fontSize={"20px"}
+          sx={{
+            backgroundColor: "#215E61",
+            border: "2px solid ",
+            borderRadius: "10px",
+            color: "#CBF7EB",
+            padding: "5px",
+          }}
+        >
+          Ojo. La opción LIBRERIAS te permitirá un precio de venta mayor, y
+          llegada a un público más “formal”. Sin embargo, pueden presentar
+          exigencias difíciles de cumplir, como tiradas altas o acuerdos de
+          exclusividad. De la misma manera, es probable que sean más selectivas
+          a la hora de tomar un libro.
+        </Typography>
+      </RadioGroup>
+    </>
+  );
+};
+const FormLibroSoloLaIdea = ({ formik }) => {
+  return (
+    <>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          fontSize={"20px"}
+          sx={{
+            backgroundColor: "#215E61",
+            border: "2px solid ",
+            borderRadius: "10px",
+            color: "#CBF7EB",
+            padding: "5px",
+          }}
+        >
+          Por decisión editorial y financiera, TRASHUMAR no otorga becas para
+          libros auto bibliográficos o auto ficción. Perdonanos. Y ahora sí,
+          contanos de que se trata (formato, genero, sinopsis, etcétera).
+        </Typography>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿Qué relación tenes vos con la idea original?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              variant="outlined"
+              id="vivenciasYAprendizajes"
+              label="vivenciasYAprendizajes"
+              name="relacionIdeaOriginal"
+              value="SON VIVENCIAS Y APRENDIZAJES DE TIPO PERSONAL"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SON VIVENCIAS Y APRENDIZAJES DE TIPO PERSONAL"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="areaDeInteres"
+              label="areaDeInteres"
+              variant="outlined"
+              name="relacionIdeaOriginal"
+              value="TIENE QUE VER CON UN ÁREA DE MI INTERES"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TIENE QUE VER CON UN ÁREA DE MI INTERES"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="soyProfesional"
+              label="soyProfesional"
+              variant="outlined"
+              name="relacionIdeaOriginal"
+              value="SOY PROFESIONAL EN EL TEMA"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="SOY PROFESIONAL EN EL TEMA"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="ideaFicticiaPropia"
+              label="ideaFicticiaPropia"
+              variant="outlined"
+              name="relacionIdeaOriginal"
+              value="ES UNA HISTORIA FICTICIA IDEADA POR MÍ"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="ES UNA HISTORIA FICTICIA IDEADA POR MÍ"
+        />
+      </RadioGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿En qué procesos intervendrás?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="guiareArmado"
+              label="guiareArmado"
+              variant="outlined"
+              value={formik.values.guiareArmado}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="GUIARÉ EL ARMADO DEL LIBRO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="recopilarInformacion"
+              label="recopilarInformacion"
+              variant="outlined"
+              value={formik.values.recopilarInformacion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="RECOPILARE INFORMACIÓN Y HARE DE INTERMEDIARIO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="controlarContenido"
+              label="controlarContenido"
+              variant="outlined"
+              value={formik.values.controlarContenido}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="CONTROLARE EL CONTENIDO QUE SE PRODUCE"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="noIntervendre"
+              label="noIntervendre"
+              variant="outlined"
+              value={formik.values.noIntervendre}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO INTERVENDRÉ EN ABSOLUTO"
+        />
+      </FormGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿Tenes material previo?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="textosEscritosPorMi"
+              label="textosEscritosPorMi"
+              variant="outlined"
+              value={formik.values.textosEscritosPorMi}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO TEXTOS ESCRITOS POR MÍ"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="tengoInformacionAlRespecto"
+              label="tengoInformacionAlRespecto"
+              variant="outlined"
+              value={formik.values.tengoInformacionAlRespecto}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO INFORMACIÓN AL RESPECTO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="tengoIdeasYPropuestas"
+              label="tengoIdeasYPropuestas"
+              variant="outlined"
+              value={formik.values.tengoIdeasYPropuestas}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO IDEAS Y PROPUESTAS"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="noTengoNadaPensado"
+              label="noTengoNadaPensado"
+              variant="outlined"
+              value={formik.values.noTengoNadaPensado}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO TENGO NADA PENSADO"
+        />
+      </FormGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿En qué procesos intervendrás?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="guiareArmado"
+              label="guiareArmado"
+              variant="outlined"
+              value={formik.values.guiareArmado}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="GUIARÉ EL ARMADO DEL LIBRO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="recopilarInformacion"
+              label="recopilarInformacion"
+              variant="outlined"
+              value={formik.values.recopilarInformacion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="RECOPILARE INFORMACIÓN Y HARE DE INTERMEDIARIO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="controlarContenido"
+              label="controlarContenido"
+              variant="outlined"
+              value={formik.values.controlarContenido}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="CONTROLARE EL CONTENIDO QUE SE PRODUCE"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="noIntervendre"
+              label="noIntervendre"
+              variant="outlined"
+              value={formik.values.noIntervendre}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO INTERVENDRÉ EN ABSOLUTO"
+        />
+      </FormGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿Tenes material previo?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="textosEscritosPorMi"
+              label="textosEscritosPorMi"
+              variant="outlined"
+              value={formik.values.textosEscritosPorMi}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO TEXTOS ESCRITOS POR MÍ"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="tengoInformacionAlRespecto"
+              label="tengoInformacionAlRespecto"
+              variant="outlined"
+              value={formik.values.tengoInformacionAlRespecto}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO INFORMACIÓN AL RESPECTO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="tengoIdeasYPropuestas"
+              label="tengoIdeasYPropuestas"
+              variant="outlined"
+              value={formik.values.tengoIdeasYPropuestas}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="TENGO IDEAS Y PROPUESTAS"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="noTengoNadaPensado"
+              label="noTengoNadaPensado"
+              variant="outlined"
+              value={formik.values.noTengoNadaPensado}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO TENGO NADA PENSADO"
+        />
+      </FormGroup>
+      <FormGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          ¿Qué etapas te hace falta cubrir?
+        </Typography>
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="entrevistasEstudioYBibliografia"
+              label="entrevistasEstudioYBibliografia"
+              variant="outlined"
+              value={formik.values.entrevistasEstudioYBibliografia}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="ENTREVISTAS, ESTUDIO Y BIBLIOGRAFÍA"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="escrituraIntegralDelTexto"
+              label="escrituraIntegralDelTexto"
+              variant="outlined"
+              value={formik.values.escrituraIntegralDelTexto}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="ESCRITURA INTEGRAL DEL TEXTO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="escrituraParcialDelTexto"
+              label="escrituraParcialDelTexto"
+              variant="outlined"
+              value={formik.values.escrituraParcialDelTexto}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="ESCRITURA PARCIAL DEL TEXTO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="informeLectura"
+              label="informeLectura"
+              variant="outlined"
+              value={formik.values.informeLectura}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="INFORME DE LECTURA"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="disenioEImagenes"
+              label="disenioEImagenes"
+              variant="outlined"
+              value={formik.values.disenioEImagenes}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="DISEÑO E IMÁGENES INTERNAS"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="correccionGramaticalYEstilos"
+              label="correccionGramaticalYEstilos"
+              variant="outlined"
+              value={formik.values.correccionGramaticalYEstilos}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="CORRECCIÓN GRAMATICAL Y DE ESTILO"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="fotografia"
+              label="fotografia"
+              variant="outlined"
+              value={formik.values.fotografia}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="FOTOGRAFÍA
+                    "
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="arteDeTapayContratapa"
+              label="arteDeTapayContratapa"
+              variant="outlined"
+              value={formik.values.arteDeTapayContratapa}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="ARTE DE TAPA Y CONTRATAPA
+                    "
+        />
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="edicionYMaquetacion"
+              label="edicionYMaquetacion"
+              variant="outlined"
+              value={formik.values.edicionYMaquetacion}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="EDICIÓN Y MAQUETACIÓN"
+        />
+      </FormGroup>
+      <RadioGroup sx={{ m: "10px 0" }}>
+        <Typography
+          component="h4"
+          id="outlined-basic"
+          label="AUTORES"
+          variant="outlined"
+        >
+          {" "}
+          ¿Qué posición tendrías ante limitaciones presupuestarias??
+        </Typography>
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes listas"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS "
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="imagenes a crear"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="PREFIERO QUE LO CUBRA LA EDITORIAL, AUNQUE MI PAGO QUEDE PENDIENTE"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="LO QUIERO HACER AD HONOREN"
+        />
+        <FormControlLabel
+          control={
+            <Radio
+              id="imagenesProyecto"
+              label="imagenesProyecto"
+              value="sin imagenes"
+              variant="outlined"
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+            />
+          }
+          label="NO HAY TRATO"
+        />
+      </RadioGroup>
       <Typography
-        component="h4"
-        id="IDIOMATRADUCCION"
-        label="IDIOMATRADUCCION"
-        variant="outlined"
+        fontSize={"20px"}
+        sx={{
+          backgroundColor: "#215E61",
+          border: "2px solid ",
+          borderRadius: "10px",
+          color: "#CBF7EB",
+          padding: "5px",
+        }}
       >
-        A que idioma queres traducirlo?
+        TRASHUMAR abre becas periódicamente, en la medida en que la plataforma y
+        el presupuesto lo permite. La selección de que libros publicar está
+        sujeta al catálogo preexistente y a las propuestas que recibamos. Tené
+        en cuenta que, si estás dispuesto a financiar alguna parte, esto se
+        puede acelerar. Tu contrato tendrá en consideración estos factores.
       </Typography>
-      <Typography
-        component="h4"
-        id="TRABAJANDOENELTEXTO"
-        label="TRABAJANDOENELTEXTO"
-        variant="outlined"
-      >
-        ESTOY TRABAJANDO EN EL TEXTO.
-      </Typography>
-      <TextField id="outlined" label="Outlined" variant="outlined" />
-    </FormGroup>
+    </>
   );
 };
 
-export { Forms1, Forms2, Forms3, Forms4 };
+export {
+  FormTextoUnico,
+  FormSerieDeTextos,
+  FormLibroContenidoDeAutor,
+  FormLibroEditarContenidoAjeno,
+  FormLibroSoloLaIdea,
+};

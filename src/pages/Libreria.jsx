@@ -10,21 +10,22 @@ const Libreria = () => {
         maxWidth="2xl"
         disableGutters
         sx={{
-          m: "30px auto",
+          m: "20px auto",
           p: "30px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          width: "90%",
+          width: "100%",
           minHeight: "65vh",
           textAlign: "center",
-          backgroundColor: "#4D7A77",
+          backgroundColor: "#215E61",
           borderRadius: "20px",
           border: "2px solid #3C9990",
-          color: "#D8EDE9",
+
+          color: "#BAE3D7",
         }}
       >
-        <Fade direction="down" triggerOnce>
+        <Fade triggerOnce>
           <Typography variant="h1" component="h2" fontWeight="bold">
             Libreria
           </Typography>

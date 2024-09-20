@@ -12,16 +12,17 @@ export default function CartaProyectos({ proyecto }) {
     <Fade triggerOnce delay={1200}>
       <Card
         sx={{
-          width: "390px",
-          height: "700px",
+          width: "20rem",
+          height: "43rem",
           border: "3px solid #3C9990",
           borderRadius: "20px",
           backgroundColor: "#A6ECE0",
-          position: "relative ",
+          position: "relative",
+          margin: "5.5rem auto",
         }}
       >
         <CardMedia
-          sx={{ padding: "40px", height: "480px" }}
+          sx={{ padding: "40px", height: "30rem" }}
           image={proyecto.img}
           src={!proyecto ? "" : proyecto.img}
         />

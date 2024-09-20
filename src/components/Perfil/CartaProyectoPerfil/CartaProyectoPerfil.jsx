@@ -23,22 +23,22 @@ export default function CartaProyectoPerfil({ proyecto }) {
       >
         <CardMedia
           sx={{ padding: "40px", height: { xs: "275px", md: "300px" } }}
-          image={proyecto.img}
+          image={!proyecto ? "" : proyecto.img}
           src={!proyecto ? "" : proyecto.img}
         />
         <CardContent sx={{ height: "300px" }}>
           <Typography gutterBottom variant="h5" component="h5">
-            {proyecto.titulo}
+            {!proyecto ? "no se encontro proyecto" : proyecto.titulo}
           </Typography>
           <Typography variant="body" color="text.secondary">
-            {proyecto.autor}
+            {!proyecto ? "no se encontro proyecto" : proyecto.autor}
           </Typography>
         </CardContent>
         <CardActions>
           <Button
             sx={{ position: "absolute", bottom: "0" }}
             component={Link}
-            to={`/proyecto/${proyecto.idProyecto}`}
+            to={`/proyecto/${!proyecto ? "" : proyecto.idProyecto}`}
           >
             Ver mas detalles
           </Button>

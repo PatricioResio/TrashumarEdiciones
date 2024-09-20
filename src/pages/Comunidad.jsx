@@ -8,16 +8,23 @@ const Comunidad = () => {
     <Container
       maxWidth="2xl"
       sx={{
-        backgroundColor: "#4D7A77",
+        m: "20px auto",
+        p: "30px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        width: "100%",
+        minHeight: "65vh",
+        textAlign: "center",
+        backgroundColor: "#215E61",
         borderRadius: "20px",
         border: "2px solid #3C9990",
-        color: "#D8EDE9",
-        width: "95vw",
-        m: "20px auto",
+
+        color: "#BAE3D7",
       }}
       disableGutters
     >
-      <Fade direction="down" triggerOnce duration={1300}>
+      <Fade triggerOnce duration={1300}>
         <Typography
           variant="h1"
           component="h2"
@@ -27,7 +34,7 @@ const Comunidad = () => {
           Bienvenidos a nuestra comunidad
         </Typography>
       </Fade>
-      <SectionComunidad />;
+      <SectionComunidad />
     </Container>
   );
 };

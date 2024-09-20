@@ -12,32 +12,31 @@ import { Fade } from "react-awesome-reveal";
 const SectionComunidad = () => {
   const { perfiles, loading } = usePerfiles();
   return loading ? (
-    <Container
-      maxWidth="2xl"
+    <Box
       sx={{
-        width: "83vw",
-        minHeight: "75vh",
-        border: "#3C9990 solid 2px",
+        minHeight: "90vh",
+        border: "2px solid #3C9990",
         borderRadius: "20px",
-        backgroundColor: "#3C9990",
+        width: "98%",
+        margin: "auto",
+        backgroundColor: "#38A098",
       }}
     >
       <CircularProgress />
-    </Container>
+    </Box>
   ) : (
-    <Container
-      disableGutters
-      maxWidth="2xl"
+    <Box
       sx={{
         display: "flex",
-        width: "83vw",
+        minHeight: "90vh",
+        width: "98%",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         m: "auto",
-        border: "#D8EDE9 solid 2px",
+        border: "#3C9990 solid 2px",
         borderRadius: "20px",
-        backgroundColor: "#3C9990",
+        backgroundColor: "#38A098",
       }}
     >
       <Fade>
@@ -51,7 +50,6 @@ const SectionComunidad = () => {
             container
             columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
             sx={{
-              width: "90%",
               minHeight: "75vh",
               m: "50px auto",
               gap: "75px",
@@ -69,7 +67,7 @@ const SectionComunidad = () => {
           </Grid>
         </Box>
       </Fade>
-    </Container>
+    </Box>
   );
 };
 

@@ -3,7 +3,11 @@ import { SectionProyecto } from "../components";
 import { Fade } from "react-awesome-reveal";
 const ProyectoNuevo = () => {
   return (
-    <Container maxWidth="2xl" disableGutters sx={{ m: "auto", width: "100%" }}>
+    <Container
+      maxWidth="2xl"
+      disableGutters
+      sx={{ m: "0 auto", width: "100%" }}
+    >
       <Fade>
         <SectionProyecto />
       </Fade>

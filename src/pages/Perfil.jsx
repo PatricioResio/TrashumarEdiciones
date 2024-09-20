@@ -1,19 +1,22 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import usePerfiles from "../hooks/usePerfiles";
 import { CircularProgress } from "@mui/material";
 import { PerfilPublico } from "../components";
+import useFilterProyectos from "../hooks/useFilterProyectos";
+import useFilterColaboraciones from "../hooks/useFilterColaboraciones";
+import useFilterPerfiles from "../hooks/useFilterPerfiles";
 
 const Perfil = () => {
-  const { perfiles, loading } = usePerfiles();
-  const { idPerfil } = useParams();
-  const perfil = perfiles.find((perfil) => perfil.idPerfil === idPerfil);
-
-  return loading ? (
+  const { perfil, loadingPerfil } = useFilterPerfiles();
+  const { proyectosUser, loadingProyectos } = useFilterProyectos();
+  const { colaboraciones, loadingColaboraciones } = useFilterColaboraciones();
+  return loadingPerfil && loadingColaboraciones && loadingProyectos ? (
     <CircularProgress />
   ) : (
     <>
-      <PerfilPublico {...perfil} />
+      <PerfilPublico
+        perfil={perfil}
+        proyectosUser={proyectosUser}
+        colaboraciones={colaboraciones}
+      />
     </>
   );
 };

@@ -16,7 +16,11 @@ const useHistorias = () => {
     const newArray = imgArrayHistorias.filter(
       (img) => img.posicion === renderHistoria
     );
-    setImgArrayCarrusel(newArray);
+    if (newArray.length > 0) {
+      setImgArrayCarrusel(newArray); // Asegúrate de que comience con el primer elemento
+    } else {
+      setImgArrayCarrusel([]); // Si no hay resultados, vacía el array
+    }
     setLoading(false);
   }, [renderHistoria]);
 

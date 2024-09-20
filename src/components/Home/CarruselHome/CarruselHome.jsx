@@ -6,18 +6,17 @@ import { homeArrays } from "../../../constants/Arrays";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Fade } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
-import { autoPlay } from "react-swipeable-views-utils";
 
 const CarruselHome = () => {
   return (
-    <Fade triggerOnce={true} delay={1200}>
+    <Fade triggerOnce delay={1200}>
       <Container
         maxWidth="false"
         disableGutters
         sx={{
           minWidth: "100%",
-          height: { xs: "300px", md: "500px", lg: "700px", xl: "93vh" },
-          borderRadius: "20px",
+          height: { xs: "40vh", md: "80vh", lg: "100vh", xl: "100vh" },
+          borderRadius: "0",
           mb: "20px",
         }}
       >
@@ -37,21 +36,19 @@ const CarruselHome = () => {
                 sx={{
                   width: "100%",
                   margin: "auto",
-                  height: { xs: "700px", xl: "93vh" },
-                  borderRadius: "10px",
+                  height: { xs: "40vh", md: "80vh", lg: "100vh", xl: "100vh" },
                 }}
               >
                 <Box
                   sx={{
                     height: {
-                      xs: "400px",
-                      md: "600px",
-                      lg: "800px",
-                      xl: "93vh",
+                      xs: "40vh",
+                      md: "60vh",
+                      lg: "100vh",
+                      xl: "100vh",
                     },
                     width: "100%",
                     position: "relative",
-                    borderRadius: "10px",
                   }}
                   component="img"
                   src={item.url}
@@ -86,7 +83,7 @@ const CarruselHome = () => {
                     key={item.h2}
                     className="h2-carrusel"
                   >
-                    <Fade direction="down" delay={1000}>
+                    <Fade triggerOnce direction="down" delay={1400}>
                       {item.h2}
                     </Fade>
                   </Typography>
@@ -104,7 +101,7 @@ const CarruselHome = () => {
                     component="p"
                     variant="p"
                   >
-                    <Fade direction="right" delay={1000}>
+                    <Fade triggerOnce direction="right" delay={1200}>
                       {item.textP}
                     </Fade>
                   </Typography>
@@ -115,9 +112,10 @@ const CarruselHome = () => {
                     to={item.buttonLink}
                     key={item.buttonLink}
                     variant="outlined"
+                    color="secondary"
                     sx={{ mt: "15px" }}
                   >
-                    <Fade direction="top" delay={1000}>
+                    <Fade triggerOnce direction="top" delay={1200}>
                       {item.buttonText}
                     </Fade>
                   </Button>

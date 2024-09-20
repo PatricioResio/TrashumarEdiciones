@@ -1,16 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectFade, Navigation } from "swiper/modules";
+import { EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
+import useResetSwiper from "../../../hooks/useResetSwiper";
 
 const Carrusel = ({ arrayImagenes }) => {
+  const swiperRef = useResetSwiper(arrayImagenes);
+
   return (
     <Fade delay={1100}>
       <Container
         sx={{
-          minWidth: "100%",
+          minWidth: "90%",
           background: "#2D4746",
           height: "100%",
           display: "flex",
@@ -22,6 +25,21 @@ const Carrusel = ({ arrayImagenes }) => {
           marginTop: "0",
         }}
       >
+        <Fade triggerOnce>
+          <Typography
+            component="h2"
+            align="center"
+            variant="h2"
+            sx={{
+              fontSize: "34px",
+              color: "#D8EDE9",
+              margin: "3rem 0 0 0",
+              padding: "0",
+            }}
+          >
+            ¿Porqué Trashumar?
+          </Typography>
+        </Fade>
         <Container
           sx={{
             display: "flex",
@@ -29,34 +47,35 @@ const Carrusel = ({ arrayImagenes }) => {
             height: "95vh",
             minWidth: "420px",
             alignItems: "center",
-            margin: "2rem auto",
+            margin: "0 auto 2rem auto",
           }}
         >
           <Swiper
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
             rewind={true}
             navigation={true}
             modules={[EffectFade, Navigation]}
             effect="fade"
             className="swiper"
-            spaceBetween={30}
             slidesPerView={1}
             runCallbacksOnInit={true}
           >
             {arrayImagenes.map((imgA) => (
-              <SwiperSlide key={imgA.id}>
-                <Box
-                  sx={{
-                    maxHeight: "95vh",
-                    width: "800px",
-                    maxWidth: "800px",
-                    margin: "auto",
-                    boxShadow: "4px 4px black",
-                  }}
-                  component="img"
-                  src={imgA.img}
-                  alt="descripcion futura de la imagen descriptiva"
-                />
-              </SwiperSlide>
+              <Fade>
+                <SwiperSlide key={imgA.id}>
+                  <Box
+                    sx={{
+                      maxHeight: "90vh",
+                      width: { xs: "20rem", md: "25rem", lg: "40rem" },
+                      margin: { xs: "0", lg: "auto" },
+                      boxShadow: "4px 4px black",
+                    }}
+                    component="img"
+                    src={imgA.img}
+                    alt="descripcion futura de la imagen descriptiva"
+                  />
+                </SwiperSlide>
+              </Fade>
             ))}
           </Swiper>
         </Container>

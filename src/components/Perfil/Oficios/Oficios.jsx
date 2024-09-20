@@ -17,7 +17,8 @@ const Oficios = ({ oficios }) => {
         minHeight: "25vh",
         height: { xs: "80%", md: "80%", lg: "600px", xl: "630px" },
         width: { xs: "200px", md: "300px", lg: "400px", xl: "600px" },
-        backgroundColor: "#3c9990",
+
+        backgroundColor: "#BAE3D7",
         m: "auto",
         mt: { xs: "30px", xl: "auto" },
 
@@ -39,7 +40,9 @@ const Oficios = ({ oficios }) => {
           </Typography>
         ) : (
           oficios.map((oficio) =>
-            oficio.valor === false ? null : (
+            oficio.valor === false ? (
+              <Typography></Typography>
+            ) : (
               <Typography key={oficio.nombre} variant="h5" component="h5">
                 {oficio.nombre}
               </Typography>

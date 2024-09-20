@@ -6,6 +6,8 @@ import useHistorias from "../../../hooks/useHistorias";
 import { Suspense } from "react";
 import { Loader } from "../../index";
 import { Fade } from "react-awesome-reveal";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 const ContenedorHistoria = () => {
   const { imgArrayCarrusel, handleChangeHistoria } = useHistorias();
@@ -15,7 +17,7 @@ const ContenedorHistoria = () => {
       <Box
         sx={{
           backgroundColor: "#3C9990",
-          height: "40rem",
+          height: "43rem",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -23,35 +25,35 @@ const ContenedorHistoria = () => {
           borderRadius: "20px",
           width: "75%",
           margin: "15px auto",
+          padding: "0",
         }}
       >
-        {historias.map((historia) => (
-          <Fade>
-            <CartaHistoria
-              key={historia.posicion}
-              {...historia}
-              handleChangeHistoria={handleChangeHistoria}
-            />
-          </Fade>
-        ))}
+        <Swiper
+          navigation={true}
+          modules={[Navigation]}
+          className="MySwiper"
+          spaceBetween={2}
+          breakpoints={{
+            920: { slidesPerView: "2" },
+            1300: { slidesPerView: "3" },
+            1690: { slidesPerView: "4" },
+          }}
+        >
+          {historias.map((historia) => (
+            <SwiperSlide key={historia.id}>
+              <Fade triggerOnce>
+                <CartaHistoria
+                  key={historia.posicion}
+                  {...historia}
+                  handleChangeHistoria={handleChangeHistoria}
+                />
+              </Fade>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column", height: "1100px" }}>
-        <Fade>
-          <Typography
-            component="h2"
-            align="center"
-            variant="h2"
-            sx={{
-              fontSize: "34px",
-              color: "#D8EDE9",
-              margin: "3rem 0 0 0",
-              padding: "0",
-            }}
-          >
-            ¿Porqué Trashumar?
-          </Typography>
-        </Fade>
-        <Fade>
+      <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+        <Fade triggerOnce>
           <Carrusel arrayImagenes={imgArrayCarrusel} />
         </Fade>
       </Box>

@@ -7,9 +7,16 @@ const ContenedorPerfiles = () => {
 
   return (
     <Container
+      maxWidth="2xl"
       sx={{
-        width: "100%",
-        margin: "15px",
+        margin: "auto auto",
+        justifyContent: "center",
+        minHeight: "85vh",
+        width: "90%",
+        border: "2px solid ",
+        borderRadius: "20px",
+        alignItems: "center",
+        backgroundColor: "#215E61",
       }}
     >
       {loading ? <CircularProgress /> : <FilaPerfiles perfiles={perfiles} />}
