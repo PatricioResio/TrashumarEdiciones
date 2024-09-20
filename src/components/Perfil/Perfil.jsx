@@ -16,14 +16,11 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faSquarePhone } from "@fortawesome/free-solid-svg-icons";
 import Oficios from "./Oficios/Oficios";
+import CartaPerfilUsuario from "./CartaPerfilUsuarioo/CartaPerfilUsuario";
 
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
   const oficios = [...currentUser.oficios];
-  const navigate = useNavigate("/registroPerfil");
-  const handleCardButton = () => {
-    navigate("/infoPerfil");
-  };
 
   return (
     <Box
@@ -59,125 +56,7 @@ const Perfil = () => {
           boxShadow: "1px 1px 5px black",
         }}
       >
-        <Container
-          maxWidth="2xl"
-          sx={{
-            width: { xs: "300px", md: "500px", lg: "800px", xl: "1200px" },
-            height: "90%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            m: "auto auto auto auto",
-            mt: { xs: "20px" },
-            paddingTop: "0px",
-            borderColor: "#14919B",
-            borderRadius: "2%",
-            backgroundColor: "#BAE3D7",
-            position: "relative",
-            color: "#02291F",
-          }}
-        >
-          <Box
-            component="img"
-            className="img-perfil-card"
-            src={!currentUser ? "No se encontro usuario" : currentUser.avatar}
-            alt="foto"
-          />
-          <Container
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Typography
-              variant="h3"
-              className="h2-perfil-card"
-              paragraph
-              fontWeight="bold"
-            >
-              {!currentUser
-                ? "No se encontro usuario"
-                : currentUser.nombrePublico}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              <IconButton
-                variant="contained"
-                color="tertiary"
-                onClick={handleCardButton}
-                sx={{ borderRadius: "50%" }}
-              >
-                <FontAwesomeIcon icon={faPenToSquare} />
-              </IconButton>
-              <Typography variant="h5" fontWeight="bold">
-                Datos personales
-              </Typography>
-            </Box>
-
-            <Box sx={{ margin: "0" }}>
-              {!currentUser.linkedinForm ? (
-                <>
-                  <Typography variant="h5"></Typography>
-                </>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faLinkedin} />
-                  {currentUser.linkedinForm}
-                </Typography>
-              )}
-              {!currentUser.facebookForm ? (
-                <>
-                  <Typography variant="h5"></Typography>
-                </>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faFacebook} />
-                  {currentUser.facebookForm}
-                </Typography>
-              )}
-              {!currentUser.instagramForm ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faInstagram} />@
-                  {currentUser.instagramForm}
-                </Typography>
-              )}
-              {!currentUser.xForm ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faSquareXTwitter} />@
-                  {currentUser.xForm}
-                </Typography>
-              )}
-              {!currentUser.email ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  {currentUser.email}
-                </Typography>
-              )}
-              {!currentUser.telefono ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon size="24px" icon={faSquarePhone} />
-                  {currentUser.telefono}
-                </Typography>
-              )}
-            </Box>
-          </Container>
-        </Container>
+        <CartaPerfilUsuario currentUser={currentUser} />
         <Oficios oficios={oficios} />
         <DescripcionPerfil {...currentUser} />
       </Container>

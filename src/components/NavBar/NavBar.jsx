@@ -161,7 +161,7 @@ function ResponsiveAppBar() {
           {!currentUser ? (
             <Box
               sx={{
-                flexGrow: 1,
+                flexGrow: { xs: "0", md: "1" },
                 marginLeft: "2rem ",
                 marginTop: "0",
                 display: "flex",
@@ -195,7 +195,7 @@ function ResponsiveAppBar() {
           ) : (
             <Box
               sx={{
-                flexGrow: 0,
+                flexGrow: { xs: "0", md: "1" },
                 marginRight: { xs: ".6rem", md: "2rem" },
                 display: "flex",
                 justifyContent: "end",

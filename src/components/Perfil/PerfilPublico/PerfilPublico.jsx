@@ -79,12 +79,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             color: "#02291F",
           }}
         >
-          <Box
-            component="img"
-            className="img-perfil-card"
-            src={!perfil ? "No se encontro usuario" : perfil.avatar}
-            alt="foto"
-          />
+          {" "}
           <Container
             sx={{
               display: "flex",
@@ -93,11 +88,19 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
               alignItems: "center",
             }}
           >
+            <Box
+              component="img"
+              className="img-perfil-card"
+              src={!perfil ? "No se encontro usuario" : perfil.avatar}
+              alt="foto"
+            />
+
             <Typography
               variant="h3"
               className="h2-perfil-card"
               paragraph
               fontWeight="bold"
+              sx={{ mt: "13rem" }}
             >
               {!perfil ? "No se encontro usuario" : perfil.nombrePublico}
             </Typography>
@@ -106,6 +109,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
+                my: "auto",
               }}
             >
               <Typography variant="h5" fontWeight="bold">
