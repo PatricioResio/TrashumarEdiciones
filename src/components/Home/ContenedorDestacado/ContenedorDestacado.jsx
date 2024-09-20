@@ -14,7 +14,7 @@ const ContenedorDestacado = () => {
       sx={{
         flexDirection: "column",
         justifyContent: "center",
-        height: { xs: "90rem", md: "100rem", lg: "1200px", xl: "900px" },
+        height: { xs: "100rem", md: "100rem", lg: "1200px", xl: "900px" },
         width: "100%",
         minWidth: { xs: "200px", xl: "700px" },
         backgroundColor: "#215E61",
@@ -53,13 +53,14 @@ const ContenedorDestacado = () => {
             minWidth: { xs: "250px", lg: "600px" },
             fontSize: "20px",
             m: "auto",
+            p: "2rem",
 
             color: "#0C2324",
             backgroundColor: "#3C9990",
             flexDirection: {
               xs: "column",
               md: "column",
-              lg: "column",
+              lg: "row",
               xl: "row",
             },
           }}
@@ -71,7 +72,7 @@ const ContenedorDestacado = () => {
               height: { xl: "600px" },
               width: { xs: "270px", md: "400px", lg: "500px", xl: "600px" },
               m: "auto",
-              mb: { xs: "0", xl: "50px" },
+              mb: { xs: "0", lg: "auto" },
             }}
             src={TAPA_HIPPIES}
             alt="Ilustracion de tapa de libro novedad"
@@ -83,11 +84,22 @@ const ContenedorDestacado = () => {
               flexDirection: "column",
               justifyContent: "center",
               m: "auto",
-              mt: { xs: "0px", xl: "auto" },
+              mt: { xs: "0px", lg: "auto" },
               gap: "20px",
             }}
           >
-            <Typography component="h3" variant="h3">
+            <Typography
+              sx={{
+                fontSize: {
+                  xs: "1.8rem",
+                  md: "2.4rem",
+                  lg: "3rem",
+                  xxl: "4rem",
+                },
+              }}
+              component="h3"
+              variant="h3"
+            >
               El día en que los hippies descubrieron los sahumerios
             </Typography>
             <Typography component="h4" variant="h4">
