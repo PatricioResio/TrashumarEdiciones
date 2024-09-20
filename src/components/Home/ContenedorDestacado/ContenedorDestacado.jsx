@@ -14,7 +14,7 @@ const ContenedorDestacado = () => {
       sx={{
         flexDirection: "column",
         justifyContent: "center",
-        height: { xs: "100rem", md: "100rem", lg: "1200px", xl: "900px" },
+        height: { xs: "70rem", md: "90rem", lg: "56rem", xl: "55rem" },
         width: "100%",
         minWidth: { xs: "200px", xl: "700px" },
         backgroundColor: "#215E61",
@@ -42,7 +42,7 @@ const ContenedorDestacado = () => {
       <Fade triggerOnce>
         <Box
           sx={{
-            height: { xs: "72rem", md: "90rem", lg: "1000px", xl: "650px" },
+            height: { xs: "52rem", md: "60rem", lg: "41rem", xl: "41rem" },
             display: "flex",
             justifyContent: "center",
             gap: "80px",
@@ -69,8 +69,8 @@ const ContenedorDestacado = () => {
             component="img"
             sx={{
               boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
-              height: { xl: "600px" },
-              width: { xs: "270px", md: "400px", lg: "500px", xl: "600px" },
+
+              width: { xs: "18rem", md: "25rem", lg: "25rem", xl: "26rem" },
               m: "auto",
               mb: { xs: "0", lg: "auto" },
             }}
@@ -79,7 +79,7 @@ const ContenedorDestacado = () => {
           ></Box>
           <Box
             sx={{
-              width: { xs: "180px", lg: "600px" },
+              width: { xs: "100%", lg: "37.5rem" },
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",

@@ -7,7 +7,7 @@ const ArticleDestacado = () => {
     <Box
       component="article"
       sx={{
-        height: { xs: "100rem", lg: "1200px", xl: "900px" },
+        height: { xs: "80rem", md: "90rem", lg: "50rem", xl: "52rem" },
         margin: "50px auto",
         width: "100%",
       }}
