@@ -19,6 +19,12 @@ export default function CartaProyectos({ proyecto }) {
           backgroundColor: "#A6ECE0",
           position: "relative",
           margin: "5.5rem auto",
+
+          transition: "transform 0.3s ease-in-out", // Duración y suavidad del efecto
+
+          "&:hover": {
+            transform: "scale(1.02)",
+          },
         }}
       >
         <CardMedia

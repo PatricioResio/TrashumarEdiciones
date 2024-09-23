@@ -31,6 +31,12 @@ const Footer = () => {
             height: { xs: "11rem", md: "12.5rem" },
             width: "25%",
             marginX: { xs: "1.5rem", md: "4rem" },
+            "& img": {
+              transition: "transform 0.3s ease-in-out",
+            },
+            "&:hover img": {
+              transform: "scale(1.07)",
+            },
           }}
         >
           <img src={LOGO_URL} />

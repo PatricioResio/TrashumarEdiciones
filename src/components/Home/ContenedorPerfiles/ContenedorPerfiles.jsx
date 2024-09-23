@@ -9,7 +9,7 @@ const ContenedorPerfiles = () => {
     <Container
       maxWidth="2xl"
       sx={{
-        margin: "auto auto",
+        margin: "auto",
         justifyContent: "center",
         minHeight: "85vh",
         width: "90%",

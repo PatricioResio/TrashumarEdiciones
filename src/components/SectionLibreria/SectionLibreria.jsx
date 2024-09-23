@@ -5,19 +5,19 @@ import { Fade } from "react-awesome-reveal";
 import CartaProyectos from "../Home/CartaProyectos/CartaProyectos";
 
 const SectionLibreria = () => {
-  const { proyectos, loading } = useProyectos();
+  const { proyectos, loadingProyectos } = useProyectos();
 
-  return loading ? (
+  return loadingProyectos ? (
     <Box
       sx={{
-        minHeight: "75vh",
+        minHeight: "90vh",
         border: "2px solid #215E61",
         borderRadius: "10px",
         margin: "20px",
         backgroundColor: "#38A098",
       }}
     >
-      <CircularProgress />
+      <CircularProgress sx={{ mt: "25%" }} />
     </Box>
   ) : (
     <>
@@ -26,7 +26,7 @@ const SectionLibreria = () => {
         sx={{
           border: "2px solid #3C9990",
           margin: "10px",
-          borderRadius: "20px",
+          borderRadius: "10px",
           backgroundColor: "#38A098",
         }}
       >
@@ -35,8 +35,9 @@ const SectionLibreria = () => {
           columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
           sx={{
             minHeight: "75vh",
-            m: "20px auto",
-            gap: "60px",
+            m: "auto",
+            gap: "50px",
+            p: "2rem",
             justifyContent: "space-around",
             alignItems: "center",
           }}

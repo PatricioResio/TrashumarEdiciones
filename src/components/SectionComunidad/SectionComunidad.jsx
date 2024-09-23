@@ -22,50 +22,38 @@ const SectionComunidad = () => {
         backgroundColor: "#38A098",
       }}
     >
-      <CircularProgress />
+      <CircularProgress sx={{ mt: "25%" }} />
     </Box>
   ) : (
     <Box
+      component="article"
       sx={{
-        display: "flex",
-        minHeight: "90vh",
-        width: "98%",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        m: "auto",
-        border: "#3C9990 solid 2px",
-        borderRadius: "20px",
+        border: "2px solid #3C9990",
+        margin: "10px",
+        borderRadius: "10px",
         backgroundColor: "#38A098",
       }}
     >
       <Fade>
-        <Box
-          component="section"
+        <Grid
+          container
+          columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
           sx={{
-            width: "100%",
+            minHeight: "90vh",
+            m: "50px auto",
+            gap: "75px",
+            justifyContent: "space-around",
+            alignItems: "center",
           }}
         >
-          <Grid
-            container
-            columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
-            sx={{
-              minHeight: "75vh",
-              m: "50px auto",
-              gap: "75px",
-              justifyContent: "flex-start",
-              alignItems: "center",
-            }}
-          >
-            {perfiles.map((perfil) => (
-              <Grid item key={perfil.id} xs={{ xs: 1, sm: 2, md: 3, xl: 5 }}>
-                <Fade>
-                  <CartaPerfiles key={perfil.id} perfil={perfil} />
-                </Fade>
-              </Grid>
-            ))}
-          </Grid>
-        </Box>
+          {perfiles.map((perfil) => (
+            <Grid item key={perfil.id} xs={{ xs: 1, sm: 2, md: 3, xl: 5 }}>
+              <Fade>
+                <CartaPerfiles key={perfil.id} perfil={perfil} />
+              </Fade>
+            </Grid>
+          ))}
+        </Grid>
       </Fade>
     </Box>
   );

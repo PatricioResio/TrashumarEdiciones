@@ -28,6 +28,7 @@ const Home = () => {
             backgroundColor: "#38A098",
             height: "100vh",
             justifyContent: "center",
+            alignItems: "center",
             border: "1px solid #3F7D92",
             borderRadius: "20px",
             width: "100%",

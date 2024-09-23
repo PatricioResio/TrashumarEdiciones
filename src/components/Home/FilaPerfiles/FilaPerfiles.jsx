@@ -5,13 +5,7 @@ import "swiper/css/effect-fade";
 import "swiper/css/effect-coverflow";
 import { Navigation } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
-import {
-  faCircleLeft,
-  faCircleRight,
-} from "@fortawesome/free-regular-svg-icons";
-import { faCircleArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box } from "@mui/material";
+import "./FilaPerfiles.css";
 
 const FilaPerfiles = ({ perfiles }) => {
   return (
@@ -19,7 +13,7 @@ const FilaPerfiles = ({ perfiles }) => {
       <Swiper
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className="MySwiper"
         spaceBetween={6}
         breakpoints={{
           820: { slidesPerView: "2" },

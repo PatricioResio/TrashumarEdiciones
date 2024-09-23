@@ -114,6 +114,13 @@ function ResponsiveAppBar() {
                   width: "4rem",
                   p: "0",
                   margin: "0.3rem 2rem",
+
+                  "& img": {
+                    transition: "transform 0.3s ease-in-out", // Duración y suavidad del efecto
+                  },
+                  "&:hover img": {
+                    transform: "scale(1.07)", // Aumenta el tamaño en 0.7
+                  },
                 }}
               >
                 <img src={LOGO_URL} />
@@ -145,9 +152,9 @@ function ResponsiveAppBar() {
                     fontSize: { lg: "14px" },
                     justifyContent: "center",
                     width: "160px",
-                    transition: "transform 0.3s",
+                    transition: "transform 0.3s ease-in-out",
                     "&:hover": {
-                      transform: "scale(1.1)",
+                      transform: "scale(1.05)",
                       color: "white",
                     },
                   }}
@@ -181,7 +188,7 @@ function ResponsiveAppBar() {
                   fontWeight: { xs: 600, md: 900 },
                   letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
                   marginRight: "3rem",
-                  transition: "transform 0.3s",
+                  transition: "transform 0.3s ease-in-out",
 
                   "&:hover": {
                     transform: "scale(1.03)",
@@ -212,7 +219,7 @@ function ResponsiveAppBar() {
                   fontFamily: "roboto",
                   fontWeight: { xs: 600, md: 900 },
                   letterSpacing: { xs: ".1rem", md: ".2rem" },
-                  transition: "transform 0.3s",
+                  transition: "transform 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.03)",
                     color: "white",

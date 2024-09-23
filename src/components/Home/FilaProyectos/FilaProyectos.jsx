@@ -13,7 +13,7 @@ const FilaProyectos = ({ proyectos }) => {
       <Swiper
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className="MySwiper"
         spaceBetween={7}
         breakpoints={{
           820: { slidesPerView: "2" },
