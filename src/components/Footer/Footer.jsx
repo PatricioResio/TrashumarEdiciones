@@ -1,7 +1,7 @@
 import { Button, Container, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../../constants/constants";
-import { FaSquareInstagram } from "react-icons/fa6";
+import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookF } from "react-icons/fa6";
 import "./Footer.css";
 import { Fade } from "react-awesome-reveal";
@@ -28,9 +28,9 @@ const Footer = () => {
           to="/"
           sx={{
             display: "flex",
-            height: "200px",
+            height: { xs: "11rem", md: "12.5rem" },
             width: "25%",
-            marginLeft: "4rem",
+            marginX: { xs: "1.5rem", md: "4rem" },
           }}
         >
           <img src={LOGO_URL} />
@@ -73,13 +73,12 @@ const Footer = () => {
             }}
             xs={1}
           >
-            <FaFacebookF className="footer-icon" />
             <Button
               to="https://www.instagram.com/trashumarediciones/"
               component={Link}
               color="secondary"
-              sx={{ width: "80px", height: "80px" }}
             >
+              <FaFacebookF className="footer-icon" />
               @trashumarediciones
             </Button>
           </Grid>
@@ -93,14 +92,13 @@ const Footer = () => {
             }}
             xs={1}
           >
-            <FaSquareInstagram className="footer-icon" />
             <Button
               to="https://www.instagram.com/trashumarediciones/"
               component={Link}
               color="secondary"
-              sx={{ width: "80px", height: "80px" }}
             >
-              <Typography>@trashumarediciones</Typography>
+              <RiInstagramFill className="footer-icon" />
+              @trashumarediciones
             </Button>
           </Grid>
           <Grid
@@ -127,10 +125,10 @@ const Footer = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              marginTop: { xs: "0px", md: "1rem" },
+              marginTop: { xs: "10px", md: "1rem" },
             }}
           >
-            <Typography color="secondary">
+            <Typography color="secondary" xs={{ mt: "1rem" }}>
               Derechos de autor reservados Trashumar Ediciones©
             </Typography>
           </Grid>
