@@ -39,7 +39,6 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         mt: "40px",
         mb: "0px",
         p: "0",
-        backgroundColor: "#215E61",
         borderRadius: "20px",
         border: "2px solid #3C9990",
         height: { xs: "3200px", md: "2900px", lg: "2200px", xxl: "2000px" },
@@ -53,7 +52,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           alignItems: "center",
           width: "100%",
           height: { xs: "1800px", md: "1500px", lg: "1200px", xl: "1500px" },
-          backgroundColor: "#215E61",
+
           borderRadius: "20px",
           border: "2px solid #3C9990",
           m: "10px auto",
@@ -62,6 +61,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
       >
         <Container
           maxWidth="2xl"
+          backgroundColor={"primary.main"}
           sx={{
             width: { xs: "300px", md: "500px", lg: "800px", xl: "1200px" },
             height: "90%",
@@ -74,7 +74,6 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             paddingTop: "0px",
             borderColor: "#14919B",
             borderRadius: "2%",
-            backgroundColor: "#BAE3D7",
             position: "relative",
             color: "#02291F",
           }}

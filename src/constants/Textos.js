@@ -9,6 +9,9 @@ export const PROGRAMA_EDITORIAL = {
   },
 };
 
+export const DESCRIPCION_ARTICULO_DESTACADO =
+  "Un relato se cuela por los caminos de América Latina: es la historia de sus caminantes.Tras muchos años infiltrado entre ellos, el autor da chispa a ese polvorín mientras se pregunta, con total sinceridad, de qué lado de la mecha le tocara salir parado. Lo hace en forma de cuentos, donde se conjuga la aventura individual de algunos con la aventura del conjunto; con su subestimación y su éxito, con su caída y su vuelta a empezar. Estos cuentos cuentan cosas que suceden, que sucedieron y que podrían suceder. Pero sobre todo, atisba a un sujeto nuevo de la historia y lo enfrenta a una sociedad que, tal vez, aún no esté preparada.Hablamos, claro, de los viajantes. No sabemos aún el resultado de esa lucha.";
+
 export const PROGRAMA_PRIMERO_1 =
   "      TRASHUMAR EDICIONES es una editorial independiente (no se rige por exigencias de mercado o de grandes grupos editoriales) y autogestiva (incluye mecanismos participativos), con algunas ideas interesantes que vale detallar. De momento, tiene una estructura tirando a pequeña y un catálogo que, a lo sumo, será limitado por nuestras condiciones materiales y no por una estrechez artística; la propuesta está diseñada para crecer y funcionar mejor en cuanto más seamos.";
 export const PROGRAMA_PRIMERO_2 =

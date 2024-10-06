@@ -7,8 +7,7 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { Container } from "@mui/material";
 import "./CartaPerfiles.css";
-import { Fade, Zoom } from "react-awesome-reveal";
-import { autoPlay } from "react-swipeable-views-utils";
+import { Fade } from "react-awesome-reveal";
 
 export default function CartaPerfiles({ perfil }) {
   const oficiosPerfil = !perfil.oficios ? [] : [...perfil.oficios.slice(0, 2)];
@@ -18,8 +17,11 @@ export default function CartaPerfiles({ perfil }) {
       <Card
         className="carta-perfiles"
         sx={{
+          width: { xs: "13rem", md: "15rem" },
+          height: { xs: "23rem", md: "25rem" },
           borderRadius: "20px",
           m: "8rem",
+          p: 0,
           transition: "transform 0.3s ease-in-out",
           "&:hover": {
             transform: "scale(1.02)",
@@ -27,27 +29,31 @@ export default function CartaPerfiles({ perfil }) {
         }}
       >
         <CardMedia
-          sx={{ height: "290px" }}
+          sx={{ height: "60%" }}
           image={perfil.avatar}
           src={!perfil.avatar ? "" : perfil.avatar}
         />
         <CardContent className="carta-perfiles-contenido">
-          <Typography gutterBottom variant="h4" component="h4">
+          <Typography
+            gutterBottom
+            component="h5"
+            variant="h5"
+            fontWeight="bold"
+          >
             {perfil.nombrePublico}
           </Typography>
 
           <Container sx={{ gap: "0px" }}>
             {oficiosPerfil.length === 0 || !oficiosPerfil ? (
-              <Typography variant="h6" component="h6" color="text.secondary">
+              <Typography component="h6" variant="h6">
                 No hay ningun oficio registrado todavía
               </Typography>
             ) : (
               oficiosPerfil.map((oficio) => (
                 <Typography
-                  key={oficio.nombre}
                   variant="h6"
                   component="h6"
-                  color="text.secondary"
+                  key={oficio.nombre}
                   sx={{ margin: "0px" }}
                 >
                   {oficio.nombre}

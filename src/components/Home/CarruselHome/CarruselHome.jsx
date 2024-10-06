@@ -15,7 +15,13 @@ const CarruselHome = () => {
         disableGutters
         sx={{
           minWidth: "100%",
-          height: { xs: "40vh", md: "80vh", lg: "100vh", xl: "100vh" },
+          height: {
+            xs: "40vh",
+            sm: "60vh",
+            md: "80vh",
+            lg: "100vh",
+            xl: "100vh",
+          },
           borderRadius: "0",
           mb: "20px",
         }}
@@ -36,14 +42,21 @@ const CarruselHome = () => {
                 sx={{
                   width: "100%",
                   margin: "auto",
-                  height: { xs: "40vh", md: "80vh", lg: "100vh", xl: "100vh" },
+                  height: {
+                    xs: "40vh",
+                    sm: "60vh",
+                    md: "80vh",
+                    lg: "100vh",
+                    xl: "100vh",
+                  },
                 }}
               >
                 <Box
                   sx={{
                     height: {
                       xs: "40vh",
-                      md: "60vh",
+                      sm: "60vh",
+                      md: "80vh",
                       lg: "100vh",
                       xl: "100vh",
                     },
@@ -60,10 +73,16 @@ const CarruselHome = () => {
                   sx={{
                     backgroundColor: "rgba(0, 0, 0, 0.5)",
                     backdropFilter: "blur(5px)",
-                    width: "53%",
+                    width: { xs: "70%", sm: "53%" },
                     position: "absolute",
-                    top: { xs: "180px", md: "350px", lg: "420px", xl: "600px" },
-                    left: { xs: "160px", md: "220", lg: "290px", xl: "420px" },
+                    bottom: 0,
+                    left: {
+                      xs: "60px",
+                      sm: "140px",
+                      md: "220px",
+                      lg: "290px",
+                      xl: "420px",
+                    },
                     color: "white",
                     padding: "20px",
                     border: "2px solid black",
@@ -71,15 +90,8 @@ const CarruselHome = () => {
                   }}
                 >
                   <Typography
-                    sx={{
-                      fontSize: {
-                        xs: "20px",
-                        md: "27px",
-                        lg: "37px",
-                        xl: "45px",
-                      },
-                      fontWeight: "bold",
-                    }}
+                    variant="h3"
+                    component="h2"
                     key={item.h2}
                     className="h2-carrusel"
                   >
@@ -88,18 +100,10 @@ const CarruselHome = () => {
                     </Fade>
                   </Typography>
                   <Typography
-                    sx={{
-                      fontSize: {
-                        xs: "13px",
-                        md: "18px",
-                        lg: "26px",
-                        xl: "33px",
-                      },
-                    }}
                     key={item.textP}
                     className="p-carrusel"
-                    component="p"
-                    variant="p"
+                    component="h5"
+                    variant="h5"
                   >
                     <Fade triggerOnce direction="right" delay={1200}>
                       {item.textP}

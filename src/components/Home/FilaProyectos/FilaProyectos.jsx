@@ -3,7 +3,6 @@ import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-import "./FilaProyectos.css";
 import "swiper/css/effect-coverflow";
 import { Navigation } from "swiper/modules";
 

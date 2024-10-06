@@ -6,31 +6,28 @@ import {
 } from "../../../constants/constants";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import { DESCRIPCION_ARTICULO_DESTACADO } from "../../../constants/Textos";
 
 const ContenedorDestacado = () => {
+  const Descripcion = DESCRIPCION_ARTICULO_DESTACADO.slice(0, 254);
   return (
     <Container
       maxWidth="2xl"
       sx={{
         flexDirection: "column",
         justifyContent: "center",
-        height: { xs: "70rem", md: "90rem", lg: "56rem", xl: "55rem" },
         width: "100%",
         minWidth: { xs: "200px", xl: "700px" },
-        backgroundColor: "#215E61",
+        background: "#6CCCD9",
         borderRadius: "20px",
         border: "2px solid #3C9990",
-
-        color: "#BAE3D7",
+        color: "#26424A",
         p: "25px",
       }}
     >
       <Fade triggerOnce easeOut direction="down">
         <Typography
           sx={{
-            fontWeight: "bold",
-            color: "#BAE3D7",
-            fontSize: "3.5rem",
             margin: "2rem",
           }}
           variant="h2"
@@ -42,7 +39,6 @@ const ContenedorDestacado = () => {
       <Fade triggerOnce>
         <Box
           sx={{
-            height: { xs: "52rem", md: "60rem", lg: "41rem", xl: "41rem" },
             display: "flex",
             justifyContent: "center",
             gap: "80px",
@@ -51,12 +47,10 @@ const ContenedorDestacado = () => {
             pt: "30px",
             width: "82%",
             minWidth: { xs: "250px", lg: "600px" },
-            fontSize: "20px",
             m: "auto",
             p: "2rem",
-
             color: "#0C2324",
-            backgroundColor: "#3C9990",
+            backgroundColor: "#BDFFF9",
             flexDirection: {
               xs: "column",
               md: "column",
@@ -88,25 +82,14 @@ const ContenedorDestacado = () => {
               gap: "20px",
             }}
           >
-            <Typography
-              sx={{
-                fontSize: {
-                  xs: "1.8rem",
-                  md: "2.4rem",
-                  lg: "3rem",
-                  xxl: "4rem",
-                },
-              }}
-              component="h3"
-              variant="h3"
-            >
+            <Typography component="h3" variant="h3">
               El día en que los hippies descubrieron los sahumerios
             </Typography>
             <Typography component="h4" variant="h4">
               Pablo Atanasopolus
             </Typography>
             <Typography component="p" variant="body">
-              Acá hay una breve descripcion de la wea de pablo
+              {Descripcion}
             </Typography>
             <Button
               sx={{

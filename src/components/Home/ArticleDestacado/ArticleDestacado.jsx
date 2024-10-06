@@ -7,7 +7,13 @@ const ArticleDestacado = () => {
     <Box
       component="article"
       sx={{
-        height: { xs: "80rem", md: "90rem", lg: "50rem", xl: "52rem" },
+        height: {
+          xs: "80rem",
+          sm: "85rem",
+          md: "90rem",
+          lg: "50rem",
+          xl: "52rem",
+        },
         margin: "50px auto",
         width: "100%",
       }}

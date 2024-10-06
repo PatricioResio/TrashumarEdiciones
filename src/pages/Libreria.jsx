@@ -18,7 +18,6 @@ const Libreria = () => {
           width: "100%",
           minHeight: "65vh",
           textAlign: "center",
-          backgroundColor: "#215E61",
           borderRadius: "20px",
           border: "2px solid #3C9990",
 
@@ -26,7 +25,12 @@ const Libreria = () => {
         }}
       >
         <Fade triggerOnce>
-          <Typography variant="h1" component="h2" fontWeight="bold">
+          <Typography
+            variant="h1"
+            component="h1"
+            fontWeight="bold"
+            color={"primary"}
+          >
             Libreria
           </Typography>
         </Fade>

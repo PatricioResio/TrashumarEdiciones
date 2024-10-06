@@ -97,6 +97,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
             >
               <Typography component="h4">{autor}</Typography>
               <Typography component="h5">{formattedFecha}</Typography>
+              <Typography>{descripcion}</Typography>
             </Box>
           </Box>
         </Box>

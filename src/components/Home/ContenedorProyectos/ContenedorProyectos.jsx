@@ -11,11 +11,11 @@ const ContenedorCartas = () => {
         display: "flex",
         margin: "auto",
         justifyContent: "center",
-        width: "90%",
+        width: "98%",
         border: "2px solid ",
         borderRadius: "20px",
         alignItems: "center",
-        backgroundColor: "#215E61",
+        backgroundColor: "#BDFFF9",
       }}
     >
       {loading ? <CircularProgress /> : <FilaProyectos proyectos={proyectos} />}

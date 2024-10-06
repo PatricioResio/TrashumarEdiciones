@@ -23,28 +23,24 @@ const Home = () => {
         }}
       >
         <ArticleDestacado />
+
         <Box
           sx={{
-            backgroundColor: "#38A098",
-            height: "100vh",
+            background: "#09A5B0",
             justifyContent: "center",
             alignItems: "center",
             border: "1px solid #3F7D92",
             borderRadius: "20px",
             width: "100%",
-            margin: "10px auto",
-            mt: "40px",
+            pb: 2,
           }}
         >
           <Fade triggerOnce>
             <Typography
-              component="h2"
+              component="h3"
+              variant="h3"
               sx={{
-                fontFamily: "roboto",
-                fontSize: "30px",
-                fontWeight: "bold",
-
-                color: "#00333D",
+                m: "1rem auto",
               }}
             >
               Proyectos para explorar
@@ -55,24 +51,20 @@ const Home = () => {
 
         <Box
           sx={{
-            backgroundColor: "#38A098",
-            height: "100vh",
+            background: "#09A5B0",
             justifyContent: "center",
             border: "1px solid #3F7D92",
             borderRadius: "20px",
             width: "100%",
-            margin: "10px auto",
+            pb: 2,
           }}
         >
           <Fade triggerOnce>
             <Typography
-              component="h2"
+              component="h3"
+              variant="h3"
               sx={{
-                fontFamily: "roboto",
-                fontSize: "30px",
-                fontWeight: "bold",
-                color: "#00333D",
-                m: "2rem auto",
+                m: "1rem auto",
               }}
             >
               Perfiles de nuestra comunidad
