@@ -21,6 +21,13 @@ const theme = createTheme({
       main: "#B5C2C7",
       white: "#BAE3D7",
     },
+    bg: {
+      dark: "#B5C2C7",
+      main: "#DFFFF9",
+      mediumBlue: "#09A5B0",
+      mediumLightBlue: "#6CCCD9",
+      lightBlue: "#BDFFF9",
+    },
     error: {
       main: red.A400,
     },
@@ -102,7 +109,25 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "0.9rem",
+      fontSize: "1.1rem",
+      "@media (min-width:600px)": {
+        fontSize: "1.2rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "1.3rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "1.4rem",
+      },
+      "@media (min-width:1536px)": {
+        fontSize: "1.5rem",
+      },
+      "@media (min-width:1920px)": {
+        fontSize: "1.6rem",
+      },
+    },
+    h6: {
+      fontSize: "0.8rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
@@ -116,26 +141,45 @@ const theme = createTheme({
         fontSize: "1.3rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "1rem",
+        fontSize: "1.4rem",
       },
     },
-    h6: {
-      fontSize: "0.7rem",
+    p: {
+      fontSize: "0.8rem",
+      "@media (min-width:600px)": {
+        fontSize: "1rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "1.1rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "1.2rem",
+      },
+      "@media (min-width:1536px)": {
+        fontSize: "1.3rem",
+      },
+      "@media (min-width:1920px)": {
+        fontSize: "1.4rem",
+      },
+    },
+    autor: {
+      fontSize: "0.8rem",
       "@media (min-width:600px)": {
         fontSize: "0.9rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1rem",
+        fontSize: "0.9rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "1.1rem",
+        fontSize: "1rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "1.2rem",
+        fontSize: "1rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "1.3rem",
+        fontSize: "1rem",
       },
+      fontWeight: 500,
     },
     body1: {
       fontWeight: 500,

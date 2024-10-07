@@ -45,16 +45,17 @@ export default function CartaPerfiles({ perfil }) {
 
           <Container sx={{ gap: "0px" }}>
             {oficiosPerfil.length === 0 || !oficiosPerfil ? (
-              <Typography component="h6" variant="h6">
+              <Typography color="text.secondary" variant="body">
                 No hay ningun oficio registrado todavía
               </Typography>
             ) : (
               oficiosPerfil.map((oficio) => (
                 <Typography
-                  variant="h6"
+                  variant="autor"
+                  color="text.secondary"
                   component="h6"
                   key={oficio.nombre}
-                  sx={{ margin: "0px" }}
+                  sx={{ margin: "auto", width: "100%" }}
                 >
                   {oficio.nombre}
                 </Typography>

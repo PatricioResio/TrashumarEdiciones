@@ -7,6 +7,7 @@ const Nosotros = () => {
     <>
       <section>
         <Box
+          bgcolor="bg.lightBlue"
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -16,7 +17,6 @@ const Nosotros = () => {
             height: "200vh",
             maxWidth: "100vw",
             border: "2px solid #3C9990",
-            backgroundColor: "#215E61",
           }}
         >
           <ContenedorHistoria />
@@ -31,6 +31,8 @@ const Nosotros = () => {
           padding: "0",
           boxShadow: "inherit",
           display: "flex",
+          width: "100vw",
+          height: "100%",
         }}
       >
         <ContenedorPrograma />

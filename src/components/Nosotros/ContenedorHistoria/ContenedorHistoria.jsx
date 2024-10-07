@@ -15,8 +15,8 @@ const ContenedorHistoria = () => {
   return (
     <>
       <Box
+        bgcolor="bg.mediumBlue"
         sx={{
-          backgroundColor: "#3C9990",
           height: "43rem",
           display: "flex",
           justifyContent: "center",

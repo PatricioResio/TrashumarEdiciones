@@ -12,31 +12,34 @@ export default function CartaProyectos({ proyecto }) {
     <Fade triggerOnce delay={1200}>
       <Card
         sx={{
-          width: "20rem",
+          width: "22rem",
           height: "43rem",
           border: "3px solid #3C9990",
           borderRadius: "20px",
           backgroundColor: "#A6ECE0",
           position: "relative",
           margin: "5.5rem auto",
-
-          transition: "transform 0.3s ease-in-out", // Duración y suavidad del efecto
-
+          transition: "transform 0.3s ease-in-out",
           "&:hover": {
             transform: "scale(1.02)",
           },
         }}
       >
         <CardMedia
-          sx={{ padding: "40px", height: "30rem" }}
+          sx={{ padding: "40px", height: "55%" }}
           image={proyecto.img}
           src={!proyecto ? "" : proyecto.img}
         />
         <CardContent sx={{ height: "300px" }}>
-          <Typography gutterBottom variant="h5" component="h5">
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="h5"
+            fontWeight="bold"
+          >
             {proyecto.titulo}
           </Typography>
-          <Typography variant="body" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             {proyecto.autor}
           </Typography>
         </CardContent>

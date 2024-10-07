@@ -25,6 +25,7 @@ const Home = () => {
         <ArticleDestacado />
 
         <Box
+          bgcolor="bg.mediumBlue"
           sx={{
             background: "#09A5B0",
             justifyContent: "center",
@@ -50,8 +51,8 @@ const Home = () => {
         </Box>
 
         <Box
+          bgcolor="bg.mediumBlue"
           sx={{
-            background: "#09A5B0",
             justifyContent: "center",
             border: "1px solid #3F7D92",
             borderRadius: "20px",

@@ -60,40 +60,52 @@ const CartaPrograma = () => {
       disableGutters
       maxWidth="xl"
       sx={{
-        height: "550px",
-        width: "80vw",
+        height: { xs: "150vh", lg: "550px" },
+        width: "100vw",
         m: "auto",
         display: "flex",
-        flexDirection: { xs: "column", md: "row" },
+        flexDirection: { xs: "column", sm: "column", md: "row" },
         justifyContent: "center",
         textAlign: "center",
-        backgroundColor: "#F5F1ED",
         borderRadius: "20px",
       }}
     >
       <Box
         sx={{
-          height: "240px",
-          width: "80vw",
+          height: { md: "550px" },
+          width: "100vw",
           m: "15px auto",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_1}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_2}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_3}
         </Typography>
       </Box>
+
       <Box
         sx={{
-          height: "240px",
+          height: { md: "550px" },
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -101,19 +113,32 @@ const CartaPrograma = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_4}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_5}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_6}
         </Typography>
       </Box>
+
       <Box
         sx={{
-          height: "240px",
+          height: { md: "550px" },
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -121,13 +146,25 @@ const CartaPrograma = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_7}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_8}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_PRIMERO_9}
         </Typography>
       </Box>
@@ -141,40 +178,51 @@ const CartaPrograma2 = () => {
       disableGutters
       maxWidth="xl"
       sx={{
-        height: "550px",
-        width: "80vw",
+        height: { lg: "550px" },
+        width: "100vw",
         m: "auto",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { xs: "column", md: "row" },
         justifyContent: "center",
         textAlign: "center",
-        backgroundColor: "#F5F1ED",
         borderRadius: "20px",
       }}
     >
       <Box
         sx={{
-          height: "240px",
-          width: "80vw",
+          height: { md: "550px" },
+          width: "100vw",
           m: "15px auto",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_1}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_2}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_3}
         </Typography>
       </Box>
       <Box
         sx={{
-          height: "240px",
+          height: { md: "550px" },
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -182,16 +230,24 @@ const CartaPrograma2 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_4}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_5}
         </Typography>
       </Box>
       <Box
         sx={{
-          height: "240px",
+          height: { md: "550px" },
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -199,16 +255,32 @@ const CartaPrograma2 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_6}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_7}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_8}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_SEGUNDO_9}
         </Typography>
       </Box>
@@ -221,40 +293,50 @@ const CartaPrograma3 = () => {
       disableGutters
       maxWidth="xl"
       sx={{
-        height: "550px",
-        width: "80vw",
+        height: { lg: "550px" },
+        width: "100vw",
         m: "auto",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { xs: "column", md: "row" },
         justifyContent: "center",
         textAlign: "center",
-        backgroundColor: "#F5F1ED",
         borderRadius: "20px",
       }}
     >
       <Box
         sx={{
-          height: "240px",
-          width: "80vw",
+          height: { md: "550px" },
+          width: "100vw",
           m: "15px auto",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_1}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_2}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_3}
         </Typography>
       </Box>
       <Box
         sx={{
-          height: "240px",
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -262,19 +344,31 @@ const CartaPrograma3 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_4}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_5}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_6}
         </Typography>
       </Box>
+
       <Box
         sx={{
-          height: "240px",
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -282,16 +376,32 @@ const CartaPrograma3 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_7}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_8}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_9}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_TERCERO_10}
         </Typography>
       </Box>
@@ -304,20 +414,18 @@ const CartaPrograma4 = () => {
       disableGutters
       maxWidth="xl"
       sx={{
-        height: "550px",
-        width: "80vw",
+        height: { lg: "550px" },
+        width: "100vw",
         m: "auto",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { xs: "column", md: "row" },
         justifyContent: "center",
         textAlign: "center",
-        backgroundColor: "#F5F1ED",
         borderRadius: "20px",
       }}
     >
       <Box
         sx={{
-          height: "240px",
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -325,22 +433,37 @@ const CartaPrograma4 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_1}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_2}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_3}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_4}
         </Typography>
       </Box>
       <Box
         sx={{
-          height: "240px",
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -348,22 +471,37 @@ const CartaPrograma4 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_5}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_6}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_7}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_8}
         </Typography>
       </Box>
       <Box
         sx={{
-          height: "240px",
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -371,19 +509,39 @@ const CartaPrograma4 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_9}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_10}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_11}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_12}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_CUARTO_13}
         </Typography>
       </Box>
@@ -396,20 +554,18 @@ const CartaPrograma5 = () => {
       disableGutters
       maxWidth="xl"
       sx={{
-        height: "550px",
-        width: "80vw",
+        height: { lg: "550px" },
+        width: "100vw",
         m: "auto",
         display: "flex",
-        flexDirection: "row",
+        flexDirection: { xs: "column", md: "row" },
         justifyContent: "center",
         textAlign: "center",
-        backgroundColor: "#F5F1ED",
         borderRadius: "20px",
       }}
     >
       <Box
         sx={{
-          height: "240px",
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -417,22 +573,37 @@ const CartaPrograma5 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_1}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_2}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_3}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_4}
         </Typography>
       </Box>
       <Box
         sx={{
-          height: "240px",
           width: "80vw",
           m: "15px auto",
           display: "flex",
@@ -440,19 +611,30 @@ const CartaPrograma5 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_5}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_6}
         </Typography>
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_7}
         </Typography>
       </Box>
       <Box
         sx={{
-          height: "240px",
           width: "27vw",
           m: "15px auto",
           display: "flex",
@@ -460,7 +642,11 @@ const CartaPrograma5 = () => {
           alignItems: "center",
         }}
       >
-        <Typography variant="body" component="p" sx={{ width: "300px" }}>
+        <Typography
+          variant="body"
+          component="p"
+          sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+        >
           {PROGRAMA_QUINTO_8}
         </Typography>
         <Typography
@@ -473,7 +659,7 @@ const CartaPrograma5 = () => {
         <Typography
           variant="body"
           component="p"
-          sx={{ width: "300px", mt: "70px" }}
+          sx={{ width: "300px", mt: { xs: "30px", lg: "70px" } }}
         >
           {PROGRAMA_QUINTO_10}
         </Typography>
