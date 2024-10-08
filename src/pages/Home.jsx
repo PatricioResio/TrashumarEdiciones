@@ -38,6 +38,7 @@ const Home = () => {
         >
           <Fade triggerOnce>
             <Typography
+              color="primary.dark"
               component="h3"
               variant="h3"
               sx={{
@@ -64,6 +65,7 @@ const Home = () => {
             <Typography
               component="h3"
               variant="h3"
+              color="primary.dark"
               sx={{
                 m: "1rem auto",
               }}

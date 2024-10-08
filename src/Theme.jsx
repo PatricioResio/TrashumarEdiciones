@@ -22,7 +22,7 @@ const theme = createTheme({
       white: "#BAE3D7",
     },
     bg: {
-      dark: "#B5C2C7",
+      dark: "#215E61",
       main: "#DFFFF9",
       mediumBlue: "#09A5B0",
       mediumLightBlue: "#6CCCD9",
@@ -30,6 +30,7 @@ const theme = createTheme({
     },
     border: {
       dark: "#B5C2C7",
+      main: "#3F7D92",
     },
     error: {
       main: red.A400,

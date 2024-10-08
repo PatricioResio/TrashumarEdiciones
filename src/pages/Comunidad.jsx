@@ -16,11 +16,6 @@ const Comunidad = () => {
         width: "100%",
         minHeight: "65vh",
         textAlign: "center",
-        backgroundColor: "#215E61",
-        borderRadius: "20px",
-        border: "2px solid #3C9990",
-
-        color: "#BAE3D7",
       }}
       disableGutters
     >
@@ -30,6 +25,8 @@ const Comunidad = () => {
           component="h2"
           fontWeight="bold"
           align="center"
+          color={"primary"}
+          marginY={2}
         >
           Bienvenidos a nuestra comunidad
         </Typography>

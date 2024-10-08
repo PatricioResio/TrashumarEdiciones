@@ -25,9 +25,10 @@ const Libreria = () => {
         <Fade triggerOnce>
           <Typography
             variant="h1"
-            component="h1"
+            component="h2"
             fontWeight="bold"
             color={"primary"}
+            marginY={2}
           >
             Libreria
           </Typography>

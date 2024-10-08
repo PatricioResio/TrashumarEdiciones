@@ -13,25 +13,27 @@ const SectionComunidad = () => {
   const { perfiles, loading } = usePerfiles();
   return loading ? (
     <Box
+      borderColor="border.dark"
+      bgcolor="bg.dark"
       sx={{
         minHeight: "90vh",
-        border: "2px solid #3C9990",
-        borderRadius: "20px",
+        border: "2px solid ",
+        borderRadius: "10px",
         width: "98%",
         margin: "auto",
-        backgroundColor: "#38A098",
       }}
     >
       <CircularProgress sx={{ mt: "25%" }} />
     </Box>
   ) : (
     <Box
+      borderColor="border.dark"
+      bgcolor="bg.dark"
       component="article"
       sx={{
-        border: "2px solid #3C9990",
+        border: "2px solid ",
         margin: "10px",
         borderRadius: "10px",
-        backgroundColor: "#38A098",
       }}
     >
       <Fade>

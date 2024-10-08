@@ -9,12 +9,12 @@ const SectionLibreria = () => {
 
   return loadingProyectos ? (
     <Box
+      bgcolor="bg.mediumBlue"
       sx={{
         minHeight: "90vh",
         border: "2px solid #215E61",
         borderRadius: "10px",
         margin: "20px",
-        backgroundColor: "#38A098",
       }}
     >
       <CircularProgress sx={{ mt: "25%" }} />
@@ -23,11 +23,11 @@ const SectionLibreria = () => {
     <>
       <Box
         component="article"
+        bgcolor="bg.mediumBlue"
         sx={{
           border: "2px solid #3C9990",
           margin: "10px",
           borderRadius: "10px",
-          backgroundColor: "#38A098",
         }}
       >
         <Grid
