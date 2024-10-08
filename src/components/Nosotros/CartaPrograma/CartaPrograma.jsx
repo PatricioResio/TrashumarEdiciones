@@ -635,7 +635,7 @@ const CartaPrograma5 = () => {
       </Box>
       <Box
         sx={{
-          width: "27vw",
+          width: "80vw",
           m: "15px auto",
           display: "flex",
           flexDirection: "column",

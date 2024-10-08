@@ -18,8 +18,6 @@ const Libreria = () => {
           width: "100%",
           minHeight: "65vh",
           textAlign: "center",
-          borderRadius: "20px",
-          border: "2px solid #3C9990",
 
           color: "#BAE3D7",
         }}

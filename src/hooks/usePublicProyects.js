@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const useProyectoPublico = () => {
   const [proyectoPublico, setProyectoPublico] = useState(undefined);
-  const [loading, setLoading] = useState(true);
+  const [loadingProyectoPublico, setLoadingProyectoPublico] = useState(true);
   const { idProyecto } = useParams();
 
   useEffect(() => {
@@ -15,11 +15,11 @@ const useProyectoPublico = () => {
       );
       setProyectoPublico(proyecto);
       console.log(proyecto);
-      setLoading(false);
+      setLoadingProyectoPublico(false);
     };
     fetchProyectos();
   }, []);
-  return { loading, proyectoPublico };
+  return { loadingProyectoPublico, proyectoPublico };
 };
 
 export default useProyectoPublico;

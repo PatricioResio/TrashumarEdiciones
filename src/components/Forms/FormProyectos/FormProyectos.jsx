@@ -23,6 +23,7 @@ function FormProyectos() {
       contanosMas: "",
       rolEnElLibro: "",
       otroAutor: "",
+      acuerdoComercial: "",
       acuerdoComercialPorcentaje: "",
       etapaDesarrollo: "",
       manuscritoTerminado: false,
@@ -31,6 +32,7 @@ function FormProyectos() {
       informeDeLectura: false,
       correccionGramatical: false,
       correccionEstilos: false,
+
       traducir: false,
       idiomaOriginal: "",
       idiomaATraducir: "",
@@ -40,6 +42,10 @@ function FormProyectos() {
       alert(JSON.stringify(values, null, 2));
     },
   });
+  /* 
+  if (traducir === true || idiomaATraducir === "" || idiomaOriginal === "") {
+    setError("completar idioma a traducir");
+  } */
 
   return (
     <Container

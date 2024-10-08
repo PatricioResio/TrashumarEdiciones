@@ -27,13 +27,13 @@ const Carrusel = ({ arrayImagenes }) => {
       >
         <Fade triggerOnce>
           <Typography
-            component="h2"
+            component="h3"
             align="center"
-            variant="h2"
+            variant="h3"
+            marginY={2}
             sx={{
               fontSize: "34px",
               color: "#D8EDE9",
-              margin: "3rem 0 0 0",
               padding: "0",
             }}
           >

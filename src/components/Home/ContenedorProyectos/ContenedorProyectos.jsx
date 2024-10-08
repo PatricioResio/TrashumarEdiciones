@@ -12,6 +12,7 @@ const ContenedorCartas = () => {
         margin: "auto",
         justifyContent: "center",
         width: "98%",
+        minHeight: "50rem",
         border: "2px solid ",
         borderRadius: "20px",
         alignItems: "center",

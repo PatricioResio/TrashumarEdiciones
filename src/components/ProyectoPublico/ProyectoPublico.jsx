@@ -25,25 +25,23 @@ const ProyectoPublico = ({ proyectoPublico }) => {
         sx={{
           display: "flex",
           flexDirection: "row",
-          backgroundColor: "#215E61",
           justifyContent: "center",
           gap: "80px",
           my: "2rem",
           minHeight: "100vh",
           width: "100%",
-          border: "3px solid #3C9990",
-          borderRadius: "15px",
         }}
       >
         <Box
           sx={{
             width: "80%",
             fontSize: "20px",
+            minHeight: "80vh",
             m: "1rem auto",
-            backgroundColor: "#38A098",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            alignItems: "center",
             gap: "80px",
             border: "2px solid #B5C2C7",
             borderRadius: "20px",
@@ -51,41 +49,62 @@ const ProyectoPublico = ({ proyectoPublico }) => {
           }}
         >
           <Fade>
-            <Box sx={{ m: "auto", p: "0 5.5rem" }}>
+            <Typography sx={{ fontWeight: "bold" }} variant="h3" component="h2">
+              {titulo}
+            </Typography>
+            <Typography variant="h4" component="h3">
+              {autor}
+            </Typography>
+
+            <Box
+              sx={{
+                m: "auto",
+                p: "0 5.5rem",
+                display: "flex",
+                flexDirection: { xs: "column", xl: "row" },
+              }}
+            >
               <Box
-                component="img"
                 sx={{
-                  boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
-                  minHeight: "30rem",
-                  maxHeight: "30rem",
-                  m: "auto",
+                  display: "flex",
+                  flexDirection: { xs: "column", lg: "row" },
                 }}
-                src={img}
-                alt="Ilustracion de tapa de libro"
-              />
-              <Box
-                component="img"
-                sx={{
-                  boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
-                  minHeight: "30rem",
-                  maxHeight: "30rem",
-                  m: "auto",
-                }}
-                src={img1}
-                alt="Ilustracion de contratapa de libro"
-              />
+              >
+                <Box
+                  component="img"
+                  sx={{
+                    boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
+                    minHeight: "30rem",
+                    maxHeight: "30rem",
+                    m: "auto 1rem auto auto",
+                  }}
+                  src={img}
+                  alt="Ilustracion de tapa de libro"
+                />
+                <Box
+                  component="img"
+                  sx={{
+                    boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
+                    minHeight: "30rem",
+                    maxHeight: "30rem",
+                    m: "auto 1rem auto auto",
+                  }}
+                  src={img1}
+                  alt="Ilustracion de contratapa de libro"
+                />
+              </Box>
+              <Box sx={{ m: "auto 3rem" }}>
+                <Typography margin={2} component="p">
+                  {formattedFecha}
+                </Typography>
+                <Typography margin={2} variant="p">
+                  {descripcion}
+                </Typography>
+              </Box>
             </Box>
           </Fade>
 
           <Box>
-            <Typography
-              color="secondary"
-              sx={{ fontWeight: "bold" }}
-              variant="h3"
-              component="h2"
-            >
-              {titulo}
-            </Typography>
             <Box
               sx={{
                 width: "600px",
@@ -94,11 +113,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
                 justifyContent: "center",
                 gap: "20px",
               }}
-            >
-              <Typography component="h4">{autor}</Typography>
-              <Typography component="h5">{formattedFecha}</Typography>
-              <Typography>{descripcion}</Typography>
-            </Box>
+            ></Box>
           </Box>
         </Box>
       </Container>

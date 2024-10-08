@@ -346,9 +346,9 @@ const FormTextoUnico = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes listas"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="puedo cubrir el trabajo de mis colegas aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -359,9 +359,9 @@ const FormTextoUnico = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes a crear"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="prefiero que lo cubra la editorial aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -372,22 +372,22 @@ const FormTextoUnico = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="lo quiero hacer ad honorem"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
           }
-          label="LO QUIERO HACER AD HONOREN"
+          label="LO QUIERO HACER AD HONOREM"
         />
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="no hay trato"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -745,14 +745,14 @@ const FormSerieDeTextos = ({ formik }) => {
           variant="outlined"
         >
           {" "}
-          ¿Qué posición tendrías ante limitaciones presupuestarias??
+          ¿Qué posición tendrías ante limitaciones presupuestarias?
         </Typography>
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes listas"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="puedo cubrir el trabajo de mis colegas aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -763,9 +763,9 @@ const FormSerieDeTextos = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes a crear"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="prefiero que lo cubra la editorial aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -776,29 +776,28 @@ const FormSerieDeTextos = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="lo quiero hacer ad honorem"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
           }
-          label="LO QUIERO HACER AD HONOREN"
+          label="LO QUIERO HACER AD HONOREM"
         />
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="no hay trato"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
           }
-          label="NO HAY TRATO
-            "
+          label="NO HAY TRATO"
         />
       </RadioGroup>
       <Typography
@@ -1963,9 +1962,9 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes listas"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="puedo cubrir el trabajo de mis colegas aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -1976,9 +1975,9 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes a crear"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="prefiero que lo cubra la editorial aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -1989,29 +1988,28 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="lo quiero hacer ad honorem"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
           }
-          label="LO QUIERO HACER AD HONOREN"
+          label="LO QUIERO HACER AD HONOREM"
         />
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="no hay trato"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
           }
-          label="NO HAY TRATO
-                "
+          label="NO HAY TRATO"
         />
       </RadioGroup>
       <Typography
@@ -2624,8 +2622,7 @@ const FormLibroSoloLaIdea = ({ formik }) => {
               onBlur={formik.handleBlur}
             />
           }
-          label="ARTE DE TAPA Y CONTRATAPA
-                    "
+          label="ARTE DE TAPA Y CONTRATAPA"
         />
         <FormControlLabel
           control={
@@ -2648,15 +2645,14 @@ const FormLibroSoloLaIdea = ({ formik }) => {
           label="AUTORES"
           variant="outlined"
         >
-          {" "}
-          ¿Qué posición tendrías ante limitaciones presupuestarias??
+          ¿Qué posición tendrías ante limitaciones presupuestarias?
         </Typography>
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes listas"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="puedo cubrir el trabajo de mis colegas aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -2667,9 +2663,9 @@ const FormLibroSoloLaIdea = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="imagenes a crear"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="prefiero que lo cubra la editorial aunque mi pago quede pendiente"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -2680,22 +2676,22 @@ const FormLibroSoloLaIdea = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="lo quiero hacer ad honorem"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
             />
           }
-          label="LO QUIERO HACER AD HONOREN"
+          label="LO QUIERO HACER AD HONOREM"
         />
         <FormControlLabel
           control={
             <Radio
-              id="imagenesProyecto"
-              label="imagenesProyecto"
-              value="sin imagenes"
+              id="acuerdoComercial"
+              label="acuerdoComercial"
+              value="no hay trato"
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}

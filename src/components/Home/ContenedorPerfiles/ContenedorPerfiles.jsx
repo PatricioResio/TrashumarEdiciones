@@ -12,7 +12,7 @@ const ContenedorPerfiles = () => {
         display: "flex",
         margin: "auto",
         justifyContent: "center",
-
+        minHeight: "40rem",
         width: "98%",
         border: "2px solid ",
         borderRadius: "20px",

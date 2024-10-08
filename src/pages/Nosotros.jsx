@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { ContenedorPrograma } from "../components/index";
 import ContenedorHistoria from "../components/Nosotros/ContenedorHistoria/ContenedorHistoria";
 
@@ -16,9 +16,11 @@ const Nosotros = () => {
             borderRadius: "20px",
             height: "200vh",
             maxWidth: "100vw",
-            border: "2px solid #3C9990",
           }}
         >
+          <Typography variant="h2" component="h2">
+            ¿De qué se trata?
+          </Typography>
           <ContenedorHistoria />
         </Box>
       </section>

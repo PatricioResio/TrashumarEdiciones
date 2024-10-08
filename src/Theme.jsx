@@ -28,6 +28,9 @@ const theme = createTheme({
       mediumLightBlue: "#6CCCD9",
       lightBlue: "#BDFFF9",
     },
+    border: {
+      dark: "#B5C2C7",
+    },
     error: {
       main: red.A400,
     },
