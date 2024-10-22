@@ -14,13 +14,11 @@ const ContenedorHistoria = () => {
     <>
       <Box
         bgcolor="bg.mediumLightBlue"
-        borderColor="border.dark"
         sx={{
           height: "43rem",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          border: "1px solid",
           borderRadius: "20px",
           width: "75%",
           margin: "4rem auto",

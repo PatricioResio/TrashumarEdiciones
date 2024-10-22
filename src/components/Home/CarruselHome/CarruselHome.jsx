@@ -83,10 +83,10 @@ const CarruselHome = () => {
                       lg: "290px",
                       xl: "420px",
                     },
-                    color: "white",
                     padding: "20px",
                     border: "2px solid black",
                     borderRadius: "15px",
+                    color: "#F5FDF8",
                   }}
                 >
                   <Typography
@@ -111,13 +111,15 @@ const CarruselHome = () => {
                   </Typography>
 
                   <Button
-                    className="button-carrusel"
                     component={Link}
                     to={item.buttonLink}
                     key={item.buttonLink}
                     variant="outlined"
-                    color="secondary"
-                    sx={{ mt: "15px" }}
+                    sx={{
+                      mt: "15px",
+                      color: "#BAE3D7",
+                      borderColor: "#BAE3D7",
+                    }}
                   >
                     <Fade triggerOnce direction="top" delay={1200}>
                       {item.buttonText}

@@ -11,35 +11,33 @@ import CartaPerfilUsuario from "./CartaPerfilUsuarioo/CartaPerfilUsuario";
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
   const oficios = [...currentUser.oficios];
-  
 
   return (
     <Box
       component="section"
+      bgcolor={"bg.lightBlue"}
       sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        width: "100%",
+        width: "95%",
         m: "auto",
-        mt: "40px",
-        mb: "0px",
+        my: "40px",
         p: "0",
-        borderRadius: "20px",
-        border: "2px solid #3C9990",
+        borderRadius: "5px",
         height: { xs: "3200px", md: "2900px", lg: "2200px", xl: "1550px" },
       }}
     >
-      <Container
+      <Box
+        bgcolor="bg.mediumLightBlue"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: "100%",
+          width: { xs: "80%", md: "70%" },
           height: { xs: "1800px", md: "1500px", lg: "1200px", xl: "1500px" },
-          backgroundColor: "#215E61",
           borderRadius: "20px",
           border: "2px solid #3C9990",
           m: "10px auto",
@@ -49,7 +47,7 @@ const Perfil = () => {
         <CartaPerfilUsuario currentUser={currentUser} />
         <Oficios oficios={oficios} />
         <DescripcionPerfil {...currentUser} />
-      </Container>
+      </Box>
 
       <Container
         disableGutters

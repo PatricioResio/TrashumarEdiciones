@@ -17,8 +17,6 @@ const MiPerfil = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        borderRadius: "20px",
-        backgroundColor: "#BDFFF9",
         margin: "40px auto",
       }}
     >

@@ -148,8 +148,10 @@ function ResponsiveAppBar() {
                   onClick={handleCloseNavMenu}
                   sx={{
                     height: "100%",
+                    fontWeight: "bold",
                     fontSize: { lg: "14px" },
                     justifyContent: "center",
+                    borderRadius: "10px",
                     width: "160px",
                     transition: "transform 0.3s ease-in-out",
                     "&:hover": {

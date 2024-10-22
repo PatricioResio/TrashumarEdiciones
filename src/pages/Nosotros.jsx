@@ -13,7 +13,6 @@ const Nosotros = () => {
             flexDirection: "column",
             textAlign: "center",
             margin: "0 0 2rem 0",
-            borderRadius: "20px",
             minHeight: "200vh",
             maxWidth: "100vw",
           }}
