@@ -2,7 +2,7 @@ export const IMG_BRAND =
   "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/bannerPrueba1.png?alt=media&token=6d98ef88-27ce-41d5-9f2e-d5a48eb3e590";
 
 export const LOGO_URL =
-  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/LogoTrashumarFinal.png?alt=media&token=3f518016-b1df-4dfc-adf9-c41e0645f325";
+  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/LogoTrashumarFinal.png?alt=media&token=4593175e-923c-4012-9dfb-ec1e55821d8c";
 
 export const DEFAULT_PERFIL_FOTO =
   "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/DefaultPerfil.png?alt=media&token=0977a220-09e0-4f8d-a668-16dc72fc757e";
