@@ -160,7 +160,7 @@ const FormTextoUnico = ({ formik }) => {
           label="ETAPAS"
           variant="outlined"
         >
-          ¿Que etapas te hace falta cubrir?
+          ¿Qué etapas te hace falta cubrir?
         </Typography>
         <FormControlLabel
           control={
@@ -564,7 +564,7 @@ const FormSerieDeTextos = ({ formik }) => {
           label="ETAPAS"
           variant="outlined"
         >
-          ¿Que etapas te hace falta cubrir?
+          ¿Qué etapas te hace falta cubrir?
         </Typography>
         <FormControlLabel
           control={
@@ -803,10 +803,8 @@ const FormSerieDeTextos = ({ formik }) => {
       <Typography
         fontSize={"20px"}
         sx={{
-          backgroundColor: "#215E61",
           border: "2px solid ",
           borderRadius: "10px",
-          color: "#CBF7EB",
           padding: "5px",
         }}
       >
@@ -830,7 +828,7 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
           label="ETAPAS"
           variant="outlined"
         >
-          ¿Que etapas te hace falta cubrir?
+          ¿Qué etapas te hace falta cubrir?
         </Typography>
         <FormControlLabel
           control={
@@ -1054,7 +1052,7 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
           label="ETAPAS"
           variant="outlined"
         >
-          ¿Que etapas te hace falta cubrir?
+          ¿Qué etapas te hace falta cubrir?
         </Typography>
         <FormControlLabel
           control={
@@ -1734,7 +1732,7 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
           label="ETAPAS"
           variant="outlined"
         >
-          ¿Que etapas te hace falta cubrir?
+          ¿Qué etapas te hace falta cubrir?
         </Typography>
         <FormControlLabel
           control={

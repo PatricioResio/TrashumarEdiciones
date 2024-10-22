@@ -13,12 +13,11 @@ const SectionComunidad = () => {
   const { perfiles, loading } = usePerfiles();
   return loading ? (
     <Box
-      borderColor="border.dark"
-      bgcolor="bg.dark"
+      bgcolor="bg.lightBlue"
       sx={{
         minHeight: "90vh",
-        border: "2px solid ",
-        borderRadius: "10px",
+        border: "1px solid #BAE3D7",
+        borderRadius: "5px",
         width: "98%",
         margin: "auto",
       }}
@@ -27,13 +26,12 @@ const SectionComunidad = () => {
     </Box>
   ) : (
     <Box
-      borderColor="border.dark"
-      bgcolor="bg.dark"
+      bgcolor="bg.lightBlue"
       component="article"
       sx={{
-        border: "2px solid ",
+        border: "1px solid #BAE3D7",
         margin: "10px",
-        borderRadius: "10px",
+        borderRadius: "5px",
       }}
     >
       <Fade>

@@ -1,26 +1,17 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./Perfil.css";
-import { Box, Container, IconButton, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Box, Container } from "@mui/material";
 import ContenedorColaboraciones from "./ContenedorColaboraciones/ContenedorColaboraciones";
 import ContenedorProyectosPerfil from "./ContenedorProyectosPerfil/ContenedorProyectosPerfil";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 import DescripcionPerfil from "./DescripcionPerfil/DescripcionPerfil";
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faSquareXTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { faSquarePhone } from "@fortawesome/free-solid-svg-icons";
 import Oficios from "./Oficios/Oficios";
 import CartaPerfilUsuario from "./CartaPerfilUsuarioo/CartaPerfilUsuario";
 
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
   const oficios = [...currentUser.oficios];
+  
 
   return (
     <Box
@@ -35,7 +26,6 @@ const Perfil = () => {
         mt: "40px",
         mb: "0px",
         p: "0",
-        backgroundColor: "#215E61",
         borderRadius: "20px",
         border: "2px solid #3C9990",
         height: { xs: "3200px", md: "2900px", lg: "2200px", xl: "1550px" },

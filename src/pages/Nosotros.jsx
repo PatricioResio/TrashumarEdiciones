@@ -12,13 +12,13 @@ const Nosotros = () => {
             display: "flex",
             flexDirection: "column",
             textAlign: "center",
-            margin: "1.5rem 0",
+            margin: "0 0 2rem 0",
             borderRadius: "20px",
-            height: "200vh",
+            minHeight: "200vh",
             maxWidth: "100vw",
           }}
         >
-          <Typography variant="h2" component="h2">
+          <Typography variant="h2" component="h2" sx={{ mt: "2rem" }}>
             ¿De qué se trata?
           </Typography>
           <ContenedorHistoria />
@@ -33,7 +33,7 @@ const Nosotros = () => {
           padding: "0",
           boxShadow: "inherit",
           display: "flex",
-          width: "100vw",
+          width: "90vw",
           height: "100%",
         }}
       >

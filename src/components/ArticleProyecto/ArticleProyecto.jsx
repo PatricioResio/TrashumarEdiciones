@@ -16,17 +16,17 @@ const SectionProyecto = () => {
         fontSize: "26px",
         borderRadius: "10px",
         p: "35px",
-        backgroundColor: "#215E61",
       }}
       maxWidth="2xl"
     >
       <Box
+        bgcolor="bg.mediumLightBlue"
         sx={{
           mb: "20px",
           width: "100%",
           maxWidth: "1600px",
+          borderRadius: "5px",
           p: "20px",
-          color: "#BAE3D7",
         }}
       >
         <Typography
@@ -60,8 +60,8 @@ const SectionProyecto = () => {
           esté aprobado, podras seguir trabajando desde la pagina. ¡Gracias por
           confiar en nosotres!
         </Typography>
+        <FormProyectos />
       </Box>
-      <FormProyectos />
     </Container>
   );
 };

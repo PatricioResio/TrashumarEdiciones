@@ -1,17 +1,18 @@
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import "./Perfil.css";
 import FilaColaboraciones from "../FilaColaboraciones/FilaColaboraciones";
 import FilaProyectosPerfil from "../FilaProyectosPerfil/FilaProyectosPerfil";
 import Oficios from "../Oficios/Oficios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquarePhone } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import {
   faFacebook,
   faInstagram,
   faLinkedin,
   faSquareXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+
 import DescripcionPerfil from "../DescripcionPerfil/DescripcionPerfil";
 
 const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
@@ -29,19 +30,17 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
   return (
     <Box
       component="section"
+      bgcolor={"bg.lightBlue"}
       sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        width: "100%",
-        m: "auto",
-        mt: "40px",
-        mb: "0px",
+        width: "95%",
+        m: "40px auto",
         p: "0",
-        borderRadius: "20px",
-        border: "2px solid #3C9990",
-        height: { xs: "3200px", md: "2900px", lg: "2200px", xxl: "2000px" },
+        borderRadius: "5px",
+        height: { xs: "160rem", sm: "150rem", lg: "100rem", xl: "85rem" },
       }}
     >
       <Container
@@ -50,30 +49,26 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: "100%",
-          height: { xs: "1800px", md: "1500px", lg: "1200px", xl: "1500px" },
-
-          borderRadius: "20px",
-          border: "2px solid #3C9990",
+          width: "90%",
+          height: { xs: "100rem", lg: "70rem", xl: "60rem" },
+          backgroundColor: "#6CCCD9",
+          borderRadius: "5px",
+          border: "1px solid #3C9990",
           m: "10px auto",
           boxShadow: "1px 1px 5px black",
         }}
       >
         <Container
           maxWidth="2xl"
-          backgroundColor={"primary.main"}
           sx={{
-            width: { xs: "300px", md: "500px", lg: "800px", xl: "1200px" },
-            height: "90%",
+            height: { xs: "40%", lg: "90%" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            m: "auto auto auto auto",
+            m: "auto auto 0 auto",
             mt: { xs: "20px" },
             paddingTop: "0px",
-            borderColor: "#14919B",
-            borderRadius: "2%",
             position: "relative",
             color: "#02291F",
           }}
@@ -111,7 +106,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
                 my: "auto",
               }}
             >
-              <Typography variant="h5" fontWeight="bold">
+              <Typography component="h5" variant="h5" fontWeight="bold">
                 Datos personales
               </Typography>
             </Box>
@@ -177,7 +172,6 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         disableGutters
         sx={{
           height: "100%",
-
           m: "auto",
           minWidth: "100%",
           display: "flex",
@@ -191,6 +185,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
       >
         <Box
           component="article"
+          bgcolor={"bg.mediumLightBlue"}
           sx={{
             m: "auto",
             border: "solid 2px #BAE3D7",
@@ -204,6 +199,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         </Box>
         <Box
           component="article"
+          bgcolor={"bg.mediumLightBlue"}
           sx={{
             m: "auto",
             border: "solid 2px #BAE3D7",

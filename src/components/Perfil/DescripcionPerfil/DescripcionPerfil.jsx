@@ -6,18 +6,18 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
     <Container
       sx={{
         width: { xs: "350px", md: "700px", lg: "900px", xl: "1200px" },
-        height: { xs: "1200px", md: "900px", lg: "500px", xl: "600px" },
-
-        backgroundColor: "#BAE3D7",
-        my: { xs: "30px" },
-        border: "2px solid #4d7a77",
-        borderRadius: "8px",
+        height: { xs: "25%", md: "80%" },
+        my: { xs: "30px", sm: "auto" },
+        border: "2px solid #BAE3D7",
+        borderRadius: "15px",
+        backgroundColor: "#BDFFF9",
+        minHeight: { xs: "25", md: "80%" },
         contain: "content",
         overflowY: "scroll",
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <Typography variant="h3" sx={{ mt: "50px" }}>
+        <Typography variant="h4" sx={{ mt: "50px" }}>
           Mi descripcion
         </Typography>
         {!explicarPerfil ? (
@@ -25,7 +25,7 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
             {nombrePublico} todavía no pudo describir su trabajo!
           </Typography>
         ) : (
-          <Typography variant="h4" sx={{ mt: "50px" }}>
+          <Typography variant="h5" sx={{ mt: "50px" }}>
             {explicarPerfil}
           </Typography>
         )}

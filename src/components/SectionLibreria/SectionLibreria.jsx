@@ -9,11 +9,11 @@ const SectionLibreria = () => {
 
   return loadingProyectos ? (
     <Box
-      bgcolor="bg.mediumBlue"
+      bgcolor="bg.lightBlue"
       sx={{
         minHeight: "90vh",
-        border: "2px solid #215E61",
-        borderRadius: "10px",
+        border: "1px solid #BAE3D7",
+        borderRadius: "5px",
         margin: "20px",
       }}
     >
@@ -23,11 +23,12 @@ const SectionLibreria = () => {
     <>
       <Box
         component="article"
-        bgcolor="bg.mediumBlue"
+        bgcolor="bg.lightBlue"
         sx={{
-          border: "2px solid #3C9990",
-          margin: "10px",
-          borderRadius: "10px",
+          minHeight: "90vh",
+          border: "1px solid #BAE3D7",
+          borderRadius: "5px",
+          margin: "20px",
         }}
       >
         <Grid
@@ -45,7 +46,7 @@ const SectionLibreria = () => {
           {proyectos.map((proyecto, i) => (
             <Grid item key={i} xs={{ xs: 1, sm: 2, md: 3, xl: 4 }}>
               <Fade>
-                <CartaProyectos key={i} proyecto={proyecto} />
+                <CartaProyectos key={proyecto.id} proyecto={proyecto} />
               </Fade>
             </Grid>
           ))}

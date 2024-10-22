@@ -1,25 +1,17 @@
 import FilaColaboraciones from "../FilaColaboraciones/FilaColaboraciones";
 import { CircularProgress, Container } from "@mui/material";
-import useProyectos from "../../../hooks/useProyectos";
-import { useContext } from "react";
-import { AuthContext } from "../../../context/AuthContext";
 import "../ContenedorProyectosPerfil/ContenedorProyectosPerfil.css";
+import useFilterColaboraciones from "../../../hooks/useFilterColaboraciones";
 
 const ContenedorColaboraciones = () => {
-  const { currentUser } = useContext(AuthContext);
-  const { proyectos, loadingProyectos } = useProyectos();
-  const nombre = currentUser.nombre;
-
-  const colaboracionesUser = proyectos.filter((proyecto) =>
-    !proyecto.colaboradores ? [] : proyecto.colaboradores.includes(nombre)
-  );
+  const { colaboraciones, loadingColaboraciones } = useFilterColaboraciones();
 
   return (
     <Container maxWidth="md" className="contenedor-fila-perfil">
-      {loadingProyectos ? (
+      {loadingColaboraciones ? (
         <CircularProgress />
       ) : (
-        <FilaColaboraciones colaboraciones={colaboracionesUser} />
+        <FilaColaboraciones colaboraciones={colaboraciones} />
       )}
     </Container>
   );

@@ -25,7 +25,7 @@ const Comunidad = () => {
           component="h2"
           fontWeight="bold"
           align="center"
-          color={"primary"}
+          color={"secondary"}
           marginY={2}
         >
           Bienvenidos a nuestra comunidad

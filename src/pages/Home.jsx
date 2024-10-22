@@ -25,20 +25,19 @@ const Home = () => {
         <ArticleDestacado />
 
         <Box
-          bgcolor="bg.mediumBlue"
+          bgcolor="bg.mediumLightBlue"
           sx={{
-            background: "#09A5B0",
             justifyContent: "center",
             alignItems: "center",
             border: "1px solid #3F7D92",
-            borderRadius: "20px",
+            borderRadius: "5px",
             width: "100%",
             pb: 2,
           }}
         >
           <Fade triggerOnce>
             <Typography
-              color="primary.dark"
+              color="secondary"
               component="h3"
               variant="h3"
               sx={{
@@ -52,11 +51,11 @@ const Home = () => {
         </Box>
 
         <Box
-          bgcolor="bg.mediumBlue"
+          bgcolor="bg.mediumLightBlue"
           sx={{
             justifyContent: "center",
             border: "1px solid #3F7D92",
-            borderRadius: "20px",
+            borderRadius: "5px",
             width: "100%",
             pb: 2,
           }}
@@ -65,7 +64,7 @@ const Home = () => {
             <Typography
               component="h3"
               variant="h3"
-              color="primary.dark"
+              color="secondary"
               sx={{
                 m: "1rem auto",
               }}

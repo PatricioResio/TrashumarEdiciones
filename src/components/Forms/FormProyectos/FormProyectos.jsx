@@ -55,13 +55,12 @@ function FormProyectos() {
         fontSize: "26px",
         p: "30px 0",
         display: "flex",
-        m: "0",
+        m: "0 auto",
         flexDirection: "column",
         alignItems: "center",
-        border: "1px solid",
-        borderColor: "#14919B",
+        border: "1px solid #BAE3D7",
         borderRadius: "20px",
-        backgroundColor: "#BAE3D7",
+        backgroundColor: "#BDFFF9",
       }}
     >
       <Box
@@ -255,7 +254,7 @@ function FormProyectos() {
           variant="outlined"
           sx={{ m: "6px" }}
         >
-          Contanos mas al respecto de tu proyecto
+          Contanos más al respecto de tu proyecto
         </Typography>
         <TextField
           multiline
@@ -264,10 +263,7 @@ function FormProyectos() {
           label="Mi idea es ...."
           variant="outlined"
         />
-        <Button
-          sx={{ color: "#BAE3D7", backgroundColor: "#215E61" }}
-          variant="contained"
-        >
+        <Button sx={{}} variant="contained">
           enviar formulario
         </Button>
       </Box>

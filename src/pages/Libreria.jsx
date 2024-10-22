@@ -27,7 +27,7 @@ const Libreria = () => {
             variant="h1"
             component="h2"
             fontWeight="bold"
-            color={"primary"}
+            color={"secondary"}
             marginY={2}
           >
             Libreria

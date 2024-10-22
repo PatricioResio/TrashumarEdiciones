@@ -17,13 +17,12 @@ const MiPerfil = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#215E61",
         borderRadius: "20px",
-        border: "2px solid #3C9990",
+        backgroundColor: "#BDFFF9",
         margin: "40px auto",
       }}
     >
-      <FormRegistroRouter></FormRegistroRouter>
+      <FormRegistroRouter />
     </Container>
   );
 };

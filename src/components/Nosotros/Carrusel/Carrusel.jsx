@@ -10,12 +10,11 @@ const Carrusel = ({ arrayImagenes }) => {
   const swiperRef = useResetSwiper(arrayImagenes);
 
   return (
-    <Fade delay={1100}>
+    <Fade delay={1100} triggerOnce>
       <Box
         bgcolor="primary.main"
         sx={{
           minWidth: "100%",
-
           height: "100%",
           display: "flex",
           flexDirection: "column",

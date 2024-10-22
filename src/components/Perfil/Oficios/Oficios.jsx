@@ -12,13 +12,12 @@ const Oficios = ({ oficios }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        border: "2px solid #4d7a77",
-        borderRadius: "8px",
-        minHeight: "25vh",
-        height: { xs: "80%", md: "80%", lg: "600px", xl: "630px" },
+        border: "2px solid #BAE3D7",
+        borderRadius: "15px",
+        backgroundColor: "#BDFFF9",
+        height: { xs: "25%", md: "80%" },
         width: { xs: "200px", md: "300px", lg: "400px", xl: "600px" },
-
-        backgroundColor: "#BAE3D7",
+        minHeight: { xs: "25", md: "80%" },
         m: "auto",
         mt: { xs: "30px", xl: "auto" },
 
@@ -26,10 +25,10 @@ const Oficios = ({ oficios }) => {
       }}
     >
       <Typography
-        gutterBottom
-        variant="h4"
+        position="top"
+        variant="h5"
         sx={{ mt: "0", fontWeight: "bold" }}
-        component="h4"
+        component="h5"
       >
         Mis oficios
       </Typography>
@@ -43,7 +42,7 @@ const Oficios = ({ oficios }) => {
             oficio.valor === false ? (
               <Typography></Typography>
             ) : (
-              <Typography key={oficio.nombre} variant="h5" component="h5">
+              <Typography key={oficio.nombre} variant="h6" component="h6">
                 {oficio.nombre}
               </Typography>
             )

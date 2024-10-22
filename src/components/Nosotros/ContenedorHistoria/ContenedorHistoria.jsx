@@ -1,10 +1,8 @@
 import CartaHistoria from "../CartaHistoria/CartaHistoria";
 import { historias } from "../../../constants/Arrays";
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import Carrusel from "../Carrusel/Carrusel";
 import useHistorias from "../../../hooks/useHistorias";
-import { Suspense } from "react";
-import { Loader } from "../../index";
 import { Fade } from "react-awesome-reveal";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -15,7 +13,7 @@ const ContenedorHistoria = () => {
   return (
     <>
       <Box
-        bgcolor="bg.mediumBlue"
+        bgcolor="bg.mediumLightBlue"
         borderColor="border.dark"
         sx={{
           height: "43rem",
@@ -25,7 +23,7 @@ const ContenedorHistoria = () => {
           border: "1px solid",
           borderRadius: "20px",
           width: "75%",
-          margin: "15px auto",
+          margin: "4rem auto",
           padding: "0",
         }}
       >

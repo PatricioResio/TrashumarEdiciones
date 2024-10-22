@@ -14,7 +14,7 @@ const FormRegistroRouter = () => {
     <Container disableGutters maxWidth="2xl" sx={{ height: "100%", m: "0" }}>
       {loading === true ? (
         <>
-          <CircularProgress></CircularProgress>
+          <CircularProgress />
         </>
       ) : (
         <FormRegistro />

@@ -1,37 +1,35 @@
-import { Button, Typography, Container } from "@mui/material";
+import { Button, Typography, Container, Box } from "@mui/material";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
 
 function LoginForm() {
   const { handleGoogle } = useContext(AuthContext);
   return (
-    <Container
-      maxWidth="xxl"
+    <Box
+      bgcolor="bg.lightBlue"
       sx={{
         height: "80vh",
-        width: "100vw",
+        width: "90vw",
         display: "flex",
         margin: "30px auto",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#2D4746",
-        border: "solid 3px #3C9990",
         borderRadius: "15px",
       }}
     >
       <form>
-        <Container
+        <Box
+          bgcolor="bg.mediumLightBlue"
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            height: "30vh",
+            height: "60vh",
             width: "36vw",
             boxSizing: "border-box",
-            border: "solid 3px #3C9990",
-            backgroundColor: "#A9CBC8",
-            borderRadius: "30px",
+            border: "solid 1px ",
+            borderRadius: "15px",
             margin: "auto",
             transition: "transform 0.3s",
             "&:hover": {
@@ -39,8 +37,7 @@ function LoginForm() {
             },
           }}
         >
-          <Typography sx={{ mt: "20px", color: "#0C2324" }} variant="h2">
-            {" "}
+          <Typography sx={{ mt: "auto" }} variant="h3">
             Iniciar sesión{" "}
           </Typography>
           <Button
@@ -49,6 +46,7 @@ function LoginForm() {
             sx={{
               width: "40%",
               margin: "auto",
+              color: "#0C2324",
               transition: "transform 0.3s",
               "&:hover": {
                 transform: "scale(1.04)",
@@ -60,9 +58,9 @@ function LoginForm() {
           >
             Ingresa con Google
           </Button>
-        </Container>
+        </Box>
       </form>
-    </Container>
+    </Box>
   );
 }
 

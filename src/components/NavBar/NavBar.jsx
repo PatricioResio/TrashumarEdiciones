@@ -48,7 +48,6 @@ function ResponsiveAppBar() {
             sx={{
               flexGrow: 1,
               display: { xs: "flex", md: "none" },
-              background: { xs: "#215E61" },
             }}
           >
             <IconButton
@@ -85,18 +84,20 @@ function ResponsiveAppBar() {
               {pages.map((page) => (
                 <MenuItem
                   sx={{
-                    backgroundColor: "#215E61",
                     height: "100%",
                   }}
                   key={page.name}
                   onClick={handleCloseNavMenu}
                 >
-                  <Link
+                  <Typography
+                    component={Link}
+                    color="secondary"
+                    bgcolor="primary"
                     to={page.path}
-                    style={{ textDecoration: "none", color: "inherit" }}
+                    style={{ textDecoration: "none" }}
                   >
-                    <Typography>{page.name}</Typography>
-                  </Link>
+                    {page.name}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -142,12 +143,10 @@ function ResponsiveAppBar() {
                 <Button
                   key={page.name}
                   component={Link}
-                  variant="text"
+                  color="secondary"
                   to={page.path}
                   onClick={handleCloseNavMenu}
                   sx={{
-                    color: "#E4F7F7",
-                    display: "block",
                     height: "100%",
                     fontSize: { lg: "14px" },
                     justifyContent: "center",

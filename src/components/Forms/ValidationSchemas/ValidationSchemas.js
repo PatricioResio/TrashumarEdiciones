@@ -25,6 +25,7 @@ const validationProyecto = yup.object().shape({
     is: true,
     then: yup.string().required("Es necesario indicar el idioma a traducir"),
   }),
+
   contanosMas: yup
     .string()
     .required("Por favor, cuéntanos más sobre tu proyecto"),

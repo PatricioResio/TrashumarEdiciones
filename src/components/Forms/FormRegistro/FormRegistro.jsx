@@ -110,7 +110,7 @@ const FormRegistro = () => {
         width: "80%",
         border: "2px solid #3C9990",
         borderRadius: "15px",
-        background: "#A9CBC8",
+        background: "#6CCCD9",
       }}
     >
       <Fade>

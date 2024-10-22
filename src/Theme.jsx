@@ -14,11 +14,10 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#215E61",
-      dark: "#0C2324",
+      main: "#09A5B0",
     },
     secondary: {
-      main: "#B5C2C7",
+      main: "#010C0D",
       white: "#BAE3D7",
     },
     bg: {
@@ -29,14 +28,15 @@ const theme = createTheme({
       lightBlue: "#BDFFF9",
     },
     border: {
+      main: "#BAE3D7",
       dark: "#B5C2C7",
-      main: "#3F7D92",
     },
     error: {
       main: red.A400,
     },
   },
   typography: {
+    color: "#09A5B0",
     h1: {
       fontWeight: "bold",
       fontSize: "2.4rem",
