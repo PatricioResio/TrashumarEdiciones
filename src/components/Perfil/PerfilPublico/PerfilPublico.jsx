@@ -38,9 +38,9 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         alignItems: "center",
         width: "95%",
         m: "40px auto",
-        p: "0",
         borderRadius: "5px",
-        height: { xs: "160rem", sm: "150rem", lg: "100rem", xl: "85rem" },
+        p: "4rem",
+        gap: "2rem",
       }}
     >
       <Container
@@ -50,7 +50,6 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           justifyContent: "center",
           alignItems: "center",
           width: "90%",
-          height: { xs: "100rem", lg: "70rem", xl: "60rem" },
           backgroundColor: "#6CCCD9",
           borderRadius: "5px",
           border: "1px solid #3C9990",
@@ -61,7 +60,6 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         <Container
           maxWidth="2xl"
           sx={{
-            height: { xs: "40%", lg: "90%" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
@@ -174,6 +172,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           height: "100%",
           m: "auto",
           minWidth: "100%",
+          gap: "2rem",
           display: "flex",
           flexDirection: {
             xs: "column",
@@ -192,7 +191,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             borderRadius: "2%",
             p: "20px",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "350px", md: "500px", lg: "800px" },
+            width: { xs: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaProyectosPerfil proyectosUser={proyectosUser} />
@@ -202,11 +201,12 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           bgcolor={"bg.mediumLightBlue"}
           sx={{
             m: "auto",
+
             border: "solid 2px #BAE3D7",
             borderRadius: "2%",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",
-            width: { xs: "350px", md: "500px", lg: "800px" },
+            width: { xs: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaColaboraciones colaboraciones={colaboraciones} />

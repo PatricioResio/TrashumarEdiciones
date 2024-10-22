@@ -68,7 +68,7 @@ const Footer = () => {
                 marginTop: "1rem",
               }}
             ></Grid>
-            <Grid
+            {/*    <Grid
               item
               sx={{
                 height: "50%",
@@ -88,7 +88,7 @@ const Footer = () => {
                 <FaFacebookF className="footer-icon" />
                 @trashumarediciones
               </Button>
-            </Grid>
+            </Grid> */}
             <Grid
               item
               sx={{
@@ -103,6 +103,14 @@ const Footer = () => {
                 to="https://www.instagram.com/trashumarediciones/"
                 component={Link}
                 color="secondary"
+                sx={{
+                  borderRadius: "10px",
+                  transition: "transform 0.3s ease-in-out",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    color: "white",
+                  },
+                }}
               >
                 <RiInstagramFill className="footer-icon" />
                 @trashumarediciones
@@ -121,7 +129,19 @@ const Footer = () => {
                 textAling: "center",
               }}
             >
-              <Button color="secondary" to="/nosotros" component={Link}>
+              <Button
+                color="secondary"
+                to="/nosotros"
+                component={Link}
+                sx={{
+                  borderRadius: "10px",
+                  transition: "transform 0.3s ease-in-out",
+                  "&:hover": {
+                    transform: "scale(1.05)",
+                    color: "white",
+                  },
+                }}
+              >
                 ALGO MAS
               </Button>
             </Grid>

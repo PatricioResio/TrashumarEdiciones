@@ -36,14 +36,14 @@ export default function CartaProyectos({ proyecto }) {
             sx={{
               position: "absolute",
               bottom: "0",
-              m: "auto 25%",
+              m: "auto 34%",
               height: "2rem",
               opacity: "0.9",
             }}
             component={Link}
             to={`/proyecto/${proyecto.idProyecto}`}
           >
-            Ver mas detalles
+            Ver más
           </Button>
         </CardActions>
       </Card>

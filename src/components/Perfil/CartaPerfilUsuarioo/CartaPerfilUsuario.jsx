@@ -21,18 +21,13 @@ const CartaPerfilUsuario = ({ currentUser }) => {
     <Container
       maxWidth="2xl"
       sx={{
-        width: { xs: "300px", md: "500px", lg: "800px", xl: "1200px" },
-        height: "90%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        m: "auto auto auto auto",
+        m: "auto auto 0 auto",
         mt: { xs: "20px" },
         paddingTop: "0px",
-        borderColor: "#14919B",
-        borderRadius: "2%",
-        backgroundColor: "#BAE3D7",
         position: "relative",
         color: "#02291F",
       }}

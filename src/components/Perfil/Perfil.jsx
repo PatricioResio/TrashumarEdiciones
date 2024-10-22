@@ -22,11 +22,10 @@ const Perfil = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "95%",
-        m: "auto",
-        my: "40px",
-        p: "0",
+        m: "40px auto",
         borderRadius: "5px",
-        height: { xs: "3200px", md: "2900px", lg: "2200px", xl: "1550px" },
+        p: "4rem",
+        gap: "2rem",
       }}
     >
       <Box
@@ -36,10 +35,10 @@ const Perfil = () => {
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: { xs: "80%", md: "70%" },
-          height: { xs: "1800px", md: "1500px", lg: "1200px", xl: "1500px" },
-          borderRadius: "20px",
-          border: "2px solid #3C9990",
+          width: "90%",
+          backgroundColor: "#6CCCD9",
+          borderRadius: "5px",
+          border: "1px solid #3C9990",
           m: "10px auto",
           boxShadow: "1px 1px 5px black",
         }}
@@ -53,6 +52,7 @@ const Perfil = () => {
         disableGutters
         sx={{
           height: "100%",
+          gap: "4rem",
           m: "auto",
           minWidth: "100%",
           display: "flex",
@@ -69,7 +69,7 @@ const Perfil = () => {
           sx={{
             m: "auto",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "350px", md: "500px", lg: "800px" },
+            width: { xs: "350px", md: "500px", lg: "45%" },
           }}
         >
           <ContenedorProyectosPerfil />
@@ -79,7 +79,7 @@ const Perfil = () => {
           sx={{
             m: "auto",
             mt: "0",
-            width: { xs: "350px", md: "500px", lg: "800px" },
+            width: { xs: "350px", md: "500px", lg: "45%" },
           }}
         >
           <ContenedorColaboraciones />

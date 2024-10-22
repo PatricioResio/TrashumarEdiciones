@@ -10,18 +10,15 @@ const Oficios = ({ oficios }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        width: { xs: "60%" },
+        justifyContent: "start",
         alignItems: "center",
         border: "2px solid #BAE3D7",
         borderRadius: "15px",
         backgroundColor: "#BDFFF9",
-        height: { xs: "25%", md: "80%" },
-        width: { xs: "200px", md: "300px", lg: "400px", xl: "600px" },
-        minHeight: { xs: "25", md: "80%" },
-        m: "auto",
-        mt: { xs: "30px", xl: "auto" },
-
-        gap: "0px",
+        m: "auto 6px",
+        gap: "2px",
+        height: "22rem",
       }}
     >
       <Typography
@@ -42,7 +39,12 @@ const Oficios = ({ oficios }) => {
             oficio.valor === false ? (
               <Typography></Typography>
             ) : (
-              <Typography key={oficio.nombre} variant="h6" component="h6">
+              <Typography
+                key={oficio.nombre}
+                variant="h6"
+                component="h6"
+                sx={{ m: "auto" }}
+              >
                 {oficio.nombre}
               </Typography>
             )

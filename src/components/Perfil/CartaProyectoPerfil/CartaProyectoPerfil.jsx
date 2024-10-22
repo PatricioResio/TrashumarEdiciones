@@ -22,7 +22,7 @@ export default function CartaProyectoPerfil({ proyecto }) {
         }}
       >
         <CardMedia
-          sx={{ padding: "40px", height: { xs: "275px", md: "300px" } }}
+          sx={{ padding: "40px", height: "100%" }}
           image={!proyecto ? "" : proyecto.img}
           src={!proyecto ? "" : proyecto.img}
         />
@@ -36,11 +36,18 @@ export default function CartaProyectoPerfil({ proyecto }) {
         </CardContent>
         <CardActions>
           <Button
-            sx={{ position: "absolute", bottom: "0" }}
+            variant="contained"
+            sx={{
+              position: "absolute",
+              bottom: "0",
+              m: "auto 28%",
+              height: "2rem",
+              opacity: "0.9",
+            }}
             component={Link}
             to={`/proyecto/${!proyecto ? "" : proyecto.idProyecto}`}
           >
-            Ver mas detalles
+            Ver más
           </Button>
         </CardActions>
       </Card>
