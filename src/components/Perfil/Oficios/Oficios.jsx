@@ -25,13 +25,13 @@ const Oficios = ({ oficios }) => {
       }}
     >
       <Typography
-        position="top"
-        variant="h5"
+        variant="h6"
         sx={{ mt: "0", fontWeight: "bold" }}
-        component="h5"
+        component="h6"
       >
         Mis oficios
       </Typography>
+
       <Container sx={{ marginLeft: "0px" }}>
         {oficios.lenght === 0 || !oficios ? (
           <Typography variant="h5" component="h5">

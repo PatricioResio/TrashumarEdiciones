@@ -14,8 +14,8 @@ export default function CartaProyectos({ proyecto }) {
         sx={{
           width: "22rem",
           height: "43rem",
-          border: "3px solid #3C9990",
-          borderRadius: "20px",
+          border: "0.5px solid #3C9990",
+          borderRadius: "3px",
           backgroundColor: "#A6ECE0",
           position: "relative",
           margin: "5.5rem auto",
@@ -26,26 +26,20 @@ export default function CartaProyectos({ proyecto }) {
         }}
       >
         <CardMedia
-          sx={{ padding: "40px", height: "55%" }}
+          sx={{ padding: "40px", height: "100%" }}
           image={proyecto.img}
           src={!proyecto ? "" : proyecto.img}
         />
-        <CardContent sx={{ height: "300px" }}>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="h5"
-            fontWeight="bold"
-          >
-            {proyecto.titulo}
-          </Typography>
-          <Typography variant="h6" color="text.secondary">
-            {proyecto.autor}
-          </Typography>
-        </CardContent>
         <CardActions>
           <Button
-            sx={{ position: "absolute", bottom: "0" }}
+            variant="contained"
+            sx={{
+              position: "absolute",
+              bottom: "0",
+              m: "auto 25%",
+              height: "2rem",
+              opacity: "0.9",
+            }}
             component={Link}
             to={`/proyecto/${proyecto.idProyecto}`}
           >
