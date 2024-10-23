@@ -9,7 +9,7 @@ const Comunidad = () => {
       maxWidth="2xl"
       sx={{
         m: "20px auto",
-        p: "30px",
+        p: { xs: 0, md: "30px" },
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

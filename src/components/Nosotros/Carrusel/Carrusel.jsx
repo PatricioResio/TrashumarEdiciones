@@ -43,7 +43,6 @@ const Carrusel = ({ arrayImagenes }) => {
           display: "flex",
           maxHeight: "fit-content",
           height: "95vh",
-          minWidth: "420px",
           alignItems: "center",
           margin: "0 auto 2rem auto",
         }}

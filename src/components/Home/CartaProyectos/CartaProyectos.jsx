@@ -12,7 +12,7 @@ export default function CartaProyectos({ proyecto }) {
     <Fade triggerOnce delay={1200}>
       <Card
         sx={{
-          width: { xs: "90%", sm: "17rem", md: "22rem" },
+          width: { xs: "12rem", sm: "17rem", md: "22rem" },
           height: { xs: "20rem", sm: "29rem", md: "43rem" },
           border: "0.5px solid #3C9990",
           borderRadius: "3px",
@@ -39,6 +39,7 @@ export default function CartaProyectos({ proyecto }) {
               m: "auto 34%",
               height: "2rem",
               opacity: "0.9",
+              fontSize: { xs: "10px", md: "14px" },
             }}
             component={Link}
             to={`/proyecto/${proyecto.idProyecto}`}
