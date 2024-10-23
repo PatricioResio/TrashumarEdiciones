@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 import { NavBar, Footer } from "./components/index";
 import { Nosotros, Home, Comunidad } from "./pages/index";
 import "./components/Perfil/DescripcionPerfil/DescripcionPerfil.css";
+import NotFound from "./components/NotFound/NotFound.jsx";
 
 const LazyLogin = lazy(() => import("./pages/Login.jsx"));
 const LazyMiPerfil = lazy(() => import("./pages/MiPerfil.jsx"));
@@ -60,6 +61,7 @@ export default function App() {
             <Route path="/publicar" Component={LazyProyectoNuevo} />
             <Route path="/registro" Component={LazyFormRegistro} />
             <Route path="/comunidad" Component={Comunidad} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>
 
