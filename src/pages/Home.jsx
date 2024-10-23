@@ -18,6 +18,7 @@ const Home = () => {
           textAlign: "center",
           margin: "4rem 0",
           gap: 4,
+          my: "7rem",
 
           color: "#BAE3D7",
         }}
@@ -32,6 +33,8 @@ const Home = () => {
             border: "1px solid #3F7D92",
             borderRadius: "5px",
             width: "100%",
+            my: "7rem",
+
             pb: 2,
           }}
         >
@@ -56,6 +59,8 @@ const Home = () => {
             justifyContent: "center",
             border: "1px solid #3F7D92",
             borderRadius: "5px",
+            my: "7rem",
+
             width: "100%",
             pb: 2,
           }}

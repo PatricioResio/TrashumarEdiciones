@@ -73,11 +73,12 @@ const CarruselHome = () => {
                   sx={{
                     backgroundColor: "rgba(0, 0, 0, 0.5)",
                     backdropFilter: "blur(5px)",
-                    width: { xs: "70%", sm: "53%" },
+                    width: { xs: "89vw", sm: "53%" },
+                    maxHeight: { xs: "40%" },
                     position: "absolute",
                     bottom: 0,
                     left: {
-                      xs: "60px",
+                      xs: "5%",
                       sm: "140px",
                       md: "220px",
                       lg: "290px",
@@ -99,12 +100,7 @@ const CarruselHome = () => {
                       {item.h2}
                     </Fade>
                   </Typography>
-                  <Typography
-                    key={item.textP}
-                    className="p-carrusel"
-                    component="h5"
-                    variant="h5"
-                  >
+                  <Typography key={item.textP} className="p-carrusel">
                     <Fade triggerOnce direction="right" delay={1200}>
                       {item.textP}
                     </Fade>

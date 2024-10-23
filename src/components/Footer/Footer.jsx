@@ -19,7 +19,7 @@ const Footer = () => {
             mt: "20px",
             alignItems: "center",
             width: "100%",
-            height: { xs: "20rem", xl: "14rem" },
+            height: { xs: "17rem", xl: "14rem" },
             padding: { xs: "0", xl: "0" },
           }}
         >
@@ -29,7 +29,7 @@ const Footer = () => {
             to="/"
             sx={{
               display: "flex",
-              height: { xs: "11rem", md: "12.5rem" },
+              height: { xs: "9rem", md: "12.5rem" },
               width: "25%",
               marginX: { xs: "1.5rem", md: "4rem" },
               "& img": {
@@ -155,7 +155,11 @@ const Footer = () => {
                 marginTop: { xs: "10px", md: "1rem" },
               }}
             >
-              <Typography color="secondary" xs={{ mt: "1rem" }}>
+              <Typography
+                color="secondary"
+                fontWeight={{ xs: "12px", md: "14px" }}
+                xs={{ mt: "1rem" }}
+              >
                 Derechos de autor reservados Trashumar Ediciones©
               </Typography>
             </Grid>

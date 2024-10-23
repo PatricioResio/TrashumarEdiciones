@@ -17,7 +17,7 @@ const ContenedorDestacado = () => {
         flexDirection: "column",
         justifyContent: "center",
         width: "100%",
-        minWidth: { xs: "200px", xl: "700px" },
+        minWidth: { xs: "100%", xl: "700px" },
         background: "#6CCCD9",
         borderRadius: "5px",
         border: "1px solid",
@@ -46,7 +46,7 @@ const ContenedorDestacado = () => {
             borderRadius: "15px",
             pt: "30px",
             width: "82%",
-            minWidth: { xs: "250px", lg: "600px" },
+            minWidth: { xs: "80%", lg: "600px" },
             m: "auto",
             p: "2rem",
             color: "#0C2324",
@@ -64,7 +64,7 @@ const ContenedorDestacado = () => {
             sx={{
               boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
 
-              width: { xs: "18rem", md: "25rem", lg: "25rem", xl: "26rem" },
+              width: { xs: "80%", md: "25rem", lg: "25rem", xl: "26rem" },
               m: "auto",
               mb: { xs: "0", lg: "auto" },
             }}
