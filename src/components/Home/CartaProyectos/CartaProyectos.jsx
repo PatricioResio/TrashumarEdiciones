@@ -12,7 +12,7 @@ export default function CartaProyectos({ proyecto }) {
     <Fade triggerOnce delay={1200}>
       <Card
         sx={{
-          width: { xs: "13rem", sm: "17rem", md: "22rem" },
+          width: { xs: "90%", sm: "17rem", md: "22rem" },
           height: { xs: "20rem", sm: "29rem", md: "43rem" },
           border: "0.5px solid #3C9990",
           borderRadius: "3px",
