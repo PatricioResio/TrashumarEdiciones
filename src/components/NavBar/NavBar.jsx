@@ -217,7 +217,8 @@ function ResponsiveAppBar() {
                   maxWidth: "150px",
                   flexGrow: 1,
                   fontFamily: "roboto",
-                  fontWeight: { xs: 600, md: 900 },
+                  fontWeight: "bold",
+                  fontSize: { xs: "12px", lg: "14px" },
                   letterSpacing: { xs: ".1rem", md: ".2rem" },
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {

@@ -1,16 +1,18 @@
 .swiper-button-next {
-  width: 20px;
-  margin: auto;
-  height: 20px;
-  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
   right: 0;
-  color: black;
+  color: white;
+  background-color: #6cccd9;
 }
 .swiper-button-prev {
-  width: 60px;
-  height: 20px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
   left: 0;
-  color: black;
+  color: white;
+  background-color: #6cccd9;
 }
 .MySwiper .swiper-slide {
   display: flex;

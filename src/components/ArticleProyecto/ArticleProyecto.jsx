@@ -22,7 +22,6 @@ const SectionProyecto = () => {
       }}
       maxWidth="2xl"
     >
-      {" "}
       <Typography
         sx={{ m: "0 auto 30px auto" }}
         align="center"
@@ -65,8 +64,13 @@ const SectionProyecto = () => {
           confiar en nosotres!
         </Typography>
         {!currentUser ? (
-          <Button color="secondary" component={Link} to="/ingresa">
-            <Typography variant="h4">
+          <Button
+            variant="contained"
+            component={Link}
+            to="/ingresa"
+            sx={{ color: "white", m: "auto" }}
+          >
+            <Typography variant="h5">
               Para seguir adelante tenes que iniciar sesión, Seguime por aquí
             </Typography>
           </Button>
