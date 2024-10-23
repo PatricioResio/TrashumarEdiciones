@@ -18,8 +18,8 @@ export default function CartaPerfiles({ perfil }) {
         className="carta-perfiles"
         sx={{
           width: { xs: "13rem", md: "15rem" },
-          height: { xs: "23rem", md: "25rem" },
-          borderRadius: "20px",
+          height: { xs: "23rem", md: "27rem" },
+          borderRadius: "5px",
           m: "8rem",
           p: 0,
           transition: "transform 0.3s ease-in-out",

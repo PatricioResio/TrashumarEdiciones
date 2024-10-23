@@ -32,7 +32,6 @@ function FormProyectos() {
       informeDeLectura: false,
       correccionGramatical: false,
       correccionEstilos: false,
-
       traducir: false,
       idiomaOriginal: "",
       idiomaATraducir: "",

@@ -30,7 +30,7 @@ const Libreria = () => {
             color={"secondary"}
             marginY={2}
           >
-            Libreria
+            Librería
           </Typography>
         </Fade>
         <Fade>

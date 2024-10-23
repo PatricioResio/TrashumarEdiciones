@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import FormProyectos from "../Forms/FormProyectos/FormProyectos";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
+import { AuthContext } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const SectionProyecto = () => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <Container
       sx={{
@@ -19,6 +22,16 @@ const SectionProyecto = () => {
       }}
       maxWidth="2xl"
     >
+      {" "}
+      <Typography
+        sx={{ m: "0 auto 30px auto" }}
+        align="center"
+        variant="h1"
+        fontWeight="bold"
+        component="h1"
+      >
+        Quiero publicar
+      </Typography>
       <Box
         bgcolor="bg.mediumLightBlue"
         sx={{
@@ -29,15 +42,6 @@ const SectionProyecto = () => {
           p: "20px",
         }}
       >
-        <Typography
-          sx={{ m: "0 auto 30px auto" }}
-          align="center"
-          variant="h1"
-          fontWeight="bold"
-          component="h1"
-        >
-          Quiero publicar
-        </Typography>
         <Typography
           variant="body"
           component="p"
@@ -60,7 +64,15 @@ const SectionProyecto = () => {
           esté aprobado, podras seguir trabajando desde la pagina. ¡Gracias por
           confiar en nosotres!
         </Typography>
-        <FormProyectos />
+        {!currentUser ? (
+          <Button color="secondary" component={Link} to="/ingresa">
+            <Typography variant="h4">
+              Para seguir adelante tenes que iniciar sesión, Seguime por aquí
+            </Typography>
+          </Button>
+        ) : (
+          <FormProyectos />
+        )}
       </Box>
     </Container>
   );

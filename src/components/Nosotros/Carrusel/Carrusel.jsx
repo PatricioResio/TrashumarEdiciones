@@ -10,76 +10,74 @@ const Carrusel = ({ arrayImagenes }) => {
   const swiperRef = useResetSwiper(arrayImagenes);
 
   return (
-    <Fade delay={1100} triggerOnce>
-      <Box
-        bgcolor="primary.main"
-        sx={{
-          minWidth: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          textAlign: "center",
-          justifyContent: "center",
-          boxShadow: "3px 3px 3px grey",
-          marginTop: "0",
-        }}
-      >
-        <Fade triggerOnce>
-          <Typography
-            component="h3"
-            align="center"
-            variant="h3"
-            marginY={2}
-            sx={{
-              fontSize: "34px",
-              color: "#D8EDE9",
-              padding: "0",
-            }}
-          >
-            ¿Porqué Trashumar?
-          </Typography>
-        </Fade>
-        <Container
+    <Box
+      bgcolor="bg.mediumBlue"
+      sx={{
+        minWidth: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        textAlign: "center",
+        justifyContent: "center",
+        boxShadow: "3px 3px 3px grey",
+        marginTop: "0",
+      }}
+    >
+      <Fade triggerOnce>
+        <Typography
+          component="h3"
+          align="center"
+          variant="h3"
+          marginY={2}
           sx={{
-            display: "flex",
-            maxHeight: "fit-content",
-            height: "95vh",
-            minWidth: "420px",
-            alignItems: "center",
-            margin: "0 auto 2rem auto",
+            fontSize: "34px",
+            color: "#D8EDE9",
+            padding: "0",
           }}
         >
-          <Swiper
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            rewind={true}
-            navigation={true}
-            modules={[EffectFade, Navigation]}
-            effect="fade"
-            className="swiper"
-            slidesPerView={1}
-            runCallbacksOnInit={true}
-          >
-            {arrayImagenes.map((imgA) => (
-              <Fade>
-                <SwiperSlide key={imgA.id}>
-                  <Box
-                    sx={{
-                      height: "85vh",
-                      width: { xs: "20rem", md: "25rem", lg: "40rem" },
-                      margin: { xs: "0", lg: "auto" },
-                      boxShadow: "4px 4px black",
-                    }}
-                    component="img"
-                    src={imgA.img}
-                    alt="descripcion futura de la imagen descriptiva"
-                  />
-                </SwiperSlide>
-              </Fade>
-            ))}
-          </Swiper>
-        </Container>
-      </Box>
-    </Fade>
+          ¿Porqué Trashumar?
+        </Typography>
+      </Fade>
+      <Container
+        sx={{
+          display: "flex",
+          maxHeight: "fit-content",
+          height: "95vh",
+          minWidth: "420px",
+          alignItems: "center",
+          margin: "0 auto 2rem auto",
+        }}
+      >
+        <Swiper
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
+          rewind={true}
+          navigation={true}
+          modules={[EffectFade, Navigation]}
+          effect="fade"
+          className="swiper"
+          slidesPerView={1}
+          runCallbacksOnInit={true}
+        >
+          {arrayImagenes.map((imgA) => (
+            <Fade>
+              <SwiperSlide key={imgA.id}>
+                <Box
+                  sx={{
+                    height: "85vh",
+                    width: { xs: "20rem", md: "25rem", lg: "40rem" },
+                    margin: { xs: "0", lg: "auto" },
+                    boxShadow: "4px 4px black",
+                  }}
+                  component="img"
+                  src={imgA.img}
+                  alt="descripcion futura de la imagen descriptiva"
+                />
+              </SwiperSlide>
+            </Fade>
+          ))}
+        </Swiper>
+      </Container>
+    </Box>
   );
 };
 

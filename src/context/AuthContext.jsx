@@ -109,6 +109,8 @@ export function AuthProvider({ children }) {
   const logOut = async () => {
     const response = await signOut(auth);
     setCurrentUser(null);
+    setGoogleUser(null);
+    setNewUser(false);
     navigate("/");
     return response;
   };

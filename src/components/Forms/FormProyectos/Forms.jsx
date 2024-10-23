@@ -397,12 +397,13 @@ const FormTextoUnico = ({ formik }) => {
         />
       </RadioGroup>
       <Typography
+        bgcolor={"bg.mediumBlue"}
         fontSize={"20px"}
+        color={"secondary.white"}
         sx={{
-          backgroundColor: "#215E61",
           border: "2px solid ",
           borderRadius: "10px",
-          color: "#CBF7EB",
+
           padding: "5px",
         }}
       >
@@ -801,7 +802,9 @@ const FormSerieDeTextos = ({ formik }) => {
         />
       </RadioGroup>
       <Typography
+        bgcolor={"bg.mediumBlue"}
         fontSize={"20px"}
+        color={"secondary.white"}
         sx={{
           border: "2px solid ",
           borderRadius: "10px",
@@ -1120,11 +1123,11 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         />
         <Typography
           fontSize={"20px"}
+          bgcolor={"bg.mediumBlue"}
+          color={"secondary.white"}
           sx={{
-            backgroundColor: "#215E61",
             border: "2px solid ",
             borderRadius: "10px",
-            color: "#CBF7EB",
             padding: "5px",
           }}
         >
@@ -1211,11 +1214,12 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         />
         <Typography
           fontSize={"20px"}
+          color={"secondary.white"}
+          bgcolor={"bg.mediumBlue"}
           sx={{
-            backgroundColor: "#215E61",
             border: "2px solid ",
             borderRadius: "10px",
-            color: "#CBF7EB",
+
             padding: "5px",
           }}
         >
@@ -1277,11 +1281,12 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
 
         <Typography
           fontSize={"20px"}
+          color={"secondary.white"}
+          bgcolor={"bg.mediumBlue"}
           sx={{
-            backgroundColor: "#215E61",
             border: "2px solid ",
             borderRadius: "10px",
-            color: "#CBF7EB",
+
             padding: "5px",
           }}
         >
@@ -2012,11 +2017,12 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
       </RadioGroup>
       <Typography
         fontSize={"20px"}
+        bgcolor={"bg.mediumBlue"}
+        color={"secondary.white"}
         sx={{
-          backgroundColor: "#215E61",
           border: "2px solid ",
           borderRadius: "10px",
-          color: "#CBF7EB",
+
           padding: "5px",
         }}
       >
@@ -2100,7 +2106,17 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
           }
           label="NO, GRACIAS."
         />
-        <Typography>
+        <Typography
+          fontSize={"20px"}
+          color={"secondary.white"}
+          bgcolor={"bg.mediumBlue"}
+          sx={{
+            border: "2px solid ",
+            borderRadius: "10px",
+
+            padding: "5px",
+          }}
+        >
           Considera que tu compromiso con la distribución facilitara la llegada
           al público.
         </Typography>
@@ -2159,11 +2175,12 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
 
         <Typography
           fontSize={"20px"}
+          color={"secondary.white"}
+          bgcolor={"bg.mediumBlue"}
           sx={{
-            backgroundColor: "#215E61",
             border: "2px solid ",
             borderRadius: "10px",
-            color: "#CBF7EB",
+
             padding: "5px",
           }}
         >
@@ -2182,12 +2199,12 @@ const FormLibroSoloLaIdea = ({ formik }) => {
     <>
       <RadioGroup sx={{ m: "10px 0" }}>
         <Typography
+          color={"secondary.white"}
+          bgcolor={"bg.mediumBlue"}
           fontSize={"20px"}
           sx={{
-            backgroundColor: "#215E61",
             border: "2px solid ",
             borderRadius: "10px",
-            color: "#CBF7EB",
             padding: "5px",
           }}
         >
@@ -2700,11 +2717,12 @@ const FormLibroSoloLaIdea = ({ formik }) => {
       </RadioGroup>
       <Typography
         fontSize={"20px"}
+        bgcolor={"bg.mediumBlue"}
+        color={"secondary.white"}
         sx={{
-          backgroundColor: "#215E61",
           border: "2px solid ",
           borderRadius: "10px",
-          color: "#CBF7EB",
+
           padding: "5px",
         }}
       >

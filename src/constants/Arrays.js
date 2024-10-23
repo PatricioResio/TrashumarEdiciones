@@ -1,10 +1,10 @@
 export const pages = [
   {
-    name: "De que se trata",
+    name: "NOSOTROS",
     path: "/nosotros",
   },
   {
-    name: "LIBRERIA",
+    name: "LIBRERÍA",
     path: "/libreria",
   },
   {
@@ -29,10 +29,10 @@ export const homeArrays = [
   {
     id: 2,
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.jpg?alt=media&token=ed3613fb-fa43-4686-b762-a28d7a98ef1a",
-    h2: "Descubri nuestra sección libreria",
+    h2: "Descubri nuestra sección librería",
     textP:
       "Trashumar es una editorial nomade, federal e independiente, por aquí podes ver nuestras novedades",
-    buttonText: "Ir a libreria",
+    buttonText: "Ir a librería",
     buttonLink: "/libreria",
   },
   {
