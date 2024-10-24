@@ -16,7 +16,7 @@ const LogOutBtn = () => {
         maxWidth: "150px",
         flexGrow: 1,
         fontFamily: "roboto",
-
+        color: "#FFFFF8",
         fontSize: { xs: "12px", lg: "14px" },
         letterSpacing: ".2rem",
         transition: "transform 0.3s",

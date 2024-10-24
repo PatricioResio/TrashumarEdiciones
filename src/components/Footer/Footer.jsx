@@ -105,11 +105,11 @@ const Footer = () => {
                 color="secondary"
                 sx={{
                   borderRadius: "10px",
+                  color: "#FFFFF8",
                   fontWeight: { xs: "8rem", md: "14rem" },
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.05)",
-                    color: "white",
                   },
                 }}
               >
@@ -136,10 +136,12 @@ const Footer = () => {
                 component={Link}
                 sx={{
                   borderRadius: "10px",
+                  color: "#FFFFF8",
+
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.05)",
-                    color: "white",
+                    color: "#FFFFF8",
                   },
                 }}
               >
@@ -157,7 +159,7 @@ const Footer = () => {
               }}
             >
               <Typography
-                color="secondary"
+                color="secondary.white"
                 fontWeight={{ xs: "12px", md: "14px" }}
                 xs={{ mt: "1rem" }}
               >

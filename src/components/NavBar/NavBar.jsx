@@ -56,7 +56,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="#FFFFF8"
             >
               <MenuIcon />
             </IconButton>
@@ -75,6 +75,7 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
+                color: "#FFFFF8",
                 display: {
                   xs: "block",
                   md: "none",
@@ -152,10 +153,11 @@ function ResponsiveAppBar() {
                     fontSize: { md: "12px", lg: "14px" },
                     justifyContent: "center",
                     borderRadius: "10px",
+                    color: "#FFFFF8",
                     transition: "transform 0.3s ease-in-out",
                     "&:hover": {
-                      transform: "scale(1.05)",
-                      color: "white",
+                      transform: "scale(1.02)",
+                      color: "#FFFFF8",
                     },
                   }}
                 >
@@ -180,7 +182,7 @@ function ResponsiveAppBar() {
                 variant="contained"
                 component={Link}
                 to="/ingresa"
-                color="primary"
+                color="secondary"
                 sx={{
                   maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
                   flexGrow: 1,
@@ -188,11 +190,12 @@ function ResponsiveAppBar() {
                   fontWeight: { xs: 600, md: 900 },
                   letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
                   marginRight: "3rem",
+                  backgroundColor: "#09A5B0",
                   transition: "transform 0.3s ease-in-out",
 
                   "&:hover": {
-                    transform: "scale(1.03)",
-                    color: "white",
+                    transform: "scale(1.02)",
+                    color: "#FFFFF8",
                   },
                 }}
               >
@@ -218,12 +221,13 @@ function ResponsiveAppBar() {
                   flexGrow: 1,
                   fontFamily: "roboto",
                   fontWeight: "bold",
+                  color: "#FFFFF8",
                   fontSize: { xs: "12px", lg: "14px" },
                   letterSpacing: { xs: ".1rem", md: ".2rem" },
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
-                    transform: "scale(1.03)",
-                    color: "white",
+                    transform: "scale(1.02)",
+                    color: "#FFFFF8",
                   },
                 }}
               >

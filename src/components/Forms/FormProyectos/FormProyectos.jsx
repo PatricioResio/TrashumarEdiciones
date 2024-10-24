@@ -59,7 +59,7 @@ function FormProyectos() {
         alignItems: "center",
         border: "1px solid #BAE3D7",
         borderRadius: "20px",
-        backgroundColor: "#BDFFF9",
+        backgroundColor: "#BDF6FF",
       }}
     >
       <Box

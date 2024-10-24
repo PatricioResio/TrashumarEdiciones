@@ -31,6 +31,7 @@ const SectionProyecto = () => {
       >
         Quiero publicar
       </Typography>
+
       <Box
         bgcolor="bg.mediumLightBlue"
         sx={{

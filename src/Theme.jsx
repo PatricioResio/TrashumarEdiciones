@@ -18,14 +18,14 @@ const theme = createTheme({
     },
     secondary: {
       main: "#010C0D",
-      white: "#BAE3D7",
+      white: "#FFFFF8",
     },
     bg: {
       dark: "#215E61",
       main: "#DFFFF9",
       mediumBlue: "#09A5B0",
-      mediumLightBlue: "#6CCCD9",
-      lightBlue: "#BDFFF9",
+      mediumLightBlue: "#7AE7F5",
+      lightBlue: "#A4FFFE",
     },
     border: {
       main: "#BAE3D7",
