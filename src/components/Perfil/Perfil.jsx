@@ -69,7 +69,7 @@ const Perfil = () => {
           sx={{
             m: "auto",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "350px", md: "500px", lg: "45%" },
+            width: { xs: "90%", md: "500px", lg: "45%" },
           }}
         >
           <ContenedorProyectosPerfil />
@@ -79,7 +79,7 @@ const Perfil = () => {
           sx={{
             m: "auto",
             mt: "0",
-            width: { xs: "350px", md: "500px", lg: "45%" },
+            width: { xs: "90%", md: "500px", lg: "45%" },
           }}
         >
           <ContenedorColaboraciones />

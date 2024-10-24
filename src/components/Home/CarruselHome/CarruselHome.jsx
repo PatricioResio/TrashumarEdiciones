@@ -54,7 +54,7 @@ const CarruselHome = () => {
                 <Box
                   sx={{
                     height: {
-                      xs: "60vh",
+                      xs: "80vh",
                       sm: "60vh",
                       md: "80vh",
                       lg: "100vh",
