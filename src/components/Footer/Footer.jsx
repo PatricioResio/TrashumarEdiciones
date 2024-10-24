@@ -106,7 +106,7 @@ const Footer = () => {
                 sx={{
                   borderRadius: "10px",
                   color: "#FFFFF8",
-                  fontWeight: { xs: "8rem", md: "14rem" },
+                  fontWeight: { xs: "5rem", md: "14rem" },
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.05)",

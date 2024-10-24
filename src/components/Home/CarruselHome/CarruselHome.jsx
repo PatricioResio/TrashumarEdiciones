@@ -16,7 +16,7 @@ const CarruselHome = () => {
         sx={{
           minWidth: "100%",
           height: {
-            xs: "40vh",
+            xs: "60vh",
             sm: "60vh",
             md: "80vh",
             lg: "100vh",
@@ -43,7 +43,7 @@ const CarruselHome = () => {
                   width: "100%",
                   margin: "auto",
                   height: {
-                    xs: "40vh",
+                    xs: "60vh",
                     sm: "60vh",
                     md: "80vh",
                     lg: "100vh",
