@@ -77,7 +77,7 @@ const theme = createTheme({
     },
     h3: {
       fontWeight: "bold",
-      fontSize: "1.4rem",
+      fontSize: "1.3rem",
       "@media (min-width:600px)": {
         fontSize: "1.6rem",
       },
@@ -95,7 +95,7 @@ const theme = createTheme({
       },
     },
     h4: {
-      fontSize: "1.6rem",
+      fontSize: "1.2rem",
       "@media (min-width:600px)": {
         fontSize: "1.8rem",
       },
@@ -113,7 +113,7 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "1.1rem",
+      fontSize: "1rem",
       "@media (min-width:600px)": {
         fontSize: "1.2rem",
       },
@@ -131,7 +131,7 @@ const theme = createTheme({
       },
     },
     h6: {
-      fontSize: "0.8rem",
+      fontSize: "0.9rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },

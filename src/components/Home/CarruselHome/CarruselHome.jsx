@@ -43,7 +43,7 @@ const CarruselHome = () => {
                   width: "100%",
                   margin: "auto",
                   height: {
-                    xs: "80vh",
+                    xs: "90vh",
                     sm: "60vh",
                     md: "80vh",
                     lg: "100vh",
@@ -54,7 +54,7 @@ const CarruselHome = () => {
                 <Box
                   sx={{
                     height: {
-                      xs: "80vh",
+                      xs: "90vh",
                       sm: "60vh",
                       md: "80vh",
                       lg: "100vh",
@@ -73,7 +73,7 @@ const CarruselHome = () => {
                   sx={{
                     backgroundColor: "rgba(0, 0, 0, 0.5)",
                     backdropFilter: "blur(5px)",
-                    width: { xs: "89vw", sm: "53%" },
+                    width: { xs: "95vw", sm: "53%" },
                     maxHeight: { xs: "40%" },
                     position: "absolute",
                     bottom: 0,
