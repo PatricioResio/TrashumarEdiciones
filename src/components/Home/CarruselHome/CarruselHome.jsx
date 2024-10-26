@@ -90,12 +90,7 @@ const CarruselHome = () => {
                     color: "#F5FDF8",
                   }}
                 >
-                  <Typography
-                    variant="h3"
-                    component="h2"
-                    key={item.h2}
-                    className="h2-carrusel"
-                  >
+                  <Typography variant="h3" component="h2" key={item.h2}>
                     <Fade triggerOnce direction="down" delay={1400}>
                       {item.h2}
                     </Fade>
