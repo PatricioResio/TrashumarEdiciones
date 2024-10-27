@@ -11,9 +11,9 @@ const FilaProyectos = ({ proyectosUser }) => {
       <Typography
         sx={{
           m: "auto auto 50px auto",
-          fontSize: { xs: "34px", md: "42px", lg: "50px", xl: "60px" },
         }}
         variant="h3"
+        component="h3"
         position="center"
       >
         Mis proyectos

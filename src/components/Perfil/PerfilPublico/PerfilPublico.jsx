@@ -40,10 +40,10 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        width: "95%",
+        width: { xs: "100%", md: "95%" },
         m: "40px auto",
         borderRadius: "5px",
-        p: "4rem",
+        p: { xs: 0, md: "4rem" },
         gap: "2rem",
       }}
     >
@@ -53,7 +53,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: "90%",
+          width: { xs: "100%", md: "90%" },
           backgroundColor: "#6CCCD9",
           borderRadius: "5px",
           border: "1px solid #3C9990",
@@ -195,7 +195,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             borderRadius: "2%",
             p: "20px",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "350px", md: "500px", lg: "45%" },
+            width: { xs: "220px", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaProyectosPerfil proyectosUser={proyectosUser} />
@@ -210,14 +210,14 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             borderRadius: "2%",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",
-            width: { xs: "350px", md: "500px", lg: "45%" },
+            width: { xs: "220px", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaColaboraciones colaboraciones={colaboraciones} />
         </Box>
 
         {!perfil.distribuidor ? (
-          <Box> </Box>
+          <> </>
         ) : (
           <Box>
             <Map lat={lat} lg={lg} />

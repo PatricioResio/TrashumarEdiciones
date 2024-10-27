@@ -27,6 +27,10 @@
   height: 12rem;
   border-radius: 40%;
 }
+
+@media xs {
+}
+
 .h2-perfil-card {
   display: flex;
   justify-content: center;
