@@ -213,7 +213,7 @@ function ResponsiveAppBar() {
                     fontFamily: "roboto",
                     fontWeight: { xs: 600, md: 900 },
                     letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
-                    marginRight: "3rem",
+                    marginRight: ".5rem",
                     backgroundColor: "#09A5B0",
                     transition: "transform 0.3s ease-in-out",
 
