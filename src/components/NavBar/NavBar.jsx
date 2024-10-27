@@ -15,13 +15,23 @@ import { AuthContext } from "../../context/AuthContext";
 import { Brand, LogOutBtn } from "../index";
 import { Fade } from "react-awesome-reveal";
 import "./NavBar.css";
-import { LOGO_URL } from "../../constants/constants";
+import { DEFAULT_PERFIL_FOTO, LOGO_URL } from "../../constants/constants";
 import { pages } from "../../constants/Arrays";
 
 function ResponsiveAppBar() {
   const { currentUser } = useContext(AuthContext);
-  const displayName = !currentUser ? null : currentUser.nombrePublico;
+  const displayName = currentUser
+    ? currentUser.nombrePublico.split(" ", 2)[0]
+    : null;
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [profileNav, setProfileNav] = React.useState(null);
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -29,6 +39,13 @@ function ResponsiveAppBar() {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+  const handleOpenProfileMenu = (event) => {
+    setProfileNav(event.currentTarget);
+  };
+
+  const handleCloseProfileMenu = () => {
+    setProfileNav(null);
   };
 
   return (
@@ -39,8 +56,9 @@ function ResponsiveAppBar() {
         maxWidth="xl"
         sx={{
           minWidth: "100%",
-          height: "5rem",
+          height: { xs: "4rem", sm: "5rem" },
           alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
         <Toolbar disableGutters>
@@ -93,6 +111,7 @@ function ResponsiveAppBar() {
                   <Typography
                     component={Link}
                     color="secondary"
+                    onClick={scrollToTop}
                     bgcolor="primary"
                     to={page.path}
                     style={{ textDecoration: "none" }}
@@ -109,13 +128,15 @@ function ResponsiveAppBar() {
               <Typography
                 variant="h6"
                 component={Link}
+                onClick={scrollToTop()}
                 to="/"
                 sx={{
                   display: "flex",
-                  height: "4.5rem",
-                  width: "4rem",
+                  borderRadius: "50%",
+                  height: { xs: "3rem", sm: "4.5rem" },
+                  width: { xs: "3rem", sm: "4rem" },
                   p: "0",
-                  margin: "0.3rem 2rem",
+                  margin: "auto 0 auto 13px",
 
                   "& img": {
                     transition: "transform 0.3s ease-in-out",
@@ -132,11 +153,12 @@ function ResponsiveAppBar() {
 
           <Box
             sx={{
-              flexGrow: 2,
+              flexGrow: { xs: 1, md: 4 },
               display: { xs: "none", md: "flex" },
-              justifyContent: "space-around",
+              justifyContent: "center",
               alignItems: "center",
-              maxWidth: "45%",
+              mx: "auto",
+              gap: 7,
             }}
           >
             <Fade triggerOnce>
@@ -146,7 +168,7 @@ function ResponsiveAppBar() {
                   component={Link}
                   color="secondary"
                   to={page.path}
-                  onClick={handleCloseNavMenu}
+                  onClick={scrollToTop}
                   sx={{
                     height: "100%",
                     fontWeight: "bold",
@@ -167,77 +189,119 @@ function ResponsiveAppBar() {
             </Fade>
           </Box>
 
-          {!currentUser ? (
-            <Box
-              sx={{
-                flexGrow: { xs: "0", md: "1" },
-                marginLeft: "2rem ",
-                marginTop: "0",
-                display: "flex",
-                justifyContent: "end",
-                alignItems: "center",
-              }}
-            >
-              <Button
-                variant="contained"
-                component={Link}
-                to="/ingresa"
-                color="secondary"
+          <Box sx={{ display: "flex" }}>
+            {!currentUser ? (
+              <Box
                 sx={{
-                  maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
                   flexGrow: 1,
-                  fontFamily: "roboto",
-                  fontWeight: { xs: 600, md: 900 },
-                  letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
-                  marginRight: "3rem",
-                  backgroundColor: "#09A5B0",
-                  transition: "transform 0.3s ease-in-out",
+                  marginLeft: "2rem ",
+                  marginTop: "0",
+                  display: "flex",
+                  justifyContent: "end",
+                  alignItems: "center",
+                }}
+              >
+                <Button
+                  variant="contained"
+                  component={Link}
+                  onClick={scrollToTop}
+                  to="/ingresa"
+                  color="secondary"
+                  sx={{
+                    maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
+                    flexGrow: 1,
+                    fontFamily: "roboto",
+                    fontWeight: { xs: 600, md: 900 },
+                    letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
+                    marginRight: "3rem",
+                    backgroundColor: "#09A5B0",
+                    transition: "transform 0.3s ease-in-out",
 
-                  "&:hover": {
-                    transform: "scale(1.02)",
-                    color: "#FFFFF8",
-                  },
-                }}
-              >
-                <Fade triggerOnce>Ingresar</Fade>
-              </Button>
-            </Box>
-          ) : (
-            <Box
-              sx={{
-                flexGrow: { xs: "0", md: "1" },
-                marginRight: { xs: ".6rem", md: "2rem" },
-                display: "flex",
-                justifyContent: "end",
-                alignItems: "center",
-              }}
-            >
-              <Button
-                variant="contained"
-                component={Link}
-                to="/miperfil"
+                    "&:hover": {
+                      transform: "scale(1.02)",
+                      color: "#FFFFF8",
+                    },
+                  }}
+                >
+                  <Fade triggerOnce>Ingresar</Fade>
+                </Button>
+              </Box>
+            ) : (
+              <Box
                 sx={{
-                  maxWidth: "150px",
                   flexGrow: 1,
-                  fontFamily: "roboto",
-                  fontWeight: "bold",
-                  color: "#FFFFF8",
-                  fontSize: { xs: "12px", lg: "14px" },
-                  letterSpacing: { xs: ".1rem", md: ".2rem" },
-                  transition: "transform 0.3s ease-in-out",
-                  "&:hover": {
-                    transform: "scale(1.02)",
-                    color: "#FFFFF8",
-                  },
+                  display: "flex",
                 }}
               >
-                <Fade triggerOnce>{displayName}</Fade>
-              </Button>
-              <Fade triggerOnce>
-                <LogOutBtn />
-              </Fade>
-            </Box>
-          )}
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenProfileMenu}
+                  color="#FFFFF8"
+                >
+                  <Box
+                    sx={{
+                      heigh: "50px",
+                      width: "50px",
+                      m: "auto",
+                      borderRadius: "50%",
+                    }}
+                    component="img"
+                    src={
+                      !currentUser ? DEFAULT_PERFIL_FOTO : currentUser.avatar
+                    }
+                  />
+                </IconButton>
+
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={profileNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "center",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "center",
+                  }}
+                  open={Boolean(profileNav)}
+                  onClose={handleCloseProfileMenu}
+                  sx={{
+                    color: "#FFFFF8",
+                    display: "block",
+                  }}
+                >
+                  <MenuItem
+                    sx={{
+                      height: "100%",
+                    }}
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      onClick={scrollToTop}
+                      component={Link}
+                      to="/miperfil"
+                      style={{
+                        textDecoration: "none",
+                        color: "#FFFFF8",
+                        mx: "auto",
+                      }}
+                    >
+                      Mi perfil
+                    </Button>
+                  </MenuItem>
+                  <MenuItem>
+                    <LogOutBtn />
+                  </MenuItem>
+                </Menu>
+              </Box>
+            )}
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

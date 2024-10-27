@@ -68,15 +68,16 @@ const ProyectoPublico = ({ proyectoPublico }) => {
                 sx={{
                   display: "flex",
                   flexDirection: { xs: "column", lg: "row" },
+                  gap: 4,
                 }}
               >
                 <Box
                   component="img"
                   sx={{
                     boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
-                    minHeight: "30rem",
-                    maxHeight: "30rem",
-                    m: "auto 1rem auto auto",
+                    height: { xs: "20rem", sm: "29rem", md: "39rem" },
+                    width: { xs: "10rem", sm: "17rem", md: "22rem" },
+                    m: "auto",
                   }}
                   src={img}
                   alt="Ilustracion de tapa de libro"
@@ -85,9 +86,9 @@ const ProyectoPublico = ({ proyectoPublico }) => {
                   component="img"
                   sx={{
                     boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
-                    minHeight: "30rem",
-                    maxHeight: "30rem",
-                    m: "auto 1rem auto auto",
+                    height: { xs: "20rem", sm: "29rem", md: "39rem" },
+                    width: { xs: "10rem", sm: "17rem", md: "22rem" },
+                    m: "auto",
                   }}
                   src={img1}
                   alt="Ilustracion de contratapa de libro"

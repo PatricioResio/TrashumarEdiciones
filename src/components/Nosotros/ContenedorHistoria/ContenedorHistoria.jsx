@@ -20,7 +20,7 @@ const ContenedorHistoria = () => {
           justifyContent: "center",
           alignItems: "center",
           borderRadius: "20px",
-          width: "75%",
+          width: { xs: "100%", md: "75%" },
           margin: "4rem auto",
           padding: "0",
         }}

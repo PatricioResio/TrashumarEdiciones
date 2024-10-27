@@ -36,6 +36,7 @@ const FormRegistro = () => {
     ],
     registroTerminado: false,
     distribuidor: false,
+    zonaDistribuidor: [],
     ubicacion: "",
     radio: "",
     avatar: DEFAULT_PERFIL_FOTO,

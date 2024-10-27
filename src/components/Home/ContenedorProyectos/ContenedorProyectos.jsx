@@ -8,15 +8,11 @@ const ContenedorCartas = () => {
     <Container
       maxWidth="2xl"
       sx={{
-        display: "flex",
         margin: "auto",
         justifyContent: "center",
         width: "98%",
         minHeight: "50rem",
-        border: "2px solid ",
-        borderRadius: "20px",
         alignItems: "center",
-        backgroundColor: "#BDFFF9",
       }}
     >
       {loading ? <CircularProgress /> : <FilaProyectos proyectos={proyectos} />}

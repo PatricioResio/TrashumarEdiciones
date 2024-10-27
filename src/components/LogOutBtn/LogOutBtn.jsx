@@ -18,7 +18,7 @@ const LogOutBtn = () => {
         fontFamily: "roboto",
         color: "#FFFFF8",
         fontSize: { xs: "12px", lg: "14px" },
-        letterSpacing: ".2rem",
+        letterSpacing: { xs: "0", md: ".2rem" },
         transition: "transform 0.3s",
         "&:hover": {
           transform: "scale(1.03)",

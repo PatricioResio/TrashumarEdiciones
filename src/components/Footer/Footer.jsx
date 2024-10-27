@@ -28,8 +28,9 @@ const Footer = () => {
             component={Link}
             to="/"
             sx={{
-              display: "flex",
-              height: { xs: "9rem", md: "12.5rem" },
+              display: { xs: "flex", sm: "flex" },
+              height: { xs: "5.5rem", md: "12.5rem" },
+              borderRadius: "50%",
               width: "25%",
               marginX: { xs: "1.5rem", md: "4rem" },
               "& img": {
@@ -99,7 +100,7 @@ const Footer = () => {
               }}
               xs={1}
             >
-              <Button
+              {/*        <Button
                 to="https://www.instagram.com/trashumarediciones/"
                 component={Link}
                 color="secondary"
@@ -111,6 +112,24 @@ const Footer = () => {
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.05)",
+                  },
+                }}
+              > */}
+              <Button
+                component={Link}
+                color="secondary"
+                to="https://www.instagram.com/trashumarediciones/"
+                sx={{
+                  height: "100%",
+                  fontWeight: "bold",
+                  fontSize: { xs: "8px", md: "12px", lg: "14px" },
+                  justifyContent: "center",
+                  borderRadius: "10px",
+                  color: "#FFFFF8",
+                  transition: "transform 0.3s ease-in-out",
+                  "&:hover": {
+                    transform: "scale(1.02)",
+                    color: "#FFFFF8",
                   },
                 }}
               >
@@ -138,7 +157,7 @@ const Footer = () => {
                 sx={{
                   borderRadius: "10px",
                   color: "#FFFFF8",
-
+                  fontSize: { xs: "8px", md: "12px", lg: "14px" },
                   transition: "transform 0.3s ease-in-out",
                   "&:hover": {
                     transform: "scale(1.05)",

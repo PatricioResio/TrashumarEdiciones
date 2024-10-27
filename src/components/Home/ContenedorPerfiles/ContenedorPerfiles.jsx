@@ -14,10 +14,7 @@ const ContenedorPerfiles = () => {
         justifyContent: "center",
         minHeight: "40rem",
         width: "98%",
-        border: "2px solid ",
-        borderRadius: "20px",
         alignItems: "center",
-        backgroundColor: "#BDFFF9",
       }}
     >
       {loading ? <CircularProgress /> : <FilaPerfiles perfiles={perfiles} />}

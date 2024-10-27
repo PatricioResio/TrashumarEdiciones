@@ -30,7 +30,6 @@ const Home = () => {
           sx={{
             justifyContent: "center",
             alignItems: "center",
-            border: "1px solid #3F7D92",
             borderRadius: "5px",
             width: "100%",
             my: "7rem",
@@ -57,7 +56,6 @@ const Home = () => {
           bgcolor="bg.mediumLightBlue"
           sx={{
             justifyContent: "center",
-            border: "1px solid #3F7D92",
             borderRadius: "5px",
             my: "7rem",
 

@@ -16,7 +16,6 @@ const SectionComunidad = () => {
       bgcolor="bg.lightBlue"
       sx={{
         minHeight: "90vh",
-        border: "1px solid #BAE3D7",
         borderRadius: "5px",
         width: "98%",
         margin: "auto",
@@ -29,7 +28,6 @@ const SectionComunidad = () => {
       bgcolor="bg.lightBlue"
       component="article"
       sx={{
-        border: "1px solid #BAE3D7",
         margin: "10px",
         borderRadius: "5px",
       }}

@@ -12,39 +12,46 @@ export default function CartaProyectos({ proyecto }) {
     <Fade triggerOnce delay={1200}>
       <Card
         sx={{
+          height: { xs: "22rem", sm: "29rem", md: "37rem" },
           width: { xs: "12rem", sm: "17rem", md: "22rem" },
-          height: { xs: "20rem", sm: "29rem", md: "43rem" },
           border: "0.5px solid #3C9990",
           borderRadius: "3px",
-          backgroundColor: "#A6ECE0",
-          position: "relative",
-          margin: "5.5rem auto",
+          backgroundColor: "transparent",
+          p: "0",
           transition: "transform 0.3s ease-in-out",
           "&:hover": {
             transform: "scale(1.02)",
           },
         }}
       >
-        <CardMedia
-          sx={{ padding: "40px", height: "100%" }}
-          image={proyecto.img}
-          src={!proyecto ? "" : proyecto.img}
-        />
-        <CardActions>
-          <Button
-            variant="contained"
-            sx={{
-              position: "absolute",
-              bottom: "0",
-              m: "auto 34%",
-              height: "2rem",
-              opacity: "0.9",
-              fontSize: { xs: "10px", md: "14px" },
-            }}
-            component={Link}
-            to={`/proyecto/${proyecto.idProyecto}`}
-          >
-            Ver más
+        <CardActions
+          sx={{
+            height: { xs: "22rem", sm: "29rem", md: "39rem" },
+            width: { xs: "12rem", sm: "17rem", md: "22rem" },
+            p: "0",
+            m: "0",
+          }}
+        >
+          <Button component={Link} to={`/proyecto/${proyecto.idProyecto}`}>
+            <CardContent
+              sx={{
+                height: { xs: "22rem", sm: "29rem", md: "39rem" },
+                width: { xs: "12rem", sm: "17rem", md: "22rem" },
+                p: "0",
+                m: "0",
+              }}
+            >
+              <CardMedia
+                sx={{
+                  height: { xs: "22rem", sm: "29rem", md: "39rem" },
+                  width: { xs: "12rem", sm: "17rem", md: "22rem" },
+                  m: "0",
+                  p: "0",
+                }}
+                image={proyecto.img}
+                src={!proyecto ? "" : proyecto.img}
+              />
+            </CardContent>
           </Button>
         </CardActions>
       </Card>

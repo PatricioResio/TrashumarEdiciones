@@ -62,8 +62,8 @@ const Carrusel = ({ arrayImagenes }) => {
               <SwiperSlide key={imgA.id}>
                 <Box
                   sx={{
-                    height: "85vh",
-                    width: { xs: "20rem", md: "25rem", lg: "40rem" },
+                    height: { xs: "410px", sm: "480px", md: "85vh" },
+                    width: { xs: "200px", sm: "230px", md: "28rem" },
                     margin: { xs: "0", lg: "auto" },
                     boxShadow: "4px 4px black",
                   }}

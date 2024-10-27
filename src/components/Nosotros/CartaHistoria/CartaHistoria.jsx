@@ -9,7 +9,13 @@ const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
 
   return (
     <Fade triggerOnce delay={1100}>
-      <Card className="carta-historia">
+      <Card
+        className="carta-historia"
+        sx={{
+          height: { xs: "400px", md: "600px" },
+          width: { xs: "160px", sm: "200px", md: "280px" },
+        }}
+      >
         <CardActions
           sx={{
             p: "0",
@@ -22,7 +28,16 @@ const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
         >
           <Button onClick={handleClickHistoria} sx={{ m: "0", p: "0" }}>
             <CardMedia
-              sx={{ height: "600px", width: "280px", m: "0", p: "0" }}
+              sx={{
+                height: { xs: "400px", md: "600px" },
+                width: {
+                  xs: "180px",
+                  sm: "230px",
+                  md: "280px",
+                },
+                m: "0",
+                p: "0",
+              }}
               image={url}
               src={!url ? "" : url}
             ></CardMedia>

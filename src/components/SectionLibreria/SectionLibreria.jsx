@@ -12,9 +12,8 @@ const SectionLibreria = () => {
       bgcolor="bg.lightBlue"
       sx={{
         minHeight: "90vh",
-        border: "1px solid #BAE3D7",
         borderRadius: "5px",
-        margin: "20px",
+        margin: { xs: "0", md: "20px" },
       }}
     >
       <CircularProgress sx={{ mt: "25%" }} />
@@ -26,9 +25,8 @@ const SectionLibreria = () => {
         bgcolor="bg.lightBlue"
         sx={{
           minHeight: "90vh",
-          border: "1px solid #BAE3D7",
           borderRadius: "5px",
-          margin: "20px",
+          margin: { xs: "0", md: "20px" },
         }}
       >
         <Grid

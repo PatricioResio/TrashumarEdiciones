@@ -12,7 +12,7 @@ import {
   faLinkedin,
   faSquareXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-
+import Map from "../../Map/Map";
 import DescripcionPerfil from "../DescripcionPerfil/DescripcionPerfil";
 
 const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
@@ -26,7 +26,11 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
     x,
     linkedin,
     email,
+    distribuidor,
+    coordenadas,
   } = perfil;
+  const { lat, lg } = coordenadas ? !coordenadas : 0;
+
   return (
     <Box
       component="section"
@@ -211,6 +215,14 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         >
           <FilaColaboraciones colaboraciones={colaboraciones} />
         </Box>
+
+        {!perfil.distribuidor ? (
+          <Box> </Box>
+        ) : (
+          <Box>
+            <Map lat={lat} lg={lg} />
+          </Box>
+        )}
       </Container>
     </Box>
   );

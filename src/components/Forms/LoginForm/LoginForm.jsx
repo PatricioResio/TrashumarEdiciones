@@ -19,32 +19,24 @@ function LoginForm() {
     >
       <form>
         <Box
-          bgcolor="bg.mediumLightBlue"
           sx={{
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
             height: "60vh",
-            width: "36vw",
-            boxSizing: "border-box",
-            border: "solid 1px ",
-            borderRadius: "15px",
+            width: "90vw",
             margin: "auto",
-            transition: "transform 0.3s",
-            "&:hover": {
-              transform: "scale(1.03)",
-            },
           }}
         >
-          <Typography sx={{ mt: "auto" }} variant="h3">
+          <Typography sx={{ mt: "auto" }} variant="h2">
             Iniciar sesión{" "}
           </Typography>
           <Button
             variant="outlined"
             onClick={handleGoogle}
             sx={{
-              width: "40%",
+              width: { xs: "40%", md: "18rem" },
               margin: "auto",
               color: "#0C2324",
               transition: "transform 0.3s",
