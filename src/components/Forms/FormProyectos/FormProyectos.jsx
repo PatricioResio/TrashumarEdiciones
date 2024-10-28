@@ -71,7 +71,7 @@ function FormProyectos() {
           display: "flex",
           flexDirection: "column",
           marginBottom: "0",
-          width: { xs: "70vw", md: "50vw" },
+          width: { xs: "90%", md: "90%" },
           color: "#02291F",
         }}
       >
