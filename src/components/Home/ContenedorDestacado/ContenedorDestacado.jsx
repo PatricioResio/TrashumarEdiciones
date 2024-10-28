@@ -82,7 +82,7 @@ const ContenedorDestacado = () => {
               El día en que los hippies descubrieron los sahumerios
             </Typography>
             <Typography component="h4" variant="h4">
-              Pablo Atanasopolus
+              Pablo Atanasópulos
             </Typography>
             <Typography component="p" variant="body">
               {Descripcion}

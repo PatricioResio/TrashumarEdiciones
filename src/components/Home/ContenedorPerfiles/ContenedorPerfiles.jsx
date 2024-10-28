@@ -9,10 +9,8 @@ const ContenedorPerfiles = () => {
     <Container
       maxWidth="2xl"
       sx={{
-        display: "flex",
         margin: "auto",
         justifyContent: "center",
-        minHeight: "40rem",
         width: "98%",
         alignItems: "center",
       }}

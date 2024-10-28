@@ -1,16 +1,15 @@
 .carta-perfiles {
-  border: 3px solid #3c9990;
+  border: 2px solid #3c9990;
   border-radius: 20px;
-  background-color: #a6ece0;
+  background-color: transparent;
   box-shadow: (0, 0, 0, 0.2);
 }
 
 .carta-perfiles-contenido {
   display: flex;
   flex-grow: 1;
-  height: 45%;
+  height: 25%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #a6ece0;
 }

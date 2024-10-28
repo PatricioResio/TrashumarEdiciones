@@ -41,7 +41,7 @@ const Home = () => {
               component="h3"
               variant="h3"
               sx={{
-                m: "4rem auto",
+                m: "2rem auto",
               }}
             >
               Proyectos para explorar
@@ -58,7 +58,7 @@ const Home = () => {
             my: "7rem",
 
             width: "100%",
-            pb: 2,
+            p: 2,
           }}
         >
           <Fade triggerOnce>

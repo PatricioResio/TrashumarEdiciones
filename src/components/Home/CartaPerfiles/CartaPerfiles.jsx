@@ -18,8 +18,9 @@ export default function CartaPerfiles({ perfil }) {
         className="carta-perfiles"
         sx={{
           width: { xs: "12rem", md: "15rem" },
-          height: { xs: "22rem", md: "27rem" },
+          height: { xs: "20rem", md: "22rem" },
           borderRadius: "5px",
+          backgroundColor: "transparent",
           m: "8rem",
           p: 0,
           transition: "transform 0.3s ease-in-out",
@@ -29,7 +30,13 @@ export default function CartaPerfiles({ perfil }) {
         }}
       >
         <CardMedia
-          sx={{ height: "55%" }}
+          sx={{
+            height: "10rem",
+            width: "10rem",
+            margin: "1rem auto",
+            borderRadius: "50%",
+            backgroundColor: "transparent",
+          }}
           image={perfil.avatar}
           src={!perfil.avatar ? "" : perfil.avatar}
         />

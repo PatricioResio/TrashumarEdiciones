@@ -51,7 +51,7 @@ function FormProyectos() {
       maxWidth="md"
       sx={{
         minHeight: "65vh",
-        fontSize: "26px",
+        fontSize: { xs: "18px", sm: "24px", md: "26px" },
         p: "30px 0",
         display: "flex",
         m: "0 auto",
@@ -71,7 +71,7 @@ function FormProyectos() {
           display: "flex",
           flexDirection: "column",
           marginBottom: "0",
-          width: "500px",
+          width: { xs: "70vw", md: "50vw" },
           color: "#02291F",
         }}
       >

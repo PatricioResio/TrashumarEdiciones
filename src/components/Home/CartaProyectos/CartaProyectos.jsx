@@ -14,13 +14,13 @@ export default function CartaProyectos({ proyecto }) {
         sx={{
           height: { xs: "22rem", sm: "29rem", md: "37rem" },
           width: { xs: "12rem", sm: "17rem", md: "22rem" },
-          border: "0.5px solid #3C9990",
+          border: "1px solid #09A5B0",
           borderRadius: "3px",
           backgroundColor: "transparent",
-          p: "0",
+
           transition: "transform 0.3s ease-in-out",
           "&:hover": {
-            transform: "scale(1.02)",
+            transform: "scale(1.01)",
           },
         }}
       >

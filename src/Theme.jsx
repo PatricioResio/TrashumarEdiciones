@@ -114,21 +114,21 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "1rem",
+      fontSize: "0.8rem",
       "@media (min-width:600px)": {
-        fontSize: "1.2rem",
+        fontSize: "0.9rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1.3rem",
+        fontSize: "1rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "1.4rem",
+        fontSize: "1rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "1.5rem",
+        fontSize: "1.1rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "1.6rem",
+        fontSize: "1.2rem",
       },
     },
     h6: {
@@ -186,7 +186,7 @@ const theme = createTheme({
       },
       fontWeight: 500,
     },
-    body1: {
+    body: {
       fontSize: "0.8rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",

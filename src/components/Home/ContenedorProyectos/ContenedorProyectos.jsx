@@ -11,7 +11,7 @@ const ContenedorCartas = () => {
         margin: "auto",
         justifyContent: "center",
         width: "98%",
-        minHeight: "50rem",
+        padding: 6,
         alignItems: "center",
       }}
     >

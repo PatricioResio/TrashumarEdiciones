@@ -122,7 +122,7 @@ const Footer = () => {
                 sx={{
                   height: "100%",
                   fontWeight: "bold",
-                  fontSize: { xs: "8px", md: "12px", lg: "14px" },
+                  fontSize: { xs: "10px", md: "14px", lg: "16px" },
                   justifyContent: "center",
                   borderRadius: "10px",
                   color: "#FFFFF8",
