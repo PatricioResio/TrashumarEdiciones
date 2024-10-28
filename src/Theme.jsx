@@ -25,6 +25,7 @@ const theme = createTheme({
       main: "#DFFFF9",
       mediumBlue: "#09A5B0",
       mediumLightBlue: "#7AE7F5",
+      semiLightBlue: "#8EFFFE",
       lightBlue: "#A4FFFE",
     },
     border: {
@@ -142,10 +143,10 @@ const theme = createTheme({
         fontSize: "1.2rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "1.3rem",
+        fontSize: "1.1rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "1.4rem",
+        fontSize: "1.1rem",
       },
     },
     p: {

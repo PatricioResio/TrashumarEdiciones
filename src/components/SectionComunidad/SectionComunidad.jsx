@@ -13,7 +13,7 @@ const SectionComunidad = () => {
   const { perfiles, loading } = usePerfiles();
   return loading ? (
     <Box
-      bgcolor="bg.lightBlue"
+      bgcolor="bg.semiLightBlue"
       sx={{
         minHeight: "90vh",
         borderRadius: "5px",
@@ -27,7 +27,7 @@ const SectionComunidad = () => {
     </Box>
   ) : (
     <Box
-      bgcolor="bg.lightBlue"
+      bgcolor="bg.semiLightBlue"
       component="article"
       sx={{
         margin: "10px",

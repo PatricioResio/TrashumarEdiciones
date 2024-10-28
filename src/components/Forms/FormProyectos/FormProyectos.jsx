@@ -57,8 +57,8 @@ function FormProyectos() {
         m: "0 auto",
         flexDirection: "column",
         alignItems: "center",
-        border: "1px solid #BAE3D7",
-        borderRadius: "20px",
+        border: "1px solid #09A5B0",
+        borderRadius: "5px",
         backgroundColor: "#A4FFFE",
       }}
     >

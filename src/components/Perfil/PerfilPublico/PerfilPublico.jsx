@@ -92,7 +92,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             xs: "column",
             md: "column",
             lg: "column",
-            xl: "row",
+            xl: "column",
           },
         }}
       >
@@ -105,7 +105,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             borderRadius: "2%",
             p: "20px",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "220px", sm: "350px", md: "500px", lg: "45%" },
+            width: { xs: "95vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaProyectosPerfil proyectosUser={proyectosUser} />
@@ -120,7 +120,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             borderRadius: "2%",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",
-            width: { xs: "220px", sm: "350px", md: "500px", lg: "45%" },
+            width: { xs: "95vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaColaboraciones colaboraciones={colaboraciones} />
@@ -130,7 +130,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           <> </>
         ) : (
           <Box>
-            <Map lat={lat} lg={lg} />
+            <Map zonaDistribuidor={zonaDistribuidor} />
           </Box>
         )}
       </Container>

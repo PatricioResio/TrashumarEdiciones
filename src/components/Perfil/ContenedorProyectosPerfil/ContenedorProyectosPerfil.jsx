@@ -13,7 +13,15 @@ const ContenedorProyectosPerfil = () => {
   );
 
   return (
-    <Container className="contenedor-fila-perfil" maxWidth="md">
+    <Container
+      className="contenedor-fila-perfil"
+      maxWidth="md"
+      sx={{
+        margin: { xs: "auto", md: "0" },
+        width: { xs: "80vw", md: "380px" },
+        height: "40rem",
+      }}
+    >
       {loading ? (
         <CircularProgress />
       ) : (

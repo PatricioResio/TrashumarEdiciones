@@ -1,6 +1,9 @@
 import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
+import { Box } from "@mui/material";
+
+import "leaflet/dist/leaflet.css"; // Importa los estilos de Leaflet
 
 // Configuración para ícono personalizado (opcional)
 const customIcon = new L.Icon({
@@ -11,27 +14,44 @@ const customIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
-const MapaLeaflet = ({ lat, lg, zoom = 13 }) => {
-  if (!lat || !lg) {
+const MapaLeaflet = ({ zonaDistribuidores, zoom = 13 }) => {
+  const lat = zonaDistribuidores?.geocode.lat;
+  const lng = zonaDistribuidores?.geocode.lng;
+
+  const markers = [
+    {
+      geocode: [-34.80549222964987, -58.400773458690026],
+      popUp: "La Casa De Los Vientos",
+    },
+    {
+      geocode: [-34.806445637152265, -58.39474421534425],
+      popUp: "Mi Casa",
+    },
+  ];
+
+  if (!lat || !lng) {
     return <p>Coordenadas no disponibles</p>;
   }
 
   return (
-    <MapContainer
-      center={[lat, lg]}
-      zoom={zoom}
-      style={{ height: "400px", width: "100%" }}
+    <Box
+      style={{
+        height: "400px",
+        width: "100%",
+        maxWidth: "800px",
+        margin: "0",
+      }}
     >
-      {/* Capa base */}
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {/* Marcador en la posición especificada */}
-      <Marker position={[lat, lg]} icon={customIcon}>
-        <Popup>Ubicación del distribuidor</Popup>
-      </Marker>
-    </MapContainer>
+      <MapContainer center={[lat, lng]} zoom={zoom} style={{ height: "400px" }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <Marker position={[lat, lng]} icon={customIcon}>
+          <Popup>Ubicación del distribuidor</Popup>
+        </Marker>
+      </MapContainer>
+    </Box>
   );
 };
 

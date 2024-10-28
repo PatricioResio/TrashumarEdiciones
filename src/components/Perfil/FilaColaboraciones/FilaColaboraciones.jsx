@@ -26,7 +26,6 @@ const FilaColaboraciones = ({ colaboraciones }) => {
           navigation={true}
           modules={[Navigation]}
           className="swiper"
-          centeredSlides
           spaceBetween={1}
           breakpoints={{
             1180: { slidesPerView: "2" },

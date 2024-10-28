@@ -33,8 +33,9 @@ const ProyectoPublico = ({ proyectoPublico }) => {
         }}
       >
         <Box
+          bgcolor={"bg.lightBlue"}
           sx={{
-            width: "80%",
+            width: { xs: "100%", md: "80%" },
             fontSize: "20px",
             minHeight: "80vh",
             m: "1rem auto",
@@ -43,8 +44,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
             justifyContent: "center",
             alignItems: "center",
             gap: "80px",
-            border: "2px solid #B5C2C7",
-            borderRadius: "20px",
+            borderRadius: "5px",
             p: "1rem",
           }}
         >
@@ -59,7 +59,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
             <Box
               sx={{
                 m: "auto",
-                p: "0 5.5rem",
+                p: { xs: "0", md: "0 5.5rem" },
                 display: "flex",
                 flexDirection: { xs: "column", xl: "row" },
               }}
@@ -76,7 +76,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
                   sx={{
                     boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
                     height: { xs: "20rem", sm: "29rem", md: "39rem" },
-                    width: { xs: "10rem", sm: "17rem", md: "22rem" },
+                    width: { xs: "13rem", sm: "17rem", md: "22rem" },
                     m: "auto",
                   }}
                   src={img}
@@ -87,7 +87,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
                   sx={{
                     boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
                     height: { xs: "20rem", sm: "29rem", md: "39rem" },
-                    width: { xs: "10rem", sm: "17rem", md: "22rem" },
+                    width: { xs: "13rem", sm: "17rem", md: "22rem" },
                     m: "auto",
                   }}
                   src={img1}

@@ -24,7 +24,7 @@ const SectionLibreria = () => {
     <>
       <Box
         component="article"
-        bgcolor="bg.lightBlue"
+        bgcolor="bg.semiLightBlue"
         sx={{
           minHeight: "90vh",
           borderRadius: "5px",

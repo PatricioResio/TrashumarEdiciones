@@ -12,8 +12,8 @@ export default function CartaProyectoPerfil({ proyecto }) {
     <Fade triggerOnce delay={1100}>
       <Card
         sx={{
-          width: { xs: "200px", md: "280px" },
-          height: { xs: "490px", md: "500px" },
+          width: { xs: "180px", md: "280px" },
+          height: { xs: "420px", md: "500px" },
           border: "3px solid #3C9990",
           borderRadius: "20px",
           backgroundColor: "#A6ECE0",

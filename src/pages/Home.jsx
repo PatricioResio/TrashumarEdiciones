@@ -33,8 +33,6 @@ const Home = () => {
             borderRadius: "5px",
             width: "100%",
             my: "7rem",
-
-            pb: 2,
           }}
         >
           <Fade triggerOnce>
@@ -43,7 +41,7 @@ const Home = () => {
               component="h3"
               variant="h3"
               sx={{
-                m: "1rem auto",
+                m: "4rem auto",
               }}
             >
               Proyectos para explorar
