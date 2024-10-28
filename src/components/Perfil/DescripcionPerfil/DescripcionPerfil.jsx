@@ -5,12 +5,12 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
   return (
     <Container
       sx={{
-        height: "25rem",
+        height: { xs: "", md: "25rem" },
         my: { xs: "30px", sm: "auto" },
-        border: "2px solid #BAE3D7",
+        border: "1px solid #09A5B0",
         display: "flex",
-        width: { xs: "60%" },
-        borderRadius: "15px",
+        width: { xs: "80%" },
+        borderRadius: "5px",
         backgroundColor: "#BDFFF9",
         contain: "content",
         overflowY: "scroll",

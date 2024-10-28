@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import Map from "../../Map/Map";
 import DescripcionPerfil from "../DescripcionPerfil/DescripcionPerfil";
+import CartaPerfilPublico from "../CartaPerfilPublico/CartaPerfilPublico";
 
 const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
   const {
@@ -27,9 +28,9 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
     linkedin,
     email,
     distribuidor,
-    coordenadas,
+    zonaDistribuidor,
   } = perfil;
-  const { lat, lg } = coordenadas ? !coordenadas : 0;
+  const { lat, lg } = zonaDistribuidor ? !zonaDistribuidor : 0;
 
   return (
     <Box
@@ -44,21 +45,18 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         m: "40px auto",
         borderRadius: "5px",
         p: { xs: 0, md: "4rem" },
-        gap: "2rem",
+        gap: "4rem",
       }}
     >
-      <Container
+      <Box
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
           width: { xs: "100%", md: "90%" },
-          backgroundColor: "#6CCCD9",
-          borderRadius: "5px",
-          border: "1px solid #3C9990",
+          gap: "2rem",
           m: "10px auto",
-          boxShadow: "1px 1px 5px black",
         }}
       >
         <Container
@@ -76,100 +74,12 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           }}
         >
           {" "}
-          <Container
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              component="img"
-              className="img-perfil-card"
-              src={!perfil ? "No se encontro usuario" : perfil.avatar}
-              alt="foto"
-            />
-
-            <Typography
-              variant="h3"
-              className="h2-perfil-card"
-              paragraph
-              fontWeight="bold"
-              sx={{ mt: "13rem" }}
-            >
-              {!perfil ? "No se encontro usuario" : perfil.nombrePublico}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                my: "auto",
-              }}
-            >
-              <Typography component="h5" variant="h5" fontWeight="bold">
-                Datos personales
-              </Typography>
-            </Box>
-
-            <Box sx={{ margin: "0" }}>
-              {!perfil.linkedinForm ? (
-                <>
-                  <Typography variant="h5"></Typography>
-                </>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faLinkedin} />
-                  {perfil.linkedinForm}
-                </Typography>
-              )}
-              {!perfil.facebookForm ? (
-                <>
-                  <Typography variant="h5"></Typography>
-                </>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faFacebook} />
-                  {perfil.facebookForm}
-                </Typography>
-              )}
-              {!perfil.instagramForm ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faInstagram} />@{perfil.instagramForm}
-                </Typography>
-              )}
-              {!perfil.xForm ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faSquareXTwitter} />@{perfil.xForm}
-                </Typography>
-              )}
-              {!perfil.email ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  {perfil.email}
-                </Typography>
-              )}
-              {!perfil.telefono ? (
-                <Typography variant="h5"></Typography>
-              ) : (
-                <Typography variant="h5">
-                  <FontAwesomeIcon size="24px" icon={faSquarePhone} />
-                  {perfil.telefono}
-                </Typography>
-              )}
-            </Box>
-          </Container>
+          <CartaPerfilPublico perfil={perfil} />
         </Container>
+
         <Oficios oficios={oficios} />
         <DescripcionPerfil {...perfil} />
-      </Container>
+      </Box>
       <Container
         disableGutters
         sx={{
@@ -188,7 +98,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
       >
         <Box
           component="article"
-          bgcolor={"bg.mediumLightBlue"}
+          bgcolor={"bg.mediumBlue"}
           sx={{
             m: "auto",
             border: "solid 2px #BAE3D7",
@@ -202,7 +112,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         </Box>
         <Box
           component="article"
-          bgcolor={"bg.mediumLightBlue"}
+          bgcolor={"bg.mediumBlue"}
           sx={{
             m: "auto",
 

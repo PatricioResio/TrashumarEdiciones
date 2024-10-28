@@ -10,19 +10,19 @@ const Oficios = ({ oficios }) => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        width: { xs: "60%" },
+        width: { xs: "80%", sm: "40%" },
         justifyContent: "start",
         alignItems: "center",
-        border: "2px solid #BAE3D7",
-        borderRadius: "15px",
+        border: "1px solid #09A5B0",
+        borderRadius: "5px",
         backgroundColor: "#BDFFF9",
         m: "auto 6px",
         gap: "2px",
-        height: "22rem",
+        height: { xs: "", md: "22rem" },
       }}
     >
       <Typography
-        variant="h6"
+        variant="h5"
         sx={{ mt: "0", fontWeight: "bold" }}
         component="h6"
       >

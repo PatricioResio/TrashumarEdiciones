@@ -19,6 +19,8 @@ const SectionComunidad = () => {
         borderRadius: "5px",
         width: "98%",
         margin: "auto",
+
+        border: "1px solid #09A5B0",
       }}
     >
       <CircularProgress sx={{ mt: "25%" }} />
@@ -30,6 +32,8 @@ const SectionComunidad = () => {
       sx={{
         margin: "10px",
         borderRadius: "5px",
+
+        border: "1px solid #09A5B0",
       }}
     >
       <Fade>

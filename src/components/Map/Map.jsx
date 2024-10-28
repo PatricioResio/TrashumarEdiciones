@@ -11,14 +11,14 @@ const customIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
-const MapaLeaflet = ({ lat, lng, zoom = 13 }) => {
-  if (!lat || !lng) {
+const MapaLeaflet = ({ lat, lg, zoom = 13 }) => {
+  if (!lat || !lg) {
     return <p>Coordenadas no disponibles</p>;
   }
 
   return (
     <MapContainer
-      center={[lat, lng]}
+      center={[lat, lg]}
       zoom={zoom}
       style={{ height: "400px", width: "100%" }}
     >
@@ -28,7 +28,7 @@ const MapaLeaflet = ({ lat, lng, zoom = 13 }) => {
         attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
       />
       {/* Marcador en la posición especificada */}
-      <Marker position={[lat, lng]} icon={customIcon}>
+      <Marker position={[lat, lg]} icon={customIcon}>
         <Popup>Ubicación del distribuidor</Popup>
       </Marker>
     </MapContainer>

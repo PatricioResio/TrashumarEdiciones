@@ -11,6 +11,7 @@ const useCoordenate = (zonaDistribuidor) => {
         setDirecciones([...{ direction: direccion, lat: lat, lg: lg }]);
       });
       setLoadingDirecciones(False);
+      console.log(direcciones);
     };
     mapDirecciones();
   }, [zonaDistribuidor]);

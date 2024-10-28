@@ -18,7 +18,6 @@ const Libreria = () => {
           width: "100%",
           minHeight: "65vh",
           textAlign: "center",
-
           color: "#BAE3D7",
         }}
       >

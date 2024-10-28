@@ -134,7 +134,7 @@ const Footer = () => {
                 }}
               >
                 <RiInstagramFill className="footer-icon" />
-                @trashumarediciones
+                trashumarediciones
               </Button>
             </Grid>
             <Grid
