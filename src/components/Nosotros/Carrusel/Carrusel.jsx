@@ -23,7 +23,7 @@ const Carrusel = ({ arrayImagenes }) => {
         marginTop: "0",
       }}
     >
-      <Fade triggerOnce>
+      <Fade triggerOnce delay={300}>
         <Typography
           component="h3"
           align="center"
@@ -58,7 +58,7 @@ const Carrusel = ({ arrayImagenes }) => {
           runCallbacksOnInit={true}
         >
           {arrayImagenes.map((imgA) => (
-            <Fade>
+            <Fade delay={300}>
               <SwiperSlide key={imgA.id}>
                 <Box
                   sx={{

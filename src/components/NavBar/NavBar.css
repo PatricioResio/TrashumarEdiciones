@@ -11,3 +11,12 @@
   background-color: darkgreen;
 }
  */
+.icon-profile {
+  height: 1.7rem;
+  width: 1.7rem;
+  background-color: #fffff8;
+  border-radius: 50%;
+  color: #09a5b0;
+  margin: auto 0;
+  padding: 10px;
+}

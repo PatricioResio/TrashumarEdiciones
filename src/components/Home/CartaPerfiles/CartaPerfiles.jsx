@@ -13,14 +13,15 @@ export default function CartaPerfiles({ perfil }) {
   const oficiosPerfil = !perfil.oficios ? [] : [...perfil.oficios.slice(0, 2)];
 
   return (
-    <Fade triggerOnce delay={1200}>
+    <Fade triggerOnce delay={200}>
       <Card
         className="carta-perfiles"
         sx={{
           width: { xs: "12rem", md: "15rem" },
           height: { xs: "20rem", md: "22rem" },
           borderRadius: "5px",
-          backgroundColor: "transparent",
+
+          backgroundColor: "#A4FFFE",
           m: "8rem",
           p: 0,
           transition: "transform 0.3s ease-in-out",

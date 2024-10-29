@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const CarruselHome = () => {
   return (
-    <Fade triggerOnce delay={1200}>
+    <Fade triggerOnce delay={400}>
       <Container
         maxWidth="false"
         disableGutters

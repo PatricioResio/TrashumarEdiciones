@@ -17,9 +17,12 @@ import { Fade } from "react-awesome-reveal";
 import "./NavBar.css";
 import { DEFAULT_PERFIL_FOTO, LOGO_URL } from "../../constants/constants";
 import { pages } from "../../constants/Arrays";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaUser } from "react-icons/fa6";
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 
 function ResponsiveAppBar() {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, loading } = useContext(AuthContext);
   const displayName = currentUser
     ? currentUser.nombrePublico.split(" ", 2)[0]
     : null;
@@ -50,260 +53,267 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static" sx={{ maxWidth: "100%" }}>
-      <Brand />
-      <Container
-        disableGutters
-        maxWidth="xl"
-        sx={{
-          minWidth: "100%",
-          height: { xs: "4rem", sm: "5rem" },
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Toolbar disableGutters>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="#FFFFF8"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "center",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "center",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+      <Fade triggerOnce delay={1}>
+        <Brand />
+        <Container
+          disableGutters
+          maxWidth="xl"
+          sx={{
+            minWidth: "100%",
+            height: { xs: "4rem", sm: "4.3rem" },
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Toolbar disableGutters>
+            <Box
               sx={{
-                color: "#FFFFF8",
-                display: {
-                  xs: "block",
-                  md: "none",
-                },
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem
-                  sx={{
-                    height: "100%",
-                  }}
-                  key={page.name}
-                  onClick={handleCloseNavMenu}
-                >
-                  <Typography
-                    component={Link}
-                    color="secondary"
-                    onClick={scrollToTop}
-                    bgcolor="primary"
-                    to={page.path}
-                    style={{ textDecoration: "none" }}
-                  >
-                    {page.name}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
-          <Box sx={{ flexGrow: 1 }}>
-            <Fade triggerOnce>
-              <Typography
-                variant="h6"
-                component={Link}
-                onClick={scrollToTop()}
-                to="/"
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleOpenNavMenu}
+                color="#FFFFF8"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "bottom",
+                  horizontal: "center",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "center",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
                 sx={{
-                  display: "flex",
-                  borderRadius: "50%",
-                  height: { xs: "3rem", sm: "4.5rem" },
-                  width: { xs: "3rem", sm: "4rem" },
-                  p: "0",
-                  margin: "auto 0 auto 13px",
-
-                  "& img": {
-                    transition: "transform 0.3s ease-in-out",
-                  },
-                  "&:hover img": {
-                    transform: "scale(1.07)",
+                  color: "#FFFFF8",
+                  display: {
+                    xs: "block",
+                    md: "none",
                   },
                 }}
               >
-                <img src={LOGO_URL} />
-              </Typography>
-            </Fade>
-          </Box>
-
-          <Box
-            sx={{
-              flexGrow: { xs: 1, md: 4 },
-              display: { xs: "none", md: "flex" },
-              justifyContent: "center",
-              alignItems: "center",
-              mx: "auto",
-              gap: 7,
-            }}
-          >
-            <Fade triggerOnce>
-              {pages.map((page) => (
-                <Button
-                  key={page.name}
-                  component={Link}
-                  color="secondary"
-                  to={page.path}
-                  onClick={scrollToTop}
-                  sx={{
-                    height: "100%",
-                    fontWeight: "bold",
-                    fontSize: { md: "12px", lg: "14px" },
-                    justifyContent: "center",
-                    borderRadius: "10px",
-                    color: "#FFFFF8",
-                    transition: "transform 0.3s ease-in-out",
-                    "&:hover": {
-                      transform: "scale(1.02)",
-                      color: "#FFFFF8",
-                    },
-                  }}
-                >
-                  {page.name}
-                </Button>
-              ))}
-            </Fade>
-          </Box>
-
-          <Box sx={{ display: "flex" }}>
-            {!currentUser ? (
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  marginLeft: "2rem ",
-                  marginTop: "0",
-                  display: "flex",
-                  justifyContent: "end",
-                  alignItems: "center",
-                }}
-              >
-                <Button
-                  variant="contained"
-                  component={Link}
-                  onClick={scrollToTop}
-                  to="/ingresa"
-                  color="secondary"
-                  sx={{
-                    maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
-                    flexGrow: 1,
-                    fontFamily: "roboto",
-                    fontWeight: { xs: 600, md: 900 },
-                    letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
-                    marginRight: ".5rem",
-                    backgroundColor: "#09A5B0",
-                    transition: "transform 0.3s ease-in-out",
-
-                    "&:hover": {
-                      transform: "scale(1.02)",
-                      color: "#FFFFF8",
-                    },
-                  }}
-                >
-                  <Fade triggerOnce>Ingresar</Fade>
-                </Button>
-              </Box>
-            ) : (
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  display: "flex",
-                }}
-              >
-                <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleOpenProfileMenu}
-                  color="#FFFFF8"
-                >
-                  <Box
-                    sx={{
-                      heigh: "50px",
-                      width: "50px",
-                      m: "auto",
-                      borderRadius: "50%",
-                    }}
-                    component="img"
-                    src={
-                      !currentUser ? DEFAULT_PERFIL_FOTO : currentUser.avatar
-                    }
-                  />
-                </IconButton>
-
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={profileNav}
-                  anchorOrigin={{
-                    vertical: "bottom",
-                    horizontal: "center",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "center",
-                  }}
-                  open={Boolean(profileNav)}
-                  onClose={handleCloseProfileMenu}
-                  sx={{
-                    color: "#FFFFF8",
-                    display: "block",
-                  }}
-                >
+                {pages.map((page) => (
                   <MenuItem
                     sx={{
                       height: "100%",
                     }}
+                    key={page.name}
                     onClick={handleCloseNavMenu}
                   >
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      onClick={scrollToTop}
+                    <Typography
                       component={Link}
-                      to="/miperfil"
-                      style={{
-                        textDecoration: "none",
+                      color="secondary"
+                      onClick={scrollToTop}
+                      bgcolor="primary"
+                      to={page.path}
+                      style={{ textDecoration: "none" }}
+                    >
+                      {page.name}
+                    </Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+
+            <Box sx={{ flexGrow: 1 }}>
+              <Fade triggerOnce>
+                <Typography
+                  variant="h6"
+                  component={Link}
+                  onClick={scrollToTop()}
+                  to="/"
+                  sx={{
+                    display: "flex",
+                    borderRadius: "50%",
+                    height: { xs: "3rem", sm: "4rem" },
+                    width: { xs: "3rem", sm: "4rem" },
+                    p: "0",
+                    margin: "auto 0 auto 13px",
+
+                    "& img": {
+                      transition: "transform 0.3s ease-in-out",
+                    },
+                    "&:hover img": {
+                      transform: "scale(1.07)",
+                    },
+                  }}
+                >
+                  <img src={LOGO_URL} />
+                </Typography>
+              </Fade>
+            </Box>
+
+            <Box
+              sx={{
+                flexGrow: { xs: 1, md: 4 },
+                display: { xs: "none", md: "flex" },
+                justifyContent: "center",
+                alignItems: "center",
+                mx: "auto",
+                gap: 7,
+              }}
+            >
+              <Fade triggerOnce>
+                {pages.map((page) => (
+                  <Button
+                    key={page.name}
+                    component={Link}
+                    color="secondary"
+                    to={page.path}
+                    onClick={scrollToTop}
+                    sx={{
+                      height: "100%",
+                      fontWeight: "bold",
+                      fontSize: { md: "12px", lg: "14px" },
+                      justifyContent: "center",
+                      borderRadius: "10px",
+                      color: "#FFFFF8",
+                      transition: "transform 0.3s ease-in-out",
+                      "&:hover": {
+                        transform: "scale(1.02)",
                         color: "#FFFFF8",
-                        mx: "auto",
+                      },
+                    }}
+                  >
+                    {page.name}
+                  </Button>
+                ))}
+              </Fade>
+            </Box>
+
+            <Box sx={{ display: "flex" }}>
+              {!currentUser && !loading ? (
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                    marginLeft: "2rem ",
+                    marginTop: "0",
+                    display: "flex",
+                    justifyContent: "end",
+                    alignItems: "center",
+                  }}
+                >
+                  <Button
+                    variant="contained"
+                    component={Link}
+                    onClick={scrollToTop}
+                    to="/ingresa"
+                    color="secondary"
+                    sx={{
+                      maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
+                      flexGrow: 1,
+                      fontFamily: "roboto",
+                      fontWeight: { xs: 600, md: 900 },
+                      letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
+                      marginRight: ".5rem",
+                      backgroundColor: "#09A5B0",
+                      transition: "transform 0.3s ease-in-out",
+
+                      "&:hover": {
+                        transform: "scale(1.02)",
+                        color: "#FFFFF8",
+                      },
+                    }}
+                  >
+                    <Fade triggerOnce>Ingresar</Fade>
+                  </Button>
+                </Box>
+              ) : (
+                <Fade triggerOnce>
+                  <Box
+                    sx={{
+                      flexGrow: 1,
+                      display: "flex",
+                    }}
+                  >
+                    <IconButton
+                      size="large"
+                      aria-label="account of current user"
+                      aria-controls="menu-appbar"
+                      aria-haspopup="true"
+                      onClick={handleOpenProfileMenu}
+                      color="#FFFFF8"
+                    >
+                      <FontAwesomeIcon icon={faUser} className="icon-profile" />
+                      {/*   <Box
+                        sx={{
+                          heigh: "50px",
+                          width: "50px",
+                          m: "auto",
+                          borderRadius: "50%",
+                        }}
+                        component="img"
+                        src={
+                          !currentUser
+                            ? DEFAULT_PERFIL_FOTO
+                            : currentUser.avatar
+                        }
+                      /> */}
+                    </IconButton>
+
+                    <Menu
+                      id="menu-appbar"
+                      anchorEl={profileNav}
+                      anchorOrigin={{
+                        vertical: "bottom",
+                        horizontal: "center",
+                      }}
+                      keepMounted
+                      transformOrigin={{
+                        vertical: "top",
+                        horizontal: "center",
+                      }}
+                      open={Boolean(profileNav)}
+                      onClose={handleCloseProfileMenu}
+                      sx={{
+                        color: "#FFFFF8",
+                        display: "block",
                       }}
                     >
-                      Mi perfil
-                    </Button>
-                  </MenuItem>
-                  <MenuItem>
-                    <LogOutBtn />
-                  </MenuItem>
-                </Menu>
-              </Box>
-            )}
-          </Box>
-        </Toolbar>
-      </Container>
+                      <MenuItem
+                        sx={{
+                          height: "100%",
+                        }}
+                        onClick={handleCloseNavMenu}
+                      >
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          onClick={scrollToTop}
+                          component={Link}
+                          to="/miperfil"
+                          style={{
+                            textDecoration: "none",
+                            color: "#FFFFF8",
+                            mx: "auto",
+                          }}
+                        >
+                          Mi perfil
+                        </Button>
+                      </MenuItem>
+                      <MenuItem>
+                        <LogOutBtn />
+                      </MenuItem>
+                    </Menu>
+                  </Box>
+                </Fade>
+              )}
+            </Box>
+          </Toolbar>
+        </Container>
+      </Fade>
     </AppBar>
   );
 }
