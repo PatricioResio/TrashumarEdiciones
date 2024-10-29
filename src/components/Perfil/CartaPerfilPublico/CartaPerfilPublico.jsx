@@ -38,13 +38,18 @@ const CartaPerfilPublico = ({ perfil }) => {
       }}
     >
       <Box
-        sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 4 }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "100%",
+          gap: 4,
+        }}
       >
         <Box
           sx={{
             height: { xs: "6rem", md: "8rem" },
             width: { xs: "6rem", md: "8rem" },
-            m: "auto",
             borderRadius: "50%",
           }}
           component="img"

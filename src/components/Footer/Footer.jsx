@@ -180,7 +180,7 @@ const Footer = () => {
             >
               <Typography
                 color="secondary.white"
-                fontWeight={{ xs: "12px", md: "14px" }}
+                variant="p"
                 xs={{ mt: "1rem" }}
               >
                 Derechos de autor reservados Trashumar Ediciones©

@@ -30,52 +30,50 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         p: 2,
       }}
     >
-      <Container
+      <Box
         sx={{
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
           alignItems: "center",
+          width: "100%",
+          gap: 4,
         }}
       >
         <Box
           component="img"
-          className="img-perfil-card"
+          sx={{
+            height: { xs: "6rem", md: "8rem" },
+            width: { xs: "6rem", md: "8rem" },
+            borderRadius: "50%",
+          }}
           src={!currentUser ? "No se encontro usuario" : currentUser.avatar}
           alt="foto"
         />
-        <Typography
-          variant="h3"
-          className="h2-perfil-card"
-          paragraph
-          fontWeight="bold"
-          sx={{ mt: "13rem" }}
-        >
+        <Typography variant="h3" className="h2-perfil-card" fontWeight="bold">
           {!currentUser ? "No se encontro usuario" : currentUser.nombrePublico}
         </Typography>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            my: "auto",
-          }}
-        >
-          <IconButton
-            variant="contained"
-            color="tertiary"
-            onClick={handleCardButton}
-            sx={{ borderRadius: "50%" }}
+        <Box sx={{ margin: "0", gap: 6 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              my: "auto",
+            }}
           >
-            <FontAwesomeIcon icon={faPenToSquare} />
-          </IconButton>
-          <Typography variant="h5" fontWeight="bold">
-            Datos personales
-          </Typography>
-        </Box>
-
-        <Box sx={{ margin: "0" }}>
+            <IconButton
+              variant="contained"
+              color="tertiary"
+              onClick={handleCardButton}
+              sx={{ borderRadius: "50%" }}
+            >
+              <FontAwesomeIcon icon={faPenToSquare} />
+            </IconButton>
+            <Typography variant="h5" fontWeight="bold">
+              Datos personales
+            </Typography>
+          </Box>
           {!currentUser.linkedinForm ? (
             <>
               <Typography variant="h5"></Typography>
@@ -127,7 +125,7 @@ const CartaPerfilUsuario = ({ currentUser }) => {
             </Typography>
           )}
         </Box>
-      </Container>
+      </Box>
     </Container>
   );
 };
