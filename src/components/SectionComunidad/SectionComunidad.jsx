@@ -40,9 +40,9 @@ const SectionComunidad = () => {
           sx={{
             minHeight: "90vh",
             m: "auto",
-            gap: { xs: 2, md: "6" },
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
+            gap: 4,
+            justifyContent: { xs: "center", md: "flex-start" },
+            alignItems: { xs: "center", md: "flex-start" },
           }}
         >
           {perfiles.map((perfil) => (
