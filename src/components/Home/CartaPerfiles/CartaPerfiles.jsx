@@ -22,7 +22,7 @@ export default function CartaPerfiles({ perfil }) {
           borderRadius: "5px",
 
           backgroundColor: "#A4FFFE",
-          m: "8rem",
+          m: { xs: "0", md: "8rem" },
           p: 0,
           transition: "transform 0.3s ease-in-out",
           "&:hover": {
