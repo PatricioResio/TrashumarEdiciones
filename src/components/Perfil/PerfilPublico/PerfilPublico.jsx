@@ -35,26 +35,27 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
   return (
     <Box
       component="section"
-      bgcolor={"bg.lightBlue"}
+      bgcolor={"bg.semiLightBlue"}
       sx={{
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        width: { xs: "100%", md: "95%" },
+        width: "95%",
         m: "40px auto",
         borderRadius: "5px",
         p: { xs: 0, md: "4rem" },
-        gap: "4rem",
+        gap: "2rem",
       }}
     >
       <Box
+        bgcolor={"bg.semiLightBlue"}
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: { xs: "100%", md: "90%" },
+          width: { xs: "100%", md: "70%" },
           gap: "2rem",
           m: "10px auto",
         }}
@@ -85,7 +86,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         sx={{
           height: "100%",
           m: "auto",
-          minWidth: "100%",
+          minWidth: "90%",
           gap: "2rem",
           display: "flex",
           flexDirection: {
@@ -103,24 +104,26 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             m: "auto",
             border: "solid 2px #BAE3D7",
             borderRadius: "2%",
+            minHeight: "35rem",
             p: "20px",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "95vw", sm: "350px", md: "500px", lg: "45%" },
+            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaProyectosPerfil proyectosUser={proyectosUser} />
         </Box>
+
         <Box
           component="article"
           bgcolor={"bg.mediumBlue"}
           sx={{
             m: "auto",
-
+            minHeight: "35rem",
             border: "solid 2px #BAE3D7",
             borderRadius: "2%",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",
-            width: { xs: "95vw", sm: "350px", md: "500px", lg: "45%" },
+            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaColaboraciones colaboraciones={colaboraciones} />

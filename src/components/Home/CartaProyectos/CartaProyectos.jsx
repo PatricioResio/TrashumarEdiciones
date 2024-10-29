@@ -9,7 +9,7 @@ import { Fade } from "react-awesome-reveal";
 
 export default function CartaProyectos({ proyecto }) {
   return (
-    <Fade triggerOnce delay={400}>
+    <Fade triggerOnce delay={500}>
       <Card
         sx={{
           height: { xs: "22rem", sm: "29rem", md: "37rem" },

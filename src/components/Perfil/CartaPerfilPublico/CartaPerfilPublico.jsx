@@ -28,11 +28,12 @@ const CartaPerfilPublico = ({ perfil }) => {
     <Container
       sx={{
         display: "flex",
-        flexDirection: { xs: "column", sm: "row", lg: "column" },
+        flexDirection: { xs: "column" },
         justifyContent: { xs: "space-around", md: "center" },
         alignItems: "center",
         borderRadius: "5px",
         border: "1px solid #3C9990",
+        width: "80%",
         p: 2,
       }}
     >

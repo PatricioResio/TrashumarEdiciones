@@ -15,7 +15,7 @@ const Perfil = () => {
   return (
     <Box
       component="section"
-      bgcolor={"bg.lightBlue"}
+      bgcolor={"bg.semiLightBlue"}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -24,26 +24,37 @@ const Perfil = () => {
         width: "95%",
         m: "40px auto",
         borderRadius: "5px",
-        p: "4rem",
+        p: { xs: 0, md: "4rem" },
         gap: "2rem",
       }}
     >
       <Box
-        bgcolor="bg.mediumLightBlue"
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: "90%",
-          backgroundColor: "#6CCCD9",
-          borderRadius: "5px",
-          border: "1px solid #3C9990",
+          width: { xs: "100%", md: "90%" },
+          gap: "2rem",
           m: "10px auto",
-          boxShadow: "1px 1px 5px black",
         }}
       >
-        <CartaPerfilUsuario currentUser={currentUser} />
+        <Container
+          maxWidth="2xl"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            m: "auto auto 0 auto",
+            mt: { xs: "20px" },
+            paddingTop: "0px",
+            position: "relative",
+            color: "#02291F",
+          }}
+        >
+          <CartaPerfilUsuario currentUser={currentUser} />
+        </Container>
         <Oficios oficios={oficios} />
         <DescripcionPerfil {...currentUser} />
       </Box>
@@ -52,34 +63,37 @@ const Perfil = () => {
         disableGutters
         sx={{
           height: "100%",
-          gap: "4rem",
-          m: "auto",
-          minWidth: "100%",
+          m: { xs: "0", md: "auto" },
+          minWidth: "90vw%",
+          gap: { xs: "0", md: "2rem" },
           display: "flex",
           flexDirection: {
             xs: "column",
             md: "column",
             lg: "column",
-            xl: "row",
+            xl: "column",
           },
         }}
       >
         <Box
           component="article"
           sx={{
-            m: "auto",
-            mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "90%", md: "500px", lg: "45%" },
+            m: { xs: "0", md: "auto" },
+            borderRadius: "2%",
+            p: "20px",
+            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <ContenedorProyectosPerfil />
         </Box>
+
         <Box
           component="article"
           sx={{
-            m: "auto",
-            mt: "0",
-            width: { xs: "90%", md: "500px", lg: "45%" },
+            m: { xs: "0", md: "auto" },
+            borderRadius: "2%",
+            p: "20px",
+            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <ContenedorColaboraciones />

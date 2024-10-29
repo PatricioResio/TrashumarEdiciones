@@ -60,7 +60,7 @@ const ContenedorDestacado = () => {
             sx={{
               boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
 
-              width: { xs: "80%", md: "25rem", lg: "25rem", xl: "26rem" },
+              width: { xs: "90%", md: "25rem", lg: "25rem", xl: "26rem" },
               m: "auto",
               mb: { xs: "0", lg: "auto" },
             }}

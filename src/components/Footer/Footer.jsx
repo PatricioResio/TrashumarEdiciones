@@ -19,7 +19,7 @@ const Footer = () => {
             mt: "20px",
             alignItems: "center",
             width: "100%",
-            height: { xs: "17rem", xl: "14rem" },
+            height: { xs: "15rem", xl: "14rem" },
             padding: { xs: "0", xl: "0" },
           }}
         >

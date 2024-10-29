@@ -18,8 +18,6 @@ const SectionComunidad = () => {
         minHeight: "90vh",
         borderRadius: "5px",
         width: "98%",
-        margin: "auto",
-
         border: "1px solid #09A5B0",
       }}
     >
@@ -32,7 +30,6 @@ const SectionComunidad = () => {
       sx={{
         margin: "10px",
         borderRadius: "5px",
-
         border: "1px solid #09A5B0",
       }}
     >
@@ -42,10 +39,10 @@ const SectionComunidad = () => {
           columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
           sx={{
             minHeight: "90vh",
-            m: "50px auto",
-            gap: "75px",
-            justifyContent: "space-around",
-            alignItems: "center",
+            m: "auto",
+            gap: { xs: 2, md: "6" },
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
           }}
         >
           {perfiles.map((perfil) => (

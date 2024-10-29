@@ -18,8 +18,10 @@ const FilaProyectos = ({ proyectosUser }) => {
       >
         Mis proyectos
       </Typography>
-      {!proyectosUser ? (
-        <Typography>El usuario no tiene proyectos todavía</Typography>
+      {proyectosUser.length === 0 ? (
+        <Typography variant="h5">
+          El usuario no tiene proyectos todavía
+        </Typography>
       ) : (
         <Swiper
           navigation={true}

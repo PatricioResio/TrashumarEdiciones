@@ -17,8 +17,8 @@ const FilaColaboraciones = ({ colaboraciones }) => {
       >
         Mis colaboraciones
       </Typography>
-      {!colaboraciones ? (
-        <Typography variant="h6">
+      {colaboraciones.length === 0 ? (
+        <Typography variant="h5" sx={{ margin: "auto" }}>
           El usuario no tiene colaboraciones todavía
         </Typography>
       ) : (
