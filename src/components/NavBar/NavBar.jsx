@@ -79,9 +79,8 @@ function ResponsiveAppBar() {
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                color="#FFFFF8"
               >
-                <MenuIcon />
+                <MenuIcon sx={{ color: "#FFFFF8" }} />
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -210,15 +209,17 @@ function ResponsiveAppBar() {
                   }}
                 >
                   <Button
-                    variant="contained"
+                    variant="outlined"
                     component={Link}
                     onClick={scrollToTop}
                     to="/ingresa"
                     sx={{
                       maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
                       flexGrow: 1,
+                      color: "#FFFFF8",
+                      border: "1px solid",
+                      borderColor: "FFFFF8",
                       fontFamily: "roboto",
-                      fontWeight: { xs: 600, md: 900 },
                       letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
                       marginRight: ".5rem",
                       transition: "transform 0.3s ease-in-out",
@@ -293,15 +294,23 @@ function ResponsiveAppBar() {
                         onClick={handleCloseNavMenu}
                       >
                         <Button
-                          variant="contained"
+                          variant="outlined"
                           color="primary"
                           onClick={scrollToTop}
                           component={Link}
                           to="/miperfil"
-                          style={{
-                            textDecoration: "none",
+                          sx={{
+                            maxWidth: "150px",
+                            flexGrow: 1,
+                            fontFamily: "roboto",
                             color: "#FFFFF8",
-                            mx: "auto",
+                            fontSize: { xs: "12px", lg: "14px" },
+                            letterSpacing: { xs: "0", md: ".2rem" },
+                            transition: "transform 0.3s",
+                            "&:hover": {
+                              transform: "scale(1.03)",
+                              color: "white",
+                            },
                           }}
                         >
                           Mi perfil

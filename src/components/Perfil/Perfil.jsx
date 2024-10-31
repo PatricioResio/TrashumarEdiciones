@@ -70,7 +70,7 @@ const Perfil = () => {
             xs: "column",
             md: "column",
             lg: "column",
-            xl: "column",
+            xl: "row",
           },
         }}
       >

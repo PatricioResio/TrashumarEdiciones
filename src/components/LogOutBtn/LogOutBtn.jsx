@@ -9,20 +9,22 @@ const LogOutBtn = () => {
   return (
     <Button
       onClick={logOut}
-      variant="contained"
+      variant="outlined"
       component={Link}
       to="/"
       sx={{
         maxWidth: "150px",
         flexGrow: 1,
         fontFamily: "roboto",
+        borderColor: "#d50000",
         color: "#FFFFF8",
         fontSize: { xs: "12px", lg: "14px" },
         letterSpacing: { xs: "0", md: ".2rem" },
         transition: "transform 0.3s",
         "&:hover": {
           transform: "scale(1.03)",
-          color: "white",
+          color: "#d50000",
+          borderColor: "#d50000",
         },
       }}
     >
