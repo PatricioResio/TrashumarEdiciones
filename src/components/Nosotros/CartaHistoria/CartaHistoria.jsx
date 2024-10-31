@@ -20,10 +20,6 @@ const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
           sx={{
             p: "0",
             transition: "transform 0.3s ease-in-out", // Duración y suavidad del efecto
-
-            "&:hover": {
-              transform: "scale(1.02)",
-            },
           }}
         >
           <Button onClick={handleClickHistoria} sx={{ m: "0", p: "0" }}>

@@ -29,14 +29,13 @@ const Footer = () => {
             sx={{
               display: { xs: "flex", sm: "flex" },
               height: { xs: "5.5rem", md: "12.5rem" },
-              borderRadius: "50%",
               width: "25%",
               marginX: { xs: "1.5rem", md: "4rem" },
               "& img": {
                 transition: "transform 0.3s ease-in-out",
               },
               "&:hover img": {
-                transform: "scale(1.07)",
+                transform: "scale(1.02)",
               },
             }}
           >

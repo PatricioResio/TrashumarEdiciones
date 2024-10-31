@@ -33,7 +33,7 @@ const SectionProyecto = () => {
       </Typography>
 
       <Box
-        bgcolor="bg.semiLightBlue"
+        bgcolor="bg.whiteBlue"
         sx={{
           mb: "20px",
           width: "100%",

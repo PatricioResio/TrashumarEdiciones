@@ -14,7 +14,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#09A5B0",
+      main: "#033B47",
     },
     secondary: {
       main: "#010C0D",
@@ -28,6 +28,7 @@ const theme = createTheme({
       mediumLightBlue: "#7AE7F5",
       semiLightBlue: "#8EFFFE",
       lightBlue: "#A4FFFE",
+      whiteBlue: "#C4FFFE",
     },
     border: {
       main: "#BAE3D7",

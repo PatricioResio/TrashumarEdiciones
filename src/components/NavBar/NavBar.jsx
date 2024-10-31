@@ -20,6 +20,7 @@ import { pages } from "../../constants/Arrays";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaUser } from "react-icons/fa6";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
+import { Divider } from "@mui/material";
 
 function ResponsiveAppBar() {
   const { currentUser, loading } = useContext(AuthContext);
@@ -97,6 +98,9 @@ function ResponsiveAppBar() {
                 open={Boolean(anchorElNav)}
                 onClose={handleCloseNavMenu}
                 sx={{
+                  "& .MuiPaper-root": {
+                    bgcolor: "rgba(0, 0, 0, 0.9)", // Fondo oscuro del menú // Color de texto claro
+                  },
                   color: "#FFFFF8",
                   display: {
                     xs: "block",
@@ -114,9 +118,9 @@ function ResponsiveAppBar() {
                   >
                     <Typography
                       component={Link}
-                      color="secondary"
+                      color="secondary.white"
                       onClick={scrollToTop}
-                      bgcolor="primary"
+                      bgcolor="secondary"
                       to={page.path}
                       style={{ textDecoration: "none" }}
                     >
@@ -146,7 +150,7 @@ function ResponsiveAppBar() {
                       transition: "transform 0.3s ease-in-out",
                     },
                     "&:hover img": {
-                      transform: "scale(1.07)",
+                      transform: "scale(1.03)",
                     },
                   }}
                 >
@@ -210,7 +214,6 @@ function ResponsiveAppBar() {
                     component={Link}
                     onClick={scrollToTop}
                     to="/ingresa"
-                    color="secondary"
                     sx={{
                       maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
                       flexGrow: 1,
@@ -218,7 +221,6 @@ function ResponsiveAppBar() {
                       fontWeight: { xs: 600, md: 900 },
                       letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
                       marginRight: ".5rem",
-                      backgroundColor: "#09A5B0",
                       transition: "transform 0.3s ease-in-out",
 
                       "&:hover": {
@@ -278,8 +280,10 @@ function ResponsiveAppBar() {
                       open={Boolean(profileNav)}
                       onClose={handleCloseProfileMenu}
                       sx={{
-                        color: "#FFFFF8",
-                        display: "block",
+                        "& .MuiPaper-root": {
+                          bgcolor: "rgba(0, 0, 0, 0.9)", // Fondo oscuro del menú
+                          color: "#FFFFF8", // Color de texto claro
+                        },
                       }}
                     >
                       <MenuItem
@@ -303,6 +307,7 @@ function ResponsiveAppBar() {
                           Mi perfil
                         </Button>
                       </MenuItem>
+                      <Divider />
                       <MenuItem>
                         <LogOutBtn />
                       </MenuItem>

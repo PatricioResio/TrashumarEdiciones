@@ -13,7 +13,7 @@ const ContenedorHistoria = () => {
   return (
     <>
       <Box
-        bgcolor="bg.mediumLightBlue"
+        bgcolor="bg.whiteBlue"
         sx={{
           height: "43rem",
           display: "flex",

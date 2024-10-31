@@ -15,7 +15,6 @@ const Perfil = () => {
   return (
     <Box
       component="section"
-      bgcolor={"bg.semiLightBlue"}
       sx={{
         display: "flex",
         flexDirection: "column",
