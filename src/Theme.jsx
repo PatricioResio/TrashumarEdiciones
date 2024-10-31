@@ -21,8 +21,9 @@ const theme = createTheme({
       white: "#FFFFF8",
     },
     bg: {
-      dark: "#215E61",
+      dark: "#022932",
       main: "#DFFFF9",
+      darkBlue: "#022932",
       mediumBlue: "#09A5B0",
       mediumLightBlue: "#7AE7F5",
       semiLightBlue: "#8EFFFE",

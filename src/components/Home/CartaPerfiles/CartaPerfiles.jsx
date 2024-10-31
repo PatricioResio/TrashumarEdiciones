@@ -13,7 +13,7 @@ export default function CartaPerfiles({ perfil }) {
   const oficiosPerfil = !perfil.oficios ? [] : [...perfil.oficios.slice(0, 2)];
 
   return (
-    <Fade triggerOnce delay={400}>
+    <Fade triggerOnce delay={700}>
       <Card
         className="carta-perfiles"
         sx={{

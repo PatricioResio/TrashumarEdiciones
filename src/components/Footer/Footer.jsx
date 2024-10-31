@@ -14,7 +14,6 @@ const Footer = () => {
           maxWidth="2xl"
           disableGutters
           sx={{
-            backgroundColor: "#09A5B0",
             display: "flex",
             mt: "20px",
             alignItems: "center",

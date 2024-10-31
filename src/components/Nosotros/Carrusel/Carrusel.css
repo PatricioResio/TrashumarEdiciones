@@ -4,3 +4,12 @@
 .swiper-slide {
   max-width: 40%;
 }
+
+@media (max-width: 768px) {
+  .swiper {
+    max-width: 60%;
+  }
+  .swiper-slide {
+    max-width: 60%;
+  }
+}

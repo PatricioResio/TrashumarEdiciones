@@ -40,7 +40,7 @@ const SectionLibreria = () => {
             minHeight: "75vh",
             m: "auto",
             gap: "50px",
-            p: "2rem",
+            p: 2,
             justifyContent: "space-around",
             alignItems: "center",
           }}

@@ -14,6 +14,7 @@ import { useFormik } from "formik";
 import { validationPerfil } from "../ValidationSchemas/ValidationSchemas";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
+import ProfilePictureUploader from "../ProfilePicture/ProfilePicture";
 
 const FormPerfil = () => {
   const { actualizarPerfil, currentUser } = useContext(AuthContext);
@@ -47,7 +48,7 @@ const FormPerfil = () => {
         variant="h2"
         gutterBottom
       >
-        Registro
+        Mi información
       </Typography>
 
       <Box
@@ -72,6 +73,7 @@ const FormPerfil = () => {
         >
           Información Profesional
         </Typography>
+
         <FormControl component="fieldset" variant="standard">
           <FormGroup>
             {formik.values.oficios.map((oficio, index) => (

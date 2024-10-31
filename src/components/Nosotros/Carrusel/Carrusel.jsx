@@ -11,10 +11,10 @@ const Carrusel = ({ arrayImagenes }) => {
 
   return (
     <Box
-      bgcolor="bg.mediumBlue"
+      bgcolor="bg.dark"
       sx={{
         minWidth: "100%",
-        height: "100%",
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
@@ -23,14 +23,13 @@ const Carrusel = ({ arrayImagenes }) => {
         marginTop: "0",
       }}
     >
-      <Fade triggerOnce delay={300}>
+      <Fade triggerOnce delay={500}>
         <Typography
           component="h3"
           align="center"
           variant="h3"
           marginY={2}
           sx={{
-            fontSize: "34px",
             color: "#D8EDE9",
             padding: "0",
           }}
@@ -62,8 +61,8 @@ const Carrusel = ({ arrayImagenes }) => {
               <SwiperSlide key={imgA.id}>
                 <Box
                   sx={{
-                    height: { xs: "410px", sm: "480px", md: "85vh" },
-                    width: { xs: "200px", sm: "230px", md: "28rem" },
+                    height: { xs: "70vh", sm: "480px", md: "85vh" },
+                    width: { xs: "75vw", sm: "230px", md: "32rem" },
                     margin: { xs: "0", lg: "auto" },
                     boxShadow: "4px 4px black",
                   }}

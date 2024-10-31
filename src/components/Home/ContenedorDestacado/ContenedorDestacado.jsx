@@ -20,12 +20,12 @@ const ContenedorDestacado = () => {
         minWidth: { xs: "100%", xl: "700px" },
         background: "#6CCCD9",
         borderRadius: "5px",
-        color: "#26424A",
         p: "25px",
       }}
     >
       <Fade triggerOnce easeOut direction="down">
         <Typography
+          color={"#0C2324"}
           sx={{
             margin: "2rem",
           }}
@@ -89,7 +89,6 @@ const ContenedorDestacado = () => {
             </Typography>
             <Button
               sx={{
-                color: "#BAE3D7",
                 width: { sx: "90px", xl: "180px" },
                 m: "5px auto",
               }}

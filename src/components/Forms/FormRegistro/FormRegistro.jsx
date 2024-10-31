@@ -14,6 +14,7 @@ import { DEFAULT_PERFIL_FOTO } from "../../../constants/constants";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { Fade } from "react-awesome-reveal";
+import ProfilePictureUploader from "../ProfilePicture/ProfilePicture";
 
 const FormRegistro = () => {
   const { registrar, navigate, currentUser } = useContext(AuthContext);
@@ -353,24 +354,9 @@ const FormRegistro = () => {
             variant="outlined"
             value={formUser.linkedinForm}
             onChange={handlerChange}
-
-            /*           error={
-            formik.touched.linkedinForm && Boolean(formik.errors.linkedinForm)
-          }
-          helperText={formik.touched.linkedinForm && formik.errors.linkedinForm} */
           />
-          {/*         <TextField
-          id="metodosVenta"
-          label="metodosVenta"
-          variant="outlined"
-          value={formik.values.metodosVenta}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          /*           error={
-            formik.touched.metodosVenta && Boolean(formik.errors.metodosVenta)
-          }
-          helperText={formik.touched.metodosVenta && formik.errors.metodosVenta} 
-        /> */}{" "}
+          <ProfilePictureUploader></ProfilePictureUploader>
+
           <Button
             type="submit"
             sx={{

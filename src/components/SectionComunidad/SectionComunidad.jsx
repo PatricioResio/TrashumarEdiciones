@@ -40,6 +40,7 @@ const SectionComunidad = () => {
           sx={{
             minHeight: "90vh",
             m: "auto",
+            p: 2,
             gap: 4,
             justifyContent: { xs: "center", md: "flex-start" },
             alignItems: { xs: "center", md: "flex-start" },
