@@ -5,24 +5,24 @@ import ContenedorHistoria from "../components/Nosotros/ContenedorHistoria/Conten
 const Nosotros = () => {
   return (
     <>
-      <section>
-        <Box
-          bgcolor="bg.lightBlue"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-            margin: "0 0 2rem 0",
-            minHeight: "200vh",
-            maxWidth: "100vw",
-          }}
-        >
-          <Typography variant="h1" component="h2" sx={{ mt: "2rem" }}>
-            ¿De qué se trata?
-          </Typography>
-          <ContenedorHistoria />
-        </Box>
-      </section>
+      <Box
+        component="section"
+        bgcolor="bg.lightBlue"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          margin: "0 0 2rem 0",
+          minHeight: "200vh",
+          maxWidth: "100vw",
+        }}
+      >
+        <Typography variant="h1" component="h2" sx={{ mt: "2rem" }}>
+          ¿De qué se trata?
+        </Typography>
+        <ContenedorHistoria />
+      </Box>
+
       <Box
         component="section"
         sx={{

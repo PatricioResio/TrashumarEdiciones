@@ -12,8 +12,8 @@ const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
       <Card
         className="carta-historia"
         sx={{
-          height: { xs: "400px", md: "600px" },
-          width: { xs: "160px", sm: "200px", md: "280px" },
+          height: { xs: "58vh", md: "600px" },
+          width: { xs: "63vw", sm: "200px", md: "280px" },
         }}
       >
         <CardActions
@@ -29,12 +29,8 @@ const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
           <Button onClick={handleClickHistoria} sx={{ m: "0", p: "0" }}>
             <CardMedia
               sx={{
-                height: { xs: "400px", md: "600px" },
-                width: {
-                  xs: "180px",
-                  sm: "230px",
-                  md: "280px",
-                },
+                height: { xs: "58vh", md: "600px" },
+                width: { xs: "63vw", sm: "230px", md: "280px" },
                 m: "0",
                 p: "0",
               }}

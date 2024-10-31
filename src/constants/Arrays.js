@@ -49,21 +49,25 @@ export const homeArrays = [
 export const historias = [
   {
     id: "0",
+    title: "¿Porqué Trashumar?",
     posicion: "primero",
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historia1.jpg?alt=media&token=6504c57e-5e14-4e69-acdf-b5ed0ff653f8",
   },
   {
     id: "1",
+    title: "¿Y los libros qué?",
     posicion: "segundo",
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historia2.jpg?alt=media&token=6089daf9-5839-4c88-9f2c-7035bc37861b",
   },
   {
     id: "2",
+    title: "Las cosas como son",
     posicion: "tercero",
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historia3.jpg?alt=media&token=ba6ab9d7-b229-4561-b690-a3c01c244722",
   },
   {
     id: "3",
+    title: "Para que nos entendamos",
     posicion: "cuarto",
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historia4.jpg?alt=media&token=2d26c03f-73ab-4a42-bc7d-d96f279a9998",
   },
