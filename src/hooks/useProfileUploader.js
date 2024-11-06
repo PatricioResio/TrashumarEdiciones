@@ -2,7 +2,7 @@ import { useState } from "react";
 import { storage } from "../api/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-const useProfileUploader = (userId) => {
+const useProfileUploader = (userId, handlerChange) => {
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState("");
   const [progress, setProgress] = useState(0);
@@ -36,6 +36,9 @@ const useProfileUploader = (userId) => {
         try {
           const downloadUrl = await getDownloadURL(uploadTask.snapshot.ref);
           setUrl(downloadUrl);
+          handlerChange({
+            target: { name: "avatar", value: downloadUrl },
+          });
           console.log("URL de descarga:", downloadUrl);
         } catch (error) {
           console.error("Error obteniendo la URL de descarga:", error);

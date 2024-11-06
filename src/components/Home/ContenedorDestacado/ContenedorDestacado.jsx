@@ -16,10 +16,10 @@ const ContenedorDestacado = () => {
       sx={{
         flexDirection: "column",
         justifyContent: "center",
-        width: "100%",
-        minWidth: { xs: "100%", xl: "700px" },
-        background: "#6CCCD9",
+        width: { xs: "100%", xl: "80%" },
+        minWidth: { xs: "100%", xl: "80%" },
         borderRadius: "5px",
+        border: "1px solid #012936",
         p: "25px",
       }}
     >

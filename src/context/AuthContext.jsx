@@ -81,28 +81,41 @@ export function AuthProvider({ children }) {
       navigate("/miperfil");
     }
   };
-
   const registrar = async (registrerUser) => {
     try {
+      if (!googleUser || !googleUser.uid) {
+        console.error("El usuario de Google no está disponible.");
+        return;
+      }
+
       const userUID = googleUser.uid;
       const userProfileRef = doc(db, "perfiles", userUID);
       const userProfileSnap = await getDoc(userProfileRef);
 
       if (!userProfileSnap.exists()) {
+        // Crear nuevo perfil
         await setDoc(userProfileRef, {
           ...registrerUser,
           idPerfil: userUID,
         });
-        setCurrentUser({ ...registrerUser });
-        navigate("/miperfil");
-        alert("Registro Terminado!");
-        return;
+        alert("¡Registro completado!");
       } else {
-        navigate("/");
-        return;
+        // Actualizar perfil existente
+        await setDoc(
+          userProfileRef,
+          {
+            ...registrerUser,
+          },
+          { merge: true } // Actualiza solo los campos nuevos o cambiados
+        );
+        alert("¡Perfil actualizado!");
       }
+
+      setCurrentUser({ ...registrerUser }); // Actualiza el estado local del usuario
+      navigate("/miperfil");
     } catch (err) {
-      console.error("error", err);
+      console.error("Error en el registro o actualización:", err);
+      alert("Error durante el registro. Por favor, inténtalo de nuevo.");
     }
   };
 

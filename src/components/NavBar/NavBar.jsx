@@ -54,7 +54,7 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar position="static" sx={{ maxWidth: "100%" }}>
-      <Fade triggerOnce delay={1}>
+      <Fade triggerOnce delay={1000}>
         <Brand />
         <Container
           disableGutters
@@ -217,16 +217,17 @@ function ResponsiveAppBar() {
                       maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
                       flexGrow: 1,
                       color: "#FFFFF8",
-                      border: "1px solid",
-                      borderColor: "FFFFF8",
                       fontFamily: "roboto",
-                      letterSpacing: { xs: ".1rem", md: ".2rem", lg: ".3rem" },
+                      letterSpacing: { xs: "0rem", md: ".1rem", lg: ".3rem" },
                       marginRight: ".5rem",
                       transition: "transform 0.3s ease-in-out",
 
                       "&:hover": {
                         transform: "scale(1.02)",
                         color: "#FFFFF8",
+
+                        border: "1px solid",
+                        borderColor: "FFFFF8",
                       },
                     }}
                   >
@@ -294,7 +295,7 @@ function ResponsiveAppBar() {
                         onClick={handleCloseNavMenu}
                       >
                         <Button
-                          variant="outlined"
+                          variant="text"
                           color="primary"
                           onClick={scrollToTop}
                           component={Link}
@@ -309,7 +310,7 @@ function ResponsiveAppBar() {
                             transition: "transform 0.3s",
                             "&:hover": {
                               transform: "scale(1.03)",
-                              color: "white",
+                              color: "#a4fffe",
                             },
                           }}
                         >

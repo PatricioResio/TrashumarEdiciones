@@ -14,10 +14,8 @@ const customIcon = new L.Icon({
   popupAnchor: [1, -34],
 });
 
-const MapaLeaflet = ({ zonaDistribuidores, zoom = 13 }) => {
-  const lat = zonaDistribuidores?.geocode.lat;
-  const lng = zonaDistribuidores?.geocode.lng;
-
+const MapaLeaflet = ({ zonaDistribuidor, zoom = 13 }) => {
+  const { lat, lng } = zonaDistribuidor;
   const markers = [
     {
       geocode: [-34.80549222964987, -58.400773458690026],
@@ -42,7 +40,11 @@ const MapaLeaflet = ({ zonaDistribuidores, zoom = 13 }) => {
         margin: "0",
       }}
     >
-      <MapContainer center={[lat, lng]} zoom={zoom} style={{ height: "400px" }}>
+      <MapContainer
+        center={zonaDistribuidor.geocode}
+        zoom={zoom}
+        style={{ height: "400px" }}
+      >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'

@@ -1,4 +1,3 @@
-import useProfileUploader from "../../../hooks/useProfileUploader"; // Ajusta la ruta según tu proyecto
 import {
   Box,
   Button,
@@ -6,16 +5,28 @@ import {
   LinearProgress,
   TextField,
 } from "@mui/material";
+import useProfileUploader from "../../../hooks/useProfileUploader";
 
-const ProfilePictureUploader = ({ userId, avatar }) => {
+const ProfilePictureUploader = ({ userId, handlerChange }) => {
   const { image, url, progress, handleImageChange, handleUpload } =
-    useProfileUploader(userId);
+    useProfileUploader(userId, handlerChange);
 
   return (
     <Box sx={{ p: 3 }}>
       <Typography variant="h5">Subir foto de perfil</Typography>
       <LinearProgress variant="determinate" value={progress} sx={{ mb: 2 }} />
-      <input type="file" onChange={handleImageChange} />
+      <label
+        htmlFor="file-upload"
+        style={{ display: "block", marginBottom: "8px" }}
+      >
+        Seleccionar archivo:
+      </label>
+      <input
+        id="file-upload"
+        type="file"
+        onChange={handleImageChange}
+        style={{ display: "block", marginBottom: "16px" }}
+      />
       <Button
         onClick={handleUpload}
         disabled={!image}
@@ -27,15 +38,14 @@ const ProfilePictureUploader = ({ userId, avatar }) => {
       {url && <Typography sx={{ mt: 2 }}>URL de la imagen: {url}</Typography>}
       {url && (
         <TextField
-          id="avatar"
           name="avatar"
-          label="X"
-          variant="outlined"
-          value={avatar}
+          id="avatar"
+          value={url}
           onChange={handlerChange}
-          /*           error={formik.touched.avatar && Boolean(formik.errors.avatar)}
-          helperText={formik.touched.avatar && formik.errors.avatar} */
-        />
+          sx={{ mt: 2 }}
+        >
+          {url}
+        </TextField>
       )}
     </Box>
   );

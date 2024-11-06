@@ -30,7 +30,6 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
     distribuidor,
     zonaDistribuidor,
   } = perfil;
-  const { lat, lg } = zonaDistribuidor ? !zonaDistribuidor : 0;
 
   return (
     <Box
@@ -93,7 +92,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             xs: "column",
             md: "column",
             lg: "column",
-            xl: "column",
+            xl: "row",
           },
         }}
       >
@@ -104,7 +103,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             m: "auto",
             border: "solid 2px #BAE3D7",
             borderRadius: "2%",
-            minHeight: "35rem",
+            minHeight: { xs: "20rem", md: "40rem" },
             p: "20px",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
@@ -128,15 +127,14 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
         >
           <FilaColaboraciones colaboraciones={colaboraciones} />
         </Box>
-
-        {!perfil.distribuidor ? (
-          <> </>
-        ) : (
-          <Box>
-            <Map zonaDistribuidor={zonaDistribuidor} />
-          </Box>
-        )}
       </Container>
+      {!perfil.distribuidor ? (
+        <> </>
+      ) : (
+        <Box>
+          <Map zonaDistribuidor={zonaDistribuidor} />
+        </Box>
+      )}
     </Box>
   );
 };

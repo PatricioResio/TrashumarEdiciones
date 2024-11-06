@@ -9,6 +9,7 @@ import {
   FormControlLabel,
   FormGroup,
   FormHelperText,
+  LinearProgress,
 } from "@mui/material";
 import { DEFAULT_PERFIL_FOTO } from "../../../constants/constants";
 import { useContext, useEffect, useState } from "react";
@@ -16,8 +17,11 @@ import { AuthContext } from "../../../context/AuthContext";
 import { Fade } from "react-awesome-reveal";
 import ProfilePictureUploader from "../ProfilePicture/ProfilePicture";
 
+import useProfileUploader from "../../../hooks/useProfileUploader";
+
 const FormRegistro = () => {
   const { registrar, navigate, currentUser } = useContext(AuthContext);
+
   const [valorInicial, setValorInicial] = useState({
     nombre: "",
     nombrePublico: "",
@@ -48,6 +52,8 @@ const FormRegistro = () => {
     explicarPerfil: "",
     metodosVenta: "",
   });
+  const [formUser, setFormUser] = useState(valorInicial);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (currentUser) {
@@ -56,9 +62,6 @@ const FormRegistro = () => {
       return;
     }
   }, [currentUser]);
-
-  const [formUser, setFormUser] = useState(valorInicial);
-  const [error, setError] = useState("");
 
   const handlerChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -74,9 +77,8 @@ const FormRegistro = () => {
           index.toString() === name ? { ...oficio, valor: checked } : oficio
         ),
       }));
-    } else {
-      setFormUser((prevUser) => ({ ...prevUser, [name]: value }));
     }
+    console.log(formUser);
   };
 
   const handlerForm = async (e) => {
@@ -91,16 +93,18 @@ const FormRegistro = () => {
       setError("el email no coincide");
       alert(error);
       return;
-    } else {
-      try {
-        await registrar(formUser);
-        navigate("/miperfil");
-      } catch (error) {
-        console.error("Error durante el registro:", error.message);
-        setError("Error durante el registro. Por favor, inténtalo de nuevo.");
-      }
+    }
+    try {
+      await registrar(formUser);
+      navigate("/miperfil");
+    } catch (error) {
+      console.error("Error durante el registro:", error.message);
+      setError("Error durante el registro. Por favor, inténtalo de nuevo.");
     }
   };
+
+  const { image, url, progress, handleImageChange, handleUpload } =
+    useProfileUploader(formUser.userId, handlerChange);
 
   return (
     <Container
@@ -112,7 +116,6 @@ const FormRegistro = () => {
         width: "80%",
         border: "2px solid #3C9990",
         borderRadius: "15px",
-        background: "#6CCCD9",
       }}
     >
       <Fade>
@@ -355,7 +358,53 @@ const FormRegistro = () => {
             value={formUser.linkedinForm}
             onChange={handlerChange}
           />
-          <ProfilePictureUploader></ProfilePictureUploader>
+
+          {/* <ProfilePictureUploader
+            userId={currentUser?.uid}
+            handlerChange={handlerChange}
+          /> */}
+          <Box sx={{ p: 3 }}>
+            <Typography variant="h5">Subir foto de perfil</Typography>
+            <LinearProgress
+              variant="determinate"
+              value={progress}
+              sx={{ mb: 2 }}
+            />
+            <label
+              htmlFor="file-upload"
+              style={{ display: "block", marginBottom: "8px" }}
+            >
+              Seleccionar archivo:
+            </label>
+            <input
+              id="file-upload"
+              type="file"
+              onChange={handleImageChange}
+              style={{ display: "block", marginBottom: "16px" }}
+            />
+            <Button
+              onClick={handleUpload}
+              disabled={!image}
+              variant="contained"
+              sx={{ mt: 2 }}
+            >
+              Subir
+            </Button>
+            {url && (
+              <Typography sx={{ mt: 2 }}>URL de la imagen: {url}</Typography>
+            )}
+            {url && (
+              <TextField
+                name="avatar"
+                id="avatar"
+                value={formUser.avatar}
+                onChange={handlerChange}
+                sx={{ mt: 2 }}
+              >
+                {url}
+              </TextField>
+            )}
+          </Box>
 
           <Button
             type="submit"
