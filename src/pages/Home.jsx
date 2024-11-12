@@ -4,6 +4,7 @@ import ContenedorPerfiles from "../components/Home/ContenedorPerfiles/Contenedor
 import CarruselHome from "../components/Home/CarruselHome/CarruselHome";
 import { Fade } from "react-awesome-reveal";
 import ArticleDestacado from "../components/Home/ArticleDestacado/ArticleDestacado";
+import BorderWave from "../components/BorderWave/BorderWave";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
           color: "#BAE3D7",
         }}
       >
+        <BorderWave></BorderWave>
         <ArticleDestacado />
 
         <Box

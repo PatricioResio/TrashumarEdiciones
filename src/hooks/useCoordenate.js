@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { obtenerCoordenadasOpenCage } from "../api/geoCodeApi";
+import { getGeocode } from "../api/geoCodeApi";
 
-const useCoordenate = (zonaDistribuidor) => {
+const useMapGeocodes = (zonaDistribuidor) => {
   const [loadingDirecciones, setLoadingDirecciones] = useState(true);
   const [direcciones, setDirecciones] = useState([]);
   return useEffect(() => {
     const mapDirecciones = async () => {
       zonaDistribuidor.forEach((direccion) => {
-        const { lat, lg } = obtenerCoordenadasOpenCage(direccion);
+        const { lat, lg } = getGeocode(direccion);
         setDirecciones([...{ direction: direccion, lat: lat, lg: lg }]);
       });
       setLoadingDirecciones(False);
@@ -18,4 +18,4 @@ const useCoordenate = (zonaDistribuidor) => {
 };
 return { direcciones, loadingDirecciones };
 
-export default useCoordenate;
+export default useMapGeocodes;

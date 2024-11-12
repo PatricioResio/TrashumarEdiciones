@@ -397,7 +397,7 @@ const FormTextoUnico = ({ formik }) => {
         />
       </RadioGroup>
       <Typography
-        bgcolor={"bg.mediumBlue"}
+        bgcolor={"bg.dark"}
         fontSize={"20px"}
         color={"secondary.white"}
         sx={{
@@ -802,7 +802,7 @@ const FormSerieDeTextos = ({ formik }) => {
         />
       </RadioGroup>
       <Typography
-        bgcolor={"bg.mediumBlue"}
+        bgcolor={"bg.dark"}
         fontSize={"20px"}
         color={"secondary.white"}
         sx={{
@@ -1123,7 +1123,6 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         />
         <Typography
           fontSize={"20px"}
-          bgcolor={"bg.mediumBlue"}
           color={"secondary.white"}
           sx={{
             border: "2px solid ",
@@ -1215,7 +1214,7 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <Typography
           fontSize={"20px"}
           color={"secondary.white"}
-          bgcolor={"bg.mediumBlue"}
+          bgcolor={"bg.dark"}
           sx={{
             border: "2px solid ",
             borderRadius: "10px",
@@ -1282,7 +1281,7 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <Typography
           fontSize={"20px"}
           color={"secondary.white"}
-          bgcolor={"bg.mediumBlue"}
+          bgcolor={"bg.dark"}
           sx={{
             border: "2px solid ",
             borderRadius: "10px",
@@ -2017,7 +2016,7 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
       </RadioGroup>
       <Typography
         fontSize={"20px"}
-        bgcolor={"bg.mediumBlue"}
+        bgcolor={"bg.dark"}
         color={"secondary.white"}
         sx={{
           border: "2px solid ",
@@ -2109,7 +2108,7 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <Typography
           fontSize={"20px"}
           color={"secondary.white"}
-          bgcolor={"bg.mediumBlue"}
+          bgcolor={"bg.dark"}
           sx={{
             border: "2px solid ",
             borderRadius: "10px",
@@ -2176,7 +2175,7 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <Typography
           fontSize={"20px"}
           color={"secondary.white"}
-          bgcolor={"bg.mediumBlue"}
+          bgcolor={"bg.dark"}
           sx={{
             border: "2px solid ",
             borderRadius: "10px",
@@ -2200,7 +2199,7 @@ const FormLibroSoloLaIdea = ({ formik }) => {
       <RadioGroup sx={{ m: "10px 0" }}>
         <Typography
           color={"secondary.white"}
-          bgcolor={"bg.mediumBlue"}
+          bgcolor={"bg.dark"}
           fontSize={"20px"}
           sx={{
             border: "2px solid ",
@@ -2717,7 +2716,7 @@ const FormLibroSoloLaIdea = ({ formik }) => {
       </RadioGroup>
       <Typography
         fontSize={"20px"}
-        bgcolor={"bg.mediumBlue"}
+        bgcolor={"bg.dark"}
         color={"secondary.white"}
         sx={{
           border: "2px solid ",

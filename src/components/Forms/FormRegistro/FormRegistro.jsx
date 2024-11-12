@@ -56,7 +56,7 @@ const FormRegistro = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (currentUser) {
+    if (currentUser && currentUser != formUser) {
       setFormUser({ ...currentUser });
     } else {
       return;
@@ -76,6 +76,11 @@ const FormRegistro = () => {
         oficios: prevUser.oficios.map((oficio, index) =>
           index.toString() === name ? { ...oficio, valor: checked } : oficio
         ),
+      }));
+    } else {
+      setFormUser((prevUser) => ({
+        ...prevUser,
+        [name]: value,
       }));
     }
     console.log(formUser);
