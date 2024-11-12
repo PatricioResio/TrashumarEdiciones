@@ -73,7 +73,6 @@ const FormPerfil = () => {
         >
           Información Profesional
         </Typography>
-
         <FormControl component="fieldset" variant="standard">
           <FormGroup>
             {formik.values.oficios.map((oficio, index) => (
@@ -91,7 +90,6 @@ const FormPerfil = () => {
             ))}
           </FormGroup>
         </FormControl>
-
         <Typography
           component="h4"
           id="outlined-basic"
@@ -132,7 +130,6 @@ const FormPerfil = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-
         <Typography
           component="h5"
           id="outlined-basic"
@@ -146,8 +143,8 @@ const FormPerfil = () => {
           Selecciona la zona donde trabajas, y el radio en que te manejas. Podes
           seleccionar varias distintas.
         </FormHelperText>
+        input
         <FormHelperText>Detalla tus metodos de venta</FormHelperText>
-
         <Button variant="contained" type="submit">
           Editar mi Información
         </Button>

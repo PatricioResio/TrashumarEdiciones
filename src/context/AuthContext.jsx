@@ -81,6 +81,7 @@ export function AuthProvider({ children }) {
       navigate("/miperfil");
     }
   };
+
   const registrar = async (registrerUser) => {
     try {
       if (!googleUser || !googleUser.uid) {
@@ -93,25 +94,23 @@ export function AuthProvider({ children }) {
       const userProfileSnap = await getDoc(userProfileRef);
 
       if (!userProfileSnap.exists()) {
-        // Crear nuevo perfil
         await setDoc(userProfileRef, {
           ...registrerUser,
           idPerfil: userUID,
         });
         alert("¡Registro completado!");
       } else {
-        // Actualizar perfil existente
         await setDoc(
           userProfileRef,
           {
             ...registrerUser,
           },
-          { merge: true } // Actualiza solo los campos nuevos o cambiados
+          { merge: true }
         );
         alert("¡Perfil actualizado!");
       }
 
-      setCurrentUser({ ...registrerUser }); // Actualiza el estado local del usuario
+      setCurrentUser({ ...registrerUser });
       navigate("/miperfil");
     } catch (err) {
       console.error("Error en el registro o actualización:", err);

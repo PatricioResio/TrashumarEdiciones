@@ -18,7 +18,6 @@ export const getGeocode = async (direccion) => {
   try {
     const response = await fetch(url);
 
-    // Verificar si la respuesta es exitosa (status 200-299)
     if (!response.ok) {
       throw new Error(
         `Error en la solicitud: ${response.status} ${response.statusText}`

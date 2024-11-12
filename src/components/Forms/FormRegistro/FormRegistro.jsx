@@ -20,7 +20,7 @@ import ProfilePictureUploader from "../ProfilePicture/ProfilePicture";
 import useProfileUploader from "../../../hooks/useProfileUploader";
 
 const FormRegistro = () => {
-  const { registrar, navigate, currentUser } = useContext(AuthContext);
+  const { registrar, navigate, currentUser, newUser } = useContext(AuthContext);
 
   const [valorInicial, setValorInicial] = useState({
     nombre: "",
@@ -123,15 +123,26 @@ const FormRegistro = () => {
         borderRadius: "15px",
       }}
     >
-      <Fade>
-        <Typography
-          sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
-          component="h1"
-          variant="h2"
-          fontWeight="bold"
-        >
-          Registrate!
-        </Typography>
+      <Fade triggerOnce>
+        {newUser ? (
+          <Typography
+            sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
+            component="h1"
+            variant="h2"
+            fontWeight="bold"
+          >
+            Registrate!
+          </Typography>
+        ) : (
+          <Typography
+            sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
+            component="h1"
+            variant="h2"
+            fontWeight="bold"
+          >
+            Tu información
+          </Typography>
+        )}
       </Fade>
       <Box
         component="form"
@@ -422,7 +433,7 @@ const FormRegistro = () => {
             }}
             variant="contained"
           >
-            Registrarme!
+            {newUser ? "Registrarme" : "Actualizar"}
           </Button>
           {error && <Typography color="error">{error}</Typography>}
         </Container>
