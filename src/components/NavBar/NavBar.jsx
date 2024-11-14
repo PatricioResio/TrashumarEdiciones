@@ -53,7 +53,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ maxWidth: "100%" }}>
+    <AppBar position="static" sx={{ maxWidth: "100%", padding: "auto" }}>
       <Fade triggerOnce delay={1000}>
         <Brand />
         <Container
@@ -62,8 +62,6 @@ function ResponsiveAppBar() {
           sx={{
             minWidth: "100%",
             height: { xs: "4rem", sm: "4.3rem" },
-            alignItems: "center",
-            justifyContent: "space-between",
           }}
         >
           <Toolbar disableGutters>
@@ -142,9 +140,7 @@ function ResponsiveAppBar() {
                     borderRadius: "50%",
                     height: { xs: "3rem", sm: "4rem" },
                     width: { xs: "3rem", sm: "4rem" },
-                    p: "0",
-                    margin: "auto 0 auto 13px",
-
+                    margin: "2px 0 auto 13px",
                     "& img": {
                       transition: "transform 0.3s ease-in-out",
                     },
@@ -218,10 +214,8 @@ function ResponsiveAppBar() {
                       flexGrow: 1,
                       color: "#FFFFF8",
                       fontFamily: "roboto",
-                      letterSpacing: { xs: "0rem", md: ".1rem", lg: ".3rem" },
                       marginRight: ".5rem",
                       transition: "transform 0.3s ease-in-out",
-
                       "&:hover": {
                         transform: "scale(1.02)",
                         color: "#FFFFF8",
@@ -251,20 +245,6 @@ function ResponsiveAppBar() {
                       color="#FFFFF8"
                     >
                       <FontAwesomeIcon icon={faUser} className="icon-profile" />
-                      {/*   <Box
-                        sx={{
-                          heigh: "50px",
-                          width: "50px",
-                          m: "auto",
-                          borderRadius: "50%",
-                        }}
-                        component="img"
-                        src={
-                          !currentUser
-                            ? DEFAULT_PERFIL_FOTO
-                            : currentUser.avatar
-                        }
-                      /> */}
                     </IconButton>
 
                     <Menu
@@ -283,8 +263,8 @@ function ResponsiveAppBar() {
                       onClose={handleCloseProfileMenu}
                       sx={{
                         "& .MuiPaper-root": {
-                          bgcolor: "rgba(0, 0, 0, 0.9)", // Fondo oscuro del menú
-                          color: "#FFFFF8", // Color de texto claro
+                          bgcolor: "rgba(0, 0, 0, 0.9)",
+                          color: "#FFFFF8",
                         },
                       }}
                     >

@@ -124,25 +124,14 @@ const FormRegistro = () => {
       }}
     >
       <Fade triggerOnce>
-        {newUser ? (
-          <Typography
-            sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
-            component="h1"
-            variant="h2"
-            fontWeight="bold"
-          >
-            Registrate!
-          </Typography>
-        ) : (
-          <Typography
-            sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
-            component="h1"
-            variant="h2"
-            fontWeight="bold"
-          >
-            Tu información
-          </Typography>
-        )}
+        <Typography
+          sx={{ margin: "2rem", justifyContent: "center", display: "flex" }}
+          component="h1"
+          variant="h2"
+          fontWeight="bold"
+        >
+          {newUser ? "Registrate!" : "Tu información"}
+        </Typography>
       </Fade>
       <Box
         component="form"
@@ -381,11 +370,7 @@ const FormRegistro = () => {
           /> */}
           <Box sx={{ p: 3 }}>
             <Typography variant="h5">Subir foto de perfil</Typography>
-            <LinearProgress
-              variant="determinate"
-              value={progress}
-              sx={{ mb: 2 }}
-            />
+
             <label
               htmlFor="file-upload"
               style={{ display: "block", marginBottom: "8px" }}
@@ -397,6 +382,11 @@ const FormRegistro = () => {
               type="file"
               onChange={handleImageChange}
               style={{ display: "block", marginBottom: "16px" }}
+            />
+            <LinearProgress
+              variant="determinate"
+              value={progress}
+              sx={{ mb: 2 }}
             />
             <Button
               onClick={handleUpload}
