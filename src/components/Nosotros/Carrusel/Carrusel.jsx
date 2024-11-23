@@ -50,8 +50,8 @@ const Carrusel = ({ arrayImagenes }) => {
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           rewind={true}
           navigation={true}
-          modules={[EffectCube, Navigation]}
-          effect="cube"
+          modules={[EffectFade, Navigation]}
+          effect="fade"
           className="swiper"
           slidesPerView={1}
           runCallbacksOnInit={true}
