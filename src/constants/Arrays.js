@@ -22,8 +22,9 @@ export const homeArrays = [
     id: 1,
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home1.jpg?alt=media&token=76de3ec4-444d-4938-990b-047cd9bf7d3b",
     h2: "Bienvenidos a Trashumar Ediciones",
-    textP: "¿Te intesera trabajar con nosotros? si queres saber más",
-    buttonText: "Seguime por aquí",
+    textP:
+      "Una editorial nómada, federal e independiente. Publicamos voces y proyectos que cruzan fronteras.",
+    buttonText: "¿Quéres trabajar con nosotros?",
     buttonLink: "/nosotros",
   },
   {
@@ -31,8 +32,8 @@ export const homeArrays = [
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.jpg?alt=media&token=ed3613fb-fa43-4686-b762-a28d7a98ef1a",
     h2: "Descubri nuestra sección librería",
     textP:
-      "Trashumar es una editorial nomade, federal e independiente, por aquí podes ver nuestras novedades",
-    buttonText: "Ir a librería",
+      "Una editorial nómada, federal e independiente. Publicamos voces y proyectos que cruzan fronteras.",
+    buttonText: " Explorá nuestra librería",
     buttonLink: "/libreria",
   },
   {
@@ -40,7 +41,7 @@ export const homeArrays = [
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3.jpg?alt=media&token=5e4d8d47-dc01-4f5d-9d9d-9850adca8241",
     h2: "Estamos formando una comunidad!",
     textP:
-      "También podes ingresar con una cuenta propia y así ser parte de nuestra comunidad en crecimiento",
+      "Registrate con tu cuenta y sé parte de Trashumar. Estamos en constante crecimiento y queremos que formes parte de esta red.",
     buttonText: "Ingresar",
     buttonLink: "/ingresa",
   },

@@ -9,7 +9,7 @@ const SectionProyecto = () => {
   return (
     <Container
       sx={{
-        minHeight: "60vh",
+        minHeight: "80vh",
         width: "100%",
         margin: "30px auto",
         display: "flex",
@@ -38,7 +38,12 @@ const SectionProyecto = () => {
           mb: "20px",
           width: "100%",
           maxWidth: "1600px",
+          minHeight: "70vh",
           borderRadius: "5px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-around",
+          alignItems: "center",
           p: "20px",
         }}
       >
@@ -64,12 +69,13 @@ const SectionProyecto = () => {
           esté aprobado, podras seguir trabajando desde la pagina. ¡Gracias por
           confiar en nosotres!
         </Typography>
+
         {!currentUser ? (
           <Button
             variant="contained"
             component={Link}
             to="/ingresa"
-            sx={{ color: "white", m: "auto" }}
+            sx={{ color: "white" }}
           >
             <Typography variant="h5">
               Para seguir adelante tenes que iniciar sesión, Seguime por aquí

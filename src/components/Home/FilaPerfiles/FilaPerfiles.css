@@ -2,14 +2,12 @@
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  right: 0;
   color: #fffff8;
 }
 .swiper-button-prev {
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  left: 0;
   color: #fffff8;
 }
 .MySwiper .swiper-slide {

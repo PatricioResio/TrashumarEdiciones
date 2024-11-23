@@ -14,7 +14,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#012936",
+      main: "#09A5B0",
     },
     secondary: {
       main: "#010C0D",
@@ -28,7 +28,7 @@ const theme = createTheme({
       mediumLightBlue: "#7AE7F5",
       semiLightBlue: "#8EFFFE",
       lightBlue: "#A4FFFE",
-      whiteBlue: "#C4FFFE",
+      whiteBlue: "#DBFFFE",
     },
     border: {
       main: "#BAE3D7",
@@ -60,7 +60,6 @@ const theme = createTheme({
       },
     },
     h2: {
-      fontWeight: "bold",
       fontSize: "1.8rem",
       "@media (min-width:600px)": {
         fontSize: "1.8rem",
@@ -72,14 +71,13 @@ const theme = createTheme({
         fontSize: "2.6rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "2.8rem",
+        fontSize: "3rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "3rem",
+        fontSize: "3.4rem",
       },
     },
     h3: {
-      fontWeight: "bold",
       fontSize: "1.4rem",
       "@media (min-width:600px)": {
         fontSize: "1.6rem",
@@ -167,6 +165,24 @@ const theme = createTheme({
       },
       "@media (min-width:1920px)": {
         fontSize: "1.4rem",
+      },
+    },
+    pCarrousel: {
+      fontSize: "0.8rem",
+      "@media (min-width:600px)": {
+        fontSize: "1rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "1.1rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "2rem",
+      },
+      "@media (min-width:1536px)": {
+        fontSize: "2rem",
+      },
+      "@media (min-width:1920px)": {
+        fontSize: "3rem",
       },
     },
     autor: {

@@ -7,7 +7,6 @@ const Nosotros = () => {
     <>
       <Box
         component="section"
-        bgcolor="bg.lightBlue"
         sx={{
           display: "flex",
           flexDirection: "column",

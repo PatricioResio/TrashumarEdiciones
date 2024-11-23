@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectFade, Navigation } from "swiper/modules";
+import { EffectCube, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Box, Container, Typography } from "@mui/material";
@@ -50,8 +50,8 @@ const Carrusel = ({ arrayImagenes }) => {
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           rewind={true}
           navigation={true}
-          modules={[EffectFade, Navigation]}
-          effect="fade"
+          modules={[EffectCube, Navigation]}
+          effect="cube"
           className="swiper"
           slidesPerView={1}
           runCallbacksOnInit={true}

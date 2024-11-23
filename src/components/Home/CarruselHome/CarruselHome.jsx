@@ -1,7 +1,15 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { EffectFade, Pagination, Autoplay } from "swiper/modules";
+import {
+  EffectFade,
+  Pagination,
+  Navigation,
+  Autoplay,
+  EffectCoverflow,
+} from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "../FilaPerfiles/FilaPerfiles.css";
+import "swiper/css/navigation";
 import { homeArrays } from "../../../constants/Arrays";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Fade } from "react-awesome-reveal";
@@ -27,13 +35,14 @@ const CarruselHome = () => {
         }}
       >
         <Swiper
-          pagination={true}
-          modules={[EffectFade, Autoplay]}
-          autoplay={{ delay: 5000 }}
+          navigation={true}
+          modules={[EffectCoverflow, Autoplay, Navigation]}
+          autoplay={{ delay: 15000 }}
           className="swiper"
-          effect="fade"
           slidesPerView={1}
         >
+          <div className=".swiper-button-prev"></div>
+          <div className=".swiper-button-next"></div>
           {homeArrays.map((item) => (
             <SwiperSlide key={item.id} className="swipper-slide">
               <Container
@@ -46,8 +55,8 @@ const CarruselHome = () => {
                     xs: "90vh",
                     sm: "60vh",
                     md: "80vh",
-                    lg: "100vh",
-                    xl: "100vh",
+                    lg: "90vh",
+                    xl: "90vh",
                   },
                 }}
               >
@@ -57,8 +66,8 @@ const CarruselHome = () => {
                       xs: "90vh",
                       sm: "60vh",
                       md: "80vh",
-                      lg: "100vh",
-                      xl: "100vh",
+                      lg: "90vh",
+                      xl: "90vh",
                     },
                     width: "100%",
                     position: "relative",
@@ -69,33 +78,55 @@ const CarruselHome = () => {
                 />
                 <Container
                   disableGutters
-                  maxWidth="xl"
+                  maxWidth="false"
                   sx={{
-                    backgroundColor: "rgba(0, 0, 0, 0.5)",
-                    backdropFilter: "blur(5px)",
-                    width: { xs: "95vw", sm: "53%" },
-                    maxHeight: { xs: "40%" },
+                    width: {
+                      xs: "90%",
+                      sm: "94%",
+                      md: "95%",
+                      lg: "97%",
+                      xl: "98%",
+                    },
                     position: "absolute",
                     bottom: 0,
-                    left: {
-                      xs: "5%",
-                      sm: "140px",
-                      md: "220px",
-                      lg: "290px",
-                      xl: "420px",
-                    },
-                    padding: "20px",
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    margin: "20px",
                     border: "2px solid black",
-                    borderRadius: "15px",
+                    borderRadius: "10%",
+                    backgroundColor: "rgba(122, 231, 210, 0.5)",
+                    borderColor: "rgba(122, 231, 210, 0.5)",
+                    backdropFilter: "blur(5px)",
                     color: "#F5FDF8",
+                    display: "flex",
+                    justifyContent: "space-around",
+                    alignItems: "center",
+                    flexDirection: "column",
                   }}
                 >
-                  <Typography variant="h3" component="h2" key={item.h2}>
+                  <Typography
+                    variant="h1"
+                    component="h1"
+                    align={"center"}
+                    sx={{
+                      m: "auto",
+                    }}
+                    key={item.h2}
+                  >
                     <Fade triggerOnce direction="down" delay={1400}>
                       {item.h2}
                     </Fade>
                   </Typography>
-                  <Typography key={item.textP} className="p-carrusel">
+                  <Typography
+                    key={item.textP}
+                    variant="h2"
+                    align={"center"}
+                    sx={{
+                      my: "auto",
+                      maxWidth: "80%",
+                    }}
+                  >
                     <Fade triggerOnce direction="right" delay={1200}>
                       {item.textP}
                     </Fade>
@@ -107,9 +138,9 @@ const CarruselHome = () => {
                     key={item.buttonLink}
                     variant="outlined"
                     sx={{
-                      mt: "15px",
-                      color: "#BAE3D7",
-                      borderColor: "#BAE3D7",
+                      my: "auto",
+                      color: "#022932",
+                      borderColor: "#022932",
                     }}
                   >
                     <Fade triggerOnce direction="top" delay={1200}>

@@ -91,8 +91,10 @@ const ContenedorDestacado = () => {
               sx={{
                 width: { sx: "90px", xl: "180px" },
                 m: "5px auto",
+                color: "#022932",
+                borderColor: "#022932",
               }}
-              variant="contained"
+              variant="outlined"
               component={Link}
               to={`/proyecto/${ID_PROYECTO_DESTACADO}`}
             >

@@ -15,6 +15,7 @@ const LazyLibreria = lazy(() => import("./pages/Libreria.jsx"));
 const LazyProyectoPublico = lazy(() =>
   import("./pages/PageProyectoPublico.jsx")
 );
+
 const LazyProyectoNuevo = lazy(() => import("./pages/ProyectoNuevo.jsx"));
 const LazyFormRegistroPerfil = lazy(() =>
   import("./components/Forms/FormPerfilContainer/FormRegistroPerfil.jsx")
@@ -29,7 +30,7 @@ export default function App() {
       <Container
         maxWidth="2xl"
         sx={{
-          background: "#A4FFFE",
+          background: "#FDFFFF",
           maxWidth: "100vw",
           margin: "0",
           padding: "0",
@@ -61,7 +62,7 @@ export default function App() {
             <Route path="/publicar" Component={LazyProyectoNuevo} />
             <Route path="/registro" Component={LazyFormRegistro} />
             <Route path="/comunidad" Component={Comunidad} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </Box>
 
