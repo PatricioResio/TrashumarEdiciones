@@ -34,13 +34,13 @@ const FormTextoUnico = ({ formik }) => {
               value={formik.values.etapaDesarrollo}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.etapaDesarrollo &&
                 Boolean(formik.errors.etapaDesarrollo)
               }
               helperText={
                 formik.touched.etapaDesarrollo && formik.errors.etapaDesarrollo
-              }
+              } */
             />
           }
           label="ESTOY TRABAJANDO EN EL TEXTO."
@@ -48,20 +48,20 @@ const FormTextoUnico = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="Manuscrito"
-              label="Manuscrito"
+              id="manuscrito"
+              label="manuscrito"
               variant="outlined"
               value={formik.values.manuscritoTerminado}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*               error={
                 formik.touched.manuscritoTerminado &&
                 Boolean(formik.errors.manuscritoTerminado)
               }
               helperText={
                 formik.touched.manuscritoTerminado &&
                 formik.errors.manuscritoTerminado
-              }
+              } */
             />
           }
           label="TENGO EL MANUSCRITO TERMINADO."
@@ -75,14 +75,14 @@ const FormTextoUnico = ({ formik }) => {
               value={formik.values.manuscritoTerminadoCorregido}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.manuscritoTerminadoCorregido &&
                 Boolean(formik.errors.manuscritoTerminadoCorregido)
               }
               helperText={
                 formik.touched.manuscritoTerminadoCorregido &&
                 formik.errors.manuscritoTerminadoCorregido
-              }
+              } */
             />
           }
           label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
@@ -90,12 +90,19 @@ const FormTextoUnico = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="ListoParaPublicar"
+              id="listoParaPublicar"
               label="ListoParaPublicar"
               variant="outlined"
               value={formik.values.listoPublicar}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.listoPublicar &&
+                Boolean(formik.errors.listoPublicar)
+              }
+              helperText={
+                formik.touched.listoPublicar && formik.errors.listoPublicar
+              }*/
             />
           }
           label="TENGO TODO LISTO PARA PUBLICAR."
@@ -121,6 +128,14 @@ const FormTextoUnico = ({ formik }) => {
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.imagenesProyecto &&
+                Boolean(formik.errors.imagenesProyecto)
+              }
+              helperText={
+                formik.touched.imagenesProyecto &&
+                formik.errors.imagenesProyecto
+              } */
             />
           }
           label="Si, ya las tengo listas"
@@ -134,6 +149,14 @@ const FormTextoUnico = ({ formik }) => {
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.imagenesProyecto &&
+                Boolean(formik.errors.imagenesProyecto)
+              }
+              helperText={
+                formik.touched.imagenesProyecto &&
+                formik.errors.imagenesProyecto
+              } */
             />
           }
           label="Si, no las tengo listas."
@@ -147,6 +170,14 @@ const FormTextoUnico = ({ formik }) => {
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.imagenesProyecto &&
+                Boolean(formik.errors.imagenesProyecto)
+              }
+              helperText={
+                formik.touched.imagenesProyecto &&
+                formik.errors.imagenesProyecto
+              } */
             />
           }
           label="No incluira imagenes"
@@ -171,14 +202,14 @@ const FormTextoUnico = ({ formik }) => {
               value={formik.values.informeDeLectura}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.informeDeLectura &&
                 Boolean(formik.errors.informeDeLectura)
               }
               helperText={
                 formik.touched.informeDeLectura &&
                 formik.errors.informeDeLectura
-              }
+              } */
             />
           }
           label="INFORME DE LECTURA."
@@ -192,38 +223,38 @@ const FormTextoUnico = ({ formik }) => {
               value={formik.values.correccionGramatical}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionGramatical &&
                 Boolean(formik.errors.correccionGramatical)
               }
               helperText={
                 formik.touched.correccionGramatical &&
                 formik.errors.correccionGramatical
-              }
+              } */
             />
           }
           label="CORRECCIÓN GRAMATICAL."
         />
-        {/*             <FormControlLabel
-              control={
-                <Checkbox
-                id="Aquí podes explayarte"
-                label="Aquí podes explayarte"
-                  variant="outlined"
-                  value={formik.values.facebookForm}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  error={
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="Manuscrito"
+              label="Manuscrito"
+              variant="outlined"
+              value={formik.values.facebookForm}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              /*   error={
                     formik.touched.facebookForm &&
                     Boolean(formik.errors.facebookForm)
                   }
                   helperText={
                     formik.touched.facebookForm && formik.errors.facebookForm
-                  }
-                />
-              }
-              label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
-            /> */}
+                  }*/
+            />
+          }
+          label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+        />
         <FormControlLabel
           control={
             <Checkbox
@@ -233,14 +264,14 @@ const FormTextoUnico = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="CORRECCIÓN DE ESTILO."
@@ -254,11 +285,11 @@ const FormTextoUnico = ({ formik }) => {
               value={formik.values.traducir}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
-              helperText={formik.touched.traducir && formik.errors.traducir}
+              /* error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}*/
             />
           }
-          label="TRADUCIR"
+          label="TRADUCI R"
         />
       </FormGroup>
       {formik.values.traducir === true ? (
@@ -352,6 +383,14 @@ const FormTextoUnico = ({ formik }) => {
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.acuerdoComercial &&
+                Boolean(formik.errors.acuerdoComercial)
+              }
+              helperText={
+                formik.touched.acuerdoComercial &&
+                formik.errors.acuerdoComercial
+              } */
             />
           }
           label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS "
@@ -365,6 +404,14 @@ const FormTextoUnico = ({ formik }) => {
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.acuerdoComercial &&
+                Boolean(formik.errors.acuerdoComercial)
+              }
+              helperText={
+                formik.touched.acuerdoComercial &&
+                formik.errors.acuerdoComercial
+              } */
             />
           }
           label="PREFIERO QUE LO CUBRA LA EDITORIAL, AUNQUE MI PAGO QUEDE PENDIENTE"
@@ -378,6 +425,14 @@ const FormTextoUnico = ({ formik }) => {
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.acuerdoComercial &&
+                Boolean(formik.errors.acuerdoComercial)
+              }
+              helperText={
+                formik.touched.acuerdoComercial &&
+                formik.errors.acuerdoComercial
+              } */
             />
           }
           label="LO QUIERO HACER AD HONOREM"
@@ -391,6 +446,14 @@ const FormTextoUnico = ({ formik }) => {
               variant="outlined"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.acuerdoComercial &&
+                Boolean(formik.errors.acuerdoComercial)
+              }
+              helperText={
+                formik.touched.acuerdoComercial &&
+                formik.errors.acuerdoComercial
+              } */
             />
           }
           label="NO HAY TRATO"
@@ -439,13 +502,13 @@ const FormSerieDeTextos = ({ formik }) => {
               value={formik.values.etapaDesarrollo}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.etapaDesarrollo &&
                 Boolean(formik.errors.etapaDesarrollo)
               }
               helperText={
                 formik.touched.etapaDesarrollo && formik.errors.etapaDesarrollo
-              }
+              }*/
             />
           }
           label="ESTOY TRABAJANDO EN EL TEXTO."
@@ -453,20 +516,20 @@ const FormSerieDeTextos = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="Manuscrito"
-              label="Manuscrito"
+              id="manuscrito"
+              label="manuscrito"
               variant="outlined"
               value={formik.values.manuscritoTerminado}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.manuscritoTerminado &&
                 Boolean(formik.errors.manuscritoTerminado)
               }
               helperText={
                 formik.touched.manuscritoTerminado &&
                 formik.errors.manuscritoTerminado
-              }
+              } */
             />
           }
           label="TENGO EL MANUSCRITO TERMINADO."
@@ -474,20 +537,20 @@ const FormSerieDeTextos = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="ManuscritoTerminadoCorregido"
-              label="ManuscritoTerminadoCorregido"
+              id="manuscritoTerminadoCorregido"
+              label="manuscritoTerminadoCorregido"
               variant="outlined"
               value={formik.values.manuscritoTerminadoCorregido}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.manuscritoTerminadoCorregido &&
                 Boolean(formik.errors.manuscritoTerminadoCorregido)
               }
               helperText={
                 formik.touched.manuscritoTerminadoCorregido &&
                 formik.errors.manuscritoTerminadoCorregido
-              }
+              } */
             />
           }
           label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
@@ -495,12 +558,19 @@ const FormSerieDeTextos = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="ListoParaPublicar"
-              label="ListoParaPublicar"
+              id="listoParaPublicar"
+              label="listoParaPublicar"
               variant="outlined"
               value={formik.values.listoPublicar}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
+              /*   error={
+                formik.touched.listoPublicar &&
+                Boolean(formik.errors.listoPublicar)
+              }
+              helperText={
+                formik.touched.listoPublicar && formik.errors.listoPublicar
+              }*/
             />
           }
           label="TENGO TODO LISTO PARA PUBLICAR."
@@ -576,14 +646,14 @@ const FormSerieDeTextos = ({ formik }) => {
               value={formik.values.informeDeLectura}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.informeDeLectura &&
                 Boolean(formik.errors.informeDeLectura)
               }
               helperText={
                 formik.touched.informeDeLectura &&
                 formik.errors.informeDeLectura
-              }
+              } */
             />
           }
           label="INFORME DE LECTURA."
@@ -591,44 +661,44 @@ const FormSerieDeTextos = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="correccionGramatical"
+              label="correccionGramatical"
               variant="outlined"
               value={formik.values.correccionGramatical}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionGramatical &&
                 Boolean(formik.errors.correccionGramatical)
               }
               helperText={
                 formik.touched.correccionGramatical &&
                 formik.errors.correccionGramatical
-              }
+              } */
             />
           }
           label="CORRECCIÓN GRAMATICAL."
         />
-        {/*             <FormControlLabel
-              control={
-                <Checkbox
-                  id="Aquí podes explayarte"
-                  label="Aquí podes explayarte"
-                  variant="outlined"
-                  value={formik.values.facebookForm}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  error={
+        <FormControlLabel
+          control={
+            <Checkbox
+              id="Aquí podes explayarte"
+              label="Aquí podes explayarte"
+              variant="outlined"
+              value={formik.values.facebookForm}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              /*   error={
                     formik.touched.facebookForm &&
                     Boolean(formik.errors.facebookForm)
                   }
                   helperText={
                     formik.touched.facebookForm && formik.errors.facebookForm
-                  }
-                />
-              }
-              label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
-            /> */}
+                  }*/
+            />
+          }
+          label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+        />
         <FormControlLabel
           control={
             <Checkbox
@@ -638,14 +708,14 @@ const FormSerieDeTextos = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="CORRECCIÓN DE ESTILO."
@@ -656,14 +726,15 @@ const FormSerieDeTextos = ({ formik }) => {
               id="traduccir"
               label="traduccir"
               variant="outlined"
-              value={formik.values.traducir}
+              v
+              alue={formik.values.traducir}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
-              helperText={formik.touched.traducir && formik.errors.traducir}
+              /* error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}*/
             />
           }
-          label="TRADUCCIÓN"
+          label="TRADUCC IÓN"
         />
       </FormGroup>
       {formik.values.traducir === true ? (
@@ -842,14 +913,14 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
               value={formik.values.informeDeLectura}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.informeDeLectura &&
                 Boolean(formik.errors.informeDeLectura)
               }
               helperText={
                 formik.touched.informeDeLectura &&
                 formik.errors.informeDeLectura
-              }
+              } */
             />
           }
           label="INFORME DE LECTURA."
@@ -857,20 +928,20 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="correccionGramatical"
+              label="correccionGramatical"
               variant="outlined"
               value={formik.values.correccionGramatical}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionGramatical &&
                 Boolean(formik.errors.correccionGramatical)
               }
               helperText={
                 formik.touched.correccionGramatical &&
                 formik.errors.correccionGramatical
-              }
+              } */
             />
           }
           label="CORRECCIÓN GRAMATICAL."
@@ -885,14 +956,14 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="CORRECCIÓN DE ESTILO."
@@ -900,20 +971,20 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="DISEÑO E IMAGENES INTERNAS"
-              label="DISEÑO E IMAGENES INTERNAS"
+              id="disenioImagenes"
+              label="disenioImagenes"
               variant="outlined"
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="DISEÑO E IMAGENES INTERNAS."
@@ -927,14 +998,14 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="ARTE DE TAPA Y CONTRATAPA."
@@ -948,14 +1019,14 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="EDICIÓN Y MAQUETACIÓN."
@@ -966,14 +1037,15 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
               id="traducir"
               label="traducir"
               variant="outlined"
-              value={formik.values.traducir}
+              v
+              alue={formik.values.traducir}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
-              helperText={formik.touched.traducir && formik.errors.traducir}
+              /* error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}*/
             />
           }
-          label="TRADUCIR"
+          label="TRADUCI R"
         />
       </FormGroup>
       {formik.values.traducir === true ? (
@@ -1066,14 +1138,14 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
               value={formik.values.informeDeLectura}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.informeDeLectura &&
                 Boolean(formik.errors.informeDeLectura)
               }
               helperText={
                 formik.touched.informeDeLectura &&
                 formik.errors.informeDeLectura
-              }
+              } */
             />
           }
           label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS"
@@ -1081,20 +1153,20 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="correccionGramatical"
+              label="correccionGramatical"
               variant="outlined"
               value={formik.values.correccionGramatical}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionGramatical &&
                 Boolean(formik.errors.correccionGramatical)
               }
               helperText={
                 formik.touched.correccionGramatical &&
                 formik.errors.correccionGramatical
-              }
+              } */
             />
           }
           label="PUEDO CUBRIR LA PRIMERA TANDA DE IMPRESIONES."
@@ -1109,14 +1181,14 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="PRECISO UNA BECA."
@@ -1150,20 +1222,17 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="informeDeLectura"
-              label="informeDeLectura"
+              id="loHareEnPersona"
+              label="loHareEnPersona"
               variant="outlined"
-              value={formik.values.informeDeLectura}
+              v
+              alue="Si, lo hare en persona"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.informeDeLectura &&
-                Boolean(formik.errors.informeDeLectura)
-              }
+              /*  error={formik.touched.distribucion}
               helperText={
-                formik.touched.informeDeLectura &&
-                formik.errors.informeDeLectura
-              }
+                formik.touched.distribucion && formik.errors.distribucion
+              }*/
             />
           }
           label="SI, LO HARÉ YO EN PERSONA"
@@ -1171,20 +1240,17 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="siPeroNoExclusivamente"
+              label="siPeroNoExclusivamente"
               variant="outlined"
-              value={formik.values.correccionGramatical}
+              v
+              alue="Si, pero no exclusivamente"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.correccionGramatical &&
-                Boolean(formik.errors.correccionGramatical)
-              }
+              /*  error={formik.touched.distribucion}
               helperText={
-                formik.touched.correccionGramatical &&
-                formik.errors.correccionGramatical
-              }
+                formik.touched.distribucion && formik.errors.distribucion
+              }*/
             />
           }
           label="SI, PERO NO EXCLUSIVAMENTE."
@@ -1193,20 +1259,17 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="correccionDeEstilo"
-              label="correccionDeEstilo"
+              id="noGracias"
+              label="noGracias"
               variant="outlined"
-              value={formik.values.correccionEstilos}
+              v
+              alue="No, gracias"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.correccionEstilos &&
-                Boolean(formik.errors.correccionEstilos)
-              }
+              /*  error={formik.touched.distribucion}
               helperText={
-                formik.touched.correccionEstilos &&
-                formik.errors.correccionEstilos
-              }
+                formik.touched.distribucion && formik.errors.distribucion
+              }*/
             />
           }
           label="NO, GRACIAS."
@@ -1238,20 +1301,20 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="informeDeLectura"
-              label="informeDeLectura"
+              id="tipoDistribucion"
+              label="tipoDistribucion"
               variant="outlined"
-              value={formik.values.informeDeLectura}
+              value="QUIERO QUE LO DISTRIBUYAN OTROS MIEMBROS DE TRASHUMAR"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.informeDeLectura &&
-                Boolean(formik.errors.informeDeLectura)
+              /*   error={
+                formik.touched.tipoDistribucion &&
+                Boolean(formik.errors.tipoDistribucion)
               }
               helperText={
-                formik.touched.informeDeLectura &&
-                formik.errors.informeDeLectura
-              }
+                formik.touched.tipoDistribucion &&
+                formik.errors.tipoDistribucion
+              } */
             />
           }
           label="QUIERO QUE LO DISTRIBUYAN OTROS MIEMBROS DE TRASHUMAR"
@@ -1259,20 +1322,20 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="tipoDistribucion"
+              label="tipoDistribucion"
               variant="outlined"
-              value={formik.values.correccionGramatical}
+              value="QUIERO QUE SE DISTRIBUYA EN LIBRERIAS"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.correccionGramatical &&
-                Boolean(formik.errors.correccionGramatical)
+              /*   error={
+                formik.touched.tipoDistribucion &&
+                Boolean(formik.errors.tipoDistribucion)
               }
               helperText={
-                formik.touched.correccionGramatical &&
-                formik.errors.correccionGramatical
-              }
+                formik.touched.tipoDistribucion &&
+                formik.errors.tipoDistribucion
+              } */
             />
           }
           label="QUIERO QUE SE DISTRIBUYA EN LIBRERIAS"
@@ -1439,14 +1502,15 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
               id="traducir"
               label="traducir"
               variant="outlined"
-              value={formik.values.traducir}
+              v
+              alue={formik.values.traducir}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={formik.touched.traducir && Boolean(formik.errors.traducir)}
-              helperText={formik.touched.traducir && formik.errors.traducir}
+              /* error={formik.touched.traducir && Boolean(formik.errors.traducir)}
+              helperText={formik.touched.traducir && formik.errors.traducir}*/
             />
           }
-          label="TRADUCIR"
+          label="TRADUCI R"
         />
       </FormGroup>
       {formik.values.traducir === true ? (
@@ -1747,14 +1811,14 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
               value={formik.values.informeDeLectura}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.informeDeLectura &&
                 Boolean(formik.errors.informeDeLectura)
               }
               helperText={
                 formik.touched.informeDeLectura &&
                 formik.errors.informeDeLectura
-              }
+              } */
             />
           }
           label="INFORME DE LECTURA."
@@ -1762,20 +1826,20 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="correccionGramatical"
+              label="correccionGramatical"
               variant="outlined"
               value={formik.values.correccionGramatical}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionGramatical &&
                 Boolean(formik.errors.correccionGramatical)
               }
               helperText={
                 formik.touched.correccionGramatical &&
                 formik.errors.correccionGramatical
-              }
+              } */
             />
           }
           label="CORRECCIÓN GRAMATICAL."
@@ -1790,14 +1854,14 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="CORRECCIÓN DE ESTILO."
@@ -1805,20 +1869,20 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Checkbox
-              id="DISEÑO E IMAGENES INTERNAS"
-              label="DISEÑO E IMAGENES INTERNAS"
+              id="disenioImagenes"
+              label="disenioImagenes"
               variant="outlined"
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="DISEÑO E IMAGENES INTERNAS."
@@ -1832,14 +1896,14 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="ARTE DE TAPA Y CONTRATAPA."
@@ -1853,14 +1917,14 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
               value={formik.values.correccionEstilos}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
+              /*   error={
                 formik.touched.correccionEstilos &&
                 Boolean(formik.errors.correccionEstilos)
               }
               helperText={
                 formik.touched.correccionEstilos &&
                 formik.errors.correccionEstilos
-              }
+              } */
             />
           }
           label="EDICIÓN Y MAQUETACIÓN."
@@ -2044,20 +2108,16 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="informeDeLectura"
-              label="informeDeLectura"
+              id="loHareEnPersona"
+              label="loHareEnPersona"
               variant="outlined"
-              value={formik.values.informeDeLectura}
+              value="Si, lo hare en persona"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.informeDeLectura &&
-                Boolean(formik.errors.informeDeLectura)
-              }
+              /*error={formik.touched.distribucion}
               helperText={
-                formik.touched.informeDeLectura &&
-                formik.errors.informeDeLectura
-              }
+                formik.touched.distribucion && formik.errors.distribucion
+              }*/
             />
           }
           label="SI, LO HARÉ YO EN PERSONA"
@@ -2065,20 +2125,16 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="siPeroNoExclusivamente"
+              label="siPeroNoExclusivamente"
               variant="outlined"
-              value={formik.values.correccionGramatical}
+              value="Si, pero no exclusivamente"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.correccionGramatical &&
-                Boolean(formik.errors.correccionGramatical)
-              }
+              /*  error={formik.touched.distribucion}
               helperText={
-                formik.touched.correccionGramatical &&
-                formik.errors.correccionGramatical
-              }
+                formik.touched.distribucion && formik.errors.distribucion
+              }*/
             />
           }
           label="SI, PERO NO EXCLUSIVAMENTE."
@@ -2087,20 +2143,16 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="correccionDeEstilo"
-              label="correccionDeEstilo"
+              id="noGracias"
+              label="noGracias"
               variant="outlined"
-              value={formik.values.correccionEstilos}
+              value="No, gracias"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.correccionEstilos &&
-                Boolean(formik.errors.correccionEstilos)
-              }
+              /*  error={formik.touched.distribucion}
               helperText={
-                formik.touched.correccionEstilos &&
-                formik.errors.correccionEstilos
-              }
+                formik.touched.distribucion && formik.errors.distribucion
+              }*/
             />
           }
           label="NO, GRACIAS."
@@ -2132,20 +2184,20 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="informeDeLectura"
-              label="informeDeLectura"
+              id="tipoDistribucion"
+              label="tipoDistribucion"
               variant="outlined"
-              value={formik.values.informeDeLectura}
+              value="QUIERO QUE LO DISTRIBUYAN OTROS MIEMBROS DE TRASHUMAR"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.informeDeLectura &&
-                Boolean(formik.errors.informeDeLectura)
+              /*   error={
+                formik.touched.tipoDistribucion &&
+                Boolean(formik.errors.tipoDistribucion)
               }
               helperText={
-                formik.touched.informeDeLectura &&
-                formik.errors.informeDeLectura
-              }
+                formik.touched.tipoDistribucion &&
+                formik.errors.tipoDistribucion
+              } */
             />
           }
           label="QUIERO QUE LO DISTRIBUYAN OTROS MIEMBROS DE TRASHUMAR"
@@ -2153,20 +2205,20 @@ const FormLibroEditarContenidoAjeno = ({ formik }) => {
         <FormControlLabel
           control={
             <Radio
-              id="CorreccionGramatical"
-              label="CorreccionGramatical"
+              id="tipoDistribucion"
+              label="tipoDistribucion"
               variant="outlined"
-              value={formik.values.correccionGramatical}
+              value="QUIERO QUE SE DISTRIBUYA EN LIBRERIAS"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.correccionGramatical &&
-                Boolean(formik.errors.correccionGramatical)
+              /*   error={
+                formik.touched.tipoDistribucion &&
+                Boolean(formik.errors.tipoDistribucion)
               }
               helperText={
-                formik.touched.correccionGramatical &&
-                formik.errors.correccionGramatical
-              }
+                formik.touched.tipoDistribucion &&
+                formik.errors.tipoDistribucion
+              } */
             />
           }
           label="QUIERO QUE SE DISTRIBUYA EN LIBRERIAS"

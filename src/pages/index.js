@@ -8,9 +8,11 @@ import Proyectos from "./Proyectos";
 import Libreria from "./Libreria";
 import Comunidad from "./Comunidad";
 import Perfil from "./Perfil";
+import Contact from "./Contact";
 
 export {
   Login,
+  Contact,
   Comunidad,
   Perfil,
   Libreria,

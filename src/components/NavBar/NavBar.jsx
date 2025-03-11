@@ -15,10 +15,9 @@ import { AuthContext } from "../../context/AuthContext";
 import { Brand, LogOutBtn } from "../index";
 import { Fade } from "react-awesome-reveal";
 import "./NavBar.css";
-import { DEFAULT_PERFIL_FOTO, LOGO_URL } from "../../constants/constants";
+import { LOGO_URL } from "../../constants/constants";
 import { pages } from "../../constants/Arrays";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaUser } from "react-icons/fa6";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Divider } from "@mui/material";
 
@@ -37,6 +36,11 @@ function ResponsiveAppBar() {
     });
   }
 
+  function scrollToContact() {
+    const section = document.getElementById("contactForm");
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -53,7 +57,14 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ maxWidth: "100%", padding: "auto" }}>
+    <AppBar
+      position="static"
+      sx={{
+        bgcolor: "rgba(9, 165, 176, 0.6)",
+        maxWidth: "100%",
+        padding: "auto",
+      }}
+    >
       <Fade triggerOnce delay={1000}>
         <Brand />
         <Container
@@ -61,7 +72,11 @@ function ResponsiveAppBar() {
           maxWidth="xl"
           sx={{
             minWidth: "100%",
-            height: { xs: "4rem", sm: "4.3rem" },
+            height: {
+              xs: "4rem",
+              sm: "4.3rem",
+            },
+            bgcolor: "rgba(9, 165, 176, 0.4)",
           }}
         >
           <Toolbar disableGutters>
@@ -96,7 +111,7 @@ function ResponsiveAppBar() {
                 onClose={handleCloseNavMenu}
                 sx={{
                   "& .MuiPaper-root": {
-                    bgcolor: "rgba(0, 0, 0, 0.9)", // Fondo oscuro del menú // Color de texto claro
+                    bgcolor: "rgba(0, 0, 0, 0.9)",
                   },
                   color: "#FFFFF8",
                   display: {
@@ -133,7 +148,7 @@ function ResponsiveAppBar() {
                 <Typography
                   variant="h6"
                   component={Link}
-                  onClick={scrollToTop()}
+                  onClick={scrollToTop}
                   to="/"
                   sx={{
                     display: "flex",
@@ -189,6 +204,27 @@ function ResponsiveAppBar() {
                     {page.name}
                   </Button>
                 ))}
+                <Button
+                  component={Link}
+                  color="secondary"
+                  to={"/"}
+                  onClick={scrollToContact}
+                  sx={{
+                    height: "100%",
+                    fontWeight: "bold",
+                    fontSize: { md: "12px", lg: "14px" },
+                    justifyContent: "center",
+                    borderRadius: "10px",
+                    color: "#FFFFF8",
+                    transition: "transform 0.3s ease-in-out",
+                    "&:hover": {
+                      transform: "scale(1.02)",
+                      color: "#FFFFF8",
+                    },
+                  }}
+                >
+                  Contacto
+                </Button>
               </Fade>
             </Box>
 
@@ -207,7 +243,6 @@ function ResponsiveAppBar() {
                   <Button
                     variant="outlined"
                     component={Link}
-                    onClick={scrollToTop}
                     to="/ingresa"
                     sx={{
                       maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
@@ -277,7 +312,6 @@ function ResponsiveAppBar() {
                         <Button
                           variant="text"
                           color="primary"
-                          onClick={scrollToTop}
                           component={Link}
                           to="/miperfil"
                           sx={{

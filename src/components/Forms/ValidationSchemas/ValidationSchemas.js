@@ -14,49 +14,34 @@ const validationPerfil = yup.object({
   explicarPerfil: yup.string(),
 });
 
-/* const validationProyecto = yup.object().shape({
-  formato: yup.string().required("Debes seleccionar un formato"),
-  rolEnLaObra: yup.string().required("Debes seleccionar tu rol en la obra"),
+const validationProyecto = yup.object().shape({
+  formato: yup
+    .string()
+    .required("Debes seleccionar un formato para tu proyecto."),
+  rolEnLaObra: yup.string().required("Debes seleccionar tu rol en la obra."),
+  contanosMas: yup
+    .string()
+    .min(20, "Escribe al menos 20 caracteres para explicar tu proyecto.")
+    .required("Este campo es obligatorio."),
+  acuerdoComercial: yup
+    .string()
+    .required("Especifica si hay un acuerdo comercial."),
+  manuscritoTerminado: yup.boolean().nullable(), // Acepta valores `null` o `undefined`
+  manuscritoTerminadoCorregido: yup.boolean().nullable(),
+  listoPublicar: yup.boolean().nullable(),
+  informeDeLectura: yup.boolean().nullable(),
+  correccionGramatical: yup.boolean().nullable(),
+  correccionEstilos: yup.boolean().nullable(),
+  traducir: yup.boolean().nullable(),
   idiomaOriginal: yup.string().when("traducir", {
     is: true,
-    then: yup.string().required("Es necesario indicar el idioma original"),
+    then: yup.string().required("Especifica el idioma original."),
+    otherwise: yup.string().nullable(),
   }),
   idiomaATraducir: yup.string().when("traducir", {
     is: true,
-    then: yup.string().required("Es necesario indicar el idioma a traducir"),
-  }),
-
-  contanosMas: yup
-    .string()
-    .required("Por favor, cuéntanos más sobre tu proyecto"),
-});
- */
-import * as Yup from "yup";
-
-const validationProyecto = Yup.object().shape({
-  formato: Yup.string().required("Selecciona un formato"),
-  rolEnLaObra: Yup.string().required("Selecciona tu rol en la obra"),
-  contanosMas: Yup.string()
-    .min(20, "Escribe al menos 20 caracteres sobre tu proyecto")
-    .required("Este campo es obligatorio"),
-  acuerdoComercial: Yup.string().required(
-    "Especifica si hay un acuerdo comercial"
-  ),
-  // Validaciones adicionales según los campos específicos de tu formulario
-  manuscritoTerminado: Yup.boolean(),
-  manuscritoTerminadoCorregido: Yup.boolean(),
-  listoPublicar: Yup.boolean(),
-  informeDeLectura: Yup.boolean(),
-  correccionGramatical: Yup.boolean(),
-  correccionEstilos: Yup.boolean(),
-  traducir: Yup.boolean(),
-  idiomaOriginal: Yup.string().when("traducir", {
-    is: true,
-    then: Yup.string().required("Especifica el idioma original"),
-  }),
-  idiomaATraducir: Yup.string().when("traducir", {
-    is: true,
-    then: Yup.string().required("Especifica el idioma al que traducir"),
+    then: yup.string().required("Especifica el idioma al que traducir."),
+    otherwise: yup.string().nullable(),
   }),
 });
 

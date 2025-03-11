@@ -2,24 +2,29 @@ import { AppBar, Button, Container, Grid, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../../constants/constants";
 import { RiInstagramFill } from "react-icons/ri";
-import { FaFacebookF } from "react-icons/fa6";
 import "./Footer.css";
 import { Fade } from "react-awesome-reveal";
 
 const Footer = () => {
   return (
-    <AppBar position="bot">
+    <AppBar
+      position="bot"
+      sx={{
+        bgcolor: "rgba(9, 165, 176, 0.6)",
+        p: "0   ",
+      }}
+    >
       <Fade triggerOnce>
         <Container
           maxWidth="2xl"
           disableGutters
           sx={{
             display: "flex",
-            mt: "20px",
             alignItems: "center",
             width: "100%",
             height: { xs: "15rem", xl: "14rem" },
             padding: { xs: "0", xl: "0" },
+            bgcolor: "rgba(9, 165, 176, 0.4)",
           }}
         >
           <Typography

@@ -4,11 +4,12 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Route, Routes } from "react-router-dom";
 import { NavBar, Footer } from "./components/index";
-import { Nosotros, Home, Comunidad } from "./pages/index";
+import { Nosotros, Home, Comunidad, Contact } from "./pages/index";
 import "./components/Perfil/DescripcionPerfil/DescripcionPerfil.css";
 import NotFound from "./components/NotFound/NotFound.jsx";
 
 const LazyLogin = lazy(() => import("./pages/Login.jsx"));
+const LazyContact = lazy(() => import("./pages/Contact.jsx"));
 const LazyMiPerfil = lazy(() => import("./pages/MiPerfil.jsx"));
 const LazyPerfil = lazy(() => import("./pages/Perfil.jsx"));
 const LazyLibreria = lazy(() => import("./pages/Libreria.jsx"));
@@ -30,7 +31,7 @@ export default function App() {
       <Container
         maxWidth="2xl"
         sx={{
-          background: "#FDFFFF",
+          background: "#FEFFFF",
           maxWidth: "100vw",
           margin: "0",
           padding: "0",
@@ -52,6 +53,7 @@ export default function App() {
             <Route path="/miperfil" Component={LazyMiPerfil} />
             <Route path="/infoPerfil" Component={LazyFormRegistro} />
             <Route path="/perfil/:idPerfil" Component={LazyPerfil} />
+            <Route path="/contacto" Component={LazyContact} />
             <Route path="/libreria" Component={LazyLibreria} />
             <Route
               path="/proyecto/:idProyecto"

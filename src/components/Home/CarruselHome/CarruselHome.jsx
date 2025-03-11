@@ -1,13 +1,6 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import {
-  EffectFade,
-  Pagination,
-  Navigation,
-  Autoplay,
-  EffectCoverflow,
-} from "swiper/modules";
+import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/pagination";
 import "../FilaPerfiles/FilaPerfiles.css";
 import "swiper/css/navigation";
 import { homeArrays } from "../../../constants/Arrays";
@@ -94,7 +87,7 @@ const CarruselHome = () => {
                     right: 0,
                     margin: "20px",
                     border: "2px solid black",
-                    borderRadius: "10%",
+                    borderRadius: "50px",
                     backgroundColor: "rgba(122, 231, 210, 0.5)",
                     borderColor: "rgba(122, 231, 210, 0.5)",
                     backdropFilter: "blur(5px)",
@@ -107,7 +100,7 @@ const CarruselHome = () => {
                 >
                   <Typography
                     variant="h1"
-                    component="h1"
+                    component="h2"
                     align={"center"}
                     sx={{
                       m: "auto",

@@ -1,10 +1,11 @@
 import { Box, Typography } from "@mui/material";
-import ContenedorProyectos from "../components/Home/ContenedorProyectos/ContenedorProyectos";
+/* import ContenedorProyectos from "../components/Home/ContenedorProyectos/ContenedorProyectos";*/
 import ContenedorPerfiles from "../components/Home/ContenedorPerfiles/ContenedorPerfiles";
 import CarruselHome from "../components/Home/CarruselHome/CarruselHome";
 import { Fade } from "react-awesome-reveal";
 import ArticleDestacado from "../components/Home/ArticleDestacado/ArticleDestacado";
 import BorderWave from "../components/BorderWave/BorderWave";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -102,6 +103,9 @@ const Home = () => {
             </Typography>
             <ContenedorPerfiles />
           </Fade>
+        </Box>
+        <Box component="section" id="contactForm">
+          <Contact />
         </Box>
       </Box>
     </>

@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCube, EffectFade, Navigation } from "swiper/modules";
+import { EffectCoverflow, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Box, Container, Typography } from "@mui/material";
@@ -50,15 +50,15 @@ const Carrusel = ({ arrayImagenes }) => {
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           rewind={true}
           navigation={true}
-          modules={[EffectFade, Navigation]}
-          effect="fade"
+          modules={[EffectCoverflow, Navigation]}
+          effect="coverFlow"
           className="swiper"
           slidesPerView={1}
           runCallbacksOnInit={true}
         >
           {arrayImagenes.map((imgA) => (
-            <Fade delay={300}>
-              <SwiperSlide key={imgA.id}>
+            <SwiperSlide key={imgA.id}>
+              <Fade delay={1300} triggerOnce>
                 <Box
                   sx={{
                     height: { xs: "70vh", sm: "480px", md: "85vh" },
@@ -70,8 +70,8 @@ const Carrusel = ({ arrayImagenes }) => {
                   src={imgA.img}
                   alt="descripcion futura de la imagen descriptiva"
                 />
-              </SwiperSlide>
-            </Fade>
+              </Fade>
+            </SwiperSlide>
           ))}
         </Swiper>
       </Container>

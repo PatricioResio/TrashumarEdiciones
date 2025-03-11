@@ -30,7 +30,7 @@ export const homeArrays = [
   {
     id: 2,
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.jpg?alt=media&token=ed3613fb-fa43-4686-b762-a28d7a98ef1a",
-    h2: "Descubri nuestra sección librería",
+    h2: "Novedades",
     textP:
       "Una editorial nómada, federal e independiente. Publicamos voces y proyectos que cruzan fronteras.",
     buttonText: " Explorá nuestra librería",

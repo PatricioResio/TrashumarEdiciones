@@ -48,7 +48,7 @@ const CartaPerfilPublico = ({ perfil }) => {
             gap: 4,
           }}
         >
-          <Fade delay={1500}>
+          <Fade delay={1500} triggerOnce>
             <Box
               sx={{
                 height: { xs: "6rem", md: "8rem" },

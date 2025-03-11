@@ -1,5 +1,4 @@
-import { Box, CircularProgress, Container, Grid } from "@mui/material";
-
+import { Box, CircularProgress, Grid } from "@mui/material";
 import useProyectos from "../../hooks/useProyectos";
 import { Fade } from "react-awesome-reveal";
 import CartaProyectos from "../Home/CartaProyectos/CartaProyectos";

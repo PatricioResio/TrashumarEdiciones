@@ -130,7 +130,7 @@ const FormPerfil = () => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
-        <Typography
+        {/*        <Typography
           component="h5"
           id="outlined-basic"
           align="left"
@@ -143,8 +143,8 @@ const FormPerfil = () => {
           Selecciona la zona donde trabajas, y el radio en que te manejas. Podes
           seleccionar varias distintas.
         </FormHelperText>
-        input
-        <FormHelperText>Detalla tus metodos de venta</FormHelperText>
+
+        <FormHelperText>Detalla tus metodos de venta</FormHelperText> */}
         <Button variant="contained" type="submit">
           Editar mi Información
         </Button>

@@ -1,4 +1,3 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
@@ -14,6 +13,7 @@ import {
   FormTextoUnico,
 } from "./Forms";
 import { Fade } from "react-awesome-reveal";
+import emailjs from "emailjs-com";
 
 function FormProyectos() {
   const formik = useFormik({
@@ -26,25 +26,75 @@ function FormProyectos() {
       acuerdoComercial: "",
       acuerdoComercialPorcentaje: "",
       etapaDesarrollo: "",
+      distribucionLibro: "",
+      tipoDistribucion: "",
       manuscritoTerminado: false,
       manuscritoTerminadoCorregido: false,
       listoPublicar: false,
       informeDeLectura: false,
       correccionGramatical: false,
       correccionEstilos: false,
+      disenioImagenes: false,
       traducir: false,
       idiomaOriginal: "",
       idiomaATraducir: "",
     },
-    validationSchema: validationProyecto,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    /*   validationSchema: validationProyecto, */
+    onSubmit: (values, { resetForm }) => {
+      if (
+        !values.formato ||
+        !values.rolEnLaObra ||
+        !values.contanosMas ||
+        !values.acuerdoComercial
+      ) {
+        alert("Debes completar todos los campos obligatorios.");
+      }
+      console.log("values:", values);
+      const templateParams = {
+        formato: values.formato,
+        rolEnLaObra: values.rolEnLaObra,
+        contanosMas: values.contanosMas,
+        acuerdoComercial: values.acuerdoComercial,
+        acuerdoComercialPorcentaje:
+          values.acuerdoComercialPorcentaje || "No especificado",
+        manuscritoTerminado: values.manuscritoTerminado ? "Sí" : "No",
+        manuscritoTerminadoCorregido: values.manuscritoTerminadoCorregido
+          ? "Sí"
+          : "No",
+        listoPublicar: values.listoPublicar ? "Sí" : "No",
+        informeDeLectura: values.informeDeLectura ? "Sí" : "No",
+        correccionGramatical: values.correccionGramatical ? "Sí" : "No",
+        correccionEstilos: values.correccionEstilos ? "Sí" : "No",
+        traducir: values.traducir ? "Sí" : "No",
+        idiomaOriginal: values.traducir ? values.idiomaOriginal : "No aplica",
+        idiomaATraducir: values.traducir ? values.idiomaATraducir : "No aplica",
+        distribucionLibro: values.distribucionLibro || "No especificado",
+        tipoDistribucion: values.tipoDistribucion || "No especificado",
+        etapaDesarrollo: values.etapaDesarrollo || "No especificado",
+      };
+      console.log("templateParams:", templateParams);
+      emailjs
+
+        .send(
+          "service_5p7dbyj",
+          "template_95bik24",
+          templateParams,
+          "jOUKbByhllu5OVumL"
+        )
+        .then(
+          (response) => {
+            alert("Formulario enviado correctamente!");
+            resetForm();
+          },
+          (error) => {
+            console.error("Error al enviar el formulario:", error);
+            alert(
+              "Ocurrió un error al enviar el formulario. Intenta nuevamente."
+            );
+          }
+        );
     },
   });
-  /* 
-  if (traducir === true || idiomaATraducir === "" || idiomaOriginal === "") {
-    setError("completar idioma a traducir");
-  } */
 
   return (
     <Container
@@ -202,13 +252,12 @@ function FormProyectos() {
                       value="Tengo la idea"
                       onChange={formik.handleChange}
                       onBlur={formik.handleBlur}
-                      error={
-                        formik.touched.tengoIdea &&
-                        Boolean(formik.errors.tengoIdea)
+                      /*          error={
+                        formik.touched.tengoIdea && !!formik.errors.tengoIdea
                       }
                       helperText={
                         formik.touched.tengoIdea && formik.errors.tengoIdea
-                      }
+                      } */
                     />
                   }
                   label="TENGO LA IDEA, PERO NO LO VOY A ESCRIBIR"
@@ -248,8 +297,8 @@ function FormProyectos() {
 
         <Typography
           component="h4"
-          id="ContanosMas"
-          label="ContanosMas"
+          id="contanosMas"
+          label="contanosMas"
           variant="outlined"
           sx={{ m: "6px" }}
         >
@@ -258,11 +307,14 @@ function FormProyectos() {
         <TextField
           multiline
           sx={{ m: "6px" }}
-          id="ContanosMas"
+          id="contanosMas"
+          value={formik.values.contanosMas}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
           label="Mi idea es ...."
           variant="outlined"
         />
-        <Button sx={{}} variant="contained">
+        <Button sx={{}} type="submit" variant="contained">
           enviar formulario
         </Button>
       </Box>

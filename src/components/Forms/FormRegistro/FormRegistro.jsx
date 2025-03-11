@@ -16,8 +16,9 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { Fade } from "react-awesome-reveal";
 import ProfilePictureUploader from "../ProfilePicture/ProfilePicture";
-
+import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import useProfileUploader from "../../../hooks/useProfileUploader";
+import AddressAutocomplete from "./AddressAutocomplete";
 
 const FormRegistro = () => {
   const { registrar, navigate, currentUser, newUser } = useContext(AuthContext);
@@ -41,7 +42,7 @@ const FormRegistro = () => {
     ],
     registroTerminado: false,
     distribuidor: false,
-    zonaDistribuidor: [],
+    zonaDistribuidor: { lat: 0, lng: 0 },
     ubicacion: "",
     radio: "",
     avatar: DEFAULT_PERFIL_FOTO,
@@ -285,22 +286,10 @@ const FormRegistro = () => {
             }}
           >
             <FormHelperText>
-              Selecciona la zona donde trabajas, y el radio en que te manejas.
+              Selecciona la zona donde trabajas, tu metodo de trabajo y si es
+              necesario el radio en que te manejas.
             </FormHelperText>
-            <TextField
-              label="Ubicación"
-              name="ubicacion"
-              value={formUser.ubicacion}
-              onChange={handlerChange}
-              fullWidth
-            />
-            <TextField
-              label="Radio de trabajo (km)"
-              name="radio"
-              value={formUser.radio}
-              onChange={handlerChange}
-              fullWidth
-            />
+            <AddressAutocomplete />
             <FormHelperText>Detalla tus metodos de venta</FormHelperText>
             <TextField
               label="Metodo de venta"
@@ -309,6 +298,13 @@ const FormRegistro = () => {
               onChange={handlerChange}
               fullWidth
             />{" "}
+            <TextField
+              label="Radio de trabajo (km)"
+              name="radio"
+              value={formUser.radio}
+              onChange={handlerChange}
+              fullWidth
+            />
           </Box>
           <Typography
             component="h4"
@@ -317,7 +313,7 @@ const FormRegistro = () => {
             variant="h4"
             gutterBottom
           >
-            Completa tus datos personales
+            Datos personales
           </Typography>
           <TextField
             id="facebookForm"
@@ -364,10 +360,6 @@ const FormRegistro = () => {
             onChange={handlerChange}
           />
 
-          {/* <ProfilePictureUploader
-            userId={currentUser?.uid}
-            handlerChange={handlerChange}
-          /> */}
           <Box sx={{ p: 3 }}>
             <Typography variant="h5">Subir foto de perfil</Typography>
 
