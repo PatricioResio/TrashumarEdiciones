@@ -1,3 +1,4 @@
+import { Check } from "@mui/icons-material";
 import {
   TextField,
   Checkbox,
@@ -16,7 +17,7 @@ import { Fade } from "react-awesome-reveal";
 const FormTextoUnico = ({ formik }) => {
   return (
     <>
-      <FormGroup sx={{ m: "10px 0" }}>
+      <RadioGroup sx={{ m: "10px 0" }}>
         <Typography
           component="h4"
           id="outlined-basic"
@@ -27,7 +28,7 @@ const FormTextoUnico = ({ formik }) => {
         </Typography>
         <FormControlLabel
           control={
-            <Checkbox
+            <Radio
               id="etapaDesarrollo"
               label="etapaDesarrollo"
               variant="outlined"
@@ -47,7 +48,7 @@ const FormTextoUnico = ({ formik }) => {
         />
         <FormControlLabel
           control={
-            <Checkbox
+            <Radio
               id="manuscrito"
               label="manuscrito"
               variant="outlined"
@@ -68,7 +69,7 @@ const FormTextoUnico = ({ formik }) => {
         />
         <FormControlLabel
           control={
-            <Checkbox
+            <Radio
               id="ManuscritoTerminadoCorregido"
               label="ManuscritoTerminadoCorregido"
               variant="outlined"
@@ -89,7 +90,7 @@ const FormTextoUnico = ({ formik }) => {
         />
         <FormControlLabel
           control={
-            <Checkbox
+            <Radio
               id="listoParaPublicar"
               label="ListoParaPublicar"
               variant="outlined"
@@ -107,7 +108,7 @@ const FormTextoUnico = ({ formik }) => {
           }
           label="TENGO TODO LISTO PARA PUBLICAR."
         />
-      </FormGroup>
+      </RadioGroup>
 
       <RadioGroup sx={{ m: "10px 0" }}>
         <Typography
