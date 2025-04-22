@@ -55,7 +55,6 @@ const ProyectoPublico = ({ proyectoPublico }) => {
             <Typography variant="h4" component="h3">
               {autor}
             </Typography>
-
             <Box
               sx={{
                 m: "auto",
@@ -71,28 +70,30 @@ const ProyectoPublico = ({ proyectoPublico }) => {
                   gap: 4,
                 }}
               >
-                <Box
-                  component="img"
-                  sx={{
-                    boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
-                    height: { xs: "20rem", sm: "29rem", md: "39rem" },
-                    width: { xs: "13rem", sm: "17rem", md: "22rem" },
-                    m: "auto",
-                  }}
-                  src={img}
-                  alt="Ilustracion de tapa de libro"
-                />
-                <Box
-                  component="img"
-                  sx={{
-                    boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
-                    height: { xs: "20rem", sm: "29rem", md: "39rem" },
-                    width: { xs: "13rem", sm: "17rem", md: "22rem" },
-                    m: "auto",
-                  }}
-                  src={img1}
-                  alt="Ilustracion de contratapa de libro"
-                />
+                <Fade delay={300} triggerOnce>
+                  <Box
+                    component="img"
+                    sx={{
+                      boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
+                      height: { xs: "20rem", sm: "29rem", md: "39rem" },
+                      width: { xs: "13rem", sm: "17rem", md: "22rem" },
+                      m: "auto",
+                    }}
+                    src={img}
+                    alt="Ilustracion de tapa de libro"
+                  />
+                  <Box
+                    component="img"
+                    sx={{
+                      boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
+                      height: { xs: "20rem", sm: "29rem", md: "39rem" },
+                      width: { xs: "13rem", sm: "17rem", md: "22rem" },
+                      m: "auto",
+                    }}
+                    src={img1}
+                    alt="Ilustracion de contratapa de libro"
+                  />
+                </Fade>
               </Box>
               <Box sx={{ m: "auto 3rem" }}>
                 <Typography margin={2} component="p">

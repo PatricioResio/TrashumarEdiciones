@@ -5,13 +5,11 @@ import Typography from "@mui/material/Typography";
 import { FormControlLabel, Radio, RadioGroup, TextField } from "@mui/material";
 import { validationProyecto } from "../ValidationSchemas/ValidationSchemas";
 import { useFormik } from "formik";
-import {
-  FormLibroContenidoDeAutor,
-  FormLibroEditarContenidoAjeno,
-  FormLibroSoloLaIdea,
-  FormSerieDeTextos,
-  FormTextoUnico,
-} from "./Forms";
+import FormTextoUnico from "./FormTextoUnico";
+import FormContenidoDeAutor from "./FormContenidoDeAutor";
+import FormContenidoAjeno from "./FormContenidoAjeno";
+import FormSoloLaIdea from "./FormSoloLaIdea";
+import FormSerieDeTextos from "./FormSerieDeTextos";
 import { Fade } from "react-awesome-reveal";
 import emailjs from "emailjs-com";
 
@@ -192,14 +190,14 @@ function FormProyectos() {
           />
         </RadioGroup>
         {formik.values.formato === "Texto unico" ? (
-          <Fade>
+          <Fade triggerOnce>
             <FormTextoUnico formik={formik} />
           </Fade>
         ) : (
           <></>
         )}
         {formik.values.formato === "Serie de textos" ? (
-          <Fade>
+          <Fade triggerOnce>
             <FormSerieDeTextos formik={formik} />
           </Fade>
         ) : (
@@ -209,7 +207,7 @@ function FormProyectos() {
         {formik.values.formato === "Libro digital" ||
         formik.values.formato === "Libro fisico" ? (
           <>
-            <Fade>
+            <Fade triggerOnce>
               <RadioGroup sx={{ m: "10px 0" }}>
                 <Typography component="h4" variant="outlined">
                   Selecciona el rol que cumplís en la obra
@@ -267,8 +265,8 @@ function FormProyectos() {
 
             {formik.values.rolEnLaObra === "Contenido de mi autoria" ? (
               <>
-                <Fade>
-                  <FormLibroContenidoDeAutor formik={formik} />
+                <Fade triggerOnce>
+                  <FormContenidoDeAutor formik={formik} />
                 </Fade>
               </>
             ) : (
@@ -276,16 +274,16 @@ function FormProyectos() {
             )}
 
             {formik.values.rolEnLaObra === "Editar contenido ajeno" ? (
-              <Fade>
-                <FormLibroEditarContenidoAjeno formik={formik} />
+              <Fade triggerOnce>
+                <FormEditarContenidoAjeno formik={formik} />
               </Fade>
             ) : (
               <></>
             )}
 
             {formik.values.rolEnLaObra === "Tengo la idea" ? (
-              <Fade>
-                <FormLibroSoloLaIdea formik={formik} />
+              <Fade triggerOnce>
+                <FormSoloLaIdea formik={formik} />
               </Fade>
             ) : (
               <></>

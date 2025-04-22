@@ -13,7 +13,87 @@ import {
 } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
 
-const FormLibroContenidoDeAutor = ({ formik }) => {
+const FormContenidoDeAutor = ({ formik }) => {
+  const formik = useFormik({
+    initialValues: {
+      formato: "",
+      rolEnLaObra: "",
+      contanosMas: "",
+      rolEnElLibro: "",
+      otroAutor: "",
+      acuerdoComercial: "",
+      acuerdoComercialPorcentaje: "",
+      etapaDesarrollo: "",
+      distribucionLibro: "",
+      tipoDistribucion: "",
+      manuscritoTerminado: false,
+      manuscritoTerminadoCorregido: false,
+      listoPublicar: false,
+      informeDeLectura: false,
+      correccionGramatical: false,
+      correccionEstilos: false,
+      disenioImagenes: false,
+      traducir: false,
+      idiomaOriginal: "",
+      idiomaATraducir: "",
+    },
+    /*   validationSchema: validationProyecto, */
+    onSubmit: (values, { resetForm }) => {
+      if (
+        !values.formato ||
+        !values.rolEnLaObra ||
+        !values.contanosMas ||
+        !values.acuerdoComercial
+      ) {
+        alert("Debes completar todos los campos obligatorios.");
+      }
+      console.log("values:", values);
+      const templateParams = {
+        formato: values.formato,
+        rolEnLaObra: values.rolEnLaObra,
+        contanosMas: values.contanosMas,
+        acuerdoComercial: values.acuerdoComercial,
+        acuerdoComercialPorcentaje:
+          values.acuerdoComercialPorcentaje || "No especificado",
+        manuscritoTerminado: values.manuscritoTerminado ? "Sí" : "No",
+        manuscritoTerminadoCorregido: values.manuscritoTerminadoCorregido
+          ? "Sí"
+          : "No",
+        listoPublicar: values.listoPublicar ? "Sí" : "No",
+        informeDeLectura: values.informeDeLectura ? "Sí" : "No",
+        correccionGramatical: values.correccionGramatical ? "Sí" : "No",
+        correccionEstilos: values.correccionEstilos ? "Sí" : "No",
+        traducir: values.traducir ? "Sí" : "No",
+        idiomaOriginal: values.traducir ? values.idiomaOriginal : "No aplica",
+        idiomaATraducir: values.traducir ? values.idiomaATraducir : "No aplica",
+        distribucionLibro: values.distribucionLibro || "No especificado",
+        tipoDistribucion: values.tipoDistribucion || "No especificado",
+        etapaDesarrollo: values.etapaDesarrollo || "No especificado",
+      };
+      console.log("templateParams:", templateParams);
+      emailjs
+
+        .send(
+          "service_5p7dbyj",
+          "template_95bik24",
+          templateParams,
+          "jOUKbByhllu5OVumL"
+        )
+        .then(
+          (response) => {
+            alert("Formulario enviado correctamente!");
+            resetForm();
+          },
+          (error) => {
+            console.error("Error al enviar el formulario:", error);
+            alert(
+              "Ocurrió un error al enviar el formulario. Intenta nuevamente."
+            );
+          }
+        );
+    },
+  });
+
   return (
     <>
       <FormGroup sx={{ m: "10px 0" }}>
@@ -549,4 +629,4 @@ const FormLibroContenidoDeAutor = ({ formik }) => {
     </>
   );
 };
-export default FormLibroContenidoDeAutor;
+export default FormContenidoDeAutor;

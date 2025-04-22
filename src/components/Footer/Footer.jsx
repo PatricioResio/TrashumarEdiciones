@@ -33,7 +33,7 @@ const Footer = () => {
             to="/"
             sx={{
               display: { xs: "flex", sm: "flex" },
-              height: { xs: "5.5rem", md: "12.5rem" },
+              height: { xs: "5.5rem", md: "8.5rem" },
               width: "25%",
               marginX: { xs: "1.5rem", md: "4rem" },
               "& img": {
