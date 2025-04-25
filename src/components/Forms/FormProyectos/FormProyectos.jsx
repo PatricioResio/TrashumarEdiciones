@@ -29,6 +29,7 @@ function FormProyectos() {
     >
       {" "}
       <Typography
+        mb={3}
         component="h4"
         id="outlined-basic"
         label="AUTORES"
@@ -37,32 +38,74 @@ function FormProyectos() {
         Elegí el formato a trabajar
       </Typography>
       <Box
-        sx={{ display: "flex", flexDirection: "row", gap: "20px", mt: "20px" }}
+        sx={{ display: "flex", flexDirection: "row", gap: "20px", mb: "4rem" }}
       >
         <Button
           variant="contained"
-          sx={{ backgroundColor: "#09A5B0" }}
+          sx={{
+            width: "25%",
+            backgroundColor:
+              posicionForm === "Texto unico" ? "#09A5B0" : "primary.main",
+            color: posicionForm === "Texto unico" ? "#fff" : "#000",
+            fontWeight: posicionForm === "Texto unico" ? "bold" : "normal",
+            "&:hover": {
+              backgroundColor:
+                posicionForm === "Texto unico" ? "#078893" : "primary.main",
+            },
+          }}
           onClick={() => setPosicionForm("Texto unico")}
         >
-          UN TEXTO ÚNICO EN LA PÁGINA
+          Un texto único en la página
         </Button>
         <Button
           variant="contained"
-          sx={{ backgroundColor: "#09A5B0" }}
+          sx={{
+            p: "0",
+            width: "25%",
+            backgroundColor:
+              posicionForm === "Serie de textos" ? "#09A5B0" : "primary.main",
+            color: posicionForm === "Serie de textos" ? "#fff" : "#000",
+            fontWeight: posicionForm === "Serie de textos" ? "bold" : "normal",
+            "&:hover": {
+              backgroundColor:
+                posicionForm === "Serie de textos" ? "#078893" : "primary.main",
+            },
+          }}
           onClick={() => setPosicionForm("Serie de textos")}
         >
           UNA SERIE DE TEXTOS EN LA PÁGINA
         </Button>
         <Button
           variant="contained"
-          sx={{ backgroundColor: "#09A5B0" }}
+          sx={{
+            width: "25%",
+            backgroundColor:
+              posicionForm === "Libro digital" ? "#09A5B0" : "primary.main",
+            color: posicionForm === "Libro digital" ? "#fff" : "#000",
+            fontWeight: posicionForm === "Libro digital" ? "bold" : "normal",
+            "&:hover": {
+              backgroundColor:
+                posicionForm === "Libro digital" ? "#078893" : "primary.main",
+            },
+          }}
           onClick={() => setPosicionForm("Libro digital")}
         >
           UN LIBRO DIGITAL
         </Button>
         <Button
           variant="contained"
-          sx={{ backgroundColor: "#09A5B0" }}
+          sx={{
+            p: "0",
+            width: "25%",
+            backgroundColor:
+              posicionForm === "Libro fisico" ? "#09A5B0" : "primary.main",
+            color: posicionForm === "Libro fisico" ? "#fff" : "#000",
+            fontWeight: posicionForm === "Libro fisico" ? "bold" : "normal",
+            "&:hover": {
+              backgroundColor:
+                posicionForm === "Libro fisico" ? "#078893" : "primary.main",
+            },
+          }}
           onClick={() => setPosicionForm("Libro fisico")}
         >
           UN LIBRO FISICO
@@ -74,26 +117,67 @@ function FormProyectos() {
             display: "flex",
             flexDirection: "row",
             gap: "20px",
-            mt: "20px",
+            mb: "2rem",
           }}
         >
           <Button
             variant="contained"
-            sx={{ backgroundColor: "#09A5B0" }}
+            sx={{
+              backgroundColor:
+                posicionForm2 === "Contenido de mi autoria"
+                  ? "#09A5B0"
+                  : "primary.main",
+              color:
+                posicionForm2 === "Contenido de mi autoria" ? "#fff" : "#000",
+              fontWeight:
+                posicionForm2 === "Contenido de mi autoria" ? "bold" : "normal",
+              "&:hover": {
+                backgroundColor:
+                  posicionForm2 === "Contenido de mi autoria"
+                    ? "#078893"
+                    : "primary.main",
+              },
+            }}
             onClick={() => setPosicionForm2("Contenido de mi autoria")}
           >
             Contenido de mi autoria
           </Button>
           <Button
             variant="contained"
-            sx={{ backgroundColor: "#09A5B0" }}
+            sx={{
+              backgroundColor:
+                posicionForm2 === "Editar contenido ajeno"
+                  ? "#09A5B0"
+                  : "primary.main",
+              color:
+                posicionForm2 === "Editar contenido ajeno" ? "#fff" : "#000",
+              fontWeight:
+                posicionForm2 === "Editar contenido ajeno" ? "bold" : "normal",
+              "&:hover": {
+                backgroundColor:
+                  posicionForm2 === "Editar contenido ajeno"
+                    ? "#078893"
+                    : "primary.main",
+              },
+            }}
             onClick={() => setPosicionForm2("Editar contenido ajeno")}
           >
             Editar contenido ajeno
           </Button>
           <Button
             variant="contained"
-            sx={{ backgroundColor: "#09A5B0" }}
+            sx={{
+              backgroundColor:
+                posicionForm2 === "Tengo la idea" ? "#09A5B0" : "primary.main",
+              color: posicionForm2 === "Tengo la idea" ? "#fff" : "#000",
+              fontWeight: posicionForm2 === "Tengo la idea" ? "bold" : "normal",
+              "&:hover": {
+                backgroundColor:
+                  posicionForm2 === "Tengo la idea"
+                    ? "#078893"
+                    : "primary.main",
+              },
+            }}
             onClick={() => setPosicionForm2("Tengo la idea")}
           >
             Tengo la idea

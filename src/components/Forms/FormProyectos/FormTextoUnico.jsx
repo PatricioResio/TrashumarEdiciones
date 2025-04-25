@@ -17,11 +17,18 @@ import { Form, Formik } from "formik";
 import emailjs from "emailjs-com";
 import { Fade } from "react-awesome-reveal";
 import { validationTextoUnico } from "../ValidationSchemas/ValidationSchemas";
+import { useContext } from "react";
+import { AuthContext } from "../../../context/AuthContext";
 
 const FormTextoUnico = () => {
+  const { currentUser } = useContext(AuthContext);
   return (
     <Formik
       initialValues={{
+        userUid: currentUser ? currentUser.uid : "No especificado",
+        userName: currentUser ? currentUser.nombre : "No especificado",
+        userEmail: currentUser ? currentUser.email : "No especificado",
+        userTelefono: currentUser ? currentUser.telefono : "No especificado",
         formato: "Quiero publicar un texto unico en la pagina",
         etapaDesarrollo: "",
         imagenesProyecto: "",
@@ -29,6 +36,7 @@ const FormTextoUnico = () => {
         idiomaOriginal: "",
         idiomaATraducir: "",
         contanosMas: "",
+        ideaPrincipal: "",
         acuerdoComercial: "",
       }}
       validationSchema={validationTextoUnico}
@@ -45,6 +53,9 @@ const FormTextoUnico = () => {
         }
         console.log("values:", values);
         const templateParams = {
+          userName: currentUser ? currentUser.nombre : "No especificado",
+          userEmail: currentUser ? currentUser.email : "No especificado",
+          userTelefono: currentUser ? currentUser.telefono : "No especificado",
           formato: values.formato,
           contanosMas: values.contanosMas,
           acuerdoComercial: values.acuerdoComercial,
@@ -57,6 +68,7 @@ const FormTextoUnico = () => {
             : "No aplica",
           etapaDesarrollo: values.etapaDesarrollo,
           imagenesProyecto: values.imagenesProyecto,
+          ideaPrincipal: values.ideaPrincipal,
         };
 
         console.log("templateParams:", templateParams);
@@ -91,10 +103,35 @@ const FormTextoUnico = () => {
         setFieldValue,
       }) => (
         <Form>
+          <Typography component="h5" variant="outlined" sx={{ m: "6px" }}>
+            Contanos un poco sobre tu idea
+          </Typography>
+          {touched.ideaPrincipal && errors.ideaPrincipal && (
+            <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+              {errors.ideaPrincipal}
+            </FormHelperText>
+          )}
+          <TextField
+            multiline
+            sx={{
+              mx: "auto",
+              mb: "10px",
+              width: "90%",
+              minHeight: "3rem",
+            }}
+            id="ideaPrincipal"
+            name="ideaPrincipal"
+            label="Acá nos vas a poder poner en contexto de tu idea..."
+            value={values.ideaPrincipal}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            variant="outlined"
+          />
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography
-              component="h4"
+              component="h5"
               id="outlined-basic"
+              mb={1}
               label="AUTORES"
               variant="outlined"
             >
@@ -118,7 +155,7 @@ const FormTextoUnico = () => {
                   error={errors.etapaDesarrollo}
                 />
               }
-              label="ESTOY TRABAJANDO EN EL TEXTO."
+              label="Estoy trabajando en el texto."
             />
 
             <FormControlLabel
@@ -133,7 +170,7 @@ const FormTextoUnico = () => {
                   error={errors.manuscritoTermindo}
                 />
               }
-              label="TENGO EL MANUSCRITO TERMINADO."
+              label="Tengo manuscrito terminado"
             />
             <FormControlLabel
               control={
@@ -147,7 +184,7 @@ const FormTextoUnico = () => {
                   error={errors.manuscritoTermindoCorregido}
                 />
               }
-              label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+              label="Tengo el manuscrito terminado y corregido"
             />
             <FormControlLabel
               control={
@@ -161,12 +198,12 @@ const FormTextoUnico = () => {
                   error={errors.listoPublicar}
                 />
               }
-              label="TENGO TODO LISTO PARA PUBLICAR."
+              label="Tengo el manuscrito listo para publicar"
             />
           </RadioGroup>
 
           <RadioGroup sx={{ m: "10px 0" }}>
-            <Typography component="h4" variant="outlined">
+            <Typography component="h5" variant="outlined">
               ¿El texto esta acompañado de una o mas imagenes?
             </Typography>
             {touched.imagenesProyecto && errors.imagenesProyecto && (
@@ -218,7 +255,7 @@ const FormTextoUnico = () => {
             />
           </RadioGroup>
           <FormGroup sx={{ m: "10px 0" }}>
-            <Typography component="h4" variant="outlined">
+            <Typography component="h5" variant="outlined">
               ¿Qué etapas te hace falta cubrir?
             </Typography>
             {touched.etapaDesarrollo && errors.etapaDesarrollo && (
@@ -239,7 +276,7 @@ const FormTextoUnico = () => {
                   error={Boolean(errors.informeDeLectura)}
                 />
               }
-              label="INFORME DE LECTURA."
+              label="Informe de lectura."
             />
             <FormControlLabel
               control={
@@ -253,7 +290,7 @@ const FormTextoUnico = () => {
                   error={Boolean(errors.correccionGramatical)}
                 />
               }
-              label="CORRECCIÓN GRAMATICAL."
+              label="Corrección gramatical."
             />
             <FormControlLabel
               control={
@@ -267,7 +304,7 @@ const FormTextoUnico = () => {
                   error={Boolean(errors.manuscrito)}
                 />
               }
-              label="TENGO EL MANUSCRITO TERMINADO Y CORREGIDO."
+              label="Tengo el manuscrito terminado y corregido."
             />
             <FormControlLabel
               control={
@@ -281,7 +318,7 @@ const FormTextoUnico = () => {
                   error={Boolean(errors.correccionEstilos)}
                 />
               }
-              label="CORRECCIÓN DE ESTILO."
+              label="Corrección de estilos."
             />
             <FormControlLabel
               control={
@@ -295,17 +332,17 @@ const FormTextoUnico = () => {
                   error={Boolean(errors.traducir)}
                 />
               }
-              label="TRADUCIR"
+              label="Traducir el texto."
             />
           </FormGroup>
           {values.traducir === true ? (
             <Fade triggerOnce>
-              <Typography component="h4" variant="outlined">
+              <Typography component="h5" variant="outlined">
                 {" "}
                 Traducción
               </Typography>
               <Typography
-                component="h4"
+                component="h5"
                 id="IDIOMA"
                 label="IDIOMA"
                 variant="outlined"
@@ -313,9 +350,7 @@ const FormTextoUnico = () => {
                 Selecciona el idioma original
               </Typography>
               <FormControl sx={{ m: "10px 0" }} fullWidth>
-                <InputLabel id="demo-simple-select-label">
-                  Idioma original
-                </InputLabel>
+                <InputLabel>Idioma original</InputLabel>
                 <Select
                   id="idiomaOriginal"
                   label="idiomaOriginal"
@@ -334,12 +369,7 @@ const FormTextoUnico = () => {
                   <MenuItem value={"japones"}>Japones</MenuItem>
                 </Select>
               </FormControl>
-              <Typography
-                component="h4"
-                id="IDIOMATRADUCCION"
-                label="IDIOMATRADUCCION"
-                variant="outlined"
-              >
+              <Typography component="h5" variant="outlined">
                 A que idioma queres traducirlo?
               </Typography>
               <FormControl sx={{ m: "10px 0" }} fullWidth>
@@ -369,7 +399,7 @@ const FormTextoUnico = () => {
           )}
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography
-              component="h4"
+              component="h5"
               id="outlined-basic"
               label="AUTORES"
               variant="outlined"
@@ -395,7 +425,7 @@ const FormTextoUnico = () => {
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
                 />
               }
-              label="PUEDO CUBRIR EL TRABAJO DE MIS COLEGAS "
+              label="Puedo cubrir el trabajo de mis colegas, aunque mi pago quede pendiente"
             />
             <FormControlLabel
               control={
@@ -410,7 +440,7 @@ const FormTextoUnico = () => {
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
                 />
               }
-              label="PREFIERO QUE LO CUBRA LA EDITORIAL, AUNQUE MI PAGO QUEDE PENDIENTE"
+              label="Prefiero que lo cubra la editorial, aunque mi pago quede pendiente"
             />
             <FormControlLabel
               control={
@@ -425,7 +455,7 @@ const FormTextoUnico = () => {
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
                 />
               }
-              label="LO QUIERO HACER AD HONOREM"
+              label="Lo quiero hacer ad honorem"
             />
             <FormControlLabel
               control={
@@ -440,17 +470,34 @@ const FormTextoUnico = () => {
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
                 />
               }
-              label="NO HAY TRATO"
+              label="No hay trato"
             />
           </RadioGroup>
+          <Typography component="h5" variant="outlined" sx={{ m: "6px" }}>
+            Contanos más al respecto de tu proyecto
+          </Typography>
+          {touched.contanosMas && errors.contanosMas && (
+            <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+              {errors.contanosMas}
+            </FormHelperText>
+          )}
+          <TextField
+            multiline
+            sx={{ m: "auto", width: "100%", minHeight: "2rem" }}
+            id="contanosMas"
+            value={values.contanosMas}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            label="Mi idea es ...."
+            variant="outlined"
+          />
           <Typography
-            bgcolor={"bg.dark"}
             fontSize={"20px"}
-            color={"secondary.white"}
+            color={"secondary.main"}
             sx={{
               border: "2px solid ",
               borderRadius: "10px",
-
+              my: "1.5rem",
               padding: "5px",
             }}
           >
@@ -462,25 +509,11 @@ const FormTextoUnico = () => {
             Tené en cuenta que tu aporte acelerara las cosas.
           </Typography>
 
-          <Typography component="h4" variant="outlined" sx={{ m: "6px" }}>
-            Contanos más al respecto de tu proyecto
-          </Typography>
-          {touched.contanosMas && errors.contanosMas && (
-            <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
-              {errors.contanosMas}
-            </FormHelperText>
-          )}
-          <TextField
-            multiline
-            sx={{ m: "6px" }}
-            id="contanosMas"
-            value={values.contanosMas}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            label="Mi idea es ...."
-            variant="outlined"
-          />
-          <Button sx={{}} type="submit" variant="contained">
+          <Button
+            sx={{ m: "auto", display: "flex" }}
+            type="submit"
+            variant="contained"
+          >
             enviar formulario
           </Button>
         </Form>

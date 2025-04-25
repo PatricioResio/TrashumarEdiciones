@@ -47,7 +47,7 @@ const validationProyecto = yup.object().shape({
 
 const validationTextoUnico = yup.object().shape({
   etapaDesarrollo: yup.string().required("El campo es obligatorio"),
-  contanosMas: yup.string().required("El campo es obligatorio"),
+  ideaPrincipal: yup.string().required("El campo es obligatorio"),
   acuerdoComercial: yup.string().required("El campo es obligatorio"),
   imagenesProyecto: yup.string().required("El campo es obligatorio"),
 });
