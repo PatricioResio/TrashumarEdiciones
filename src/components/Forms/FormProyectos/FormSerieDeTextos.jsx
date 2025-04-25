@@ -13,8 +13,9 @@ import {
 } from "@mui/material";
 import { useFormik } from "formik";
 import { Fade } from "react-awesome-reveal";
+import { validationTextoUnico } from "../ValidationSchemas/ValidationSchemas";
 
-const FormSerieDeTextos = ({ formik }) => {
+const FormSerieDeTextos = () => {
   const formik = useFormik({
     initialValues: {
       formato: "Quiero publicar un texto unico en la pagina",
@@ -27,7 +28,7 @@ const FormSerieDeTextos = ({ formik }) => {
       acuerdoComercial: "",
       acuerdoComercialPorcentaje: "",
     },
-    /*   validationSchema: validationProyecto, */
+    validationSchema: validationTextoUnico,
     onSubmit: (values, { resetForm }) => {
       if (
         !values.formato ||

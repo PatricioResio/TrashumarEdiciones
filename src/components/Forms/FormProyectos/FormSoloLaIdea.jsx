@@ -14,7 +14,7 @@ import {
 import { useFormik } from "formik";
 import { Fade } from "react-awesome-reveal";
 
-const FormSoloLaIdea = ({ formik }) => {
+const FormSoloLaIdea = () => {
   const formik = useFormik({
     initialValues: {
       formato: "",

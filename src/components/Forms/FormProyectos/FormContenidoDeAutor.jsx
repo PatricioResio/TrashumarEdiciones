@@ -12,8 +12,9 @@ import {
   MenuItem,
 } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
+import { useFormik } from "formik";
 
-const FormContenidoDeAutor = ({ formik }) => {
+const FormContenidoDeAutor = () => {
   const formik = useFormik({
     initialValues: {
       formato: "",

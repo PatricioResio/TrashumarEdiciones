@@ -11,9 +11,10 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import { useFormik } from "formik";
 import { Fade } from "react-awesome-reveal";
 
-const FormEditarContenidoAjeno = ({ formik }) => {
+const FormEditarContenidoAjeno = () => {
   const formik = useFormik({
     initialValues: {
       formato: "",

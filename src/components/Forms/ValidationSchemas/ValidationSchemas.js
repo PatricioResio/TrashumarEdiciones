@@ -45,4 +45,11 @@ const validationProyecto = yup.object().shape({
   }),
 });
 
-export { validationPerfil, validationProyecto };
+const validationTextoUnico = yup.object().shape({
+  etapaDesarrollo: yup.string().required("El campo es obligatorio"),
+  contanosMas: yup.string().required("El campo es obligatorio"),
+  acuerdoComercial: yup.string().required("El campo es obligatorio"),
+  imagenesProyecto: yup.string().required("El campo es obligatorio"),
+});
+
+export { validationPerfil, validationProyecto, validationTextoUnico };
