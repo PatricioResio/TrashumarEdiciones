@@ -28,18 +28,10 @@ function FormProyectos() {
       }}
     >
       {" "}
-      <Typography
-        mb={3}
-        component="h4"
-        id="outlined-basic"
-        label="AUTORES"
-        variant="outlined"
-      >
+      <Typography mb={3} component="h4" variant="outlined">
         Elegí el formato a trabajar
       </Typography>
-      <Box
-        sx={{ display: "flex", flexDirection: "row", gap: "20px", mb: "4rem" }}
-      >
+      <Box sx={{ display: "flex", flexDirection: "row", mb: "4rem" }}>
         <Button
           variant="contained"
           sx={{
@@ -80,7 +72,9 @@ function FormProyectos() {
           sx={{
             width: "25%",
             backgroundColor:
-              posicionForm === "Libro digital" ? "#09A5B0" : "primary.main",
+              posicionForm === "Libro digital"
+                ? "bg.mediumBlue"
+                : "primary.main",
             color: posicionForm === "Libro digital" ? "#fff" : "#000",
             fontWeight: posicionForm === "Libro digital" ? "bold" : "normal",
             "&:hover": {
@@ -205,7 +199,10 @@ function FormProyectos() {
           {posicionForm2 === "Contenido de mi autoria" ? (
             <>
               <Fade triggerOnce>
-                <FormContenidoDeAutor />
+                <FormContenidoDeAutor
+                  posicionForm={posicionForm}
+                  posicionForm2={posicionForm2}
+                />
               </Fade>
             </>
           ) : (
@@ -214,7 +211,10 @@ function FormProyectos() {
 
           {posicionForm2 === "Editar contenido ajeno" ? (
             <Fade triggerOnce>
-              <FormContenidoAjeno />
+              <FormContenidoAjeno
+                posicionForm={posicionForm}
+                posicionForm2={posicionForm2}
+              />
             </Fade>
           ) : (
             <></>
@@ -222,7 +222,10 @@ function FormProyectos() {
 
           {posicionForm2 === "Tengo la idea" ? (
             <Fade triggerOnce>
-              <FormSoloLaIdea />
+              <FormSoloLaIdea
+                posicionForm={posicionForm}
+                posicionForm2={posicionForm2}
+              />
             </Fade>
           ) : (
             <></>

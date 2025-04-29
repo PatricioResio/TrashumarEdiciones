@@ -490,13 +490,12 @@ const FormSerieDeTextos = () => {
           />
           <Typography
             fontSize={"20px"}
-            color={"secondary.main"}
+            color={"secondary.white"}
+            bgcolor={"bg.mediumBlue"}
             sx={{
-              border: "2px solid ",
               borderRadius: "10px",
-
-              my: "1.5rem",
               padding: "5px",
+              my: "1.5rem",
             }}
           >
             Intentaremos cubrir los gastos y pagarte, pero dependerá del
