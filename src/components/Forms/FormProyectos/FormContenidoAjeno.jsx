@@ -10,6 +10,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Button,
 } from "@mui/material";
 import { Formik, Form } from "formik";
 import { Fade } from "react-awesome-reveal";
@@ -813,6 +814,26 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
               selectivas a la hora de tomar un libro.
             </Typography>
           </RadioGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                value={values.contrato}
+                onChange={handleChange}
+                error={Boolean(errors.contrato)}
+                id="contrato"
+                name="contrato"
+                label="contrato"
+              />
+            }
+            label="Estoy de acuerdo con los términos y condiciones"
+          />
+          <Button
+            sx={{ m: "auto", display: "flex" }}
+            type="submit"
+            variant="contained"
+          >
+            enviar formulario
+          </Button>
         </Form>
       )}
     </Formik>

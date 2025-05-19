@@ -75,10 +75,10 @@ const FormTextoUnico = () => {
 
         emailjs
           .send(
-            "service_5p7dbyj",
-            "template_cl61jny",
+            import.meta.env.VITE_EMAILJS_SERVICE_TEXTO_UNICO,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_TEXTO_UNICO,
             templateParams,
-            "UFKZ--VbjyDkKEHnH"
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY_TEXTO_UNICO
           )
           .then(
             (response) => {
@@ -503,7 +503,19 @@ const FormTextoUnico = () => {
             en cuenta tu propuesta y haremos lo posible por publicar tu texto.
             Tené en cuenta que tu aporte acelerara las cosas.
           </Typography>
-
+          <FormControlLabel
+            control={
+              <Checkbox
+                value={values.contrato}
+                onChange={handleChange}
+                error={Boolean(errors.contrato)}
+                id="contrato"
+                name="contrato"
+                label="contrato"
+              />
+            }
+            label="Estoy de acuerdo con los términos y condiciones"
+          />
           <Button
             sx={{ m: "auto", display: "flex" }}
             type="submit"

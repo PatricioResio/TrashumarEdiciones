@@ -10,10 +10,14 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Button,
+  FormHelperText,
 } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
-import { Form, Formik, useFormik } from "formik";
-import { validationProyecto } from "../ValidationSchemas/ValidationSchemas";
+import { Form, Formik } from "formik";
+
+import emailjs from "emailjs-com";
+import { validationContenidoAutor } from "../ValidationSchemas/ValidationSchemas";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext } from "react";
 
@@ -28,15 +32,12 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
         userEmail: currentUser ? currentUser.email : "No especificado",
         userUid: currentUser ? currentUser.uid : "No especificado",
         userTelefono: currentUser ? currentUser.telefono : "No especificado",
-        rolEnLaObra: "",
         contanosMas: "",
-        rolEnElLibro: "",
-        otroAutor: "",
-        acuerdoComercial: "",
-        acuerdoComercialPorcentaje: "",
         etapaDesarrollo: "",
-        distribucionLibro: "",
+        distribucion: "",
         tipoDistribucion: "",
+        reconocimientoDistribucion: "",
+        gastos: "",
         manuscritoTerminado: false,
         manuscritoTerminadoCorregido: false,
         listoPublicar: false,
@@ -48,49 +49,46 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
         idiomaOriginal: "",
         idiomaATraducir: "",
       }}
-      validationSchema={validationProyecto}
+      validationSchema={validationContenidoAutor}
       onSubmit={(values, { resetForm }) => {
-        if (
-          !values.formato ||
-          !values.rolEnLaObra ||
-          !values.contanosMas ||
-          !values.acuerdoComercial
-        ) {
-          alert("Debes completar todos los campos obligatorios.");
-        }
         console.log("values:", values);
         const templateParams = {
           formato: values.formato,
-          rolEnLaObra: values.rolEnLaObra,
+          idea: values.idea,
+          userName: currentUser ? currentUser.nombre : "No especificado",
+          userEmail: currentUser ? currentUser.email : "No especificado",
+          userUid: currentUser ? currentUser.uid : "No especificado",
+          userTelefono: currentUser ? currentUser.telefono : "No especificado",
+          gastos: values.gastos,
           contanosMas: values.contanosMas,
-          acuerdoComercial: values.acuerdoComercial,
-          acuerdoComercialPorcentaje:
-            values.acuerdoComercialPorcentaje || "No especificado",
-          manuscritoTerminado: values.manuscritoTerminado ? "Sí" : "No",
+          distribucion: values.distribucion,
+          tipoDistribucion: values.tipoDistribucion,
+          etapaDesarrollo: values.etapaDesarrollo,
+          reconocimientoDistribucion: values.reconocimientoDistribucion,
+          manuscritoTerminado: values.manuscritoTerminado ? "si" : "no",
           manuscritoTerminadoCorregido: values.manuscritoTerminadoCorregido
-            ? "Sí"
-            : "No",
-          listoPublicar: values.listoPublicar ? "Sí" : "No",
-          informeDeLectura: values.informeDeLectura ? "Sí" : "No",
-          correccionGramatical: values.correccionGramatical ? "Sí" : "No",
-          correccionEstilos: values.correccionEstilos ? "Sí" : "No",
+            ? "si"
+            : "no",
+          listoPublicar: values.listoPublicar ? "si" : "no",
+          informeDeLectura: values.informeDeLectura ? "si" : "no",
+          correccionGramatical: values.correccionGramatical ? "si" : "no",
+          correccionEstilos: values.correccionEstilos ? "si" : "no",
           traducir: values.traducir ? "Sí" : "No",
-          idiomaOriginal: values.traducir ? values.idiomaOriginal : "No aplica",
-          idiomaATraducir: values.traducir
-            ? values.idiomaATraducir
+          idiomaOriginal: values.traducir
+            ? values.idiomaOriginal != "" || values.idiomaOriginal
             : "No aplica",
-          distribucionLibro: values.distribucionLibro || "No especificado",
-          tipoDistribucion: values.tipoDistribucion || "No especificado",
-          etapaDesarrollo: values.etapaDesarrollo || "No especificado",
+          idiomaATraducir: values.traducir
+            ? values.idiomaATraducir != "" || values.idiomaATraducir
+            : "No aplica",
         };
         console.log("templateParams:", templateParams);
         emailjs
 
           .send(
-            "service_5p7dbyj",
-            "template_95bik24",
+            import.meta.env.VITE_EMAILJS_SERVICE_TEXTO_UNICO,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_CONTENIDO_DE_AUTOR,
             templateParams,
-            "jOUKbByhllu5OVumL"
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY_TEXTO_UNICO
           )
           .then(
             (response) => {
@@ -106,24 +104,74 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
           );
       }}
     >
-      {({
-        values,
-        handleChange,
-        handleBlur,
-        errors,
-        touched,
-        setFieldValue,
-      }) => (
+      {({ values, handleChange, handleBlur, errors, touched }) => (
         <Form>
-          <FormGroup sx={{ m: "10px 0" }}>
-            <Typography component="h6" variant="outlined">
-              ¿Qué etapas te hace falta cubrir?
+          <RadioGroup sx={{ m: "10px 0" }}>
+            <Typography component="h5" variant="outlined">
+              ¿En qué etapa del desarrollo te encontras?
             </Typography>
             {touched.etapaDesarrollo && errors.etapaDesarrollo && (
-              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+              <FormHelperText sx={{ color: "#F50E00" }}>
                 {errors.etapaDesarrollo}
               </FormHelperText>
             )}
+            <FormControlLabel
+              control={
+                <Radio
+                  id="etapaDesarrollo"
+                  label="etapaDesarrollo"
+                  name="etapaDesarrollo"
+                  value="Trabajando en el texto"
+                  onChange={handleChange}
+                  error={errors.etapaDesarrollo}
+                />
+              }
+              label="Estoy trabajando en el texto."
+            />
+            <FormControlLabel
+              control={
+                <Radio
+                  id="etapaDesarrollo"
+                  label="etapaDesarrollo"
+                  name="etapaDesarrollo"
+                  value="manuscrito terminado"
+                  onChange={handleChange}
+                  error={errors.manuscritoTerminado}
+                />
+              }
+              label="Tengo el manuscrito terminado."
+            />
+            <FormControlLabel
+              control={
+                <Radio
+                  id="etapaDesarrollo"
+                  name="etapaDesarrollo"
+                  label="etapaDesarrollo"
+                  value="Manuscrito terminado y corregido"
+                  onChange={handleChange}
+                  error={errors.manuscritoTerminadoCorregido}
+                />
+              }
+              label="Tengo el manuscrito terminado y corregido."
+            />
+            <FormControlLabel
+              control={
+                <Radio
+                  id="etapaDesarrollo"
+                  name="etapaDesarrollo"
+                  label="etapaDesarrollo"
+                  value="Manuscrito listo para publicar"
+                  onChange={handleChange}
+                  error={errors.listoPublicar}
+                />
+              }
+              label="Tengo el manuscrito listo para publicar."
+            />
+          </RadioGroup>
+          <FormGroup sx={{ m: "10px 0" }}>
+            <Typography component="h5" variant="outlined">
+              ¿Qué etapas te hace falta cubrir?
+            </Typography>
             {touched.etapasACubrir && errors.etapasACubrir && (
               <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
                 {errors.etapasACubrir}
@@ -278,49 +326,54 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
           ) : (
             <></>
           )}
-          <FormGroup sx={{ m: "10px 0" }}>
+          <RadioGroup sx={{ m: "10px 0" }}>
             <Typography component="h5" variant="outlined">
               ¿Cómo podes afrontar los gastos?
             </Typography>
+            {touched.gastos && errors.gastos && (
+              <FormHelperText sx={{ color: "#F50E00" }}>
+                {errors.gastos}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="gastos"
                   label="gastos"
                   name="gastos"
-                  value={values.informeDeLectura}
+                  value="Puedo cubrir la primera tanda de impresiones."
                   onChange={handleChange}
-                  error={Boolean(errors.informeDeLectura)}
+                  error={errors.gastos}
                 />
               }
               label="Puedo cubrir la primera tanda de impresiones."
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="gastos"
                   label="gastos"
                   name="gastos"
-                  value={values.correccionGramatical}
+                  value="Puedo afrontar los costos del libro."
                   onChange={handleChange}
-                  error={Boolean(errors.correccionGramatical)}
+                  error={errors.gastos}
                 />
               }
-              label="Puedo cubrir la primera tanda de impresiones."
+              label="Puedo afrontar los costos del libro."
             />
 
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="gastos"
                   label="gastos"
                   name="gastos"
-                  value={values.correccionEstilos}
+                  value="Preciso una beca."
                   onChange={handleChange}
-                  error={Boolean(errors.correccionEstilos)}
+                  error={errors.gastos}
                 />
               }
-              label="Precio una beca."
+              label="Preciso una beca."
             />
             <Typography
               fontSize={"20px"}
@@ -339,12 +392,17 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
               alguna parte, esto se puede acelerar. Tu contrato tendrá en
               consideración estos factores.
             </Typography>
-          </FormGroup>
+          </RadioGroup>
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography component="h5" variant="outlined">
               ¿Vas a involucrarte en la distribución del libro? / Para esto,
               debes registrarte como distribuidor.
             </Typography>
+            {touched.distribucion && errors.distribucion && (
+              <FormHelperText sx={{ color: "#F50E00" }}>
+                {errors.distribucion}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio
@@ -353,7 +411,7 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
                   name="distribucion"
                   value="Si, lo hare en persona"
                   onChange={handleChange}
-                  error={touched.distribucion}
+                  error={errors.distribucion}
                 />
               }
               label="Si, lo hare en persona."
@@ -367,7 +425,7 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
                   value="Si, pero no exclusivamente"
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  error={touched.distribucion}
+                  error={errors.distribucion}
                 />
               }
               label="Si, pero no exclusivamente."
@@ -381,7 +439,7 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
                   value="No, gracias"
                   name="distribucion"
                   onChange={handleChange}
-                  error={touched.distribucion}
+                  error={errors.distribucion}
                 />
               }
               label="No, gracias."
@@ -403,6 +461,11 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿Qué tipo de distribución te gustaría?
             </Typography>
+            {touched.tipoDistribucion && errors.tipoDistribucion && (
+              <FormHelperText sx={{ color: "#F50E00" }}>
+                {errors.tipoDistribucion}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio
@@ -429,6 +492,19 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
               }
               label="Quiero que se distribuya en librerías"
             />
+            <FormControlLabel
+              control={
+                <Radio
+                  id="tipoDistribucion"
+                  label="tipoDistribucion"
+                  name="tipoDistribucion"
+                  value="Librerias y miembros de Trashumar"
+                  onChange={handleChange}
+                  error={errors.tipoDistribucion}
+                />
+              }
+              label="Librerias y miembros de Trashumar"
+            />
 
             <Typography
               fontSize={"20px"}
@@ -447,68 +523,112 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
               selectivas a la hora de tomar un libro.
             </Typography>
           </RadioGroup>
-          <FormGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h4"
-              id="ETAPAS"
-              label="ETAPAS"
-              variant="outlined"
-            >
+          <RadioGroup sx={{ m: "10px 0" }}>
+            <Typography component="h5" variant="outlined">
               ¿Qué reconocimiento recibirán?
             </Typography>
+            {touched.reconocimientoDistribucion &&
+              errors.reconocimientoDistribucion && (
+                <FormHelperText sx={{ color: "#F50E00" }}>
+                  {errors.reconocimientoDistribucion}
+                </FormHelperText>
+              )}
+
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="informeDeLectura"
                   label="informeDeLectura"
-                  name="reconocimientoAutor"
+                  name="reconocimientoDistribucion"
                   value="SU NOMBRE EN PORTADA, JUNTO AL MIO"
                   onChange={handleChange}
-                  error={errors.reconocimientoAutor}
+                  error={errors.reconocimientoDistribucion}
                 />
               }
               label="Su nombre en portada, junto al mío."
             />
-            <FormControlLabel
+            {/*             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="CorreccionGramatical"
                   label="CorreccionGramatical"
-                  name="reconocimientoAutor"
+                  name="reconocimientoDistribucion"
                   value="SU NOMBRE EN PORTADA, SIN EL MIO"
                   onChange={handleChange}
-                  error={errors.reconocimientoAutor}
+                  error={errors.reconocimientoDistribucion}
                 />
               }
               label="puedo cubrir la primera tanda de impresiones. (?)"
-            />
+            /> */}
 
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="correccionDeEstilo"
                   label="correccionDeEstilo"
-                  name="reconocimientoAutor"
+                  name="reconocimientoDistribucion"
                   value="SU NOMBRE JUNTO A EL O LOS TEXTOS SUYOS"
                   onChange={handleChange}
-                  error={errors.reconocimientoAutor}
+                  error={errors.reconocimientoDistribucion}
                 />
               }
               label="Su nombre junto a el o los textos suyos."
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="correccionDeEstilo"
-                  name="reconocimientoAutor"
+                  name="reconocimientoDistribucion"
                   value="SU NOMBRE EN EL INICIO DEL LIBRO"
                   onChange={handleChange}
-                  error={errors.reconocimientoAutor}
+                  error={errors.reconocimientoDistribucion}
                 />
               }
               label="Su nombre en el inicio del libro."
             />
-          </FormGroup>
+          </RadioGroup>
+          <Typography component="h5" variant="outlined" sx={{ m: "6px" }}>
+            Contanos más al respecto de tu proyecto
+          </Typography>
+          {touched.contanosMas && errors.contanosMas && (
+            <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+              {errors.contanosMas}
+            </FormHelperText>
+          )}
+          <TextField
+            multiline
+            sx={{
+              mx: "auto",
+              width: "100%",
+              minHeight: "3rem",
+            }}
+            id="contanosMas"
+            value={values.contanosMas}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            label="Mi idea es ...."
+            variant="outlined"
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                value={values.contrato}
+                onChange={handleChange}
+                error={Boolean(errors.contrato)}
+                id="contrato"
+                name="contrato"
+                label="contrato"
+              />
+            }
+            label="Estoy de acuerdo con los términos y condiciones"
+          />
+          <Button
+            sx={{ m: "auto", display: "flex" }}
+            type="submit"
+            variant="contained"
+          >
+            enviar formulario
+          </Button>
         </Form>
       )}
     </Formik>

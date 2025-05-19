@@ -76,11 +76,12 @@ const FormSerieDeTextos = () => {
 
         emailjs
           .send(
-            "service_5p7dbyj",
-            "template_cl61jny",
+            import.meta.env.VITE_EMAILJS_SERVICE_TEXTO_UNICO,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_TEXTO_UNICO,
             templateParams,
-            "UFKZ--VbjyDkKEHnH"
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY_TEXTO_UNICO
           )
+
           .then(
             (response) => {
               alert("Formulario enviado correctamente!");
@@ -104,7 +105,7 @@ const FormSerieDeTextos = () => {
         setFieldValue,
       }) => (
         <Form>
-          <Typography component="h6" variant="outlined" sx={{ m: "6px" }}>
+          <Typography component="h5" variant="outlined" sx={{ m: "6px" }}>
             Empecemos hablando al respecto de tu proyecto
           </Typography>
           {touched.ideaPrincipal && errors.ideaPrincipal && (
@@ -128,12 +129,7 @@ const FormSerieDeTextos = () => {
             variant="outlined"
           />
           <RadioGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h6"
-              id="outlined-basic"
-              label="AUTORES"
-              variant="outlined"
-            >
+            <Typography component="h5" variant="outlined">
               ¿En qué etapa del desarrollo te encontras?
             </Typography>
             {touched.etapaDesarrollo && errors.etapaDesarrollo && (
@@ -147,7 +143,6 @@ const FormSerieDeTextos = () => {
                   id="etapaDesarrollo"
                   label="etapaDesarrollo"
                   name="etapaDesarrollo"
-                  variant="outlined"
                   value="Trabajando en el texto"
                   onChange={handleChange}
                   error={errors.etapaDesarrollo}
@@ -162,7 +157,6 @@ const FormSerieDeTextos = () => {
                   label="etapaDesarrollo"
                   name="etapaDesarrollo"
                   value="manuscrito terminado"
-                  variant="outlined"
                   onChange={handleChange}
                   error={errors.manuscritoTerminado}
                 />
@@ -175,7 +169,6 @@ const FormSerieDeTextos = () => {
                   id="etapaDesarrollo"
                   name="etapaDesarrollo"
                   label="etapaDesarrollo"
-                  variant="outlined"
                   value="Manuscrito terminado y corregido"
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -190,7 +183,6 @@ const FormSerieDeTextos = () => {
                   id="etapaDesarrollo"
                   name="etapaDesarrollo"
                   label="etapaDesarrollo"
-                  variant="outlined"
                   value="Manuscrito listo para publicar"
                   onChange={handleChange}
                   error={errors.listoPublicar}
@@ -201,18 +193,13 @@ const FormSerieDeTextos = () => {
           </RadioGroup>
 
           <RadioGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h6"
-              id="outlined-basic"
-              label="AUTORES"
-              variant="outlined"
-            >
+            <Typography component="h5" variant="outlined">
               {" "}
               ¿El texto esta acompañado de una o mas imagenes?
             </Typography>
-            {touched.imagenesProyectos && errors.imagenesProyectos && (
+            {touched.imagenesProyecto && errors.imagenesProyecto && (
               <FormHelperText sx={{ color: "#F50E00" }}>
-                {errors.imagenesProyectos}
+                {errors.imagenesProyecto}
               </FormHelperText>
             )}
             <FormControlLabel
@@ -222,8 +209,8 @@ const FormSerieDeTextos = () => {
                   label="imagenesProyecto"
                   name="imagenesProyecto"
                   value="imagenes listas"
-                  variant="outlined"
                   onChange={handleChange}
+                  error={errors.imagenesProyecto}
                   onBlur={handleBlur}
                 />
               }
@@ -236,9 +223,9 @@ const FormSerieDeTextos = () => {
                   name="imagenesProyecto"
                   label="imagenesProyecto"
                   value="imagenes a crear"
-                  variant="outlined"
                   onChange={handleChange}
                   onBlur={handleBlur}
+                  error={errors.imagenesProyecto}
                 />
               }
               label="Si, no las tengo listas."
@@ -250,8 +237,8 @@ const FormSerieDeTextos = () => {
                   name="imagenesProyecto"
                   label="imagenesProyecto"
                   value="sin imagenes"
-                  variant="outlined"
                   onChange={handleChange}
+                  error={errors.imagenesProyecto}
                   onBlur={handleBlur}
                 />
               }
@@ -260,7 +247,7 @@ const FormSerieDeTextos = () => {
           </RadioGroup>
 
           <FormGroup sx={{ m: "10px 0" }}>
-            <Typography component="h6" variant="outlined">
+            <Typography component="h5" variant="outlined">
               ¿Qué etapas te hace falta cubrir?
             </Typography>
             {touched.etapaACubrir && errors.etapaACubrir && (
@@ -345,10 +332,10 @@ const FormSerieDeTextos = () => {
           </FormGroup>
           {values.traducir === true ? (
             <Fade triggerOnce>
-              <Typography component="h6" variant="outlined">
+              <Typography component="h5" variant="outlined">
                 Traducción
               </Typography>
-              <Typography component="h6" variant="outlined">
+              <Typography component="h5" variant="outlined">
                 Selecciona el idioma original
               </Typography>
               <FormControl sx={{ m: "10px 0" }} fullWidth>
@@ -371,7 +358,7 @@ const FormSerieDeTextos = () => {
                   <MenuItem value={"japones"}>Japones</MenuItem>
                 </Select>
               </FormControl>
-              <Typography component="h6" variant="outlined">
+              <Typography component="h5" variant="outlined">
                 A que idioma queres traducirlo?
               </Typography>
               <FormControl sx={{ m: "10px 0" }} fullWidth>
@@ -401,7 +388,7 @@ const FormSerieDeTextos = () => {
           )}
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography
-              component="h6"
+              component="h5"
               id="outlined-basic"
               label="AUTORES"
               variant="outlined"
@@ -466,7 +453,7 @@ const FormSerieDeTextos = () => {
               label="No hay trato"
             />
           </RadioGroup>
-          <Typography component="h6" variant="outlined" sx={{ m: "6px" }}>
+          <Typography component="h5" variant="outlined" sx={{ m: "6px" }}>
             Contanos más al respecto de tu proyecto
           </Typography>
           {touched.contanosMas && errors.contanosMas && (
@@ -505,6 +492,19 @@ const FormSerieDeTextos = () => {
             en cuenta tu propuesta y haremos lo posible por publicar tu texto.
             Tené en cuenta que tu aporte acelerara las cosas.
           </Typography>
+          <FormControlLabel
+            control={
+              <Checkbox
+                value={values.contrato}
+                onChange={handleChange}
+                error={Boolean(errors.contrato)}
+                id="contrato"
+                name="contrato"
+                label="contrato"
+              />
+            }
+            label="Estoy de acuerdo con los términos y condiciones"
+          />
           <Button
             sx={{ m: "auto", display: "flex" }}
             type="submit"

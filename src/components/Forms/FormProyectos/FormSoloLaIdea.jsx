@@ -10,6 +10,7 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Button,
 } from "@mui/material";
 import { Form, Formik, useFormik } from "formik";
 import { Fade } from "react-awesome-reveal";
@@ -211,12 +212,10 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                   label="recopilarInformacion"
                   value={values.ProcesoIntervendras}
                   onChange={handleChange}
-                  error={
-                    touched.ProcesoIntervendras && errors.ProcesoIntervendras
-                  }
+                  error={Boolean(errors.ProcesoIntervendras)}
                 />
               }
-              label="RECOPILARE INFORMACIÓN Y HARE DE INTERMEDIARIO"
+              label="Recopilaré información y haré de intermediario"
             />
             <FormControlLabel
               control={
@@ -620,6 +619,26 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             parte, esto se puede acelerar. Tu contrato tendrá en consideración
             estos factores.
           </Typography>
+          <FormControlLabel
+            control={
+              <Checkbox
+                value={values.contrato}
+                onChange={handleChange}
+                error={Boolean(errors.contrato)}
+                id="contrato"
+                name="contrato"
+                label="contrato"
+              />
+            }
+            label="Estoy de acuerdo con los términos y condiciones"
+          />
+          <Button
+            sx={{ m: "auto", display: "flex" }}
+            type="submit"
+            variant="contained"
+          >
+            enviar formulario
+          </Button>
         </Form>
       )}
     </Formik>
