@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Form, Formik } from "formik";
-
+import "./ContactForm.css";
 import emailjs from "emailjs-com";
 
 const ContactForm = () => {
@@ -94,6 +94,20 @@ const ContactForm = () => {
               onBlur={handleBlur}
               error={errors.name && touched.name}
             />
+            {touched.title && errors.title && (
+              <FormHelperText sx={{ color: "#F50E00" }}>
+                {errors.title}
+              </FormHelperText>
+            )}
+            <TextField
+              sx={{ margin: "7px" }}
+              label="Asunto"
+              name="title"
+              value={values.title}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={errors.title && touched.title}
+            />
             {touched.email && errors.email && (
               <FormHelperText sx={{ color: "#F50E00" }}>
                 {errors.email}
@@ -114,21 +128,17 @@ const ContactForm = () => {
               </FormHelperText>
             )}
             <TextareaAutosize
-              style={{
-                width: "25rem",
-                height: "15rem",
-                margin: "7px",
-                backgroundColor: "rgba(180, 250, 250, 0.95)",
-                fontSize: "1.3rem",
-              }}
+              className="textArea"
               minRows={3}
-              label="message"
               name="message"
               value={values.message}
               onBlur={handleBlur}
               onChange={handleChange}
-              error={errors.message && touched.message}
+              placeholder=""
             />
+            <label className="mui-label">Tu mensaje</label>
+            <span className="textArea-underline" />
+
             <Button variant="outlined" type="submit">
               Enviar mensaje
             </Button>

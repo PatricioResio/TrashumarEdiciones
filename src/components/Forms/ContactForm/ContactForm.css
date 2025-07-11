@@ -1,0 +1,59 @@
+.textArea {
+  position: relative;
+  width: 75%;
+  margin-bottom: 6px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  padding: 8px 0 6px 0;
+  border: 1px solid rgba(70, 70, 70, 0.42);
+  border-radius: 4px;
+  outline: none;
+  background: transparent;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.01s;
+}
+
+.textArea:hover {
+  border: 1px solid #070707;
+}
+
+.textArea:focus {
+  border: 2px solid #18c9c9;
+}
+
+/* Label flotante personalizado, opcional */
+.mui-label {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.textArea:focus + .mui-label,
+.textArea:not(:placeholder-shown) + .mui-label {
+  top: -16px;
+  font-size: 12px;
+  color: #1976d2;
+}
+
+/* Línea inferior animada */
+.textArea-underline {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #1976d2;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.textArea:focus ~ .textArea-underline {
+  transform: scaleX(1);
+}
