@@ -5,74 +5,137 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import { Form, Formik } from "formik";
+
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
-  const initialValue = { nombre: "", mensaje: "", email: "" };
-  const [contactForm, setContactForm] = useState([initialValue]);
-  const handlerChange = () => {};
-  const handlerSubmit = () => {};
+  const initialValueContact = {
+    name: "",
+    message: "",
+    email: "",
+    date: "",
+    title: "",
+  };
   return (
-    <>
-      <Box
-        component="form"
-        onSubmit={handlerSubmit}
-        sx={{
-          height: "75vh",
-          width: "100%",
-          display: "flex",
-          bgcolor: "bg.whiteBlue",
-          flexDirection: "column",
-          justifyContent: "start",
-          alignItems: "center",
-        }}
-      >
-        <Typography
-          sx={{ margin: "7px", mt: "100px" }}
-          component="h2"
-          variant="h2"
-        >
-          Querias contactarnos?
-        </Typography>
-        <Typography component="h3" variant="h6">
-          Acá podes hablar sin tapujos
-        </Typography>
-        <TextField
-          sx={{ margin: "7px" }}
-          label="Nombre"
-          name="nombre"
-          variant="outlined"
-          value={contactForm.nombre}
-          onChange={handlerChange}
-        />
-        <TextField
-          sx={{ margin: "7px" }}
-          label="Email"
-          name="email"
-          variant="outlined"
-          value={contactForm.email}
-          onChange={handlerChange}
-          /*           error={!!error && error.includes("Email")} // Error específico
-          helperText={!!error && error.includes("Email") ? error : ""} */
-        />
-        <TextareaAutosize
-          style={{
-            width: "30rem",
-            height: "15rem",
-            margin: "7px",
-            backgroundColor: "bg.whiteBlue",
-          }}
-          minRows={3}
-          label="mensaje"
-          name="mensaje"
-          value={contactForm.mensaje}
-          onChange={handlerChange}
-          /*        error={!!error && error.includes("mensaje")} // Error específico
-          helperText={!!error && error.includes("mensaje") ? error : ""} */
-        />
-        <Button>Enviar mensaje</Button>
-      </Box>
-    </>
+    <Formik
+      initialValues={{
+        initialValueContact,
+      }}
+      onSubmit={(values, { resetForm }) => {
+        const templateParams = {
+          name: values.name,
+          email: values.email,
+          title: values.title,
+          date: getDate(),
+          message: values.message,
+        };
+        emailjs
+
+          .send(
+            import.meta.env.VITE_EMAILJS_SERVICE_CONTACT,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
+            templateParams,
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY_CONTACT
+          )
+          .then(
+            (response) => {
+              alert("Formulario enviado correctamente!");
+              resetForm();
+            },
+            (error) => {
+              console.error("Error al enviar el formulario:", error);
+              alert(
+                "Ocurrió un error al enviar el formulario. Intenta nuevamente."
+              );
+            }
+          );
+      }}
+    >
+      {({ values, handleChange, handleBlur, errors, touched }) => (
+        <Form>
+          <Box
+            sx={{
+              height: "75vh",
+              width: "95%",
+              m: "auto",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "start",
+              alignItems: "center",
+              backgroundColor: "rgba(149, 247, 247, 0.95)",
+            }}
+          >
+            <Typography
+              sx={{ my: "1.5rem", color: "secondary.main" }}
+              component="h2"
+              variant="h2"
+            >
+              Querias contactarnos?
+            </Typography>
+            <Typography
+              component="h3"
+              variant="h6"
+              sx={{ color: "secondary.main" }}
+            >
+              Acá podes hablar sin tapujos
+            </Typography>
+            {touched.name && errors.name && (
+              <FormHelperText sx={{ color: "#F50E00" }}>
+                {errors.name}
+              </FormHelperText>
+            )}
+            <TextField
+              sx={{ margin: "7px" }}
+              label="Nombre"
+              name="name"
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              error={errors.name && touched.name}
+            />
+            {touched.email && errors.email && (
+              <FormHelperText sx={{ color: "#F50E00" }}>
+                {errors.email}
+              </FormHelperText>
+            )}
+            <TextField
+              sx={{ margin: "7px" }}
+              label="Email"
+              name="email"
+              value={values.email}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              error={errors.email && touched.email}
+            />
+            {touched.message && errors.message && (
+              <FormHelperText sx={{ color: "#F50E00" }}>
+                {errors.message}
+              </FormHelperText>
+            )}
+            <TextareaAutosize
+              style={{
+                width: "25rem",
+                height: "15rem",
+                margin: "7px",
+                backgroundColor: "rgba(180, 250, 250, 0.95)",
+                fontSize: "1.3rem",
+              }}
+              minRows={3}
+              label="message"
+              name="message"
+              value={values.message}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              error={errors.message && touched.message}
+            />
+            <Button variant="outlined" type="submit">
+              Enviar mensaje
+            </Button>
+          </Box>
+        </Form>
+      )}
+    </Formik>
   );
 };
 

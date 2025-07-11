@@ -50,8 +50,6 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
       }}
       validationSchema={validationContenidoAutor}
       onSubmit={(values, { resetForm }) => {
-        console.log("values:", values);
-
         const templateParams = {
           formato: values.formato,
           idea: values.idea,
@@ -81,7 +79,6 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
             ? values.idiomaATraducir != "" || values.idiomaATraducir
             : "No aplica",
         };
-        console.log("templateParams:", templateParams);
         emailjs
 
           .send(

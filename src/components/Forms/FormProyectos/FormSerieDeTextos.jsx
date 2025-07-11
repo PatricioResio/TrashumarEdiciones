@@ -48,10 +48,8 @@ const FormSerieDeTextos = () => {
           !values.acuerdoComercial
         ) {
           alert("Debes completar todos los campos obligatorios.");
-          console.log(values);
           return;
         }
-        console.log("values:", values);
         const templateParams = {
           userName: currentUser ? currentUser.nombre : "No especificado",
           userEmail: currentUser ? currentUser.email : "No especificado",
@@ -61,8 +59,6 @@ const FormSerieDeTextos = () => {
           ideaPrincipal: values.ideaPrincipal,
           contanosMas: values.contanosMas,
           acuerdoComercial: values.acuerdoComercial,
-          /*          acuerdoComercialPorcentaje:
-            values.acuerdoComercialPorcentaje || "No especificado", */
           traducir: values.traducir ? "Sí" : "No",
           idiomaOriginal: values.traducir ? values.idiomaOriginal : "No aplica",
           idiomaATraducir: values.traducir
@@ -71,9 +67,6 @@ const FormSerieDeTextos = () => {
           etapaDesarrollo: values.etapaDesarrollo,
           imagenesProyecto: values.imagenesProyecto,
         };
-
-        console.log("templateParams:", templateParams);
-
         emailjs
           .send(
             import.meta.env.VITE_EMAILJS_SERVICE_TEXTO_UNICO,

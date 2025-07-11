@@ -15,7 +15,6 @@ import {
 } from "@mui/material";
 import { Formik, Form } from "formik";
 import emailjs from "emailjs-com";
-import { Fade } from "react-awesome-reveal";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { validationContenidoAjeno } from "../ValidationSchemas/ValidationSchemas";
@@ -37,8 +36,6 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
       }}
       validationSchema={validationContenidoAjeno}
       onSubmit={(values, { resetForm }) => {
-        console.log("values:", values);
-
         const templateParams = {
           formato: posicionForm,
           idea: posicionForm2,
@@ -82,7 +79,6 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
           distribucionLibro: values.distribucionLibro,
           tipoDistribucion: values.tipoDistribucion,
         };
-        console.log("templateParams:", templateParams);
         emailjs
 
           .send(

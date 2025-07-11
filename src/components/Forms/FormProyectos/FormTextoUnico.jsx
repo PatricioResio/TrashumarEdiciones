@@ -41,7 +41,6 @@ const FormTextoUnico = () => {
       }}
       validationSchema={validationTextoUnico}
       onSubmit={(values, { resetForm }) => {
-        console.log("values:", values);
         const templateParams = {
           userName: currentUser ? currentUser.nombre : "No especificado",
           userEmail: currentUser ? currentUser.email : "No especificado",
@@ -49,8 +48,6 @@ const FormTextoUnico = () => {
           formato: values.formato,
           contanosMas: values.contanosMas,
           acuerdoComercial: values.acuerdoComercial,
-          /*          acuerdoComercialPorcentaje:
-            values.acuerdoComercialPorcentaje || "No especificado", */
           traducir: values.traducir ? "Sí" : "No",
           idiomaOriginal: values.traducir ? values.idiomaOriginal : "No aplica",
           idiomaATraducir: values.traducir
@@ -60,9 +57,6 @@ const FormTextoUnico = () => {
           imagenesProyecto: values.imagenesProyecto,
           ideaPrincipal: values.ideaPrincipal,
         };
-
-        console.log("templateParams:", templateParams);
-
         emailjs
           .send(
             import.meta.env.VITE_EMAILJS_SERVICE_TEXTO_UNICO,

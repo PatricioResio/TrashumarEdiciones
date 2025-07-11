@@ -86,6 +86,16 @@ const validationContenidoAjeno = yup.object().shape({
     .min(20, "Escribe al menos 20 caracteres para explicar tu proyecto.")
     .required("Este campo es obligatorio."),
 });
+const validationSoloLaIdea = yup.object().shape({
+  relacionIdeaOriginal: yup.string().required("Este campo es obligatorio."),
+  limitacionesPresupuestarias: yup
+    .string()
+    .required("Este campo es obligatorio."),
+  contanosMas: yup
+    .string()
+    .min(20, "Escribe al menos 20 caracteres para explicar tu proyecto.")
+    .required("Este campo es obligatorio."),
+});
 
 const validationTextoUnico = yup.object().shape({
   etapaDesarrollo: yup.string().required("El campo es obligatorio"),
@@ -100,4 +110,5 @@ export {
   validationTextoUnico,
   validationContenidoAutor,
   validationContenidoAjeno,
+  validationSoloLaIdea,
 };

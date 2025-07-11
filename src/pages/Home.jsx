@@ -1,5 +1,4 @@
 import { Box, Typography } from "@mui/material";
-/* import ContenedorProyectos from "../components/Home/ContenedorProyectos/ContenedorProyectos";*/
 import ContenedorPerfiles from "../components/Home/ContenedorPerfiles/ContenedorPerfiles";
 import CarruselHome from "../components/Home/CarruselHome/CarruselHome";
 import { Fade } from "react-awesome-reveal";
@@ -29,44 +28,7 @@ const Home = () => {
       >
         <ArticleDestacado />
         <BannerCuerpo />
-        {/*      <Box
-          bgcolor="bg.whiteBlue"
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "5px",
-            width: "100%",
-            my: "7rem",
-          }}
-        >
-          <Fade triggerOnce>
-            <Typography
-              color="secondary"
-              component="h3"
-              variant="h3"
-              sx={{
-                m: "2rem",
-              }}
-            >
-              Proyectos
-            </Typography>
-            <Typography
-              component="h5"
-              variant="h5"
-              color="secondary"
-              sx={{
-                m: "1rem auto",
-                width: "50%",
-              }}
-            >
-              Descubrí historias, proyectos y talentos. Sumate a las redes que
-              tejemos entre todos. Conectá con quienes pueden inspirarte o ser
-              parte de tus próximos proyectos
-            </Typography>
-            <ContenedorProyectos />
-          </Fade>
-        </Box>
- */}
+
         <Box
           bgcolor="bg.whiteBlue"
           sx={{

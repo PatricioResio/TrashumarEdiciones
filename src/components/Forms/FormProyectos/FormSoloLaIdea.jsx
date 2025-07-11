@@ -6,15 +6,12 @@ import {
   FormControlLabel,
   RadioGroup,
   Radio,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
   Button,
+  FormHelperText,
 } from "@mui/material";
-import { Form, Formik, useFormik } from "formik";
-import { Fade } from "react-awesome-reveal";
-import { validationProyecto } from "../ValidationSchemas/ValidationSchemas";
+import { Form, Formik } from "formik";
+import emailjs from "emailjs-com";
+import { validationSoloLaIdea } from "../ValidationSchemas/ValidationSchemas";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 
@@ -29,61 +26,93 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
         userEmail: currentUser ? currentUser.email : "No especificado",
         userUid: currentUser ? currentUser.uid : "No especificado",
         userTelefono: currentUser ? currentUser.telefono : "No especificado",
-        rolEnLaObra: "",
         contanosMas: "",
-        rolEnElLibro: "",
-        otroAutor: "",
-        acuerdoComercial: "",
-        acuerdoComercialPorcentaje: "",
-        etapaDesarrollo: "",
-        distribucionLibro: "",
-        tipoDistribucion: "",
-        manuscritoTerminado: false,
-        manuscritoTerminadoCorregido: false,
-        listoPublicar: false,
+        relacionIdeaOriginal: "",
+        guiareArmado: false,
+        recopilarInformacion: false,
+        controlarContenido: false,
+        noIntervendre: false,
+        textosEscritosPorMi: false,
+        tengoInformacionAlRespecto: false,
+        tengoIdeasYPropuestas: false,
+        noTengoNadaPensado: false,
+        entrevistas: false,
+        escrituraIntegral: false,
+        escrituraParcial: false,
         informeDeLectura: false,
-        correccionGramatical: false,
-        correccionEstilos: false,
         disenioImagenes: false,
-        traducir: false,
-        idiomaOriginal: "",
-        idiomaATraducir: "",
+        correccionGramaticalYEstilos: false,
+        fotografia: false,
+        arteTapa: false,
+        edicionMaquetacion: false,
+        limitacionesPresupuestarias: "",
       }}
-      validationSchema={validationProyecto}
+      validationSchema={validationSoloLaIdea}
       onSubmit={(values, { resetForm }) => {
-        console.log("values:", values);
         const templateParams = {
           formato: values.formato,
-          rolEnLaObra: values.rolEnLaObra,
-          contanosMas: values.contanosMas,
+          idea: values.idea,
+          userName: currentUser ? currentUser.nombre : "No especificado",
+          userEmail: currentUser ? currentUser.email : "No especificado",
+          userTelefono: currentUser ? currentUser.telefono : "No especificado",
           relacionIdeaOriginal: values.relacionIdeaOriginal,
-          acuerdoComercialPorcentaje:
-            values.acuerdoComercialPorcentaje || "No especificado",
-          manuscritoTerminado: values.manuscritoTerminado ? "Sí" : "No",
-          manuscritoTerminadoCorregido: values.manuscritoTerminadoCorregido
-            ? "Sí"
-            : "No",
-          listoPublicar: values.listoPublicar ? "Sí" : "No",
-          informeDeLectura: values.informeDeLectura ? "Sí" : "No",
-          correccionGramatical: values.correccionGramatical ? "Sí" : "No",
-          correccionEstilos: values.correccionEstilos ? "Sí" : "No",
-          traducir: values.traducir ? "Sí" : "No",
-          idiomaOriginal: values.traducir ? values.idiomaOriginal : "No aplica",
-          idiomaATraducir: values.traducir
-            ? values.idiomaATraducir
-            : "No aplica",
-          distribucionLibro: values.distribucionLibro || "No especificado",
-          tipoDistribucion: values.tipoDistribucion || "No especificado",
-          etapaDesarrollo: values.etapaDesarrollo || "No especificado",
+          guiareArmado: !values.guiareArmado
+            ? ""
+            : "Guiaré el armado del libro",
+          recopilarInformacion: !values.recopilarInformacion
+            ? ""
+            : "Recopilaré información y haré de intermediario",
+          controlarContenido: !values.controlarContenido
+            ? ""
+            : "Controlaré el contenido que se produce",
+          noIntervendre: !values.noIntervendre
+            ? ""
+            : "No intervendré en absoluto",
+
+          textosEscritosPorMi: !values.textosEscritosPorMi
+            ? ""
+            : "Tengo textos escritos por mi",
+          tengoInformacionAlRespecto: !values.tengoInformacionAlRespecto
+            ? ""
+            : "Tengo información al respecto",
+          tengoIdeasYPropuestas: !values.tengoIdeasYPropuestas
+            ? ""
+            : "Tengo ideas y propuestas",
+          noTengoNadaPensado: !values.noTengoNadaPensado
+            ? ""
+            : "No tengo nada pensado",
+          entrevistas: !values.entrevistas
+            ? ""
+            : "Entrevistas, estudio y bibliografía",
+          escrituraIntegral: !values.escrituraIntegral
+            ? ""
+            : "Escritura integral del texto",
+          escrituraParcial: !values.escrituraParcial
+            ? ""
+            : "Escritura parcial del texto",
+          informeDeLectura: !values.informeDeLectura
+            ? ""
+            : "Informe de lectura",
+          disenioImagenes: !values.disenioImagenes ? "" : "Diseño e imágenes",
+          correccionGramaticalYEstilos: !values.correccionGramaticalYEstilos
+            ? ""
+            : "Corrección gramatical y estilos",
+          fotografia: !values.fotografia ? "" : "Fotografía",
+          arteTapa: !values.arteTapa ? "" : "Arte de tapa y contratapa",
+          edicionMaquetacion: !values.edicionMaquetacion
+            ? ""
+            : "Edición y maquetación",
+
+          limitacionesPresupuestarias: values.limitacionesPresupuestarias,
+          contanosMas: values.contanosMas,
         };
-        console.log("templateParams:", templateParams);
         emailjs
 
           .send(
-            "service_5p7dbyj",
-            "template_95bik24",
+            import.meta.env.VITE_EMAILJS_SERVICE_CONTENIDO_AJENO,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_SOLO_IDEA,
             templateParams,
-            "jOUKbByhllu5OVumL"
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY_CONTENIDO_AJENO
           )
           .then(
             (response) => {
@@ -99,14 +128,7 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
           );
       }}
     >
-      {({
-        values,
-        handleChange,
-        handleBlur,
-        errors,
-        touched,
-        setFieldValue,
-      }) => (
+      {({ values, handleChange, handleBlur, errors, touched }) => (
         <Form>
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography
@@ -127,6 +149,11 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿Qué relación tenes vos con la idea original?
             </Typography>
+            {touched.relacionIdeaOriginal && errors.relacionIdeaOriginal && (
+              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                {errors.relacionIdeaOriginal}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio
@@ -184,15 +211,16 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿En qué procesos intervendrás?
             </Typography>
+
             <FormControlLabel
               control={
                 <Checkbox
                   id="guiareArmado"
                   label="guiareArmado"
-                  name="ProcesoIntervendras"
-                  value={values.ProcesoIntervendras}
+                  name="guiareArmado"
+                  value={values.guiareArmado}
                   onChange={handleChange}
-                  error={Boolean(errors.ProcesoIntervendras)}
+                  error={Boolean(errors.guiareArmado)}
                 />
               }
               label="Guiaré el armado del libro"
@@ -202,9 +230,10 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="recopilarInformacion"
                   label="recopilarInformacion"
-                  value={values.ProcesoIntervendras}
+                  name="recopilarInformacion"
+                  value={values.recopilarInformacion}
                   onChange={handleChange}
-                  error={Boolean(errors.ProcesoIntervendras)}
+                  error={Boolean(errors.recopilarInformacion)}
                 />
               }
               label="Recopilaré información y haré de intermediario"
@@ -214,9 +243,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="controlarContenido"
                   label="controlarContenido"
-                  name="procesoIntervendras"
-                  error={Boolean(errors.procesoIntervendras)}
-                  value={values.procesoIntervendras}
+                  name="controlarContenido"
+                  error={Boolean(errors.controlarContenido)}
+                  value={values.controlarContenido}
                   onChange={handleChange}
                 />
               }
@@ -227,9 +256,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="noIntervendre"
                   label="noIntervendre"
-                  name="procesoIntervendras"
-                  error={Boolean(errors.procesoIntervendras)}
-                  value={values.procesoIntervendras}
+                  name="noIntervendre"
+                  error={Boolean(errors.noIntervendre)}
+                  value={values.noIntervendre}
                   onChange={handleChange}
                 />
               }
@@ -240,14 +269,15 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿Tenes material previo?
             </Typography>
+
             <FormControlLabel
               control={
                 <Checkbox
                   id="textosEscritosPorMi"
                   label="textosEscritosPorMi"
-                  name="materialPrevio"
-                  error={Boolean(errors.materialPrevio)}
-                  value={values.materialPrevio}
+                  name="textosEscritosPorMi"
+                  error={Boolean(errors.textosEscritosPorMi)}
+                  value={values.textosEscritosPorMi}
                   onChange={handleChange}
                 />
               }
@@ -258,9 +288,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="tengoInformacionAlRespecto"
                   label="tengoInformacionAlRespecto"
-                  name="materialPrevio"
-                  error={Boolean(errors.materialPrevio)}
-                  value={values.materialPrevio}
+                  name="tengoInformacionAlRespecto"
+                  error={Boolean(errors.tengoInformacionAlRespecto)}
+                  value={values.tengoInformacionAlRespecto}
                   onChange={handleChange}
                 />
               }
@@ -271,9 +301,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="tengoIdeasYPropuestas"
                   label="tengoIdeasYPropuestas"
-                  name="materialPrevio"
-                  error={Boolean(errors.materialPrevio)}
-                  value={values.materialPrevio}
+                  name="tengoIdeasYPropuestas"
+                  error={Boolean(errors.tengoIdeasYPropuestas)}
+                  value={values.tengoIdeasYPropuestas}
                   onChange={handleChange}
                 />
               }
@@ -284,137 +314,16 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="noTengoNadaPensado"
                   label="noTengoNadaPensado"
-                  name="materialPrevio"
-                  error={Boolean(errors.materialPrevio)}
-                  value={values.materialPrevio}
+                  name="noTengoNadaPensado"
+                  error={Boolean(errors.noTengoNadaPensado)}
+                  value={values.noTengoNadaPensado}
                   onChange={handleChange}
                 />
               }
               label="No tengo nada pensado"
             />
           </FormGroup>
-          {/* <FormGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h5"
-              variant="outlined"
-            >
-              ¿En qué procesos intervendrás?
-            </Typography>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="guiareArmado"
-                  label="guiareArmado"
-                  variant="outlined"
-                  value={values.guiareArmado}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="GUIARÉ EL ARMADO DEL LIBRO"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="recopilarInformacion"
-                  label="recopilarInformacion"
-                  variant="outlined"
-                  value={values.recopilarInformacion}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="RECOPILARE INFORMACIÓN Y HARE DE INTERMEDIARIO"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="controlarContenido"
-                  label="controlarContenido"
-                  variant="outlined"
-                  value={values.controlarContenido}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="CONTROLARE EL CONTENIDO QUE SE PRODUCE"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="noIntervendre"
-                  label="noIntervendre"
-                  variant="outlined"
-                  value={values.noIntervendre}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="NO INTERVENDRÉ EN ABSOLUTO"
-            />
-          </FormGroup>
-          <FormGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h5"
-              id="outlined-basic"
-              label="AUTORES"
-              variant="outlined"
-            >
-              ¿Tenes material previo?
-            </Typography>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="textosEscritosPorMi"
-                  label="textosEscritosPorMi"
-                  variant="outlined"
-                  value={values.textosEscritosPorMi}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="TENGO TEXTOS ESCRITOS POR MÍ"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="tengoInformacionAlRespecto"
-                  label="tengoInformacionAlRespecto"
-                  variant="outlined"
-                  value={values.tengoInformacionAlRespecto}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="TENGO INFORMACIÓN AL RESPECTO"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="tengoIdeasYPropuestas"
-                  label="tengoIdeasYPropuestas"
-                  variant="outlined"
-                  value={values.tengoIdeasYPropuestas}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="TENGO IDEAS Y PROPUESTAS"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  id="noTengoNadaPensado"
-                  label="noTengoNadaPensado"
-                  variant="outlined"
-                  value={values.noTengoNadaPensado}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                />
-              }
-              label="NO TENGO NADA PENSADO"
-            />
-          </FormGroup> */}
+
           <FormGroup sx={{ m: "10px 0" }}>
             <Typography component="h5" variant="outlined">
               ¿Qué etapas te hace falta cubrir?
@@ -424,9 +333,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="entrevistasEstudioYBibliografia"
                   label="entrevistasEstudioYBibliografia"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="entrevistas"
+                  value={values.entrevistas}
+                  error={Boolean(errors.entrevistas)}
                   onChange={handleChange}
                 />
               }
@@ -437,9 +346,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="escrituraIntegralDelTexto"
                   label="escrituraIntegralDelTexto"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="escrituraIntegral"
+                  value={values.escrituraIntegral}
+                  error={Boolean(errors.escrituraIntegral)}
                   onChange={handleChange}
                 />
               }
@@ -450,9 +359,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="escrituraParcialDelTexto"
                   label="escrituraParcialDelTexto"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="escrituraParcial"
+                  value={values.escrituraParcial}
+                  error={Boolean(errors.escrituraParcial)}
                   onChange={handleChange}
                 />
               }
@@ -463,9 +372,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="informeLectura"
                   label="informeLectura"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="informeDeLectura"
+                  value={values.informeDeLectura}
+                  error={Boolean(errors.informeDeLectura)}
                   onChange={handleChange}
                 />
               }
@@ -476,9 +385,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="disenioEImagenes"
                   label="disenioEImagenes"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="disenioImagenes"
+                  value={values.disenioImagenes}
+                  error={Boolean(errors.disenioImagenes)}
                   onChange={handleChange}
                 />
               }
@@ -489,9 +398,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="correccionGramaticalYEstilos"
                   label="correccionGramaticalYEstilos"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="correccionGramaticalYEstilos"
+                  value={values.correccionGramaticalYEstilos}
+                  error={Boolean(errors.correccionGramaticalYEstilos)}
                   onChange={handleChange}
                 />
               }
@@ -502,9 +411,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="fotografia"
                   label="fotografia"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="fotografia"
+                  value={values.fotografia}
+                  error={Boolean(errors.fotografia)}
                   onChange={handleChange}
                 />
               }
@@ -515,9 +424,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="arteDeTapayContratapa"
                   label="arteDeTapayContratapa"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="arteTapa"
+                  value={values.arteTapa}
+                  error={Boolean(errors.arteTapa)}
                   onChange={handleChange}
                 />
               }
@@ -528,9 +437,9 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="edicionYMaquetacion"
                   label="edicionYMaquetacion"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
-                  error={Boolean(errors.etapaACubrir)}
+                  name="edicionMaquetacion"
+                  value={values.edicionMaquetacion}
+                  error={Boolean(errors.edicionMaquetacion)}
                   onChange={handleChange}
                 />
               }
@@ -541,19 +450,20 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿Qué posición tendrías ante limitaciones presupuestarias?
             </Typography>
-            {touched.acuerdoComercial && errors.acuerdoComercial && (
-              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
-                {errors.acuerdoComercial}
-              </FormHelperText>
-            )}
+            {touched.limitacionesPresupuestarias &&
+              errors.limitacionesPresupuestarias && (
+                <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                  {errors.limitacionesPresupuestarias}
+                </FormHelperText>
+              )}
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="puedoCubrirTrabajo"
+                  label="puedoCubrirTrabajo"
                   value="puedo cubrir el trabajo de mis colegas aunque mi pago quede pendiente"
-                  name="posicionLimitacionesPresupuestarias"
-                  error={errors.acuerdoComercial}
+                  name="limitacionesPresupuestarias"
+                  error={errors.limitacionesPresupuestarias}
                   onChange={handleChange}
                 />
               }
@@ -562,11 +472,11 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="prefieroQueLoCubraEditorial"
+                  label="prefieroQueLoCubraEditorial"
                   value="prefiero que lo cubra la editorial aunque mi pago quede pendiente"
-                  name="posicionLimitacionesPresupuestarias"
-                  error={errors.acuerdoComercial}
+                  name="limitacionesPresupuestarias"
+                  error={errors.limitacionesPresupuestarias}
                   onChange={handleChange}
                 />
               }
@@ -575,11 +485,11 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="loQuieroHacerAdHonorem"
+                  label="loQuieroHacerAdHonorem"
                   value="lo quiero hacer ad honorem"
-                  name="posicionLimitacionesPresupuestarias"
-                  error={errors.acuerdoComercial}
+                  name="limitacionesPresupuestarias"
+                  error={errors.limitacionesPresupuestarias}
                   onChange={handleChange}
                 />
               }
@@ -588,17 +498,42 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="noHayTrato"
+                  label="noHayTrato"
                   value="no hay trato"
-                  name="posicionLimitacionesPresupuestarias"
-                  error={errors.acuerdoComercial}
+                  name="limitacionesPresupuestarias"
+                  error={errors.limitacionesPresupuestarias}
                   onChange={handleChange}
                 />
               }
               label="No hay trato"
             />
           </RadioGroup>
+          <Typography component="h5" variant="outlined" sx={{ m: "6px" }}>
+            Contanos sobre tu idea
+          </Typography>
+          {touched.contanosMas && errors.contanosMas && (
+            <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+              {errors.contanosMas}
+            </FormHelperText>
+          )}
+          <TextField
+            multiline
+            sx={{
+              mx: "auto",
+              mb: "10px",
+              width: "90%",
+              minHeight: "3rem",
+            }}
+            id="contanosMas"
+            name="contanosMas"
+            label="Pensa que el contexto es importante..."
+            value={values.contanosMas}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.contanosMas && errors.contanosMas}
+            variant="outlined"
+          />
           <Typography
             fontSize={"20px"}
             color={"secondary.white"}
