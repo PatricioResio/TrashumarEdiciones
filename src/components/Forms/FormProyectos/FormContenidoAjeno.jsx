@@ -11,11 +11,15 @@ import {
   Select,
   MenuItem,
   Button,
+  FormHelperText,
 } from "@mui/material";
 import { Formik, Form } from "formik";
+import emailjs from "emailjs-com";
 import { Fade } from "react-awesome-reveal";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthContext";
+import { validationContenidoAjeno } from "../ValidationSchemas/ValidationSchemas";
+import { initialValuesContenidoAjeno } from "../TemplatesParams/TemplateParams";
 
 const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
   const { currentUser } = useContext(AuthContext);
@@ -28,73 +32,64 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
         userEmail: currentUser ? currentUser.email : "No especificado",
         userUid: currentUser ? currentUser.uid : "No especificado",
         userTelefono: currentUser ? currentUser.telefono : "No especificado",
-        rolEnLaObra: "",
-        contanosMas: "",
-        rolEnElLibro: "",
-        otroAutor: "",
-        acuerdoComercial: "",
-        acuerdoComercialPorcentaje: "",
-        acuerdoComercialNoAutor: "",
-        reconocimientoAutor: "",
-        etapaDesarrollo: "",
-        distribucionLibro: "",
-        tipoDistribucion: "",
-        manuscritoTerminado: false,
-        manuscritoTerminadoCorregido: false,
-        listoPublicar: false,
-        informeDeLectura: false,
-        correccionGramatical: false,
-        correccionEstilos: false,
-        disenioImagenes: false,
-        traducir: false,
-        idiomaOriginal: "",
-        idiomaATraducir: "",
+
+        ...initialValuesContenidoAjeno,
       }}
-      /*   validationSchema: validationProyecto, */
+      validationSchema={validationContenidoAjeno}
       onSubmit={(values, { resetForm }) => {
-        if (
-          !values.formato ||
-          !values.contanosMas ||
-          !values.imagenesProyecto ||
-          !values.acuerdoComercial
-        ) {
-          alert("Debes completar todos los campos obligatorios.");
-          console.log(values);
-          return;
-        }
         console.log("values:", values);
+
         const templateParams = {
-          formato: values.formato,
-          rolEnLaObra: values.rolEnLaObra,
+          formato: posicionForm,
+          idea: posicionForm2,
+          userName: currentUser ? currentUser.nombre : "No especificado",
+          userEmail: currentUser ? currentUser.email : "No especificado",
+          userTelefono: currentUser ? currentUser.telefono : "No especificado",
+          informeDeLecturaRol: !values.informeDeLecturaRol
+            ? ""
+            : "Yo realizo el informe de lectura",
+          correccionGramaticalRol: !values.correccionGramaticalRol
+            ? ""
+            : "Yo realizo la corrección gramatical",
+          correccionEstilosRol: !values.correccionEstilosRol
+            ? ""
+            : "Yo realizo la corrección de estilos",
+          edicionMaquetacionRol: !values.edicionMaquetarRol
+            ? ""
+            : "Yo realizo la edición y maquetación",
+          disenioImagenesRol: !values.disenioImagenesRol
+            ? ""
+            : "Yo realizo el diseño de imágenes internas",
+          traducirRol: !values.traducirRol ? "" : "Yo realizo la traducción",
+          rolAutorEnLaObra: values.rolAutorEnLaObra,
+          reconocimientoAutor: values.reconocimientoAutor,
+          acuerdoComercialNoAutor: values.acuerdoComercialNoAutor,
           contanosMas: values.contanosMas,
-          acuerdoComercial: values.acuerdoComercial,
-          acuerdoComercialPorcentaje:
-            values.acuerdoComercialPorcentaje || "No especificado",
-          manuscritoTerminado: values.manuscritoTerminado ? "Sí" : "No",
-          manuscritoTerminadoCorregido: values.manuscritoTerminadoCorregido
-            ? "Sí"
-            : "No",
-          listoPublicar: values.listoPublicar ? "Sí" : "No",
+          etapaDesarrollo: values.etapaDesarrollo,
           informeDeLectura: values.informeDeLectura ? "Sí" : "No",
           correccionGramatical: values.correccionGramatical ? "Sí" : "No",
           correccionEstilos: values.correccionEstilos ? "Sí" : "No",
+          disenioImagenes: values.disenioImagenes ? "Sí" : "No",
+          edicionMaquetacion: values.edicionMaquetacion ? "Sí" : "No",
+          arteTapa: values.arteTapa ? "Sí" : "No",
+          todoListo: values.todoListo ? "tenemos todo listo" : "No",
           traducir: values.traducir ? "Sí" : "No",
           idiomaOriginal: values.traducir ? values.idiomaOriginal : "No aplica",
           idiomaATraducir: values.traducir
             ? values.idiomaATraducir
             : "No aplica",
-          distribucionLibro: values.distribucionLibro || "No especificado",
-          tipoDistribucion: values.tipoDistribucion || "No especificado",
-          etapaDesarrollo: values.etapaDesarrollo || "No especificado",
+          limitacionesPresupuestarias: values.limitacionesPresupuestarias,
+          distribucionLibro: values.distribucionLibro,
+          tipoDistribucion: values.tipoDistribucion,
         };
         console.log("templateParams:", templateParams);
         emailjs
 
           .send(
-            "service_5p7dbyj",
-            "template_95bik24",
+            import.meta.env.VITE_EMAILJS_SERVICE_CONTENIDO_AJENO,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_CONTENIDO_AJENO,
             templateParams,
-            "jOUKbByhllu5OVumL"
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY_CONTENIDO_AJENO
           )
           .then(
             (response) => {
@@ -110,34 +105,21 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
           );
       }}
     >
-      {({
-        values,
-        handleChange,
-        handleBlur,
-        errors,
-        touched,
-        setFieldValue,
-      }) => (
+      {({ values, handleChange, handleBlur, errors, touched }) => (
         <Form>
           <FormGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h5"
-              id="outlined-basic"
-              label="AUTORES"
-              variant="outlined"
-            >
+            <Typography component="h5" variant="outlined">
               ¿Qué rol cumplís en el libro?
             </Typography>
             <FormControlLabel
               control={
                 <Checkbox
-                  id="informeDeLectura"
-                  label="informeDeLectura"
-                  variant="outlined"
-                  name="rolEnElLibro"
-                  value="Contenido de mi autoria"
+                  id="informeDeLecturaRol"
+                  label="informeDeLecturaRol"
+                  name="informeDeLecturaRol"
+                  value={values.informeDeLecturaRol}
                   onChange={handleChange}
-                  error={errors.rolEnElLibro}
+                  error={Boolean(errors.informeDeLecturaRol)}
                 />
               }
               label="Informe de lectura"
@@ -147,11 +129,10 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="Editar"
                   label="Editar"
-                  variant="outlined"
-                  name="rolEnElLibro"
-                  value="CORRECCIÓN GRAMATICAL"
+                  name="correccionGramaticalRol"
+                  value={values.correccionGramaticalRol}
                   onChange={handleChange}
-                  error={errors.rolEnElLibro}
+                  error={Boolean(errors.correccionGramaticalRol)}
                 />
               }
               label="Corrección gramatical"
@@ -159,12 +140,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Checkbox
-                  id="rolEnElLibro"
-                  label="rolEnElLibro"
-                  name="rolEnElLibro"
-                  value="CORRECCIÓN DE ESTILO"
+                  id="correccionEstilosRol"
+                  label="correccionEstilosRol"
+                  name="correccionEstilosRol"
+                  value={values.correccionEstilosRol}
                   onChange={handleChange}
-                  error={errors.rolEnElLibro}
+                  error={Boolean(errors.correccionEstilosRol)}
                 />
               }
               label="Corrección de estilo"
@@ -172,12 +153,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Checkbox
-                  id="rolEnElLibro"
-                  label="rolEnElLibro"
-                  name="rolEnElLibro"
-                  value="EDICIÓN Y MAQUETACIÓN"
+                  id="editarYMaquetarRol"
+                  label="editarYMaquetarRol"
+                  name="editarYMaquetarRol"
+                  value={values.editarYMaquetarRol}
                   onChange={handleChange}
-                  error={errors.rolEnElLibro}
+                  error={Boolean(errors.editarYMaquetarRol)}
                 />
               }
               label="Edición y maquetación"
@@ -185,86 +166,49 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Checkbox
-                  id="traducir"
-                  label="traducir"
-                  name="traducir"
-                  value={values.traducir}
+                  id="disenioImagenesRol"
+                  label="disenioImagenesRol"
+                  name="disenioImagenesRol"
+                  value={values.disenioImagenesRol}
                   onChange={handleChange}
-                  error={errors.traducir}
+                  error={Boolean(errors.disenioImagenesRol)}
+                />
+              }
+              label="Diseño de imagenes"
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  id="traducirRol"
+                  label="traducirRol"
+                  name="traducirRol"
+                  value={values.traducirRol}
+                  onChange={handleChange}
+                  error={Boolean(errors.traducirRol)}
                 />
               }
               label="Traducir"
             />
           </FormGroup>
-          {values.traducir === true ? (
-            <Fade>
-              <Typography component="h5" variant="outlined">
-                Traducción
-              </Typography>
-              <Typography component="h5" variant="outlined">
-                Selecciona el idioma original
-              </Typography>
-              <FormControl sx={{ m: "10px 0" }} fullWidth>
-                <InputLabel>Idioma original</InputLabel>
-                <Select
-                  name="idiomaOriginal"
-                  id="idiomaOriginal"
-                  label="idiomaOriginal"
-                  value={values.idiomaOriginal}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={
-                    touched.idiomaOriginal && Boolean(errors.idiomaOriginal)
-                  }
-                >
-                  <MenuItem value={10}>Español (latinoamerica)</MenuItem>
-                  <MenuItem value={20}>Ingles</MenuItem>
-                  <MenuItem value={30}>Frances</MenuItem>
-                  <MenuItem value={40}>Aleman</MenuItem>
-                  <MenuItem value={50}>Portugues</MenuItem>
-                  <MenuItem value={60}>Japones</MenuItem>
-                </Select>
-              </FormControl>
-              <Typography component="h5" variant="outlined">
-                A que idioma queres traducirlo?
-              </Typography>
-              <FormControl sx={{ m: "10px 0" }} fullWidth>
-                <InputLabel id="idiomaATraducir">Idioma a traducir</InputLabel>
-                <Select
-                  labelId="idiomaATraducir"
-                  id="idiomaATraducir"
-                  label="idiomaATraducir"
-                  value={values.idiomaATraducir}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  error={
-                    touched.idiomaATraducir && Boolean(errors.idiomaATraducir)
-                  }
-                >
-                  <MenuItem value={10}>Español (latinoamerica)</MenuItem>
-                  <MenuItem value={20}>Ingles</MenuItem>
-                  <MenuItem value={30}>Frances</MenuItem>
-                  <MenuItem value={40}>Aleman</MenuItem>
-                  <MenuItem value={50}>Portugues</MenuItem>
-                  <MenuItem value={60}>Japones</MenuItem>
-                </Select>
-              </FormControl>
-            </Fade>
-          ) : (
-            <></>
-          )}
+
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography component="h5" variant="outlined">
-              ¿Qué rol cumplen?
+              ¿Qué rol cumple el autor en la obra?
             </Typography>
+            {touched.rolAutorEnLaObra && errors.rolAutorEnLaObra && (
+              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                {errors.rolAutorEnLaObra}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio
                   id="noParticipa"
                   label="noParticipa"
-                  name="otroAutor"
+                  name="rolAutorEnLaObra"
                   value="No participa"
                   onChange={handleChange}
+                  error={errors.rolAutorEnLaObra}
                 />
               }
               label="No participa en el armado del libro"
@@ -274,42 +218,46 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                 <Radio
                   id="siParticipa"
                   label="siParticipa"
-                  variant="outlined"
-                  name="otroAutor"
+                  name="rolAutorEnLaObra"
                   value="Si participa"
                   onChange={handleChange}
-                  error={errors.reconocimientoAutor}
+                  error={errors.rolAutorEnLaObra}
                 />
               }
               label="Participa activamente en el armado del libro"
             />
           </RadioGroup>
-          <FormGroup sx={{ m: "10px 0" }}>
+          <RadioGroup sx={{ m: "10px 0" }}>
             <Typography component="h5" variant="outlined">
               ¿Qué reconocimiento recibirán?
             </Typography>
+            {touched.reconocimientoAutor && errors.reconocimientoAutor && (
+              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                {errors.reconocimientoAutor}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="reconocimientoAutor"
                   label="reconocimientoAutor"
                   name="reconocimientoAutor"
                   value="SU NOMBRE EN PORTADA, JUNTO AL MIO"
                   onChange={handleChange}
-                  error={Boolean(errors.reconocimientoAutor)}
+                  error={errors.reconocimientoAutor}
                 />
               }
               label="Su nombre en portada, junto al mío"
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="reconocimientoAutor"
                   label="reconocimientoAutor"
                   name="reconocimientoAutor"
                   value="SU NOMBRE EN PORTADA, SIN EL MIO"
                   onChange={handleChange}
-                  error={Boolean(errors.reconocimientoAutor)}
+                  error={errors.reconocimientoAutor}
                 />
               }
               label="Su nombre en portada, sin el mío"
@@ -317,43 +265,47 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
 
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="reconocimientoAutor"
                   label="reconocimientoAutor"
                   name="reconocimientoAutor"
                   value="SU NOMBRE JUNTO A EL O LOS TEXTOS SUYOS"
                   onChange={handleChange}
-                  error={Boolean(errors.reconocimientoAutor)}
+                  error={errors.reconocimientoAutor}
                 />
               }
               label="Su nombre junto a el o los textos suyos"
             />
             <FormControlLabel
               control={
-                <Checkbox
+                <Radio
                   id="correccionDeEstilo"
                   label="reconocimientoAutor"
-                  variant="outlined"
                   name="reconocimientoAutor"
                   value="SU NOMBRE EN EL INICIO DEL LIBRO"
                   onChange={handleChange}
-                  error={Boolean(errors.reconocimientoAutor)}
+                  error={errors.reconocimientoAutor}
                 />
               }
               label="Su nombre en el inicio del libro"
             />
-          </FormGroup>
+          </RadioGroup>
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography component="h5" variant="outlined">
               ¿Cómo es el acuerdo comercial entre ustedes?
             </Typography>
+            {touched.acuerdoComercialNoAutor &&
+              errors.acuerdoComercialNoAutor && (
+                <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                  {errors.acuerdoComercialNoAutor}
+                </FormHelperText>
+              )}
             <FormControlLabel
               control={
                 <Radio
                   id="acuerdoComercialNoAutor"
                   label="acuerdoComercialNoAutor"
                   name="acuerdoComercialNoAutor"
-                  variant="outlined"
                   value="LO ARREGLAMOS DE FORMA PRIVADA"
                   onChange={handleChange}
                   error={errors.acuerdoComercialNoAutor}
@@ -367,7 +319,6 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                   id="acuerdoComercialNoAutor"
                   label="acuerdoComercialNoAutor"
                   name="acuerdoComercialNoAutor"
-                  variant="outlined"
                   value="RECIBEN UN PORCENTAJE DE FORMA DIRECTA"
                   onChange={handleChange}
                   error={errors.acuerdoComercialNoAutor}
@@ -417,13 +368,17 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿En qué etapa del desarrollo te encontras?
             </Typography>
+            {touched.etapaDesarrollo && errors.etapaDesarrollo && (
+              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                {errors.etapaDesarrollo}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio
                   id="ESTAMOS TRABAJANDO EN EL TEXTO."
                   label="ESTAMOS TRABAJANDO EN EL TEXTO."
                   name="etapaDesarrollo"
-                  variant="outlined"
                   value="ESTAMOS TRABAJANDO EN EL TEXTO."
                   onChange={handleChange}
                   error={errors.etapaDesarrollo}
@@ -437,7 +392,6 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                   id="TENEMOS EL MANUSCRITO TERMINADO."
                   label="TENEMOS EL MANUSCRITO TERMINADO."
                   name="etapaDesarrollo"
-                  variant="outlined"
                   value="TENEMOS EL MANUSCRITO TERMINADO."
                   onChange={handleChange}
                   error={errors.etapaDesarrollo}
@@ -451,7 +405,6 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                   id="TENEMOS MANUSCRITO TERMINADO Y CORREGIDO."
                   label="TENEMOS MANUSCRITO TERMINADO Y CORREGIDO."
                   name="etapaDesarrollo"
-                  variant="outlined"
                   value="TENEMOS MANUSCRITO TERMINADO Y CORREGIDO."
                   onChange={handleChange}
                   error={errors.etapaDesarrollo}
@@ -465,7 +418,6 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                   id="TENEMOS TODO LISTO PARA PUBLICAR."
                   label="TENEMOS TODO LISTO PARA PUBLICAR."
                   name="etapaDesarrollo"
-                  variant="outlined"
                   value="TENEMOS TODO LISTO PARA PUBLICAR."
                   onChange={handleChange}
                   error={errors.etapaDesarrollo}
@@ -475,21 +427,16 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             />
           </RadioGroup>
           <FormGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h5"
-              id="ETAPAS"
-              label="ETAPAS"
-              variant="outlined"
-            >
+            <Typography component="h5" variant="outlined">
               ¿Qué etapas te hace falta cubrir?
             </Typography>
             <FormControlLabel
               control={
                 <Checkbox
-                  id="etapaACubrir"
-                  label="etapaACubrir"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
+                  id="informeDeLectura"
+                  label="informeDeLectura"
+                  name="informeDeLectura"
+                  value={values.informeDeLectura}
                   onChange={handleChange}
                   error={Boolean(errors.informeDeLectura)}
                 />
@@ -501,8 +448,8 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="correccionGramatical"
                   label="correccionGramatical"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
+                  name="correccionGramatical"
+                  value={values.correccionGramatical}
                   onChange={handleChange}
                   error={Boolean(errors.correccionGramatical)}
                 />
@@ -513,12 +460,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Checkbox
-                  id="correccionDeEstilo"
-                  label="correccionDeEstilo"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
+                  id="correccionEstilos"
+                  label="correccionEstilos"
+                  name="correccionEstilos"
+                  value={values.correccionEstilos}
                   onChange={handleChange}
-                  error={Boolean(errors.etapaACubrir)}
+                  error={Boolean(errors.correccionEstilos)}
                 />
               }
               label="Corrección de estilo."
@@ -528,10 +475,10 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                 <Checkbox
                   id="disenioImagenes"
                   label="disenioImagenes"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
+                  name="disenioImagenes"
+                  value={values.disenioImagenes}
                   onChange={handleChange}
-                  error={Boolean(errors.etapaACubrir)}
+                  error={Boolean(errors.disenioImagenes)}
                 />
               }
               label="Diseño e imagenes internas."
@@ -539,12 +486,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Checkbox
-                  id="arteDeTapaYContratapa"
-                  label="arteDeTapaYContratapa"
-                  name="etapaACubrir"
-                  value={values.etapaACubrir}
+                  id="arteTapa"
+                  label="arteTapa"
+                  name="arteTapa"
+                  value={values.arteTapa}
                   onChange={handleChange}
-                  error={Boolean(errors.etapaACubrir)}
+                  error={Boolean(errors.arteTapa)}
                 />
               }
               label="Arte de tapa y contratapa."
@@ -552,22 +499,36 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Checkbox
-                  id="correccionDeEstilo"
-                  label="correccionDeEstilo"
-                  variant="outlined"
-                  value={values.etapaACubrir}
+                  id="edicionMaquetacion"
+                  label="edicionMaquetacion"
+                  name="edicionMaquetacion"
+                  value={values.edicionMaquetacion}
                   onChange={handleChange}
-                  error={Boolean(errors.etapaACubrir)}
+                  error={Boolean(errors.edicionMaquetacion)}
                 />
               }
               label="Edición y maquetación."
+            />
+
+            <FormControlLabel
+              control={
+                <Checkbox
+                  id="todoListo"
+                  name="todoListo"
+                  label="todoListo"
+                  value={values.todoListo}
+                  onChange={handleChange}
+                  error={Boolean(errors.todoListo)}
+                />
+              }
+              label="Tenemos todo listo."
             />
             <FormControlLabel
               control={
                 <Checkbox
                   id="traducir"
                   label="traducir"
-                  variant="outlined"
+                  name="traducir"
                   value={values.traducir}
                   onChange={handleChange}
                   error={Boolean(errors.traducir)}
@@ -593,7 +554,7 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                   value={values.idiomaOriginal}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  error={touched.correccionEstilos && errors.correccionEstilos}
+                  error={touched.idiomaOriginal && errors.idiomaOriginal}
                 >
                   <MenuItem value={"Español (latinoamerica)"}>
                     Español (latinoamerica)
@@ -617,7 +578,7 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                   value={values.idiomaATraducir}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  error={touched.correccionEstilos && errors.correccionEstilos}
+                  error={touched.idiomaATraducir && errors.idiomaATraducir}
                 >
                   <MenuItem value={"Español (latinoamerica)"}>
                     Español (latinoamerica)
@@ -637,15 +598,22 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿Qué posición tendrías ante limitaciones presupuestarias?
             </Typography>
+            {touched.limitacionesPresupuestarias &&
+              errors.limitacionesPresupuestarias && (
+                <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                  {errors.limitacionesPresupuestarias}
+                </FormHelperText>
+              )}
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="limitacionesPresupuestarias"
+                  label="limitacionesPresupuestarias"
+                  name="limitacionesPresupuestarias"
                   value="puedo cubrir el trabajo de mis colegas aunque mi pago quede pendiente"
                   variant="outlined"
                   onChange={handleChange}
-                  onBlur={handleBlur}
+                  error={errors.limitacionesPresupuestarias}
                 />
               }
               label="Puedo cubrir el trabajo de mis colegas, aunque mi pago quede pendiente"
@@ -653,12 +621,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="limitacionesPresupuestarias"
+                  label="limitacionesPresupuestarias"
+                  name="limitacionesPresupuestarias"
                   value="prefiero que lo cubra la editorial aunque mi pago quede pendiente"
-                  variant="outlined"
                   onChange={handleChange}
-                  onBlur={handleBlur}
+                  error={errors.limitacionesPresupuestarias}
                 />
               }
               label="Prefiero que lo cubra la editorial, aunque mi pago quede pendiente"
@@ -666,12 +634,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="limitacionesPresupuestarias"
+                  label="limitacionesPresupuestarias"
+                  name="limitacionesPresupuestarias"
                   value="lo quiero hacer ad honorem"
-                  variant="outlined"
                   onChange={handleChange}
-                  onBlur={handleBlur}
+                  error={errors.limitacionesPresupuestarias}
                 />
               }
               label="Lo quiero hacer ad honorem"
@@ -679,12 +647,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <FormControlLabel
               control={
                 <Radio
-                  id="acuerdoComercial"
-                  label="acuerdoComercial"
+                  id="limitacionesPresupuestarias"
+                  label="limitacionesPresupuestarias"
+                  name="limitacionesPresupuestarias"
                   value="no hay trato"
-                  variant="outlined"
                   onChange={handleChange}
-                  onBlur={handleBlur}
+                  error={errors.limitacionesPresupuestarias}
                 />
               }
               label="No hay trato"
@@ -710,17 +678,22 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
           <RadioGroup sx={{ m: "10px 0" }}>
             <Typography component="h5" variant="outlined">
               ¿Vas a involucrarte en la distribución del libro? / Para esto,
-              debes registrarte en DISTRIBUIDORES.
+              debes registrarte como distribuidor.
             </Typography>
+            {touched.distribucionLibro && errors.distribucionLibro && (
+              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                {errors.distribucionLibro}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio
                   id="loHareEnPersona"
                   label="loHareEnPersona"
-                  name="distribucion"
+                  name="distribucionLibro"
                   value="Si, lo hare en persona"
                   onChange={handleChange}
-                  error={touched.distribucion}
+                  error={errors.distribucionLibro}
                 />
               }
               label="Si, lo hare en persona"
@@ -730,10 +703,10 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                 <Radio
                   id="siPeroNoExclusivamente"
                   label="siPeroNoExclusivamente"
-                  name="distribucion"
+                  name="distribucionLibro"
                   value="Si, pero no exclusivamente"
                   onChange={handleChange}
-                  error={touched.distribucion}
+                  error={errors.distribucionLibro}
                 />
               }
               label="Si, pero no exclusivamente"
@@ -744,10 +717,10 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
                 <Radio
                   id="noGracias"
                   label="noGracias"
-                  name="distribucion"
+                  name="distribucionLibro"
                   value="No, gracias"
                   onChange={handleChange}
-                  error={touched.distribucion}
+                  error={errors.distribucionLibro}
                 />
               }
               label="No, gracias"
@@ -770,6 +743,11 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿Qué tipo de distribución te gustaría?
             </Typography>
+            {touched.tipoDistribucion && errors.tipoDistribucion && (
+              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                {errors.tipoDistribucion}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio
@@ -814,6 +792,31 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
               selectivas a la hora de tomar un libro.
             </Typography>
           </RadioGroup>
+          <Typography component="h5" variant="outlined" sx={{ m: "6px" }}>
+            Contanos sobre tu idea
+          </Typography>
+          {touched.contanosMas && errors.contanosMas && (
+            <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+              {errors.contanosMas}
+            </FormHelperText>
+          )}
+          <TextField
+            multiline
+            sx={{
+              mx: "auto",
+              mb: "10px",
+              width: "90%",
+              minHeight: "3rem",
+            }}
+            id="contanosMas"
+            name="contanosMas"
+            label="Pensa que el contexto es importante..."
+            value={values.contanosMas}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.contanosMas && errors.contanosMas}
+            variant="outlined"
+          />
           <FormControlLabel
             control={
               <Checkbox

@@ -20,9 +20,11 @@ import SectionComunidad from "./SectionComunidad/SectionComunidad";
 import ContenedorPrograma from "./Nosotros/ContenedorPrograma/ContenedorPrograma";
 import Loader from "./Loader/Loader";
 import ProyectoPublico from "./ProyectoPublico/ProyectoPublico";
+import BannerCuerpo from "./BannerCuerpo/BannerCuerpo";
 
 export {
   ProyectoPublico,
+  BannerCuerpo,
   ContenedorPrograma,
   Loader,
   Brand,

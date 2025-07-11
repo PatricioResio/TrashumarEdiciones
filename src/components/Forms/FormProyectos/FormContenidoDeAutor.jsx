@@ -15,7 +15,6 @@ import {
 } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
 import { Form, Formik } from "formik";
-
 import emailjs from "emailjs-com";
 import { validationContenidoAutor } from "../ValidationSchemas/ValidationSchemas";
 import { AuthContext } from "../../../context/AuthContext";
@@ -52,6 +51,7 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
       validationSchema={validationContenidoAutor}
       onSubmit={(values, { resetForm }) => {
         console.log("values:", values);
+
         const templateParams = {
           formato: values.formato,
           idea: values.idea,

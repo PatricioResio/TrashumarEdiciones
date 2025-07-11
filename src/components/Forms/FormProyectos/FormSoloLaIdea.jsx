@@ -51,20 +51,12 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
       }}
       validationSchema={validationProyecto}
       onSubmit={(values, { resetForm }) => {
-        if (
-          !values.formato ||
-          !values.rolEnLaObra ||
-          !values.contanosMas ||
-          !values.acuerdoComercial
-        ) {
-          alert("Debes completar todos los campos obligatorios.");
-        }
         console.log("values:", values);
         const templateParams = {
           formato: values.formato,
           rolEnLaObra: values.rolEnLaObra,
           contanosMas: values.contanosMas,
-          acuerdoComercial: values.acuerdoComercial,
+          relacionIdeaOriginal: values.relacionIdeaOriginal,
           acuerdoComercialPorcentaje:
             values.acuerdoComercialPorcentaje || "No especificado",
           manuscritoTerminado: values.manuscritoTerminado ? "Sí" : "No",
@@ -549,6 +541,11 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             <Typography component="h5" variant="outlined">
               ¿Qué posición tendrías ante limitaciones presupuestarias?
             </Typography>
+            {touched.acuerdoComercial && errors.acuerdoComercial && (
+              <FormHelperText sx={{ color: "#F50E00", ml: "0.5rem" }}>
+                {errors.acuerdoComercial}
+              </FormHelperText>
+            )}
             <FormControlLabel
               control={
                 <Radio

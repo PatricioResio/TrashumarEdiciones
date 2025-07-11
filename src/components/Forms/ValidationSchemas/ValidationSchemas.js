@@ -44,6 +44,7 @@ const validationProyecto = yup.object().shape({
     otherwise: yup.string().nullable(),
   }),
 });
+
 const validationContenidoAutor = yup.object().shape({
   formato: yup
     .string()
@@ -63,6 +64,29 @@ const validationContenidoAutor = yup.object().shape({
     .required("Este campo es obligatorio."),
 });
 
+const validationContenidoAjeno = yup.object().shape({
+  rolAutorEnLaObra: yup
+    .string()
+    .required("Debes seleccionar el rol del autor en la obra."),
+  reconocimientoAutor: yup
+    .string()
+    .required("Debes seleccionar el reconocimiento que se le dara al autor."),
+  acuerdoComercialNoAutor: yup.string().required("Este campo es obligatorio."),
+  etapaDesarrollo: yup
+    .string()
+    .required("Debes seleccionar la etapa de desarrollo."),
+
+  distribucionLibro: yup.string().required("Este campo es obligatorio."),
+  tipoDistribucion: yup.string().required("Este campo es obligatorio."),
+  limitacionesPresupuestarias: yup
+    .string()
+    .required("Este campo es obligatorio."),
+  contanosMas: yup
+    .string()
+    .min(20, "Escribe al menos 20 caracteres para explicar tu proyecto.")
+    .required("Este campo es obligatorio."),
+});
+
 const validationTextoUnico = yup.object().shape({
   etapaDesarrollo: yup.string().required("El campo es obligatorio"),
   ideaPrincipal: yup.string().required("El campo es obligatorio"),
@@ -75,4 +99,5 @@ export {
   validationProyecto,
   validationTextoUnico,
   validationContenidoAutor,
+  validationContenidoAjeno,
 };

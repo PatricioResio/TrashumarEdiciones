@@ -6,11 +6,13 @@ import { Fade } from "react-awesome-reveal";
 import ArticleDestacado from "../components/Home/ArticleDestacado/ArticleDestacado";
 import BorderWave from "../components/BorderWave/BorderWave";
 import Contact from "./Contact";
+import { BannerCuerpo } from "../components";
 
 const Home = () => {
   return (
     <>
       <CarruselHome />
+
       <Box
         maxWidth="100vw"
         component="section"
@@ -25,9 +27,8 @@ const Home = () => {
           color: "#BAE3D7",
         }}
       >
-        <BorderWave></BorderWave>
         <ArticleDestacado />
-
+        <BannerCuerpo />
         {/*      <Box
           bgcolor="bg.whiteBlue"
           sx={{
@@ -104,6 +105,7 @@ const Home = () => {
             <ContenedorPerfiles />
           </Fade>
         </Box>
+        <BannerCuerpo />
         <Box component="section" id="contactForm">
           <Contact />
         </Box>

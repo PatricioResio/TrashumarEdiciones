@@ -1,4 +1,10 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  TextareaAutosize,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
 
 const ContactForm = () => {
@@ -12,9 +18,10 @@ const ContactForm = () => {
         component="form"
         onSubmit={handlerSubmit}
         sx={{
-          height: "100vh",
+          height: "75vh",
           width: "100%",
           display: "flex",
+          bgcolor: "bg.whiteBlue",
           flexDirection: "column",
           justifyContent: "start",
           alignItems: "center",
@@ -28,7 +35,7 @@ const ContactForm = () => {
           Querias contactarnos?
         </Typography>
         <Typography component="h3" variant="h6">
-          Acá podes hablar sin prejuicios
+          Acá podes hablar sin tapujos
         </Typography>
         <TextField
           sx={{ margin: "7px" }}
@@ -48,17 +55,16 @@ const ContactForm = () => {
           /*           error={!!error && error.includes("Email")} // Error específico
           helperText={!!error && error.includes("Email") ? error : ""} */
         />
-        <TextField
-          component="textArea"
-          sx={{
+        <TextareaAutosize
+          style={{
             width: "30rem",
             height: "15rem",
             margin: "7px",
-            borderColor: "",
+            backgroundColor: "bg.whiteBlue",
           }}
+          minRows={3}
           label="mensaje"
           name="mensaje"
-          variant="outlined"
           value={contactForm.mensaje}
           onChange={handlerChange}
           /*        error={!!error && error.includes("mensaje")} // Error específico

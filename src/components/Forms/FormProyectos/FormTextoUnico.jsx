@@ -41,16 +41,6 @@ const FormTextoUnico = () => {
       }}
       validationSchema={validationTextoUnico}
       onSubmit={(values, { resetForm }) => {
-        if (
-          !values.formato ||
-          !values.contanosMas ||
-          !values.imagenesProyecto ||
-          !values.acuerdoComercial
-        ) {
-          alert("Debes completar todos los campos obligatorios.");
-          console.log(values);
-          return;
-        }
         console.log("values:", values);
         const templateParams = {
           userName: currentUser ? currentUser.nombre : "No especificado",
@@ -149,7 +139,6 @@ const FormTextoUnico = () => {
                   id="etapaDesarrollo"
                   label="etapaDesarrollo"
                   name="etapaDesarrollo"
-                  variant="outlined"
                   value="Trabajando en el texto"
                   onChange={handleChange}
                   error={errors.etapaDesarrollo}
@@ -165,7 +154,6 @@ const FormTextoUnico = () => {
                   label="etapaDesarrollo"
                   name="etapaDesarrollo"
                   value="manuscrito terminado"
-                  variant="outlined"
                   onChange={handleChange}
                   error={errors.manuscritoTermindo}
                 />
@@ -178,7 +166,6 @@ const FormTextoUnico = () => {
                   id="etapaDesarrollo"
                   name="etapaDesarrollo"
                   label="etapaDesarrollo"
-                  variant="outlined"
                   value="Manuscrito terminado y corregido"
                   onChange={handleChange}
                   error={errors.manuscritoTermindoCorregido}
@@ -192,7 +179,6 @@ const FormTextoUnico = () => {
                   id="etapaDesarrollo"
                   name="etapaDesarrollo"
                   label="etapaDesarrollo"
-                  variant="outlined"
                   value="Manuscrito listo para publicar"
                   onChange={handleChange}
                   error={errors.listoPublicar}
@@ -218,7 +204,6 @@ const FormTextoUnico = () => {
                   label="imagenesProyecto"
                   name="imagenesProyecto"
                   value="imagenes listas"
-                  variant="outlined"
                   onChange={handleChange}
                   error={errors.imagenesProyecto}
                 />
@@ -232,7 +217,6 @@ const FormTextoUnico = () => {
                   label="imagenesProyecto"
                   name="imagenesProyecto"
                   value="imagenes a crear"
-                  variant="outlined"
                   onChange={handleChange}
                   error={errors.imagenesProyecto}
                 />
@@ -246,7 +230,6 @@ const FormTextoUnico = () => {
                   label="imagenesProyecto"
                   name="imagenesProyecto"
                   value="sin imagenes"
-                  variant="outlined"
                   onChange={handleChange}
                   error={errors.imagenesProyecto}
                 />
@@ -270,7 +253,6 @@ const FormTextoUnico = () => {
                   id="EtapaDesarrollo"
                   label="informeDeLectura"
                   name="informeDeLectura"
-                  variant="outlined"
                   value={values.informeDeLectura}
                   onChange={handleChange}
                   error={Boolean(errors.informeDeLectura)}
@@ -284,7 +266,6 @@ const FormTextoUnico = () => {
                   id="EtapaDesarrollo"
                   label="CorreccionGramatical"
                   name="CorreccionGramatical"
-                  variant="outlined"
                   value={values.correccionGramatical}
                   onChange={handleChange}
                   error={Boolean(errors.correccionGramatical)}
@@ -298,7 +279,6 @@ const FormTextoUnico = () => {
                   id="EtapaDesarrollo"
                   label="Manuscrito"
                   name="Manuscrito"
-                  variant="outlined"
                   value={values.manuscrito}
                   onChange={handleChange}
                   error={Boolean(errors.manuscrito)}
@@ -312,7 +292,6 @@ const FormTextoUnico = () => {
                   id="EtapaDesarrollo"
                   label="correccionDeEstilo"
                   name="correccionDeEstilo"
-                  variant="outlined"
                   value={values.correccionEstilos}
                   onChange={handleChange}
                   error={Boolean(errors.correccionEstilos)}
@@ -326,7 +305,6 @@ const FormTextoUnico = () => {
                   id="EtapaDesarrollo"
                   label="traducir"
                   name="traducir"
-                  variant="outlined"
                   value={values.traducir}
                   onChange={handleChange}
                   error={Boolean(errors.traducir)}
@@ -393,12 +371,7 @@ const FormTextoUnico = () => {
             <></>
           )}
           <RadioGroup sx={{ m: "10px 0" }}>
-            <Typography
-              component="h5"
-              id="outlined-basic"
-              label="AUTORES"
-              variant="outlined"
-            >
+            <Typography component="h5" variant="outlined">
               {" "}
               ¿Qué posición tendrías ante limitaciones presupuestarias?
             </Typography>
@@ -414,7 +387,6 @@ const FormTextoUnico = () => {
                   label="acuerdoComercial"
                   name="acuerdoComercial"
                   value="puedo cubrir el trabajo de mis colegas aunque mi pago quede pendiente"
-                  variant="outlined"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
@@ -429,7 +401,6 @@ const FormTextoUnico = () => {
                   label="acuerdoComercial"
                   name="acuerdoComercial"
                   value="prefiero que lo cubra la editorial aunque mi pago quede pendiente"
-                  variant="outlined"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
@@ -444,7 +415,6 @@ const FormTextoUnico = () => {
                   label="acuerdoComercial"
                   name="acuerdoComercial"
                   value="lo quiero hacer ad honorem"
-                  variant="outlined"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
@@ -459,7 +429,6 @@ const FormTextoUnico = () => {
                   label="acuerdoComercial"
                   name="acuerdoComercial"
                   value="no hay trato"
-                  variant="outlined"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   error={touched.acuerdoComercial && errors.acuerdoComercial}
