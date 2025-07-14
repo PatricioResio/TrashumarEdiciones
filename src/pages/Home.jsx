@@ -30,13 +30,14 @@ const Home = () => {
         <BannerCuerpo />
 
         <Box
-          bgcolor="bg.whiteBlue"
           sx={{
             justifyContent: "center",
             borderRadius: "5px",
             my: "7rem",
+            mx: "auto",
 
-            width: "100%",
+            backgroundColor: "rgba(149, 247, 247, 0.95)",
+            width: "95%",
             p: 2,
           }}
         >

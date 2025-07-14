@@ -14,7 +14,7 @@ import { validationContacto } from "../ValidationSchemas/ValidationSchemas";
 
 const ContactForm = () => {
   const getDate = () => {
-    return new Date().toISOString().split("T")[0]; // "2025-07-11"
+    return new Date().toISOString().split("T")[0];
   };
   const initialValueContact = {
     name: "",
@@ -23,11 +23,10 @@ const ContactForm = () => {
     date: getDate(),
     title: "",
   };
+
   return (
     <Formik
-      initialValues={{
-        initialValueContact,
-      }}
+      initialValues={initialValueContact}
       validationSchema={validationContacto}
       onSubmit={(values, { resetForm }) => {
         const templateParams = {

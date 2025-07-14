@@ -352,7 +352,6 @@ export const imgArrayHistorias = [
     posicion: "cuarto",
     img: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/historias%2Fhistorias4-17-min.png?alt=media&token=75b1ad00-e74e-4992-9367-dcbed2219c05",
   },
-
   {
     id: "56",
     posicion: "cuarto",
