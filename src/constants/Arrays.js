@@ -1,3 +1,4 @@
+import { scrollToContact } from "../hooks/useScrollToContact";
 export const pages = [
   {
     name: "NOSOTROS",
@@ -30,11 +31,12 @@ export const homeArrays = [
   {
     id: 2,
     url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.jpg?alt=media&token=ed3613fb-fa43-4686-b762-a28d7a98ef1a",
-    h2: "Novedades",
+    h2: "Contacto",
     textP:
-      "Una editorial nómada, federal e independiente. Publicamos voces y proyectos que cruzan fronteras.",
-    buttonText: " Explorá nuestra librería",
-    buttonLink: "/libreria",
+      "Quéres contactarte con nosotros para hablar de trashumancias? seguí el boton.",
+    buttonText: "Contactanos",
+    buttonLink: "",
+    function: scrollToContact,
   },
   {
     id: 3,

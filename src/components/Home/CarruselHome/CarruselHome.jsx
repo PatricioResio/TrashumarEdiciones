@@ -129,6 +129,7 @@ const CarruselHome = () => {
                     component={Link}
                     to={item.buttonLink}
                     key={item.buttonLink}
+                    onClick={!item.function ? null : item.function}
                     variant="outlined"
                     sx={{
                       my: "auto",

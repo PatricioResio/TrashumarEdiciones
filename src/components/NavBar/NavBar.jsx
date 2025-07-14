@@ -36,11 +36,6 @@ function ResponsiveAppBar() {
     });
   }
 
-  function scrollToContact() {
-    const section = document.getElementById("contactForm");
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -204,27 +199,6 @@ function ResponsiveAppBar() {
                     {page.name}
                   </Button>
                 ))}
-                <Button
-                  component={Link}
-                  color="secondary"
-                  to={"/"}
-                  onClick={scrollToContact}
-                  sx={{
-                    height: "100%",
-                    fontWeight: "bold",
-                    fontSize: { md: "12px", lg: "14px" },
-                    justifyContent: "center",
-                    borderRadius: "10px",
-                    color: "#FFFFF8",
-                    transition: "transform 0.3s ease-in-out",
-                    "&:hover": {
-                      transform: "scale(1.02)",
-                      color: "#FFFFF8",
-                    },
-                  }}
-                >
-                  Contacto
-                </Button>
               </Fade>
             </Box>
 
