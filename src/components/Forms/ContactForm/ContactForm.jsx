@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  FormHelperText,
   TextareaAutosize,
   TextField,
   Typography,
@@ -9,12 +10,17 @@ import { Form, Formik } from "formik";
 import "./ContactForm.css";
 import emailjs from "emailjs-com";
 
+import { validationContacto } from "../ValidationSchemas/ValidationSchemas";
+
 const ContactForm = () => {
+  const getDate = () => {
+    return new Date().toISOString().split("T")[0]; // "2025-07-11"
+  };
   const initialValueContact = {
     name: "",
     message: "",
     email: "",
-    date: "",
+    date: getDate(),
     title: "",
   };
   return (
@@ -22,16 +28,16 @@ const ContactForm = () => {
       initialValues={{
         initialValueContact,
       }}
+      validationSchema={validationContacto}
       onSubmit={(values, { resetForm }) => {
         const templateParams = {
           name: values.name,
           email: values.email,
           title: values.title,
-          date: getDate(),
+          date: values.date,
           message: values.message,
         };
         emailjs
-
           .send(
             import.meta.env.VITE_EMAILJS_SERVICE_CONTACT,
             import.meta.env.VITE_EMAILJS_TEMPLATE_CONTACT,
@@ -40,8 +46,8 @@ const ContactForm = () => {
           )
           .then(
             (response) => {
-              alert("Formulario enviado correctamente!");
               resetForm();
+              alert("Formulario enviado correctamente!");
             },
             (error) => {
               console.error("Error al enviar el formulario:", error);
@@ -54,18 +60,7 @@ const ContactForm = () => {
     >
       {({ values, handleChange, handleBlur, errors, touched }) => (
         <Form>
-          <Box
-            sx={{
-              height: "75vh",
-              width: "95%",
-              m: "auto",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "start",
-              alignItems: "center",
-              backgroundColor: "rgba(149, 247, 247, 0.95)",
-            }}
-          >
+          <Box className="container">
             <Typography
               sx={{ my: "1.5rem", color: "secondary.main" }}
               component="h2"
@@ -86,7 +81,7 @@ const ContactForm = () => {
               </FormHelperText>
             )}
             <TextField
-              sx={{ margin: "7px" }}
+              className="textField"
               label="Nombre"
               name="name"
               value={values.name}
@@ -100,7 +95,7 @@ const ContactForm = () => {
               </FormHelperText>
             )}
             <TextField
-              sx={{ margin: "7px" }}
+              className="textField"
               label="Asunto"
               name="title"
               value={values.title}
@@ -114,7 +109,7 @@ const ContactForm = () => {
               </FormHelperText>
             )}
             <TextField
-              sx={{ margin: "7px" }}
+              className="textField"
               label="Email"
               name="email"
               value={values.email}
@@ -134,6 +129,7 @@ const ContactForm = () => {
               value={values.message}
               onBlur={handleBlur}
               onChange={handleChange}
+              error={errors.message && touched.message}
               placeholder=""
             />
             <label className="mui-label">Tu mensaje</label>

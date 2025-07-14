@@ -1,3 +1,19 @@
+.container {
+  height: 75vh;
+  width: 95%;
+  margin: auto;
+  margin-top: -8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: rgba(149, 247, 247, 0.95);
+}
+
+.textField {
+  margin: 7px;
+  width: 75%;
+}
 .textArea {
   position: relative;
   width: 75%;
@@ -12,6 +28,47 @@
   resize: vertical;
   min-height: 80px;
   transition: border-color 0.01s;
+}
+@media (min-width: 600px) {
+  .textField {
+    width: 50%;
+  }
+  .textArea {
+    width: 50%;
+  }
+  .container {
+    margin-top: -6rem;
+  }
+}
+@media (min-width: 920px) {
+  .textField {
+    width: 40%;
+  }
+  .textArea {
+    width: 40%;
+  }
+  .container {
+    margin-top: -4rem;
+  }
+}
+@media (min-width: 1240px) {
+  .textArea {
+    width: 38%;
+  }
+  .textField {
+    width: 38%;
+  }
+  .container {
+    margin-top: 6rem;
+  }
+}
+@media (min-width: 1500px) {
+  .container {
+    margin-top: 9rem;
+  }
+  .textField {
+    width: 38%;
+  }
 }
 
 .textArea:hover {
