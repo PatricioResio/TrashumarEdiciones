@@ -39,6 +39,7 @@ const FormPerfil = () => {
         border: "1px solid",
         borderColor: "#3C9990",
         borderRadius: "20px",
+        bgcolor: "rgba(149, 247, 247, 0.75)",
       }}
     >
       <Typography

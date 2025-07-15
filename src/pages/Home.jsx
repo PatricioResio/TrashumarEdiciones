@@ -21,6 +21,7 @@ const Home = () => {
           textAlign: "center",
           margin: "4rem 0",
           gap: 4,
+
           my: "7rem",
 
           color: "#BAE3D7",

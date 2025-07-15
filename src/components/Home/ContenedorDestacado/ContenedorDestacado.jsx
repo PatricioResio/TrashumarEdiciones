@@ -7,22 +7,12 @@ import {
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { DESCRIPCION_ARTICULO_DESTACADO } from "../../../constants/Textos";
+import "./ContenedorDestacado.css";
 
 const ContenedorDestacado = () => {
   const Descripcion = DESCRIPCION_ARTICULO_DESTACADO.slice(0, 254);
   return (
-    <Container
-      maxWidth="2xl"
-      sx={{
-        flexDirection: "column",
-        justifyContent: "center",
-        width: { xs: "100%", xl: "80%" },
-        minWidth: { xs: "100%", xl: "80%" },
-        borderRadius: "5px",
-        border: "1px solid #012936",
-        p: "25px",
-      }}
-    >
+    <Container maxWidth="2xl" className="contenedor-destacado">
       <Fade triggerOnce easeOut direction="down">
         <Typography
           color={"#0C2324"}

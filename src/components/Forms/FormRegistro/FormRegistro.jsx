@@ -122,6 +122,7 @@ const FormRegistro = () => {
         width: "80%",
         border: "2px solid #3C9990",
         borderRadius: "15px",
+        bgcolor: "rgba(149, 247, 247, 0.75)",
       }}
     >
       <Fade triggerOnce>
@@ -389,9 +390,13 @@ const FormRegistro = () => {
               Subir
             </Button>
             {url && (
-              <Typography sx={{ mt: 2 }}>URL de la imagen: {url}</Typography>
+              <Box
+                component="img"
+                url={url}
+                sx={{ mt: 2, width: "8rem", height: "8rem" }}
+              ></Box>
             )}
-            {url && (
+            {/*          {url && (
               <TextField
                 name="avatar"
                 id="avatar"
@@ -401,7 +406,7 @@ const FormRegistro = () => {
               >
                 {url}
               </TextField>
-            )}
+            )} */}
           </Box>
 
           <Button

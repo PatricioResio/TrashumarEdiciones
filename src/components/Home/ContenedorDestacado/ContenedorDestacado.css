@@ -1,11 +1,16 @@
-.contenedor-destacado-responsive {
-  width: 80%;
-  font-size: 20px;
-  margin: auto;
-  background-color: #3c9990;
-  display: flex;
+.contenedor-destacado {
+  flex-direction: column;
   justify-content: center;
-  gap: 80px;
-  border: 2px solid #b5c2c7;
-  border-radius: 20px;
+  background-color: rgba(149, 247, 247, 0.75);
+  width: 100%;
+  min-width: 100%;
+  border-radius: 5px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 600px) {
+  .contenedor-destacado {
+    width: 90%;
+    min-width: 80%;
+  }
 }

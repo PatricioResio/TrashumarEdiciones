@@ -50,9 +50,11 @@ const ContenedorHistoria = () => {
         </Swiper>
       </Box>
       <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-        <Fade triggerOnce>
-          <Carrusel arrayImagenes={imgArrayCarrusel} />
-        </Fade>
+        <Box>
+          <Fade triggerOnce>
+            <Carrusel arrayImagenes={imgArrayCarrusel} />
+          </Fade>
+        </Box>
       </Box>
     </>
   );
