@@ -9,7 +9,7 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
         my: { xs: "30px", sm: "auto" },
         border: "1px solid #09A5B0",
         display: "flex",
-        width: { xs: "80%" },
+        width: { xs: "80%", md: "40%" },
         borderRadius: "5px",
         backgroundColor: "#BDFFF9",
         contain: "content",

@@ -34,6 +34,7 @@ const CartaPerfilPublico = ({ perfil }) => {
         alignItems: "center",
         borderRadius: "5px",
         border: "1px solid #3C9990",
+        backgroundColor: " rgba(149, 247, 247, 0.95)",
         width: "80%",
         p: 2,
       }}
@@ -51,8 +52,8 @@ const CartaPerfilPublico = ({ perfil }) => {
           <Fade delay={1500} triggerOnce>
             <Box
               sx={{
-                height: { xs: "6rem", md: "8rem" },
-                width: { xs: "6rem", md: "8rem" },
+                height: { xs: "6rem", md: "10rem" },
+                width: { xs: "6rem", md: "10rem" },
                 borderRadius: "50%",
               }}
               component="img"
@@ -60,6 +61,7 @@ const CartaPerfilPublico = ({ perfil }) => {
               alt="foto de perfil"
             />
           </Fade>
+
           <Typography variant="h3" className="h2-perfil-card" fontWeight="bold">
             {!perfil ? "No se encontro usuario" : perfil.nombrePublico}
           </Typography>

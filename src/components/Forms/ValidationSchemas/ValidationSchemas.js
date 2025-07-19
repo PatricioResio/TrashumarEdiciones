@@ -14,7 +14,7 @@ const validationPerfil = yup.object({
   explicarPerfil: yup.string(),
 });
 
-const validationContacto = yup.object({
+const validationContact = yup.object({
   name: yup.string().required("El nombre es obligatorio"),
   email: yup.string().email().required("El email es obligatorio"),
   title: yup.string().required("El asunto es obligatorio"),
@@ -118,5 +118,5 @@ export {
   validationContenidoAutor,
   validationContenidoAjeno,
   validationSoloLaIdea,
-  validationContacto,
+  validationContact,
 };

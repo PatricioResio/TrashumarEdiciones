@@ -15,6 +15,7 @@ import {
 import Map from "../../Map/Map";
 import DescripcionPerfil from "../DescripcionPerfil/DescripcionPerfil";
 import CartaPerfilPublico from "../CartaPerfilPublico/CartaPerfilPublico";
+import BannerCuerpo from "../../BannerCuerpo/BannerCuerpo";
 
 const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
   const {
@@ -34,7 +35,6 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
   return (
     <Box
       component="section"
-      bgcolor={"bg.semiLightBlue"}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -48,17 +48,17 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
       }}
     >
       <Box
-        bgcolor={"bg.semiLightBlue"}
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
           justifyContent: "center",
           alignItems: "center",
-          width: { xs: "100%", md: "70%" },
+          width: { xs: "100%", md: "90%" },
           gap: "2rem",
           m: "10px auto",
         }}
       >
+        <Oficios oficios={oficios} />
         <Container
           maxWidth="2xl"
           sx={{
@@ -70,15 +70,15 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             mt: { xs: "20px" },
             paddingTop: "0px",
             position: "relative",
-            color: "#02291F",
           }}
         >
-          {" "}
           <CartaPerfilPublico perfil={perfil} />
         </Container>
 
-        <Oficios oficios={oficios} />
         <DescripcionPerfil {...perfil} />
+      </Box>
+      <Box sx={{ marginTop: { xs: "0", md: "-25rem" } }}>
+        <BannerCuerpo />
       </Box>
       <Container
         disableGutters
@@ -98,10 +98,10 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
       >
         <Box
           component="article"
-          bgcolor={"bg.mediumBlue"}
           sx={{
             m: "auto",
             border: "solid 2px #BAE3D7",
+            backgroundColor: "rgba(149, 247, 247, 0.9)",
             borderRadius: "2%",
             minHeight: { xs: "20rem", md: "40rem" },
             p: "20px",
@@ -114,11 +114,11 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
 
         <Box
           component="article"
-          bgcolor={"bg.mediumBlue"}
           sx={{
             m: "auto",
             minHeight: "35rem",
             border: "solid 2px #BAE3D7",
+            backgroundColor: "rgba(149, 247, 247, 0.9)",
             borderRadius: "2%",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",

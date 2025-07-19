@@ -26,8 +26,10 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         alignItems: "center",
         borderRadius: "5px",
         border: "1px solid #3C9990",
+        backgroundColor: " rgba(149, 247, 247, 0.95)",
         width: "80%",
         p: 2,
+        boxShadow: "1px 1px 5px black",
       }}
     >
       <Box
@@ -42,8 +44,8 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         <Box
           component="img"
           sx={{
-            height: { xs: "6rem", md: "8rem" },
-            width: { xs: "6rem", md: "8rem" },
+            height: { xs: "6rem", md: "10rem" },
+            width: { xs: "6rem", md: "10rem" },
             borderRadius: "50%",
           }}
           src={!currentUser ? "No se encontro usuario" : currentUser.avatar}

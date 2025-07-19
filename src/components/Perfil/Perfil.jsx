@@ -7,6 +7,7 @@ import ContenedorProyectosPerfil from "./ContenedorProyectosPerfil/ContenedorPro
 import DescripcionPerfil from "./DescripcionPerfil/DescripcionPerfil";
 import Oficios from "./Oficios/Oficios";
 import CartaPerfilUsuario from "./CartaPerfilUsuarioo/CartaPerfilUsuario";
+import BannerCuerpo from "../BannerCuerpo/BannerCuerpo";
 
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
@@ -38,26 +39,37 @@ const Perfil = () => {
           m: "10px auto",
         }}
       >
-        <Container
-          maxWidth="2xl"
+        <Box
           sx={{
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "center",
-            m: "auto auto 0 auto",
-            mt: { xs: "20px" },
-            paddingTop: "0px",
-            position: "relative",
-            color: "#02291F",
+            flexDirection: { xs: "column", md: "row" },
+            marginBottom: { xs: "2", md: "-20rem" },
           }}
         >
-          <CartaPerfilUsuario currentUser={currentUser} />
-        </Container>
-        <Oficios oficios={oficios} />
-        <DescripcionPerfil {...currentUser} />
+          <Oficios oficios={oficios} />
+          <Container
+            maxWidth="2xl"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              m: "auto auto 0 auto",
+              mt: { xs: "20px" },
+              mb: { xs: "auto", md: "8rem" },
+              paddingTop: "0px",
+              position: "relative",
+            }}
+          >
+            <CartaPerfilUsuario currentUser={currentUser} />
+          </Container>
+          <DescripcionPerfil {...currentUser} />
+        </Box>
       </Box>
 
+      <Box sx={{ marginTop: { xs: "0", md: "-25rem" } }}>
+        <BannerCuerpo />
+      </Box>
       <Container
         disableGutters
         sx={{

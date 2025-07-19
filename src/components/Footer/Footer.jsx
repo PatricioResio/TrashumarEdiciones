@@ -11,7 +11,6 @@ import { LOGO_URL } from "../../constants/constants";
 import { RiInstagramFill } from "react-icons/ri";
 import "./Footer.css";
 import { Fade } from "react-awesome-reveal";
-
 import { pages } from "../../constants/Arrays";
 
 const Footer = () => {
@@ -49,8 +48,8 @@ const Footer = () => {
             to="/"
             sx={{
               display: { xs: "flex", sm: "flex" },
-              height: { xs: "5.5rem", md: "8.5rem" },
-              width: "25%",
+              height: { xs: "7rem", md: "8.5rem" },
+              width: { xs: "50%", md: "25%" },
               marginX: { xs: "1.5rem", md: "4rem" },
               "& img": {
                 transition: "transform 0.3s ease-in-out",
@@ -78,23 +77,25 @@ const Footer = () => {
               item
               xs={1}
               sx={{
-                height: "50%",
                 width: "50%",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "space-evenly",
+                textAling: "center",
                 m: "auto",
                 mt: "0px",
               }}
             >
               <Box
                 sx={{
+                  flexGrow: { xs: 1, md: 4 },
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "start",
                   m: "auto",
+                  ml: 0,
                 }}
               >
                 <Typography
@@ -115,7 +116,6 @@ const Footer = () => {
                         height: "100%",
                         fontWeight: "bold",
                         fontSize: { md: "12px", lg: "14px" },
-                        justifyContent: "center",
                         borderRadius: "10px",
                         color: "#FFFFF8",
                         transition: "transform 0.3s ease-in-out",
@@ -154,6 +154,8 @@ const Footer = () => {
                   justifyContent: "center",
                   alignItems: "start",
                   m: "auto",
+
+                  ml: 0,
                 }}
               >
                 {" "}
@@ -209,6 +211,7 @@ const Footer = () => {
                   justifyContent: "center",
                   alignItems: "start",
                   m: "auto",
+                  ml: 0,
                 }}
               >
                 <Typography

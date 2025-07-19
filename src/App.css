@@ -5,3 +5,33 @@
   width: 100%;
   height: auto;
 }
+
+.container-perfiles {
+  justify-content: center;
+  border-radius: 5px;
+  margin: 7rem auto;
+  margin-top: -7rem;
+  background-color: rgba(149, 247, 247, 0.95);
+  width: 95%;
+  padding: 2;
+  height: 65vh;
+}
+
+@media (min-width: 920px) {
+  .container-perfiles {
+    margin-top: -4rem;
+    height: 70vh;
+  }
+}
+@media (min-width: 1240px) {
+  .container-perfiles {
+    margin-top: 6rem;
+    height: 75vh;
+  }
+}
+@media (min-width: 1500px) {
+  .container-perfiles {
+    margin-top: 8rem;
+    height: 80vh;
+  }
+}

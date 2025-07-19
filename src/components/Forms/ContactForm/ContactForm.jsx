@@ -10,7 +10,7 @@ import { Form, Formik } from "formik";
 import "./ContactForm.css";
 import emailjs from "emailjs-com";
 
-import { validationContacto } from "../ValidationSchemas/ValidationSchemas";
+import { validationContact } from "../ValidationSchemas/ValidationSchemas";
 
 const ContactForm = () => {
   const getDate = () => {
@@ -27,7 +27,7 @@ const ContactForm = () => {
   return (
     <Formik
       initialValues={initialValueContact}
-      validationSchema={validationContacto}
+      validationSchema={validationContact}
       onSubmit={(values, { resetForm }) => {
         const templateParams = {
           name: values.name,

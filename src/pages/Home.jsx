@@ -5,6 +5,7 @@ import { Fade } from "react-awesome-reveal";
 import ArticleDestacado from "../components/Home/ArticleDestacado/ArticleDestacado";
 import BorderWave from "../components/BorderWave/BorderWave";
 import Contact from "./Contact";
+import "../App.css";
 import { BannerCuerpo } from "../components";
 
 const Home = () => {
@@ -30,18 +31,7 @@ const Home = () => {
         <ArticleDestacado />
         <BannerCuerpo />
 
-        <Box
-          sx={{
-            justifyContent: "center",
-            borderRadius: "5px",
-            my: "7rem",
-            mx: "auto",
-
-            backgroundColor: "rgba(149, 247, 247, 0.95)",
-            width: "95%",
-            p: 2,
-          }}
-        >
+        <Box className="container-perfiles">
           <Fade triggerOnce>
             <Typography
               component="h3"

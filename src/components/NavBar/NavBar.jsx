@@ -20,6 +20,7 @@ import { pages } from "../../constants/Arrays";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Divider } from "@mui/material";
+import { IMG_BRAND } from "../../constants/constants";
 
 function ResponsiveAppBar() {
   const { currentUser, loading } = useContext(AuthContext);
@@ -55,23 +56,21 @@ function ResponsiveAppBar() {
     <AppBar
       position="static"
       sx={{
-        bgcolor: "rgba(9, 165, 176, 0.6)",
         maxWidth: "100%",
         padding: "auto",
       }}
     >
       <Fade triggerOnce delay={1000}>
-        <Brand />
         <Container
           disableGutters
           maxWidth="xl"
           sx={{
             minWidth: "100%",
+            backgroundImage: `url(${IMG_BRAND})`,
             height: {
-              xs: "4rem",
-              sm: "4.3rem",
+              xs: "7rem",
+              sm: "6rem",
             },
-            bgcolor: "rgba(9, 165, 176, 0.4)",
           }}
         >
           <Toolbar disableGutters>
@@ -148,8 +147,8 @@ function ResponsiveAppBar() {
                   sx={{
                     display: "flex",
                     borderRadius: "50%",
-                    height: { xs: "3rem", sm: "4rem" },
-                    width: { xs: "3rem", sm: "4rem" },
+                    height: { xs: "6rem", sm: "6rem" },
+                    width: { xs: "6rem", sm: "6rem" },
                     margin: "2px 0 auto 13px",
                     "& img": {
                       transition: "transform 0.3s ease-in-out",

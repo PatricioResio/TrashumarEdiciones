@@ -17,6 +17,7 @@ const Oficios = ({ oficios }) => {
         borderRadius: "5px",
         backgroundColor: "#BDFFF9",
         m: "auto 6px",
+        zIndex: 1,
         gap: "2px",
         height: { xs: "", md: "22rem" },
       }}

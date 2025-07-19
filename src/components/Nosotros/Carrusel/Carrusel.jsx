@@ -11,16 +11,18 @@ const Carrusel = ({ arrayImagenes }) => {
 
   return (
     <Box
-      bgcolor="bg.dark"
       sx={{
-        minWidth: "100%",
-        height: "100vh",
+        minWidth: "97%",
+        height: "95vh",
+        maxWidth: "90%",
         display: "flex",
         flexDirection: "column",
         textAlign: "center",
         justifyContent: "center",
         boxShadow: "3px 3px 3px grey",
         marginTop: "0",
+        m: "auto",
+        backgroundColor: "rgba(0, 30, 31, 0.8)",
       }}
     >
       <Fade triggerOnce delay={500}>
@@ -30,7 +32,6 @@ const Carrusel = ({ arrayImagenes }) => {
           variant="h3"
           marginY={2}
           sx={{
-            color: "#D8EDE9",
             padding: "0",
           }}
         >
