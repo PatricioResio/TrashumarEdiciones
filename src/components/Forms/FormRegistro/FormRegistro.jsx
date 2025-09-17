@@ -19,6 +19,7 @@ import ProfilePictureUploader from "../ProfilePicture/ProfilePicture";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import useProfileUploader from "../../../hooks/useProfileUploader";
 import AddressAutocomplete from "./AddressAutocomplete";
+import AddressAutocompleteWrapper from "./AddressAutocompleteWrapper";
 
 const FormRegistro = () => {
   const { registrar, navigate, currentUser, newUser } = useContext(AuthContext);
@@ -290,7 +291,7 @@ const FormRegistro = () => {
               Selecciona la zona donde trabajas, tu metodo de trabajo y si es
               necesario el radio en que te manejas.
             </FormHelperText>
-            <AddressAutocomplete />
+            <AddressAutocompleteWrapper />
             <FormHelperText>Detalla tus metodos de venta</FormHelperText>
             <TextField
               label="Metodo de venta"
