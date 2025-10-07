@@ -8,6 +8,7 @@ import DescripcionPerfil from "./DescripcionPerfil/DescripcionPerfil";
 import Oficios from "./Oficios/Oficios";
 import CartaPerfilUsuario from "./CartaPerfilUsuarioo/CartaPerfilUsuario";
 import BannerCuerpo from "../BannerCuerpo/BannerCuerpo";
+import SectionDistribuidor from "./SectionDistribuidor/SectionDistribuidor";
 
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
@@ -109,6 +110,13 @@ const Perfil = () => {
         >
           <ContenedorColaboraciones />
         </Box>
+        {/*         {!distribuidor ? (
+          <></>
+        ) : (
+          <Box>
+            <SectionDistribuidor />
+          </Box>
+        )} */}
       </Container>
     </Box>
   );

@@ -37,7 +37,7 @@ const Footer = () => {
             display: "flex",
             alignItems: "center",
             width: "100%",
-            height: { xs: "24rem", xl: "17rem" },
+            height: { xs: "24rem", md: "15rem" },
             padding: { xs: "0", xl: "0" },
             bgcolor: "rgba(9, 165, 176, 0.4)",
           }}

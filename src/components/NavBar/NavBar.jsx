@@ -12,7 +12,6 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Brand, LogOutBtn } from "../index";
 import { Fade } from "react-awesome-reveal";
 import "./NavBar.css";
 import { LOGO_URL } from "../../constants/constants";
@@ -20,7 +19,7 @@ import { pages } from "../../constants/Arrays";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { Divider } from "@mui/material";
-import { IMG_BRAND } from "../../constants/constants";
+import LogOutBtn from "../LogOutBtn/LogOutBtn";
 
 function ResponsiveAppBar() {
   const { currentUser, loading } = useContext(AuthContext);
@@ -66,10 +65,9 @@ function ResponsiveAppBar() {
           maxWidth="xl"
           sx={{
             minWidth: "100%",
-            backgroundImage: `url(${IMG_BRAND})`,
             height: {
               xs: "7rem",
-              sm: "6rem",
+              sm: "5rem",
             },
           }}
         >
@@ -147,8 +145,8 @@ function ResponsiveAppBar() {
                   sx={{
                     display: "flex",
                     borderRadius: "50%",
-                    height: { xs: "6rem", sm: "6rem" },
-                    width: { xs: "6rem", sm: "6rem" },
+                    height: { xs: "6rem", sm: "4.6rem" },
+                    width: { xs: "6rem", sm: "5rem" },
                     margin: "2px 0 auto 13px",
                     "& img": {
                       transition: "transform 0.3s ease-in-out",

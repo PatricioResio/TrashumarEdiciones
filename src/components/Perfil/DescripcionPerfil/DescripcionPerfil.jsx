@@ -1,11 +1,10 @@
 import { Box, Container, Typography } from "@mui/material";
-import React from "react";
 
 const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
   return (
     <Container
       sx={{
-        height: { xs: "", md: "25rem" },
+        height: { xs: "", md: "20rem" },
         my: { xs: "30px", sm: "auto" },
         border: "1px solid #09A5B0",
         display: "flex",
@@ -23,7 +22,7 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
           justifyContent: "start",
         }}
       >
-        <Typography variant="h4" sx={{ mt: "10px" }}>
+        <Typography variant="h5" sx={{ mt: "10px", fontWeight: "bold" }}>
           Mi descripcion
         </Typography>
         {!explicarPerfil ? (

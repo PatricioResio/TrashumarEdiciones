@@ -8,7 +8,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 const ContenedorHistoria = () => {
-  const { imgArrayCarrusel, handleChangeHistoria } = useHistorias();
+  const { imgArrayCarrusel, handleChangeHistoria, handlerPopUp } =
+    useHistorias();
 
   return (
     <>
@@ -43,6 +44,7 @@ const ContenedorHistoria = () => {
                   key={historia.posicion}
                   {...historia}
                   handleChangeHistoria={handleChangeHistoria}
+                  handlerPopUp={handlerPopUp}
                 />
               </Fade>
             </SwiperSlide>

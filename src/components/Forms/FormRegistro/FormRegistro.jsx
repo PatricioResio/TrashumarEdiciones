@@ -15,10 +15,7 @@ import { DEFAULT_PERFIL_FOTO } from "../../../constants/constants";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { Fade } from "react-awesome-reveal";
-import ProfilePictureUploader from "../ProfilePicture/ProfilePicture";
-import GooglePlacesAutocomplete from "react-google-places-autocomplete";
 import useProfileUploader from "../../../hooks/useProfileUploader";
-import AddressAutocomplete from "./AddressAutocomplete";
 import AddressAutocompleteWrapper from "./AddressAutocompleteWrapper";
 
 const FormRegistro = () => {
@@ -44,7 +41,7 @@ const FormRegistro = () => {
     registroTerminado: false,
     distribuidor: false,
     zonaDistribuidor: { lat: 0, lng: 0 },
-    ubicacion: "",
+    address: "",
     radio: "",
     avatar: DEFAULT_PERFIL_FOTO,
     facebookForm: "",
@@ -71,6 +68,11 @@ const FormRegistro = () => {
       setFormUser((prevUser) => ({
         ...prevUser,
         distribuidor: checked,
+      }));
+    } else if (name == "address" && value !== "") {
+      setFormUser((prevUser) => ({
+        ...prevUser,
+        [name]: value,
       }));
     } else if (type === "checkbox") {
       setFormUser((prevUser) => ({
@@ -291,7 +293,7 @@ const FormRegistro = () => {
               Selecciona la zona donde trabajas, tu metodo de trabajo y si es
               necesario el radio en que te manejas.
             </FormHelperText>
-            <AddressAutocompleteWrapper />
+            <AddressAutocompleteWrapper handlerChange={handlerChange} />
             <FormHelperText>Detalla tus metodos de venta</FormHelperText>
             <TextField
               label="Metodo de venta"

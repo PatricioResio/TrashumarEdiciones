@@ -6,10 +6,12 @@ import { Box, Container, Typography } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
 import useResetSwiper from "../../../hooks/useResetSwiper";
 
-const Carrusel = ({ arrayImagenes }) => {
+const Carrusel = ({ arrayImagenes, popUp }) => {
   const swiperRef = useResetSwiper(arrayImagenes);
 
-  return (
+  return !popUp ? (
+    <></>
+  ) : (
     <Box
       sx={{
         minWidth: "97%",

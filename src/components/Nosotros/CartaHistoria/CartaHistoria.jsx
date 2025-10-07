@@ -2,9 +2,18 @@ import { Button, Card, CardActions, CardMedia } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
 import "./CartaHistoria.css";
 
-const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
+const CartaHistoria = ({
+  url,
+  id,
+  posicion,
+  handleChangeHistoria,
+  handlerPopUp,
+}) => {
   const handleClickHistoria = () => {
     handleChangeHistoria(posicion);
+  };
+  const handlePopUp = () => {
+    handlerPopUp();
   };
 
   return (
@@ -32,6 +41,7 @@ const CartaHistoria = ({ url, id, posicion, handleChangeHistoria }) => {
               }}
               image={url}
               src={!url ? "" : url}
+              onClick={handlePopUp}
             ></CardMedia>
           </Button>
         </CardActions>

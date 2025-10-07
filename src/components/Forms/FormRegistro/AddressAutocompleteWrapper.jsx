@@ -1,8 +1,18 @@
-import AddressAutocomplete from "./AddressAutocomplete";
-import useLoadGoogleMaps from "../../../hooks/useLoadGoogleMaps.js";
+import AddressAutocomplete from "./AddressAutocomplete"; // tu componente que usa react-places-autocomplete
+import useLoadGooglePlaces from "../../../hooks/useLoadGooglePlaces";
 
-export default function AddressAutocompleteWrapper() {
-  const ready = useLoadGoogleMaps();
+export default function AddressAutocompleteWrapper({
+  handlerChange,
+  initialAddress,
+}) {
+  const ready = useLoadGooglePlaces();
 
-  return !ready ? <p>Loading..</p> : <AddressAutocomplete />;
+  if (!ready) return <div>Cargando Google Maps...</div>;
+
+  return (
+    <AddressAutocomplete
+      handlerChange={handlerChange}
+      initialAddress={initialAddress}
+    />
+  );
 }

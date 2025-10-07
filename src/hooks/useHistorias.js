@@ -6,9 +6,13 @@ const useHistorias = () => {
 
   const [imgArrayCarrusel, setImgArrayCarrusel] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [popUp, setPopUp] = useState(false);
 
   const handleChangeHistoria = (posicion) => {
     setRenderHistoria(posicion);
+  };
+  const handlerPopUp = () => {
+    setPopUp(!popUp);
   };
 
   useEffect(() => {
@@ -24,7 +28,13 @@ const useHistorias = () => {
     setLoading(false);
   }, [renderHistoria]);
 
-  return { imgArrayCarrusel, loading, renderHistoria, handleChangeHistoria };
+  return {
+    imgArrayCarrusel,
+    loading,
+    renderHistoria,
+    handleChangeHistoria,
+    handlerPopUp,
+  };
 };
 
 export default useHistorias;
