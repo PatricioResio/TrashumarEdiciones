@@ -60,83 +60,85 @@ const ContactForm = () => {
       {({ values, handleChange, handleBlur, errors, touched }) => (
         <Form>
           <Box className="container">
-            <Typography
-              sx={{ my: "1.5rem", color: "secondary.main" }}
-              component="h2"
-              variant="h2"
-            >
-              Querias contactarnos?
-            </Typography>
-            <Typography
-              component="h3"
-              variant="h6"
-              sx={{ color: "secondary.main" }}
-            >
-              Acá podes hablar sin tapujos
-            </Typography>
-            {touched.name && errors.name && (
-              <FormHelperText sx={{ color: "#F50E00" }}>
-                {errors.name}
-              </FormHelperText>
-            )}
-            <TextField
-              className="textField"
-              label="Nombre"
-              name="name"
-              value={values.name}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={errors.name && touched.name}
-            />
-            {touched.title && errors.title && (
-              <FormHelperText sx={{ color: "#F50E00" }}>
-                {errors.title}
-              </FormHelperText>
-            )}
-            <TextField
-              className="textField"
-              label="Asunto"
-              name="title"
-              value={values.title}
-              onChange={handleChange}
-              onBlur={handleBlur}
-              error={errors.title && touched.title}
-            />
-            {touched.email && errors.email && (
-              <FormHelperText sx={{ color: "#F50E00" }}>
-                {errors.email}
-              </FormHelperText>
-            )}
-            <TextField
-              className="textField"
-              label="Email"
-              name="email"
-              value={values.email}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              error={errors.email && touched.email}
-            />
-            {touched.message && errors.message && (
-              <FormHelperText sx={{ color: "#F50E00" }}>
-                {errors.message}
-              </FormHelperText>
-            )}
-            <TextareaAutosize
-              className="textArea"
-              minRows={3}
-              name="message"
-              value={values.message}
-              onBlur={handleBlur}
-              onChange={handleChange}
-              error={errors.message && touched.message}
-              placeholder=""
-            />
-            <label className="mui-label">Tu mensaje</label>
-            <span className="textArea-underline" />
+            <Box className="form-box">
+              <Typography
+                sx={{ my: "1.5rem", color: "secondary.main" }}
+                component="h3"
+                variant="h3"
+              >
+                Querias contactarnos?
+              </Typography>
+              <Typography
+                component="h5"
+                variant="h5"
+                sx={{ color: "bg.white", mb: "1.5rem" }}
+              >
+                Acá podes hablar sin tapujos
+              </Typography>
+              {touched.name && errors.name && (
+                <FormHelperText sx={{ color: "#F50E00" }}>
+                  {errors.name}
+                </FormHelperText>
+              )}
+              <TextField
+                className="textField"
+                label="Nombre"
+                name="name"
+                value={values.name}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.name && touched.name}
+              />
+              {touched.title && errors.title && (
+                <FormHelperText sx={{ color: "#F50E00" }}>
+                  {errors.title}
+                </FormHelperText>
+              )}
+              <TextField
+                className="textField"
+                label="Asunto"
+                name="title"
+                value={values.title}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={errors.title && touched.title}
+              />
+              {touched.email && errors.email && (
+                <FormHelperText sx={{ color: "#F50E00" }}>
+                  {errors.email}
+                </FormHelperText>
+              )}
+              <TextField
+                className="textField"
+                label="Email"
+                name="email"
+                value={values.email}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                error={errors.email && touched.email}
+              />
+              {touched.message && errors.message && (
+                <FormHelperText sx={{ color: "#F50E00" }}>
+                  {errors.message}
+                </FormHelperText>
+              )}
+              <TextareaAutosize
+                className="textArea"
+                minRows={3}
+                name="message"
+                value={values.message}
+                onBlur={handleBlur}
+                onChange={handleChange}
+                error={errors.message && touched.message}
+                placeholder=""
+              />
+              <label className="mui-label">Tu mensaje</label>
+              <span className="textArea-underline" />
 
-            <Button variant="outlined" type="submit">
-              Enviar mensaje
-            </Button>
+              <Button variant="outlined" type="submit" sx={{ my: "3rem" }}>
+                Enviar mensaje
+              </Button>
+            </Box>
           </Box>
         </Form>
       )}

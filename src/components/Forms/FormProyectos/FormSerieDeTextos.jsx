@@ -499,7 +499,13 @@ const FormSerieDeTextos = () => {
             label="Estoy de acuerdo con los términos y condiciones"
           />
           <Button
-            sx={{ m: "auto", display: "flex" }}
+            sx={{
+              mx: "auto",
+              color: "white",
+              my: "30px",
+              display: "flex",
+              bgcolor: "#0097A7",
+            }}
             type="submit"
             variant="contained"
           >

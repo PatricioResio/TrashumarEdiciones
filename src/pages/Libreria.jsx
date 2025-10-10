@@ -31,6 +31,19 @@ const Libreria = () => {
           >
             Librería
           </Typography>
+          <Typography
+            variant="h5"
+            component="h5"
+            sx={{
+              mt: "2rem",
+              color: "#777777ff",
+              width: { xs: "90%", md: "40%" },
+              m: "20px auto 0 auto",
+            }}
+          >
+            Nuestro catalogo de libros y publicaciones esta en pleno
+            crecimiento, sumate!
+          </Typography>
         </Fade>
         <Fade>
           <SectionLibreria />

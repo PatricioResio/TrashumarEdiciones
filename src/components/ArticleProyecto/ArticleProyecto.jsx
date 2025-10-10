@@ -17,7 +17,6 @@ const SectionProyecto = () => {
         alignItems: "center",
         marginTop: "20px",
         fontSize: "26px",
-        borderRadius: "10px",
         p: "35px",
       }}
       maxWidth="2xl"
@@ -39,12 +38,13 @@ const SectionProyecto = () => {
           width: "100%",
           maxWidth: "1600px",
           minHeight: "70vh",
-          borderRadius: "5px",
+          borderRadius: "30px",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
           alignItems: "center",
           p: "20px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
         }}
       >
         <Typography

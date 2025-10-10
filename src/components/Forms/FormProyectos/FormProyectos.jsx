@@ -23,9 +23,9 @@ function FormProyectos() {
         m: "0 auto",
         flexDirection: "column",
         alignItems: "center",
-        border: "1px solid #09A5B0",
-        borderRadius: "5px",
-        backgroundColor: "#A4FFFE",
+        borderRadius: "20px",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        backgroundColor: " rgba(255, 255, 255, 0.5)",
       }}
     >
       {" "}
@@ -43,16 +43,16 @@ function FormProyectos() {
         <Button
           variant="outlined"
           sx={{
-            borderRadius: "0px",
+            borderRadius: "5px",
             width: "25%",
             p: "0.1rem",
             backgroundColor:
-              posicionForm === "Texto unico" ? "#078893" : "#00000",
-            color: posicionForm === "Texto unico" ? "#fff" : "#000",
+              posicionForm === "Texto unico" ? "#7AE7F5" : "#00000",
+            color: posicionForm === "Texto unico" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Texto unico" ? "bold" : "normal",
             "&:hover": {
               backgroundColor:
-                posicionForm === "Texto unico" ? "#078893" : "primary.main",
+                posicionForm === "Texto unico" ? "#7AE7F5" : "primary.main",
             },
           }}
           onClick={() => setPosicionForm("Texto unico")}
@@ -62,16 +62,16 @@ function FormProyectos() {
         <Button
           variant="outlined"
           sx={{
-            borderRadius: "0px",
+            borderRadius: "5px",
             p: "0.1rem",
             width: "25%",
             backgroundColor:
-              posicionForm === "Serie de textos" ? "#078893" : "#00000",
-            color: posicionForm === "Serie de textos" ? "#fff" : "#000",
+              posicionForm === "Serie de textos" ? "#7AE7F5" : "#00000",
+            color: posicionForm === "Serie de textos" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Serie de textos" ? "bold" : "normal",
             "&:hover": {
               backgroundColor:
-                posicionForm === "Serie de textos" ? "#078893" : "primary.main",
+                posicionForm === "Serie de textos" ? "#7AE7F5" : "primary.main",
             },
           }}
           onClick={() => setPosicionForm("Serie de textos")}
@@ -81,16 +81,16 @@ function FormProyectos() {
         <Button
           variant="outlined"
           sx={{
-            borderRadius: "0px",
+            borderRadius: "5px",
             p: "0.1rem",
             width: "25%",
             backgroundColor:
-              posicionForm === "Libro digital" ? "#078893" : "#00000",
-            color: posicionForm === "Libro digital" ? "#fff" : "#000",
+              posicionForm === "Libro digital" ? "#7AE7F5" : "#00000",
+            color: posicionForm === "Libro digital" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Libro digital" ? "bold" : "normal",
             "&:hover": {
               backgroundColor:
-                posicionForm === "Libro digital" ? "#078893" : "primary.main",
+                posicionForm === "Libro digital" ? "#7AE7F5" : "primary.main",
             },
           }}
           onClick={() => setPosicionForm("Libro digital")}
@@ -100,16 +100,16 @@ function FormProyectos() {
         <Button
           variant="outlined"
           sx={{
-            borderRadius: "0px",
+            borderRadius: "5px",
             p: "0.1rem",
             width: "25%",
             backgroundColor:
-              posicionForm === "Libro fisico" ? "#078893" : "#00000",
-            color: posicionForm === "Libro fisico" ? "#fff" : "#000",
+              posicionForm === "Libro fisico" ? "#7AE7F5" : "#00000",
+            color: posicionForm === "Libro fisico" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Libro fisico" ? "bold" : "normal",
             "&:hover": {
               backgroundColor:
-                posicionForm === "Libro fisico" ? "#078893" : "primary.main",
+                posicionForm === "Libro fisico" ? "#7AE7F5" : "primary.main",
             },
           }}
           onClick={() => setPosicionForm("Libro fisico")}
@@ -130,21 +130,23 @@ function FormProyectos() {
           <Button
             variant="outlined"
             sx={{
-              borderRadius: "0px",
+              borderRadius: "5px",
               p: "0.1rem",
               width: "33%",
               backgroundColor:
                 posicionForm2 === "Contenido de mi autoria"
-                  ? "#078893"
+                  ? "#7AE7F5"
                   : "#00000",
               color:
-                posicionForm2 === "Contenido de mi autoria" ? "#fff" : "#000",
+                posicionForm2 === "Contenido de mi autoria"
+                  ? "#000000ea"
+                  : "#000",
               fontWeight:
                 posicionForm2 === "Contenido de mi autoria" ? "bold" : "normal",
               "&:hover": {
                 backgroundColor:
                   posicionForm2 === "Contenido de mi autoria"
-                    ? "#078893"
+                    ? "#7AE7F5"
                     : "primary.main",
               },
             }}
@@ -155,21 +157,23 @@ function FormProyectos() {
           <Button
             variant="outlined"
             sx={{
-              borderRadius: "0px",
+              borderRadius: "5px",
               p: "0.1rem",
               width: "33%",
               backgroundColor:
                 posicionForm2 === "Editar contenido ajeno"
-                  ? "#078893"
+                  ? "#7AE7F5"
                   : "#00000",
               color:
-                posicionForm2 === "Editar contenido ajeno" ? "#fff" : "#000",
+                posicionForm2 === "Editar contenido ajeno"
+                  ? "#000000ea"
+                  : "#000",
               fontWeight:
                 posicionForm2 === "Editar contenido ajeno" ? "bold" : "normal",
               "&:hover": {
                 backgroundColor:
                   posicionForm2 === "Editar contenido ajeno"
-                    ? "#078893"
+                    ? "#7AE7F5"
                     : "primary.main",
               },
             }}
@@ -180,17 +184,17 @@ function FormProyectos() {
           <Button
             variant="outlined"
             sx={{
-              borderRadius: "0px",
+              borderRadius: "5px",
               p: "0.1rem",
               width: "33%",
               backgroundColor:
-                posicionForm2 === "Tengo la idea" ? "#078893" : "#00000",
-              color: posicionForm2 === "Tengo la idea" ? "#fff" : "#000",
+                posicionForm2 === "Tengo la idea" ? "#7AE7F5" : "#00000",
+              color: posicionForm2 === "Tengo la idea" ? "#000000ea" : "#000",
               fontWeight: posicionForm2 === "Tengo la idea" ? "bold" : "normal",
               "&:hover": {
                 backgroundColor:
                   posicionForm2 === "Tengo la idea"
-                    ? "#078893"
+                    ? "#7AE7F5"
                     : "primary.main",
               },
             }}

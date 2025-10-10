@@ -12,7 +12,8 @@ const SectionLibreria = () => {
       sx={{
         minHeight: "90vh",
 
-        borderRadius: "5px",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        borderRadius: "30px",
         margin: { xs: "0", md: "20px" },
       }}
     >
@@ -25,7 +26,9 @@ const SectionLibreria = () => {
         bgcolor="bg.whiteBlue"
         sx={{
           minHeight: "90vh",
-          borderRadius: "5px",
+          borderRadius: "30px",
+
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
 
           margin: { xs: "0", md: "20px" },
         }}

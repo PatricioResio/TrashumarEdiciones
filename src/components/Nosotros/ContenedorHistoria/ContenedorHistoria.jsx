@@ -20,10 +20,11 @@ const ContenedorHistoria = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          borderRadius: "20px",
+          borderRadius: "25px",
           width: { xs: "100%", md: "75%" },
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
           margin: "4rem auto",
-          padding: "0",
+          padding: "3rem",
         }}
       >
         <Swiper

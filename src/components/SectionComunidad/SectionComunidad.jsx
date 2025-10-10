@@ -16,7 +16,9 @@ const SectionComunidad = () => {
       bgcolor="bg.whiteBlue"
       sx={{
         minHeight: "90vh",
-        borderRadius: "5px",
+        borderRadius: "30px",
+
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
       }}
     >
       <CircularProgress sx={{ mt: "25%" }} />
@@ -26,7 +28,9 @@ const SectionComunidad = () => {
       bgcolor="bg.whiteBlue"
       component="article"
       sx={{
-        borderRadius: "5px",
+        borderRadius: "30px",
+
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
       }}
     >
       <Fade>

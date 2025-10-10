@@ -12,36 +12,34 @@ const CartaHistoria = ({
   const handleClickHistoria = () => {
     handleChangeHistoria(posicion);
   };
-  const handlePopUp = () => {
-    handlerPopUp();
-  };
 
   return (
     <Fade triggerOnce delay={1100}>
       <Card
         className="carta-historia"
         sx={{
-          height: { xs: "58vh", md: "600px" },
+          borderRadius: "20px",
+          height: { xs: "58vh", md: "37.5rem" },
           width: { xs: "63vw", sm: "200px", md: "280px" },
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
         }}
       >
         <CardActions
           sx={{
-            p: "0",
-            transition: "transform 0.3s ease-in-out", // Duración y suavidad del efecto
+            p: "0", // Duración y suavidad del efecto
           }}
         >
           <Button onClick={handleClickHistoria} sx={{ m: "0", p: "0" }}>
             <CardMedia
               sx={{
-                height: { xs: "58vh", md: "600px" },
+                height: { xs: "58vh", md: "37.5rem" },
                 width: { xs: "63vw", sm: "230px", md: "280px" },
                 m: "0",
                 p: "0",
               }}
               image={url}
               src={!url ? "" : url}
-              onClick={handlePopUp}
+              onClick={handlerPopUp}
             ></CardMedia>
           </Button>
         </CardActions>

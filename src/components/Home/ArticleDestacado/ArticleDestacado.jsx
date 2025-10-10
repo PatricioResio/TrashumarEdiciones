@@ -15,7 +15,7 @@ const ArticleDestacado = () => {
           xl: "52rem",
         },
         margin: "50px auto",
-        width: "100%",
+        width: "95%",
       }}
     >
       <ContenedorDestacado />

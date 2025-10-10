@@ -3,20 +3,35 @@
   width: 95%;
   margin: auto;
   margin-top: -8rem;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
   background-color: rgba(149, 247, 247, 0.95);
+}
+.form-box {
+  height: 65vh;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  background-color: rgba(247, 255, 255, 0.95);
 }
 
 .textField {
   margin: 7px;
-  width: 75%;
+  width: 80%;
 }
 .textArea {
   position: relative;
-  width: 75%;
+  width: 80%;
   margin-bottom: 6px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -31,21 +46,25 @@
 }
 @media (min-width: 600px) {
   .textField {
-    width: 50%;
+    width: 90%;
   }
   .textArea {
-    width: 50%;
+    width: 90%;
   }
   .container {
     margin-top: -6rem;
+    height: 95vh;
+  }
+  .form-box {
+    height: 85vh;
   }
 }
 @media (min-width: 920px) {
   .textField {
-    width: 40%;
+    width: 80%;
   }
   .textArea {
-    width: 40%;
+    width: 80%;
   }
   .container {
     margin-top: -4rem;
@@ -53,10 +72,10 @@
 }
 @media (min-width: 1240px) {
   .textArea {
-    width: 38%;
+    width: 70%;
   }
   .textField {
-    width: 38%;
+    width: 70%;
   }
   .container {
     margin-top: 6rem;
@@ -67,7 +86,10 @@
     margin-top: 9rem;
   }
   .textField {
-    width: 38%;
+    width: 60%;
+  }
+  .textArea {
+    width: 60%;
   }
 }
 

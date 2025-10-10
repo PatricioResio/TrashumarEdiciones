@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: rgba(149, 247, 247, 0.9);
   box-shadow: 1px 1px 5px black;
-  min-height: 40rem;
+  min-height: 45rem;
 }

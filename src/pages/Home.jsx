@@ -3,7 +3,7 @@ import ContenedorPerfiles from "../components/Home/ContenedorPerfiles/Contenedor
 import CarruselHome from "../components/Home/CarruselHome/CarruselHome";
 import { Fade } from "react-awesome-reveal";
 import ArticleDestacado from "../components/Home/ArticleDestacado/ArticleDestacado";
-import BorderWave from "../components/BorderWave/BorderWave";
+
 import Contact from "./Contact";
 import "../App.css";
 import { BannerCuerpo } from "../components";

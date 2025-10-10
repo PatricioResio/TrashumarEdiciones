@@ -55,7 +55,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           alignItems: "center",
           width: { xs: "100%", md: "90%" },
           gap: "2rem",
-          m: "10px auto",
+          m: "-25px auto",
         }}
       >
         <Oficios oficios={oficios} />
@@ -101,9 +101,9 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           sx={{
             m: "auto",
             border: "solid 2px #BAE3D7",
-            backgroundColor: "rgba(149, 247, 247, 0.9)",
+            backgroundColor: "rgba(149, 247, 247, 0.8)",
             borderRadius: "2%",
-            minHeight: { xs: "20rem", md: "40rem" },
+            minHeight: { xs: "20rem", md: "46rem" },
             p: "20px",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
@@ -116,9 +116,9 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           component="article"
           sx={{
             m: "auto",
-            minHeight: "35rem",
+            minHeight: { xs: "20rem", md: "46rem" },
             border: "solid 2px #BAE3D7",
-            backgroundColor: "rgba(149, 247, 247, 0.9)",
+            backgroundColor: "rgba(149, 247, 247, 0.8)",
             borderRadius: "2%",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",

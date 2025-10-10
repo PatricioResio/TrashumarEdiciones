@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -7,7 +7,7 @@ import CartaProyectoPerfil from "../CartaProyectoPerfil/CartaProyectoPerfil";
 
 const FilaProyectos = ({ proyectosUser }) => {
   return (
-    <>
+    <Box sx={{ minHeight: "60vh", marginBottom: "5rem" }}>
       <Typography
         sx={{
           m: "auto auto 50px auto",
@@ -45,7 +45,7 @@ const FilaProyectos = ({ proyectosUser }) => {
           ))}
         </Swiper>
       )}
-    </>
+    </Box>
   );
 };
 

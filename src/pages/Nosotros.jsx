@@ -19,6 +19,18 @@ const Nosotros = () => {
         <Typography variant="h1" component="h2" sx={{ mt: "2rem" }}>
           ¿De qué se trata?
         </Typography>
+        <Typography
+          variant="h5"
+          component="h5"
+          sx={{
+            mt: "2rem",
+            color: "#777777ff",
+            width: { xs: "90%", md: "40%" },
+            m: "20px auto 0 auto",
+          }}
+        >
+          Cada imagen te va a mostrar una historia diferente.
+        </Typography>
         <ContenedorHistoria />
       </Box>
 

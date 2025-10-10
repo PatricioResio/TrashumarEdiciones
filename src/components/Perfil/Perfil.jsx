@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import "./Perfil.css";
-import { Box, Container } from "@mui/material";
+import { Box, Container, Fade } from "@mui/material";
 import ContenedorColaboraciones from "./ContenedorColaboraciones/ContenedorColaboraciones";
 import ContenedorProyectosPerfil from "./ContenedorProyectosPerfil/ContenedorProyectosPerfil";
 import DescripcionPerfil from "./DescripcionPerfil/DescripcionPerfil";
@@ -23,6 +23,7 @@ const Perfil = () => {
         justifyContent: "center",
         alignItems: "center",
         width: "95%",
+        minHeight: "70vh",
         m: "40px auto",
         borderRadius: "5px",
         p: { xs: 0, md: "4rem" },
@@ -38,6 +39,8 @@ const Perfil = () => {
           width: { xs: "100%", md: "90%" },
           gap: "2rem",
           m: "10px auto",
+
+          minHeight: "40vh",
         }}
       >
         <Box
@@ -45,6 +48,8 @@ const Perfil = () => {
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
             marginBottom: { xs: "2", md: "-20rem" },
+
+            minHeight: "40vh",
           }}
         >
           <Oficios oficios={oficios} />
@@ -69,7 +74,9 @@ const Perfil = () => {
       </Box>
 
       <Box sx={{ marginTop: { xs: "0", md: "-25rem" } }}>
-        <BannerCuerpo />
+        <Fade triggerOnce easeOut direction="down">
+          <BannerCuerpo />
+        </Fade>
       </Box>
       <Container
         disableGutters

@@ -13,7 +13,7 @@ const ContenedorDestacado = () => {
   const Descripcion = DESCRIPCION_ARTICULO_DESTACADO.slice(0, 254);
   return (
     <Container maxWidth="2xl" className="contenedor-destacado">
-      <Fade triggerOnce easeOut direction="down">
+      <Fade triggerOnce easeIn direction="down">
         <Typography
           color={"#0C2324"}
           sx={{
@@ -48,7 +48,7 @@ const ContenedorDestacado = () => {
           <Box
             component="img"
             sx={{
-              boxShadow: " 2px 2px rgba(0.12, 0, 0, 0.2)",
+              boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
 
               width: { xs: "90%", md: "25rem", lg: "25rem", xl: "26rem" },
               m: "auto",
@@ -80,7 +80,7 @@ const ContenedorDestacado = () => {
             <Button
               sx={{
                 width: { sx: "90px", xl: "180px" },
-                m: "5px auto",
+                m: "4rem auto 0 auto",
                 color: "#022932",
                 borderColor: "#022932",
               }}

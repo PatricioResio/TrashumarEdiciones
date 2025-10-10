@@ -15,9 +15,10 @@ export default function CartaProyectos({ proyecto }) {
           height: { xs: "22rem", sm: "29rem", md: "37rem" },
           width: { xs: "12rem", sm: "17rem", md: "22rem" },
           border: "1px solid #09A5B0",
-          borderRadius: "3px",
+          borderRadius: "15px",
           backgroundColor: "transparent",
 
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
           transition: "transform 0.3s ease-in-out",
           "&:hover": {
             transform: "scale(1.01)",

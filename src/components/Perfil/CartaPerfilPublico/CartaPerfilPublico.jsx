@@ -32,7 +32,7 @@ const CartaPerfilPublico = ({ perfil }) => {
         flexDirection: { xs: "column" },
         justifyContent: { xs: "space-around", md: "center" },
         alignItems: "center",
-        borderRadius: "5px",
+        borderRadius: "12px",
         border: "1px solid #3C9990",
         backgroundColor: " rgba(149, 247, 247, 0.95)",
         width: "80%",
