@@ -17,7 +17,7 @@ const ContenedorDestacado = () => {
         <Typography
           color={"#0C2324"}
           sx={{
-            margin: "2rem",
+            margin: { xs: "0", md: "2rem" },
           }}
           variant="h2"
           component="h2"
@@ -31,11 +31,10 @@ const ContenedorDestacado = () => {
             display: "flex",
             justifyContent: "center",
             gap: "80px",
-            pt: "30px",
             width: "82%",
             minWidth: { xs: "80%", lg: "600px" },
             m: "auto",
-            p: "2rem",
+            p: { xs: "0", md: "2rem" },
             color: "#0C2324",
             flexDirection: {
               xs: "column",
@@ -49,14 +48,13 @@ const ContenedorDestacado = () => {
             component="img"
             sx={{
               boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-
               width: { xs: "90%", md: "25rem", lg: "25rem", xl: "26rem" },
-              m: "auto",
+              m: { xs: "0 auto", md: "auto" },
               mb: { xs: "0", lg: "auto" },
             }}
             src={TAPA_HIPPIES}
             alt="Ilustracion de tapa de libro novedad"
-          ></Box>
+          />
           <Box
             sx={{
               width: { xs: "100%", lg: "37.5rem" },
@@ -65,7 +63,7 @@ const ContenedorDestacado = () => {
               justifyContent: "center",
               m: "auto",
               mt: { xs: "0px", lg: "auto" },
-              gap: "20px",
+              gap: { xs: "10px", md: "20px" },
             }}
           >
             <Typography component="h3" variant="h3">
@@ -80,7 +78,7 @@ const ContenedorDestacado = () => {
             <Button
               sx={{
                 width: { sx: "90px", xl: "180px" },
-                m: "4rem auto 0 auto",
+                m: { xs: "0", md: "4rem auto 0 auto" },
                 color: "#022932",
                 borderColor: "#022932",
               }}

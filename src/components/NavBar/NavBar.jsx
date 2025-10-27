@@ -66,7 +66,7 @@ function ResponsiveAppBar() {
           sx={{
             minWidth: "100%",
             height: {
-              xs: "7rem",
+              xs: "5rem",
               sm: "5rem",
             },
           }}
@@ -135,7 +135,7 @@ function ResponsiveAppBar() {
               </Menu>
             </Box>
 
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1, margin: "auto" }}>
               <Fade triggerOnce>
                 <Typography
                   variant="h6"
@@ -145,9 +145,12 @@ function ResponsiveAppBar() {
                   sx={{
                     display: "flex",
                     borderRadius: "50%",
-                    height: { xs: "6rem", sm: "4.6rem" },
+                    height: { xs: "4.5rem", sm: "4.6rem" },
                     width: { xs: "6rem", sm: "5rem" },
-                    margin: "2px 0 auto 13px",
+                    margin: {
+                      xs: "3px 0 auto 0",
+                      md: "3px auto auto 10px",
+                    },
                     "& img": {
                       transition: "transform 0.3s ease-in-out",
                     },
@@ -204,7 +207,6 @@ function ResponsiveAppBar() {
                 <Box
                   sx={{
                     flexGrow: 1,
-                    marginLeft: "2rem ",
                     marginTop: "0",
                     display: "flex",
                     justifyContent: "end",

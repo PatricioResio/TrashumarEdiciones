@@ -1,9 +1,7 @@
 import CartaPerfiles from "../CartaPerfiles/CartaPerfiles";
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import "swiper/css/effect-coverflow";
-import { Navigation } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "./FilaPerfiles.css";
 
@@ -11,8 +9,6 @@ const FilaPerfiles = ({ perfiles }) => {
   return (
     <>
       <Swiper
-        navigation={true}
-        modules={[Navigation]}
         className="MySwiper"
         spaceBetween={6}
         breakpoints={{

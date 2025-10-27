@@ -1,8 +1,9 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
+import { Pagination, Autoplay, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "../FilaPerfiles/FilaPerfiles.css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./CarruselHome.css";
 import { homeArrays } from "../../../constants/Arrays";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Fade } from "react-awesome-reveal";
@@ -28,14 +29,12 @@ const CarruselHome = () => {
         }}
       >
         <Swiper
-          navigation={true}
-          modules={[EffectCoverflow, Autoplay, Navigation]}
+          pagination={true}
+          modules={[EffectCoverflow, Autoplay, Pagination]}
           autoplay={{ delay: 15000 }}
           className="swiper"
           slidesPerView={1}
         >
-          <div className=".swiper-button-prev"></div>
-          <div className=".swiper-button-next"></div>
           {homeArrays.map((item) => (
             <SwiperSlide key={item.id} className="swipper-slide">
               <Container
@@ -80,12 +79,16 @@ const CarruselHome = () => {
                       lg: "97%",
                       xl: "98%",
                     },
+                    height: {
+                      xs: "80vh",
+                      sm: "78vh",
+                    },
                     position: "absolute",
                     bottom: 0,
                     top: 0,
                     left: 0,
                     right: 0,
-                    margin: "20px",
+                    margin: { xs: "20px", xl: "auto" },
                     border: "2px solid black",
                     borderRadius: "50px",
                     backgroundColor: "rgba(122, 231, 210, 0.5)",

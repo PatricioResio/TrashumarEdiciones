@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
 import { SwiperSlide, Swiper } from "swiper/react";
 import CartaProyectoPerfil from "../CartaProyectoPerfil/CartaProyectoPerfil";
 
@@ -24,8 +24,8 @@ const FilaProyectos = ({ proyectosUser }) => {
         </Typography>
       ) : (
         <Swiper
-          navigation={true}
-          modules={[Navigation]}
+          pagination={true}
+          modules={[Pagination]}
           className="swiper"
           centeredSlides={true}
           spaceBetween={1}

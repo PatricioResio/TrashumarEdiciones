@@ -9,7 +9,7 @@ const SectionProyecto = () => {
   return (
     <Container
       sx={{
-        minHeight: "80vh",
+        minHeight: { xs: "65vh", md: "80vh" },
         width: "100%",
         margin: "30px auto",
         display: "flex",

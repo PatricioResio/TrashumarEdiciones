@@ -1,17 +1,17 @@
 import CartaProyectos from "../CartaProyectos/CartaProyectos";
 import { SwiperSlide, Swiper } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css/effect-coverflow";
-import { Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 const FilaProyectos = ({ proyectos }) => {
   return (
     <>
       <Swiper
-        navigation={true}
-        modules={[Navigation]}
+        pagination={true}
+        modules={[Pagination]}
         className="MySwiper"
         spaceBetween={7}
         breakpoints={{

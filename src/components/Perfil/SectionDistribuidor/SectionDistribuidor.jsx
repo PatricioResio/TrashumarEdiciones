@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import Map from "../../Map/Map";
 
 const SectionDistribuidor = (zonaDistribuidor, address) => {
   return (

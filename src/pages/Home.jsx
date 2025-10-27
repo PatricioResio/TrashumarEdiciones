@@ -29,7 +29,12 @@ const Home = () => {
         }}
       >
         <ArticleDestacado />
-        <BannerCuerpo />
+        <Box>
+          <Typography></Typography>
+        </Box>
+        <Box component="section" mb={{ xs: "-190px", md: 0 }}>
+          <BannerCuerpo />
+        </Box>
 
         <Box className="container-perfiles">
           <Fade triggerOnce>
@@ -59,7 +64,9 @@ const Home = () => {
             <ContenedorPerfiles />
           </Fade>
         </Box>
-        <BannerCuerpo />
+        <Box component="section" mb={{ xs: "-190px", md: 0 }}>
+          <BannerCuerpo />
+        </Box>
         <Box component="section" id="contactForm">
           <Contact />
         </Box>

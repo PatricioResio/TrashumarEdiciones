@@ -38,7 +38,7 @@ const Footer = () => {
             alignItems: "center",
             width: "100%",
             height: { xs: "24rem", md: "15rem" },
-            padding: { xs: "0", xl: "0" },
+            padding: 0,
             bgcolor: "rgba(9, 165, 176, 0.4)",
           }}
         >
@@ -83,8 +83,7 @@ const Footer = () => {
                 alignItems: "center",
                 justifyContent: "space-evenly",
                 textAling: "center",
-                m: "auto",
-                mt: "0px",
+                m: "0 auto auto auto",
               }}
             >
               <Box
@@ -94,12 +93,11 @@ const Footer = () => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "start",
-                  m: "auto",
-                  ml: 0,
+                  m: "auto auto auto 0",
                 }}
               >
                 <Typography
-                  sx={{ fontSize: "1.8rem" }}
+                  sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
                   color={"secondary.white"}
                 >
                   Secciones
@@ -113,7 +111,7 @@ const Footer = () => {
                       to={page.path}
                       onClick={scrollToTop}
                       sx={{
-                        height: "100%",
+                        height: { xs: "1.75rem", md: "100%" },
                         fontWeight: "bold",
                         fontSize: { md: "12px", lg: "14px" },
                         borderRadius: "10px",
@@ -141,8 +139,7 @@ const Footer = () => {
                 alignItems: "center",
                 justifyContent: "space-evenly",
                 textAling: "center",
-                m: "auto",
-                mt: "0px",
+                m: "0 auto auto auto",
               }}
             >
               {" "}
@@ -153,14 +150,12 @@ const Footer = () => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "start",
-                  m: "auto",
-
-                  ml: 0,
+                  m: "auto auto auto 0",
                 }}
               >
                 {" "}
                 <Typography
-                  sx={{ fontSize: "1.8rem" }}
+                  sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
                   color={"secondary.white"}
                 >
                   Contacto
@@ -210,12 +205,11 @@ const Footer = () => {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "start",
-                  m: "auto",
-                  ml: 0,
+                  m: "auto auto auto 0",
                 }}
               >
                 <Typography
-                  sx={{ fontSize: "1.8rem" }}
+                  sx={{ fontSize: { xs: "1.5rem", md: "1.8rem" } }}
                   color={"secondary.white"}
                 >
                   Seguinos

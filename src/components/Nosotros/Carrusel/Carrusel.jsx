@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, EffectFade, Navigation } from "swiper/modules";
+import { EffectCoverflow, EffectFade, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Box, Container, Typography } from "@mui/material";
 import { Fade } from "react-awesome-reveal";
 import useResetSwiper from "../../../hooks/useResetSwiper";
@@ -52,8 +52,8 @@ const Carrusel = ({ arrayImagenes, popUp }) => {
         <Swiper
           onSwiper={(swiper) => (swiperRef.current = swiper)}
           rewind={true}
-          navigation={true}
-          modules={[EffectCoverflow, Navigation]}
+          Pagination={true}
+          modules={[EffectCoverflow, Pagination]}
           effect="coverFlow"
           className="swiper"
           slidesPerView={1}

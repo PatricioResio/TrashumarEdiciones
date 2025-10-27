@@ -5,6 +5,7 @@ import PlacesAutocomplete, {
   getLatLng,
 } from "react-places-autocomplete";
 import Map from "../../Map/Map";
+import { Box } from "@mui/material";
 
 export default function AddressAutocompleteWrapper({
   handlerChange,
@@ -56,7 +57,7 @@ export default function AddressAutocompleteWrapper({
   };
 
   return (
-    <div style={{ maxWidth: "100%" }}>
+    <div style={{ maxWidth: "100%", marginBottom: "4rem" }}>
       <PlacesAutocomplete
         value={address}
         onChange={handleChange}
@@ -72,33 +73,43 @@ export default function AddressAutocompleteWrapper({
                   height: "48px",
                   fontSize: "16px",
                   padding: "8px",
+                  borderRadius: "4px",
+                  border: "1px solid #ccc",
                   boxSizing: "border-box",
-                  backgroundColor: "#A4FFFE",
+                  backgroundColor: " rgba(255, 255, 255, 0.75)",
                 },
               })}
             />
             <div
               style={{
-                border: "1px solid #ccc",
+                border: "1px solid #dfdfdfff",
+                borderRadius: "4px",
                 marginTop: "2px",
                 position: "absolute",
                 background: "#fff",
                 maxWidth: "100%",
               }}
             >
-              {loading && <div style={{ padding: "8px" }}>Cargando...</div>}
-              {suggestions.map((suggestion, idx) => (
-                <div
-                  key={idx}
-                  {...getSuggestionItemProps(suggestion)}
-                  style={{
-                    padding: "8px",
-                    cursor: "pointer",
-                    backgroundColor: suggestion.active ? "#eee" : "#fff",
-                  }}
-                >
-                  {suggestion.description}
+              {loading && (
+                <div style={{ padding: "8px", marginBot: "10px" }}>
+                  Cargando...
                 </div>
+              )}
+              {suggestions.map((suggestion, idx) => (
+                <Box>
+                  <div
+                    key={idx}
+                    {...getSuggestionItemProps(suggestion)}
+                    style={{
+                      padding: "8px",
+                      cursor: "pointer",
+                      marginBottom: "10px",
+                      backgroundColor: suggestion.active ? "#eee" : "#fff",
+                    }}
+                  >
+                    {suggestion.description}
+                  </div>
+                </Box>
               ))}
             </div>
           </div>

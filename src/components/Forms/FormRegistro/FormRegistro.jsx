@@ -117,15 +117,16 @@ const FormRegistro = () => {
 
   return (
     <Container
+      bgcolor="bg.whiteBlue"
       maxWidth="2xl"
       sx={{
         margin: "6rem auto",
         display: "flex",
         flexDirection: "column",
         width: "80%",
-        border: "2px solid #3C9990",
         borderRadius: "15px",
-        bgcolor: "rgba(149, 247, 247, 0.75)",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        bgcolor: "#DBFFFE",
       }}
     >
       <Fade triggerOnce>
@@ -135,7 +136,7 @@ const FormRegistro = () => {
           variant="h2"
           fontWeight="bold"
         >
-          {newUser ? "Registrate!" : "Tu información"}
+          {newUser ? "Registrate!" : "Tu perfil"}
         </Typography>
       </Fade>
       <Box
@@ -144,11 +145,12 @@ const FormRegistro = () => {
         sx={{
           borderBottom: 1,
           width: "100%",
-          borderColor: "divider",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          margin: "5px",
+          margin: "auto auto 4rem auto",
+          borderRadius: "15px",
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+          bgcolor: " rgba(255, 255, 255, 0.8)",
         }}
       >
         <Container
@@ -161,13 +163,17 @@ const FormRegistro = () => {
             sx={{
               display: "flex",
               flexDirection: "column",
+              margin: "auto",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
             }}
           >
             <Typography
-              component="h4"
+              component="h2"
               id="outlined-basic"
-              align="left"
-              variant="h4"
+              align="center"
+              variant="h5"
               gutterBottom
             >
               Información Profesional
@@ -260,7 +266,6 @@ const FormRegistro = () => {
             </FormControl>
           </Container>
         </Container>
-
         <Container
           disableGutters
           sx={{
@@ -271,91 +276,44 @@ const FormRegistro = () => {
             marginLeft: "auto",
           }}
         >
-          <FormControlLabel
-            control={
-              <Checkbox
-                name="distribuidor"
-                checked={formUser.distribuidor}
-                onChange={handlerChange}
-              />
-            }
-            label="Soy distribuidor (personas fisicas)"
-          />
-          <Box
-            sx={{
-              display: formUser.distribuidor === true ? "flex" : "none",
-              flexDirection: "column",
-              gap: 2,
-              marginTop: 4,
-            }}
-          >
-            <FormHelperText>
-              Selecciona la zona donde trabajas, tu metodo de trabajo y si es
-              necesario el radio en que te manejas.
-            </FormHelperText>
-            <AddressAutocompleteWrapper handlerChange={handlerChange} />
-            <FormHelperText>Detalla tus metodos de venta</FormHelperText>
-            <TextField
-              label="Metodo de venta"
-              name="metodoVenta"
-              value={formUser.radio}
-              onChange={handlerChange}
-              fullWidth
-            />{" "}
-            <TextField
-              label="Radio de trabajo (km)"
-              name="radio"
-              value={formUser.radio}
-              onChange={handlerChange}
-              fullWidth
-            />
-          </Box>
           <Typography
-            component="h4"
+            component="h3"
             id="outlined-basic"
             align="left"
-            variant="h4"
+            variant="h5"
             gutterBottom
           >
             Datos personales
           </Typography>
           <TextField
             id="facebookForm"
+            sx={{ marginBottom: "15px" }}
             name="facebookForm"
             label="facebook"
             variant="outlined"
             value={formUser.facebookForm}
             onChange={handlerChange}
-            /*           error={
-            formik.touched.facebookForm && Boolean(formik.errors.facebookForm)
-          }
-          helperText={formik.touched.facebookForm && formik.errors.facebookForm} */
           />
           <TextField
             id="instagramForm"
+            sx={{ marginBottom: "15px" }}
             label="Instagram"
             name="instagramForm"
             variant="outlined"
             value={formUser.instagramForm}
             onChange={handlerChange}
-            /*           error={
-            formik.touched.instagramForm && Boolean(formik.errors.instagramForm)
-          }
-          helperText={
-            formik.touched.instagramForm && formik.errors.instagramForm
-          } */
           />
           <TextField
             id="xForm"
+            sx={{ marginBottom: "15px" }}
             name="xForm"
             label="X"
             variant="outlined"
             value={formUser.xForm}
             onChange={handlerChange}
-            /*           error={formik.touched.xForm && Boolean(formik.errors.xForm)}
-          helperText={formik.touched.xForm && formik.errors.xForm} */
           />
           <TextField
+            sx={{ marginBottom: "15px" }}
             id="linkedinForm"
             name="linkedinForm"
             label="linkedinForm"
@@ -412,14 +370,54 @@ const FormRegistro = () => {
             )} */}
           </Box>
 
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="distribuidor"
+                checked={formUser.distribuidor}
+                onChange={handlerChange}
+              />
+            }
+            label="Soy distribuidor (personas fisicas)"
+          />
+          <Box
+            sx={{
+              display: formUser.distribuidor === true ? "flex" : "none",
+              flexDirection: "column",
+              gap: 2,
+              marginTop: 4,
+            }}
+          >
+            <FormHelperText>
+              Selecciona la zona donde trabajas, tu metodo de trabajo y si es
+              necesario el radio en que te manejas.
+            </FormHelperText>
+            <FormHelperText>Detalla tus metodos de venta</FormHelperText>
+            <TextField
+              label="Metodo de venta"
+              name="metodoVenta"
+              value={formUser.radio}
+              onChange={handlerChange}
+              fullWidth
+            />{" "}
+            <TextField
+              label="Radio de trabajo (km)"
+              name="radio"
+              value={formUser.radio}
+              onChange={handlerChange}
+              fullWidth
+            />
+            <AddressAutocompleteWrapper handlerChange={handlerChange} />
+          </Box>
           <Button
             type="submit"
             sx={{
               width: "50%",
               display: "flex",
+              bgcolor: "#A4FFFE",
               justifyContent: "center",
               margin: "auto",
-              boxShadow: "inherit",
+              mb: "2rem",
             }}
             variant="contained"
           >

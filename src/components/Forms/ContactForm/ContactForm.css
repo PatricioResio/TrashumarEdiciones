@@ -44,7 +44,7 @@
   min-height: 80px;
   transition: border-color 0.01s;
 }
-@media (min-width: 600px) {
+@media (min-width: 200px) {
   .textField {
     width: 90%;
   }
@@ -56,7 +56,8 @@
     height: 95vh;
   }
   .form-box {
-    height: 85vh;
+    height: 70vh;
+    width: 80%;
   }
 }
 @media (min-width: 920px) {
