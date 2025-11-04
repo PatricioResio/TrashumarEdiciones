@@ -1,21 +1,13 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import "./Perfil.css";
 import FilaColaboraciones from "../FilaColaboraciones/FilaColaboraciones";
 import FilaProyectosPerfil from "../FilaProyectosPerfil/FilaProyectosPerfil";
 import Oficios from "../Oficios/Oficios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquarePhone } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faSquareXTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import Map from "../../Map/Map";
+
 import DescripcionPerfil from "../DescripcionPerfil/DescripcionPerfil";
 import CartaPerfilPublico from "../CartaPerfilPublico/CartaPerfilPublico";
 import BannerCuerpo from "../../BannerCuerpo/BannerCuerpo";
+import SectionDistribuidor from "../SectionDistribuidor/SectionDistribuidor";
 
 const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
   const {
@@ -30,6 +22,8 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
     email,
     distribuidor,
     zonaDistribuidor,
+    metodoVentas,
+    address,
   } = perfil;
 
   return (
@@ -128,13 +122,19 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
           <FilaColaboraciones colaboraciones={colaboraciones} />
         </Box>
       </Container>
-      {!perfil.distribuidor ? (
-        <> </>
-      ) : (
-        <Box>
-          <Map zonaDistribuidor={zonaDistribuidor} />
-        </Box>
-      )}
+      <Container maxWidth="2xl">
+        {!perfil.distribuidor ? (
+          <></>
+        ) : (
+          <Box>
+            <SectionDistribuidor
+              address={perfil.address}
+              zonaDistribuidor={perfil.zonaDistribuidor}
+              metodoVenta={perfil.metodoVenta}
+            />
+          </Box>
+        )}
+      </Container>
     </Box>
   );
 };

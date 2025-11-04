@@ -6,12 +6,12 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
       sx={{
         height: { xs: "", md: "20rem" },
         my: { xs: "30px", sm: "auto" },
-        border: "1px solid #09A5B0",
         display: "flex",
         pading: "20px",
         width: { xs: "80%", md: "40%" },
         borderRadius: "10px",
-        backgroundColor: "#BDFFF9",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        backgroundColor: " rgba(255, 255, 255, 0.8)",
         contain: "content",
       }}
     >

@@ -43,6 +43,7 @@ const Perfil = () => {
           minHeight: "40vh",
         }}
       >
+        <CartaPerfilUsuario currentUser={currentUser} />
         <Box
           sx={{
             display: "flex",
@@ -52,7 +53,6 @@ const Perfil = () => {
             minHeight: "40vh",
           }}
         >
-          <Oficios oficios={oficios} />
           <Container
             maxWidth="2xl"
             sx={{
@@ -66,9 +66,8 @@ const Perfil = () => {
               paddingTop: "0px",
               position: "relative",
             }}
-          >
-            <CartaPerfilUsuario currentUser={currentUser} />
-          </Container>
+          ></Container>
+          <Oficios oficios={oficios} />
           <DescripcionPerfil {...currentUser} />
         </Box>
       </Box>
@@ -83,7 +82,7 @@ const Perfil = () => {
         sx={{
           height: "100%",
           m: { xs: "0", md: "auto" },
-          minWidth: "90vw%",
+          minWidth: "90vw",
           gap: { xs: "0", md: "2rem" },
           display: "flex",
           flexDirection: {
@@ -97,8 +96,12 @@ const Perfil = () => {
         <Box
           component="article"
           sx={{
-            m: { xs: "0", md: "auto" },
+            m: "auto",
+            minHeight: { xs: "20rem", md: "46rem" },
+            border: "solid 2px #BAE3D7",
+            backgroundColor: "rgba(149, 247, 247, 0.8)",
             borderRadius: "2%",
+            mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",
             width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
           }}
@@ -109,21 +112,30 @@ const Perfil = () => {
         <Box
           component="article"
           sx={{
-            m: { xs: "0", md: "auto" },
+            m: "auto",
+            minHeight: { xs: "20rem", md: "46rem" },
+            backgroundColor: "rgba(149, 247, 247, 0.8)",
             borderRadius: "2%",
+            mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",
             width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <ContenedorColaboraciones />
         </Box>
-        {/*         {!distribuidor ? (
+      </Container>
+      <Container maxWidth="2xl">
+        {!currentUser.distribuidor ? (
           <></>
         ) : (
           <Box>
-            <SectionDistribuidor />
+            <SectionDistribuidor
+              address={currentUser.address}
+              zonaDistribuidor={currentUser.zonaDistribuidor}
+              metodoVenta={currentUser.metodoVenta}
+            />
           </Box>
-        )} */}
+        )}
       </Container>
     </Box>
   );

@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 const ContenedorHistoria = () => {
-  const { imgArrayCarrusel, handleChangeHistoria, handlerPopUp } =
+  const { imgArrayCarrusel, handleChangeHistoria, handlerPopUp, popUp } =
     useHistorias();
 
   return (
@@ -52,13 +52,25 @@ const ContenedorHistoria = () => {
           ))}
         </Swiper>
       </Box>
-      <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-        <Box>
+      {!popUp ? (
+        <></>
+      ) : (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            height: "1vh",
+            zIndex: 1500,
+          }}
+        >
           <Fade triggerOnce>
-            <Carrusel arrayImagenes={imgArrayCarrusel} />
+            <Carrusel
+              arrayImagenes={imgArrayCarrusel}
+              handlerPopUp={handlerPopUp}
+            />
           </Fade>
         </Box>
-      </Box>
+      )}
     </>
   );
 };

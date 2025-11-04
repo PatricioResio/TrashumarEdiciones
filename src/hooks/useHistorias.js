@@ -34,6 +34,7 @@ const useHistorias = () => {
     renderHistoria,
     handleChangeHistoria,
     handlerPopUp,
+    popUp,
   };
 };
 

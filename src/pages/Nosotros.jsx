@@ -12,7 +12,7 @@ const Nosotros = () => {
           flexDirection: "column",
           textAlign: "center",
           margin: "0 0 2rem 0",
-          minHeight: "200vh",
+          minHeight: "100vh",
           maxWidth: "100vw",
         }}
       >
@@ -39,7 +39,7 @@ const Nosotros = () => {
         sx={{
           fontSize: "16px",
           fontWeight: "bold",
-          margin: "6rem auto",
+          margin: " auto",
           padding: "0",
           boxShadow: "inherit",
           display: "flex",

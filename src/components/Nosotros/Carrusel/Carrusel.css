@@ -1,15 +1,53 @@
-.swiper {
-  max-width: 40%;
-}
-.swiper-slide {
-  max-width: 40%;
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* queda sobre todo */
+  animation: fadeIn 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .swiper {
-    max-width: 60%;
+.popup-content {
+  position: relative;
+  background: rgba(189, 253, 255, 0.9);
+  border-radius: 20px;
+  height: 95vh;
+  width: 90%;
+  animation: scaleUp 0.3s ease;
+}
+
+.close-btn {
+  position: absolute !important;
+  top: 10px;
+  right: 15px;
+  color: white !important;
+  font-size: 2rem !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  .swiper-slide {
-    max-width: 60%;
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }

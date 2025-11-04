@@ -21,16 +21,16 @@ const MapaLeaflet = ({ zonaDistribuidor, address, zoom = 13 }) => {
   return (
     <Box
       style={{
-        height: "400px",
+        height: "500px",
+        maxWidth: "1200px",
         width: "100%",
-        maxWidth: "800px",
-        margin: "0",
+        margin: "auto",
       }}
     >
       <MapContainer
         center={[zonaDistribuidor.lat, zonaDistribuidor.lng]}
         zoom={zoom}
-        style={{ height: "400px" }}
+        style={{ height: "500px", width: "100%" }}
       >
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

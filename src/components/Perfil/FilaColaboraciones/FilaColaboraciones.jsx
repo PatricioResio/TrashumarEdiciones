@@ -7,7 +7,7 @@ import CartaProyectoPerfil from "../CartaProyectoPerfil/CartaProyectoPerfil";
 
 const FilaColaboraciones = ({ colaboraciones }) => {
   return (
-    <Box sx={{ minHeight: "45vh", marginBottom: "5rem" }}>
+    <Box sx={{ minHeight: "60vh", marginBottom: "5rem" }}>
       <Typography
         sx={{
           m: "auto auto 50px auto",

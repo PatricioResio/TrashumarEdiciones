@@ -25,6 +25,7 @@ const CartaHistoria = ({
         }}
       >
         <CardActions
+          onClick={handlerPopUp}
           sx={{
             p: "0", // Duración y suavidad del efecto
           }}
@@ -39,7 +40,6 @@ const CartaHistoria = ({
               }}
               image={url}
               src={!url ? "" : url}
-              onClick={handlerPopUp}
             ></CardMedia>
           </Button>
         </CardActions>

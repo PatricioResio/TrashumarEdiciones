@@ -46,8 +46,7 @@ function FormProyectos() {
             borderRadius: "5px",
             width: "25%",
             p: "0.1rem",
-            backgroundColor:
-              posicionForm === "Texto unico" ? "#7AE7F5" : "#00000",
+            backgroundColor: posicionForm === "Texto unico" ? "Ñ" : "#00000",
             color: posicionForm === "Texto unico" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Texto unico" ? "bold" : "normal",
             "&:hover": {

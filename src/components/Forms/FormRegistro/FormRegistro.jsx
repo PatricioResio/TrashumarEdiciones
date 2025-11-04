@@ -144,7 +144,7 @@ const FormRegistro = () => {
         onSubmit={(e) => handlerForm(e)}
         sx={{
           borderBottom: 1,
-          width: "100%",
+          width: "80%",
           display: "flex",
           flexDirection: "column",
           margin: "auto auto 4rem auto",
@@ -414,7 +414,7 @@ const FormRegistro = () => {
             sx={{
               width: "50%",
               display: "flex",
-              bgcolor: "#A4FFFE",
+              bgcolor: "#DBFFFE",
               justifyContent: "center",
               margin: "auto",
               mb: "2rem",

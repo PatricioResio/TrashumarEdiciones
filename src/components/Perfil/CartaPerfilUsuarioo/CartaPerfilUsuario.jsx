@@ -25,11 +25,12 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         justifyContent: { xs: "space-around", md: "center" },
         alignItems: "center",
         borderRadius: "12px",
-        border: "1px solid #3C9990",
-        backgroundColor: " rgba(149, 247, 247, 0.95)",
+        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        backgroundColor: " rgba(233, 255, 253, 0.95)",
         width: "80%",
+        zIndex: 1,
+        mt: "70px",
         p: 2,
-        boxShadow: "1px 1px 5px black",
       }}
     >
       <Box
