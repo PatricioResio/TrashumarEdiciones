@@ -27,7 +27,7 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         borderRadius: "12px",
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
         backgroundColor: " rgba(233, 255, 253, 0.95)",
-        width: "80%",
+        width: "30%",
         zIndex: 1,
         mt: "70px",
         p: 2,

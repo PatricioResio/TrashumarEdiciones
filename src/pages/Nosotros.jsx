@@ -33,7 +33,6 @@ const Nosotros = () => {
         </Typography>
         <ContenedorHistoria />
       </Box>
-
       <Box
         component="section"
         sx={{
@@ -52,5 +51,4 @@ const Nosotros = () => {
     </>
   );
 };
-
 export default Nosotros;

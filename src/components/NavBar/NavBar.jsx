@@ -149,7 +149,7 @@ function ResponsiveAppBar() {
                     width: { xs: "6rem", sm: "5rem" },
                     margin: {
                       xs: "3px 0 auto 0",
-                      md: "3px auto auto 10px",
+                      md: "3px 0 auto 10px",
                     },
                     "& img": {
                       transition: "transform 0.3s ease-in-out",
@@ -166,12 +166,14 @@ function ResponsiveAppBar() {
 
             <Box
               sx={{
-                flexGrow: { xs: 1, md: 4 },
                 display: { xs: "none", md: "flex" },
                 justifyContent: "center",
                 alignItems: "center",
-                mx: "auto",
-                gap: 7,
+                position: "absolute",
+                left: "50%",
+                transform: "translateX(-50%)",
+                gap: 6,
+                width: "fit-content",
               }}
             >
               <Fade triggerOnce>
@@ -183,10 +185,8 @@ function ResponsiveAppBar() {
                     to={page.path}
                     onClick={scrollToTop}
                     sx={{
-                      height: "100%",
                       fontWeight: "bold",
                       fontSize: { md: "12px", lg: "14px" },
-                      justifyContent: "center",
                       borderRadius: "10px",
                       color: "#FFFFF8",
                       transition: "transform 0.3s ease-in-out",
@@ -222,12 +222,10 @@ function ResponsiveAppBar() {
                       flexGrow: 1,
                       color: "#FFFFF8",
                       fontFamily: "roboto",
-                      marginRight: ".5rem",
                       transition: "transform 0.3s ease-in-out",
                       "&:hover": {
                         transform: "scale(1.02)",
                         color: "#FFFFF8",
-
                         border: "1px solid",
                         borderColor: "FFFFF8",
                       },

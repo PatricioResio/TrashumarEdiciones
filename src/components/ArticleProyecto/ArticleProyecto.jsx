@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import FormProyectos from "../Forms/FormProyectos/FormProyectos";
 import { Box, Button, Container, Typography } from "@mui/material";
 import { AuthContext } from "../../context/AuthContext";
@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const SectionProyecto = () => {
   const { currentUser } = useContext(AuthContext);
+
   return (
     <Container
       sx={{

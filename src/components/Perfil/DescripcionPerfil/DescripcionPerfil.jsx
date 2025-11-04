@@ -9,8 +9,7 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
         display: "flex",
         pading: "20px",
         width: { xs: "80%", md: "40%" },
-        borderRadius: "10px",
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+        boxShadow: "0 0 1px rgba(0, 0, 0, 0.1)",
         backgroundColor: " rgba(255, 255, 255, 0.8)",
         contain: "content",
       }}
@@ -22,8 +21,8 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
           justifyContent: "start",
         }}
       >
-        <Typography variant="h5" sx={{ mt: "10px", fontWeight: "bold" }}>
-          Mi descripcion
+        <Typography variant="h5" sx={{ m: "5px auto", fontWeight: "bold" }}>
+          Como lo hago
         </Typography>
         {!explicarPerfil ? (
           <Typography>

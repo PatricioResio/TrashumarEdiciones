@@ -34,21 +34,24 @@ const Perfil = () => {
         sx={{
           display: "flex",
           flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
-          justifyContent: "center",
-          alignItems: "center",
+          alignContent: "center",
           width: { xs: "100%", md: "90%" },
           gap: "2rem",
+          p: "10px",
           m: "10px auto",
-
+          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+          zIndex: 1,
           minHeight: "40vh",
         }}
       >
         <CartaPerfilUsuario currentUser={currentUser} />
+        <Oficios oficios={oficios} />
+        <DescripcionPerfil {...currentUser} />
         <Box
           sx={{
             display: "flex",
             flexDirection: { xs: "column", md: "row" },
-            marginBottom: { xs: "2", md: "-20rem" },
+            marginBottom: { md: "-20rem" },
 
             minHeight: "40vh",
           }}
@@ -67,10 +70,9 @@ const Perfil = () => {
               position: "relative",
             }}
           ></Container>
-          <Oficios oficios={oficios} />
-          <DescripcionPerfil {...currentUser} />
         </Box>
       </Box>
+      <Box></Box>
 
       <Box sx={{ marginTop: { xs: "0", md: "-25rem" } }}>
         <Fade triggerOnce easeOut direction="down">

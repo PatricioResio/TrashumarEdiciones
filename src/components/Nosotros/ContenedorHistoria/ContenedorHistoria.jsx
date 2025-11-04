@@ -63,12 +63,10 @@ const ContenedorHistoria = () => {
             zIndex: 1500,
           }}
         >
-          <Fade triggerOnce>
-            <Carrusel
-              arrayImagenes={imgArrayCarrusel}
-              handlerPopUp={handlerPopUp}
-            />
-          </Fade>
+          <Carrusel
+            arrayImagenes={imgArrayCarrusel}
+            handlerPopUp={handlerPopUp}
+          />
         </Box>
       )}
     </>
