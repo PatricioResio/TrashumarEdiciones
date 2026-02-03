@@ -8,17 +8,8 @@ import CartaProyectoPerfil from "../CartaProyectoPerfil/CartaProyectoPerfil";
 const FilaColaboraciones = ({ colaboraciones }) => {
   return (
     <Box sx={{ minHeight: "60vh", marginBottom: "5rem" }}>
-      <Typography
-        sx={{
-          m: "auto auto 50px auto",
-        }}
-        variant="h3"
-        position="center"
-      >
-        Mis colaboraciones
-      </Typography>
       {colaboraciones.length === 0 ? (
-        <Typography variant="h5" sx={{ margin: "auto" }}>
+        <Typography variant="p" align="center" mt={5}>
           El usuario no tiene colaboraciones todavía
         </Typography>
       ) : (

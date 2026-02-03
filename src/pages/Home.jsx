@@ -25,7 +25,7 @@ const Home = () => {
 
           my: "7rem",
 
-          color: "#BAE3D7",
+          color: "linear-gradient(to bottom, #ffffff, #e9fffc 60%, #dafffe)",
         }}
       >
         <ArticleDestacado />

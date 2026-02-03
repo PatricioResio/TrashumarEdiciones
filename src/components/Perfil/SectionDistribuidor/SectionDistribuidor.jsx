@@ -11,13 +11,13 @@ const SectionDistribuidor = ({ zonaDistribuidor, address, metodoVentas }) => {
         m: "auto",
         p: "5px",
         borderTop: "1px solid #BAE3D7",
-        width: "80vw",
+        width: "100%",
       }}
     >
       <Typography component="h3" variant="h3" mb={2}>
         Acá vendo mis productos por
       </Typography>
-      <Typography variant="h4" mb={1}>
+      <Typography variant="h3" mb={1}>
         Nos podes encontrar en {formatedAddress}
       </Typography>
       <Typography mb={2}>

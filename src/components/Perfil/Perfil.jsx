@@ -1,145 +1,192 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import "./Perfil.css";
-import { Box, Container, Fade } from "@mui/material";
-import ContenedorColaboraciones from "./ContenedorColaboraciones/ContenedorColaboraciones";
-import ContenedorProyectosPerfil from "./ContenedorProyectosPerfil/ContenedorProyectosPerfil";
-import DescripcionPerfil from "./DescripcionPerfil/DescripcionPerfil";
-import Oficios from "./Oficios/Oficios";
+import {
+  Box,
+  Container,
+  Tabs,
+  Tab,
+  Paper,
+  Typography,
+  IconButton,
+} from "@mui/material";
+
 import CartaPerfilUsuario from "./CartaPerfilUsuarioo/CartaPerfilUsuario";
-import BannerCuerpo from "../BannerCuerpo/BannerCuerpo";
+import Oficios from "./Oficios/Oficios";
+import DescripcionPerfil from "./DescripcionPerfil/DescripcionPerfil";
+import ContenedorProyectosPerfil from "./ContenedorProyectosPerfil/ContenedorProyectosPerfil";
+import ContenedorColaboraciones from "./ContenedorColaboraciones/ContenedorColaboraciones";
 import SectionDistribuidor from "./SectionDistribuidor/SectionDistribuidor";
+import InformacionPersonal from "./InformacionPersonal/InformacionPersonal";
+import {
+  faBookOpen,
+  faTruck,
+  faUserGear,
+} from "@fortawesome/free-solid-svg-icons";
+import { faHandshake, faUser } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Perfil = () => {
   const { currentUser } = useContext(AuthContext);
-  const oficios = [...currentUser.oficios];
+  const [tab, setTab] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setTab(newValue);
+  };
 
   return (
-    <Box
-      component="section"
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        width: "95%",
-        minHeight: "70vh",
-        m: "40px auto",
-        borderRadius: "5px",
-        p: { xs: 0, md: "4rem" },
-        gap: "2rem",
-      }}
-    >
+    <Container maxWidth="md" sx={{ mt: 6, mb: 10 }}>
+      {/* CABECERA PERFIL */}
       <Box
+        elevation={2}
         sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "column", lg: "row", xl: "row" },
-          alignContent: "center",
-          width: { xs: "100%", md: "90%" },
-          gap: "2rem",
-          p: "10px",
-          m: "10px auto",
-          boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-          zIndex: 1,
-          minHeight: "40vh",
+          p: 3,
+          borderTopLeftRadius: "16px",
+          borderTopRightRadius: "16px",
+          borderBottomLeftRadius: 0,
+          borderBottomRightRadius: 0,
+          background:
+            "linear-gradient(to bottom, #cbfcfcff, #acebe5ff 60%, #7ccac6ff)",
+          textAlign: "center",
         }}
       >
         <CartaPerfilUsuario currentUser={currentUser} />
-        <Oficios oficios={oficios} />
-        <DescripcionPerfil {...currentUser} />
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            marginBottom: { md: "-20rem" },
+      </Box>
 
-            minHeight: "40vh",
-          }}
+      {/* TABS */}
+      <Paper elevation={1}>
+        <Tabs
+          value={tab}
+          onChange={handleChange}
+          centered
+          textColor="primary"
+          indicatorColor="primary"
         >
-          <Container
-            maxWidth="2xl"
+          <Tab
+            icon={<FontAwesomeIcon icon={faUser} />}
+            label="Perfil"
+            sx={{ width: "33%" }}
+          />
+          <Tab
+            label="Proyectos"
+            sx={{ width: "33%" }}
+            icon={<FontAwesomeIcon icon={faBookOpen} />}
+          />
+          {currentUser.distribuidor && (
+            <Tab
+              label="Distribuidor"
+              sx={{ width: "33%" }}
+              icon={<FontAwesomeIcon icon={faTruck} />}
+            />
+          )}
+        </Tabs>
+      </Paper>
+
+      {/* CONTENIDO DE CADA TAB */}
+
+      {tab === 0 && (
+        <Box sx={{ gap: 3 }}>
+          <Paper sx={{ p: 3 }}>
+            <Box
+              sx={{
+                p: 3,
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <InformacionPersonal user={currentUser}></InformacionPersonal>
+
+              <Oficios oficios={currentUser.oficios} />
+            </Box>
+            <Box
+              sx={{
+                p: 3,
+                display: "flex",
+                flexDirection: "row",
+              }}
+            >
+              <DescripcionPerfil
+                {...currentUser}
+                title="Sobre mí"
+                icon={faUser}
+              />
+              <DescripcionPerfil
+                {...currentUser}
+                title="Cómo trabajo"
+                icon={faUserGear}
+              />
+            </Box>
+          </Paper>
+        </Box>
+      )}
+
+      {tab === 1 && (
+        <Box sx={{ display: "flex", flexDirection: "row", gap: 3 }}>
+          <Paper sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
+            <Box sx={{ p: 3, width: "50%" }}>
+              <Box
+                sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}
+              >
+                {" "}
+                <IconButton
+                  sx={{
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    "&:hover": { backgroundColor: "primary.dark" },
+                  }}
+                >
+                  <FontAwesomeIcon icon={faBookOpen} />
+                </IconButton>
+                <Typography variant="h6" fontWeight={600}>
+                  Proyectos
+                </Typography>
+              </Box>
+              <ContenedorProyectosPerfil />
+            </Box>
+
+            <Box sx={{ p: 3, width: "50%" }}>
+              <Box
+                sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}
+              >
+                {" "}
+                <IconButton
+                  sx={{
+                    backgroundColor: "primary.main",
+                    color: "white",
+                    "&:hover": { backgroundColor: "primary.dark" },
+                  }}
+                >
+                  <FontAwesomeIcon icon={faHandshake} />
+                </IconButton>
+                <Typography variant="h6" fontWeight={600}>
+                  Colaboraciones
+                </Typography>
+              </Box>
+              <ContenedorColaboraciones />
+            </Box>
+          </Paper>
+        </Box>
+      )}
+
+      {tab === 2 && currentUser.distribuidor && (
+        <Paper sx={{ p: 3 }}>
+          <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              m: "auto auto 0 auto",
-              mt: { xs: "20px" },
-              mb: { xs: "auto", md: "8rem" },
-              paddingTop: "0px",
-              position: "relative",
+              gap: 3,
+              maxWidth: "100%",
             }}
-          ></Container>
-        </Box>
-      </Box>
-      <Box></Box>
-
-      <Box sx={{ marginTop: { xs: "0", md: "-25rem" } }}>
-        <Fade triggerOnce easeOut direction="down">
-          <BannerCuerpo />
-        </Fade>
-      </Box>
-      <Container
-        disableGutters
-        sx={{
-          height: "100%",
-          m: { xs: "0", md: "auto" },
-          minWidth: "90vw",
-          gap: { xs: "0", md: "2rem" },
-          display: "flex",
-          flexDirection: {
-            xs: "column",
-            md: "column",
-            lg: "column",
-            xl: "row",
-          },
-        }}
-      >
-        <Box
-          component="article"
-          sx={{
-            m: "auto",
-            minHeight: { xs: "20rem", md: "46rem" },
-            border: "solid 2px #BAE3D7",
-            backgroundColor: "rgba(149, 247, 247, 0.8)",
-            borderRadius: "2%",
-            mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            p: "20px",
-            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
-          }}
-        >
-          <ContenedorProyectosPerfil />
-        </Box>
-
-        <Box
-          component="article"
-          sx={{
-            m: "auto",
-            minHeight: { xs: "20rem", md: "46rem" },
-            backgroundColor: "rgba(149, 247, 247, 0.8)",
-            borderRadius: "2%",
-            mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            p: "20px",
-            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
-          }}
-        >
-          <ContenedorColaboraciones />
-        </Box>
-      </Container>
-      <Container maxWidth="2xl">
-        {!currentUser.distribuidor ? (
-          <></>
-        ) : (
-          <Box>
+          >
+            <Typography variant="h6">Distribución</Typography>
             <SectionDistribuidor
               address={currentUser.address}
               zonaDistribuidor={currentUser.zonaDistribuidor}
               metodoVenta={currentUser.metodoVenta}
             />
           </Box>
-        )}
-      </Container>
-    </Box>
+        </Paper>
+      )}
+    </Container>
   );
 };
 

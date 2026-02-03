@@ -13,10 +13,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const CartaPerfilUsuario = ({ currentUser }) => {
-  const navigate = useNavigate("/registroPerfil");
-  const handleCardButton = () => {
-    navigate("/infoPerfil");
-  };
   return (
     <Container
       sx={{
@@ -24,9 +20,6 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         flexDirection: { xs: "column" },
         justifyContent: { xs: "space-around", md: "center" },
         alignItems: "center",
-        borderRadius: "12px",
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-        backgroundColor: " rgba(233, 255, 253, 0.95)",
         width: "30%",
         zIndex: 1,
         mt: "70px",
@@ -45,89 +38,18 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         <Box
           component="img"
           sx={{
-            height: { xs: "6rem", md: "10rem" },
-            width: { xs: "6rem", md: "10rem" },
+            height: { xs: "6rem", md: "10rem", lg: "13rem" },
+            width: { xs: "6rem", md: "10rem", lg: "13rem" },
             borderRadius: "50%",
+            border: "3px solid #eefffdff",
           }}
           src={!currentUser ? "No se encontro usuario" : currentUser.avatar}
           alt="foto"
         />
-        <Typography variant="h3" className="h2-perfil-card" fontWeight="bold">
+        <Typography variant="h4" fontWeight="bold" color="#fdffffff">
+          {" "}
           {!currentUser ? "No se encontro usuario" : currentUser.nombrePublico}
         </Typography>
-
-        <Box sx={{ margin: "0", gap: 6 }}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              my: "auto",
-            }}
-          >
-            <IconButton
-              variant="contained"
-              color="tertiary"
-              onClick={handleCardButton}
-              sx={{ borderRadius: "50%" }}
-            >
-              <FontAwesomeIcon icon={faPenToSquare} />
-            </IconButton>
-            <Typography variant="h5" fontWeight="bold">
-              Datos personales
-            </Typography>
-          </Box>
-          {!currentUser.linkedinForm ? (
-            <>
-              <Typography variant="h5"></Typography>
-            </>
-          ) : (
-            <Typography variant="h5">
-              <FontAwesomeIcon icon={faLinkedin} />
-              {currentUser.linkedinForm}
-            </Typography>
-          )}
-          {!currentUser.facebookForm ? (
-            <>
-              <Typography variant="h5"></Typography>
-            </>
-          ) : (
-            <Typography variant="h5">
-              <FontAwesomeIcon icon={faFacebook} />
-              {currentUser.facebookForm}
-            </Typography>
-          )}
-          {!currentUser.instagramForm ? (
-            <Typography variant="h5"></Typography>
-          ) : (
-            <Typography variant="h5">
-              <FontAwesomeIcon icon={faInstagram} />@{currentUser.instagramForm}
-            </Typography>
-          )}
-          {!currentUser.xForm ? (
-            <Typography variant="h5"></Typography>
-          ) : (
-            <Typography variant="h5">
-              <FontAwesomeIcon icon={faSquareXTwitter} />@{currentUser.xForm}
-            </Typography>
-          )}
-          {!currentUser.email ? (
-            <Typography variant="h5"></Typography>
-          ) : (
-            <Typography variant="h5">
-              <FontAwesomeIcon icon={faEnvelope} />
-              {currentUser.email}
-            </Typography>
-          )}
-          {!currentUser.telefono ? (
-            <Typography variant="h5"></Typography>
-          ) : (
-            <Typography variant="h5">
-              <FontAwesomeIcon size="24px" icon={faSquarePhone} />
-              {currentUser.telefono}
-            </Typography>
-          )}
-        </Box>
       </Box>
     </Container>
   );

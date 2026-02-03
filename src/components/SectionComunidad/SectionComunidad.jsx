@@ -1,10 +1,4 @@
-import {
-  Box,
-  CircularProgress,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, CircularProgress, Grid } from "@mui/material";
 import CartaPerfiles from "../Home/CartaPerfiles/CartaPerfiles";
 import usePerfiles from "../../hooks/usePerfiles";
 import { Fade } from "react-awesome-reveal";
@@ -17,7 +11,7 @@ const SectionComunidad = () => {
       sx={{
         minHeight: "90vh",
         borderRadius: "30px",
-
+        margin: { xs: "0", md: "20px" },
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
       }}
     >
@@ -29,7 +23,7 @@ const SectionComunidad = () => {
       component="article"
       sx={{
         borderRadius: "30px",
-
+        margin: { xs: "0", md: "20px" },
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
       }}
     >

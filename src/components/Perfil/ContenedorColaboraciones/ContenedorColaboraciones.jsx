@@ -12,10 +12,19 @@ const ContenedorColaboraciones = () => {
   const colaboraciones = proyectos.filter((proyecto) =>
     !proyecto.colaboradores
       ? []
-      : proyecto.colaboradores.includes(currentUser.nombrePublico)
+      : proyecto.colaboradores.includes(currentUser.nombrePublico),
   );
   return (
-    <Container maxWidth="md" className="contenedor-fila-perfil">
+    <Container
+      maxWidth="md"
+      className="contenedor-fila-perfil"
+      sx={{
+        margin: { xs: "0", md: "auto" },
+        width: { xs: "80vw", md: "100%" },
+        height: "40rem",
+        minHeight: "40rem",
+      }}
+    >
       {loadingProyectos ? (
         <CircularProgress />
       ) : (

@@ -1,17 +1,22 @@
-import { Box, Container, Typography } from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Box, Container, Divider, IconButton, Typography } from "@mui/material";
 
-const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
+const DescripcionPerfil = ({
+  nombrePublico,
+  explicarPerfil,
+  explicarTrabajo,
+  title,
+  icon,
+}) => {
   return (
-    <Container
+    <Box
       sx={{
-        height: { xs: "", md: "20rem" },
-        my: { xs: "30px", sm: "auto" },
-        display: "flex",
-        pading: "20px",
-        width: { xs: "80%", md: "40%" },
-        boxShadow: "0 0 1px rgba(0, 0, 0, 0.1)",
-        backgroundColor: " rgba(255, 255, 255, 0.8)",
-        contain: "content",
+        p: 3,
+        borderRadius: 3,
+        m: 2,
+        backgroundColor: "background.paper",
+        boxShadow: 1,
+        width: "50%",
       }}
     >
       <Box
@@ -21,20 +26,33 @@ const DescripcionPerfil = ({ nombrePublico, explicarPerfil }) => {
           justifyContent: "start",
         }}
       >
-        <Typography variant="h5" sx={{ m: "5px auto", fontWeight: "bold" }}>
-          Como lo hago
-        </Typography>
+        <Box sx={{ display: "flex", alignItems: "start", gap: 2, mb: 2 }}>
+          <IconButton
+            sx={{
+              backgroundColor: "primary.main",
+              color: "white",
+              "&:hover": { backgroundColor: "primary.dark" },
+            }}
+          >
+            <FontAwesomeIcon icon={icon} />
+          </IconButton>{" "}
+          <Typography variant="h6" sx={{ fontWeight: "bold" }}>
+            {title}
+          </Typography>
+        </Box>
+        <Divider />
+
         {!explicarPerfil ? (
           <Typography>
             {nombrePublico} todavía no pudo describir su trabajo!
           </Typography>
         ) : (
-          <Typography variant="h5" sx={{ mt: "50px" }}>
-            {explicarPerfil}
+          <Typography variant="h5" mt={2} fontWeight="normal">
+            {title === "Sobre mí" ? explicarPerfil : explicarTrabajo}
           </Typography>
         )}
       </Box>
-    </Container>
+    </Box>
   );
 };
 

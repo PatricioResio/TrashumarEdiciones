@@ -1,37 +1,45 @@
 import React from "react";
-
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { faHammer } from "@fortawesome/free-solid-svg-icons";
+import {
+  Box,
+  Chip,
+  Container,
+  Divider,
+  IconButton,
+  Typography,
+} from "@mui/material";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Oficios = ({ oficios }) => {
   return (
-    <Container
-      maxWidth="2xl"
-      disableGutters
+    <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        width: { xs: "80%", sm: "30%" },
-        justifyContent: "start",
-        alignItems: "center",
-        borderRadius: "5px",
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-        backgroundColor: " rgba(255, 255, 255, 0.8)",
-        m: "auto",
-        zIndex: 1,
-        gap: "2px",
-        height: { xs: "18rem", md: "8rem" },
+        p: 3,
+        borderRadius: 3,
+        m: 2,
+        backgroundColor: "background.paper",
+        boxShadow: 1,
+        width: "50%",
       }}
     >
-      <Typography
-        variant="h5"
-        sx={{ mt: "0", fontWeight: "bold" }}
-        component="h6"
-      >
-        Que hago
-      </Typography>
-
+      <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
+        {" "}
+        <IconButton
+          sx={{
+            backgroundColor: "primary.main",
+            color: "white",
+            "&:hover": { backgroundColor: "primary.dark" },
+          }}
+        >
+          <FontAwesomeIcon icon={faHammer} />
+        </IconButton>
+        <Typography variant="h6" fontWeight={600}>
+          Oficios
+        </Typography>
+      </Box>
+      <Divider sx={{ mb: 2 }} />
       <Container sx={{ marginLeft: "0px", display: "flex", flexWrap: "wrap" }}>
-        {oficios.lenght === 0 || !oficios ? (
+        {!oficios || oficios.length === 0 ? (
           <Typography variant="h5" component="h5">
             No hay ningun oficio registrado todavía
           </Typography>
@@ -40,19 +48,25 @@ const Oficios = ({ oficios }) => {
             oficio.valor === false ? (
               <></>
             ) : (
-              <Typography
+              <Chip
                 key={oficio.nombre}
-                variant="p"
-                component="p"
-                sx={{ m: "auto" }}
-              >
-                {oficio.nombre} {oficio.valor > 0 ? "," : ""}
-              </Typography>
-            )
+                label={oficio.nombre}
+                sx={{
+                  backgroundColor: "#e6f4f1",
+                  color: "#1e6f64",
+                  fontWeight: 700,
+                  margin: "6px",
+                  borderRadius: "8px",
+                  "&:hover": {
+                    backgroundColor: "#d2ebe6",
+                  },
+                }}
+              />
+            ),
           )
         )}
       </Container>
-    </Container>
+    </Box>
   );
 };
 

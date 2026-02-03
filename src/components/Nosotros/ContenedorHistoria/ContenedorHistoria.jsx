@@ -5,7 +5,7 @@ import Carrusel from "../Carrusel/Carrusel";
 import useHistorias from "../../../hooks/useHistorias";
 import { Fade } from "react-awesome-reveal";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 const ContenedorHistoria = () => {
   const { imgArrayCarrusel, handleChangeHistoria, handlerPopUp, popUp } =
@@ -28,8 +28,8 @@ const ContenedorHistoria = () => {
         }}
       >
         <Swiper
-          navigation={true}
-          modules={[Navigation]}
+          pagination={true}
+          modules={[Pagination]}
           className="MySwiper"
           spaceBetween={2}
           breakpoints={{

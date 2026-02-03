@@ -9,7 +9,7 @@ const ContenedorProyectosPerfil = () => {
   const { proyectos, loading } = useProyectos();
   const { currentUser } = useContext(AuthContext);
   const proyectosUser = proyectos.filter(
-    (proyecto) => proyecto.autor === currentUser.nombrePublico
+    (proyecto) => proyecto.autor === currentUser.nombrePublico,
   );
 
   return (

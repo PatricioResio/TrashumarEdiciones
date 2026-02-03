@@ -31,7 +31,7 @@ export default function App() {
       <Container
         maxWidth="2xl"
         sx={{
-          background: "#FEFFFF",
+          background: "#faffffff",
           maxWidth: "100vw",
           margin: "0",
           padding: "0",
