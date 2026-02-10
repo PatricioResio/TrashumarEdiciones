@@ -8,18 +8,8 @@ import CartaProyectoPerfil from "../CartaProyectoPerfil/CartaProyectoPerfil";
 const FilaProyectos = ({ proyectosUser }) => {
   return (
     <Box sx={{ minHeight: "60vh", marginBottom: "5rem" }}>
-      <Typography
-        sx={{
-          m: "auto auto 50px auto",
-        }}
-        variant="h3"
-        component="h3"
-        position="center"
-      >
-        Mis proyectos
-      </Typography>
       {proyectosUser.length === 0 ? (
-        <Typography variant="h5">
+        <Typography variant="p">
           El usuario no tiene proyectos todavía
         </Typography>
       ) : (

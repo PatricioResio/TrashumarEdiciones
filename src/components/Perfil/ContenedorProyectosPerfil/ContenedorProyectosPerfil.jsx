@@ -15,7 +15,7 @@ const ContenedorProyectosPerfil = () => {
   return (
     <Container
       className="contenedor-fila-perfil"
-      maxWidth="md"
+      maxWidth="lg"
       sx={{
         margin: { xs: "0", md: "auto" },
         width: { xs: "80vw", md: "100%" },

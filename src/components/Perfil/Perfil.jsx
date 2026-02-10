@@ -8,6 +8,7 @@ import {
   Paper,
   Typography,
   IconButton,
+  Divider,
 } from "@mui/material";
 
 import CartaPerfilUsuario from "./CartaPerfilUsuarioo/CartaPerfilUsuario";
@@ -34,7 +35,7 @@ const Perfil = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ mt: 6, mb: 10 }}>
+    <Container maxWidth="lg" sx={{ mt: 6, mb: 10 }}>
       {/* CABECERA PERFIL */}
       <Box
         elevation={2}
@@ -120,11 +121,32 @@ const Perfil = () => {
       )}
 
       {tab === 1 && (
-        <Box sx={{ display: "flex", flexDirection: "row", gap: 3 }}>
-          <Paper sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
-            <Box sx={{ p: 3, width: "50%" }}>
+        <Paper sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              m: "auto",
+              p: 3,
+            }}
+          >
+            <Box
+              sx={{
+                p: 3,
+                m: "15px auto",
+                width: "45%",
+                borderRadius: "10px",
+                backgroundColor: "background.paper",
+                boxShadow: 1,
+              }}
+            >
               <Box
-                sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+                  m: 2,
+                }}
               >
                 {" "}
                 <IconButton
@@ -140,12 +162,28 @@ const Perfil = () => {
                   Proyectos
                 </Typography>
               </Box>
+              <Divider />
               <ContenedorProyectosPerfil />
             </Box>
 
-            <Box sx={{ p: 3, width: "50%" }}>
+            <Box
+              sx={{
+                p: 3,
+                m: "auto",
+                width: "45%",
+                borderRadius: "10px",
+                backgroundColor: "background.paper",
+                boxShadow: 1,
+              }}
+            >
               <Box
-                sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
+
+                  m: 2,
+                }}
               >
                 {" "}
                 <IconButton
@@ -161,10 +199,12 @@ const Perfil = () => {
                   Colaboraciones
                 </Typography>
               </Box>
+
+              <Divider />
               <ContenedorColaboraciones />
             </Box>
-          </Paper>
-        </Box>
+          </Box>
+        </Paper>
       )}
 
       {tab === 2 && currentUser.distribuidor && (
