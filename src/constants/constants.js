@@ -1,5 +1,5 @@
 export const IMG_BRAND =
-  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/bannerPrueba1.png?alt=media&token=6d98ef88-27ce-41d5-9f2e-d5a48eb3e590";
+  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/BannerCuerpo.webp?alt=media&token=f61c4164-7493-40bd-a25d-3335c5bb1aa4";
 
 export const LOGO_URL =
   "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/logoSinFondo.png?alt=media&token=415a831a-24d9-4507-ab76-8838e7228304";

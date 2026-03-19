@@ -21,7 +21,7 @@ export const pages = [
 export const homeArrays = [
   {
     id: 1,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home1.jpg?alt=media&token=76de3ec4-444d-4938-990b-047cd9bf7d3b",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home1.webp?alt=media&token=54e246dc-b7e4-43c2-8a53-5922c9ab63f6",
     h2: "Bienvenidos a Trashumar Ediciones",
     textP:
       "Una editorial nómada, federal e independiente. Publicamos voces y proyectos que cruzan fronteras.",
@@ -30,7 +30,7 @@ export const homeArrays = [
   },
   {
     id: 2,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.jpg?alt=media&token=ed3613fb-fa43-4686-b762-a28d7a98ef1a",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.webp?alt=media&token=6c8c7c4f-daaa-4559-bfe2-1c808e20402e",
     h2: "Contacto",
     textP:
       "Quéres contactarte con nosotros para hablar de trashumancias? seguí el boton.",
@@ -40,7 +40,7 @@ export const homeArrays = [
   },
   {
     id: 3,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3.jpg?alt=media&token=5e4d8d47-dc01-4f5d-9d9d-9850adca8241",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3.webp?alt=media&token=1f7d3685-deea-4a96-9789-51882e928d89",
     h2: "Estamos formando una comunidad!",
     textP:
       "Registrate con tu cuenta y sé parte de Trashumar. Estamos en constante crecimiento y queremos que formes parte de esta red.",

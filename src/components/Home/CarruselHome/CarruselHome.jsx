@@ -7,9 +7,13 @@ import "./CarruselHome.css";
 import { homeArrays } from "../../../constants/Arrays";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Fade } from "react-awesome-reveal";
+import { useState } from "react";
+import LazyImage from "../../LazyImage/LazyImage.jsx";
+
 import { Link } from "react-router-dom";
 
 const CarruselHome = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   return (
     <Fade triggerOnce delay={1200}>
       <Container
@@ -32,10 +36,10 @@ const CarruselHome = () => {
           pagination={true}
           modules={[EffectCoverflow, Autoplay, Pagination]}
           autoplay={{ delay: 15000 }}
-          className="swiper"
           slidesPerView={1}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         >
-          {homeArrays.map((item) => (
+          {homeArrays.map((item, index) => (
             <SwiperSlide key={item.id} className="swipper-slide">
               <Container
                 maxWidth="false"
@@ -52,21 +56,11 @@ const CarruselHome = () => {
                   },
                 }}
               >
-                <Box
-                  sx={{
-                    height: {
-                      xs: "90vh",
-                      sm: "60vh",
-                      md: "80vh",
-                      lg: "90vh",
-                      xl: "90vh",
-                    },
-                    width: "100%",
-                    position: "relative",
-                  }}
-                  component="img"
+                <LazyImage
                   src={item.url}
-                  alt="descripcion futura de la imagen "
+                  alt="descripcion futura de la imagen"
+                  height="100%"
+                  shouldLoad={Math.abs(index - activeIndex) <= 1}
                 />
                 <Container
                   disableGutters

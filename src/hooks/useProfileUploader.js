@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { storage } from "../api/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { compressImage } from "../utils/compressImage";
 
 const useProfileUploader = (userId, handlerChange) => {
   const [image, setImage] = useState(null);
@@ -13,18 +14,20 @@ const useProfileUploader = (userId, handlerChange) => {
     }
   };
 
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!image) return;
+
+    const compressedImage = await compressImage(image, 400, 0.7);
 
     // Crear referencia a Firebase Storage
     const storageRef = ref(storage, `profile_pictures/${userId}/${image.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, image);
+    const uploadTask = uploadBytesResumable(storageRef, compressedImage);
 
     uploadTask.on(
       "state_changed",
       (snapshot) => {
         const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100,
         );
         setProgress(progress);
       },
@@ -43,7 +46,7 @@ const useProfileUploader = (userId, handlerChange) => {
         } catch (error) {
           console.error("Error obteniendo la URL de descarga:", error);
         }
-      }
+      },
     );
   };
 
