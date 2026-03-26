@@ -1,14 +1,23 @@
-import { Box, Typography } from "@mui/material";
-import ContenedorPerfiles from "../components/Home/ContenedorPerfiles/ContenedorPerfiles";
+import { Suspense, lazy } from "react";
+import { Box, CircularProgress, Typography } from "@mui/material";
 import CarruselHome from "../components/Home/CarruselHome/CarruselHome";
 import { Fade } from "react-awesome-reveal";
-import ArticleDestacado from "../components/Home/ArticleDestacado/ArticleDestacado";
-
-import Contact from "./Contact";
 import "../App.css";
-import { BannerCuerpo } from "../components";
+import BannerCuerpo from "../components/BannerCuerpo/BannerCuerpo";
+import { useLazyImage } from "../hooks/useLazyImages";
 
+const LazyArticleDestacado = lazy(() =>
+  import("../components/Home/ArticleDestacado/ArticleDestacado")
+);
+const LazyContenedorPerfiles = lazy(() =>
+  import("../components/Home/ContenedorPerfiles/ContenedorPerfiles")
+);
+const LazyContact = lazy(() => import("./Contact"));
 const Home = () => {
+  const { imgRef: articleRef, isVisible: articleVisible } = useLazyImage("400px");
+  const { imgRef: perfilesRef, isVisible: perfilesVisible } = useLazyImage("500px");
+  const { imgRef: contactRef, isVisible: contactVisible } = useLazyImage("600px");
+
   return (
     <>
       <CarruselHome />
@@ -23,21 +32,25 @@ const Home = () => {
           margin: "4rem 0",
           gap: 4,
 
-          my: "7rem",
-
           color: "linear-gradient(to bottom, #ffffff, #e9fffc 60%, #dafffe)",
         }}
       >
-        <ArticleDestacado />
+        <Box ref={articleRef} component="section" sx={{ minHeight: "50rem" }}>
+          <Suspense fallback={<CircularProgress />}>
+            {articleVisible ? <LazyArticleDestacado /> : null}
+          </Suspense>
+        </Box>
+
         <Box>
           <Typography></Typography>
         </Box>
-        <Box component="section" mb={{ xs: "-190px", md: 0 }}>
+
+        <Box component="section" mb={"20rem"}>
           <BannerCuerpo />
         </Box>
 
         <Box className="container-perfiles">
-          <Fade triggerOnce>
+        
             <Typography
               component="h3"
               variant="h3"
@@ -61,14 +74,20 @@ const Home = () => {
               tejemos entre todos. Conectá con quienes pueden inspirarte o ser
               parte de tus próximos proyectos
             </Typography>
-            <ContenedorPerfiles />
-          </Fade>
+            <Box ref={perfilesRef} sx={{ minHeight: "18rem" }}>
+              <Suspense fallback={<CircularProgress />}>
+                {perfilesVisible ? <LazyContenedorPerfiles /> : null}
+              </Suspense>
+            </Box>
+        
         </Box>
         <Box component="section" mb={{ xs: "-190px", md: 0 }}>
           <BannerCuerpo />
         </Box>
-        <Box component="section" id="contactForm">
-          <Contact />
+        <Box ref={contactRef} component="section" id="contactForm" sx={{ minHeight: "22rem" }}>
+          <Suspense fallback={<CircularProgress />}>
+            {contactVisible ? <LazyContact /> : null}
+          </Suspense>
         </Box>
       </Box>
     </>

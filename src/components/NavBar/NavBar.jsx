@@ -1,320 +1,186 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
-import { Fade } from "react-awesome-reveal";
-import "./NavBar.css";
-import { LOGO_URL } from "../../constants/constants";
-import { pages } from "../../constants/Arrays";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { Divider } from "@mui/material";
-import LogOutBtn from "../LogOutBtn/LogOutBtn";
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  IconButton,
+  Box,
+  Drawer,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Container,
+  useTheme,
+  useMediaQuery,
+  Menu,
+  MenuItem,
+  Avatar,
+  Divider,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import PersonIcon from '@mui/icons-material/Person';
+import CloseIcon from '@mui/icons-material/Close';
+import { useAuth } from '../../context/AuthContext'; // ajustá el path
+import { LOGO_URL } from '../../constants/constants';
 
-function ResponsiveAppBar() {
-  const { currentUser, loading } = useContext(AuthContext);
-  const displayName = currentUser
-    ? currentUser.nombrePublico.split(" ", 2)[0]
-    : null;
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [profileNav, setProfileNav] = React.useState(null);
+const menuItems = [
+  { label: 'NOSOTROS', path: '/nosotros' },
+  { label: 'LIBRERÍA', path: '/libreria' },
+  { label: 'COMUNIDAD', path: '/comunidad' },
+  { label: 'QUIERO PUBLICAR', path: '/publicar' },
+];
 
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
+export function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const navigate = useNavigate();
+  const { currentUser, logOut } = useAuth();
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleDrawerToggle = () => setMobileOpen(!mobileOpen);
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setMobileOpen(false);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-  const handleOpenProfileMenu = (event) => {
-    setProfileNav(event.currentTarget);
+  const handleMenuOpen = (e) => setAnchorEl(e.currentTarget);
+  const handleMenuClose = () => setAnchorEl(null);
+
+  const handleLogout = async () => {
+    await logOut();
+    handleMenuClose();
   };
 
-  const handleCloseProfileMenu = () => {
-    setProfileNav(null);
-  };
+  const drawer = (
+    <Box sx={{ width: 280, bgcolor: 'primary.main', height: '100%', color: 'white' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
+        <IconButton onClick={handleDrawerToggle} sx={{ color: 'white' }}>
+          <CloseIcon />
+        </IconButton>
+      </Box>
+      <List>
+        {menuItems.map((item) => (
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton
+              onClick={() => handleNavigation(item.path)}
+              sx={{ py: 2, '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.1)' } }}
+            >
+              <ListItemText
+                primary={item.label}
+                primaryTypographyProps={{ fontWeight: 600, fontSize: '1rem' }}
+              />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
 
   return (
-    <AppBar
-      position="static"
-      sx={{
-        maxWidth: "100%",
-        padding: "auto",
-      }}
-    >
-      <Fade triggerOnce delay={1000}>
-        <Container
-          disableGutters
-          maxWidth="xl"
-          sx={{
-            minWidth: "100%",
-            height: {
-              xs: "5rem",
-              sm: "5rem",
-            },
-          }}
-        >
-          <Toolbar disableGutters>
+    <>
+      <AppBar position="sticky" elevation={0} sx={{ bgcolor: 'primary.main' }}>
+        <Container maxWidth="xl">
+          <Toolbar disableGutters sx={{ minHeight: { xs: 70, md: 80 } }}>
+
+            {/* Logo */}
             <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: "flex", md: "none" },
-              }}
+              component="a"
+              onClick={() => navigate('/')}
+              sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'white', mr: 4, cursor: 'pointer' }}
             >
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-              >
-                <MenuIcon sx={{ color: "#FFFFF8" }} />
-              </IconButton>
-              <Menu
-                id="menu-appbar"
-                anchorEl={anchorElNav}
-                anchorOrigin={{
-                  vertical: "bottom",
-                  horizontal: "center",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "center",
-                }}
-                open={Boolean(anchorElNav)}
-                onClose={handleCloseNavMenu}
-                sx={{
-                  "& .MuiPaper-root": {
-                    bgcolor: "rgba(0, 0, 0, 0.9)",
-                  },
-                  color: "#FFFFF8",
-                  display: {
-                    xs: "block",
-                    md: "none",
-                  },
-                }}
-              >
-                {pages.map((page) => (
-                  <MenuItem
+              <Box
+                component="img"
+                src={LOGO_URL}
+                alt="Trashumar Ediciones"
+                sx={{ height: { xs: 45, md: 50 }, width: 'auto', mr: 1.5 }}
+              />
+            </Box>
+
+            {/* Desktop Menu */}
+            {!isMobile && (
+              <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
+                {menuItems.map((item) => (
+                  <Button
+                    key={item.label}
+                    onClick={() => navigate(item.path)}
                     sx={{
-                      height: "100%",
+                      color: 'white',
+                      fontWeight: 600,
+                      fontSize: '0.95rem',
+                      px: 2.5,
+                      py: 1,
+                      borderRadius: 2,
+                      '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.15)' },
                     }}
-                    key={page.name}
-                    onClick={handleCloseNavMenu}
                   >
-                    <Typography
-                      component={Link}
-                      color="secondary.white"
-                      onClick={scrollToTop}
-                      bgcolor="secondary"
-                      to={page.path}
-                      style={{ textDecoration: "none" }}
-                    >
-                      {page.name}
-                    </Typography>
+                    {item.label}
+                  </Button>
+                ))}
+              </Box>
+            )}
+
+            <Box sx={{ flexGrow: 1, display: { xs: 'block', md: 'none' } }} />
+
+            {/* Auth */}
+            {currentUser ? (
+              <>
+                <IconButton
+                  onClick={handleMenuOpen}
+                  sx={{ color: 'white', bgcolor: 'rgba(255,255,255,0.1)', '&:hover': { bgcolor: 'rgba(255,255,255,0.2)' } }}
+                >
+                  {currentUser.fotoPerfil
+                    ? <Avatar src={currentUser.fotoPerfil} sx={{ width: 32, height: 32 }} />
+                    : <PersonIcon />
+                  }
+                </IconButton>
+                <Menu
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                  anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                >
+                  <MenuItem onClick={() => { handleMenuClose(); navigate('/miperfil'); }}>
+                    Mi perfil
                   </MenuItem>
-                ))}
-              </Menu>
-            </Box>
+                  <Divider />
+                  <MenuItem onClick={handleLogout} sx={{ color: 'error.main' }}>
+                    Cerrar sesión
+                  </MenuItem>
+                </Menu>
+              </>
+            ) : (
+              <Button
+                onClick={() => navigate('/ingresa')}
+                variant="outlined"
+                sx={{
+                  color: 'white',
+                  borderColor: 'rgba(255,255,255,0.5)',
+                  fontWeight: 600,
+                  '&:hover': { borderColor: 'white', bgcolor: 'rgba(255,255,255,0.1)' },
+                }}
+              >
+                Ingresar
+              </Button>
+            )}
 
-            <Box sx={{ flexGrow: 1, margin: "auto" }}>
-              <Fade triggerOnce>
-                <Typography
-                  variant="h6"
-                  component={Link}
-                  onClick={scrollToTop}
-                  to="/"
-                  sx={{
-                    display: "flex",
-                    borderRadius: "50%",
-                    height: { xs: "4.5rem", sm: "4.6rem" },
-                    width: { xs: "6rem", sm: "5rem" },
-                    margin: {
-                      xs: "3px 0 auto 0",
-                      md: "3px 0 auto 10px",
-                    },
-                    "& img": {
-                      transition: "transform 0.3s ease-in-out",
-                    },
-                    "&:hover img": {
-                      transform: "scale(1.03)",
-                    },
-                  }}
-                >
-                  <img src={LOGO_URL} />
-                </Typography>
-              </Fade>
-            </Box>
-
-            <Box
-              sx={{
-                display: { xs: "none", md: "flex" },
-                justifyContent: "center",
-                alignItems: "center",
-                position: "absolute",
-                left: "50%",
-                transform: "translateX(-50%)",
-                gap: 6,
-                width: "fit-content",
-              }}
-            >
-              <Fade triggerOnce>
-                {pages.map((page) => (
-                  <Button
-                    key={page.name}
-                    component={Link}
-                    color="secondary"
-                    to={page.path}
-                    onClick={scrollToTop}
-                    sx={{
-                      fontWeight: "bold",
-                      fontSize: { md: "12px", lg: "14px" },
-                      borderRadius: "10px",
-                      color: "#FFFFF8",
-                      transition: "transform 0.3s ease-in-out",
-                      "&:hover": {
-                        transform: "scale(1.02)",
-                        color: "#FFFFF8",
-                      },
-                    }}
-                  >
-                    {page.name}
-                  </Button>
-                ))}
-              </Fade>
-            </Box>
-
-            <Box sx={{ display: "flex" }}>
-              {!currentUser && !loading ? (
-                <Box
-                  sx={{
-                    flexGrow: 1,
-                    marginTop: "0",
-                    display: "flex",
-                    justifyContent: "end",
-                    alignItems: "center",
-                  }}
-                >
-                  <Button
-                    variant="outlined"
-                    component={Link}
-                    to="/ingresa"
-                    sx={{
-                      maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
-                      flexGrow: 1,
-                      color: "#FFFFF8",
-                      fontFamily: "roboto",
-                      transition: "transform 0.3s ease-in-out",
-                      "&:hover": {
-                        transform: "scale(1.02)",
-                        color: "#FFFFF8",
-                        border: "1px solid",
-                        borderColor: "FFFFF8",
-                      },
-                    }}
-                  >
-                    <Fade triggerOnce>Ingresar</Fade>
-                  </Button>
-                </Box>
-              ) : (
-                <Fade triggerOnce>
-                  <Box
-                    sx={{
-                      flexGrow: 1,
-                      display: "flex",
-                    }}
-                  >
-                    <IconButton
-                      size="large"
-                      aria-label="account of current user"
-                      aria-controls="menu-appbar"
-                      aria-haspopup="true"
-                      onClick={handleOpenProfileMenu}
-                      color="#FFFFF8"
-                    >
-                      <FontAwesomeIcon icon={faUser} className="icon-profile" />
-                    </IconButton>
-
-                    <Menu
-                      id="menu-appbar"
-                      anchorEl={profileNav}
-                      anchorOrigin={{
-                        vertical: "bottom",
-                        horizontal: "center",
-                      }}
-                      keepMounted
-                      transformOrigin={{
-                        vertical: "top",
-                        horizontal: "center",
-                      }}
-                      open={Boolean(profileNav)}
-                      onClose={handleCloseProfileMenu}
-                      sx={{
-                        "& .MuiPaper-root": {
-                          bgcolor: "rgba(0, 0, 0, 0.9)",
-                          color: "#FFFFF8",
-                        },
-                      }}
-                    >
-                      <MenuItem
-                        sx={{
-                          height: "100%",
-                        }}
-                        onClick={handleCloseNavMenu}
-                      >
-                        <Button
-                          variant="text"
-                          color="primary"
-                          component={Link}
-                          to="/miperfil"
-                          sx={{
-                            maxWidth: "150px",
-                            flexGrow: 1,
-                            fontFamily: "roboto",
-                            color: "#FFFFF8",
-                            fontSize: { xs: "12px", lg: "14px" },
-                            letterSpacing: { xs: "0", md: ".2rem" },
-                            transition: "transform 0.3s",
-                            "&:hover": {
-                              transform: "scale(1.03)",
-                              color: "#a4fffe",
-                            },
-                          }}
-                        >
-                          Mi perfil
-                        </Button>
-                      </MenuItem>
-                      <Divider />
-                      <MenuItem>
-                        <LogOutBtn />
-                      </MenuItem>
-                    </Menu>
-                  </Box>
-                </Fade>
-              )}
-            </Box>
+            {/* Mobile Menu Button */}
+            {isMobile && (
+              <IconButton color="inherit" edge="end" onClick={handleDrawerToggle} sx={{ ml: 1 }}>
+                <MenuIcon />
+              </IconButton>
+            )}
           </Toolbar>
         </Container>
-      </Fade>
-    </AppBar>
+      </AppBar>
+
+      <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle} ModalProps={{ keepMounted: true }}>
+        {drawer}
+      </Drawer>
+    </>
   );
-}
-export default ResponsiveAppBar;
+}export default Navbar;

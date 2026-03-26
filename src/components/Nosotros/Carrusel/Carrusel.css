@@ -14,7 +14,7 @@
 
 .popup-content {
   position: relative;
-  background: rgba(189, 253, 255, 0.9);
+  background: rgba(12, 12, 12, 0.9);
   border-radius: 20px;
   height: 95vh;
   width: 90%;
@@ -25,7 +25,7 @@
   position: absolute !important;
   top: 10px;
   right: 15px;
-  color: #000808ff !important;
+  color: rgb(255, 255, 255) !important;
   font-size: 2rem !important;
   background: transparent !important;
   border: none !important;

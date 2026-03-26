@@ -8,11 +8,11 @@ const ArticleDestacado = () => {
       component="article"
       sx={{
         height: {
-          xs: "85vh",
-          sm: "85rem",
-          md: "90rem",
-          lg: "50rem",
-          xl: "52rem",
+          xs: "120vh",
+          sm: "185rem",
+          md: "150rem",
+          lg: "150rem",
+          xl: "130vh",
         },
         margin: "50px auto",
         width: "95%",

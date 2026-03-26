@@ -1,13 +1,5 @@
-import { auth, db } from "../api/firebase";
 import { useNavigate } from "react-router-dom";
-import { getDoc, doc, setDoc } from "firebase/firestore";
-import { createContext, useContext, useState, useEffect } from "react";
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { createContext, useContext, useState, useEffect, useRef } from "react";
 
 export const AuthContext = createContext();
 
@@ -26,20 +18,52 @@ export function AuthProvider({ children }) {
   const [newUser, setNewUser] = useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const servicesRef = useRef(null);
+
+  const loadFirebaseServices = async () => {
+    if (servicesRef.current) return servicesRef.current;
+
+    const [{ auth }, { db }, firestoreModule, authModule] = await Promise.all([
+      import("../api/firebaseAuth"),
+      import("../api/firebaseDb"),
+      import("firebase/firestore"),
+      import("firebase/auth"),
+    ]);
+
+    servicesRef.current = {
+      auth,
+      db,
+      firestoreModule,
+      authModule,
+    };
+
+    return servicesRef.current;
+  };
 
   useEffect(() => {
-    const googleUnsubscribe = onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        setCurrentUser(null);
-        setLoading(false);
-      } else {
-        const userGoogle = user;
-        setGoogleUser(userGoogle);
-        setLoading(false);
-        return;
-      }
-    });
-    return () => googleUnsubscribe();
+    let unsubscribe = null;
+    let isMounted = true;
+
+    const setupAuthListener = async () => {
+      const { auth, authModule } = await loadFirebaseServices();
+      unsubscribe = authModule.onAuthStateChanged(auth, (user) => {
+        if (!isMounted) return;
+        if (!user) {
+          setCurrentUser(null);
+          setLoading(false);
+        } else {
+          setGoogleUser(user);
+          setLoading(false);
+        }
+      });
+    };
+
+    setupAuthListener().catch(() => setLoading(false));
+
+    return () => {
+      isMounted = false;
+      if (unsubscribe) unsubscribe();
+    };
   }, []);
 
   useEffect(() => {
@@ -55,8 +79,9 @@ export function AuthProvider({ children }) {
     const unsuscribe = async () => {
       const uidGoogleUser = googleUser;
       if (uidGoogleUser) {
-        const userDoc = doc(db, "perfiles", uidGoogleUser.uid);
-        getDoc(userDoc).then((response) => {
+        const { db, firestoreModule } = await loadFirebaseServices();
+        const userDoc = firestoreModule.doc(db, "perfiles", uidGoogleUser.uid);
+        firestoreModule.getDoc(userDoc).then((response) => {
           setCurrentUser(response.data());
         });
       }
@@ -66,8 +91,9 @@ export function AuthProvider({ children }) {
   }, [googleUser]);
 
   const loginWithGoogle = async () => {
-    const responseGoogle = new GoogleAuthProvider();
-    return signInWithPopup(auth, responseGoogle);
+    const { auth, authModule } = await loadFirebaseServices();
+    const responseGoogle = new authModule.GoogleAuthProvider();
+    return authModule.signInWithPopup(auth, responseGoogle);
   };
 
   const handleGoogle = async (e) => {
@@ -84,23 +110,24 @@ export function AuthProvider({ children }) {
 
   const registrar = async (registrerUser) => {
     try {
+      const { db, firestoreModule } = await loadFirebaseServices();
       if (!googleUser || !googleUser.uid) {
         console.error("El usuario de Google no está disponible.");
         return;
       }
 
       const userUID = googleUser.uid;
-      const userProfileRef = doc(db, "perfiles", userUID);
-      const userProfileSnap = await getDoc(userProfileRef);
+      const userProfileRef = firestoreModule.doc(db, "perfiles", userUID);
+      const userProfileSnap = await firestoreModule.getDoc(userProfileRef);
 
       if (!userProfileSnap.exists()) {
-        await setDoc(userProfileRef, {
+        await firestoreModule.setDoc(userProfileRef, {
           ...registrerUser,
           idPerfil: userUID,
         });
         alert("¡Registro completado!");
       } else {
-        await setDoc(
+        await firestoreModule.setDoc(
           userProfileRef,
           {
             ...registrerUser,
@@ -119,7 +146,8 @@ export function AuthProvider({ children }) {
   };
 
   const logOut = async () => {
-    const response = await signOut(auth);
+    const { auth, authModule } = await loadFirebaseServices();
+    const response = await authModule.signOut(auth);
     setCurrentUser(null);
     setGoogleUser(null);
     setNewUser(false);

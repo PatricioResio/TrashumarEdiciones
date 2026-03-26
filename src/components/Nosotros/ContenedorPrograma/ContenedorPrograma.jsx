@@ -1,50 +1,50 @@
-import { Container, Typography } from "@mui/material";
-import {
-  CartaPrograma,
-  CartaPrograma2,
-  CartaPrograma3,
-  CartaPrograma4,
-  CartaPrograma5,
-} from "../CartaPrograma/CartaPrograma";
+import { Box, Container, Typography } from "@mui/material";
+import { PROGRAMAS } from "../../../constants/Textos";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
-import { SwiperSlide, Swiper } from "swiper/react";
 
 const ContenedorPrograma = () => {
   return (
-    <Container
-      disableGutters
-      maxWidth="xl"
-      sx={{ mb: "150px", height: { xs: "200vh", md: "550px" } }}
-    >
+    <Container disableGutters maxWidth="xl" sx={{ mb: "150px" }}>
       <Typography variant="h3" component="h3" align="center" gutterBottom>
         Programa editorial
       </Typography>
       <Swiper
         pagination={true}
         modules={[Pagination]}
-        className="swiper"
-        slidesPerView={1}
-        spaceBetween={40}
+        spaceBetween={20}
+        breakpoints={{
+          0:    { slidesPerView: "1" },
+          700:  { slidesPerView: "2" },
+          1200: { slidesPerView: "3" },
+        }}
+        style={{ paddingBottom: "3rem" }}
       >
-        <SwiperSlide className="swiper-slide">
-          <CartaPrograma />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <CartaPrograma2 />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <CartaPrograma3 />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <CartaPrograma4 />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-slide">
-          <CartaPrograma5 />
-        </SwiperSlide>
+        {PROGRAMAS.map((parrafo, i) => (
+          <SwiperSlide key={i}>
+            <Box
+              sx={{
+                height:"400px",
+                overflowY: "auto",
+                p: "1.5rem",
+                borderRadius: "12px",
+                boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+                textAlign: "justify",
+                bgcolor: "bg.whiteBlue",
+              }}
+            >
+              <Typography variant="body2" sx={{
+                minHeightt:"100%", whiteSpace: "pre-line" }}>
+                {parrafo}
+              </Typography>
+            </Box>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </Container>
   );
 };
+
 export default ContenedorPrograma;

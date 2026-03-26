@@ -22,9 +22,13 @@ export default function CartaProyectoPerfil({ proyecto }) {
         }}
       >
         <CardMedia
+          component="img"
           sx={{ padding: "40px", height: "100%" }}
-          image={!proyecto ? "" : proyecto.img}
-          src={!proyecto ? "" : proyecto.img}
+          image={proyecto?.img || "https://placehold.co/700x1100?text=Proyecto"}
+          src={proyecto?.img || "https://placehold.co/700x1100?text=Proyecto"}
+          alt={proyecto?.titulo || "Proyecto"}
+          loading="lazy"
+          decoding="async"
         />
         <CardContent sx={{ height: "300px" }}>
           <Typography gutterBottom variant="h5" component="h5">

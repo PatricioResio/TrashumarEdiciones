@@ -1,5 +1,4 @@
 import { Box, Typography, Link as MuiLink } from "@mui/material";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InfoItem = ({ icon, text, href, prefix }) => {
   if (!text) return null;
@@ -18,12 +17,10 @@ const InfoItem = ({ icon, text, href, prefix }) => {
           fontSize: 16,
         }}
       >
-        <FontAwesomeIcon icon={icon} />
+        {icon}
       </Box>
-
       <Typography variant="body1" sx={{ wordBreak: "break-word" }}>
-        {prefix}
-        {text}
+        {prefix}{text}
       </Typography>
     </>
   );
@@ -38,9 +35,7 @@ const InfoItem = ({ icon, text, href, prefix }) => {
         borderRadius: 2,
         transition: "all 0.2s ease",
         cursor: href ? "pointer" : "default",
-        "&:hover": href
-          ? { backgroundColor: "rgba(0,0,0,0.05)", transform: "scale(1.01)" }
-          : {},
+        "&:hover": href ? { backgroundColor: "rgba(0,0,0,0.05)", transform: "scale(1.01)" } : {},
       }}
       component={href ? MuiLink : "div"}
       href={href}

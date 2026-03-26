@@ -3,7 +3,6 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 
@@ -43,14 +42,18 @@ export default function CartaProyectos({ proyecto }) {
               }}
             >
               <CardMedia
+                component="img"
                 sx={{
                   height: { xs: "22rem", sm: "29rem", md: "39rem" },
                   width: { xs: "12rem", sm: "17rem", md: "22rem" },
                   m: "0",
                   p: "0",
                 }}
-                image={proyecto.img}
-                src={!proyecto ? "" : proyecto.img}
+                image={proyecto?.img || "https://placehold.co/700x1100?text=Proyecto"}
+                src={proyecto?.img || "https://placehold.co/700x1100?text=Proyecto"}
+                alt={proyecto?.titulo || "Proyecto"}
+                loading="lazy"
+                decoding="async"
               />
             </CardContent>
           </Button>

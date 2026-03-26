@@ -1,6 +1,6 @@
 .container {
-  height: 75vh;
-  width: 95%;
+  height: 55vh;
+  width: 75%;
   margin: auto;
   margin-top: -8rem;
   padding: 2rem 0;
@@ -10,19 +10,30 @@
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
-  background-color: rgba(149, 247, 247, 0.95);
+  background-color: rgba(247, 255, 255, 0.99);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  border-color:#7AE7F5;
+  border-left: 6px solid #09A5B0;
+  border-top: none;
+
+  
 }
+@media (min-width: 1200px) {
+  .container-perfiles {
+    border-left: none;
+    border-top: 6px solid #09A5B0;
+  }
+}
+
 .form-box {
-  height: 65vh;
-  width: 50%;
+  height: 35vh;
+  width: 40%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 25px;
-  background-color: rgba(247, 255, 255, 0.95);
 }
 
 .textField {
@@ -53,11 +64,13 @@
   }
   .container {
     margin-top: -6rem;
-    height: 95vh;
+    height: 70vh;
+    
+    width: 60%;
   }
   .form-box {
-    height: 70vh;
-    width: 80%;
+    height: 60vh;
+    width: 60%;
   }
 }
 @media (min-width: 920px) {
@@ -87,10 +100,10 @@
     margin-top: 9rem;
   }
   .textField {
-    width: 60%;
+    width: 80%;
   }
   .textArea {
-    width: 60%;
+    width: 80%;
   }
 }
 

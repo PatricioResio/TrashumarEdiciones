@@ -1,18 +1,11 @@
-import {
-  faFacebook,
-  faInstagram,
-  faLinkedin,
-  faSquareXTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope, faPenToSquare } from "@fortawesome/free-regular-svg-icons";
-import { faSquarePhone } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, Container, IconButton, Typography } from "@mui/material";
+import { Box, Container,Typography } from "@mui/material";
 
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const CartaPerfilUsuario = ({ currentUser }) => {
+  const avatarSrc =
+    currentUser?.avatar || "https://placehold.co/400x400?text=Avatar";
+
   return (
     <Container
       sx={{
@@ -43,8 +36,10 @@ const CartaPerfilUsuario = ({ currentUser }) => {
             borderRadius: "50%",
             border: "3px solid #eefffdff",
           }}
-          src={!currentUser ? "No se encontro usuario" : currentUser.avatar}
+          src={avatarSrc}
           alt="foto"
+          loading="lazy"
+          decoding="async"
         />
         <Typography variant="h4" fontWeight="bold" color="#fdffffff">
           {" "}

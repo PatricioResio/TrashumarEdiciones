@@ -8,21 +8,23 @@
 
 .container-perfiles {
   justify-content: center;
-  border-radius: 5px;
   margin: 7rem auto;
-  margin-top: -7rem;
-  background-color: rgba(149, 247, 247, 0.95);
+  background-color: rgba(248, 255, 255, 0.99);
   width: 95%;
   padding: 2;
   height: 65vh;
 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
-}
+  border-color:#7AE7F5;
+  
+  border-left: none;
+  border-top: 6px solid #09A5B0;
+  }
+
 
 @media (min-width: 920px) {
   .container-perfiles {
-    margin-top: -4rem;
     height: 70vh;
   }
 }

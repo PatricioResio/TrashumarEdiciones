@@ -41,8 +41,7 @@ const theme = createTheme({
   typography: {
     color: "#09A5B0",
     h1: {
-      fontWeight: "bold",
-      fontSize: "2.4rem",
+      fontSize: "3rem",
       "@media (min-width:600px)": {
         fontSize: "2.5rem",
       },
@@ -56,11 +55,16 @@ const theme = createTheme({
         fontSize: "4rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "4.5rem",
-      },
+        fontSize: "4rem",
+      },  
+      fontFamily: "Roboto, sans-serif",
+      fontWeight: 400,
     },
     h2: {
-      fontSize: "1.8rem",
+      fontFamily: "Roboto, sans-serif",
+      fontWeight: 300,
+   
+      fontSize: "3rem",
       "@media (min-width:600px)": {
         fontSize: "1.8rem",
       },
@@ -71,13 +75,15 @@ const theme = createTheme({
         fontSize: "2.6rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "3rem",
+        fontSize: "2rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "3.4rem",
+        fontSize: "2.9rem",
       },
     },
     h3: {
+       fontFamily: "Roboto, sans-serif",
+    
       fontSize: "1.4rem",
       "@media (min-width:600px)": {
         fontSize: "1.6rem",
@@ -89,10 +95,10 @@ const theme = createTheme({
         fontSize: "2.1rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "2.6rem",
+        fontSize: "1.8rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "3rem",
+        fontSize: "1.9rem",
       },
     },
     h4: {
@@ -104,13 +110,13 @@ const theme = createTheme({
         fontSize: "2rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "2.2rem",
+        fontSize: "1.7rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "2.4rem",
+        fontSize: "2rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "2.8rem",
+        fontSize: "2.1rem",
       },
     },
     h5: {
@@ -164,47 +170,13 @@ const theme = createTheme({
         fontSize: "1.3rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "1.4rem",
-      },
-    },
-    pCarrousel: {
-      fontSize: "0.8rem",
-      "@media (min-width:600px)": {
-        fontSize: "1rem",
-      },
-      "@media (min-width:900px)": {
-        fontSize: "1.1rem",
-      },
-      "@media (min-width:1200px)": {
-        fontSize: "2rem",
-      },
-      "@media (min-width:1536px)": {
-        fontSize: "2rem",
-      },
-      "@media (min-width:1920px)": {
         fontSize: "3rem",
       },
     },
-    autor: {
-      fontSize: "0.6rem",
-      "@media (min-width:600px)": {
-        fontSize: "0.9rem",
-      },
-      "@media (min-width:900px)": {
-        fontSize: "0.9rem",
-      },
-      "@media (min-width:1200px)": {
-        fontSize: "1rem",
-      },
-      "@media (min-width:1536px)": {
-        fontSize: "1rem",
-      },
-      "@media (min-width:1920px)": {
-        fontSize: "1rem",
-      },
-      fontWeight: 500,
-    },
-    body: {
+   
+    body1: {
+      color:"rgb(12, 12, 12)",
+      fontFamily: "Inter, sans-serif",
       fontSize: "0.8rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
@@ -222,13 +194,24 @@ const theme = createTheme({
         fontSize: "1.4rem",
       },
     },
+    body2: 
+    
+    {color:"",
+      fontFamily: "Inter, sans-serif",
+    },
     button: {
+      fontWeight:400,
       fontSize: "0.8rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
+      fontFamily:"Roboto, sans-serif"
     },
+
+      
+ 
   },
+
 });
 
 export default theme;

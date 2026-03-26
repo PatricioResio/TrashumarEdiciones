@@ -14,11 +14,9 @@ const CartaHistoria = ({
   };
 
   return (
-    <Fade triggerOnce delay={1100}>
       <Card
         className="carta-historia"
         sx={{
-          borderRadius: "20px",
           height: { xs: "58vh", md: "37.5rem" },
           width: { xs: "63vw", sm: "200px", md: "280px" },
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
@@ -27,24 +25,27 @@ const CartaHistoria = ({
         <CardActions
           onClick={handlerPopUp}
           sx={{
-            p: "0", // Duración y suavidad del efecto
+            p: "0", 
           }}
         >
           <Button onClick={handleClickHistoria} sx={{ m: "0", p: "0" }}>
             <CardMedia
+              component="img"
               sx={{
                 height: { xs: "58vh", md: "37.5rem" },
                 width: { xs: "63vw", sm: "230px", md: "280px" },
                 m: "0",
                 p: "0",
+                borderRadius: "20px",
               }}
-              image={url}
-              src={!url ? "" : url}
+              src={url || "https://placehold.co/900x1200?text=Historia"}
+              alt={`Historia ${id}`}
+              loading="lazy"
+              decoding="async"
             ></CardMedia>
           </Button>
         </CardActions>
       </Card>
-    </Fade>
   );
 };
 

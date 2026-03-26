@@ -31,14 +31,18 @@ export default function CartaPerfiles({ perfil }) {
         }}
       >
         <CardMedia
+          component="img"
           sx={{
             height: "10rem",
             width: "10rem",
             margin: "1rem auto",
             borderRadius: "50%",
           }}
-          image={perfil.avatar}
-          src={!perfil.avatar ? "" : perfil.avatar}
+          image={perfil?.avatar || "https://placehold.co/400x400?text=Perfil"}
+          src={perfil?.avatar || "https://placehold.co/400x400?text=Perfil"}
+          alt={`Avatar de ${perfil?.nombrePublico || "perfil"}`}
+          loading="lazy"
+          decoding="async"
         />
         <CardContent className="carta-perfiles-contenido">
           <Typography

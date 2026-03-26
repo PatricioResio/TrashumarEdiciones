@@ -1,15 +1,19 @@
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
 import { AuthProvider } from "./context/AuthContext";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Route, Routes } from "react-router-dom";
-import { NavBar, Footer } from "./components/index";
-import { Nosotros, Home, Comunidad, Contact } from "./pages/index";
+import { CircularProgress } from "@mui/material";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 import "./components/Perfil/DescripcionPerfil/DescripcionPerfil.css";
 import NotFound from "./components/NotFound/NotFound.jsx";
+import Home from "./pages/Home";
 
 const LazyLogin = lazy(() => import("./pages/Login.jsx"));
 const LazyContact = lazy(() => import("./pages/Contact.jsx"));
+const LazyNosotros = lazy(() => import("./pages/Nosotros.jsx"));
+const LazyComunidad = lazy(() => import("./pages/Comunidad.jsx"));
 const LazyMiPerfil = lazy(() => import("./pages/MiPerfil.jsx"));
 const LazyPerfil = lazy(() => import("./pages/Perfil.jsx"));
 const LazyLibreria = lazy(() => import("./pages/Libreria.jsx"));
@@ -48,24 +52,32 @@ export default function App() {
             minWidth: "100%",
           }}
         >
-          <Routes>
-            <Route path="/" Component={Home} />
-            <Route path="/miperfil" Component={LazyMiPerfil} />
-            <Route path="/infoPerfil" Component={LazyFormRegistro} />
-            <Route path="/perfil/:idPerfil" Component={LazyPerfil} />
-            <Route path="/contacto" Component={LazyContact} />
-            <Route path="/libreria" Component={LazyLibreria} />
-            <Route
-              path="/proyecto/:idProyecto"
-              Component={LazyProyectoPublico}
-            />
-            <Route path="/nosotros" Component={Nosotros} />
-            <Route path="/ingresa" Component={LazyLogin} />
-            <Route path="/publicar" Component={LazyProyectoNuevo} />
-            <Route path="/registro" Component={LazyFormRegistro} />
-            <Route path="/comunidad" Component={Comunidad} />
-            <Route path="/*" element={<NotFound />} />
-          </Routes>
+          <Suspense
+            fallback={
+              <Box sx={{ display: "flex", justifyContent: "center", py: 5 }}>
+                <CircularProgress />
+              </Box>
+            }
+          >
+            <Routes>
+              <Route path="/" Component={Home} />
+              <Route path="/miperfil" Component={LazyMiPerfil} />
+              <Route path="/infoPerfil" Component={LazyFormRegistro} />
+              <Route path="/perfil/:idPerfil" Component={LazyPerfil} />
+              <Route path="/contacto" Component={LazyContact} />
+              <Route path="/libreria" Component={LazyLibreria} />
+              <Route
+                path="/proyecto/:idProyecto"
+                Component={LazyProyectoPublico}
+              />
+              <Route path="/nosotros" Component={LazyNosotros} />
+              <Route path="/ingresa" Component={LazyLogin} />
+              <Route path="/publicar" Component={LazyProyectoNuevo} />
+              <Route path="/registro" Component={LazyFormRegistro} />
+              <Route path="/comunidad" Component={LazyComunidad} />
+              <Route path="/*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </Box>
 
         <Footer />

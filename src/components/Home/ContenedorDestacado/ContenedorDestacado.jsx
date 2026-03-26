@@ -1,6 +1,7 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Card, CardMedia, Chip, Container, Divider, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import {
+  CONTRATAPA_HIPPIES,
   ID_PROYECTO_DESTACADO,
   TAPA_HIPPIES,
 } from "../../../constants/constants";
@@ -8,24 +9,40 @@ import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import { DESCRIPCION_ARTICULO_DESTACADO } from "../../../constants/Textos";
 import "./ContenedorDestacado.css";
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import LazyImage from "../../LazyImage/LazyImage";
 
 const ContenedorDestacado = () => {
   const Descripcion = DESCRIPCION_ARTICULO_DESTACADO.slice(0, 254);
   return (
-    <Container maxWidth="2xl" className="contenedor-destacado">
-      <Fade triggerOnce easeIn direction="down">
+    <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', py: 6 }}>
+    <Paper sx={{    m:"auto",
+      maxWidth:"80vw",
+      p:4,
+      borderRadius:"20px",
+      bgcolor: "white",
+      borderLeft: {
+        xs: "none",
+        lg: "6px solid #09A5B0",
+      },
+      borderTop: {
+        xs: "6px solid #09A5B0",
+        lg: "none",
+      },
+      borderColor: "#7AE7F5",}}>
+      <Box sx={{ mb: 5, textAlign: 'center' }}>
         <Typography
-          color={"#0C2324"}
+          variant="h1"
+          component="h3"
           sx={{
-            margin: { xs: "0", md: "2rem" },
+            fontSize: { xs: '2rem', md: '3rem' },
+            fontWeight: 500,
+            lineHeight: 1.2,
           }}
-          variant="h2"
-          component="h2"
         >
-          Este es nuestro proyecto destacado!
+          El día en que los hippies descubrieron los sahumerios
         </Typography>
-      </Fade>
-      <Fade triggerOnce>
+
         <Box
           sx={{
             display: "flex",
@@ -44,55 +61,166 @@ const ContenedorDestacado = () => {
             },
           }}
         >
-          <Box
-            component="img"
-            sx={{
-              boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-              width: { xs: "90%", md: "25rem", lg: "25rem", xl: "26rem" },
-              m: { xs: "0 auto", md: "auto" },
-              mb: { xs: "0", lg: "auto" },
-            }}
-            src={TAPA_HIPPIES}
-            alt="Ilustracion de tapa de libro novedad"
-          />
-          <Box
-            sx={{
-              width: { xs: "100%", lg: "37.5rem" },
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              m: "auto",
-              mt: { xs: "0px", lg: "auto" },
-              gap: { xs: "10px", md: "20px" },
-            }}
-          >
-            <Typography component="h3" variant="h3">
-              El día en que los hippies descubrieron los sahumerios
-            </Typography>
-            <Typography component="h4" variant="h4">
-              Pablo Atanasópulos
-            </Typography>
-            <Typography component="p" variant="body">
-              {Descripcion}
-            </Typography>
-            <Button
-              sx={{
-                width: { sx: "90px", xl: "180px" },
-                m: { xs: "0", md: "4rem auto 0 auto" },
-                color: "#022932",
-                borderColor: "#022932",
-              }}
-              variant="outlined"
-              component={Link}
-              to={`/proyecto/${ID_PROYECTO_DESTACADO}`}
-            >
-              Ver más
-            </Button>
-          </Box>
+         
         </Box>
-      </Fade>
-    </Container>
-  );
-};
+      </Box>
+
+      {/* Contenido Principal */}
+      <Box
+  sx={{
+    display: "flex",
+    flexDirection: {
+      xs: "column",
+      md: "column",
+      lg: "row",
+    },
+    gap: 4,
+    alignItems: "stretch",
+  }}
+>
+  {/* IMÁGENES */}
+  <Box
+  sx={{
+    display: "flex",
+    flexDirection: {
+      xs: "column",
+      md: "column",
+      lg: "row",
+    },
+    gap: 1,
+    width: {
+      xs: "100%",
+      lg: "50%",
+    },
+  }}
+>
+  <Card
+    elevation={0}
+    sx={{
+      width: "100%",
+      borderRadius: 3,
+      boxShadow: "none",
+      background: "transparent",
+      border: "none",
+    }}
+  >
+    <LazyImage
+      src={TAPA_HIPPIES}
+      alt="Tapa Hippies"
+      priority={false} // ⚠️ true SOLO si es LCP
+      sx={{
+        width: "100%",
+        height: {
+          xs: "40vh",
+          md: "30vh",
+          lg: "55vh",
+        },
+        objectFit: "contain",
+        p: 2,
+      }}
+    />
+  </Card>
+</Box>
+  {/* CONTENIDO */}
+  <Box
+    elevation={2}
+    sx={{
+      flex: 1,
+      p: { xs: 3, md: 5 },
+  
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "start",
+    }}
+  ><Box>
+
+
+    <Typography
+      variant="h4"
+      sx={{
+        mb: 1,
+        fontWeight: 400,
+      }}
+    >
+      Sobre este libro
+    </Typography> 
+      <Typography
+      variant="body2"
+      sx={{
+        fontSize: "1.1rem",
+        lineHeight: 1.8,
+      }}
+    >
+      por Pablo    </Typography>
+    <Chip
+         icon={<CalendarTodayIcon sx={{ color: 'primary.main' }} />}
+            label="19/3/2024"
+            variant="outlined"
+            sx={{
+              borderColor: 'primary.main',
+              color: 'primary.main',
+              fontSize: '1rem',
+              py: 2.5,
+              px: 1,
+    mb:3,
+              fontWeight: 400,
+            }}
+          />
+            </Box>
+
+    <Divider sx={{ mb: 3 }} />
+
+    <Typography
+      variant="body2"
+      sx={{
+        lineHeight: 1.8,
+        textAlign: "justify",
+      }}
+    >
+    {Descripcion}
+    </Typography>
+    <Button component={Link}
+   to={`/proyecto/${ID_PROYECTO_DESTACADO}`} variant="contained" 
+   sx={{ 
+    margin: "30px auto 0 auto ",
+    maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
+  }}
+   >Leer más</Button>
+  </Box>
+</Box>
+
+      {/* Footer Info */}
+      <Box
+        sx={{
+          mt: 6,
+          p: 3,
+          bgcolor: 'bg.whiteBlue',
+          borderRadius: 3,
+          textAlign: 'center',
+        }}
+      >
+        <Typography
+          variant="h6"
+          sx={{
+            color: 'text.primary',
+            fontWeight: 600,
+            mb: 1,
+          }}
+        >
+          Trashumar Ediciones
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+          }}
+        >
+          Una editorial nómada, federal e independiente. Publicamos voces y proyectos que
+          cruzan fronteras.
+        </Typography>
+      </Box>
+    </Paper>
+  </Box>
+);
+}
 
 export default ContenedorDestacado;

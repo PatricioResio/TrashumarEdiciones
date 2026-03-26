@@ -1,14 +1,14 @@
-import {
+/* import {
   faFacebook,
   faInstagram,
   faLinkedin,
   faSquareXTwitter,
-} from "@fortawesome/free-brands-svg-icons";
-import "../Perfil.css";
+} from "@fortawesome/free-brands-svg-icons"; */
+import "../Perfil.css";/* 
 import { faEnvelope, faSquarePhone } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Box, Container, Typography } from "@mui/material";
-import { Fade } from "react-awesome-reveal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; */
+import { Box, Container, Typography } from "@mui/material";/* 
+import { Fade } from "react-awesome-reveal"; */
 import React from "react";
 
 const CartaPerfilPublico = ({ perfil }) => {
@@ -40,7 +40,7 @@ const CartaPerfilPublico = ({ perfil }) => {
         p: 2,
       }}
     >
-      <Fade delay={1100} triggerOnce>
+
         <Box
           sx={{
             display: "flex",
@@ -50,7 +50,7 @@ const CartaPerfilPublico = ({ perfil }) => {
             gap: 4,
           }}
         >
-          <Fade delay={1500} triggerOnce>
+
             <Box
               sx={{
                 height: { xs: "6rem", md: "10rem" },
@@ -58,11 +58,12 @@ const CartaPerfilPublico = ({ perfil }) => {
                 borderRadius: "50%",
               }}
               component="img"
-              src={perfil.avatar}
+              src={perfil?.avatar || "https://placehold.co/400x400?text=Perfil"}
               alt="foto de perfil"
+              loading="lazy"
+              decoding="async"
             />
-          </Fade>
-
+    
           <Typography variant="h3" className="h2-perfil-card" fontWeight="bold">
             {!perfil ? "No se encontro usuario" : perfil.nombrePublico}
           </Typography>
@@ -83,7 +84,7 @@ const CartaPerfilPublico = ({ perfil }) => {
             </>
           ) : (
             <Typography variant="h5">
-              <FontAwesomeIcon icon={faLinkedin} />
+      {/*         <FontAwesomeIcon icon={faLinkedin} /> */}
               {perfil.linkedinForm}
             </Typography>
           )}
@@ -93,7 +94,7 @@ const CartaPerfilPublico = ({ perfil }) => {
             </>
           ) : (
             <Typography variant="h5">
-              <FontAwesomeIcon icon={faFacebook} />
+              {/* <FontAwesomeIcon icon={faFacebook} /> */}
               {perfil.facebookForm}
             </Typography>
           )}
@@ -101,21 +102,21 @@ const CartaPerfilPublico = ({ perfil }) => {
             <Typography variant="h5"></Typography>
           ) : (
             <Typography variant="h5">
-              <FontAwesomeIcon icon={faInstagram} />@{perfil.instagramForm}
+             {/*  <FontAwesomeIcon icon={faInstagram} />@{perfil.instagramForm} */}
             </Typography>
           )}
           {!perfil.xForm ? (
             <Typography variant="h5"></Typography>
           ) : (
             <Typography variant="h5">
-              <FontAwesomeIcon icon={faSquareXTwitter} />@{perfil.xForm}
+              {/* <FontAwesomeIcon icon={faSquareXTwitter} />@{perfil.xForm} */}
             </Typography>
           )}
           {!perfil.email ? (
             <Typography variant="h5"></Typography>
           ) : (
             <Typography variant="h5">
-              <FontAwesomeIcon icon={faEnvelope} />
+            {/*   <FontAwesomeIcon icon={faEnvelope} /> */}
               {perfil.email}
             </Typography>
           )}
@@ -123,12 +124,11 @@ const CartaPerfilPublico = ({ perfil }) => {
             <Typography variant="h5"></Typography>
           ) : (
             <Typography variant="h5">
-              <FontAwesomeIcon size="24px" icon={faSquarePhone} />
+             {/*  <FontAwesomeIcon size="24px" icon={faSquarePhone} /> */}
               {perfil.telefono}
             </Typography>
           )}
         </Box>
-      </Fade>
     </Container>
   );
 };

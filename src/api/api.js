@@ -1,4 +1,4 @@
-import { db } from "./firebase";
+import { db } from "./firebaseDb";
 import { getDocs, collection, getDoc } from "firebase/firestore";
 
 export const getProyectos = async () => {

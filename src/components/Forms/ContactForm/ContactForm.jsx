@@ -62,7 +62,7 @@ const ContactForm = () => {
           <Box className="container">
             <Box className="form-box">
               <Typography
-                sx={{ my: "1.5rem", color: "secondary.main" }}
+                sx={{ my: "1.5rem", color: "secondary.main", }}
                 component="h3"
                 variant="h3"
               >

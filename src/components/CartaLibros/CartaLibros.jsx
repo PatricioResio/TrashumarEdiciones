@@ -18,9 +18,13 @@ const CartaLibros = ({ libro }) => {
       }}
     >
       <CardMedia
+        component="img"
         sx={{ width: "350px", height: "500px" }}
-        image={libro.imagen}
-        src={!libro ? "" : libro.imagen}
+        image={libro?.imagen || "https://placehold.co/700x1000?text=Libro"}
+        src={libro?.imagen || "https://placehold.co/700x1000?text=Libro"}
+        alt={libro?.titulo || "Libro"}
+        loading="lazy"
+        decoding="async"
       />
       <CardContent>
         <Typography gutterBottom variant="h4" component="h4">

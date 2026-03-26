@@ -14,7 +14,7 @@ const ContenedorHistoria = () => {
   return (
     <>
       <Box
-        bgcolor="bg.whiteBlue"
+   
         sx={{
           height: "43rem",
           display: "flex",
@@ -25,8 +25,15 @@ const ContenedorHistoria = () => {
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
           margin: "4rem auto",
           padding: "3rem",
-        }}
-      >
+           borderLeft: {
+        xs: "none",
+        lg: "6px solid #09A5B0",
+      },
+      borderTop: {
+        xs: "6px solid #09A5B0",
+        lg: "none",
+      },
+      borderColor: "#7AE7F5",}}>
         <Swiper
           pagination={true}
           modules={[Pagination]}
@@ -40,14 +47,12 @@ const ContenedorHistoria = () => {
         >
           {historias.map((historia) => (
             <SwiperSlide key={historia.id}>
-              <Fade triggerOnce>
                 <CartaHistoria
                   key={historia.posicion}
                   {...historia}
                   handleChangeHistoria={handleChangeHistoria}
                   handlerPopUp={handlerPopUp}
                 />
-              </Fade>
             </SwiperSlide>
           ))}
         </Swiper>
