@@ -5,41 +5,34 @@ export const AuthContext = createContext();
 
 export const useAuth = () => {
   const context = useContext(AuthContext);
-  if (!context) {
-    console.log("error creando el contexto");
-  } else {
-    return context;
-  }
+  if (!context) throw new Error("useAuth debe usarse dentro de AuthProvider");
+  return context;
 };
 
 export function AuthProvider({ children }) {
-  const [currentUser, setCurrentUser] = useState(null);
-  const [googleUser, setGoogleUser] = useState(null);
-  const [newUser, setNewUser] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
-  const servicesRef = useRef(null);
+  const [currentUser, setCurrentUser]   = useState(null);
+  const [googleUser, setGoogleUser]     = useState(null);
+  const [newUser, setNewUser]           = useState(false);
+  const [loading, setLoading]           = useState(true);
+  const [authError, setAuthError]       = useState(null); // ← estado de error nuevo
+  const navigate                        = useNavigate();
+  const servicesRef                     = useRef(null);
 
   const loadFirebaseServices = async () => {
     if (servicesRef.current) return servicesRef.current;
 
-    const [{ auth }, { db }, firestoreModule, authModule] = await Promise.all([
-      import("../api/firebaseAuth"),
-      import("../api/firebaseDb"),
+    // un solo import de firebase, no dos
+    const [{ auth, db }, firestoreModule, authModule] = await Promise.all([
+      import("../api/firebase"),
       import("firebase/firestore"),
       import("firebase/auth"),
     ]);
 
-    servicesRef.current = {
-      auth,
-      db,
-      firestoreModule,
-      authModule,
-    };
-
+    servicesRef.current = { auth, db, firestoreModule, authModule };
     return servicesRef.current;
   };
 
+  // listener de auth state
   useEffect(() => {
     let unsubscribe = null;
     let isMounted = true;
@@ -48,17 +41,17 @@ export function AuthProvider({ children }) {
       const { auth, authModule } = await loadFirebaseServices();
       unsubscribe = authModule.onAuthStateChanged(auth, (user) => {
         if (!isMounted) return;
-        if (!user) {
-          setCurrentUser(null);
-          setLoading(false);
-        } else {
-          setGoogleUser(user);
-          setLoading(false);
-        }
+        setGoogleUser(user ?? null);
+        setLoading(false);
       });
     };
 
-    setupAuthListener().catch(() => setLoading(false));
+    setupAuthListener().catch(() => {
+      if (isMounted) {
+        setAuthError("No se pudo conectar con el servidor de autenticación.");
+        setLoading(false);
+      }
+    });
 
     return () => {
       isMounted = false;
@@ -66,93 +59,98 @@ export function AuthProvider({ children }) {
     };
   }, []);
 
+  // cuando googleUser cambia, buscar perfil en Firestore
   useEffect(() => {
-    if (!currentUser) {
+    if (!googleUser) {
+      setCurrentUser(null);
       setNewUser(true);
       return;
-    } else {
-      setNewUser(false);
     }
-  }, [currentUser]);
 
-  useEffect(() => {
-    const unsuscribe = async () => {
-      const uidGoogleUser = googleUser;
-      if (uidGoogleUser) {
+    const fetchPerfil = async () => {
+      try {
         const { db, firestoreModule } = await loadFirebaseServices();
-        const userDoc = firestoreModule.doc(db, "perfiles", uidGoogleUser.uid);
-        firestoreModule.getDoc(userDoc).then((response) => {
+        const userDoc = firestoreModule.doc(db, "perfiles", googleUser.uid);
+        const response = await firestoreModule.getDoc(userDoc);
+        if (response.exists()) {
           setCurrentUser(response.data());
-        });
+          setNewUser(false);
+        } else {
+          setCurrentUser(null);
+          setNewUser(true);
+        }
+      } catch (error) {
+        console.error("Error al obtener perfil:", error);
+        setAuthError("No se pudo cargar tu perfil. Intentá de nuevo.");
       }
     };
-    unsuscribe();
-    return;
+
+    fetchPerfil();
   }, [googleUser]);
 
   const loginWithGoogle = async () => {
     const { auth, authModule } = await loadFirebaseServices();
-    const responseGoogle = new authModule.GoogleAuthProvider();
-    return authModule.signInWithPopup(auth, responseGoogle);
+    const provider = new authModule.GoogleAuthProvider();
+    return authModule.signInWithPopup(auth, provider);
   };
 
   const handleGoogle = async (e) => {
     e.preventDefault();
-
+    setAuthError(null);
     try {
       await loginWithGoogle();
+      navigate("/miperfil"); // ← solo navega si el login fue exitoso
     } catch (error) {
       console.error("Error durante la autenticación con Google:", error);
-    } finally {
-      navigate("/miperfil");
+      setAuthError("No se pudo iniciar sesión con Google. Intentá de nuevo.");
     }
   };
 
   const registrar = async (registrerUser) => {
+    setAuthError(null);
     try {
       const { db, firestoreModule } = await loadFirebaseServices();
-      if (!googleUser || !googleUser.uid) {
-        console.error("El usuario de Google no está disponible.");
+      if (!googleUser?.uid) {
+        setAuthError("Tu sesión de Google no está disponible. Intentá loguearte de nuevo.");
         return;
       }
 
-      const userUID = googleUser.uid;
-      const userProfileRef = firestoreModule.doc(db, "perfiles", userUID);
+      const userProfileRef = firestoreModule.doc(db, "perfiles", googleUser.uid);
       const userProfileSnap = await firestoreModule.getDoc(userProfileRef);
 
       if (!userProfileSnap.exists()) {
         await firestoreModule.setDoc(userProfileRef, {
           ...registrerUser,
-          idPerfil: userUID,
+          idPerfil: googleUser.uid,
         });
+        // reemplazá este alert por un Snackbar de MUI en el componente que llama a registrar()
+        // por ahora lo dejamos pero marcado para cambiar
         alert("¡Registro completado!");
       } else {
-        await firestoreModule.setDoc(
-          userProfileRef,
-          {
-            ...registrerUser,
-          },
-          { merge: true }
-        );
+        await firestoreModule.setDoc(userProfileRef, { ...registrerUser }, { merge: true });
         alert("¡Perfil actualizado!");
       }
 
       setCurrentUser({ ...registrerUser });
       navigate("/miperfil");
     } catch (err) {
-      console.error("Error en el registro o actualización:", err);
-      alert("Error durante el registro. Por favor, inténtalo de nuevo.");
+      console.error("Error en el registro:", err);
+      setAuthError("Error durante el registro. Por favor, intentá de nuevo.");
     }
   };
 
   const logOut = async () => {
-    const { auth, authModule } = await loadFirebaseServices();
-    const response = await authModule.signOut(auth);
-    setCurrentUser(null);
-    setGoogleUser(null);
-    setNewUser(false);
-    navigate("/");
-    return response;
+    try {
+      const { auth, authModule } = await loadFirebaseServices();
+      await authModule.signOut(auth);
+      setCurrentUser(null);
+      setGoogleUser(null);
+      setNewUser(false);
+      navigate("/");
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+      setAuthError("No se pudo cerrar la sesión. Intentá de nuevo.");
+    }
   };
 
   return (
@@ -160,6 +158,8 @@ export function AuthProvider({ children }) {
       value={{
         newUser,
         currentUser,
+        loading,
+        authError,      // ← ahora los componentes pueden leer y mostrar el error
         loginWithGoogle,
         logOut,
         registrar,

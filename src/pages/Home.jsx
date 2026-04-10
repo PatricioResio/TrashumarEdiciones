@@ -31,7 +31,6 @@ const Home = () => {
           textAlign: "center",
           margin: "4rem 0",
           gap: 4,
-
           color: "linear-gradient(to bottom, #ffffff, #e9fffc 60%, #dafffe)",
         }}
       >
@@ -45,7 +44,7 @@ const Home = () => {
           <Typography></Typography>
         </Box>
 
-        <Box component="section" mb={"20rem"}>
+        <Box component="section" mb={"50rem"}>
           <BannerCuerpo />
         </Box>
 
@@ -81,9 +80,9 @@ const Home = () => {
             </Box>
         
         </Box>
-        <Box component="section" mb={{ xs: "-190px", md: 0 }}>
+{/*         <Box component="section" mb={{ xs: "-190px", md: 0 }}>
           <BannerCuerpo />
-        </Box>
+        </Box> */}
         <Box ref={contactRef} component="section" id="contactForm" sx={{ minHeight: "22rem" }}>
           <Suspense fallback={<CircularProgress />}>
             {contactVisible ? <LazyContact /> : null}

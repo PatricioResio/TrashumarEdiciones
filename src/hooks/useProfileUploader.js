@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { storage } from "../api/firebaseStorage";
+import { storage } from "../api/firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { compressImage } from "../utils/compressImage";
 

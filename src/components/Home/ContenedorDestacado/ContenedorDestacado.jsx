@@ -65,7 +65,7 @@ const ContenedorDestacado = () => {
         </Box>
       </Box>
 
-      {/* Contenido Principal */}
+   
       <Box
   sx={{
     display: "flex",
@@ -97,7 +97,7 @@ const ContenedorDestacado = () => {
   <Card
     elevation={0}
     sx={{
-      width: "100%",
+      width: "80%",
       borderRadius: 3,
       boxShadow: "none",
       background: "transparent",
@@ -107,21 +107,21 @@ const ContenedorDestacado = () => {
     <LazyImage
       src={TAPA_HIPPIES}
       alt="Tapa Hippies"
-      priority={false} // ⚠️ true SOLO si es LCP
+      priority={false} 
+      width="100%"
+      height={ {
+        xs: "40vh",
+        md: "30vh",
+        lg: "55vh",
+      }}
       sx={{
-        width: "100%",
-        height: {
-          xs: "40vh",
-          md: "30vh",
-          lg: "55vh",
-        },
         objectFit: "contain",
         p: 2,
       }}
     />
   </Card>
 </Box>
-  {/* CONTENIDO */}
+ 
   <Box
     elevation={2}
     sx={{
@@ -189,7 +189,6 @@ const ContenedorDestacado = () => {
   </Box>
 </Box>
 
-      {/* Footer Info */}
       <Box
         sx={{
           mt: 6,

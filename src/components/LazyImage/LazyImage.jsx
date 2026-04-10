@@ -48,9 +48,9 @@ const LazyImage = ({
         width={imgWidth}
         height={imgHeight}
         sx={{
-          width: "100%",
-          height: "100%",
-          objectFit,
+          objectFit: "fit",
+          width:"100%",
+          height:"100%",
           opacity: loaded ? 1 : 0,
           transition: "opacity 0.3s ease",
         }}

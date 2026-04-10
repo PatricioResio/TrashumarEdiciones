@@ -1,4 +1,4 @@
-import { db } from "./firebaseDb";
+import { db } from "./firebase";
 import { getDocs, collection, getDoc } from "firebase/firestore";
 
 export const getProyectos = async () => {
@@ -41,10 +41,3 @@ export const getLibros = async () => {
   }
 };
 
-/* export const setPerfil = async () = {
-  try{
-    const
-  } catch {
-
-  }
-} */

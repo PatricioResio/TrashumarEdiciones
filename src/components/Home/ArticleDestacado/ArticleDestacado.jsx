@@ -14,7 +14,7 @@ const ArticleDestacado = () => {
           lg: "150rem",
           xl: "130vh",
         },
-        margin: "50px auto",
+        margin: "auto",
         width: "95%",
       }}
     >

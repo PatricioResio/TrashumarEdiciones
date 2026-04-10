@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
+import LazyImage from "../LazyImage/LazyImage";
 
 const CartaLibros = ({ libro }) => {
   return (
@@ -17,7 +18,7 @@ const CartaLibros = ({ libro }) => {
         height: "700px",
       }}
     >
-      <CardMedia
+      <LazyImage
         component="img"
         sx={{ width: "350px", height: "500px" }}
         image={libro?.imagen || "https://placehold.co/700x1000?text=Libro"}
