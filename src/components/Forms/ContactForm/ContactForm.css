@@ -10,12 +10,14 @@
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
-  background-color: rgba(247, 255, 255, 0.99);
+  background: linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe);
+
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   border-color:#7AE7F5;
   border-left: 6px solid #09A5B0;
   border-top: none;
+  
 
   
 }

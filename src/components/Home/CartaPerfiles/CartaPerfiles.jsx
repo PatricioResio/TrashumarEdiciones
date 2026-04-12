@@ -21,9 +21,8 @@ export default function CartaPerfiles({ perfil }) {
           height: { xs: "20rem", md: "22rem" },
           m: { xs: "auto", md: "8rem" },
           borderRadius: "20px",
-
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-          backgroundColor: " rgba(255, 255, 255, 0.7)",
+          backgroundColor: "rgba(255, 255, 255, 0.7)",
           transition: "transform 0.3s ease-in-out",
           "&:hover": {
             transform: "scale(1.02)",

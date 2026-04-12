@@ -7,19 +7,18 @@
 }
 
 .container-perfiles {
+  background: linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe);
   justify-content: center;
   margin: 7rem auto;
-  background-color: rgba(248, 255, 255, 0.99);
-  width: 95%;
   padding: 2;
+  width: 95%;
   height: 65vh;
-
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
-  border-color:#7AE7F5;
+  border-color:#09A5B0;
   
-  border-left: none;
-  border-top: 6px solid #09A5B0;
+  border-top: none;
+  border-left: 6px solid #09A5B0;
   }
 
 
@@ -37,6 +36,6 @@
 @media (min-width: 1500px) {
   .container-perfiles {
     margin-top: 8rem;
-    height: 80vh;
+    height: 70vh;
   }
 }

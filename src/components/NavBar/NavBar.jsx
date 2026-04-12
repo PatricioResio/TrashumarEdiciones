@@ -83,7 +83,7 @@ export function Navbar() {
   return (
     <>
       <AppBar position="sticky" elevation={0} sx={{ bgcolor: 'primary.main' }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="2xl">
           <Toolbar disableGutters sx={{ minHeight: { xs: 70, md: 80 } }}>
 
             {/* Logo */}

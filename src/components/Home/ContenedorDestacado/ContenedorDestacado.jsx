@@ -17,10 +17,10 @@ const ContenedorDestacado = () => {
   return (
     <Box sx={{ bgcolor: 'background.default', minHeight: '100vh', py: 6 }}>
     <Paper sx={{    m:"auto",
-      maxWidth:"80vw",
+      maxWidth:"70vw",
       p:4,
       borderRadius:"20px",
-      bgcolor: "white",
+      background:"linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe)",
       borderLeft: {
         xs: "none",
         lg: "6px solid #09A5B0",
@@ -30,41 +30,6 @@ const ContenedorDestacado = () => {
         lg: "none",
       },
       borderColor: "#7AE7F5",}}>
-      <Box sx={{ mb: 5, textAlign: 'center' }}>
-        <Typography
-          variant="h1"
-          component="h3"
-          sx={{
-            fontSize: { xs: '2rem', md: '3rem' },
-            fontWeight: 500,
-            lineHeight: 1.2,
-          }}
-        >
-          El día en que los hippies descubrieron los sahumerios
-        </Typography>
-
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "80px",
-            width: "82%",
-            minWidth: { xs: "80%", lg: "600px" },
-            m: "auto",
-            p: { xs: "0", md: "2rem" },
-            color: "#0C2324",
-            flexDirection: {
-              xs: "column",
-              md: "column",
-              lg: "row",
-              xl: "row",
-            },
-          }}
-        >
-         
-        </Box>
-      </Box>
-
    
       <Box
   sx={{
@@ -91,6 +56,7 @@ const ContenedorDestacado = () => {
     width: {
       xs: "100%",
       lg: "50%",
+      xl:"35%"
     },
   }}
 >
@@ -102,22 +68,18 @@ const ContenedorDestacado = () => {
       boxShadow: "none",
       background: "transparent",
       border: "none",
+      objectFit: "cover",
+      p: 2,
+      margin:"auto",
     }}
   >
     <LazyImage
       src={TAPA_HIPPIES}
       alt="Tapa Hippies"
       priority={false} 
-      width="100%"
-      height={ {
-        xs: "40vh",
-        md: "30vh",
-        lg: "55vh",
-      }}
-      sx={{
-        objectFit: "contain",
-        p: 2,
-      }}
+      height={{sx:"60vh", lg:"50vh"}}
+
+     
     />
   </Card>
 </Box>
@@ -132,18 +94,20 @@ const ContenedorDestacado = () => {
       flexDirection: "column",
       justifyContent: "start",
     }}
-  ><Box>
+  > <Typography
+  variant="h1"
+  component="h3"
+  sx={{
+    fontSize: { xs: '2rem', md: '3rem' },
+    fontWeight: 500,
+    lineHeight: 1.2,
+  }}
+>
+  El día en que los hippies descubrieron los sahumerios
+</Typography><Box>
 
 
-    <Typography
-      variant="h4"
-      sx={{
-        mb: 1,
-        fontWeight: 400,
-      }}
-    >
-      Sobre este libro
-    </Typography> 
+  
       <Typography
       variant="body2"
       sx={{
@@ -169,12 +133,22 @@ const ContenedorDestacado = () => {
             </Box>
 
     <Divider sx={{ mb: 3 }} />
-
+    <Typography
+      variant="h4"
+      sx={{
+        mb: 1,
+        fontWeight: 400,
+      }}
+    >
+      Sobre este libro
+    </Typography> 
     <Typography
       variant="body2"
       sx={{
         lineHeight: 1.8,
         textAlign: "justify",
+        width:"90%",
+        margin:"auto"
       }}
     >
     {Descripcion}
@@ -192,17 +166,18 @@ const ContenedorDestacado = () => {
       <Box
         sx={{
           mt: 6,
-          p: 3,
-          bgcolor: 'bg.whiteBlue',
-          borderRadius: 3,
+          p: 2,          
+          background:"#09A5B0",
+          borderRadius:"60px",
           textAlign: 'center',
+          
+          color: 'secondary.white',
         }}
       >
         <Typography
-          variant="h6"
+          variant="h4"
           sx={{
-            color: 'text.primary',
-            fontWeight: 600,
+            fontWeight: 500,
             mb: 1,
           }}
         >
@@ -211,6 +186,8 @@ const ContenedorDestacado = () => {
         <Typography
           variant="body1"
           sx={{
+            
+            color: 'secondary.white',
           }}
         >
           Una editorial nómada, federal e independiente. Publicamos voces y proyectos que

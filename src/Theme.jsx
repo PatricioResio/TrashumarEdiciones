@@ -194,11 +194,25 @@ const theme = createTheme({
         fontSize: "1.4rem",
       },
     },
-    body2: 
-    
-    {color:"",
+    body2: {color:"rgb(12, 12, 12)",
       fontFamily: "Inter, sans-serif",
-    },
+      fontSize: "0.8rem",
+      "@media (min-width:600px)": {
+        fontSize: "1rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "1.1rem",
+      },
+      "@media (min-width:1200px)": {
+        fontSize: "1.2rem",
+      },
+      "@media (min-width:1536px)": {
+        fontSize: "1.3rem",
+      },
+      "@media (min-width:1920px)": {
+        fontSize: "1.4rem",
+      },},
+ 
     button: {
       fontWeight:400,
       fontSize: "0.8rem",

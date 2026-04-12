@@ -1,7 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Box, CircularProgress, Typography } from "@mui/material";
 import CarruselHome from "../components/Home/CarruselHome/CarruselHome";
-import { Fade } from "react-awesome-reveal";
 import "../App.css";
 import BannerCuerpo from "../components/BannerCuerpo/BannerCuerpo";
 import { useLazyImage } from "../hooks/useLazyImages";
@@ -20,6 +19,7 @@ const Home = () => {
 
   return (
     <>
+
       <CarruselHome />
 
       <Box
@@ -31,7 +31,7 @@ const Home = () => {
           textAlign: "center",
           margin: "4rem 0",
           gap: 4,
-          color: "linear-gradient(to bottom, #ffffff, #e9fffc 60%, #dafffe)",
+          
         }}
       >
         <Box ref={articleRef} component="section" sx={{ minHeight: "50rem" }}>
@@ -39,15 +39,35 @@ const Home = () => {
             {articleVisible ? <LazyArticleDestacado /> : null}
           </Suspense>
         </Box>
-
-        <Box>
-          <Typography></Typography>
         </Box>
-
-        <Box component="section" mb={"50rem"}>
+        <Box
+        maxWidth="100vw"
+        component="section"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          margin: "4rem 0",
+          gap: 4,
+          borderRadius:"20px"
+        }}
+      >
+        <Box component="section" m={"auto"} sx={{borderRadius:"20px"}}>
           <BannerCuerpo />
         </Box>
-
+        </Box>
+    <Box maxWidth="100vw"
+        component="section"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          margin: "4rem 0",
+          gap: 4,
+          
+        }}
+      >
+      
         <Box className="container-perfiles">
         
             <Typography
@@ -78,11 +98,24 @@ const Home = () => {
                 {perfilesVisible ? <LazyContenedorPerfiles /> : null}
               </Suspense>
             </Box>
+    </Box>
         
         </Box>
 {/*         <Box component="section" mb={{ xs: "-190px", md: 0 }}>
           <BannerCuerpo />
         </Box> */}
+           <Box
+        maxWidth="100vw"
+        component="section"
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          textAlign: "center",
+          margin: "4rem 0",
+          gap: 4,
+          color: "linear-gradient(to bottom, #ffffff, #e9fffc 60%, #dafffe)",
+        }}
+      >
         <Box ref={contactRef} component="section" id="contactForm" sx={{ minHeight: "22rem" }}>
           <Suspense fallback={<CircularProgress />}>
             {contactVisible ? <LazyContact /> : null}
