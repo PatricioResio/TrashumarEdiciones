@@ -23,8 +23,8 @@ export const pages = [
 export const homeArrays = [
   {
     id: 1,
-    url: HOME_HERO_LCP_URL,
-    h2: "Trashumar Ediciones",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.webp?alt=media&token=f6b7fc3a-3806-44e3-a793-fd35b2e83c5d",
+    h2: "Bienvenidos",
     textP:
       "Bienvenidos a Trashumar, una editorial nómada, federal e independiente. Publicamos voces y proyectos que cruzan fronteras.",
     buttonText: "¿Quéres trabajar con nosotros?",
@@ -32,8 +32,8 @@ export const homeArrays = [
   },
   {
     id: 2,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.webp?alt=media&token=f6b7fc3a-3806-44e3-a793-fd35b2e83c5d",
     h2: "Contacto",
+    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3.webp?alt=media&token=1f7d3685-deea-4a96-9789-51882e928d89",
     textP:
       "Quéres contactarte con nosotros para hablar de trashumancias? seguí el boton.",
     buttonText: "Contactanos",
@@ -42,7 +42,7 @@ export const homeArrays = [
   },
   {
     id: 3,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3.webp?alt=media&token=1f7d3685-deea-4a96-9789-51882e928d89",
+    url: HOME_HERO_LCP_URL,   
     h2: "Estamos formando una comunidad!",
     textP:
       "Registrate con tu cuenta y sé parte de Trashumar. Estamos en constante crecimiento y queremos que formes parte de esta red.",

@@ -175,7 +175,7 @@ const theme = createTheme({
     },
    
     body1: {
-      color:"rgb(12, 12, 12)",
+      
       fontFamily: "Inter, sans-serif",
       fontSize: "0.8rem",
       "@media (min-width:600px)": {

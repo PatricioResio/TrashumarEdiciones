@@ -63,7 +63,7 @@ function Footer() {
                     style={{ marginBot:"100px", width: "100%", height: "100%", objectFit: "contain" }}
                   />
                 </Typography>
-            <Typography variant="body2" sx={{ lineHeight: 1.7, opacity: 0.9, maxWidth:"50%" }}>
+            <Typography variant="body1" sx={{ lineHeight: 1.7, opacity: 0.9, maxWidth:"50%" }}>
               Una editorial nómada, federal e independiente. Publicamos voces y proyectos que
               cruzan fronteras y culturas.
             </Typography>
@@ -141,13 +141,12 @@ function Footer() {
                 <EmailIcon />
               </IconButton>
             </Box>
-            <Typography variant="body2" sx={{ mt: 2, opacity: 0.9 }}>
+            <Typography variant="body1" sx={{ mt: 2, opacity: 0.9 }}>
               contacto@trashumarediciones.com
             </Typography>
           </Grid>
         </Grid>
 
-        {/* Copyright */}
         <Box
           sx={{
             borderTop: '1px solid rgba(255, 255, 255, 0.2)',
@@ -156,7 +155,7 @@ function Footer() {
             textAlign: 'center',
           }}
         >
-          <Typography variant="body2" sx={{ opacity: 0.8 }}>
+          <Typography variant="body1" sx={{ opacity: 0.8, color:"white" }}>
             © {new Date().getFullYear()} Trashumar Ediciones. Todos los derechos reservados.
           </Typography>
         </Box>

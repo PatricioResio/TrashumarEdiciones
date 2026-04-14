@@ -17,7 +17,7 @@ function FormProyectos() {
       sx={{
         minHeight: "65vh",
         fontSize: { xs: "18px", sm: "24px", md: "26px" },
-
+        color:"black",  
         p: "30px 0",
         display: "flex",
         m: "0 auto",

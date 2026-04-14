@@ -50,6 +50,7 @@ export default function App() {
             padding: "0",
             margin: "0",
             minWidth: "100%",
+            minHeight:"100vh",
           }}
         >
           <Suspense

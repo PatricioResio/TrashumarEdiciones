@@ -19,6 +19,10 @@ const Home = () => {
 
   return (
     <>
+    <Box sx={{margin:"40px auto 10px auto", width:"100%", }}>
+    <Typography component="h1" variant="h1" fontWeight={500} align={"center"}>Trashumar Ediciones</Typography>
+    <Typography align={"center"}> una editorial nómada, federal e independiente.</Typography>
+    </Box>
 
       <CarruselHome />
 

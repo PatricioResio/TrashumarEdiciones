@@ -16,7 +16,7 @@ const Nosotros = () => {
           maxWidth: "100vw",
         }}
       >
-        <Typography variant="h1" component="h1" sx={{ mt: "2rem" }}>
+        <Typography variant="h1" component="h1" sx={{ mt: "2rem", color:"black" }}>
           ¿De qué se trata?
         </Typography>
         <Typography

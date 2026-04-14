@@ -144,7 +144,7 @@ export function Navbar() {
                   transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                   anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                 >
-                  <MenuItem onClick={() => { handleMenuClose(); navigate('/miperfil'); }}>
+                  <MenuItem sx={{color:"black"}} onClick={() => { handleMenuClose(); navigate('/miperfil'); }}>
                     Mi perfil
                   </MenuItem>
                   <Divider />

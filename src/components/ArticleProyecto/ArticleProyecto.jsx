@@ -23,7 +23,7 @@ const SectionProyecto = () => {
       maxWidth="2xl"
     >
       <Typography
-        sx={{ m: "0 auto 30px auto" }}
+        sx={{ m: "0 auto 30px auto", color:"black" }}
         align="center"
         variant="h1"
         fontWeight="bold"
@@ -49,7 +49,7 @@ const SectionProyecto = () => {
         }}
       >
         <Typography
-          variant="body"
+          variant="body2"
           component="p"
           sx={{ m: "20px auto", width: "100%" }}
         >

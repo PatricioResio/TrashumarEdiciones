@@ -15,7 +15,7 @@ const Comunidad = () => {
         flexDirection: "column",
         justifyContent: "center",
         width: "100%",
-        minHeight: "65vh",
+        minHeight: "100vh",
         textAlign: "center",
       }}
       disableGutters
