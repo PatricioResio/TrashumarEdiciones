@@ -14,7 +14,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#09A5B0",
+      main: "#17B8B8",
     },
     secondary: {
       main: "#000808ff",
@@ -63,10 +63,12 @@ const theme = createTheme({
     h2: {
       fontFamily: "Roboto, sans-serif",
       fontWeight: 300,
-   
       fontSize: "3rem",
+      "@media (min-width:0px)": {
+      fontSize:"1.8rem"
+      },
       "@media (min-width:600px)": {
-        fontSize: "1.8rem",
+      fontSize: "2rem",
       },
       "@media (min-width:900px)": {
         fontSize: "2.4rem",
@@ -213,14 +215,27 @@ const theme = createTheme({
         fontSize: "1.4rem",
       },},
  
-    button: {
-      fontWeight:400,
-      fontSize: "0.8rem",
-      "@media (min-width:600px)": {
+      button: { 
+        fontWeight: 400,
+        px: 4,
         fontSize: "1rem",
+        bgcolor: 'primary.main',
+        color: 'white',
+        py: 1.8,
+        fontSize: '1rem',
+        fontFamily:"Roboto, sans-serif",
+        borderRadius: 2,
+        '&:hover': {
+          bgcolor: 'primary.dark',
+          transform: 'translateY(-2px)',
+          boxShadow: '0 10px 20px rgba(23, 184, 184, 0.35)',
+        },
+        transition: 'all 0.3s ease',
+
+          "@media (min-width:600px)": {
+          fontSize: "1.1rem",
+        },
       },
-      fontFamily:"Roboto, sans-serif"
-    },
 
       
  

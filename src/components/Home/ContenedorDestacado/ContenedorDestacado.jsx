@@ -157,7 +157,7 @@ const ContenedorDestacado = () => {
    to={`/proyecto/${ID_PROYECTO_DESTACADO}`} variant="contained" 
    sx={{ 
     margin: "30px auto 0 auto ",
-    maxWidth: { xs: "5rem", sm: "6rem", lg: "9rem" },
+    maxWidth: { xs: "10rem", sm: "12rem", lg: "9rem" },
   }}
    >Leer más</Button>
   </Box>

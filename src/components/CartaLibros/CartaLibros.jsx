@@ -36,7 +36,7 @@ const CartaLibros = ({ libro }) => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button component={Link} to={`/libro/${libro.id}`}>
+        <Button  component={Link} to={`/libro/${libro.id}`}>
           Ver mas detalles
         </Button>
       </CardActions>

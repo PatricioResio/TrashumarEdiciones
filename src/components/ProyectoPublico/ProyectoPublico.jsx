@@ -33,7 +33,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
         }}
       >
         <Box
-          bgcolor={"bg.whiteBlue"}
+          bgcolor={"secondary.white"}
           sx={{
             width: { xs: "100%", md: "80%" },
             fontSize: "20px",

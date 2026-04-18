@@ -9,7 +9,8 @@ const SectionProyecto = () => {
 
   return (
     <Container
-      sx={{
+    maxWidth="2xl"
+    sx={{
         minHeight: { xs: "65vh", md: "80vh" },
         width: "100%",
         margin: "30px auto",
@@ -20,20 +21,18 @@ const SectionProyecto = () => {
         fontSize: "26px",
         p: "35px",
       }}
-      maxWidth="2xl"
     >
       <Typography
         sx={{ m: "0 auto 30px auto", color:"black" }}
         align="center"
         variant="h1"
-        fontWeight="bold"
         component="h1"
       >
         Quiero publicar
       </Typography>
 
       <Box
-        bgcolor="bg.whiteBlue"
+       
         sx={{
           mb: "20px",
           width: "100%",
@@ -44,6 +43,7 @@ const SectionProyecto = () => {
           flexDirection: "column",
           justifyContent: "space-around",
           alignItems: "center",
+          background:"linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe)",
           p: "20px",
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
         }}
@@ -76,7 +76,23 @@ const SectionProyecto = () => {
             variant="contained"
             component={Link}
             to="/ingresa"
-            sx={{ color: "white" }}
+            sx={{
+              bgcolor: 'primary.main',
+              color: "#FFFFF8",
+              fontWeight: 600,
+              margin:"auto",
+              px: 4,
+              py: 1.8,
+              fontSize: '1rem',
+              alignSelf: 'flex-start',
+              borderRadius: 2,
+              '&:hover': {
+                bgcolor: 'primary.dark',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 10px 20px rgba(23, 184, 184, 0.35)',
+              },
+              transition: 'all 0.3s ease',
+            }}
           >
             <Typography variant="h5">
               Para seguir adelante tenes que iniciar sesión, Seguime por aquí

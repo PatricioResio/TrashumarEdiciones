@@ -8,12 +8,14 @@ import {
   Radio,
   Button,
   FormHelperText,
+  Box,
 } from "@mui/material";
 import { Form, Formik } from "formik";
 import emailjs from "emailjs-com";
 import { validationSoloLaIdea } from "../ValidationSchemas/ValidationSchemas";
 import { useContext } from "react";
 import { AuthContext } from "../../../context/AuthContext";
+import ButtonForm from "../ButtonForm";
 
 const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
   const { currentUser } = useContext(AuthContext);
@@ -537,7 +539,7 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
           <Typography
             fontSize={"20px"}
             color={"secondary.white"}
-            bgcolor={"bg.mediumBlue"}
+            bgcolor={"primary.main"}
             sx={{
               borderRadius: "10px",
               padding: "5px",
@@ -564,19 +566,14 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             }
             label="Estoy de acuerdo con los términos y condiciones"
           />
-          <Button
-            sx={{
-              mx: "auto",
-              color: "white",
-              my: "30px",
-              display: "flex",
-              bgcolor: "#0097A7",
-            }}
-            type="submit"
-            variant="contained"
-          >
-            enviar formulario
-          </Button>
+         <Box sx={{margin:"auto", display:"flex", margin:"20px"}}>
+
+            <ButtonForm
+             text="enviar formulario" 
+             type="submit"
+             variant="contained"
+            />
+          </Box>
         </Form>
       )}
     </Formik>

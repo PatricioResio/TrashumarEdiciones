@@ -6,6 +6,7 @@ import FormSoloLaIdea from "./FormSoloLaIdea";
 import FormSerieDeTextos from "./FormSerieDeTextos";
 import { Fade } from "react-awesome-reveal";
 import useFormProyectos from "../../../hooks/useFormProyectos";
+import ButtonNavForm from "./ButtonNavForm";
 
 function FormProyectos() {
   const { posicionForm, setPosicionForm, posicionForm2, setPosicionForm2 } =
@@ -18,17 +19,16 @@ function FormProyectos() {
         minHeight: "65vh",
         fontSize: { xs: "18px", sm: "24px", md: "26px" },
         color:"black",  
-        p: "30px 0",
-        display: "flex",
+        p: "30px 10px",
         m: "0 auto",
+        display: "flex",
         flexDirection: "column",
         alignItems: "center",
         borderRadius: "20px",
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-        backgroundColor: " rgba(255, 255, 255, 0.5)",
+        backgroundColor: " rgba(255, 255, 255, 0.9)",
       }}
     >
-      {" "}
       <Typography mb={3} component="h4" variant="outlined">
         Elegí el formato a trabajar
       </Typography>
@@ -40,28 +40,16 @@ function FormProyectos() {
           mb: "1rem",
         }}
       >
+<ButtonNavForm posicionForm={posicionForm} text="Texto unico" position="texto unico" setPosicionForm={setPosicionForm}/>
+
+
         <Button
           variant="outlined"
           sx={{
             borderRadius: "5px",
-            width: "25%",
-            p: "0.1rem",
-            backgroundColor: posicionForm === "Texto unico" ? "Ñ" : "#00000",
-            color: posicionForm === "Texto unico" ? "#000000ea" : "#000",
-            fontWeight: posicionForm === "Texto unico" ? "bold" : "normal",
-            "&:hover": {
-              backgroundColor:
-                posicionForm === "Texto unico" ? "#7AE7F5" : "primary.main",
-            },
-          }}
-          onClick={() => setPosicionForm("Texto unico")}
-        >
-          Un texto único
-        </Button>
-        <Button
-          variant="outlined"
-          sx={{
-            borderRadius: "5px",
+            fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
+            height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
+
             p: "0.1rem",
             width: "25%",
             backgroundColor:
@@ -83,6 +71,8 @@ function FormProyectos() {
             borderRadius: "5px",
             p: "0.1rem",
             width: "25%",
+              height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
+            fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
             backgroundColor:
               posicionForm === "Libro digital" ? "#7AE7F5" : "#00000",
             color: posicionForm === "Libro digital" ? "#000000ea" : "#000",
@@ -101,6 +91,8 @@ function FormProyectos() {
           sx={{
             borderRadius: "5px",
             p: "0.1rem",
+            height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"}, 
+            fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
             width: "25%",
             backgroundColor:
               posicionForm === "Libro fisico" ? "#7AE7F5" : "#00000",
@@ -124,6 +116,7 @@ function FormProyectos() {
             width: "100%",
             mb: "1rem",
             p: "auto",
+             height:"4rem",
           }}
         >
           <Button
@@ -131,6 +124,8 @@ function FormProyectos() {
             sx={{
               borderRadius: "5px",
               p: "0.1rem",
+              fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
+              height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
               width: "33%",
               backgroundColor:
                 posicionForm2 === "Contenido de mi autoria"
@@ -158,7 +153,9 @@ function FormProyectos() {
             sx={{
               borderRadius: "5px",
               p: "0.1rem",
+              fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
               width: "33%",
+              height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
               backgroundColor:
                 posicionForm2 === "Editar contenido ajeno"
                   ? "#7AE7F5"
@@ -184,6 +181,8 @@ function FormProyectos() {
             variant="outlined"
             sx={{
               borderRadius: "5px",
+              fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
+              height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
               p: "0.1rem",
               width: "33%",
               backgroundColor:

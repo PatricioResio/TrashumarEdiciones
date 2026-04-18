@@ -32,16 +32,15 @@ const CarruselHome = () => {
       disableGutters
       sx={{
         position: 'relative', 
-        width: "75%",
-        padding:1,
+        width: {xs:"70%",md:"60%", lg:"75%"},
+        boxShadow:"0 0 10px rgba(0, 0, 0, 0.2)",
+        borderRadius:"30px",
         height: {
-          xs: "90vh",
-          sm: "60vh",
-          md: "80vh",
-          lg: "75vh",
-          xl: "75vh",
+          xs: "65vh",
+          sm: "70vh",
+          md: "70vh",
+          lg: "65vh",
         },
-        mb: "20px",
       }}
     >
       <IconButton className="swiper-prev-custom" >
@@ -50,15 +49,16 @@ const CarruselHome = () => {
         <IconButton className="swiper-next-custom">
           <ArrowForwardIosIcon />
         </IconButton>
+        
         <Box sx={{
     overflow: 'hidden',
     borderRadius: '30px',
     height: {
-      xs: "90vh",
-      sm: "60vh",
-      md: "80vh",
-      lg: "75vh",
-      xl: "75vh",
+      xs: "65vh",
+      sm: "70vh",
+      md: "70vh",
+      lg: "65vh",
+      xl: "65vh",
     },
   }}>
 
@@ -80,15 +80,15 @@ const CarruselHome = () => {
               disableGutters
               sx={{
                 width: "100%",
-                margin: "80px auto auto auto",
+                margin: "auto auto auto auto",
                 overflow: "hidden",
                 borderRadius: "30px",
                 display: "flex",
                 flexDirection: { xs: "column", lg: "row" },
                 height: {
-                  xs: "90vh",
-                  sm: "60vh",
-                  md: "80vh",
+                  xs: "65vh",
+                  sm: "70vh",
+                  md: "70vh",
                   lg: "65vh",
                   xl: "65vh",
                 },
@@ -97,7 +97,7 @@ const CarruselHome = () => {
               <LazyImage
                 src={item.url}
                 alt={item.h2}
-                height="100%"
+                height={{xs:"45%", lg:"100%"}} 
                 imgWidth={1920}
                 imgHeight={1080}
                 sizes={HERO_FULL_BLEED_SIZES}
@@ -106,18 +106,20 @@ const CarruselHome = () => {
                 fetchPriority={index === 0 ? "high" : "auto"}
                 shouldLoad={Math.abs(index - activeIndex) <= 1}
                 />
+                
               <Container
                 disableGutters
                 maxWidth="false"
                 sx={{
-                  width: "50%",
-                  height: "100%",
+                  width: {xs:"100%",lg:"70%"},
+                  height: {xs:"45vh",lg:"100%"},
                   margin: "auto",
                   backgroundColor: "rgba(255, 253, 253, 0.88)",
-                  border:"1px solid #09A5B0",
-                  borderColor: "rgba(13, 14, 14, 0.7)",
-                  borderLeft: "none", // ← saca el borde interno
-                  borderRadius: "0 30px 30px 0",
+                  border:"none",
+                  borderRight:{xs:"none",lg:"7px solid rgba(23, 184, 184, 1)"},
+                  borderBottom: {xs:"7px solid rgba(23, 184, 184, 1)", lg:"none"}, // 
+                  borderLeft: {xs:"30px", lg:"none"}, // 
+                  borderRadius: {xs:"0 0 30px 30px",lg:"0 30px 30px 0"},
                   color: "#F5FDF8",
                   display: "flex",
                   justifyContent: "space-around",
@@ -126,13 +128,12 @@ const CarruselHome = () => {
                 }}
               >    <Box
               sx={{
-                mt: 6,
+                mt: {xs:2,lg:6},
                 p: 1,          
                 width:"85%",
                 background:"#09A5B0",
                 borderRadius:"60px",
                 textAlign: 'center',
-                
                 color: 'secondary.white',
               }}
             >
@@ -165,16 +166,21 @@ const CarruselHome = () => {
                   onClick={!item.function ? null : item.function}
                   variant="contained"
                   sx={{
-                    my: "auto",
-                    bgcolor: "#09A5B0",
-                    borderColor: "#022932",
-                    border: "2px solid",
-                    width:"50%",
-                    borderRadius:"20px",
-                    "&:hover": {
-                      outline: "none",
-                      bgcolor: "#09A5B0",
+                    bgcolor: 'primary.main',
+                    color: 'white',
+                    fontWeight: 600,
+                    margin:"auto",
+                    px: 4,
+                    py: 1.8,
+                    fontSize: '1rem',
+                    alignSelf: 'flex-start',
+                    borderRadius: 2,
+                    '&:hover': {
+                      bgcolor: 'primary.dark',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 10px 20px rgba(23, 184, 184, 0.35)',
                     },
+                    transition: 'all 0.3s ease',
                   }}
                   >
                   {item.buttonText}
