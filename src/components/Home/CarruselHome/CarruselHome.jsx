@@ -2,10 +2,10 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "../FilaPerfiles/FilaPerfiles.css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import "./CarruselHome.css";
 import { homeArrays } from "../../../constants/Arrays";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -20,6 +20,7 @@ import { Link } from "react-router-dom";
 
 const CarruselHome = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [loadedIndexes, setLoadedIndexes] = useState(new Set([0, 1, 2]));
 
   const slideSrcSets = useMemo(
     () => homeArrays.map((item) => buildWidthSrcSet(item.responsiveSrcs)),
@@ -62,13 +63,14 @@ const CarruselHome = () => {
     },
   }}>
 
-      <Swiper
+      <Swiper className="MySwiper"
         navigation={{
           nextEl: '.swiper-next-custom',
           prevEl: '.swiper-prev-custom',
         }}
-        modules={[Autoplay, Navigation]}
-        autoplay={{ delay: 15000 }}
+        modules={[Autoplay, Navigation, Pagination]}
+        pagination={{clickable: true }}
+        autoplay={{ delay: 30000 }}
         slidesPerView={1}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
       >
@@ -103,8 +105,8 @@ const CarruselHome = () => {
                 sizes={HERO_FULL_BLEED_SIZES}
                 srcSet={slideSrcSets[index]}
                 priority={index === 0}
-                fetchPriority={index === 0 ? "high" : "auto"}
-                shouldLoad={Math.abs(index - activeIndex) <= 1}
+                fetchPriority={index === 0 ? "high" : "auto"}         
+                shouldLoad={loadedIndexes.has(index)}
                 />
                 
               <Container
@@ -139,7 +141,7 @@ const CarruselHome = () => {
             >
 
                 <Typography
-                  variant="h2"
+                  variant="h3"
                   component="h2"
                   fontWeight={500}
                   color={"secondary.white"}
@@ -153,9 +155,9 @@ const CarruselHome = () => {
                 <Typography
                   key={item.textP}
                   color={"#121212"}
-                  variant="h4"
+                  variant="h5"
                   align={"center"}
-                  sx={{ my: "auto", maxWidth: { sm: "80%", lg: "65%" } }}
+                  sx={{ my: "auto", maxWidth: { sm: "80%", lg: "65%" }, }}
                 >
                   {item.textP}
                 </Typography>
@@ -170,6 +172,7 @@ const CarruselHome = () => {
                     color: 'white',
                     fontWeight: 600,
                     margin:"auto",
+                    width:"80%",
                     px: 4,
                     py: 1.8,
                     fontSize: '1rem',

@@ -9,9 +9,9 @@ const ArticleDestacado = () => {
       sx={{
         height: {
           xs: "120vh",
-          sm: "185rem",
-          md: "150rem",
-          lg: "150rem",
+          sm: "80vh",
+          md: "80vh",
+          lg: "80vh",
           xl: "80vh",
         },
         margin: "auto",

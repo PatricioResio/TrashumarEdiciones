@@ -1,6 +1,7 @@
 import { Box, Container,Typography } from "@mui/material";
 
 import React from "react";
+import LazyImage from "../../LazyImage/LazyImage";
 
 const CartaPerfilUsuario = ({ currentUser }) => {
   const avatarSrc =
@@ -29,18 +30,22 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         }}
       >
         <Box
-          component="img"
+
           sx={{
             height: { xs: "6rem", md: "10rem", lg: "13rem" },
             width: { xs: "6rem", md: "10rem", lg: "13rem" },
             borderRadius: "50%",
             border: "3px solid #eefffdff",
+            overflow:"hidden"
           }}
-          src={avatarSrc}
+          
+        ><LazyImage
+        src={avatarSrc}
           alt="foto"
           loading="lazy"
           decoding="async"
         />
+        </Box>
         <Typography variant="h4" fontWeight="bold" color="#fdffffff">
           {" "}
           {!currentUser ? "No se encontro usuario" : currentUser.nombrePublico}

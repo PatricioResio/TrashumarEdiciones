@@ -27,3 +27,19 @@
   color: white;
   transform: translateY(-50%) scale(1.1); /* ← mantener el translateY en el hover también */
 }
+/* Bullets base */
+.MySwiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #a3a3a3;
+  opacity: 1;
+  border-radius: 100px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+ 
+}
+
+/* Bullet activo: doble de ancho */
+.MySwiper .swiper-pagination-bullet-active {
+  width: 20px; /* el doble del width base */
+  background-color: #17B8B8; /* tu color activo */
+}

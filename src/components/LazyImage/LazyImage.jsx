@@ -1,6 +1,7 @@
 import { Box, Skeleton } from "@mui/material";
 import { useLazyImage } from "../../hooks/useLazyImages";
 import { useImageLoader } from "../../hooks/useImageLoader";
+import { useEffect } from "react";
 
 const LazyImage = ({
   src,
@@ -18,6 +19,7 @@ const LazyImage = ({
   sizes,
   imgWidth,
   imgHeight,
+  onLoaded, // ← nueva prop
 }) => {
   const { imgRef, isVisible } = useLazyImage(rootMargin);
   const canLoad = priority || (shouldLoad !== undefined ? shouldLoad : isVisible);
@@ -25,36 +27,50 @@ const LazyImage = ({
   const resolvedLoading = loading || (priority ? "eager" : "lazy");
   const resolvedFetchPriority = fetchPriority || (priority ? "high" : "auto");
 
+  // ✅ Notifica al padre cuando la imagen cargó
+  useEffect(() => {
+    if (loaded && onLoaded) onLoaded();
+  }, [loaded, onLoaded]);
+
   return (
     <Box ref={imgRef} sx={{ position: "relative", width, height }}>
-      {!loaded && canLoad && (
-        <Skeleton
-          variant="rectangular"
-          width="100%"
-          height="100%"
-          sx={{ position: "absolute", top: 0, left: 0 }}
-        />
-      )}
-      <Box
-        component="img"
-        src={canLoad ? src : undefined}
-        alt={alt}
-        onLoad={onLoad}
-        loading={resolvedLoading}
-        decoding={decoding}
-        fetchpriority={resolvedFetchPriority}
-        srcSet={canLoad ? srcSet : undefined}
-        sizes={sizes}
-        width={imgWidth}
-        height={imgHeight}
+      <Skeleton
+        variant="rectangular"
+        width="100%"
+        height="100%"
+        animation="wave"
         sx={{
-          objectFit: "fit",
-          width:"100%",
-          height:"100%",
-          opacity: loaded ? 1 : 0,
-          transition: "opacity 0.3s ease",
+          position: "absolute",
+          top: 0,
+          left: 0,
+          borderRadius: "inherit",
+          opacity: loaded ? 0 : 1,
+          transition: "opacity 0.8s ease",
+          pointerEvents: loaded ? "none" : "auto",
         }}
       />
+      {canLoad && (
+        <Box
+          component="img"
+          src={src}
+          alt={alt}
+          onLoad={onLoad}
+          loading={resolvedLoading}
+          decoding={decoding}
+          fetchpriority={resolvedFetchPriority}
+          srcSet={srcSet}
+          sizes={sizes}
+          width={imgWidth}
+          height={imgHeight}
+          sx={{
+            objectFit,
+            width: "100%",
+            height: "100%",
+            opacity: loaded ? 1 : 0,
+            transition: "opacity 0.8s ease",
+          }}
+        />
+      )}
     </Box>
   );
 };

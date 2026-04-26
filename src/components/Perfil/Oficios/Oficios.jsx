@@ -1,5 +1,4 @@
-import React from "react";/* 
-import { faHammer } from "@fortawesome/free-solid-svg-icons"; */
+import HandymanIcon from "@mui/icons-material/Handyman";
 import {
   Box,
   Chip,
@@ -7,9 +6,7 @@ import {
   Divider,
   IconButton,
   Typography,
-} from "@mui/material";/* 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; */
-
+} from "@mui/material";
 const Oficios = ({ oficios }) => {
   return (
     <Box
@@ -31,7 +28,7 @@ const Oficios = ({ oficios }) => {
             "&:hover": { backgroundColor: "primary.dark" },
           }}
         >
-        {/*   <FontAwesomeIcon icon={faHammer} /> */}
+           <HandymanIcon/>
         </IconButton>
         <Typography variant="h6" fontWeight={600}>
           Oficios

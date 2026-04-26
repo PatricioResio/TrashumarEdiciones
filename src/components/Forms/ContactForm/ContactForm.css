@@ -16,11 +16,9 @@
   border-radius: 25px;
   border-color:#7AE7F5;
   border-left: 6px solid #09A5B0;
-  border-top: none;
-  
-
-  
+  border-top: none;  
 }
+
 @media (min-width: 1200px) {
   .container-perfiles {
     border-left: none;
@@ -29,7 +27,7 @@
 }
 
 .form-box {
-  height: 35vh;
+  height: 55vh;
   width: 40%;
   margin: auto;
   display: flex;
@@ -42,10 +40,11 @@
   margin: 7px;
   width: 80%;
 }
+
 .textArea {
   position: relative;
   width: 80%;
-  margin-bottom: 6px;
+  margin-bottom: 20px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   padding: 8px 0 6px 0;
@@ -57,6 +56,7 @@
   min-height: 80px;
   transition: border-color 0.01s;
 }
+
 @media (min-width: 200px) {
   .textField {
     width: 90%;
@@ -66,15 +66,16 @@
   }
   .container {
     margin-top: -6rem;
-    height: 70vh;
+    height: 80vh;
     
-    width: 60%;
+    width: 95%;
   }
   .form-box {
-    height: 60vh;
-    width: 60%;
+    height: 70vh;
+    width: 90%;
   }
 }
+
 @media (min-width: 920px) {
   .textField {
     width: 80%;
@@ -86,6 +87,7 @@
     margin-top: -4rem;
   }
 }
+
 @media (min-width: 1240px) {
   .textArea {
     width: 70%;
@@ -97,27 +99,29 @@
     margin-top: 6rem;
   }
 }
+
 @media (min-width: 1500px) {
   .container {
     margin-top: 9rem;
+    
+    width:70%;
   }
   .textField {
-    width: 80%;
+    width: 75%;
   }
   .textArea {
-    width: 80%;
+    width: 75%;
   }
 }
 
 .textArea:hover {
-  border: 1px solid #070707;
+  border: 1px solid #18c9c9;
 }
 
 .textArea:focus {
   border: 2px solid #18c9c9;
 }
 
-/* Label flotante personalizado, opcional */
 .mui-label {
   position: absolute;
   left: 0;
@@ -132,10 +136,9 @@
 .textArea:not(:placeholder-shown) + .mui-label {
   top: -16px;
   font-size: 12px;
-  color: #1976d2;
+  color: #18c9c9;
 }
 
-/* Línea inferior animada */
 .textArea-underline {
   content: "";
   position: absolute;

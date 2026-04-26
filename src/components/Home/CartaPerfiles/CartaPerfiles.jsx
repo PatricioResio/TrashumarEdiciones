@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { Container } from "@mui/material";
 import "./CartaPerfiles.css";
 import { Fade } from "react-awesome-reveal";
+import LazyImage from "../../LazyImage/LazyImage";
 
 export default function CartaPerfiles({ perfil }) {
   const oficiosPerfil = !perfil.oficios ? [] : [...perfil.oficios.slice(0, 2)];
@@ -18,7 +19,7 @@ export default function CartaPerfiles({ perfil }) {
         className="carta-perfiles"
         sx={{
           width: { xs: "12rem", md: "15rem" },
-          height: { xs: "20rem", md: "22rem" },
+          height: { xs: "20rem", md: "22rem", lg:"22rem" },
           m: { xs: "auto", md: "8rem" },
           borderRadius: "20px",
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
@@ -28,21 +29,24 @@ export default function CartaPerfiles({ perfil }) {
             transform: "scale(1.02)",
           },
         }}
-      >
-        <CardMedia
+      ><CardMedia    sx={{
+        height: "9rem",
+        width: "9rem",
+        margin: "1rem auto",
+        borderRadius: "50%",
+        overflow: "hidden",
+      }}>
+
+        <LazyImage
           component="img"
-          sx={{
-            height: "10rem",
-            width: "10rem",
-            margin: "1rem auto",
-            borderRadius: "50%",
-          }}
           image={perfil?.avatar || "https://placehold.co/400x400?text=Perfil"}
           src={perfil?.avatar || "https://placehold.co/400x400?text=Perfil"}
           alt={`Avatar de ${perfil?.nombrePublico || "perfil"}`}
           loading="lazy"
           decoding="async"
-        />
+
+          />
+        </CardMedia>
         <CardContent className="carta-perfiles-contenido">
           <Typography
             gutterBottom
@@ -53,7 +57,7 @@ export default function CartaPerfiles({ perfil }) {
             {perfil.nombrePublico}
           </Typography>
 
-          <Container sx={{ gap: "0px" }}>
+          <Container sx={{ gap: "0px", mb:2 }}>
             {oficiosPerfil.length === 0 || !oficiosPerfil ? (
               <Typography color="text.secondary" variant="body">
                 No hay ningun oficio registrado todavía

@@ -62,15 +62,15 @@ const ContactForm = () => {
           <Box className="container">
             <Box className="form-box">
               <Typography
-                sx={{ my: "1.5rem", color: "secondary.main", }}
+                sx={{ my: "1.5rem", color: "secondary.main", fontWeight:500 }}
                 component="h3"
                 variant="h3"
               >
                 Querias contactarnos?
               </Typography>
               <Typography
-                component="h5"
-                variant="h5"
+                component="h4"
+                variant="h6"
                 sx={{ color: "bg.white", mb: "1.5rem" }}
               >
                 Acá podes hablar sin tapujos
@@ -118,7 +118,7 @@ const ContactForm = () => {
                 error={errors.email && touched.email}
               />
               {touched.message && errors.message && (
-                <FormHelperText sx={{ color: "#F50E00" }}>
+                <FormHelperText sx={{ color: "#F50E00", }}>
                   {errors.message}
                 </FormHelperText>
               )}

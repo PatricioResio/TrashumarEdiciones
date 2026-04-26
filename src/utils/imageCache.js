@@ -31,3 +31,10 @@ export const isImageLoaded = (src) => {
   }
   return false;
 };
+export const isImageCached = (src) => {
+  // Verifica si el browser ya tiene la imagen en su cache de red
+  if (typeof window === "undefined") return false;
+  const img = new Image();
+  img.src = src;
+  return img.complete && img.naturalWidth > 0;
+};

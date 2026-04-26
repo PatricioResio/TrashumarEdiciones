@@ -77,7 +77,7 @@ const theme = createTheme({
         fontSize: "2.6rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "2rem",
+        fontSize: "2.7rem",
       },
       "@media (min-width:1920px)": {
         fontSize: "2.9rem",
@@ -97,10 +97,10 @@ const theme = createTheme({
         fontSize: "2.1rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "1.8rem",
+        fontSize: "2.4rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "1.9rem",
+        fontSize: "2.5rem",
       },
     },
     h4: {
@@ -122,21 +122,21 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "0.8rem",
+      fontSize: "1rem",
       "@media (min-width:600px)": {
-        fontSize: "0.9rem",
+        fontSize: "1.3rem",
       },
       "@media (min-width:900px)": {
-        fontSize: "1rem",
+        fontSize: "1.3rem",
       },
       "@media (min-width:1200px)": {
-        fontSize: "1rem",
+        fontSize: "1.3rem",
       },
       "@media (min-width:1536px)": {
-        fontSize: "1.1rem",
+        fontSize: "1.4rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "1.2rem",
+        fontSize: "1.4rem",
       },
     },
     h6: {

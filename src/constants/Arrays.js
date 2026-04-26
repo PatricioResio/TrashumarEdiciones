@@ -43,7 +43,7 @@ export const homeArrays = [
   {
     id: 3,
     url: HOME_HERO_LCP_URL,   
-    h2: "Estamos formando una comunidad!",
+    h2: "Registrate",
     textP:
       "Registrate con tu cuenta y sé parte de Trashumar. Estamos en constante crecimiento y queremos que formes parte de esta red.",
     buttonText: "Ingresar",

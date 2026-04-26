@@ -7,7 +7,7 @@ const CartaPrograma = ({ texto }) => {
       disableGutters
       maxWidth="xl"
       sx={{
-        height: { xs: "150vh", lg: "550px" },
+        height: {xs:"450px",lg:"750px"},
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
         justifyContent: "center",

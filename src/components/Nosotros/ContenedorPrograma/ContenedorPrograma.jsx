@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 const ContenedorPrograma = () => {
   return (
     <Container disableGutters maxWidth="xl" sx={{ mb: "150px" }}>
-      <Typography variant="h3" component="h3" align="center" gutterBottom>
+      <Typography variant="h2" component="h3" align="center" gutterBottom fontWeight={400}>
         Programa editorial
       </Typography>
       <Swiper
@@ -26,7 +26,7 @@ const ContenedorPrograma = () => {
           <SwiperSlide key={i}>
             <Box
               sx={{
-                height:"400px",
+                height:{xs:"400px",sm:"500px",md:"550px",lg:"750px"},
                 overflowY: "auto",
                 p: "1.5rem",
                 borderRadius: "12px",

@@ -33,7 +33,7 @@ const Home = () => {
           display: "flex",
           flexDirection: "column",
           textAlign: "center",
-          margin: "4rem 0",
+          margin: "10rem 0",
           gap: 4,
           
         }}
@@ -56,7 +56,7 @@ const Home = () => {
           borderRadius:"20px"
         }}
       >
-        <Box component="section" m={"auto"} sx={{borderRadius:"20px"}}>
+        <Box component="section" m={"auto"} sx={{borderRadius:"20px",}}>
           <BannerCuerpo />
         </Box>
         </Box>
@@ -78,15 +78,15 @@ const Home = () => {
               component="h3"
               variant="h3"
               color="secondary"
-              sx={{
+              sx={{fontWeight:500,
                 m: "1rem auto",
               }}
             >
               Perfiles de nuestra comunidad
             </Typography>
             <Typography
-              component="h5"
-              variant="h5"
+              component="h6"
+              variant="h6"
               color="secondary"
               sx={{
                 m: "1rem auto",
@@ -103,7 +103,9 @@ const Home = () => {
               </Suspense>
             </Box>
     </Box>
-        
+    <Box component="section" m={"auto"}  sx={{borderRadius:"20px"}}>
+          <BannerCuerpo />
+        </Box>
         </Box>
 {/*         <Box component="section" mb={{ xs: "-190px", md: 0 }}>
           <BannerCuerpo />
@@ -115,7 +117,7 @@ const Home = () => {
           display: "flex",
           flexDirection: "column",
           textAlign: "center",
-          margin: "4rem 0",
+          margin: "10rem 0",
           gap: 4,
           color: "linear-gradient(to bottom, #ffffff, #e9fffc 60%, #dafffe)",
         }}

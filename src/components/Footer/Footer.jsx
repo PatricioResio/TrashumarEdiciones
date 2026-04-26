@@ -20,16 +20,15 @@ function Footer() {
       sx={{
         bgcolor: 'primary.main',
         color: 'white',
-        py: 6,
+        p: 8,
         mt: 8,
-        pl:4,
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="2xl">
       <Grid container spacing={4} justifyContent="space-between"> 
           {/* Acerca de */}
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
+          <Grid size={{ xs: 12, md: 4 }} mb={4}>
+            <Typography variant="h5" sx={{ fontWeight: 600, mb: 2 }}>
               Trashumar Ediciones
             </Typography>
             <Typography
@@ -40,10 +39,11 @@ function Footer() {
                   sx={{
                     display: "flex",
                     borderRadius: "50%",
-                    height: { xs: "4.5rem", sm: "4.6rem" },
+                    overflow:"hidden",
+                    height: { xs: "6rem", sm: "5rem" },
                     width: { xs: "6rem", sm: "5rem" },
                     margin: {
-                      xs: "3px 0 auto 0",
+                      xs: "3px 0 15px 0",
                       md: "3px 0 auto 10px",
                     },
                     "& img": {
@@ -58,10 +58,8 @@ function Footer() {
                     src={LOGO_URL}
                     alt="Logo de Trashumar Ediciones"
                     width="200"
-                    height="160"
-                    
-                    style={{ marginBot:"100px", width: "100%", height: "100%", objectFit: "contain" }}
-                  />
+                    height="200"
+                     />
                 </Typography>
             <Typography variant="body1" sx={{ lineHeight: 1.7, opacity: 0.9, maxWidth:"50%" }}>
               Una editorial nómada, federal e independiente. Publicamos voces y proyectos que

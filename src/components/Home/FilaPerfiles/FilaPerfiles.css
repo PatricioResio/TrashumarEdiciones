@@ -1,6 +1,30 @@
-.MySwiper .swiper-slide {
+.swiper-pagination-bullet-active {
+  height:26rem;  
+}
+
+.Swiper .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+/* Bullets base */
+.Swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #a3a3a3;
+  opacity: 1;
+  border-radius: 100px;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* Bullet activo: doble de ancho */
+.Swiper .swiper-pagination-bullet-active {
+  width: 20px; /* el doble del width base */
+  background-color: #17B8B8; /* tu color activo */
+}
+@media (min-width:900px) { .Swiper{
+  height: 28rem;
+}
+  
 }

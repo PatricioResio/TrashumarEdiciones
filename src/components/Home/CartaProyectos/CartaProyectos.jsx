@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
+import LazyImage from "../../LazyImage/LazyImage";
 
 export default function CartaProyectos({ proyecto }) {
   return (
@@ -16,7 +17,6 @@ export default function CartaProyectos({ proyecto }) {
           border: "1px solid #09A5B0",
           borderRadius: "15px",
           backgroundColor: "transparent",
-
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
           transition: "transform 0.3s ease-in-out",
           "&:hover": {
@@ -42,19 +42,20 @@ export default function CartaProyectos({ proyecto }) {
               }}
             >
               <CardMedia
-                component="img"
                 sx={{
                   height: { xs: "22rem", sm: "29rem", md: "39rem" },
                   width: { xs: "12rem", sm: "17rem", md: "22rem" },
                   m: "0",
                   p: "0",
                 }}
-                image={proyecto?.img || "https://placehold.co/700x1100?text=Proyecto"}
+               
+              >
+              <LazyImage  image={proyecto?.img || "https://placehold.co/700x1100?text=Proyecto"}
                 src={proyecto?.img || "https://placehold.co/700x1100?text=Proyecto"}
                 alt={proyecto?.titulo || "Proyecto"}
                 loading="lazy"
-                decoding="async"
-              />
+                decoding="async"/>
+              </CardMedia>
             </CardContent>
           </Button>
         </CardActions>

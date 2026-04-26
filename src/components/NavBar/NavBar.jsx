@@ -24,6 +24,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import CloseIcon from '@mui/icons-material/Close';
 import { useAuth } from '../../context/AuthContext'; // ajustá el path
 import { LOGO_URL } from '../../constants/constants';
+import LazyImage from '../LazyImage/LazyImage';
 
 const menuItems = [
   { label: 'NOSOTROS', path: '/nosotros' },
@@ -90,13 +91,12 @@ export function Navbar() {
             <Box
               component="a"
               onClick={() => navigate('/')}
-              sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'white', mr: 4, cursor: 'pointer' }}
+              sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'white', mr: 4, cursor: 'pointer', 
+                height: { xs: 45, md: 60 }, width: 60, mr: 1.5, overflow:"hidden", borderRadius:"50%" }}
             >
-              <Box
-                component="img"
+              <LazyImage
                 src={LOGO_URL}
                 alt="Trashumar Ediciones"
-                sx={{ height: { xs: 45, md: 50 }, width: 'auto', mr: 1.5 }}
               />
             </Box>
 

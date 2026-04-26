@@ -2,16 +2,17 @@ import CartaPerfiles from "../CartaPerfiles/CartaPerfiles";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/effect-coverflow";
-import { SwiperSlide, Swiper } from "swiper/react";
-import "./FilaPerfiles.css";
-import { Pagination } from "swiper/modules";
 import "swiper/css/pagination";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "./FilaPerfiles.css";
+import { Box } from "@mui/material";
 
 const FilaPerfiles = ({ perfiles }) => {
   return (
-    <>
+    <Box sx={{height: { xs: "24rem", md: "26rem", lg:"26rem" },}}>
       <Swiper
-        className="MySwiper"
+      className="Swiper"
         spaceBetween={6}
         modules={[Pagination]}
         pagination={{ clickable: true }}
@@ -23,12 +24,12 @@ const FilaPerfiles = ({ perfiles }) => {
         }}
       >
         {perfiles.map((perfil) => (
-          <SwiperSlide key={perfil.idPerfil} className="MySwiper">
+          <SwiperSlide key={perfil.idPerfil} className="swiper.slide">
             <CartaPerfiles perfil={{ ...perfil }} />
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </Box>
   );
 };
 

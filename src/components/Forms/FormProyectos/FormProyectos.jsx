@@ -40,9 +40,7 @@ function FormProyectos() {
           mb: "1rem",
         }}
       >
-<ButtonNavForm posicionForm={posicionForm} text="Texto unico" position="texto unico" setPosicionForm={setPosicionForm}/>
-
-
+          <ButtonNavForm posicionForm={posicionForm} text="Texto unico" position="texto unico" setPosicionForm={setPosicionForm}/>
         <Button
           variant="outlined"
           sx={{
