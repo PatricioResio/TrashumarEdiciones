@@ -92,7 +92,7 @@ export function Navbar() {
               component="a"
               onClick={() => navigate('/')}
               sx={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'white', mr: 4, cursor: 'pointer', 
-                height: { xs: 45, md: 60 }, width: 60, mr: 1.5, overflow:"hidden", borderRadius:"50%" }}
+                height: { xs: 45, md: 60 }, width:{xs:45, md:60}, overflow:"hidden", borderRadius:"50%" }}
             >
               <LazyImage
                 src={LOGO_URL}

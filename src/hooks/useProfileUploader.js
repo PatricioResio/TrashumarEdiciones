@@ -42,9 +42,7 @@ const useProfileUploader = (userId, handlerChange) => {
           handlerChange({
             target: { name: "avatar", value: downloadUrl },
           });
-          console.log("URL de descarga:", downloadUrl);
         } catch (error) {
-          console.error("Error obteniendo la URL de descarga:", error);
         }
       },
     );

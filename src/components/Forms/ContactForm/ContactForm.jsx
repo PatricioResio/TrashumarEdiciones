@@ -9,6 +9,8 @@ import {
 import { Form, Formik } from "formik";
 import "./ContactForm.css";
 import emailjs from "emailjs-com";
+import { useState } from "react";
+import { Snackbar, Alert } from "@mui/material";
 
 import { validationContact } from "../ValidationSchemas/ValidationSchemas";
 
@@ -23,7 +25,7 @@ const ContactForm = () => {
     date: getDate(),
     title: "",
   };
-
+  const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "error" });
   return (
     <Formik
       initialValues={initialValueContact}
@@ -45,16 +47,15 @@ const ContactForm = () => {
           )
           .then(
             (response) => {
+              setSnackbar({ open: true, message: "Mensaje enviado correctamente!", severity: "success" });
               resetForm();
-              alert("Formulario enviado correctamente!");
             },
             (error) => {
               console.error("Error al enviar el formulario:", error);
-              alert(
-                "Ocurrió un error al enviar el formulario. Intenta nuevamente."
-              );
+              setSnackbar({ open: true, message: "Ocurrió un error al enviar el mensaje. Intentá nuevamente.", severity: "error" });
             }
           );
+      
       }}
     >
       {({ values, handleChange, handleBlur, errors, touched }) => (
@@ -156,6 +157,20 @@ const ContactForm = () => {
               </Button>
             </Box>
           </Box>
+    <Snackbar
+    open={snackbar.open}
+    autoHideDuration={5000}
+    onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+    anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+  >
+    <Alert
+      onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+      severity={snackbar.severity}
+      variant="filled"
+    >
+      {snackbar.message}
+    </Alert>
+  </Snackbar>
         </Form>
       )}
     </Formik>

@@ -6,7 +6,6 @@ import FormSoloLaIdea from "./FormSoloLaIdea";
 import FormSerieDeTextos from "./FormSerieDeTextos";
 import { Fade } from "react-awesome-reveal";
 import useFormProyectos from "../../../hooks/useFormProyectos";
-import ButtonNavForm from "./ButtonNavForm";
 
 function FormProyectos() {
   const { posicionForm, setPosicionForm, posicionForm2, setPosicionForm2 } =
@@ -40,7 +39,27 @@ function FormProyectos() {
           mb: "1rem",
         }}
       >
-          <ButtonNavForm posicionForm={posicionForm} text="Texto unico" position="texto unico" setPosicionForm={setPosicionForm}/>
+          <Button
+          variant="outlined"
+          sx={{
+            borderRadius: "5px",
+            fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
+            height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
+
+            p: "0.1rem",
+            width: "25%",
+            backgroundColor:
+              posicionForm === "Texto unico" ? "primary.main" : "#00000",
+            color: posicionForm === "Texto unico" ? "#000000" : "#000",
+            fontWeight: posicionForm === "Texto unico" ? "bold" : "normal",
+            "&:hover": {
+              backgroundColor:"primary.main"
+            },
+          }}
+          onClick={() => setPosicionForm("Texto unico")}
+        >
+          Texto único
+        </Button>
         <Button
           variant="outlined"
           sx={{
@@ -51,17 +70,16 @@ function FormProyectos() {
             p: "0.1rem",
             width: "25%",
             backgroundColor:
-              posicionForm === "Serie de textos" ? "#7AE7F5" : "#00000",
+              posicionForm === "Serie de textos" ? "primary.main" : "#00000",
             color: posicionForm === "Serie de textos" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Serie de textos" ? "bold" : "normal",
             "&:hover": {
-              backgroundColor:
-                posicionForm === "Serie de textos" ? "#7AE7F5" : "primary.main",
+              backgroundColor:"primary.main"
             },
           }}
           onClick={() => setPosicionForm("Serie de textos")}
         >
-          UNA SERIE DE TEXTOS
+         SERIE DE TEXTOS
         </Button>
         <Button
           variant="outlined"
@@ -72,17 +90,16 @@ function FormProyectos() {
               height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
             fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
             backgroundColor:
-              posicionForm === "Libro digital" ? "#7AE7F5" : "#00000",
+              posicionForm === "Libro digital" ?  "primary.main"  : "#00000",
             color: posicionForm === "Libro digital" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Libro digital" ? "bold" : "normal",
             "&:hover": {
-              backgroundColor:
-                posicionForm === "Libro digital" ? "#7AE7F5" : "primary.main",
+              backgroundColor:"primary.main"
             },
           }}
           onClick={() => setPosicionForm("Libro digital")}
         >
-          UN LIBRO DIGITAL
+         LIBRO DIGITAL
         </Button>
         <Button
           variant="outlined"
@@ -93,17 +110,16 @@ function FormProyectos() {
             fontSize:{xs:"0.7rem",md:"1rem",lg:"1.2rem"},
             width: "25%",
             backgroundColor:
-              posicionForm === "Libro fisico" ? "#7AE7F5" : "#00000",
+              posicionForm === "Libro fisico" ?  "primary.main"  : "#00000",
             color: posicionForm === "Libro fisico" ? "#000000ea" : "#000",
             fontWeight: posicionForm === "Libro fisico" ? "bold" : "normal",
             "&:hover": {
-              backgroundColor:
-                posicionForm === "Libro fisico" ? "#7AE7F5" : "primary.main",
+              backgroundColor:"primary.main"
             },
           }}
           onClick={() => setPosicionForm("Libro fisico")}
         >
-          UN LIBRO FISICO
+          LIBRO FISICO
         </Button>
       </Box>
       {posicionForm === "Libro digital" || posicionForm === "Libro fisico" ? (
@@ -127,7 +143,7 @@ function FormProyectos() {
               width: "33%",
               backgroundColor:
                 posicionForm2 === "Contenido de mi autoria"
-                  ? "#7AE7F5"
+                  ? "primary.main"
                   : "#00000",
               color:
                 posicionForm2 === "Contenido de mi autoria"
@@ -136,10 +152,7 @@ function FormProyectos() {
               fontWeight:
                 posicionForm2 === "Contenido de mi autoria" ? "bold" : "normal",
               "&:hover": {
-                backgroundColor:
-                  posicionForm2 === "Contenido de mi autoria"
-                    ? "#7AE7F5"
-                    : "primary.main",
+                backgroundColor:"primary.main"
               },
             }}
             onClick={() => setPosicionForm2("Contenido de mi autoria")}
@@ -156,7 +169,7 @@ function FormProyectos() {
               height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
               backgroundColor:
                 posicionForm2 === "Editar contenido ajeno"
-                  ? "#7AE7F5"
+                  ? "primary.main"
                   : "#00000",
               color:
                 posicionForm2 === "Editar contenido ajeno"
@@ -164,12 +177,9 @@ function FormProyectos() {
                   : "#000",
               fontWeight:
                 posicionForm2 === "Editar contenido ajeno" ? "bold" : "normal",
-              "&:hover": {
-                backgroundColor:
-                  posicionForm2 === "Editar contenido ajeno"
-                    ? "#7AE7F5"
-                    : "primary.main",
-              },
+                "&:hover": {
+                  backgroundColor:"primary.main"
+                },
             }}
             onClick={() => setPosicionForm2("Editar contenido ajeno")}
           >
@@ -183,16 +193,13 @@ function FormProyectos() {
               height:{xs:"4rem",sm:"3rem", md:"3rem",lg:"4rem"},
               p: "0.1rem",
               width: "33%",
-              backgroundColor:
-                posicionForm2 === "Tengo la idea" ? "#7AE7F5" : "#00000",
               color: posicionForm2 === "Tengo la idea" ? "#000000ea" : "#000",
               fontWeight: posicionForm2 === "Tengo la idea" ? "bold" : "normal",
-              "&:hover": {
-                backgroundColor:
-                  posicionForm2 === "Tengo la idea"
-                    ? "#7AE7F5"
-                    : "primary.main",
-              },
+              backgroundColor:
+                posicionForm2 === "Tengo la idea" ? "primary.main" : "#00000",
+                "&:hover": {
+                  backgroundColor:"primary.main"
+                },
             }}
             onClick={() => setPosicionForm2("Tengo la idea")}
           >

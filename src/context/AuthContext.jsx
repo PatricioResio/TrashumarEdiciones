@@ -123,16 +123,14 @@ export function AuthProvider({ children }) {
           ...registrerUser,
           idPerfil: googleUser.uid,
         });
-        // reemplazá este alert por un Snackbar de MUI en el componente que llama a registrar()
-        // por ahora lo dejamos pero marcado para cambiar
-        alert("¡Registro completado!");
+  
       } else {
         await firestoreModule.setDoc(userProfileRef, { ...registrerUser }, { merge: true });
-        alert("¡Perfil actualizado!");
+
       }
 
       setCurrentUser({ ...registrerUser });
-      navigate("/miperfil");
+
     } catch (err) {
       console.error("Error en el registro:", err);
       setAuthError("Error durante el registro. Por favor, intentá de nuevo.");

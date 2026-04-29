@@ -14,7 +14,6 @@ const useProyectoPublico = () => {
         (proyecto) => proyecto.idProyecto == idProyecto
       );
       setProyectoPublico(proyecto);
-      console.log(proyecto);
       setLoadingProyectoPublico(false);
     };
     fetchProyectos();

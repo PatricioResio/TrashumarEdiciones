@@ -13,17 +13,20 @@ import {
   Button,
   FormHelperText,
   Box,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import { Form, Formik } from "formik";
 import emailjs from "emailjs-com";
 import { Fade } from "react-awesome-reveal";
 import { validationTextoUnico } from "../ValidationSchemas/ValidationSchemas";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import ButtonForm from "../ButtonForm";
 
 const FormTextoUnico = () => {
   const { currentUser } = useContext(AuthContext);
+  const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "error" });
   return (
     <Formik
       initialValues={{
@@ -68,14 +71,12 @@ const FormTextoUnico = () => {
           )
           .then(
             (response) => {
-              alert("Formulario enviado correctamente!");
+              setSnackbar({ open: true, message: "Formulario enviado correctamente!", severity: "success" });
               resetForm();
             },
             (error) => {
               console.error("Error al enviar el formulario:", error);
-              alert(
-                "Ocurrió un error al enviar el formulario. Intenta nuevamente."
-              );
+              setSnackbar({ open: true, message: "Ocurrió un error al enviar el formulario. Intentá nuevamente.", severity: "error" });
             }
           );
       }}
@@ -481,14 +482,28 @@ const FormTextoUnico = () => {
             }
             label="Estoy de acuerdo con los términos y condiciones"
           />
-       <Box sx={{margin:"auto", display:"flex", margin:"20px"}}>
+          <Box sx={{margin:"auto", display:"flex", margin:"20px"}}>
 
-<ButtonForm
- text="enviar formulario" 
- type="submit"
- variant="contained"
-/>
-</Box>
+            <ButtonForm
+            text="enviar formulario" 
+            type="submit"
+            variant="contained"
+            />
+          </Box>
+          <Snackbar
+            open={snackbar.open}
+            autoHideDuration={5000}
+            onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+            anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          >
+            <Alert
+              onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+              severity={snackbar.severity}
+              variant="filled"
+            >
+              {snackbar.message}
+            </Alert>
+          </Snackbar>
         </Form>
       )}
     </Formik>

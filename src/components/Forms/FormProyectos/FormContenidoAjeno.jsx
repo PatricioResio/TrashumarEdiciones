@@ -13,10 +13,12 @@ import {
   Button,
   FormHelperText,
   Box,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 import { Formik, Form } from "formik";
 import emailjs from "emailjs-com";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { validationContenidoAjeno } from "../ValidationSchemas/ValidationSchemas";
 import { initialValuesContenidoAjeno } from "../TemplatesParams/TemplateParams";
@@ -24,6 +26,7 @@ import ButtonForm from "../ButtonForm";
 
 const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
   const { currentUser } = useContext(AuthContext);
+  const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "error" });
   return (
     <Formik
       initialValues={{
@@ -91,14 +94,12 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
           )
           .then(
             (response) => {
-              alert("Formulario enviado correctamente!");
+              setSnackbar({ open: true, message: "Formulario enviado correctamente!", severity: "success" });
               resetForm();
             },
             (error) => {
               console.error("Error al enviar el formulario:", error);
-              alert(
-                "Ocurrió un error al enviar el formulario. Intenta nuevamente."
-              );
+              setSnackbar({ open: true, message: "Ocurrió un error al enviar el formulario. Intentá nuevamente.", severity: "error" });
             }
           );
       }}
@@ -836,6 +837,20 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
  variant="contained"
 />
 </Box>
+<Snackbar
+  open={snackbar.open}
+  autoHideDuration={5000}
+  onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+  anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+>
+  <Alert
+    onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+    severity={snackbar.severity}
+    variant="filled"
+  >
+    {snackbar.message}
+  </Alert>
+</Snackbar>
         </Form>
       )}
     </Formik>
