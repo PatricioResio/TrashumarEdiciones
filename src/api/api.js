@@ -1,5 +1,5 @@
 import { db } from "./firebase";
-import { getDocs, collection, getDoc } from "firebase/firestore";
+import { getDocs, collection, getDoc, doc } from "firebase/firestore";
 
 export const getProyectos = async () => {
   try {
@@ -10,11 +10,13 @@ export const getProyectos = async () => {
     throw new Error("Error al obtener los proyectos");
   }
 };
-
 export const getPerfil = async ({ idPerfil }) => {
   try {
-    const perfilesSnapshot = await getDoc(collection(db, "perfiles", idPerfil));
-    return perfilesSnapshot.docs.map((doc) => doc.data());
+    const perfilSnapshot = await getDoc(doc(db, "perfiles", idPerfil)); // ← doc() no collection()
+    if (!perfilSnapshot.exists()) {
+      throw new Error("Perfil no encontrado");
+    }
+    return perfilSnapshot.data(); // ← .data() directo, no .docs.map()
   } catch (error) {
     console.error(error);
     throw new Error("Error al obtener el perfil solicitado");

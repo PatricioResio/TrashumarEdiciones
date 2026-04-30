@@ -14,7 +14,6 @@ const LazyLogin = lazy(() => import("./pages/Login.jsx"));
 const LazyContact = lazy(() => import("./pages/Contact.jsx"));
 const LazyNosotros = lazy(() => import("./pages/Nosotros.jsx"));
 const LazyComunidad = lazy(() => import("./pages/Comunidad.jsx"));
-const LazyMiPerfil = lazy(() => import("./pages/MiPerfil.jsx"));
 const LazyPerfil = lazy(() => import("./pages/Perfil.jsx"));
 const LazyLibreria = lazy(() => import("./pages/Libreria.jsx"));
 const LazyProyectoPublico = lazy(() =>
@@ -62,7 +61,7 @@ export default function App() {
           >
             <Routes>
               <Route path="/" Component={Home} />
-              <Route path="/miperfil" Component={LazyMiPerfil} />
+              <Route path="/miperfil" Component={LazyPerfil} />
               <Route path="/infoPerfil" Component={LazyFormRegistro} />
               <Route path="/perfil/:idPerfil" Component={LazyPerfil} />
               <Route path="/contacto" Component={LazyContact} />

@@ -10,11 +10,10 @@ import FormProyectos from "./Forms/FormProyectos/FormProyectos";
 import FormRegistro from "./Forms/FormRegistro/FormRegistro";
 import FormRegistroPerfil from "./Forms/FormPerfilContainer/FormRegistroPerfil";
 import NavBar from "./NavBar/NavBar";
-import Perfil from "./Perfil/Perfil";
+import PerfilRender from "./Perfil/PerfilRender";
 import LogOutBtn from "./LogOutBtn/LogOutBtn";
 import Carrusel from "./Nosotros/Carrusel/Carrusel";
 import ContenedorProyectos from "./Home/ContenedorProyectos/ContenedorProyectos";
-import PerfilPublico from "./Perfil/PerfilPublico/PerfilPublico";
 import SectionProyecto from "./ArticleProyecto/ArticleProyecto";
 import SectionComunidad from "./SectionComunidad/SectionComunidad";
 import ContenedorPrograma from "./Nosotros/ContenedorPrograma/ContenedorPrograma";
@@ -40,10 +39,9 @@ export {
   FormProyectos,
   FormRegistro,
   NavBar,
-  Perfil,
+  PerfilRender,
   LogOutBtn,
   Carrusel,
-  PerfilPublico,
   SectionProyecto,
   FormRegistroPerfil,
 };

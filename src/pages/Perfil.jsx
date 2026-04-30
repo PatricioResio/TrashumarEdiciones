@@ -1,5 +1,5 @@
 import { CircularProgress } from "@mui/material";
-import { PerfilPublico } from "../components";
+import { PerfilRender } from "../components/index";
 import useFilterProyectos from "../hooks/useFilterProyectos";
 import useFilterColaboraciones from "../hooks/useFilterColaboraciones";
 import useFilterPerfiles from "../hooks/useFilterPerfiles";
@@ -12,7 +12,7 @@ const Perfil = () => {
     <CircularProgress />
   ) : (
     <>
-      <PerfilPublico
+      <PerfilRender
         perfil={perfil}
         proyectosUser={proyectosUser}
         colaboraciones={colaboraciones}
