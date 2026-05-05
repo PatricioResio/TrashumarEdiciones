@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import Map from "../../Map/Map";
 
-const SectionDistribuidor = ({ zonaDistribuidor, address, metodoVentas }) => {
+const SectionDistribuidor = ({ zonaDistribuidor, address, metodoVentas, radio }) => {
   const part = address.split(",");
   const formatedAddress = part.slice(0, 2).join(",");
 
@@ -15,7 +15,7 @@ const SectionDistribuidor = ({ zonaDistribuidor, address, metodoVentas }) => {
       }}
     >
       <Typography component="h3" variant="h3" mb={2}>
-        Acá vendo mis productos por
+        Acá vendo mis productos por {radio}
       </Typography>
       <Typography variant="h3" mb={1}>
         Nos podes encontrar en {formatedAddress}

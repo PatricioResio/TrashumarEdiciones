@@ -33,7 +33,7 @@ const CarruselHome = () => {
       disableGutters
       sx={{
         position: 'relative', 
-        width: {xs:"70%",md:"60%", lg:"75%"},
+        width: {xs:"85%",md:"60%", lg:"75%"},
         boxShadow:"0 0 10px rgba(0, 0, 0, 0.2)",
         borderRadius:"30px",
         height: {
@@ -173,9 +173,9 @@ const CarruselHome = () => {
                     fontWeight: 600,
                     margin:"auto",
                     width:"80%",
-                    px: 4,
+                    px: 1,
                     py: 1.8,
-                    fontSize: '1rem',
+                    fontSize: '0.8rem',
                     alignSelf: 'flex-start',
                     borderRadius: 2,
                     '&:hover': {

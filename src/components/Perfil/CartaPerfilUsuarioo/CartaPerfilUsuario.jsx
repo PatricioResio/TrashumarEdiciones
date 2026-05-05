@@ -32,8 +32,8 @@ const CartaPerfilUsuario = ({ currentUser }) => {
         <Box
 
           sx={{
-            height: { xs:"10rem", md: "10rem", lg: "13rem" },
-            width: {  xs:"10rem", md: "10rem", lg: "13rem" },
+            height: { xs:"10rem", lg: "13rem" },
+            width: {  xs:"10rem", lg: "13rem" },
             borderRadius: "50%",
             border: "3px solid #eefffdff",
             overflow:"hidden"

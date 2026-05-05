@@ -130,7 +130,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             <SectionDistribuidor
               address={perfil.address}
               zonaDistribuidor={perfil.zonaDistribuidor}
-              metodoVenta={perfil.metodoVenta}
+              metodoVenta={perfil.metodoVentas}
             />
           </Box>
         )}

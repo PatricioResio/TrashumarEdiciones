@@ -167,9 +167,10 @@ const PerfilRender = () => {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
             <Typography variant="h6">Distribución</Typography>
             <SectionDistribuidor
+            radio={perfil.radio}
               address={perfil.address}
               zonaDistribuidor={perfil.zonaDistribuidor}
-              metodoVenta={perfil.metodoVenta}
+              metodoVentas={perfil.metodoVentas}
             />
           </Box>
         </Paper>

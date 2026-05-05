@@ -18,7 +18,7 @@ const ContenedorDestacado = () => {
     <Box sx={{ bgcolor: 'background.default',  py: 6 }}>
     <Paper sx={{    m:"auto",
       maxWidth:{xs:"95vw",md:"70vw"},
-      height: {xs:"120vh",md:'80vh'},
+      height: {xs:"140vh",lg:'100vh'},
       p:4,
       borderRadius:"20px",
       background:"linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe)",
@@ -44,7 +44,6 @@ const ContenedorDestacado = () => {
     alignItems: "stretch",
   }}
 >
-  {/* IMÁGENES */}
   <Box
   sx={{
     display: "flex",
@@ -81,9 +80,9 @@ const ContenedorDestacado = () => {
       src={TAPA_HIPPIES}
       alt="Tapa Hippies"
       priority={false} 
-      height={{xs:"35vh", lg:"45vh"}}
-
-     
+      imgWidth={1920}
+      imgHeight={1080}
+      height={{xs:"45vh", lg:"55vh"}}
     />
   </Card>
 </Box>
@@ -93,7 +92,6 @@ const ContenedorDestacado = () => {
     sx={{
       flex: 1,
       p: { xs: 3, md: 0 },
-  
       display: "flex",
       flexDirection: "column",
       justifyContent: "start",
@@ -106,10 +104,9 @@ const ContenedorDestacado = () => {
   }}
 >
   El día en que los hippies descubrieron los sahumerios
-</Typography><Box>
+</Typography>
+<Box>
 
-
-  
       <Typography
       variant="h6"
       sx={{
@@ -132,15 +129,13 @@ const ContenedorDestacado = () => {
               fontWeight: 400,
             }}
           />
-            </Box>
-
-    <Divider sx={{ mb: 3 }} />
+    </Box>
+    <Divider color={"#17B8B8"}  sx={{ mb: 3, }} />
     <Typography
       variant="h4"
       component="h4"
       sx={{
         mb: 1,
-        fontWeight: 400,
       }}
     >
       Sobre este libro
@@ -148,7 +143,7 @@ const ContenedorDestacado = () => {
     <Typography
       variant="h5"
       sx={{
-        lineHeight: 1.8,
+        lineHeight: 1.2,
         textAlign: "justify",
         width:"90%",
         margin:"auto"

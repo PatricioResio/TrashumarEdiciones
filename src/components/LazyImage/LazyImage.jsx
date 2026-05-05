@@ -19,6 +19,7 @@ const LazyImage = ({
   sizes,
   imgWidth,
   imgHeight,
+  maxHeight,
   onLoaded, // ← nueva prop
 }) => {
   const { imgRef, isVisible } = useLazyImage(rootMargin);
@@ -36,10 +37,10 @@ const LazyImage = ({
     <Box ref={imgRef} sx={{ position: "relative", width, height }}>
       <Skeleton
         variant="rectangular"
-        width="100%"
-        height="100%"
         animation="wave"
         sx={{
+          height:imgHeight,
+          width:"100%",
           position: "absolute",
           top: 0,
           left: 0,
@@ -60,12 +61,11 @@ const LazyImage = ({
           fetchpriority={resolvedFetchPriority}
           srcSet={srcSet}
           sizes={sizes}
-          width={imgWidth}
-          height={imgHeight}
           sx={{
             objectFit,
             width: "100%",
             height: "100%",
+            maxHeight: maxHeight ?? "none",
             opacity: loaded ? 1 : 0,
             transition: "opacity 0.8s ease",
           }}
