@@ -2,6 +2,7 @@ import {
   Box, TextField, Checkbox, Typography, Button, Container,
   FormControl, FormControlLabel, FormGroup, FormHelperText,
   LinearProgress, Snackbar, Alert,
+  InputAdornment,
 } from "@mui/material";
 import { DEFAULT_PERFIL_FOTO } from "../../../constants/constants";
 import { useContext, useEffect, useState } from "react";
@@ -35,6 +36,12 @@ const FormRegistro = () => {
 
   const [formUser, setFormUser] = useState(valorInicial);
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "error" });
+  const socialFields = [
+    { name: "facebookForm",   label: "Facebook",  prefix: "facebook.com/",    placeholder: "tu.usuario" },
+    { name: "instagramForm",  label: "Instagram", prefix: "instagram.com/",   placeholder: "@tuusuario" },
+    { name: "xForm",          label: "X",         prefix: "x.com/",           placeholder: "@tuusuario" },
+    { name: "linkedinForm",   label: "LinkedIn",  prefix: "linkedin.com/in/", placeholder: "tu-nombre" },
+  ];
 
   const showSnackbar = (message, severity = "error") => {
     setSnackbar({ open: true, message, severity });
@@ -152,11 +159,27 @@ const FormRegistro = () => {
 
         <Container disableGutters sx={{ display: "flex", flexDirection: "column", width: "72%", justifyContent: "start", marginLeft: "auto" }}>
           <Typography component="h3" align="left" variant="h5" gutterBottom>Datos personales</Typography>
-          <TextField sx={{ marginBottom: "15px" }} name="facebookForm" label="Facebook" variant="outlined" value={formUser.facebookForm} onChange={handlerChange} />
-          <TextField sx={{ marginBottom: "15px" }} name="instagramForm" label="Instagram" variant="outlined" value={formUser.instagramForm} onChange={handlerChange} />
-          <TextField sx={{ marginBottom: "15px" }} name="xForm" label="X" variant="outlined" value={formUser.xForm} onChange={handlerChange} />
-          <TextField sx={{ marginBottom: "15px" }} name="linkedinForm" label="LinkedIn" variant="outlined" value={formUser.linkedinForm} onChange={handlerChange} />
-
+          {socialFields.map(({ name, label, prefix, placeholder }) => (
+  <TextField
+    key={name}
+    sx={{ marginBottom: "15px" }}
+    name={name}
+    label={label}
+    variant="outlined"
+    value={formUser[name]}
+    onChange={handlerChange}
+    placeholder={placeholder}
+    InputProps={{
+      startAdornment: (
+        <InputAdornment position="start">
+          <Typography variant="body2" color="text.secondary" sx={{ whiteSpace: "nowrap" }}>
+            {prefix}
+          </Typography>
+        </InputAdornment>
+      ),
+    }}
+  />
+))}
           <Box sx={{ p: 3 }}>
             <Typography variant="h5">Subir foto de perfil</Typography>
             <label htmlFor="file-upload" style={{ display: "block", marginBottom: "8px" }}>Seleccionar archivo:</label>

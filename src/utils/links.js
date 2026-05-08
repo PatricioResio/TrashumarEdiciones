@@ -9,6 +9,10 @@ const instagramLink = (user) =>
 const xLink = (user) =>
   user ? `https://x.com/${user.replace("@", "")}` : null;
 
-const linkedinLink = (url) =>
-  url?.startsWith("http") ? url : `https://${url}`;
-export { whatsappLink, instagramLink, xLink, linkedinLink, cleanPhone };
+const linkedinLink = (url) => {
+  if (!url) return "#";
+  if (url.startsWith("http")) return url;
+  const slug = url.trim().replace(/\s+/g, "-"); // reemplaza espacios por guiones
+  return `https://linkedin.com/in/${slug}`;
+};
+export { instagramLink, xLink, linkedinLink, whatsappLink };

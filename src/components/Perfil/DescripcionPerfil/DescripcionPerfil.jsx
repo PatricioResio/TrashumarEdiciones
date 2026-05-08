@@ -8,7 +8,7 @@ const DescripcionPerfil = ({
   icon,
 }) => {
   return (
-    <Box sx={{ p: 3, borderRadius: 3, m: 2, backgroundColor: "background.paper", boxShadow: 1, width: "50%" }}>
+    <Box sx={{ p: 3, borderRadius: 3, m: "auto", backgroundColor: "background.paper", boxShadow: 1, width: "95%", minHeight: "300px" }}>
       <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "start" }}>
         <Box sx={{ display: "flex", alignItems: "start", gap: 2, mb: 2 }}>
           <IconButton sx={{ backgroundColor: "primary.main", color: "white", "&:hover": { backgroundColor: "primary.dark" } }}>

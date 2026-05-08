@@ -28,9 +28,6 @@ const PerfilRender = () => {
   const [tab, setTab] = useState(0);
   const [perfil, setPerfil] = useState(null);
   const [loading, setLoading] = useState(true);
-
-
-  // si hay id en la URL es perfil público, sino es el propio
   const esPerfilPropio = !idPerfil || currentUser?.idPerfil === idPerfil;
   useEffect(() => {
     const cargarPerfil = async () => {
@@ -60,7 +57,7 @@ const PerfilRender = () => {
     );
   }
 
-  if (!perfil) {
+  if (!loading && !perfil) {
     return (
       <Box sx={{ textAlign: "center", mt: 10 }}>
         <Typography variant="h5">Perfil no encontrado</Typography>
@@ -70,22 +67,16 @@ const PerfilRender = () => {
 
   return (
     <Container maxWidth="lg" sx={{ mt: 6, mb: 10 }}>
-      {/* CABECERA */}
       <Box
         sx={{
+          borderRadius:"16px 16px 0 0",
           p: 3,
-          borderTopLeftRadius: "16px",
-          borderTopRightRadius: "16px",
-          borderBottomLeftRadius: 0,
-          borderBottomRightRadius: 0,
           background: "linear-gradient(to bottom, #cbfcfcff, #acebe5ff 60%, #7ccac6ff)",
           textAlign: "center",
           position: "relative",
         }}
       >
         <CartaPerfilUsuario currentUser={perfil} />
-
-        {/* botón editar — solo visible en perfil propio */}
         {esPerfilPropio && (
           <Button
             component={Link}
@@ -105,7 +96,6 @@ const PerfilRender = () => {
         )}
       </Box>
 
-      {/* TABS */}
       <Paper elevation={1}>
         <Tabs value={tab} onChange={(e, v) => setTab(v)} centered textColor="primary" indicatorColor="primary">
           <Tab icon={<PersonOutlineIcon />} label="Perfil" sx={{ width: "33%" }} />
@@ -116,18 +106,17 @@ const PerfilRender = () => {
         </Tabs>
       </Paper>
 
-      {/* TAB 0 - PERFIL */}
       {tab === 0 && (
-        <Box sx={{ gap: 3 }}>
-          <Paper sx={{ p: 3 }}>
-            <Box sx={{ p: 3, display: "flex", flexDirection: "row" }}>
+        <Box sx={{ gap: {xs:1,md:3} }}>
+          <Paper sx={{ p: {xs:1,md:3}}}>
+          <Box sx={{ p: {xs:1,md:3}, display: "flex", flexDirection: "row" }}>
               <InformacionPersonal user={perfil} />
               <Oficios oficios={perfil.oficios} />
             </Box>
             <Box sx={{ p: 3, display: "flex", flexDirection: "row" }}>
               <DescripcionPerfil {...perfil} title="Sobre mí" icon={<PersonIcon />} />
-              <DescripcionPerfil {...perfil} title="Sobre mi trabajo" icon={<ManageAccountsIcon />} />
             </Box>
+          
           </Paper>
         </Box>
       )}
@@ -167,7 +156,7 @@ const PerfilRender = () => {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
             <Typography variant="h6">Distribución</Typography>
             <SectionDistribuidor
-            radio={perfil.radio}
+              radio={perfil.radio}
               address={perfil.address}
               zonaDistribuidor={perfil.zonaDistribuidor}
               metodoVentas={perfil.metodoVentas}

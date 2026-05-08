@@ -21,6 +21,7 @@ const ContenedorPrograma = () => {
           1200: { slidesPerView: "3" },
         }}
         style={{ paddingBottom: "3rem" }}
+        className="MySwiper"
       >
         {PROGRAMAS.map((parrafo, i) => (
           <SwiperSlide key={i}>

@@ -6,11 +6,12 @@ import "swiper/css/pagination";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import "./FilaPerfiles.css";
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const FilaPerfiles = ({ perfiles }) => {
   return (
-    <Box sx={{height: { xs: "24rem", md: "26rem", lg:"26rem" },}}>
+    <Box sx={{height: { xs: "30rem", md: "26rem", lg:"26rem" },}}>
       <Swiper
       className="Swiper"
         spaceBetween={6}
@@ -29,6 +30,23 @@ const FilaPerfiles = ({ perfiles }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      <Button component={Link} to="/comunidad"variant="contained" sx={{
+                    bgcolor: 'primary.main',
+                    color: 'white',
+                    fontWeight: 600,
+                    margin:"auto",
+                    width:{xs:"45%", lg:"30%",},
+                    px: 1,
+                    py: 1.8,
+                    fontSize: '0.8rem',
+                    alignSelf: 'flex-start',
+                    borderRadius: 2,
+                    '&:hover': {
+                      bgcolor: 'primary.dark',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 10px 20px rgba(23, 184, 184, 0.35)',
+                    },
+                    transition: 'all 0.3s ease',}} >Descubrí más trashumarenses</Button>
     </Box>
   );
 };

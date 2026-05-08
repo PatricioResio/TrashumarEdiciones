@@ -30,19 +30,19 @@ const SectionComunidad = () => {
       <Fade>
         <Grid
           container
-          columns={{ xs: 1, sm: 2, md: 3, xl: 4 }}
+          columns={{ xs: 2, sm: 3, md: 4, lg: 5, xl: 6 }}
           sx={{
             minHeight: "90vh",
             m: "auto",
             p: 2,
-            gap: 4,
+            gap: 1,
             justifyContent: { xs: "center", md: "flex-start" },
             alignItems: { xs: "center", md: "flex-start" },
           }}
         >
           {perfiles.map((perfil) => (
-            <Grid item key={perfil.id} xs={{ xs: 1, sm: 2, md: 3, xl: 5 }}>
-              <Fade>
+            <Grid item key={perfil.id} sx={{ xs: 2, sm: 3, md: 4, lg: 2, xl: 1 }}>
+              <Fade triggerOnce>
                 <CartaPerfiles key={perfil.id} perfil={perfil} />
               </Fade>
             </Grid>

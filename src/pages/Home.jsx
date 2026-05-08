@@ -73,7 +73,6 @@ const Home = () => {
       >
       
         <Box className="container-perfiles">
-        
             <Typography
               component="h3"
               variant="h3"

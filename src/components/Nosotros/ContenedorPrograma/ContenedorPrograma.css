@@ -25,9 +25,9 @@
 .swiper-next-custom.MuiIconButton-root:hover {
   background-color: #09A5B0;
   color: white;
-  transform: translateY(-50%) scale(1.1); 
+  transform: translateY(-50%) scale(1.1); /* ← mantener el translateY en el hover también */
 }
-
+/* Bullets base */
 .MySwiper .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
@@ -38,8 +38,8 @@
  
 }
 
-
+/* Bullet activo: doble de ancho */
 .MySwiper .swiper-pagination-bullet-active {
-  width: 20px; 
-  background-color: #17B8B8; 
+  width: 20px; /* el doble del width base */
+  background-color: #17B8B8; /* tu color activo */
 }

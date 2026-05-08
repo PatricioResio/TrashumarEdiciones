@@ -14,14 +14,13 @@ const ContenedorHistoria = () => {
   return (
     <>
       <Box
-   
         sx={{
-          height: "43rem",
+          height: "45rem",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           borderRadius: "25px",
-          width: { xs: "100%", md: "75%" },
+          width: { xs: "95%",sm:"85%", md: "75%" },
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
           margin: "4rem auto",
           padding: "3rem",
@@ -37,7 +36,7 @@ const ContenedorHistoria = () => {
         <Swiper
           pagination={true}
           modules={[Pagination]}
-          className="MySwiper"
+          className="MySwiperHistorias"
           spaceBetween={2}
           breakpoints={{
             920: { slidesPerView: "2" },

@@ -18,7 +18,7 @@ const ContenedorDestacado = () => {
     <Box sx={{ bgcolor: 'background.default',  py: 6 }}>
     <Paper sx={{    m:"auto",
       maxWidth:{xs:"95vw",md:"70vw"},
-      height: {xs:"140vh",lg:'100vh'},
+      height: {xs:"140vh",md:"135vh",lg:'100vh', xl:'90vh'},
       p:4,
       borderRadius:"20px",
       background:"linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe)",

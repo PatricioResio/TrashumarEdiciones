@@ -44,6 +44,8 @@ const CartaPerfilUsuario = ({ currentUser }) => {
           alt="foto"
           loading="lazy"
           decoding="async"
+          imgHeight={400}	
+          imgWidth={400}
         />
         </Box>
         <Typography variant="h4" fontWeight="bold" color="#fdffffff">

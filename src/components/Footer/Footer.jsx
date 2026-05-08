@@ -73,13 +73,13 @@ function Footer() {
               Enlaces Rápidos
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Link href="/" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
+              <Link href="/libreria" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
                 Librería
               </Link>
-              <Link href="/" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
+              <Link href="/nosotros" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
                 Nosotros
               </Link>
-              <Link href="/" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
+              <Link href="/comunidad" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
                 Comunidad
               </Link>
               <Link href="/publicar" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
@@ -94,7 +94,7 @@ function Footer() {
               Síguenos
             </Typography>
             <Box sx={{ display: 'flex', gap: 1 }}>
-              <IconButton
+{/*               <IconButton
                 sx={{
                   color: 'white',
                   bgcolor: 'rgba(255, 255, 255, 0.1)',
@@ -104,7 +104,7 @@ function Footer() {
                 }}
               >
                 <FacebookIcon />
-              </IconButton>
+              </IconButton> 
               <IconButton
                 sx={{
                   color: 'white',
@@ -115,8 +115,9 @@ function Footer() {
                 }}
               >
                 <TwitterIcon />
-              </IconButton>
+              </IconButton>*/}
               <IconButton
+                href="https://instagram.com/trashumarediciones"
                 sx={{
                   color: 'white',
                   bgcolor: 'rgba(255, 255, 255, 0.1)',
@@ -127,7 +128,7 @@ function Footer() {
               >
                 <InstagramIcon />
               </IconButton>
-              <IconButton
+      {/*         <IconButton
                 sx={{
                   color: 'white',
                   bgcolor: 'rgba(255, 255, 255, 0.1)',
@@ -136,8 +137,8 @@ function Footer() {
                   },
                 }}
               >
-                <EmailIcon />
-              </IconButton>
+                <EmailIcon /> 
+              </IconButton>*/}
             </Box>
             <Typography variant="body1" sx={{ mt: 2, opacity: 0.9 }}>
               contacto@trashumarediciones.com

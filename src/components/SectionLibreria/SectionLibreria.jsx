@@ -45,7 +45,7 @@ const SectionLibreria = () => {
           }}
         >
           {proyectos.map((proyecto, i) => (
-            <Grid item key={i} xs={{ xs: 1, sm: 2, md: 3, xl: 4 }}>
+            <Grid item key={i} sx={{ xs: 1, sm: 2, md: 3, xl: 4 }}>
               <Fade>
                 <CartaProyectos key={proyecto.id} proyecto={proyecto} />
               </Fade>

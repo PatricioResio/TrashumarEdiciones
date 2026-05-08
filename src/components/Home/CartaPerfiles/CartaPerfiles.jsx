@@ -20,7 +20,7 @@ export default function CartaPerfiles({ perfil }) {
         sx={{
           width: { xs: "12rem", md: "15rem" },
           height: { xs: "20rem", md: "22rem", lg:"22rem" },
-          m: { xs: "auto", md: "8rem" },
+          m: { xs: "auto",sm:"1rem",md: "2rem", lg:"3.5rem" },
           borderRadius: "20px",
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
           backgroundColor: "rgba(255, 255, 255, 0.7)",
@@ -44,7 +44,6 @@ export default function CartaPerfiles({ perfil }) {
           alt={`Avatar de ${perfil?.nombrePublico || "perfil"}`}
           loading="lazy"
           decoding="async"
-
           />
         </CardMedia>
         <CardContent className="carta-perfiles-contenido">

@@ -36,6 +36,7 @@ const Carrusel = ({ arrayImagenes, handlerPopUp }) => {
             effect="coverFlow"
             slidesPerView={1}
             runCallbacksOnInit
+            className="MySwiperHistorias"
           >
             {arrayImagenes.map((imgA) => (
               <SwiperSlide key={imgA.id}>
