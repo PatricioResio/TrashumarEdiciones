@@ -12,26 +12,25 @@
   margin: 7rem auto;
   padding: 2;
   width: 95%;
-  height: 75vh;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 25px;
   border-color:#09A5B0;
-  
   border-top: none;
   border-left: 6px solid #09A5B0;
   }
 
 @media (min-width:0px) { .container-perfiles{
-  height: 100vh;
+  height: 75vh;
 }
   
 }
 @media (min-width:420px) { .container-perfiles{
-  height: 90vh;
+  height: 70vh;
 }
   
 }
 @media (min-width:900px) { .container-perfiles{
-  height: 85vh;
+  height: 62vh;
 }
   
+}

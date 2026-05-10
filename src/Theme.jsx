@@ -221,8 +221,6 @@ const theme = createTheme({
         fontSize: "1rem",
         bgcolor: 'primary.main',
         color: 'white',
-        py: 1.8,
-        fontSize: '1rem',
         fontFamily:"Roboto, sans-serif",
         borderRadius: 2,
         '&:hover': {

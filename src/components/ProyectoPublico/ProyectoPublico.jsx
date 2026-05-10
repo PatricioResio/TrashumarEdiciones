@@ -83,7 +83,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
           width: { xs: "92%", md: "70%", xl: "60%" }, // ← ancho responsivo
           p: 4,
           borderRadius: "20px",
-          background: "linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe)",
+          background: "linear-gradient(to bottom,rgb(241, 255, 255), #e9fffc 60%, #dafffe)",
           borderLeft: { xs: "none", lg: "6px solid #09A5B0" },
           borderTop: { xs: "6px solid #09A5B0", lg: "none" },
           borderColor: "#7AE7F5",
@@ -111,10 +111,10 @@ const ProyectoPublico = ({ proyectoPublico }) => {
         </Typography>
       </Box>
 
-      {/* FOOTER EDITORIAL */}
-      <Box
+           <Box
         sx={{
-          mt: 10,
+          m:"auto",
+          width:{xs:"90%",lg:"60%" },
           p: 2,          
           background:"#09A5B0",
           borderRadius:"60px",
@@ -122,10 +122,10 @@ const ProyectoPublico = ({ proyectoPublico }) => {
           color: 'secondary.white',
         }}
       >
-        <Typography variant="h6" sx={{ color: "text.primary", fontWeight: 600, mb: 1 }}>
+        <Typography variant="h6" sx={{ color: "secondary.white", fontWeight: 600, mb: 1 }}>
           Trashumar Ediciones
         </Typography>
-        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+        <Typography variant="body2" sx={{ color: "secondary.white" }}>
           Una editorial nómada, federal e independiente. Publicamos voces y
           proyectos que cruzan fronteras.
         </Typography>

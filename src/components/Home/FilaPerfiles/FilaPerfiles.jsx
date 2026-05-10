@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const FilaPerfiles = ({ perfiles }) => {
   return (
-    <Box sx={{height: { xs: "30rem", md: "26rem", lg:"26rem" },}}>
+    <Box sx={{height: { xs: "20rem", md: "22rem", lg:"26rem" },}}>
       <Swiper
       className="Swiper"
         spaceBetween={6}
@@ -33,13 +33,13 @@ const FilaPerfiles = ({ perfiles }) => {
       <Button component={Link} to="/comunidad"variant="contained" sx={{
                     bgcolor: 'primary.main',
                     color: 'white',
+                    height:"40px",
                     fontWeight: 600,
-                    margin:"auto",
-                    width:{xs:"45%", lg:"30%",},
+                    margin:"30px auto auto auto",
+                    width:{xs:"70%", md:"50%", lg:"30%",},
                     px: 1,
                     py: 1.8,
                     fontSize: '0.8rem',
-                    alignSelf: 'flex-start',
                     borderRadius: 2,
                     '&:hover': {
                       bgcolor: 'primary.dark',

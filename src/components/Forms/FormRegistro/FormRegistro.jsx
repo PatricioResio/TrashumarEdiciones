@@ -104,9 +104,8 @@ const FormRegistro = () => {
     <Container
       maxWidth="2xl"
       sx={{
-        margin: "6rem auto", display: "flex", flexDirection: "column",
+        margin: "1rem auto", display: "flex", flexDirection: "column",
         width: "80%", borderRadius: "15px",
-        boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)", bgcolor: "#DBFFFE",
       }}
     >
       <Fade triggerOnce>
@@ -130,7 +129,7 @@ const FormRegistro = () => {
         <Container sx={{ display: "flex", flexDirection: { xs: "column", md: "column", lg: "row" },justifyContent:"space-around",width: "80%" }}>
           <Container sx={{ display: "flex", flexDirection: "column", margin: "auto", alignItems: "space-between", justifyContent: "center", width: "100%" }}>
             <Typography component="h2" align="center" variant="h5" gutterBottom>
-              Información Profesional
+              Información de contacto
             </Typography>
             <FormHelperText>Los datos de la información profesional son obligatorios</FormHelperText>
             <TextField sx={{ margin: "7px" }} label="Nombre" name="nombre" variant="outlined" value={formUser.nombre} onChange={handlerChange} />

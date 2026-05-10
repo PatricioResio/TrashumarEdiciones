@@ -18,7 +18,7 @@ const ContenedorDestacado = () => {
     <Box sx={{ bgcolor: 'background.default',  py: 6 }}>
     <Paper sx={{    m:"auto",
       maxWidth:{xs:"95vw",md:"70vw"},
-      height: {xs:"140vh",md:"135vh",lg:'100vh', xl:'90vh'},
+      height: {xs:"120vh",sm:"112vh",lg:'76vh',},
       p:4,
       borderRadius:"20px",
       background:"linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe)",
@@ -54,13 +54,6 @@ const ContenedorDestacado = () => {
     },
     gap: {xs:0, md:1},
     margin:"auto",
-    width: {
-      xs: "65%",
-      sm:"45%",
-      md:"50%",
-      lg: "50%",
-      xl: "35%"
-    },
   }}
 >
   <Card
@@ -171,7 +164,7 @@ const ContenedorDestacado = () => {
 
       <Box
         sx={{
-          mt: 10,
+          mt: 4,
           p: 2,          
           background:"#09A5B0",
           borderRadius:"60px",
