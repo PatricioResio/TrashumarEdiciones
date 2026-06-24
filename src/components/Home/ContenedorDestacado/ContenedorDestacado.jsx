@@ -33,134 +33,137 @@ const ContenedorDestacado = () => {
       borderColor: "#7AE7F5",}}>
    
       <Box
-  sx={{
-    display: "flex",
-    flexDirection: {
-      xs: "column",
-      md: "column",
-      lg: "row",
-    },
-    gap: 4,
-    alignItems: "stretch",
-  }}
->
-  <Box
-  sx={{
-    display: "flex",
-    flexDirection: {
-      xs: "column",
-      md: "column",
-      lg: "row",
-    },
-    gap: {xs:0, md:1},
-    margin:"auto",
-  }}
->
-  <Card
-    elevation={0}
-    sx={{
-      width: {xs:"100%",md:"80%"},
-      borderRadius: 3,
-      boxShadow: "none",
-      background: "transparent",
-      border: "none",
-      objectFit: "cover",
-      p: 0,
-      margin:"auto",
-    }}
-  >
-    <LazyImage
-      src={TAPA_HIPPIES}
-      alt="Tapa Hippies"
-      priority={false} 
-      imgWidth={1920}
-      imgHeight={1080}
-      height={{xs:"45vh", lg:"55vh"}}
-    />
-  </Card>
-</Box>
- 
-  <Box
-    elevation={2}
-    sx={{
-      flex: 1,
-      p: { xs: 3, md: 0 },
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "start",
-    }}
-  > <Typography
-  variant="h4"
-  component="h3"
-  sx={{
-    lineHeight: 1.2,
-  }}
->
-  El día en que los hippies descubrieron los sahumerios
-</Typography>
-<Box>
-
-      <Typography
-      variant="h6"
-      sx={{
-        lineHeight: 1.8,
-        my:2,
-      }}
-    >
-      Pablo Atanasópulos    </Typography>
-    <Chip
-         icon={<CalendarTodayIcon sx={{ color: 'primary.main' }} />}
-            label="19/3/2024"
-            variant="outlined"
+        sx={{
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            md: "column",
+            lg: "row",
+          },
+          gap: 4,
+          alignItems: "stretch",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: {
+              xs: "column",
+              md: "column",
+              lg: "row",
+            },
+            gap: {xs:0, md:1},
+            margin:"auto",
+          }}
+        >
+          <Card
+            elevation={0}
             sx={{
-              borderColor: 'primary.main',
-              color: 'primary.main',
-              fontSize: '1rem',
-              py: 2.5,
-              px: 1,
-              mb:3,
-              fontWeight: 400,
+              width: {xs:"100%",md:"80%"},
+              borderRadius: 3,
+              boxShadow: "none",
+              background: "transparent",
+              border: "none",
+              objectFit: "cover",
+              p: 0,
+              margin:"auto",
             }}
-          />
-    </Box>
-    <Divider color={"#17B8B8"}  sx={{ mb: 3, }} />
-    <Typography
-      variant="h4"
-      component="h4"
-      sx={{
-        mb: 1,
-      }}
-    >
-      Sobre este libro
-    </Typography> 
-    <Typography
-      variant="h5"
-      sx={{
-        lineHeight: 1.2,
-        textAlign: "justify",
-        width:"90%",
-        margin:"auto"
-      }}
-    >
-    {Descripcion}
-    </Typography>
-    <Button component={Link}
-   to={`/proyecto/${ID_PROYECTO_DESTACADO}`} variant="contained" 
-   sx={{ 
-    color:"white",
-    width:"60%",
-    fontWeight:"600",
-    margin: "30px auto 0 auto ",
-    '&:hover': {
-      bgcolor: 'primary.dark',
-      transform: 'translateY(-2px)',
-      boxShadow: '0 10px 20px rgba(23, 184, 184, 0.35)',
-    },
-    transition: 'all 0.3s ease',
-  
-  }}>Leer más</Button>
-  </Box>
-</Box>
+          >
+            <LazyImage
+              src={TAPA_HIPPIES}
+              alt="Tapa Hippies"
+              priority={false} 
+              imgWidth={1920}
+              imgHeight={1080}
+              height={{xs:"45vh", lg:"55vh"}}
+            />
+          </Card>
+        </Box>
+ 
+        <Box
+          elevation={2}
+          sx={{
+            flex: 1,
+            p: { xs: 3, md: 0 },
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "start",
+          }}
+        >
+          <Typography
+              variant="h4"
+              component="h3"
+              sx={{
+                lineHeight: 1.2,
+              }}
+            >
+              El día en que los hippies descubrieron los sahumerios
+          </Typography>
+          <Box>
+
+            <Typography
+            variant="h6"
+            sx={{
+              lineHeight: 1.8,
+              my:2,
+            }}
+            >
+              Pablo Atanasópulos
+            </Typography>
+            <Chip
+              icon={<CalendarTodayIcon sx={{ color: 'primary.main' }} />}
+                  label="19/3/2024"
+                  variant="outlined"
+                  sx={{
+                    borderColor: 'primary.main',
+                    color: 'primary.main',
+                    fontSize: '1rem',
+                    py: 2.5,
+                    px: 1,
+                    mb:3,
+                    fontWeight: 400,
+                  }}
+            />
+          </Box>
+          <Divider color={"#17B8B8"}  sx={{ mb: 3, }} />
+          <Typography
+            variant="h4"
+            component="h4"
+            sx={{
+              mb: 1,
+            }}
+          >
+            Sobre este libro
+          </Typography> 
+          <Typography
+            variant="h5"
+            sx={{
+              lineHeight: 1.2,
+              textAlign: "justify",
+              width:"90%",
+              margin:"auto"
+            }}
+          >
+          {Descripcion}
+          </Typography>
+          <Button component={Link}
+            to={`/proyecto/${ID_PROYECTO_DESTACADO}`} variant="contained" 
+            sx={{ 
+              color:"white",
+              width:"60%",
+              fontWeight:"600",
+              margin: "30px auto 0 auto ",
+              '&:hover': {
+                bgcolor: 'primary.dark',
+                transform: 'translateY(-2px)',
+                boxShadow: '0 10px 20px rgba(23, 184, 184, 0.35)',
+              },
+              transition: 'all 0.3s ease',
+            
+          }}>Leer más
+          </Button>
+        </Box>
+      </Box>
 
       <Box
         sx={{

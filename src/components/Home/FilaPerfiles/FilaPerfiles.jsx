@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const FilaPerfiles = ({ perfiles }) => {
   return (
-    <Box sx={{height: { xs: "20rem", md: "22rem", lg:"26rem" },}}>
+    <Box sx={{height: { xs: "20rem", md: "22rem", lg:"29rem" },}}>
       <Swiper
       className="Swiper"
         spaceBetween={6}

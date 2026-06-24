@@ -36,7 +36,7 @@ const ContenedorHistoria = () => {
         <Swiper
           pagination={true}
           modules={[Pagination]}
-          className="MySwiperHistorias"
+          className="MySwiperCartasHistorias"
           spaceBetween={2}
           breakpoints={{
             920: { slidesPerView: "2" },
