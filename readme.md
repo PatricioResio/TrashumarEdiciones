@@ -3,6 +3,7 @@
 esta version todavía esta en desarrollo
 es un sitio web, con intenciones de generar una comunidad "laboral" del ambiente editorial.
 así mismo servir también como exposición de la editorial
+Aquí un link al mismo https://trashumarediciones.netlify.app
 
 ## Tecnologías utilizadas
 
