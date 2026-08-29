@@ -482,7 +482,7 @@ const FormTextoUnico = () => {
             }
             label="Estoy de acuerdo con los términos y condiciones"
           />
-          <Box sx={{margin:"auto", display:"flex", margin:"20px"}}>
+          <Box sx={{margin:"auto", display:"flex", }}>
 
             <ButtonForm
             text="enviar formulario" 

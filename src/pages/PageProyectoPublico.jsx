@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, CircularProgress } from "@mui/material";
 import { ProyectoPublico } from "../components/index";
 import useProyectoPublico from "../hooks/usePublicProyects";
-import usePerfiles from "../hooks/usePerfiles";
+import { PerfilesContext } from "../context/PerfilesContext";
 
 const PageProyectoPublico = () => {
   const { proyectoPublico, loadingProyectoPublico } = useProyectoPublico();
-  const { perfiles, loading } = usePerfiles();
+  const { perfiles, loadingPerfiles } = useContext(PerfilesContext);
   return loadingProyectoPublico ? (
     <Box sx={{ minHeight: "90vh", display: "flex", alignContent: "center" }}>
       <CircularProgress sx={{ m: "auto" }} />

@@ -23,12 +23,13 @@ import SectionDistribuidor from "./SectionDistribuidor/SectionDistribuidor";
 import InformacionPersonal from "./InformacionPersonal/InformacionPersonal";
 
 const PerfilRender = () => {
-  const { idPerfil } = useParams(); // undefined si es /miperfil
+  const { idPerfil } = useParams(); 
   const { currentUser } = useContext(AuthContext);
   const [tab, setTab] = useState(0);
   const [perfil, setPerfil] = useState(null);
   const [loading, setLoading] = useState(true);
   const esPerfilPropio = !idPerfil || currentUser?.idPerfil === idPerfil;
+  
   useEffect(() => {
     const cargarPerfil = async () => {
       setLoading(true);
@@ -49,15 +50,14 @@ const PerfilRender = () => {
     cargarPerfil();
   }, [idPerfil, currentUser]);
 
-  if (loading) {
+  if (loading || !perfil ) {
     return (
       <Box sx={{ display: "flex", justifyContent: "center", mt: 10 }}>
         <CircularProgress />
       </Box>
-    );
+    )  
   }
-
-  if (!loading && !perfil) {
+  if ( !loading && !perfil) {
     return (
       <Box sx={{ textAlign: "center", mt: 10 }}>
         <Typography variant="h5">Perfil no encontrado</Typography>
@@ -123,20 +123,20 @@ const PerfilRender = () => {
 
       {/* TAB 1 - PROYECTOS */}
       {tab === 1 && (
-        <Paper sx={{ display: "flex", flexDirection: "row", width: "100%" }}>
-          <Box sx={{ display: "flex", flexDirection: "row", m: "auto", p: 3 }}>
-            <Box sx={{ p: 3, m: "15px auto", width: "45%", borderRadius: "10px", backgroundColor: "background.paper", boxShadow: 1 }}>
-              <Box sx={{ display: "flex", alignItems: "center", gap: 2, m: 2 }}>
+        <Paper sx={{ display: "flex", flexDirection: "column", width: "100%" }}>
+          <Box sx={{ display: "flex", flexDirection: "column", m: "auto", p: 1 ,width: "90%"}}>
+            <Box sx={{ p: 1, m: "15px auto", width: "100%", borderRadius: "10px", backgroundColor: "background.paper", boxShadow: 1 }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 3, m: 2 }}>
                 <IconButton sx={{ backgroundColor: "primary.main", color: "white", "&:hover": { backgroundColor: "primary.dark" } }}>
                   <MenuBookIcon />
                 </IconButton>
                 <Typography variant="h6" fontWeight={600}>Proyectos</Typography>
               </Box>
               <Divider />
-              <ContenedorProyectosPerfil uid={perfil.idPerfil} />
+              <ContenedorProyectosPerfil uid={perfil.idPerfil} nombrePublico={perfil.nombrePublico} />
             </Box>
 
-            <Box sx={{ p: 3, m: "auto", width: "45%", borderRadius: "10px", backgroundColor: "background.paper", boxShadow: 1 }}>
+            <Box sx={{ p: 1, m: "15px auto", width: "100%", borderRadius: "10px", backgroundColor: "background.paper", boxShadow: 1 }}>
               <Box sx={{ display: "flex", alignItems: "center", gap: 2, m: 2 }}>
                 <IconButton sx={{ backgroundColor: "primary.main", color: "white", "&:hover": { backgroundColor: "primary.dark" } }}>
                   <HandshakeIcon />
@@ -144,7 +144,7 @@ const PerfilRender = () => {
                 <Typography variant="h6" fontWeight={600}>Colaboraciones</Typography>
               </Box>
               <Divider />
-              <ContenedorColaboraciones uid={perfil.idPerfil} />
+              <ContenedorColaboraciones uid={perfil.idPerfil} nombrePublico={perfil.nombrePublico} />
             </Box>
           </Box>
         </Paper>

@@ -20,17 +20,17 @@
   }
 
 @media (min-width:0px) { .container-perfiles{
-  height: 75vh;
+  height: 85vh;
 }
   
 }
 @media (min-width:420px) { .container-perfiles{
-  height: 70vh;
+  height: 74vh;
 }
   
 }
 @media (min-width:900px) { .container-perfiles{
-  height: 62vh;
+  height: 82vh;
 }
   
 }

@@ -1,11 +1,12 @@
 import { Box, CircularProgress, Grid } from "@mui/material";
 import CartaPerfiles from "../Home/CartaPerfiles/CartaPerfiles";
-import usePerfiles from "../../hooks/usePerfiles";
+import { PerfilesContext } from "../../context/PerfilesContext";
 import { Fade } from "react-awesome-reveal";
+import { useContext } from "react";
 
 const SectionComunidad = () => {
-  const { perfiles, loading } = usePerfiles();
-  return loading ? (
+  const { perfiles, loadingPerfiles } = useContext(PerfilesContext);
+  return loadingPerfiles ? (
     <Box
       bgcolor="bg.whiteBlue"
       sx={{

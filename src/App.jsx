@@ -1,5 +1,7 @@
 import { Suspense, lazy } from "react";
 import { AuthProvider } from "./context/AuthContext";
+import { ProyectsProvider } from "./context/ProyectsContext";
+import { PerfilesProvider } from "./context/PerfilesContext.jsx";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
 import { Route, Routes } from "react-router-dom";
@@ -31,6 +33,9 @@ const LazyFormRegistro = lazy(() =>
 export default function App() {
   return (
     <AuthProvider>
+    <ProyectsProvider>
+    <PerfilesProvider>
+
       <Container
         maxWidth="2xl"
         sx={{
@@ -62,8 +67,8 @@ export default function App() {
             <Routes>
               <Route path="/" Component={Home} />
               <Route path="/miperfil" Component={LazyPerfil} />
-              <Route path="/infoPerfil" Component={LazyFormRegistro} />
               <Route path="/perfil/:idPerfil" Component={LazyPerfil} />
+              <Route path="/infoPerfil" Component={LazyFormRegistro} />
               <Route path="/contacto" Component={LazyContact} />
               <Route path="/libreria" Component={LazyLibreria} />
               <Route
@@ -82,6 +87,9 @@ export default function App() {
 
         <Footer />
       </Container>
-    </AuthProvider>
+              
+      </PerfilesProvider>
+      </ProyectsProvider>
+      </AuthProvider>
   );
 }

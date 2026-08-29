@@ -1,10 +1,11 @@
-import { Box, CircularProgress, Grid } from "@mui/material";
-import useProyectos from "../../hooks/useProyectos";
+import { Box, CircularProgress, Grid } from "@mui/material";  
 import { Fade } from "react-awesome-reveal";
 import CartaProyectos from "../Home/CartaProyectos/CartaProyectos";
+import { useContext } from "react";
+import { ProyectsContext } from "../../context/ProyectsContext";
 
 const SectionLibreria = () => {
-  const { proyectos, loadingProyectos } = useProyectos();
+  const { proyectos, loadingProyectos } = useContext(ProyectsContext);
 
   return loadingProyectos ? (
     <Box

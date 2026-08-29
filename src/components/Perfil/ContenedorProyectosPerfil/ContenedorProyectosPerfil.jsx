@@ -1,16 +1,14 @@
+// src/components/Perfil/ContenedorProyectosPerfil/ContenedorProyectosPerfil.jsx
 import FilaProyectosPerfil from "../FilaProyectosPerfil/FilaProyectosPerfil";
 import { CircularProgress, Container } from "@mui/material";
 import useProyectos from "../../../hooks/useProyectos";
-import { useContext } from "react";
-import { AuthContext } from "../../../context/AuthContext";
 import "./ContenedorProyectosPerfil.css";
 
-const ContenedorProyectosPerfil = () => {
-  const { proyectos, loading } = useProyectos();
-  const { currentUser } = useContext(AuthContext);
-  const proyectosUser = proyectos.filter(
-    (proyecto) => proyecto.autor === currentUser.nombrePublico,
-  );
+const ContenedorProyectosPerfil = ({ nombrePublico }) => {
+  const { proyectos, loadingProyectos } = useProyectos();
+  const proyectosUser = nombrePublico
+    ? proyectos.filter((proyecto) => proyecto.autor === nombrePublico)
+    : [];
 
   return (
     <Container
@@ -18,12 +16,12 @@ const ContenedorProyectosPerfil = () => {
       maxWidth="lg"
       sx={{
         margin: { xs: "0", md: "auto" },
-        width: { xs: "80vw", md: "100%" },
-        height: "40rem",
-        minHeight: "40rem",
+        width: { xs: "85vw", md: "100%" },
+        height: "30rem",
+        minHeight: "30rem",
       }}
     >
-      {loading ? (
+      {loadingProyectos ? (
         <CircularProgress />
       ) : (
         <FilaProyectosPerfil proyectosUser={proyectosUser} />

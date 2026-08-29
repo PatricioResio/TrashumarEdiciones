@@ -1,9 +1,10 @@
 import FilaPerfiles from "../FilaPerfiles/FilaPerfiles";
 import { CircularProgress, Container, Fade } from "@mui/material";
-import usePerfiles from "../../../hooks/usePerfiles";
+import { PerfilesContext } from "../../../context/PerfilesContext";
+import { useContext } from "react";
 
 const ContenedorPerfiles = () => {
-  const { perfiles, loading } = usePerfiles();
+  const { perfiles, loadingPerfiles } = useContext(PerfilesContext)
 
   return (
     <Container
@@ -15,7 +16,7 @@ const ContenedorPerfiles = () => {
         alignItems: "center",
       }}
     >
-      {loading ? <CircularProgress /> : <FilaPerfiles perfiles={perfiles} />}
+      {loadingPerfiles ? <CircularProgress /> : <FilaPerfiles perfiles={perfiles} />}
     </Container>
   );
 };

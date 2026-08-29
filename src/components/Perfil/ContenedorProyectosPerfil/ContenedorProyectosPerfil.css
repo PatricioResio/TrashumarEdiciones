@@ -1,5 +1,6 @@
 .contenedor-fila-perfil {
   display: flex;
-  min-height: 45rem;
+  flex-direction: column;
+  min-height: 12rem;
   width: 100%;
 }

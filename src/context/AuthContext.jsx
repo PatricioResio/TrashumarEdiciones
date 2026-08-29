@@ -157,7 +157,7 @@ export function AuthProvider({ children }) {
         newUser,
         currentUser,
         loading,
-        authError,      // ← ahora los componentes pueden leer y mostrar el error
+        authError,     
         loginWithGoogle,
         logOut,
         registrar,
