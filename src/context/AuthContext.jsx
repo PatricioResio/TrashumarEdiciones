@@ -16,20 +16,28 @@ export function AuthProvider({ children }) {
   const [loading, setLoading]           = useState(true);
   const [authError, setAuthError]       = useState(null); // ← estado de error nuevo
   const navigate                        = useNavigate();
-  const servicesRef                     = useRef(null);
 
-  const loadFirebaseServices = async () => {
-    if (servicesRef.current) return servicesRef.current;
+  const authServicesRef = useRef(null);
+  const firestoreServicesRef = useRef(null);
 
-    // un solo import de firebase, no dos
-    const [{ auth, db }, firestoreModule, authModule] = await Promise.all([
+  const loadAuthServices = async () => {
+    if (authServicesRef.current) return authServicesRef.current;
+    const [{ auth }, authModule] = await Promise.all([
       import("../api/firebase"),
-      import("firebase/firestore"),
       import("firebase/auth"),
     ]);
+    authServicesRef.current = { auth, authModule };
+    return authServicesRef.current;
+  };
 
-    servicesRef.current = { auth, db, firestoreModule, authModule };
-    return servicesRef.current;
+  const loadFirestoreServices = async () => {
+    if (firestoreServicesRef.current) return firestoreServicesRef.current;
+    const [{ db }, firestoreModule] = await Promise.all([
+      import("../api/firestore"),
+      import("firebase/firestore"),
+    ]);
+    firestoreServicesRef.current = { db, firestoreModule };
+    return firestoreServicesRef.current;
   };
 
   // listener de auth state
@@ -38,7 +46,7 @@ export function AuthProvider({ children }) {
     let isMounted = true;
 
     const setupAuthListener = async () => {
-      const { auth, authModule } = await loadFirebaseServices();
+      const { auth, authModule } = await loadAuthServices();
       unsubscribe = authModule.onAuthStateChanged(auth, (user) => {
         if (!isMounted) return;
         setGoogleUser(user ?? null);
@@ -69,7 +77,7 @@ export function AuthProvider({ children }) {
 
     const fetchPerfil = async () => {
       try {
-        const { db, firestoreModule } = await loadFirebaseServices();
+        const { db, firestoreModule } = await loadFirestoreServices();
         const userDoc = firestoreModule.doc(db, "perfiles", googleUser.uid);
         const response = await firestoreModule.getDoc(userDoc);
         if (response.exists()) {
@@ -89,7 +97,7 @@ export function AuthProvider({ children }) {
   }, [googleUser]);
 
   const loginWithGoogle = async () => {
-    const { auth, authModule } = await loadFirebaseServices();
+    const { auth, authModule } = await loadAuthServices();
     const provider = new authModule.GoogleAuthProvider();
     return authModule.signInWithPopup(auth, provider);
   };
@@ -109,7 +117,7 @@ export function AuthProvider({ children }) {
   const registrar = async (registrerUser) => {
     setAuthError(null);
     try {
-      const { db, firestoreModule } = await loadFirebaseServices();
+      const { db, firestoreModule } = await loadFirestoreServices();
       if (!googleUser?.uid) {
         setAuthError("Tu sesión de Google no está disponible. Intentá loguearte de nuevo.");
         return;
@@ -139,7 +147,7 @@ export function AuthProvider({ children }) {
 
   const logOut = async () => {
     try {
-      const { auth, authModule } = await loadFirebaseServices();
+      const { auth, authModule } = await loadAuthServices();
       await authModule.signOut(auth);
       setCurrentUser(null);
       setGoogleUser(null);
@@ -157,7 +165,7 @@ export function AuthProvider({ children }) {
         newUser,
         currentUser,
         loading,
-        authError,     
+        authError,      // ← ahora los componentes pueden leer y mostrar el error
         loginWithGoogle,
         logOut,
         registrar,

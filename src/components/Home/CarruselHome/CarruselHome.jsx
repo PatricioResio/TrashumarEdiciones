@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "./CarruselHome.css";
 import { homeArrays } from "../../../constants/Arrays";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import LazyImage from "../../LazyImage/LazyImage.jsx";
 import {
   buildWidthSrcSet,
@@ -20,7 +20,27 @@ import { Link } from "react-router-dom";
 
 const CarruselHome = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [loadedIndexes, setLoadedIndexes] = useState(new Set([0, 1, 2]));
+  // Solo el slide 0 (el que se ve primero) carga de entrada, para no competir
+  // por ancho de banda con el LCP. El resto se suma una vez que el navegador
+  // está libre, y siempre que el usuario navegue cerca de un slide todavía no cargado.
+  const [loadedIndexes, setLoadedIndexes] = useState(new Set([0]));
+
+  useEffect(() => {
+    const idle =
+      window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
+    const cancelIdle = window.cancelIdleCallback || clearTimeout;
+    const id = idle(() => {
+      setLoadedIndexes((prev) => new Set([...prev, 1, 2]));
+    });
+    return () => cancelIdle(id);
+  }, []);
+
+  useEffect(() => {
+    setLoadedIndexes((prev) => {
+      if (prev.has(activeIndex)) return prev;
+      return new Set([...prev, activeIndex]);
+    });
+  }, [activeIndex]);
 
   const slideSrcSets = useMemo(
     () => homeArrays.map((item) => buildWidthSrcSet(item.responsiveSrcs)),
@@ -128,30 +148,7 @@ const CarruselHome = () => {
                   alignItems: "center",
                   flexDirection: "column",
                 }}
-              >    <Box
-              sx={{
-                mt: {xs:2,lg:6},
-                p: 1,          
-                width:"85%",
-                background:"#09A5B0",
-                borderRadius:"60px",
-                textAlign: 'center',
-                color: 'secondary.white',
-              }}
-            >
-
-                <Typography
-                  variant="h3"
-                  component="h2"
-                  fontWeight={500}
-                  color={"secondary.white"}
-                  align={"center"}
-                  sx={{ m: "auto" }}
-                  key={item.h2}
-                  >
-                  {item.h2}
-                </Typography>
-                  </Box>
+              >
                 <Typography
                   key={item.textP}
                   color={"#121212"}

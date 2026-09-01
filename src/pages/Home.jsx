@@ -57,7 +57,7 @@ const Home = () => {
         }}
       >
         <Box component="section" m={"auto"} sx={{borderRadius:"20px",}}>
-          <BannerCuerpo />
+          <BannerCuerpo priority={false}/>
         </Box>
         </Box>
     <Box maxWidth="100vw"
@@ -103,7 +103,7 @@ const Home = () => {
             </Box>
     </Box>
     <Box component="section" m={"auto"}  sx={{borderRadius:"20px"}}>
-          <BannerCuerpo />
+          <BannerCuerpo priority={false}/>
         </Box>
         </Box>
 {/*         <Box component="section" mb={{ xs: "-190px", md: 0 }}>

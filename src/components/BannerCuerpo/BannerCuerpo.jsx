@@ -5,7 +5,7 @@ import "./BannerCuerpo.css";
 import { isImageCached } from "../../utils/imageCache";
 import { useState } from "react";
 import { useImageLoader } from "../../hooks/useImageLoader";
-const BannerCuerpo = () => {
+const BannerCuerpo = ({ priority = true }) => {
   const [loaded, setLoaded] = useState(false);
 
   return (
@@ -15,7 +15,7 @@ const BannerCuerpo = () => {
         alt="imagen de logotipo de olas"
         width={{xs:"100%",lg:"60vw"}}
         height="38vh"
-        priority={true}
+        priority={priority}
         onLoaded={() => setLoaded(true)} // ← recibe el callback
       />
       <Box className={`banner-text-container ${loaded ? "visible" : ""}`}>
