@@ -14,17 +14,6 @@ export default defineConfig({
             return "mui-vendor";
           }
 
-          if (id.includes("node_modules/firebase") || id.includes("node_modules/@firebase")) {
-            return "firebase-vendor";
-          }
-          if (
-            id.includes("node_modules/leaflet") ||
-            id.includes("node_modules/react-leaflet") ||
-            id.includes("node_modules/@googlemaps")
-          ) {
-            return "maps-vendor";
-          }
-
           if (id.includes("node_modules/swiper")) {
             return "swiper-vendor";
           }
