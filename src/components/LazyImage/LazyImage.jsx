@@ -2,7 +2,6 @@ import { Box, Skeleton } from "@mui/material";
 import { useLazyImage } from "../../hooks/useLazyImages";
 import { useImageLoader } from "../../hooks/useImageLoader";
 import { useEffect } from "react";
-import { autoSrcSet, autoResizedSrc } from "../../utils/responsiveImages";
 
 const LazyImage = ({
   src,
@@ -25,11 +24,7 @@ const LazyImage = ({
 }) => {
   const { imgRef, isVisible } = useLazyImage(rootMargin);
   const canLoad = priority || (shouldLoad !== undefined ? shouldLoad : isVisible);
-  // Si no viene un srcSet explícito, lo generamos solos a partir de `src`
-  // (ver utils/responsiveImages.js) en vez de bajar siempre la imagen original entera.
-  const resolvedSrcSet = srcSet || autoSrcSet(src);
-  const resolvedSrc = resolvedSrcSet ? autoResizedSrc(src) : src;
-  const { loaded, onLoad } = useImageLoader(resolvedSrc, canLoad);
+  const { loaded, onLoad } = useImageLoader(src, canLoad);
   const resolvedLoading = loading || (priority ? "eager" : "lazy");
   const resolvedFetchPriority = fetchPriority || (priority ? "high" : "auto");
 
@@ -58,14 +53,14 @@ const LazyImage = ({
       {canLoad && (
         <Box
           component="img"
-          src={resolvedSrc}
+          src={src}
           alt={alt}
           onLoad={onLoad}
           loading={resolvedLoading}
           decoding={decoding}
           fetchpriority={resolvedFetchPriority}
-          srcSet={resolvedSrcSet}
-          sizes={sizes || (resolvedSrcSet ? "100vw" : undefined)}
+          srcSet={srcSet}
+          sizes={sizes}
           sx={{
             objectFit,
             width: "100%",
