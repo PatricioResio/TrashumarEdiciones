@@ -1,8 +1,9 @@
 import FilaProyectos from "../FilaProyectos/FilaProyectos";
 import { CircularProgress, Container } from "@mui/material";
-import useProyectos from "../../../hooks/useProyectos";
+import { useContext } from "react";
+import { ProyectsContext } from "../../../context/ProyectsContext";
 const ContenedorCartas = () => {
-  const { proyectos, loading } = useProyectos();
+  const { proyectos, loadingProyectos } = useContext(ProyectsContext);
 
   return (
     <Container
@@ -15,7 +16,7 @@ const ContenedorCartas = () => {
         alignItems: "center",
       }}
     >
-      {loading ? <CircularProgress /> : <FilaProyectos proyectos={proyectos} />}
+      {loadingProyectos ? <CircularProgress /> : <FilaProyectos proyectos={proyectos} />}
     </Container>
   );
 };

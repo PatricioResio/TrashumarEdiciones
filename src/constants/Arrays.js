@@ -23,7 +23,12 @@ export const pages = [
 export const homeArrays = [
   {
     id: 1,
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home1.webp?alt=media&token=98438b6d-e268-4e89-8f95-a38d0bf492f1",
+    responsiveSrcs: {
+     640: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_960.webp?alt=media&token=818c425a-8894-41a7-9745-480ba7a2d2db",
+     960: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_640.webp?alt=media&token=8e4d26db-6629-4fc0-b367-963815e3ec00",
+     1280: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_1280.webp?alt=media&token=ce0248a3-aee5-4241-a67b-3a5929b4f600",
+     1920: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_1920.webp?alt=media&token=cfa23730-c40a-40a1-a8c4-b72cec513e5e",
+    },
     h2: "Bienvenidos",
     textP:
       "Bienvenidos a Trashumar, una editorial nómada, federal e independiente. Publicamos voces y proyectos que cruzan fronteras.",
@@ -33,7 +38,12 @@ export const homeArrays = [
   {
     id: 2,
     h2: "Contacto",
-    url: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home2.webp?alt=media&token=ee9c24e8-7536-4327-87cb-30e11a19abd3",
+    responsiveSrcs: {
+     640: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_2_640.webp?alt=media&token=a853fc8e-adb8-4bca-b296-b22e572c2f0a",
+     960: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_2_960.webp?alt=media&token=8aafb19d-1c8b-415a-849b-b0a6425c2381",
+     1280: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_2_1280.webp?alt=media&token=fd240c74-d7d1-4bb2-b521-ebe84ab1be2d",
+     1920: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_2_1920.webp?alt=media&token=192e3c1b-8b02-4215-af86-d7e78e9cb08b",
+    },
     textP:
       "Quéres contactarte con nosotros para hablar de trashumancias? seguí el boton.",
     buttonText: "Contactanos",
@@ -42,7 +52,12 @@ export const homeArrays = [
   },
   {
     id: 3,
-    url: HOME_HERO_LCP_URL,   
+    responsiveSrcs: {
+     640: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_3_640.webp?alt=media&token=35d294c6-71ab-48a2-9c4c-da22239782db",
+     960: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_3_960.webp?alt=media&token=92821b17-7bf0-4ea0-9c2f-e9ca0427db56",
+     1280: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_3_1280.webp?alt=media&token=0183def8-a8a8-4b15-a38f-e1e386dd5870",
+     1920: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_3_1920.webp?alt=media&token=438e7d02-208e-45d0-8adc-577b30f5d612",
+    },
     h2: "Registrate",
     textP:
       "Registrate con tu cuenta y sé parte de Trashumar. Estamos en constante crecimiento y queremos que formes parte de esta red.",

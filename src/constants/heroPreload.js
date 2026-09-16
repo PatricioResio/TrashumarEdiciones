@@ -3,4 +3,4 @@
  * Mantener alineado con homeArrays[0]; se usa para preload y SEO crítico.
  */
 export const HOME_HERO_LCP_URL =
-  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home3%20(1).webp?alt=media&token=8829c4f6-f6c0-424d-9041-bbfa2d721062";
+  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Home1.webp?alt=media&token=98438b6d-e268-4e89-8f95-a38d0bf492f1";
