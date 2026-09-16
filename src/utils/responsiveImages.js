@@ -14,7 +14,8 @@ export function buildWidthSrcSet(widthToUrl) {
 }
 
 /** Tamaño de render típico del hero a pantalla completa */
-export const HERO_FULL_BLEED_SIZES = "100vw";
+export const HERO_FULL_BLEED_SIZES =
+  "(max-width: 899px) 85vw, (max-width: 1199px) 60vw, 720px";
 
 const AUTO_RESIZE_WIDTHS = [400, 800, 1200, 1920];
 
