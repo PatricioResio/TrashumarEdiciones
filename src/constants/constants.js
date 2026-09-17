@@ -1,6 +1,6 @@
 export const IMG_BRAND = "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/BannerCuerpo%2FBannerCuerpo_640.webp?alt=media&token=f2e153d8-f38e-423c-9c1a-1ccfec37f824";
 export const IMG_BRAND_RESPONSIVE = {
-  320:"".
+    320:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/BannerCuerpo%2FBannerCuerpo_320.webp?alt=media&token=e191e483-84cc-478e-925d-6eb23f481ca0".
     640: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/BannerCuerpo%2FBannerCuerpo_640.webp?alt=media&token=f2e153d8-f38e-423c-9c1a-1ccfec37f824",
     960: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/BannerCuerpo%2FBannerCuerpo_960.webp?alt=media&token=6ee6d72e-ee42-401f-a9ab-e8e77fe61c15",
     1280: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/BannerCuerpo%2FBannerCuerpo_1280.webp?alt=media&token=f5119545-153d-4215-94cb-af3de18223ca",
