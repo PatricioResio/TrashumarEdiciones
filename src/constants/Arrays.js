@@ -1,5 +1,4 @@
 import { scrollToContact } from "../hooks/useScrollToContact";
-import { HOME_HERO_LCP_URL } from "./heroPreload";
 export const pages = [
   {
     name: "NOSOTROS",
