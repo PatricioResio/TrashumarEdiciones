@@ -3,20 +3,23 @@ import { IMG_BRAND, IMG_BRAND_RESPONSIVE } from "../../constants/constants";
 import LazyImage from "../LazyImage/LazyImage";
 import "./BannerCuerpo.css";
 import { isImageCached } from "../../utils/imageCache";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useImageLoader } from "../../hooks/useImageLoader";
 import { buildWidthSrcSet } from "../../utils/responsiveImages";
 
 const BannerCuerpo = ({ priority = true }) => {
   const [loaded, setLoaded] = useState(false);
-  const srcSet = buildWidthSrcSet(IMG_BRAND_RESPONSIVE);
+  const slideSrcSets = useMemo(
+    () => [buildWidthSrcSet(IMG_BRAND_RESPONSIVE)],
+    [],
+  );
 
   return (
     <Box className="banner-container">
       <LazyImage
         src={IMG_BRAND}
-        srcSet={srcSet}
-        sizes={srcSet ? "(max-width: 900px) 100vw, 60vw" : undefined}
+        srcSet={ slideSrcSets }
+        sizes={slideSrcSets ? "(max-width: 900px) 100vw, 60vw" : undefined}
         alt="imagen de logotipo de olas"
         width={{xs:"100%",lg:"60vw"}}
         height="38vh"
