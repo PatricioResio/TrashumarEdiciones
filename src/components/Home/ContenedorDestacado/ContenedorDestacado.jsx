@@ -11,23 +11,18 @@ import { DESCRIPCION_ARTICULO_DESTACADO } from "../../../constants/Textos";
 import "./ContenedorDestacado.css";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import LazyImage from "../../LazyImage/LazyImage";
-
 import { buildWidthSrcSet } from "../../../utils/responsiveImages";
 
 
 const ContenedorDestacado = () => {
   const Descripcion = DESCRIPCION_ARTICULO_DESTACADO.slice(0, 254);
  
-  const slideSrcSets = useMemo(
+  const slideSrcSet = useMemo(
     () => [buildWidthSrcSet(TAPA_HIPPIES, 1920, 1080)],
     [],
   );
 
   
-  const slideSrcSets2 = useMemo(
-    () => [buildWidthSrcSet(CONTRATAPA_HIPPIES)],
-    [],
-  );
 
   return (
     <Box sx={{ bgcolor: 'background.default',  py: 6 }}>
@@ -85,9 +80,9 @@ const ContenedorDestacado = () => {
             }}
           >
             <LazyImage
-              srcSet={slideSrcSets}
+              srcSet={slideSrcSet}
               src={TAPA_HIPPIES}
-              sizes={slideSrcSets ? "(max-width: 900px) 100vw, 60vw" : undefined}
+              sizes="(max-width: 1199px) 100vw, 60vw"
               alt="Tapa Hippies"
               priority={false} 
               imgWidth={1920}

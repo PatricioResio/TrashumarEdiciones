@@ -12,7 +12,7 @@ export const DEFAULT_PERFIL_FOTO = "https://firebasestorage.googleapis.com/v0/b/
 export const TAPA_HIPPIES =  {
     320:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Novedad%2FTAPA_HIPPIES_320.webp?alt=media&token=d3e1e0b4-6ba4-444f-b91c-96e3285997d6",
     640: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Novedad%2FTAPA_HIPPIES_640.webp?alt=media&token=ffcc6c77-0e6c-46d3-b4f1-93f04666335d",
-    960: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Novedad%2FTAPA_HIPPIES_920.webp?alt=media&token=e2761903-7770-4cdb-b3a6-db66ded7fd51",
+    920: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Novedad%2FTAPA_HIPPIES_920.webp?alt=media&token=e2761903-7770-4cdb-b3a6-db66ded7fd51",
     1280: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Novedad%2FTAPA_HIPPIES_1280.webp?alt=media&token=61fc2a07-7943-4eb3-bfc2-46ca0cb152e0",
   
 };

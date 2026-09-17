@@ -9,7 +9,7 @@ import { buildWidthSrcSet } from "../../utils/responsiveImages";
 
 const BannerCuerpo = ({ priority = true }) => {
   const [loaded, setLoaded] = useState(false);
-  const slideSrcSets = useMemo(
+  const slideSrcSet = useMemo(
     () => [buildWidthSrcSet(IMG_BRAND_RESPONSIVE)],
     [],
   );
@@ -18,8 +18,8 @@ const BannerCuerpo = ({ priority = true }) => {
     <Box className="banner-container">
       <LazyImage
         src={IMG_BRAND}
-        srcSet={ slideSrcSets }
-        sizes={slideSrcSets ? "(max-width: 900px) 100vw, 60vw" : undefined}
+        srcSet={ slideSrcSet}
+        sizes="(max-width: 1199px) 100vw, 60vw"
         alt="imagen de logotipo de olas"
         width={{xs:"100%",lg:"60vw"}}
         height="38vh"
