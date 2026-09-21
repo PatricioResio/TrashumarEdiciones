@@ -11,7 +11,11 @@ export const PerfilesProvider = ({ children }) => {
   const [perfilCache, setPerfilCache] = useState({}); // cache individual por idPerfil
 
   // fetch de todos los perfiles (para listados, búsqueda, etc.)
-  useEffect(() => {
+  // PerfilesProvider
+useEffect(() => {
+  const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
+  const cancelIdle = window.cancelIdleCallback || clearTimeout;
+  const id = idle(() => {
     const cached = getCached("perfiles");
     if (cached) {
       setPerfiles(cached);
@@ -23,7 +27,9 @@ export const PerfilesProvider = ({ children }) => {
       setPerfiles(data);
       setLoadingPerfiles(false);
     });
-  }, []);
+  });
+  return () => cancelIdle(id);
+}, []);
 
   // fetch individual cacheado por idPerfil
   const getOrFetchPerfil = async (idPerfil) => {
