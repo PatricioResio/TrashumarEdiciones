@@ -8,7 +8,7 @@ export const IMG_BRAND_RESPONSIVE = {
     1920: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/BannerCuerpo%2FBannerCuerpo_1920.webp?alt=media&token=82432421-f4b9-4dbb-8ee3-4753b9feee27",
 };
 export const LOGO_URL =
-  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/logoSinFondo.webp?alt=media&token=de7292fb-fdad-4090-aa59-4a9f7ba63a00";
+  "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/logo_sin_fondo_85.webp?alt=media&token=1e2a31b0-f495-4b07-b346-794da58ce0db";
 export const DEFAULT_PERFIL_FOTO = "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/DefaultPerfil.webp?alt=media&token=5134d3ed-d677-47cd-afbc-264b81b09c8d";
 export const TAPA_HIPPIES =  {
     320:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/Novedad%2FTAPA_HIPPIES_320.webp?alt=media&token=d3e1e0b4-6ba4-444f-b91c-96e3285997d6",

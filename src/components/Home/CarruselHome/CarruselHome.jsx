@@ -51,10 +51,10 @@ const CarruselHome = () => {
         },
       }}
     >
-      <IconButton className="swiper-prev-custom" aria-laber="boton para retroceder en carusel principal">
+      <IconButton className="swiper-prev-custom" aria-label="boton para retroceder en carusel principal">
         <ArrowBackIosNewIcon />
       </IconButton>
-      <IconButton className="swiper-next-custom" aria-laber="boton para avanzar en carusel principal">
+      <IconButton className="swiper-next-custom" aria-label="boton para avanzar en carusel principal">
         <ArrowForwardIosIcon />
       </IconButton>
 
