@@ -66,8 +66,6 @@ const LazyImage = ({
             width: "100%",
             height: "100%",
             maxHeight: maxHeight ?? "none",
-            opacity: loaded ? 1 : 0,
-            transition: "opacity 0.8s ease",
           }}
         />
       )}
