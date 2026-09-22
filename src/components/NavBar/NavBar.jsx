@@ -178,7 +178,7 @@ export function Navbar() {
         </Container>
       </AppBar>
 
-      <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle} ModalProps={{ keepMounted: true }}>
+      <Drawer anchor="right" alt="boton de menu de cuenta" open={mobileOpen} onClose={handleDrawerToggle} ModalProps={{ keepMounted: true }}>
         {drawer}
       </Drawer>
     </>

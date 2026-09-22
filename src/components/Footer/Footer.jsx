@@ -118,6 +118,7 @@ function Footer() {
               </IconButton>*/}
               <IconButton
                 href="https://instagram.com/trashumarediciones"
+                alt="link a la cuenta oficial de instagram"
                 sx={{
                   color: 'white',
                   bgcolor: 'rgba(255, 255, 255, 0.1)',
