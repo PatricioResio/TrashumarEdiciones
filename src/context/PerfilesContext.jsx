@@ -1,6 +1,5 @@
 // PerfilesContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
-import { getPerfiles, getPerfil } from "../api/api";
 import { getCached, setCached } from "../api/cache";
 
 export const PerfilesContext = createContext();
@@ -13,6 +12,7 @@ export const PerfilesProvider = ({ children }) => {
   // fetch de todos los perfiles (para listados, búsqueda, etc.)
   // PerfilesProvider
 useEffect(() => {
+  let isMounted = true;
   const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
   const cancelIdle = window.cancelIdleCallback || clearTimeout;
   const id = idle(() => {
@@ -22,19 +22,27 @@ useEffect(() => {
       setLoadingPerfiles(false);
       return;
     }
-    getPerfiles().then((data) => {
-      setCached("perfiles", data);
-      setPerfiles(data);
-      setLoadingPerfiles(false);
+    // import dinámico: recién acá se baja el chunk de api.js (y firestore/firebase)
+    import("../api/api").then(({ getPerfiles }) => {
+      getPerfiles().then((data) => {
+        if (!isMounted) return;
+        setCached("perfiles", data);
+        setPerfiles(data);
+        setLoadingPerfiles(false);
+      });
     });
   });
-  return () => cancelIdle(id);
+  return () => {
+    isMounted = false;
+    cancelIdle(id);
+  };
 }, []);
 
   // fetch individual cacheado por idPerfil
   const getOrFetchPerfil = async (idPerfil) => {
     if (perfilCache[idPerfil]) return;
     try {
+      const { getPerfil } = await import("../api/api");
       const data = await getPerfil({ idPerfil });
       setPerfilCache((prev) => ({ ...prev, [idPerfil]: data }));
     } catch (error) {

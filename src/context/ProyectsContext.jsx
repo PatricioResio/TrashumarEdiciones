@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { getProyectos } from "../api/api";
 
 export const ProyectsContext = createContext();
 
@@ -8,15 +7,23 @@ export const ProyectsProvider = ({ children }) => {
   const [loadingProyectos, setLoadingProyectos] = useState(true);
 // ProyectsProvider
 useEffect(() => {
+  let isMounted = true;
   const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
   const cancelIdle = window.cancelIdleCallback || clearTimeout;
   const id = idle(() => {
-    getProyectos().then((data) => {
-      setProyectos(data);
-      setLoadingProyectos(false);
+    // import dinámico: recién acá se baja el chunk de api.js (y firestore/firebase)
+    import("../api/api").then(({ getProyectos }) => {
+      getProyectos().then((data) => {
+        if (!isMounted) return;
+        setProyectos(data);
+        setLoadingProyectos(false);
+      });
     });
   });
-  return () => cancelIdle(id);
+  return () => {
+    isMounted = false;
+    cancelIdle(id);
+  };
 }, []);
   return (
     <ProyectsContext.Provider value={{ proyectos, loadingProyectos }}>
