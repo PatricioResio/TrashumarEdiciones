@@ -25,8 +25,8 @@ export const homeArrays = [
     responsiveSrcs: {
       320:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_320.webp?alt=media&token=69d66063-7dc8-4821-a6db-f114588b8fff",
       480:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome1_480.webp?alt=media&token=31246ab6-5b50-4890-b26c-bd45f340b7e6",
-      640: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_960.webp?alt=media&token=818c425a-8894-41a7-9745-480ba7a2d2db",
-     960: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_640.webp?alt=media&token=8e4d26db-6629-4fc0-b367-963815e3ec00",
+      640: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_640.webp?alt=media&token=8e4d26db-6629-4fc0-b367-963815e3ec00",
+     960: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_960.webp?alt=media&token=818c425a-8894-41a7-9745-480ba7a2d2db",
      1280: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_1280.webp?alt=media&token=ce0248a3-aee5-4241-a67b-3a5929b4f600",
     },
     h2: "Bienvenidos",
