@@ -1,5 +1,5 @@
 import { Box, Divider, IconButton, Typography } from "@mui/material";
-
+import "./DescripcionPerfil.css";
 const DescripcionPerfil = ({
   nombrePublico,
   explicarPerfil,

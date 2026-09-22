@@ -8,7 +8,6 @@ import { Route, Routes } from "react-router-dom";
 import { CircularProgress } from "@mui/material";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-import "./components/Perfil/DescripcionPerfil/DescripcionPerfil.css";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import Home from "./pages/Home";
 
