@@ -157,6 +157,7 @@ export function Navbar() {
               <Button
                 onClick={() => navigate('/ingresa')}
                 variant="outlined"
+                aria-label="boton para ingresar a tu cuenta"
                 sx={{
                   color: 'white',
                   borderColor: 'rgba(255,255,255,0.5)',
@@ -170,7 +171,7 @@ export function Navbar() {
 
             {/* Mobile Menu Button */}
             {isMobile && (
-              <IconButton color="inherit" edge="end" onClick={handleDrawerToggle} sx={{ ml: 1 }}>
+              <IconButton color="inherit" aria-label="boton de menu de cuenta" edge="end" onClick={handleDrawerToggle} sx={{ ml: 1 }}>
                 <MenuIcon />
               </IconButton>
             )}
@@ -178,7 +179,7 @@ export function Navbar() {
         </Container>
       </AppBar>
 
-      <Drawer anchor="right" alt="boton de menu de cuenta" open={mobileOpen} onClose={handleDrawerToggle} ModalProps={{ keepMounted: true }}>
+      <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle} ModalProps={{ keepMounted: true }}>
         {drawer}
       </Drawer>
     </>
