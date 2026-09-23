@@ -34,7 +34,7 @@ export function AuthProvider({ children }) {
     if (firestoreServicesRef.current) return firestoreServicesRef.current;
     const [{ db }, firestoreModule] = await Promise.all([
       import("../api/firestore"),
-      import("firebase/firestore"),
+      import("firebase/firestore/lite"),
     ]);
     firestoreServicesRef.current = { db, firestoreModule };
     return firestoreServicesRef.current;
