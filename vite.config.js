@@ -19,13 +19,6 @@ export default defineConfig({
           }
 
           if (
-            id.includes("node_modules/@fortawesome") ||
-            id.includes("node_modules/react-icons")
-          ) {
-            return "icons-vendor";
-          }
-
-          if (
             id.includes("node_modules/formik") ||
             id.includes("node_modules/yup") ||
             id.includes("node_modules/match-sorter") ||

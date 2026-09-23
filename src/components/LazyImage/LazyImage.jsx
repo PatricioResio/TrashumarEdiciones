@@ -45,8 +45,6 @@ const LazyImage = ({
           top: 0,
           left: 0,
           borderRadius: "inherit",
-          opacity: loaded ? 0 : 1,
-          transition: "opacity 0.8s ease",
           pointerEvents: loaded ? "none" : "auto",
         }}
       />
@@ -66,6 +64,8 @@ const LazyImage = ({
             width: "100%",
             height: "100%",
             maxHeight: maxHeight ?? "none",
+            opacity: priority ? 1 : (loaded ? 1 : 0),
+            transition: priority ? "none" : "opacity 0.2s ease",
           }}
         />
       )}
