@@ -17,12 +17,19 @@ import { Link } from "react-router-dom";
 // carga con React.lazy desde CarruselHome.jsx. Así el hero estático (mismo
 // slide 0, mismos datos) puede pintarse de inmediato sin esperar a que este
 // chunk (~107kB) se descargue y ejecute.
+// Índice del slide marcado como priority en homeArrays (0 si ninguno lo tiene,
+// para no romper si algún día se borra ese campo por error).
+const priorityIndex = Math.max(
+  homeArrays.findIndex((item) => item.priority),
+  0,
+);
+const restIndexes = homeArrays
+  .map((_, i) => i)
+  .filter((i) => i !== priorityIndex);
+
 const SwiperCarousel = ({ onReady }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  // Solo el slide 0 (el que se ve primero) carga de entrada, para no competir
-  // por ancho de banda con el LCP. El resto se suma una vez que el navegador
-  // está libre, y siempre que el usuario navegue cerca de un slide todavía no cargado.
-  const [loadedIndexes, setLoadedIndexes] = useState(new Set([0]));
+ const [activeIndex, setActiveIndex] = useState(priorityIndex);
+const [loadedIndexes, setLoadedIndexes] = useState(new Set([priorityIndex]));
 
   useEffect(() => {
     // Este componente ya se montó: el chunk de Swiper terminó de descargarse,
@@ -35,7 +42,7 @@ const SwiperCarousel = ({ onReady }) => {
       window.requestIdleCallback || ((cb) => setTimeout(cb, 1500));
     const cancelIdle = window.cancelIdleCallback || clearTimeout;
     const id = idle(() => {
-      setLoadedIndexes((prev) => new Set([...prev, 1, 2]));
+      setLoadedIndexes((prev) => new Set([...prev, ...restIndexes]));
     });
     return () => cancelIdle(id);
   }, []);
@@ -94,8 +101,8 @@ const SwiperCarousel = ({ onReady }) => {
               imgHeight={1080}
               sizes={HERO_FULL_BLEED_SIZES}
               srcSet={slideSrcSets[index]}
-              priority={index === 0}
-              fetchPriority={index === 0 ? "high" : "auto"}
+              priority={!!item.priority}
+              fetchPriority={item.priority ? "high" : "auto"}
               shouldLoad={loadedIndexes.has(index)}
             />
 

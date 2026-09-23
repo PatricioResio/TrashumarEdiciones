@@ -22,6 +22,7 @@ export const pages = [
 export const homeArrays = [
   {
     id: 1,
+    priority: true,
     responsiveSrcs: {
       320:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_1_320.webp?alt=media&token=69d66063-7dc8-4821-a6db-f114588b8fff",
       480:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome1_480.webp?alt=media&token=31246ab6-5b50-4890-b26c-bd45f340b7e6",
@@ -37,6 +38,7 @@ export const homeArrays = [
   },
   {
     id: 2,
+    priority: false,
     h2: "Contacto",
     responsiveSrcs: {
      320:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_2_320.webp?alt=media&token=dfd74a03-0490-45f8-90a8-7a193d0da24d",
@@ -53,6 +55,7 @@ export const homeArrays = [
   },
   {
     id: 3,
+    priority: false,
     responsiveSrcs: {
       320:"https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_3_320.webp?alt=media&token=31d71a77-1229-4907-9ea6-67aeff0e03b7",
      480: "https://firebasestorage.googleapis.com/v0/b/trashumar-c8bd9.appspot.com/o/HomeCarrousel%2FHome_3_480.webp?alt=media&token=240d82cf-9620-44e4-a994-0680f72b74bd",

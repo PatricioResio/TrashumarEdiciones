@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 // así la imagen del LCP no depende de que esa librería termine de descargar.
 const SwiperCarousel = lazy(() => import("../SwiperCarousel/SwiperCarousel.jsx"));
 
-const heroSlide = homeArrays[0];
+const heroSlide = homeArrays.find((item) => item.priority) ?? homeArrays[0];
 
 const CarruselHome = () => {
   const [swiperReady, setSwiperReady] = useState(false);
