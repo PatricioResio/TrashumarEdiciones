@@ -20,6 +20,7 @@ import { Form, Formik } from "formik";
 import emailjs from "emailjs-com";
 import { Fade } from "react-awesome-reveal";
 import { validationTextoUnico } from "../ValidationSchemas/ValidationSchemas";
+import ConsentCheckbox from "../../ConsentCheckbox/ConsentCheckbox";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import ButtonForm from "../ButtonForm";
@@ -43,6 +44,7 @@ const FormTextoUnico = () => {
         contanosMas: "",
         ideaPrincipal: "",
         acuerdoComercial: "",
+        aceptaTerminos: false,
       }}
       validationSchema={validationTextoUnico}
       onSubmit={(values, { resetForm }) => {
@@ -469,18 +471,9 @@ const FormTextoUnico = () => {
             en cuenta tu propuesta y haremos lo posible por publicar tu texto.
             Tené en cuenta que tu aporte acelerara las cosas.
           </Typography>
-          <FormControlLabel
-            control={
-              <Checkbox
-                value={values.contrato}
-                onChange={handleChange}
-                error={Boolean(errors.contrato)}
-                id="contrato"
-                name="contrato"
-                label="contrato"
-              />
-            }
-            label="Estoy de acuerdo con los términos y condiciones"
+          <ConsentCheckbox
+            name="aceptaTerminos"
+            extraText="Entiendo que el contenido enviado puede compartirse con lectores y evaluadores de Trashumar para su revisión editorial."
           />
           <Box sx={{margin:"auto", display:"flex", }}>
 

@@ -20,6 +20,7 @@ import { Fade } from "react-awesome-reveal";
 import { Form, Formik } from "formik";
 import emailjs from "emailjs-com";
 import { validationContenidoAutor } from "../ValidationSchemas/ValidationSchemas";
+import ConsentCheckbox from "../../ConsentCheckbox/ConsentCheckbox";
 import { AuthContext } from "../../../context/AuthContext";
 import { useContext, useState } from "react";
 import ButtonForm from "../ButtonForm";
@@ -52,6 +53,7 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
         traducir: false,
         idiomaOriginal: "",
         idiomaATraducir: "",
+        aceptaTerminos: false,
       }}
       validationSchema={validationContenidoAutor}
       onSubmit={(values, { resetForm }) => {
@@ -609,18 +611,9 @@ const FormContenidoDeAutor = ({ posicionForm, posicionForm2 }) => {
             label="Mi idea es ...."
             variant="outlined"
           />
-          <FormControlLabel
-            control={
-              <Checkbox
-                value={values.contrato}
-                onChange={handleChange}
-                error={Boolean(errors.contrato)}
-                id="contrato"
-                name="contrato"
-                label="contrato"
-              />
-            }
-            label="Estoy de acuerdo con los términos y condiciones"
+          <ConsentCheckbox
+            name="aceptaTerminos"
+            extraText="Entiendo que el contenido enviado puede compartirse con lectores y evaluadores de Trashumar para su revisión editorial."
           />
        <Box sx={{margin:"auto", display:"flex",}}>
 

@@ -13,6 +13,12 @@ import "@fontsource/roboto/latin-ext-700.css";
 import Theme from "./Theme.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary.jsx";
+import { installGlobalErrorHandlers } from "./utils/errorLogger";
+
+// Atrapa errores de script y promesas sin catch en toda la app, no solo los
+// de renderizado de React (esos los atrapa el ErrorBoundary de abajo).
+installGlobalErrorHandlers();
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -21,7 +27,9 @@ root.render(
   <BrowserRouter>
     <ThemeProvider theme={Theme}>
       <CssBaseline />
-      <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </ThemeProvider>
   </BrowserRouter>
 );

@@ -69,6 +69,9 @@ const validationContenidoAutor = yup.object().shape({
     .string()
     .min(20, "Escribe al menos 20 caracteres para explicar tu proyecto.")
     .required("Este campo es obligatorio."),
+  aceptaTerminos: yup
+    .boolean()
+    .oneOf([true], "Tenés que aceptar los Términos y la Política de Privacidad."),
 });
 
 const validationContenidoAjeno = yup.object().shape({
@@ -92,6 +95,9 @@ const validationContenidoAjeno = yup.object().shape({
     .string()
     .min(20, "Escribe al menos 20 caracteres para explicar tu proyecto.")
     .required("Este campo es obligatorio."),
+  aceptaTerminos: yup
+    .boolean()
+    .oneOf([true], "Tenés que aceptar los Términos y la Política de Privacidad."),
 });
 const validationSoloLaIdea = yup.object().shape({
   relacionIdeaOriginal: yup.string().required("Este campo es obligatorio."),
@@ -102,6 +108,9 @@ const validationSoloLaIdea = yup.object().shape({
     .string()
     .min(20, "Escribe al menos 20 caracteres para explicar tu proyecto.")
     .required("Este campo es obligatorio."),
+  aceptaTerminos: yup
+    .boolean()
+    .oneOf([true], "Tenés que aceptar los Términos y la Política de Privacidad."),
 });
 
 const validationTextoUnico = yup.object().shape({
@@ -109,6 +118,9 @@ const validationTextoUnico = yup.object().shape({
   ideaPrincipal: yup.string().required("El campo es obligatorio"),
   acuerdoComercial: yup.string().required("El campo es obligatorio"),
   imagenesProyecto: yup.string().required("El campo es obligatorio"),
+  aceptaTerminos: yup
+    .boolean()
+    .oneOf([true], "Tenés que aceptar los Términos y la Política de Privacidad."),
 });
 
 export {

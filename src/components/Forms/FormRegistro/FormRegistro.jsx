@@ -32,6 +32,7 @@ const FormRegistro = () => {
     zonaDistribuidor: { lat: 0, lng: 0 }, address: "", radio: "",
     avatar: DEFAULT_PERFIL_FOTO, facebookForm: "", instagramForm: "",
     xForm: "", linkedinForm: "", explicarPerfil: "", metodosVenta: "",
+    aceptaTerminos: false,
   });
 
   const [formUser, setFormUser] = useState(valorInicial);
@@ -59,8 +60,8 @@ const FormRegistro = () => {
 
   const handlerChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (type === "checkbox" && name === "distribuidor") {
-      setFormUser((prev) => ({ ...prev, distribuidor: checked }));
+    if (type === "checkbox" && (name === "distribuidor" || name === "aceptaTerminos")) {
+      setFormUser((prev) => ({ ...prev, [name]: checked }));
     } else if (name === "address" && value !== "") {
       setFormUser((prev) => ({ ...prev, [name]: value }));
     } else if (type === "checkbox") {
@@ -81,6 +82,10 @@ const FormRegistro = () => {
 
     if (!nombre || !nombrePublico || !email || !telefono || !emailConfirm) {
       showSnackbar("Por favor completá todos los campos obligatorios.");
+      return;
+    }
+    if (!formUser.aceptaTerminos) {
+      showSnackbar("Tenés que aceptar los Términos y la Política de Privacidad para continuar.");
       return;
     }
     if (email !== emailConfirm) {
@@ -199,6 +204,31 @@ const FormRegistro = () => {
             <TextField label="Radio de trabajo (km)" name="radio" value={formUser.radio} onChange={handlerChange} fullWidth />
             <AddressAutocompleteWrapper handlerChange={handlerChange} />
           </Box>
+
+          <FormControlLabel
+            control={
+              <Checkbox
+                name="aceptaTerminos"
+                checked={formUser.aceptaTerminos}
+                onChange={handlerChange}
+              />
+            }
+            label={
+              <>
+                Leí y acepto los{" "}
+                <a href="/terminos" target="_blank" rel="noopener noreferrer">
+                  Términos y Condiciones
+                </a>{" "}
+                y la{" "}
+                <a href="/privacidad" target="_blank" rel="noopener noreferrer">
+                  Política de Privacidad
+                </a>
+                . Entiendo que mi cuenta de Google se usa solo para crear e
+                identificar mi cuenta en Trashumar, y no se utiliza con
+                ningún otro fin.
+              </>
+            }
+          />
 
           <Button type="submit"   sx={{
                     bgcolor: 'primary.main',

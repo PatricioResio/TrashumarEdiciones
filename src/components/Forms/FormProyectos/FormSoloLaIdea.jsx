@@ -15,6 +15,7 @@ import {
 import { Form, Formik } from "formik";
 import emailjs from "emailjs-com";
 import { validationSoloLaIdea } from "../ValidationSchemas/ValidationSchemas";
+import ConsentCheckbox from "../../ConsentCheckbox/ConsentCheckbox";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import ButtonForm from "../ButtonForm";
@@ -51,6 +52,7 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
         arteTapa: false,
         edicionMaquetacion: false,
         limitacionesPresupuestarias: "",
+        aceptaTerminos: false,
       }}
       validationSchema={validationSoloLaIdea}
       onSubmit={(values, { resetForm }) => {
@@ -554,19 +556,7 @@ const FormSoloLaIdea = ({ posicionForm, posicionForm2 }) => {
             parte, esto se puede acelerar. Tu contrato tendrá en consideración
             estos factores.
           </Typography>
-          <FormControlLabel
-            control={
-              <Checkbox
-                value={values.contrato}
-                onChange={handleChange}
-                error={Boolean(errors.contrato)}
-                id="contrato"
-                name="contrato"
-                label="contrato"
-              />
-            }
-            label="Estoy de acuerdo con los términos y condiciones"
-          />
+          <ConsentCheckbox name="aceptaTerminos" />
          <Box sx={{margin:"auto", display:"flex",}}>
 
             <ButtonForm

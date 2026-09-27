@@ -85,6 +85,12 @@ function Footer() {
               <Link href="/publicar" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
                 Quiero Publicar
               </Link>
+              <Link href="/privacidad" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
+                Política de Privacidad
+              </Link>
+              <Link href="/terminos" color="inherit" underline="hover" sx={{ opacity: 0.9 }}>
+                Términos y Condiciones
+              </Link>
             </Box>
           </Grid>
 

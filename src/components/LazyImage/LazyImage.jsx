@@ -45,6 +45,7 @@ const LazyImage = ({
           top: 0,
           left: 0,
           borderRadius: "inherit",
+          opacity: !loaded ? 1 : 0,
           pointerEvents: loaded ? "none" : "auto",
         }}
       />

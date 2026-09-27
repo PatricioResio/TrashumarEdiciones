@@ -21,6 +21,7 @@ import emailjs from "emailjs-com";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../context/AuthContext";
 import { validationContenidoAjeno } from "../ValidationSchemas/ValidationSchemas";
+import ConsentCheckbox from "../../ConsentCheckbox/ConsentCheckbox";
 import { initialValuesContenidoAjeno } from "../TemplatesParams/TemplateParams";
 import ButtonForm from "../ButtonForm";
 
@@ -38,6 +39,7 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
         userTelefono: currentUser ? currentUser.telefono : "No especificado",
 
         ...initialValuesContenidoAjeno,
+        aceptaTerminos: false,
       }}
       validationSchema={validationContenidoAjeno}
       onSubmit={(values, { resetForm }) => {
@@ -816,18 +818,9 @@ const FormEditarContenidoAjeno = ({ posicionForm, posicionForm2 }) => {
             error={touched.contanosMas && errors.contanosMas}
             variant="outlined"
           />
-          <FormControlLabel
-            control={
-              <Checkbox
-                value={values.contrato}
-                onChange={handleChange}
-                error={Boolean(errors.contrato)}
-                id="contrato"
-                name="contrato"
-                label="contrato"
-              />
-            }
-            label="Estoy de acuerdo con los términos y condiciones"
+          <ConsentCheckbox
+            name="aceptaTerminos"
+            extraText="Entiendo que el contenido enviado puede compartirse con lectores y evaluadores de Trashumar para su revisión editorial."
           />
           <Box sx={{margin:"auto", display:"flex",}}>
 

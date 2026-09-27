@@ -28,6 +28,12 @@ const LazyFormRegistroPerfil = lazy(() =>
 const LazyFormRegistro = lazy(() =>
   import("./components/Forms/FormRegistro/FormRegistro.jsx")
 );
+const LazyPoliticaPrivacidad = lazy(() =>
+  import("./pages/PoliticaPrivacidad/PoliticaPrivacidad.jsx")
+);
+const LazyTerminosCondiciones = lazy(() =>
+  import("./pages/TerminosCondiciones/TerminosCondiciones.jsx")
+);
 
 export default function App() {
   return (
@@ -79,6 +85,8 @@ export default function App() {
               <Route path="/publicar" Component={LazyProyectoNuevo} />
               <Route path="/registro" Component={LazyFormRegistro} />
               <Route path="/comunidad" Component={LazyComunidad} />
+              <Route path="/privacidad" Component={LazyPoliticaPrivacidad} />
+              <Route path="/terminos" Component={LazyTerminosCondiciones} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </Suspense>
