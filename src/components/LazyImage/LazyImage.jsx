@@ -39,7 +39,7 @@ const LazyImage = ({
         variant="rectangular"
         animation="wave"
         sx={{
-          height:imgHeight,
+          height:"100%",
           width:"100%",
           position: "absolute",
           top: 0,
