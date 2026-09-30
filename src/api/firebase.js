@@ -27,7 +27,8 @@ export const auth = getAuth(app);
 // Sin esto, App Check bloquea tu propio localhost durante el desarrollo.
 if (import.meta.env.DEV) {
   // eslint-disable-next-line no-undef
-  self.FIREBASE_APPCHECK_DEBUG_TOKEN = true;
+  self.FIREBASE_APPCHECK_DEBUG_TOKEN =
+    import.meta.env.VITE_APPCHECK_DEBUG_TOKEN || true;
 }
 
 export const appCheck = initializeAppCheck(app, {
