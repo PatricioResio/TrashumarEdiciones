@@ -26,6 +26,7 @@
     "react-awesome-reveal": "^4.2.8",
     "react-dom": "^18.2.0",
     "react-google-places-autocomplete": "^4.1.0",
+    "react-google-recaptcha": "^3.1.0",
     "react-leaflet": "^4.2.1",
     "react-places-autocomplete": "^7.3.0",
     "react-router-dom": "^6.12.1",

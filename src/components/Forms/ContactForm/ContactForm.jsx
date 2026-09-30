@@ -9,8 +9,9 @@ import {
 import { Form, Formik } from "formik";
 import "./ContactForm.css";
 import emailjs from "emailjs-com";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Snackbar, Alert } from "@mui/material";
+import ReCAPTCHA from "react-google-recaptcha";
 
 import { validationContact } from "../ValidationSchemas/ValidationSchemas";
 
@@ -26,17 +27,29 @@ const ContactForm = () => {
     title: "",
   };
   const [snackbar, setSnackbar] = useState({ open: false, message: "", severity: "error" });
+  const recaptchaRef = useRef(null);
   return (
     <Formik
       initialValues={initialValueContact}
       validationSchema={validationContact}
       onSubmit={(values, { resetForm }) => {
+        const captchaToken = recaptchaRef.current?.getValue();
+        if (!captchaToken) {
+          setSnackbar({
+            open: true,
+            message: "Por favor, marcá el casillero \"No soy un robot\" antes de enviar.",
+            severity: "error",
+          });
+          return;
+        }
+
         const templateParams = {
           name: values.name,
           email: values.email,
           title: values.title,
           date: values.date,
           message: values.message,
+          "g-recaptcha-response": captchaToken,
         };
         emailjs
           .send(
@@ -49,10 +62,12 @@ const ContactForm = () => {
             (response) => {
               setSnackbar({ open: true, message: "Mensaje enviado correctamente!", severity: "success" });
               resetForm();
+              recaptchaRef.current?.reset();
             },
             (error) => {
               console.error("Error al enviar el formulario:", error);
               setSnackbar({ open: true, message: "Ocurrió un error al enviar el mensaje. Intentá nuevamente.", severity: "error" });
+              recaptchaRef.current?.reset();
             }
           );
       
@@ -135,6 +150,13 @@ const ContactForm = () => {
               />
               <label className="mui-label">Tu mensaje</label>
               <span className="textArea-underline" />
+
+              <Box sx={{ my: 2 }}>
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                />
+              </Box>
 
               <Button variant="contained"  sx={{
                     bgcolor: 'primary.main',

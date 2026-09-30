@@ -1,6 +1,5 @@
 // PerfilesContext.jsx
 import { createContext, useContext, useEffect, useState } from "react";
-import { getCached, setCached } from "../api/cache";
 
 export const PerfilesContext = createContext();
 
@@ -19,17 +18,11 @@ useEffect(() => {
   const runWhenIdle = () => {
     const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 300));
     idleId = idle(() => {
-      const cached = getCached("perfiles");
-      if (cached) {
-        setPerfiles(cached);
-        setLoadingPerfiles(false);
-        return;
-      }
-      // import dinámico: recién acá se baja el chunk de api.js (y firestore/firebase)
+      // import dinámico: recién acá se baja el chunk de api.js (y firestore/firebase).
+      // La caché (localStorage con TTL) ya la maneja getPerfiles() internamente.
       import("../api/api").then(({ getPerfiles }) => {
         getPerfiles().then((data) => {
           if (!isMounted) return;
-          setCached("perfiles", data);
           setPerfiles(data);
           setLoadingPerfiles(false);
         });
