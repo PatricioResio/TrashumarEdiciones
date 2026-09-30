@@ -13,6 +13,20 @@ export function buildWidthSrcSet(widthToUrl) {
   return parts.map(([w, u]) => `${u} ${w}w`).join(", ");
 }
 
+/**
+ * Devuelve una URL "plana" de respaldo a partir de un mapa ancho→URL, para usar
+ * como atributo `src` (navegadores muy viejos sin soporte de `srcset` la usan
+ * como único recurso). Elige el ancho más grande disponible.
+ */
+export function widestSrc(widthToUrl) {
+  if (!widthToUrl || typeof widthToUrl !== "object") return undefined;
+  const parts = Object.entries(widthToUrl)
+    .map(([w, u]) => [Number(w), String(u).trim()])
+    .filter(([w, u]) => Number.isFinite(w) && w > 0 && u.length > 0)
+    .sort((a, b) => b[0] - a[0]);
+  return parts.length > 0 ? parts[0][1] : undefined;
+}
+
 /** Tamaño de render típico del hero a pantalla completa */
 export const HERO_FULL_BLEED_SIZES =
   "(max-width: 899px) 85vw, (max-width: 1199px) 60vw, 720px";

@@ -8,6 +8,7 @@ import { Suspense, lazy, useMemo, useState } from "react";
 import LazyImage from "../../LazyImage/LazyImage.jsx";
 import {
   buildWidthSrcSet,
+  widestSrc,
   HERO_FULL_BLEED_SIZES,
 } from "../../../utils/responsiveImages";
 import { Link } from "react-router-dom";
@@ -76,7 +77,7 @@ const CarruselHome = () => {
             }}
           >
             <LazyImage
-              src={heroSlide.url}
+              src={widestSrc(heroSlide.responsiveSrcs)}
               alt={heroSlide.h2}
               height={{ xs: "45%", lg: "100%" }}
               imgWidth={1920}

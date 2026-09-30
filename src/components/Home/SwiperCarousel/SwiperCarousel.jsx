@@ -9,6 +9,7 @@ import { useEffect, useMemo, useState } from "react";
 import LazyImage from "../../LazyImage/LazyImage.jsx";
 import {
   buildWidthSrcSet,
+  widestSrc,
   HERO_FULL_BLEED_SIZES,
 } from "../../../utils/responsiveImages";
 import { Link } from "react-router-dom";
@@ -94,7 +95,7 @@ const [loadedIndexes, setLoadedIndexes] = useState(new Set([priorityIndex]));
             }}
           >
             <LazyImage
-              src={item.url}
+              src={widestSrc(item.responsiveSrcs)}
               alt={item.h2}
               height={{ xs: "45%", lg: "100%" }}
               imgWidth={1920}
