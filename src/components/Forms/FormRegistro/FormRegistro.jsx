@@ -31,7 +31,8 @@ const FormRegistro = () => {
     registroTerminado: false, distribuidor: false,
     zonaDistribuidor: { lat: 0, lng: 0 }, address: "", radio: "",
     avatar: DEFAULT_PERFIL_FOTO, facebookForm: "", instagramForm: "",
-    xForm: "", linkedinForm: "", explicarPerfil: "", metodosVenta: "",
+    xForm: "", linkedinForm: "", explicarPerfil: "", metodoVentas: "",
+    horario: "", metodosPago: "",
     aceptaTerminos: false,
   });
 
@@ -200,8 +201,24 @@ const FormRegistro = () => {
           <Box sx={{ display: formUser.distribuidor ? "flex" : "none", flexDirection: "column", gap: 2, marginTop: 4 }}>
             <FormHelperText>Seleccioná la zona donde trabajás, tu método de trabajo y el radio en que te manejás.</FormHelperText>
             <FormHelperText>Detallá tus métodos de venta</FormHelperText>
-            <TextField label="Método de venta" name="metodosVenta" value={formUser.metodosVenta} onChange={handlerChange} fullWidth />
+            <TextField label="Método de venta" name="metodoVentas" value={formUser.metodoVentas} onChange={handlerChange} fullWidth />
             <TextField label="Radio de trabajo (km)" name="radio" value={formUser.radio} onChange={handlerChange} fullWidth />
+            <TextField
+              label="Horario de atención"
+              name="horario"
+              value={formUser.horario}
+              onChange={handlerChange}
+              placeholder="Ej: Lunes a Viernes de 10 a 19 hs"
+              fullWidth
+            />
+            <TextField
+              label="Métodos de pago"
+              name="metodosPago"
+              value={formUser.metodosPago}
+              onChange={handlerChange}
+              placeholder="Ej: Efectivo, transferencia, Mercado Pago"
+              fullWidth
+            />
             <AddressAutocompleteWrapper handlerChange={handlerChange} />
           </Box>
 

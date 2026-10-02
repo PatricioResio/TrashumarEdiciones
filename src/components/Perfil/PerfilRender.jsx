@@ -160,6 +160,9 @@ const PerfilRender = () => {
               address={perfil.address}
               zonaDistribuidor={perfil.zonaDistribuidor}
               metodoVentas={perfil.metodoVentas}
+              telefono={perfil.telefono}
+              horario={perfil.horario}
+              metodosPago={perfil.metodosPago}
             />
           </Box>
         </Paper>
