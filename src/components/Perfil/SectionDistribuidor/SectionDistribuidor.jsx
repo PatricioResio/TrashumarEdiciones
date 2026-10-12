@@ -93,7 +93,7 @@ const SectionDistribuidor = ({
               bgcolor: "bg.whiteBlue",
               color: "primary.main",
               fontWeight: 700,
-              fontSize: "0.7rem",
+              fontSize: "0.8rem",
               textTransform: "uppercase",
             }}
           />

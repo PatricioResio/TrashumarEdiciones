@@ -16,7 +16,7 @@ const ContenedorProyectosPerfil = ({ nombrePublico }) => {
       maxWidth="lg"
       sx={{
         margin: { xs: "0", md: "auto" },
-        width: { xs: "85vw", md: "100%" },
+        width: { xs: "92vw", md: "100%" },
         height: "30rem",
         minHeight: "30rem",
       }}

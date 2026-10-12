@@ -37,11 +37,12 @@ const CarruselHome = () => {
 
   return (
     <Container
+      className="carrusel-home"
       maxWidth="false"
       disableGutters
       sx={{
         position: "relative",
-        width: { xs: "85%", md: "60%", lg: "75%" },
+        width: { xs: "94%", md: "60%", lg: "75%" },
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
         borderRadius: "30px",
         height: {
@@ -130,7 +131,7 @@ const CarruselHome = () => {
                   width: "80%",
                   px: 1,
                   py: 1.8,
-                  fontSize: "0.8rem",
+                  fontSize: { xs: "1rem", md: "0.9rem" },
                   alignSelf: "flex-start",
                   borderRadius: 2,
                   "&:hover": {

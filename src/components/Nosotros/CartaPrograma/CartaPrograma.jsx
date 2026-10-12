@@ -20,7 +20,7 @@ const CartaPrograma = ({ texto }) => {
               variant="body1"
               
               component="p"
-              sx={{ width: { xs: "80vw", md: "18.75rem" } }}
+              sx={{ width: { xs: "92vw", md: "18.75rem" } }}
             >
               {texto}
             </Typography>

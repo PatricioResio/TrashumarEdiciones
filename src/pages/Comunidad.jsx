@@ -37,7 +37,7 @@ const Comunidad = () => {
           sx={{
             mt: "2rem",
             color: "#777777ff",
-            width: { xs: "90%", md: "40%" },
+            width: { xs: "94%", md: "40%" },
             m: "20px auto 0 auto",
           }}
         >

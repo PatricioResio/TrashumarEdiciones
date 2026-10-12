@@ -19,7 +19,7 @@ const ContenedorColaboraciones = ({ nombrePublico }) => {
       className="contenedor-fila-perfil"
       sx={{
         margin: { xs: "0", md: "auto" },
-        width: { xs: "80vw", md: "100%" },
+        width: { xs: "92vw", md: "100%" },
         height: "40rem",
         minHeight: "40rem",
       }}

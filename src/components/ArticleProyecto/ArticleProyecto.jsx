@@ -13,7 +13,7 @@ const SectionProyecto = () => {
     sx={{
         minHeight: { xs: "65vh", md: "80vh" },
         width: "100%",
-        margin: "30px auto",
+        margin: {xs:"auto auto", md:"30px auto"},
         display: "flex",
         flexDirection: "column",
         alignItems: "center",

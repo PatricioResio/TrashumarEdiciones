@@ -80,7 +80,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
       <Box
         sx={{
           m: "auto",
-          width: { xs: "92%", md: "70%", xl: "60%" }, // ← ancho responsivo
+          width: { xs: "95%", md: "70%", xl: "60%" }, // ← ancho responsivo
           p: 4,
           borderRadius: "20px",
           background: "linear-gradient(to bottom,rgb(241, 255, 255), #e9fffc 60%, #dafffe)",
@@ -114,7 +114,7 @@ const ProyectoPublico = ({ proyectoPublico }) => {
            <Box
         sx={{
           m:"auto",
-          width:{xs:"90%",lg:"60%" },
+          width:{xs:"95%",lg:"60%" },
           p: 2,          
           background:"#09A5B0",
           borderRadius:"60px",
