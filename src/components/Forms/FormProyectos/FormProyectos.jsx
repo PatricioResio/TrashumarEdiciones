@@ -13,7 +13,7 @@ function FormProyectos() {
 
   return (
     <Container
-      maxWidth="md"
+      maxWidth="2xl"
       sx={{
         minHeight: "65vh",
         fontSize: { xs: "18px", sm: "24px", md: "26px" },

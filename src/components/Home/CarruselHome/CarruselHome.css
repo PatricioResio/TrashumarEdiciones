@@ -43,3 +43,20 @@
   width: 20px; 
   background-color: #17B8B8; 
 }
+@media (max-width: 899px) {
+  button.swiper-prev-custom.MuiIconButton-root,
+  button.swiper-next-custom.MuiIconButton-root {
+    width: 44px;
+    height: 44px;
+  }
+  button.swiper-prev-custom.MuiIconButton-root {
+    left: 8px;
+  }
+  button.swiper-next-custom.MuiIconButton-root {
+    right: 8px;
+  }
+  .carrusel-home button.swiper-prev-custom.MuiIconButton-root,
+  .carrusel-home button.swiper-next-custom.MuiIconButton-root {
+    top: 22%;
+  }
+}

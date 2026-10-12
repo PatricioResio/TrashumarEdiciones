@@ -150,7 +150,7 @@ const [loadedIndexes, setLoadedIndexes] = useState(new Set([priorityIndex]));
                   width: "80%",
                   px: 1,
                   py: 1.8,
-                  fontSize: "0.8rem",
+                  fontSize: { xs: "1rem", md: "0.9rem" },
                   alignSelf: "flex-start",
                   borderRadius: 2,
                   "&:hover": {

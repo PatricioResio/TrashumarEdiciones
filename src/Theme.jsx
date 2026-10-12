@@ -65,7 +65,7 @@ const theme = createTheme({
       fontWeight: 300,
       fontSize: "3rem",
       "@media (min-width:0px)": {
-      fontSize:"1.8rem"
+      fontSize: "2rem"
       },
       "@media (min-width:600px)": {
       fontSize: "2rem",
@@ -86,7 +86,7 @@ const theme = createTheme({
     h3: {
        fontFamily: "Roboto, sans-serif",
     
-      fontSize: "1.4rem",
+      fontSize: "1.6rem",
       "@media (min-width:600px)": {
         fontSize: "1.6rem",
       },
@@ -104,7 +104,7 @@ const theme = createTheme({
       },
     },
     h4: {
-      fontSize: "1.2rem",
+      fontSize: "1.4rem",
       "@media (min-width:600px)": {
         fontSize: "1.8rem",
       },
@@ -122,7 +122,7 @@ const theme = createTheme({
       },
     },
     h5: {
-      fontSize: "1rem",
+      fontSize: "1.15rem",
       "@media (min-width:600px)": {
         fontSize: "1.3rem",
       },
@@ -140,7 +140,7 @@ const theme = createTheme({
       },
     },
     h6: {
-      fontSize: "0.9rem",
+      fontSize: "1rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
@@ -158,7 +158,7 @@ const theme = createTheme({
       },
     },
     p: {
-      fontSize: "0.8rem",
+      fontSize: "1rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
@@ -172,14 +172,14 @@ const theme = createTheme({
         fontSize: "1.3rem",
       },
       "@media (min-width:1920px)": {
-        fontSize: "3rem",
+        fontSize: "1.4rem",
       },
     },
    
     body1: {
       
       fontFamily: "Inter, sans-serif",
-      fontSize: "0.8rem",
+      fontSize: "1rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },
@@ -198,7 +198,7 @@ const theme = createTheme({
     },
     body2: {color:"rgb(12, 12, 12)",
       fontFamily: "Inter, sans-serif",
-      fontSize: "0.8rem",
+      fontSize: "1rem",
       "@media (min-width:600px)": {
         fontSize: "1rem",
       },

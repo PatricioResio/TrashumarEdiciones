@@ -100,7 +100,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             minHeight: { xs: "20rem", md: "46rem" },
             p: "20px",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
-            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
+            width: { xs: "94vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaProyectosPerfil proyectosUser={proyectosUser} />
@@ -116,7 +116,7 @@ const PerfilPublico = ({ proyectosUser, colaboraciones, perfil = {} }) => {
             borderRadius: "2%",
             mt: { xs: "auto", md: "0", lg: "0", xl: "0" },
             p: "20px",
-            width: { xs: "90vw", sm: "350px", md: "500px", lg: "45%" },
+            width: { xs: "94vw", sm: "350px", md: "500px", lg: "45%" },
           }}
         >
           <FilaColaboraciones colaboraciones={colaboraciones} />

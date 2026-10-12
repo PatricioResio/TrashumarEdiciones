@@ -36,10 +36,10 @@ const FilaPerfiles = ({ perfiles }) => {
                     height:"40px",
                     fontWeight: 600,
                     margin:"30px auto auto auto",
-                    width:{xs:"70%", md:"50%", lg:"30%",},
+                    width:{xs:"90%", md:"50%", lg:"30%",},
                     px: 1,
                     py: 1.8,
-                    fontSize: '0.8rem',
+                    fontSize: { xs: '1rem', md: '0.9rem' },
                     borderRadius: 2,
                     '&:hover': {
                       bgcolor: 'primary.dark',

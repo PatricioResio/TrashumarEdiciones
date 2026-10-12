@@ -4,7 +4,9 @@
   background-color: "#E1E5E6";
   width: 100%;
   height: auto;
+  overflow-x: clip ;
 }
+
 
 .container-perfiles {
   background: linear-gradient(to bottom, #e6ffff, #e9fffc 60%, #dafffe);

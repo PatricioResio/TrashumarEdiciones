@@ -48,7 +48,7 @@ export default function App() {
           maxWidth: "100vw",
           margin: "0",
           padding: "0",
-          minWidth: "99vw",
+          minWidth: "100vw",
         }}
         disableGutters
       >

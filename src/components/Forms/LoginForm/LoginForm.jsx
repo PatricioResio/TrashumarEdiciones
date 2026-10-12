@@ -17,7 +17,7 @@ function LoginForm() {
     <Box
       sx={{
         height: {xs: "70vh", md: "60vh"},
-        width: {xs: "80vw",sm:"45vw", md: "40vw", lg: "35vw"},
+        width: {xs: "92vw",sm:"45vw", md: "40vw", lg: "35vw"},
         display: "flex",
         margin: "5rem auto",
         justifyContent: "center",
@@ -47,7 +47,7 @@ function LoginForm() {
           onClick={handleClick}
           disabled={loading}
           sx={{
-            width: { xs: "40%", md: "18rem" },
+            width: { xs: "75%", md: "18rem" },
             margin: "auto",
             color: "#0C2324",
             transition: "transform 0.3s",
