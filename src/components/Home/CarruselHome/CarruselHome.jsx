@@ -42,7 +42,7 @@ const CarruselHome = () => {
       disableGutters
       sx={{
         position: "relative",
-        width: { xs: "94%", md: "60%", lg: "75%" },
+        width: { xs: "90%", md: "60%", lg: "75%" },
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
         borderRadius: "30px",
         height: {
